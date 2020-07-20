@@ -25,7 +25,7 @@ RequestExecutionLevel admin
 ; Modern UI end
 
 Name "${PRODUCT_NAME} - ${PRODUCT_VERSION}"
-Icon "skytemple_randomizer.ico"
+Icon "skytemple.ico"
 OutFile "skytemple-randomizer-${PRODUCT_VERSION}-install.exe"
 InstallDir "$PROGRAMFILES64\${PRODUCT_NAME}"
 ShowInstDetails show

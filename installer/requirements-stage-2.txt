@@ -1,0 +1,2 @@
+skytemple-files==0.1.0a2
+explorerscript==0.0.4

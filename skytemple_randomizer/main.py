@@ -24,6 +24,7 @@ import gi
 
 from skytemple_files.dungeon_randomizer import run_main as run_dungeon_randomizer
 from skytemple_files.ground_actor_randomizer import run_main as run_ground_actor_randomizer
+from skytemple_files.starter_randomizer import run_main as run_starter_randomizer
 
 gi.require_version('Gtk', '3.0')
 
@@ -66,7 +67,8 @@ class MainController:
             return
         rand_dungeons = self.builder.get_object('rand_dungeons').get_active()
         rand_npcs = self.builder.get_object('rand_npcs').get_active()
-        if not rand_dungeons and not rand_npcs:
+        rand_starters = self.builder.get_object('rand_starters').get_active()
+        if not rand_dungeons and not rand_npcs and not rand_starters:
             self.display_error("You need to choose something to randomize.")
             return
 
@@ -94,6 +96,9 @@ class MainController:
                     in_fn = out_fn
                 if rand_dungeons:
                     run_dungeon_randomizer(in_fn, out_fn)
+                    in_fn = out_fn
+                if rand_starters:
+                    run_starter_randomizer(in_fn, out_fn)
                 md = Gtk.MessageDialog(self.window,
                                        Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.ERROR,
                                        Gtk.ButtonsType.OK,
@@ -121,6 +126,7 @@ class MainController:
                                title=error_title)
         md.run()
         md.destroy()
+
 
 def main():
     path = os.path.abspath(os.path.dirname(__file__))

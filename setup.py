@@ -10,7 +10,7 @@ with open(path.join(this_directory, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='skytemple-randomizer',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     description='Randomizer GUI to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky (EU/US)',
     long_description=long_description,
@@ -18,7 +18,7 @@ setup(
     url='https://github.com/SkyTemple/skytemple-randomizer/',
     install_requires=[
         'ndspy >= 3.0.0',
-        'skytemple-files >= 0.1.0a2',
+        'skytemple-files >= 0.1.0a3',
         'pygobject >= 3.26.0'
     ],
     classifiers=[

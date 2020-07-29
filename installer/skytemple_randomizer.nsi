@@ -1,5 +1,5 @@
 !define PRODUCT_NAME "SkyTemple Randomizer"
-!define PRODUCT_VERSION "0.0.2"
+!define PRODUCT_VERSION "0.0.3"
 
 !define DIST_DIR "dist\skytemple_randomizer"
 !define APPEXE "skytemple_randomizer.exe"

@@ -7,8 +7,8 @@ SkyTemple Randomizer
 
 .. |logo| image:: https://raw.githubusercontent.com/SkyTemple/skytemple/master/skytemple/data/icons/hicolor/256x256/apps/skytemple.png
 
-.. |build| image:: https://jenkins.riptide.parakoopa.de/buildStatus/icon?job=skytemple-randomizer%2Fmaster
-    :target: https://jenkins.riptide.parakoopa.de/blue/organizations/jenkins/skytemple-randomizer/activity
+.. |build| image:: https://img.shields.io/github/workflow/status/SkyTemple/skytemple-randomizer/Build,%20test%20and%20publish
+    :target: https://pypi.org/project/skytemple-randomizer/
     :alt: Build Status
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/skytemple-randomizer

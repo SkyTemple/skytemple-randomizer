@@ -1,3 +1,4 @@
+__version__ = '0.0.3'
 from setuptools import setup, find_packages
 
 # README read-in
@@ -10,7 +11,7 @@ with open(path.join(this_directory, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='skytemple-randomizer',
-    version='0.0.3',
+    version=__version__,
     packages=find_packages(),
     description='Randomizer GUI to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky (EU/US)',
     long_description=long_description,

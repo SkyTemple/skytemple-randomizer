@@ -22,13 +22,13 @@ import webbrowser
 
 import gi
 
-from skytemple_files.dungeon_randomizer import run_main as run_dungeon_randomizer
-from skytemple_files.ground_actor_randomizer import run_main as run_ground_actor_randomizer
-from skytemple_files.starter_randomizer import run_main as run_starter_randomizer
+from skytemple_randomizer.randomizer.dungeon_randomizer import run_main as run_dungeon_randomizer
+from skytemple_randomizer.randomizer.ground_actor_randomizer import run_main as run_ground_actor_randomizer
+from skytemple_randomizer.randomizer.starter_randomizer import run_main as run_starter_randomizer
 
 gi.require_version('Gtk', '3.0')
 
-from gi.repository import Gtk, Gdk, GLib
+from gi.repository import Gtk, GLib
 from gi.repository.Gtk import Window
 
 

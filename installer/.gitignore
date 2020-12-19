@@ -1,5 +1,4 @@
 _build_root
 *.whl
 *.exe
-!skytemple_randomizer.spec
 bundling/

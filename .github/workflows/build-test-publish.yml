@@ -1,5 +1,5 @@
-# Builds on all branches & PRs
-# Deploys to PyPi on "release".
+# Builds on all branches & PRs and packages for MacOS and Windows.
+# Deploys to PyPi for tags.
 name: Build, test and publish
 
 on: [push, pull_request]
@@ -59,3 +59,140 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
           twine upload *.whl
+  package-windows:
+    needs: build
+    runs-on: windows-2019
+    name: Build and package for Windows
+    steps:
+      - name: Install MSys2 and dependencies
+        uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          msystem: MINGW64
+          install: >-
+            mingw-w64-x86_64-curl
+            git
+            unzip
+            mingw-w64-x86_64-python
+            mingw-w64-x86_64-python-pip
+            mingw-w64-x86_64-gtksourceview3
+            mingw-w64-x86_64-python-pillow
+            mingw-w64-x86_64-python-cairo
+            mingw-w64-x86_64-gtk3
+            mingw-w64-x86_64-python3-gobject
+            mingw-w64-x86_64-openssl
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Rewrite version for dev if not tag
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        shell: msys2 {0}
+        run: |
+          perl -i -pe "s/__version__\s*=\s*'(.*?)(rc.*|a.*|post.*)?'/__version__='\1.dev${GITHUB_SHA::8}'/" setup.py
+          echo "IS_DEV_BUILD=1" >> $GITHUB_ENV
+      - name: Note version
+        shell: msys2 {0}
+        run: |
+          echo "PACKAGE_VERSION=$(python3 -- ./setup.py --version)" >> $GITHUB_ENV
+      - name: Install and package
+        shell: msys2 {0}
+        run: |
+          cd installer
+
+          # Download armips and other binary depedencies
+          ./download-windows-dependencies.sh
+
+          # Download and prepare the Arc theme
+          curl https://skytemple.org/build_deps/Arc.zip -O
+          unzip Arc.zip
+
+          # Install NSIS
+          curl https://skytemple.org/build_deps/nsis.zip -O
+          unzip -o nsis.zip -d "/c/Program Files (x86)/NSIS"
+
+          # Install PyInstaller
+          pip3 install pyinstaller
+
+          # Package
+          ./build-windows.sh $PACKAGE_VERSION
+
+      - name: Create installer
+        uses: joncloud/makensis-action@v3.4
+        with:
+          script-file: installer/skytemple-randomizer.nsi
+          arguments: "/DPRODUCT_VERSION=${{ env.PACKAGE_VERSION }}"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: skytemple-randomizer-windows-app
+          path: |
+            installer/skytemple-randomizer-*-install.exe
+
+  package-mac:
+    needs: build
+    runs-on: macos-10.15
+    name: Build and package for Mac OS
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Rewrite version for dev if not tag
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        run: |
+          perl -i -pe "s/__version__\s*=\s*'(.*?)(rc.*|a.*|post.*)?'/__version__='\1.dev${GITHUB_SHA::8}'/" setup.py
+          echo "IS_DEV_BUILD=1" >> $GITHUB_ENV
+      - name: Note version
+        run: |
+          echo "PACKAGE_VERSION=$(python3 -- ./setup.py --version)" >> $GITHUB_ENV
+      - name: Install and package
+        run: |
+          brew install git pygobject3 gtk+3 python@3.8 gtksourceview3 adwaita-icon-theme sdl cmake
+          PATH=/usr/local/opt/python@3.8/bin:/usr/local/bin:$PATH
+
+
+          # Install other dependencies and SkyTemple Randomizer itself
+          pip3 install skytemple-rust pyinstaller
+          pip3 install -r requirements-mac-windows.txt
+          pip3 install .
+          if [ -n "$IS_DEV_BUILD" ]; then
+            installer/install-skytemple-components-from-git.sh
+          fi
+
+          cd installer
+
+          # Install themes
+          curl https://skytemple.org/build_deps/mac/McMojave.zip -O
+          unzip McMojave.zip > /dev/null
+          curl https://skytemple.org/build_deps/Arc.zip -O
+          unzip Arc.zip > /dev/null
+
+          # Download armips
+          curl https://skytemple.org/build_deps/mac/armips -O
+
+          # Package
+          ./build-mac.sh $PACKAGE_VERSION
+
+          # Creating a zip makes the artifact upload much faster since there are so many files
+          zip -r skytemple-randomizer-mac.zip dist/SkyTempleRandomizer.app > /dev/null
+
+      - name: Upload .app
+        uses: actions/upload-artifact@v2
+        with:
+          name: skytemple-randomizer-mac-app
+          path: |
+            installer/skytemple-randomizer-mac.zip
+
+      - name: Create installer
+        run: |
+          # See https://github.com/sindresorhus/create-dmg
+          # create-dmg automatically generates an installer icon if imagemagick is installed
+          brew install graphicsmagick imagemagick
+
+          # This tool returns exit code 2 if the DMG was created but code signing failed for some reason
+          npx create-dmg --dmg-title=SkyTempleRandomizer installer/dist/SkyTempleRandomizer.app installer || true
+
+      - name: Upload .dmg
+        uses: actions/upload-artifact@v2
+        with:
+          name: skytemple-randomizer-mac-dmg
+          path: |
+            installer/SkyTempleRandomizer*.dmg

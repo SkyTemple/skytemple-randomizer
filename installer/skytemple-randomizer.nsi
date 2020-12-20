@@ -2,7 +2,7 @@
 
 !define DIST_DIR "dist\skytemple_randomizer"
 !define APPEXE "skytemple_randomizer.exe"
-!define PRODUCT_ICON "skytemple.ico"
+!define PRODUCT_ICON "skytemple_randomizer.ico"
 
 SetCompressor lzma
 
@@ -24,7 +24,7 @@ RequestExecutionLevel admin
 ; Modern UI end
 
 Name "${PRODUCT_NAME} - ${PRODUCT_VERSION}"
-Icon "skytemple.ico"
+Icon "skytemple_randomizer.ico"
 OutFile "skytemple-randomizer-${PRODUCT_VERSION}-install.exe"
 InstallDir "$PROGRAMFILES64\${PRODUCT_NAME}"
 ShowInstDetails show

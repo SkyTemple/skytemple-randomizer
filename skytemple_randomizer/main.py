@@ -168,7 +168,7 @@ def main():
     MainController(builder, main_window)
 
     main_window.present()
-    main_window.set_icon_name('skytemple')
+    main_window.set_icon_name('skytemple_randomizer')
     Gtk.main()
 
 

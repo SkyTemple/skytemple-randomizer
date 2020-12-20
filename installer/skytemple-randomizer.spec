@@ -8,7 +8,7 @@ site_packages = next(p for p in sys.path if 'site-packages' in p)
 
 additional_files = []
 additional_datas = [
-    (os.path.join(pkg_path, 'data'), 'skytemple_randomizer/data'),
+    (os.path.join(pkg_path, 'data'), '/data'),
     (os.path.join(pkg_path, '*.glade'), '.'),
     (os.path.join(site_packages, 'skytemple_icons', 'hicolor'), 'skytemple_icons/hicolor'),
     (os.path.join(site_packages, 'skytemple_files', '_resources'), 'skytemple_files/_resources'),
@@ -62,7 +62,7 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           console=False,
-          icon=os.path.abspath(os.path.join('.', 'skytemple.ico')))
+          icon=os.path.abspath(os.path.join('.', 'skytemple_randomizer.ico')))
 
 coll = COLLECT(exe,
                a.binaries,

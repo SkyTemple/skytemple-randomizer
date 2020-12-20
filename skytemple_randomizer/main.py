@@ -146,6 +146,10 @@ def main():
         # Load theming under macOS
         _macos_load_theme()
 
+        # The search path is wrong if SkyTemple is executed as an .app bundle
+        if getattr(sys, 'frozen', False):
+            path = os.path.dirname(sys.executable)
+
     itheme: Gtk.IconTheme = Gtk.IconTheme.get_default()
     itheme.append_search_path(os.path.abspath(os.path.join(data_dir(), "icons")))
     itheme.rescan_if_needed()
@@ -169,6 +173,9 @@ def main():
 
 
 def data_dir():
+    if sys.platform.startswith('darwin'):
+        if getattr(sys, 'frozen', False):
+            return os.path.join(os.path.dirname(sys.executable), 'data')
     return os.path.join(os.path.dirname(__file__), 'data')
 
 

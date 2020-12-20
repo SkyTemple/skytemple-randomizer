@@ -145,8 +145,8 @@ jobs:
           echo "PACKAGE_VERSION=$(python3 -- ./setup.py --version)" >> $GITHUB_ENV
       - name: Install and package
         run: |
-          brew install git pygobject3 gtk+3 python@3.8 gtksourceview3 adwaita-icon-theme sdl cmake
-          PATH=/usr/local/opt/python@3.8/bin:/usr/local/bin:$PATH
+          brew install git pygobject3 gtk+3 python@3.9 gtksourceview3 adwaita-icon-theme sdl cmake
+          PATH=/usr/local/opt/python@3.9/bin:/usr/local/bin:$PATH
 
 
           # Install other dependencies and SkyTemple Randomizer itself

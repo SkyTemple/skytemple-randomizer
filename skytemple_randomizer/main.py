@@ -14,17 +14,29 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import json
 import logging
 import os
 import sys
 import traceback
 import webbrowser
+from functools import partial
+from math import floor
+from typing import Optional
 
 import gi
+import pkg_resources
+from ndspy.rom import NintendoDSRom
 
+from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
+from skytemple_files.common.util import open_utf8
+from skytemple_icons import icons
+from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder
 from skytemple_randomizer.randomizer.dungeon_randomizer import run_main as run_dungeon_randomizer
 from skytemple_randomizer.randomizer.ground_actor_randomizer import run_main as run_ground_actor_randomizer
 from skytemple_randomizer.randomizer.starter_randomizer import run_main as run_starter_randomizer
+from skytemple_randomizer.randomizer_thread import RandomizerThread
+from skytemple_randomizer.status import Status
 
 gi.require_version('Gtk', '3.0')
 
@@ -37,12 +49,17 @@ class MainController:
         self.builder = builder
         self.window = window
 
-        filter_nds = Gtk.FileFilter()
-        filter_nds.set_name("Nintendo DS ROMs (*.nds)")
-        filter_nds.add_mime_type("application/x-nintendo-ds-rom")
-        filter_nds.add_pattern("*.nds")
-        self.builder.get_object('input_file').add_filter(filter_nds)
-        self.file_chooser: Gtk.FileChooserButton = self.builder.get_object('input_file')
+        self.static_config = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
+
+        self.chosen_file = None
+
+        # Load default configuration
+        self.ui_applier = ConfigUIApplier(self.builder,
+                                          self.static_config.dungeon_data.dungeons,
+                                          self.static_config.dungeon_data.abilities)
+        self.ui_reader = ConfigUIReader(self.builder)
+        self.config = ConfigFileLoader.load(os.path.join(data_dir(), 'default.json'))
+        self.ui_applier.apply(self.config)
 
         self.builder.connect_signals(self)
 
@@ -57,19 +74,121 @@ class MainController:
         w.hide_on_delete()
         return True
 
+    def on_cr_dungeons_settings_randomize_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store[path][2] = not widget.get_active()
+
+    def on_cr_dungeons_settings_monster_houses_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store[path][3] = not widget.get_active()
+
+    def on_cr_dungeons_settings_randomize_weather_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store[path][4] = not widget.get_active()
+
+    def on_cr_dungeons_settings_unlock_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store[path][5] = not widget.get_active()
+
+    def on_cr_pokemon_abilities_enabled_use_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_monsters_abilities')
+        store[path][2] = not widget.get_active()
+
+    def on_btn_rom_clicked(self, *args):
+        dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
+            "Open ROM...",
+            self.window,
+            Gtk.FileChooserAction.OPEN,
+            None, None
+        )
+
+        filter_nds = Gtk.FileFilter()
+        filter_nds.set_name("Nintendo DS ROMs (*.nds)")
+        filter_nds.add_mime_type("application/x-nintendo-ds-rom")
+        filter_nds.add_pattern("*.nds")
+        dialog.add_filter(filter_nds)
+
+        response = dialog.run()
+        fn = dialog.get_filename()
+        dialog.destroy()
+
+        if response == Gtk.ResponseType.ACCEPT:
+            self.chosen_file = fn
+            self.builder.get_object('label_rom').set_text(os.path.basename(fn))
+
+    def on_import_clicked(self, *args):
+        dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
+            "Import configuration...",
+            self.window,
+            Gtk.FileChooserAction.OPEN,
+            None, None
+        )
+
+        filter = Gtk.FileFilter()
+        filter.set_name("JSON configuration file (*.json)")
+        filter.add_mime_type("	application/json")
+        filter.add_pattern("*.json")
+        dialog.add_filter(filter)
+
+        response = dialog.run()
+        fn = dialog.get_filename()
+        dialog.destroy()
+
+        if response == Gtk.ResponseType.ACCEPT:
+            try:
+                self.config = ConfigFileLoader.load(fn)
+                self.ui_applier.apply(self.config)
+            except BaseException as e:
+                self.display_error(f"The config file you tried to import is invalid:\n{e.__class__.__name__}:\n{e}")
+
+    def on_export_clicked(self, *args):
+        save_diag = Gtk.FileChooserNative.new(
+            "Export configuration...",
+            self.window,
+            Gtk.FileChooserAction.SAVE,
+            None, None
+        )
+
+        filter = Gtk.FileFilter()
+        filter.set_name("JSON configuration file (*.json)")
+        filter.add_mime_type("application/json")
+        filter.add_pattern("*.json")
+        save_diag.add_filter(filter)
+        response = save_diag.run()
+        fn = save_diag.get_filename()
+        if '.' not in fn:
+            fn += '.json'
+        save_diag.destroy()
+
+        if response == Gtk.ResponseType.ACCEPT:
+            with open_utf8(fn, 'w') as f:
+                json.dump(self.ui_reader.read(), f, indent=4, cls=EnumJsonEncoder)
+
     def on_about_clicked(self, *args):
-        self.builder.get_object("about_dialog").run()
+        about: Gtk.AboutDialog = self.builder.get_object("about_dialog")
+        about.connect("response", lambda d, r: d.hide())
+
+        def activate_link(l, uri, *args):
+            webbrowser.open_new_tab(uri)
+            return True
+
+        about.connect("activate-link", activate_link)
+        header_bar: Optional[Gtk.HeaderBar] = about.get_header_bar()
+        if header_bar is not None:
+            # Cool bug??? And it only works on the left as well, wtf?
+            header_bar.set_decoration_layout('close')
+        about.set_version(version())
+        about.run()
+
+    def on_discord_clicked(self, *args):
+        webbrowser.open_new_tab('https://discord.gg/4e3X36f')
+
+    def on_skytemple_clicked(self, *args):
+        webbrowser.open_new_tab('https://skytemple.org')
 
     def on_randomize_clicked(self, *args):
-        in_fn = self.file_chooser.get_filename()
-        if in_fn is None:
+        if self.chosen_file is None:
             self.display_error("Please choose an input file.")
-            return
-        rand_dungeons = self.builder.get_object('rand_dungeons').get_active()
-        rand_npcs = self.builder.get_object('rand_npcs').get_active()
-        rand_starters = self.builder.get_object('rand_starters').get_active()
-        if not rand_dungeons and not rand_npcs and not rand_starters:
-            self.display_error("You need to choose something to randomize.")
             return
 
         dialog = Gtk.FileChooserDialog(
@@ -91,32 +210,53 @@ class MainController:
 
         if response == Gtk.ResponseType.OK:
             try:
-                if rand_npcs:
-                    run_ground_actor_randomizer(in_fn, out_fn)
-                    in_fn = out_fn
-                if rand_dungeons:
-                    run_dungeon_randomizer(in_fn, out_fn)
-                    in_fn = out_fn
-                if rand_starters:
-                    run_starter_randomizer(in_fn, out_fn)
-                md = Gtk.MessageDialog(self.window,
-                                       Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.ERROR,
-                                       Gtk.ButtonsType.OK,
-                                       "Successfully randomized!",
-                                       title="SkyTemple Randomizer")
-                md.run()
-                md.destroy()
+                self.builder.get_object('progress_close').set_sensitive(False)
+                progress_bar: Gtk.ProgressBar = self.builder.get_object('progress_bar')
+                progress_label: Gtk.Label = self.builder.get_object('progress_label')
+                progress_diag: Gtk.Dialog = self.builder.get_object('progress')
+                progress_diag.set_title('Randomizing...')
+
+                def update_fn(progress, desc):
+                    progress_bar.set_fraction(progress / randomizer.total_steps)
+                    if desc == Status.DONE_SPECIAL_STR:
+                        progress_label.set_text("Randomization complete!")
+                    else:
+                        progress_label.set_text(f"{floor(progress / randomizer.total_steps * 100)}%: {desc}")
+
+                def check_done():
+                    if not randomizer.is_done():
+                        return True
+                    self.builder.get_object('progress_close').set_sensitive(True)
+                    if randomizer.error:
+                        progress_label.set_text(f"Error: {randomizer.error.__class__.__name__}\n{randomizer.error}")
+                        progress_diag.set_title('Randomizing failed!')
+                    else:
+                        progress_label.set_text("Randomization complete!")
+                        progress_diag.set_title('Randomizing complete!')
+                        pass  # TODO SAVE
+                    return False
+
+                rom = NintendoDSRom.fromFile(self.chosen_file)
+                status = Status()
+                status.subscribe(lambda a, b: GLib.idle_add(partial(update_fn, a, b)))
+                randomizer = RandomizerThread(status, rom, self.config)
+                randomizer.start()
+
+                # SHOW DIALOG
+                img: Gtk.Image = self.builder.get_object('img_portrait_duskako')
+                img.set_from_file(os.path.join(data_dir(), 'duskako_neutral.png'))
+
+                GLib.timeout_add(100, check_done)
+
+                progress_diag.run()
             except BaseException as ex:
                 tb = traceback.format_exc()
                 print(tb)
                 self.display_error(f"Error: {ex}\n{tb}")
                 return
 
-    def on_explanation_activate_link(self, *args):
-        webbrowser.open_new_tab("https://discord.gg/4e3X36f")
-
-    def on_explanation1_activate_link(self, *args):
-        webbrowser.open_new_tab("https://projectpokemon.org/home/forums/topic/57303-pmd2-skytemple-rom-editor-maps-scripts-debugger/")
+    def on_progress_close_clicked(self, *args):
+        self.builder.get_object('progress').hide()
 
     def display_error(self, error_message, error_title='SkyTemple Randomizer - Error'):
         md = Gtk.MessageDialog(self.window,
@@ -151,6 +291,7 @@ def main():
             path = os.path.dirname(sys.executable)
 
     itheme: Gtk.IconTheme = Gtk.IconTheme.get_default()
+    itheme.append_search_path(os.path.abspath(icons()))
     itheme.append_search_path(os.path.abspath(os.path.join(data_dir(), "icons")))
     itheme.rescan_if_needed()
 
@@ -197,6 +338,18 @@ def _macos_load_theme():
         settings.set_property("gtk-application-prefer-dark-theme", True)
         theme_name = 'Mojave-dark'
     settings.set_property("gtk-theme-name", theme_name)
+
+
+def version():
+    try:
+        return pkg_resources.get_distribution("skytemple_randomizer").version
+    except pkg_resources.DistributionNotFound:
+        # Try reading from a VERISON file instead
+        version_file = os.path.join(data_dir(), 'VERSION')
+        if os.path.exists(version_file):
+            with open(version_file) as f:
+                return f.read()
+        return 'unknown'
 
 
 if __name__ == '__main__':

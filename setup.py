@@ -1,4 +1,4 @@
-__version__ = '0.0.3'
+__version__ = '1.0.0rc1'
 from setuptools import setup, find_packages
 
 # README read-in
@@ -27,7 +27,6 @@ setup(
         'Development Status :: 2 - Beta',
         'Programming Language :: Python',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9'

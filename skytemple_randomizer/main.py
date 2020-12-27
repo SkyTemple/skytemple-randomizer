@@ -33,7 +33,7 @@ from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
 from skytemple_files.common.util import open_utf8
 from skytemple_icons import icons
 from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder, \
-    get_effective_seed
+    get_effective_seed, ConfigDocApplier
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
@@ -54,10 +54,10 @@ class MainController:
 
         # Load default configuration
         self.ui_applier = ConfigUIApplier(self.builder,
-                                          self.static_config.dungeon_data.dungeons,
-                                          self.static_config.dungeon_data.abilities)
+                                          self.static_config.dungeon_data.dungeons)
         self.ui_reader = ConfigUIReader(self.builder)
         self.ui_applier.apply(ConfigFileLoader.load(os.path.join(data_dir(), 'default.json')))
+        ConfigDocApplier(self.window, self.builder).apply()
 
         self.builder.connect_signals(self)
 
@@ -238,7 +238,9 @@ class MainController:
                 status.subscribe(lambda a, b: GLib.idle_add(partial(update_fn, a, b)))
                 config = self.ui_reader.read()
                 # Set the seed
-                random.seed(get_effective_seed(config['seed']))
+                seed = get_effective_seed(config['seed'])
+                random.seed(seed)
+                self.builder.get_object('seed_label').set_text('Your Seed: ' + str(seed))
                 randomizer = RandomizerThread(status, rom, config)
                 randomizer.start()
 

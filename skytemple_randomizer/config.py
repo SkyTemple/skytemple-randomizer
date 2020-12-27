@@ -16,14 +16,19 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import json
+import sys
 import time
 from enum import Enum
+from functools import partial
 from typing import TypedDict, Optional, List, Dict
 
 from gi.repository import Gtk
 
-from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon, Pmd2DungeonAbility
+from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon
 from skytemple_files.common.util import open_utf8
+from skytemple_files.data.md.model import Ability
+from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
+from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
 CLASSREF = '__classref'
 
@@ -31,6 +36,15 @@ CLASSREF = '__classref'
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
+
+
+class StartersNpcsConfigDoc:
+    starters = \
+        """If enabled, starter and partner choices are randomized between all available Pokémon."""
+    npcs = \
+        """If enabled all NPCs are randomized and all mentions of them in the script*. Additionally boss fights are also changed to use these new NPCs.
+        
+        *: Some additional text in the game may also be affected (eg. some item names)."""
 
 
 class DungeonModeConfig(Enum):
@@ -63,10 +77,46 @@ class DungeonsConfig(TypedDict):
     settings: Dict[int, DungeonSettingsConfig]
 
 
+class DungeonsConfigDoc:
+    mode = \
+        """Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\n
+        If you choose "Keep floors in a dungeon similar" aspects like the music and tileset will be the same for all floors of a dungeon."""
+    layouts = \
+        """Whether or not to randomize general aspects of the dungeon's layout. This also includes tileset and music and most general settings."""
+    weather = \
+        """Whether or not to randomize weather. You can choose to have harmful weather less option and you can also choose to have the game roll random weather, every time a floor is entered."""
+    items = \
+        """Whether or not to randomize items on the floor, in shops, in monster houses and buried."""
+    pokemon = \
+        """Whether or not to randomize Pokémon spawns. 
+        Levels of Pokémon on a floor are randomized to be -/+3 of the original game's weakest/strongest Pokémon on the floor."""
+    traps = \
+        """Whether or not to randomize traps and Wonder Tile spawn chances."""
+    fixed_rooms = \
+        """Whether or not to replace all boss fight rooms with randomly generated room layouts.
+        
+        THIS MAY BE UNBALANCED OR UNSTABLE."""
+    settings = \
+        """Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.
+        You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked. 
+        Please note that entering story dungeons prematurely can mess with the game's story progression."""
+
+
 class ImprovementsConfig(TypedDict):
     download_portraits: bool
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
+
+
+class ImprovementsConfigDoc:
+    download_portraits = \
+        """If enabled existing Pokémon portraits for starters and NPCs will be downloaded from https://sprites.pmdcollab.org."""
+    patch_moveshortcuts = \
+        f"""Installs the patch '{MoveShortcutsPatch().name}' by {MoveShortcutsPatch().author}: 
+        {MoveShortcutsPatch().description}"""
+    patch_unuseddungeonchance = \
+        f"""Installs the patch '{UnusedDungeonChancePatch().name}' by {UnusedDungeonChancePatch().author}: 
+        {UnusedDungeonChancePatch().description}"""
 
 
 class MovesetConfig(Enum):
@@ -85,10 +135,28 @@ class MonsterConfig(TypedDict):
     abilities_enabled: List[int]
 
 
+class MonsterConfigDoc:
+    iq_groups = \
+        """Assigns all Pokémon in the game a random IQ group."""
+    abilities = \
+        """Assigns all Pokémon in the game a random ability from the "Random Abilities Pool"."""
+    typings = \
+        """Assigns all Pokémon one to two random types."""
+    movesets = \
+        """If enabled, assignes all Pokémon random TM/HM, egg move and level up movesets. You can control the properties of the starting move."""
+    ban_unowns = \
+        """If enabled, starters and NPCs will not randomize into Unowns and Unowns will not spawn in dungeons."""
+
+
 class LocationsConfig(TypedDict):
     randomize: bool
     first: str
     second: str
+
+
+class LocationsConfigDoc:
+    randomize = \
+        """Replaces the names of the locations in the game with random combinations of words from "First Word" and "Second Word"."""
 
 
 class ChaptersConfig(TypedDict):
@@ -96,9 +164,26 @@ class ChaptersConfig(TypedDict):
     text: str
 
 
+class ChaptersConfigDoc:
+    randomize = \
+        """Replaces the names of the chapters with random names from this list."""
+
+
 class TextConfig(TypedDict):
     main: bool
     story: bool
+
+
+class TextConfigDoc:
+    main = \
+        """Randomize the game's main text file. This contains everything except for most of the overworld dialogue.
+        The randomization is done in a way that (in most cases) similar categories of texts are shuffled, meaning for example, that Pokémon types and names are shuffled.
+        
+        THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
+    story = \
+        """Randomize the game's overworld scene text. ALL overworld text is shuffled.
+        
+        THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
 
 
 class RandomizerConfig(TypedDict):
@@ -113,13 +198,20 @@ class RandomizerConfig(TypedDict):
     seed: str  # see get_effective_seed
 
 
+class RandomizerConfigDoc:
+    seed = \
+        """This value is used to initialize the randomizer.
+        If you use the same settings, seed and version of the randomizer you will get the same result.
+        Leave empty for auto-generating seed."""
+
+
 def get_effective_seed(seed: Optional[str]):
-    """If the seed is empty, returns None, otherwise tries to
+    """If the seed is empty, returns system time, otherwise tries to
     convert it into a number or returns it"""
     if seed is not None:
         seed = seed.strip()
     if seed is None or seed == "":
-        return None
+        return time.time()
     else:
         try:
             return int(seed)
@@ -185,10 +277,9 @@ class ConfigFileLoader:
 
 class ConfigUIApplier:
     """Applies configuration to the UI widgets."""
-    def __init__(self, builder: Gtk.Builder, dungeons: List[Pmd2DungeonDungeon], abilities: List[Pmd2DungeonAbility]):
+    def __init__(self, builder: Gtk.Builder, dungeons: List[Pmd2DungeonDungeon]):
         self.builder = builder
         self.dungeons = dungeons
-        self.abilities = abilities
 
     def apply(self, config: RandomizerConfig):
         self.builder.get_object('store_tree_dungeons_dungeons').clear()
@@ -234,8 +325,9 @@ class ConfigUIApplier:
         elif typ == list and (len(config) < 1 or isinstance(next(iter(config)), int)):
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
-            for i in range(0, len(self.abilities)):
-                s.append([i, self._get_ability_name(i), i in config])
+            for a in Ability:
+                if a.value != 0xFF:
+                    s.append([a.value, a.print_name, a.value in config])
         else:
             raise TypeError(f"Unknown type for {self.__class__.__name__}: {typ}")
 
@@ -247,9 +339,6 @@ class ConfigUIApplier:
 
     def _get_dungeon_name(self, idx):
         return self.dungeons[idx].name
-
-    def _get_ability_name(self, idx):
-        return self.abilities[idx].name
 
 
 class ConfigUIReader:
@@ -312,6 +401,43 @@ class ConfigUIReader:
         if w is None:
             raise ValueError(f"UI element '{n}' not found.")
         return w
+
+
+class ConfigDocApplier:
+    """Connects the help buttons with the text of the *Doc classes."""
+    def __init__(self, window, builder: Gtk.Builder):
+        self.window = window
+        self.builder = builder
+
+    def apply(self):
+        return self._handle(type(None), RandomizerConfig)
+
+    def _handle(self, parent_typ: type, typ: type, field_name=None, field_name_short=None):
+        if hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
+            for field, field_type in typ.__annotations__.items():
+                field_full = field
+                if field_name is not None:
+                    field_full = field_name + '_' + field
+                self._handle(typ, field_type, field_full, field)
+        if hasattr(parent_typ, '__name__'):
+            current_module = sys.modules[__name__]
+            if parent_typ.__name__ + 'Doc' in current_module.__dict__:
+                cls = sys.modules[__name__].__dict__[parent_typ.__name__ + 'Doc']
+                if field_name_short in cls.__dict__:
+                    help_name = 'help_' + field_name
+                    help_btn = self.builder.get_object(help_name)
+                    if not help_btn:
+                        raise ValueError(f"Help button {help_name} not found.")
+                    help_btn.connect('clicked', partial(
+                        self.show_help, '\n'.join([line.strip() for line in cls.__dict__[field_name_short].splitlines()])
+                    ))
+
+    def show_help(self, info, *args):
+        md = Gtk.MessageDialog(self.window,
+                               Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.INFO,
+                               Gtk.ButtonsType.OK, info)
+        md.run()
+        md.destroy()
 
 
 class EnumJsonEncoder(json.JSONEncoder):

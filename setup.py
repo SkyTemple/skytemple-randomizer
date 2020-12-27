@@ -19,7 +19,8 @@ setup(
     url='https://github.com/SkyTemple/skytemple-randomizer/',
     install_requires=[
         'ndspy >= 3.0.0',
-        'skytemple-files >= 1.0.0',
+        'skytemple-files >= 1.0.1',
+        'explorerscript >= 0.0.7',
         'skytemple-icons >= 0.1.0',
         'pygobject >= 3.26.0'
     ],
@@ -31,7 +32,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9'
     ],
-    package_data={'skytemple_randomizer': ['*.glade', 'data/*/*/*/*/*', 'data/*']},
+    package_data={'skytemple_randomizer': ['*.glade', 'data/*/*/*/*/*', 'data/*', 'data/*/*']},
     entry_points='''
         [console_scripts]
         skytemple_randomizer=skytemple_randomizer.main:main

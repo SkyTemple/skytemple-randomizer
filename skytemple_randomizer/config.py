@@ -80,7 +80,6 @@ class MonsterConfig(TypedDict):
     iq_groups: bool
     abilities: bool
     typings: bool
-    exp_required: bool
     movesets: MovesetConfig
     ban_unowns: bool
     abilities_enabled: List[int]
@@ -115,17 +114,17 @@ class RandomizerConfig(TypedDict):
 
 
 def get_effective_seed(seed: Optional[str]):
-    """If the seed is empty, returns system time, otherwise tries to
-    convert it into a number or returns the hash value"""
+    """If the seed is empty, returns None, otherwise tries to
+    convert it into a number or returns it"""
     if seed is not None:
         seed = seed.strip()
     if seed is None or seed == "":
-        return round(time.time())
+        return None
     else:
         try:
             return int(seed)
         except ValueError:
-            return hash(seed)
+            return seed
 
 
 class ConfigFileLoader:
@@ -192,6 +191,8 @@ class ConfigUIApplier:
         self.abilities = abilities
 
     def apply(self, config: RandomizerConfig):
+        self.builder.get_object('store_tree_dungeons_dungeons').clear()
+        self.builder.get_object('store_tree_monsters_abilities').clear()
         self._handle(config)
 
     def _handle(self, config, field_name=None):

@@ -17,6 +17,7 @@
 import json
 import logging
 import os
+import random
 import sys
 import traceback
 import webbrowser
@@ -31,10 +32,8 @@ from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
 from skytemple_files.common.util import open_utf8
 from skytemple_icons import icons
-from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder
-from skytemple_randomizer.randomizer.dungeon_randomizer import run_main as run_dungeon_randomizer
-from skytemple_randomizer.randomizer.ground_actor_randomizer import run_main as run_ground_actor_randomizer
-from skytemple_randomizer.randomizer.starter_randomizer import run_main as run_starter_randomizer
+from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder, \
+    get_effective_seed
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
@@ -58,8 +57,7 @@ class MainController:
                                           self.static_config.dungeon_data.dungeons,
                                           self.static_config.dungeon_data.abilities)
         self.ui_reader = ConfigUIReader(self.builder)
-        self.config = ConfigFileLoader.load(os.path.join(data_dir(), 'default.json'))
-        self.ui_applier.apply(self.config)
+        self.ui_applier.apply(ConfigFileLoader.load(os.path.join(data_dir(), 'default.json')))
 
         self.builder.connect_signals(self)
 
@@ -136,8 +134,7 @@ class MainController:
 
         if response == Gtk.ResponseType.ACCEPT:
             try:
-                self.config = ConfigFileLoader.load(fn)
-                self.ui_applier.apply(self.config)
+                self.ui_applier.apply(ConfigFileLoader.load(fn))
             except BaseException as e:
                 self.display_error(f"The config file you tried to import is invalid:\n{e.__class__.__name__}:\n{e}")
 
@@ -217,11 +214,11 @@ class MainController:
                 progress_diag.set_title('Randomizing...')
 
                 def update_fn(progress, desc):
-                    progress_bar.set_fraction(progress / randomizer.total_steps)
+                    progress_bar.set_fraction((progress - 1) / randomizer.total_steps)
                     if desc == Status.DONE_SPECIAL_STR:
-                        progress_label.set_text("Randomization complete!")
+                        progress_label.set_text("Randomizing complete!")
                     else:
-                        progress_label.set_text(f"{floor(progress / randomizer.total_steps * 100)}%: {desc}")
+                        progress_label.set_text(f"{floor((progress - 1) / randomizer.total_steps * 100)}%: {desc}")
 
                 def check_done():
                     if not randomizer.is_done():
@@ -231,15 +228,18 @@ class MainController:
                         progress_label.set_text(f"Error: {randomizer.error.__class__.__name__}\n{randomizer.error}")
                         progress_diag.set_title('Randomizing failed!')
                     else:
-                        progress_label.set_text("Randomization complete!")
+                        rom.saveToFile(out_fn)
+                        progress_label.set_text("Randomizing complete!")
                         progress_diag.set_title('Randomizing complete!')
-                        pass  # TODO SAVE
                     return False
 
                 rom = NintendoDSRom.fromFile(self.chosen_file)
                 status = Status()
                 status.subscribe(lambda a, b: GLib.idle_add(partial(update_fn, a, b)))
-                randomizer = RandomizerThread(status, rom, self.config)
+                config = self.ui_reader.read()
+                # Set the seed
+                random.seed(get_effective_seed(config['seed']))
+                randomizer = RandomizerThread(status, rom, config)
                 randomizer.start()
 
                 # SHOW DIALOG

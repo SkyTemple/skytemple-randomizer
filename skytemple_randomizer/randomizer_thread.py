@@ -14,20 +14,38 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import logging
 from threading import Thread, Lock
-from typing import Optional, List
+from typing import List
 
 from ndspy.rom import NintendoDSRom
 
 from skytemple_files.common.util import get_ppmdu_config_for_rom
 from skytemple_randomizer.config import RandomizerConfig
-from skytemple_randomizer.randomizer.abstract import TestRandomizer, AbstractRandomizer
+from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
+from skytemple_randomizer.randomizer.boss import BossRandomizer
+from skytemple_randomizer.randomizer.chapter import ChapterRandomizer
+from skytemple_randomizer.randomizer.dungeon import DungeonRandomizer
+from skytemple_randomizer.randomizer.dungeon_unlocker import DungeonUnlocker
+from skytemple_randomizer.randomizer.fixed_room import FixedRoomRandomizer
+from skytemple_randomizer.randomizer.location import LocationRandomizer
+from skytemple_randomizer.randomizer.monster import MonsterRandomizer
+from skytemple_randomizer.randomizer.moveset import MovesetRandomizer
+from skytemple_randomizer.randomizer.npc import NpcRandomizer
+from skytemple_randomizer.randomizer.patch_applier import PatchApplier
+from skytemple_randomizer.randomizer.portrait_downloader import PortraitDownloader
+from skytemple_randomizer.randomizer.starter import StarterRandomizer
+from skytemple_randomizer.randomizer.text_main import TextMainRandomizer
+from skytemple_randomizer.randomizer.text_script import TextScriptRandomizer
 from skytemple_randomizer.status import Status
 
 
 RANDOMIZERS = [
-    TestRandomizer, TestRandomizer
+    NpcRandomizer, StarterRandomizer, BossRandomizer, DungeonRandomizer, FixedRoomRandomizer,
+    DungeonUnlocker, PortraitDownloader, PatchApplier, MonsterRandomizer, MovesetRandomizer,
+    LocationRandomizer, ChapterRandomizer, TextMainRandomizer, TextScriptRandomizer
 ]
+logger = logging.getLogger(__name__)
 
 
 class RandomizerThread(Thread):
@@ -72,6 +90,7 @@ class RandomizerThread(Thread):
                 local_status.subscribe(local_status_fn)
                 randomizer.run(local_status)
         except BaseException as error:
+            logger.error("Exception during randomization.", exc_info=error)
             self.error = error
 
         with self.lock:

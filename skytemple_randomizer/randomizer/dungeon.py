@@ -20,7 +20,6 @@ from typing import Optional, List
 
 from ndspy.rom import NintendoDSRom
 
-from skytemple.module.dungeon.controller.floor import KECLEON_MD_INDEX
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonItem
 from skytemple_files.common.types.file_types import FileType
@@ -194,6 +193,7 @@ SECONDARY_TERRAIN_TILESET_MAP = {
     89: MappaFloorSecondaryTerrainType.NONE
 }
 ALLOWED_TILESET_IDS = [k for k in SECONDARY_TERRAIN_TILESET_MAP.keys() if k < 170]
+KECLEON_MD_INDEX = 383
 # TODO: Make configurable?
 MONSTER_LEVEL_VARIANCE = 3
 

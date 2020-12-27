@@ -39,7 +39,7 @@ from skytemple_randomizer.status import Status
 
 gi.require_version('Gtk', '3.0')
 
-from gi.repository import Gtk, GLib
+from gi.repository import Gtk, GLib, Gdk
 from gi.repository.Gtk import Window
 
 
@@ -296,6 +296,16 @@ def main():
     itheme.append_search_path(os.path.abspath(icons()))
     itheme.append_search_path(os.path.abspath(os.path.join(data_dir(), "icons")))
     itheme.rescan_if_needed()
+
+    # Load CSS
+    style_provider = Gtk.CssProvider()
+    with open(os.path.join(path, "skytemple_randomizer.css"), 'rb') as f:
+        css = f.read()
+    style_provider.load_from_data(css)
+    Gtk.StyleContext.add_provider_for_screen(
+        Gdk.Screen.get_default(), style_provider,
+        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+    )
 
     # Load Builder and Window
     builder = Gtk.Builder()

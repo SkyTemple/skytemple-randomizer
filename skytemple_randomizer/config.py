@@ -211,7 +211,7 @@ def get_effective_seed(seed: Optional[str]):
     if seed is not None:
         seed = seed.strip()
     if seed is None or seed == "":
-        return time.time()
+        return round(time.time())
     else:
         try:
             return int(seed)

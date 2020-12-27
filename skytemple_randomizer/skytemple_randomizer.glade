@@ -331,6 +331,10 @@
                     <property name="top_attach">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="back_illust"/>
+                  <class name="starters"/>
+                </style>
               </object>
             </child>
             <child type="tab">
@@ -710,6 +714,10 @@
                             <property name="top_attach">2</property>
                           </packing>
                         </child>
+                        <style>
+                          <class name="back_illust"/>
+                          <class name="dungeons"/>
+                        </style>
                       </object>
                     </child>
                     <child type="tab">
@@ -1062,6 +1070,10 @@
                     <property name="top_attach">2</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="back_illust"/>
+                  <class name="improvements"/>
+                </style>
               </object>
               <packing>
                 <property name="position">2</property>
@@ -1349,6 +1361,10 @@
                             <property name="top_attach">4</property>
                           </packing>
                         </child>
+                        <style>
+                          <class name="back_illust"/>
+                          <class name="monsters"/>
+                        </style>
                       </object>
                     </child>
                     <child type="tab">
@@ -1580,8 +1596,14 @@
                               <object class="GtkTextView" id="text_locations_first">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <style>
+                                  <class name="no_bg"/>
+                                </style>
                               </object>
                             </child>
+                            <style>
+                              <class name="no_bg"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1623,8 +1645,14 @@
                               <object class="GtkTextView" id="text_locations_second">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <style>
+                                  <class name="no_bg"/>
+                                </style>
                               </object>
                             </child>
+                            <style>
+                              <class name="no_bg"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1646,6 +1674,10 @@
                     <property name="position">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="back_illust"/>
+                  <class name="locations"/>
+                </style>
               </object>
               <packing>
                 <property name="position">4</property>
@@ -1766,6 +1798,9 @@
                       <object class="GtkTextView" id="text_chapters_text">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <style>
+                          <class name="no_bg"/>
+                        </style>
                       </object>
                     </child>
                   </object>
@@ -1775,6 +1810,10 @@
                     <property name="position">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="back_illust"/>
+                  <class name="chapters"/>
+                </style>
               </object>
               <packing>
                 <property name="position">5</property>
@@ -1913,6 +1952,10 @@
                     <property name="top_attach">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="back_illust"/>
+                  <class name="text"/>
+                </style>
               </object>
               <packing>
                 <property name="position">6</property>

@@ -61,7 +61,7 @@ class StarterRandomizer(AbstractRandomizer):
             if k % 3 == 0:
                 k += 1
             personality_message = f"Will be a [CS:K]{self._get_name(string_file, new_id, pokemon_string_data)}[CR]!"
-            assert "Will be a" in string_file.strings[0x67C + k]
+            #assert "Will be a" in string_file.strings[0x67C + k]
             string_file.strings[0x67C + k] = personality_message
             if i % 2 == 1:
                 new_id += NUM_ENTITIES

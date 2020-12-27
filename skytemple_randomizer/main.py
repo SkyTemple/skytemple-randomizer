@@ -205,7 +205,7 @@ class MainController:
         out_fn = dialog.get_filename()
         dialog.destroy()
 
-        if response == Gtk.ResponseType.OK:
+        if response == Gtk.ResponseType.ACCEPT:
             try:
                 self.builder.get_object('progress_close').set_sensitive(False)
                 progress_bar: Gtk.ProgressBar = self.builder.get_object('progress_bar')

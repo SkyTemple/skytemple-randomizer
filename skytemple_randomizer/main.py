@@ -188,11 +188,11 @@ class MainController:
             self.display_error("Please choose an input file.")
             return
 
-        dialog = Gtk.FileChooserDialog(
+        dialog = Gtk.FileChooserNative.new(
             "Output ROM filename...",
             self.window,
             Gtk.FileChooserAction.SAVE,
-            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE, Gtk.ResponseType.OK)
+            None, None
         )
 
         filter_nds = Gtk.FileFilter()

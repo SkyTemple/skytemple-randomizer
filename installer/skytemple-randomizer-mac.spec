@@ -19,8 +19,6 @@ additional_datas = [
     (os.path.join('.', 'armips'), 'skytemple_files/_resources'),
 
     # Themes
-    ('Mojave-dark', 'share/themes/Mojave-dark'),
-    ('Mojave-light', 'share/themes/Mojave-light'),
     ('Arc', 'share/themes/Arc'),
     ('Arc-Dark', 'share/themes/Arc-Dark'),
 ]

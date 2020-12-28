@@ -83,7 +83,8 @@ class MovesetRandomizer(AbstractRandomizer):
 
         for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
             waza_p_entry.egg_moves = [choice(VALID_MOVE_IDS) for _ in waza_p_entry.egg_moves]
-            waza_p_entry.tm_hm_moves = [choice(VALID_MOVE_IDS) for _ in waza_p_entry.tm_hm_moves]
+            # Don't randomize, since not all have TM/HSs
+            #waza_p_entry.tm_hm_moves = [choice(VALID_MOVE_IDS) for _ in waza_p_entry.tm_hm_moves]
 
             for idx, e in enumerate(waza_p_entry.level_up_moves):
                 if idx > 0 or self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:

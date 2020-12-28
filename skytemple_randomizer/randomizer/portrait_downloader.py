@@ -23,7 +23,7 @@ from PIL import Image
 
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom_ppmdu
-from skytemple_files.data.md.model import NUM_ENTITIES
+from skytemple_files.data.md.model import NUM_ENTITIES, Gender
 from skytemple_files.graphics.kao.model import KaoImage
 from skytemple_files.graphics.kao.sprite_bot_sheet import SpriteBotSheet
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
@@ -65,15 +65,15 @@ class PortraitDownloader(AbstractRandomizer):
             status.step("Downloading portraits for NPCs...")
             for actor in actor_list.list:
                 if actor.entid > 0:
-                    self._import_portrait(kao, config, actor.entid, md.entries[actor.entid].national_pokedex_number)
+                    self._import_portrait(kao, config, actor.entid, md.entries[actor.entid])
 
             status.step("Downloading portraits for starters...")
             for starter in starters:
-                self._import_portrait(kao, config, starter, md.entries[starter].national_pokedex_number)
+                self._import_portrait(kao, config, starter, md.entries[starter])
 
             status.step("Downloading portraits for partners...")
             for partner in partners:
-                self._import_portrait(kao, config, partner, md.entries[partner].national_pokedex_number)
+                self._import_portrait(kao, config, partner, md.entries[partner])
 
             self.rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
 
@@ -81,10 +81,21 @@ class PortraitDownloader(AbstractRandomizer):
         except BaseException as ex:
             raise RuntimeError("Unable to download portraits. Try again later or disable this improvement!") from ex
 
-    def _import_portrait(self, kaos, config, mdidx, pokedex_number):
-        # todo: support for female forms
+    def _import_portrait(self, kaos, config, mdidx, md):
+        pokedex_number = md.national_pokedex_number
+        forms_to_try = ['0000']
+        if md.gender == Gender.FEMALE:
+            forms_to_try.insert(0, '0000f')
+        if mdidx == 279:  # Celebi Shiny
+            forms_to_try.insert(0, '0000s')
         if f'{pokedex_number:04}' in config and '0000' in config[f'{pokedex_number:04}']['forms']:
-            filename = config[f'{pokedex_number:04}']['forms']['0000']['filename']
+            filename = None
+            for form in forms_to_try:
+                if form in config[f'{pokedex_number:04}']['forms']:
+                    filename = config[f'{pokedex_number:04}']['forms'][form]['filename']
+                    break
+            if filename is None:
+                return
             url = f'http://sprites.pmdcollab.org/resources/portraits/{filename}'
             with urllib.request.urlopen(url) as download:
                 for subindex, image in SpriteBotSheet.load(io.BytesIO(download.read()), self._get_portrait_name):

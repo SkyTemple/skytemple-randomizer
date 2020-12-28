@@ -275,7 +275,7 @@ def main():
 
     if sys.platform.startswith('win'):
         # Load theming under Windows
-        _windows_load_theme()
+        _load_theme()
         # Solve issue #12
         try:
             from skytemple_files.common.platform_utils.win import win_set_error_mode
@@ -286,7 +286,7 @@ def main():
 
     if sys.platform.startswith('darwin'):
         # Load theming under macOS
-        _macos_load_theme()
+        _load_theme()
 
         # The search path is wrong if SkyTemple is executed as an .app bundle
         if getattr(sys, 'frozen', False):
@@ -332,24 +332,9 @@ def data_dir():
     return os.path.join(os.path.dirname(__file__), 'data')
 
 
-def _windows_load_theme():
-    from skytemple_files.common.platform_utils.win import win_use_light_theme
+def _load_theme():
     settings = Gtk.Settings.get_default()
-    theme_name = 'Arc'
-    if not win_use_light_theme():
-        settings.set_property("gtk-application-prefer-dark-theme", True)
-        theme_name = 'Arc-Dark'
-    settings.set_property("gtk-theme-name", theme_name)
-
-
-def _macos_load_theme():
-    from skytemple_files.common.platform_utils.macos import macos_use_light_theme
-    settings = Gtk.Settings.get_default()
-    theme_name = 'Mojave-light'
-    if not macos_use_light_theme():
-        settings.set_property("gtk-application-prefer-dark-theme", True)
-        theme_name = 'Mojave-dark'
-    settings.set_property("gtk-theme-name", theme_name)
+    settings.set_property("gtk-theme-name", 'Arc-Dark')
 
 
 def version():

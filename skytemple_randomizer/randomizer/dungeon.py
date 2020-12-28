@@ -296,7 +296,6 @@ class DungeonRandomizer(AbstractRandomizer):
                         # If we are randomizing based on dungeon groups, use some settings of the first floor instead
                         # to make them look more like one connected dungeon
                         first_floor = floor_list[0]
-                        floor.monsters += first_floor.monsters
                         floor.layout.tileset_id = first_floor.layout.tileset_id
                         floor.layout.music_id = first_floor.layout.music_id
                         floor.layout.secondary_terrain = first_floor.layout.secondary_terrain

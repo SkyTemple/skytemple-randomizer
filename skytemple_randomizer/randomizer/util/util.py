@@ -82,6 +82,8 @@ def replace_text_main(string_file: Str, replace_map: Dict[str, str], start_idx, 
 
 
 def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data, replace_map: Dict[str, str]):
+    for a, b in replace_map.items():
+        replace_map[a.upper()] = b.upper()
     for file_path in get_files_from_rom_with_extension(rom, 'ssb'):
         script = FileType.SSB.deserialize(rom.getFileByName(file_path), static_data)
         script.constants = [replace_strings(string, replace_map) for string in script.constants]

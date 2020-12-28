@@ -339,7 +339,7 @@ def _load_theme():
 
 def version():
     try:
-        return pkg_resources.get_distribution("skytemple_randomizer").version
+        return pkg_resources.get_distribution("skytemple-randomizer").version
     except pkg_resources.DistributionNotFound:
         # Try reading from a VERISON file instead
         version_file = os.path.join(data_dir(), 'VERSION')

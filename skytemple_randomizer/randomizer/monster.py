@@ -71,7 +71,7 @@ class MonsterRandomizer(AbstractRandomizer):
                     while ability2 == ability1:
                         ability2 = Ability(choice(ability_ids))
                     base_entry.ability_primary = ability1
-                    base_entry.ability_primary = ability2
+                    base_entry.ability_secondary = ability2
 
         self.rom.setFileByName('BALANCE/monster.md', FileType.MD.serialize(md))
 

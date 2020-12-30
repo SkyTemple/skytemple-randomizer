@@ -333,6 +333,7 @@ class DungeonRandomizer(AbstractRandomizer):
         tileset = choice(ALLOWED_TILESET_IDS)
         structure = choice(list(MappaFloorStructureType))
         allow_monster_houses = self.config['dungeons']['settings'][dungeon_id]['monster_houses']
+        randomize_iq = self.config['dungeons']['settings'][dungeon_id]['enemy_iq']
         # Make Monster Houses less likely by re-rolling 50% of the time when it happens
         if structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH:
             if choice((True, False)):
@@ -370,7 +371,7 @@ class DungeonRandomizer(AbstractRandomizer):
             empty_monster_house_chance=randrange(0, 101),
             unk_hidden_stairs=choice((0, 255)),
             hidden_stairs_spawn_chance=randrange(0, 101),
-            enemy_iq=randrange(1, 601) if dungeon_id > 4 else original_layout.enemy_iq,
+            enemy_iq=randrange(1, 601) if randomize_iq else original_layout.enemy_iq,
             iq_booster_allowed=choice((True, False))
         )
 

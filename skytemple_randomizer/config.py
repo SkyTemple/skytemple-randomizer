@@ -64,6 +64,7 @@ class DungeonSettingsConfig(TypedDict):
     unlock: bool
     randomize_weather: bool
     monster_houses: bool
+    enemy_iq: bool
 
 
 class DungeonsConfig(TypedDict):
@@ -321,7 +322,7 @@ class ConfigUIApplier:
             for idx, settings in config.items():
                 settings: DungeonSettingsConfig
                 s.append([idx, self._get_dungeon_name(idx), settings['randomize'], settings['monster_houses'],
-                          settings['randomize_weather'], settings['unlock']])
+                          settings['randomize_weather'], settings['unlock'], settings['enemy_iq']])
         elif typ == list and (len(config) < 1 or isinstance(next(iter(config)), int)):
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
@@ -381,9 +382,9 @@ class ConfigUIReader:
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
             d = {}
-            for idx, name, randomize, monster_houses, randomize_weather, unlock in s:
+            for idx, name, randomize, monster_houses, randomize_weather, unlock, enemy_iq in s:
                 d[idx] = {'randomize': randomize, 'monster_houses': monster_houses,
-                          'randomize_weather': randomize_weather, 'unlock': unlock}
+                          'randomize_weather': randomize_weather, 'unlock': unlock, 'enemy_iq': enemy_iq}
             return d
         elif typ == List[int]:
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)

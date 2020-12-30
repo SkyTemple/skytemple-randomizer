@@ -92,6 +92,10 @@ class MainController:
         store: Gtk.Store = self.builder.get_object('store_tree_monsters_abilities')
         store[path][2] = not widget.get_active()
 
+    def on_cr_dungeons_settings_enemy_iq_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store[path][6] = not widget.get_active()
+
     def on_btn_rom_clicked(self, *args):
         dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
             "Open ROM...",

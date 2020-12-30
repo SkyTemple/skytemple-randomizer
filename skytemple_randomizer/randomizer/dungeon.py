@@ -409,6 +409,7 @@ class DungeonRandomizer(AbstractRandomizer):
         if choice([True] + [False] * 7):
             cats_as_list.append(MappaItemCategory.LINK_BOX)
 
+        cats_as_list.sort(key=lambda x: x.value)
         weights = sorted(self._random_weights(len(cats_as_list)))
         for i, cat in enumerate(cats_as_list):
             categories[cat] = weights[i]

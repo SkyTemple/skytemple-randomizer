@@ -1,4 +1,4 @@
-#  Copyright 2020 Parakoopa
+#  Copyright 2020-2021 Parakoopa and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -26,6 +26,9 @@ from math import floor
 from typing import Optional
 
 import gi
+
+gi.require_version('Gtk', '3.0')
+
 import pkg_resources
 from ndspy.rom import NintendoDSRom
 
@@ -36,8 +39,6 @@ from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigF
     get_effective_seed, ConfigDocApplier
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
-
-gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk, GLib, Gdk
 from gi.repository.Gtk import Window
@@ -330,9 +331,8 @@ def main():
 
 
 def data_dir():
-    if sys.platform.startswith('darwin'):
-        if getattr(sys, 'frozen', False):
-            return os.path.join(os.path.dirname(sys.executable), 'data')
+    if getattr(sys, 'frozen', False):
+        return os.path.join(os.path.dirname(sys.executable), 'data')
     return os.path.join(os.path.dirname(__file__), 'data')
 
 

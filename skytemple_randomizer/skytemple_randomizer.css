@@ -28,29 +28,29 @@
 }
 
 .back_illust.starters {
-   background-image: url("skytemple_randomizer/data/back_illust/starters.png");
+   background-image: url("data/back_illust/starters.png");
 }
 
 .back_illust.dungeons {
-   background-image: url("skytemple_randomizer/data/back_illust/dungeons.png");
+   background-image: url("data/back_illust/dungeons.png");
 }
 
 .back_illust.improvements {
-   background-image: url("skytemple_randomizer/data/back_illust/improvements.png");
+   background-image: url("data/back_illust/improvements.png");
 }
 
 .back_illust.monsters {
-   background-image: url("skytemple_randomizer/data/back_illust/monsters.png");
+   background-image: url("data/back_illust/monsters.png");
 }
 
 .back_illust.locations {
-   background-image: url("skytemple_randomizer/data/back_illust/locations.png");
+   background-image: url("data/back_illust/locations.png");
 }
 
 .back_illust.chapters {
-   background-image: url("skytemple_randomizer/data/back_illust/chapters.png");
+   background-image: url("data/back_illust/chapters.png");
 }
 
 .back_illust.text {
-   background-image: url("skytemple_randomizer/data/back_illust/text.png");
+   background-image: url("data/back_illust/text.png");
 }

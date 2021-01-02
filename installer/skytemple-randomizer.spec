@@ -8,8 +8,6 @@ site_packages = next(p for p in sys.path if 'site-packages' in p)
 
 additional_files = []
 additional_datas = [
-    # XXX: No better way to do this? :(
-    (os.path.join(pkg_path, 'data'), 'skytemple_randomizer/data'),
     (os.path.join(pkg_path, 'data'), 'data'),
     (os.path.join(pkg_path, '*.glade'), '.'),
     (os.path.join(pkg_path, '*.css'), '.'),

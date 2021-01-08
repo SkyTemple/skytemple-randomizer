@@ -21,3 +21,6 @@ if [ -n "$IS_DEV_BUILD" ]; then
 fi
 
 pyinstaller skytemple-randomizer.spec
+
+echo $version > dist/skytemple_randomizer/VERSION
+echo $version > dist/skytemple_randomizer/data/VERSION

@@ -18,7 +18,7 @@ from random import choice
 from typing import Dict
 
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.data.md.model import Gender
+from skytemple_files.data.md.model import Gender, NUM_ENTITIES
 from skytemple_files.data.str.model import Str
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
@@ -81,16 +81,18 @@ class NpcRandomizer(AbstractRandomizer):
         mapped = {}
         # We want to map actors with the same name to the same ID
         mapped_for_names = {}
-        old_entid_bases = [actor.entid % 600 for actor in actor_list.list]
+        old_entid_bases = [actor.entid % NUM_ENTITIES for actor in actor_list.list]
         for actor in actor_list.list:
             if actor.entid > 0:
-                old_name = self._get_name(string_file, actor.entid % 600, pokemon_string_data)
+                old_name = self._get_name(string_file, actor.entid % NUM_ENTITIES, pokemon_string_data)
                 if old_name in mapped_for_names.keys():
                     new_entid = mapped_for_names[old_name]
+                    if new_entid >= 1154:
+                        new_entid -= NUM_ENTITIES
                 else:
                     new_entid = choice(get_allowed_md_ids(self.config, True))
                     # Due to the way the string replacing works we don't want anything that previously existed.
-                    while md.get_by_index(new_entid).gender == Gender.INVALID or new_entid % 600 in old_entid_bases:
+                    while md.get_by_index(new_entid).gender == Gender.INVALID or new_entid % NUM_ENTITIES in old_entid_bases:
                         new_entid = choice(get_allowed_md_ids(self.config, True))
                 mapped[actor.entid] = new_entid
                 mapped_for_names[old_name] = new_entid

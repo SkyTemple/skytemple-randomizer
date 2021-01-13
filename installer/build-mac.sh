@@ -36,3 +36,6 @@ sed -i '' 's/run_skytemple/pre_run_skytemple/' dist/SkyTempleRandomizer.app/Cont
 # Create a shell script that sets LD_LIBRARY_PATH and launches SkyTemple
 printf '#!/bin/sh\nLD_LIBRARY_PATH="$(dirname $0)" PATH="$PATH:$(dirname $0)/skytemple_files/_resources" "$(dirname $0)/run_skytemple"\n' > $appdir/pre_run_skytemple
 chmod +x $appdir/pre_run_skytemple
+
+echo $1 > $appdir/VERSION
+echo $1 > $appdir/data/VERSION

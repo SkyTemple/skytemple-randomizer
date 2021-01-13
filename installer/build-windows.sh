@@ -22,5 +22,5 @@ fi
 
 pyinstaller skytemple-randomizer.spec
 
-echo $version > dist/skytemple_randomizer/VERSION
-echo $version > dist/skytemple_randomizer/data/VERSION
+echo $1 > dist/skytemple_randomizer/VERSION
+echo $1 > dist/skytemple_randomizer/data/VERSION

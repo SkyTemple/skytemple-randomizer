@@ -58,7 +58,8 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False) -> List[int]
     if with_plus_600:
         to_add = set()
         for ent in ents:
-            to_add.add(ent + NUM_ENTITIES)
+            if ent <=1154:
+                to_add.add(ent + NUM_ENTITIES)
         ents.update(to_add)
     return list(ents)
 

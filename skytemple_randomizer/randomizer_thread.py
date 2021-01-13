@@ -34,6 +34,7 @@ from skytemple_randomizer.randomizer.moveset import MovesetRandomizer
 from skytemple_randomizer.randomizer.npc import NpcRandomizer
 from skytemple_randomizer.randomizer.patch_applier import PatchApplier
 from skytemple_randomizer.randomizer.portrait_downloader import PortraitDownloader
+from skytemple_randomizer.randomizer.recruitment_table import RecruitmentTableRandomizer
 from skytemple_randomizer.randomizer.starter import StarterRandomizer
 from skytemple_randomizer.randomizer.text_main import TextMainRandomizer
 from skytemple_randomizer.randomizer.text_script import TextScriptRandomizer
@@ -41,8 +42,8 @@ from skytemple_randomizer.status import Status
 
 
 RANDOMIZERS = [
-    NpcRandomizer, StarterRandomizer, BossRandomizer, DungeonRandomizer, FixedRoomRandomizer,
-    DungeonUnlocker, PortraitDownloader, PatchApplier, MonsterRandomizer, MovesetRandomizer,
+    NpcRandomizer, StarterRandomizer, BossRandomizer, RecruitmentTableRandomizer, DungeonRandomizer,
+    FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader, PatchApplier, MonsterRandomizer, MovesetRandomizer,
     LocationRandomizer, ChapterRandomizer, TextMainRandomizer, TextScriptRandomizer
 ]
 logger = logging.getLogger(__name__)

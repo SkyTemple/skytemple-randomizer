@@ -63,7 +63,7 @@ class StarterRandomizer(AbstractRandomizer):
             personality_message = f"Will be a [CS:K]{self._get_name(string_file, new_id, pokemon_string_data)}[CR]!"
             #assert "Will be a" in string_file.strings[0x67C + k]
             string_file.strings[0x67C + k] = personality_message
-            if i % 2 == 1:
+            if i % 2 == 1 and new_id + NUM_ENTITIES <= 1154:
                 new_id += NUM_ENTITIES
             new_player_ids.append(new_id)
             k += 1
@@ -84,6 +84,8 @@ class StarterRandomizer(AbstractRandomizer):
     @staticmethod
     def _random_gender(orig_value):
         """50% male (nothing added to index), 50% female (+600 added to index)"""
+        if orig_value + NUM_ENTITIES > 1154:
+            return orig_value
         if choice([True, False]):
             return orig_value + NUM_ENTITIES
         return orig_value

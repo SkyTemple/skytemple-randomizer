@@ -58,6 +58,8 @@ class MonsterRandomizer(AbstractRandomizer):
             if self.config['pokemon']['typings']:
                 type1 = choice(VALID_FIRST_TYPE)
                 type2 = choice(VALID_SECOND_TYPE)
+                while type1 == type2:
+                    type2 = choice(VALID_SECOND_TYPE)
                 base_entry.type_primary = type1
                 secn_entry.type_primary = type1
                 base_entry.type_secondary = type2
@@ -72,6 +74,8 @@ class MonsterRandomizer(AbstractRandomizer):
                         ability2 = Ability(choice(ability_ids))
                     base_entry.ability_primary = ability1
                     base_entry.ability_secondary = ability2
+                    secn_entry.ability_primary = ability1
+                    secn_entry.ability_secondary = ability2
 
         self.rom.setFileByName('BALANCE/monster.md', FileType.MD.serialize(md))
 

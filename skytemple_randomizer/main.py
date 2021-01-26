@@ -211,6 +211,8 @@ class MainController:
         dialog.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            if '.' not in out_fn:
+                out_fn += '.nds'
             try:
                 self.builder.get_object('progress_close').set_sensitive(False)
                 progress_bar: Gtk.ProgressBar = self.builder.get_object('progress_bar')

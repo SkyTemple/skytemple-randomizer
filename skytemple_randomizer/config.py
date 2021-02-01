@@ -36,6 +36,7 @@ CLASSREF = '__classref'
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
+    global_items: bool
 
 
 class StartersNpcsConfigDoc:
@@ -45,6 +46,8 @@ class StartersNpcsConfigDoc:
         """If enabled all NPCs are randomized and all mentions of them in the script*. Additionally boss fights are also changed to use these new NPCs.
         
         *: Some additional text in the game may also be affected (eg. some item names)."""
+    global_items = \
+        """If enabled, the Treasure Town shop item list, the dungeon reward item lists and all other global item lists are randomized."""
 
 
 class DungeonModeConfig(Enum):
@@ -240,7 +243,11 @@ class ConfigFileLoader:
             kwargs = {}
             for field, field_type in typ.__annotations__.items():
                 if field not in target:
-                    raise KeyError(f"Configuration '{field_type}' missing for {typ}.")
+                    # Compatibility:
+                    if field == 'global_items' and field_type == bool:
+                        target[field] = True
+                    else:
+                        raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)
             v = typ(**kwargs)
             v[CLASSREF] = typ

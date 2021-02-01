@@ -1,7 +1,8 @@
 {
   "starters_npcs": {
     "starters": true,
-    "npcs": true
+    "npcs": true,
+    "global_items": true
   },
   "dungeons": {
     "mode": 0,

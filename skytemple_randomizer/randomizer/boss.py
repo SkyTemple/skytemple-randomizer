@@ -14,12 +14,15 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from random import choice
+
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
 from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
+from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to fixed room monster spawn indices.
@@ -45,6 +48,8 @@ ACTOR_TO_BOSS_MAPPING = {
     375: [25],
     380: [94], 381: [95], 382: [96], 383: [97], 384: [98]
 }
+# Secret Bazar Pokémon that aren't also NPCs
+EXTRA_FF_MONSTER_RANDOMIZE = [16, 18, 19, 20]
 
 
 class BossRandomizer(AbstractRandomizer):
@@ -75,6 +80,9 @@ class BossRandomizer(AbstractRandomizer):
             if i in ACTOR_TO_BOSS_MAPPING:
                 for bi in ACTOR_TO_BOSS_MAPPING[i]:
                     boss_list[bi].md_idx = actor.entid
+
+        for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
+            boss_list[extra_id].md_idx = choice(get_allowed_md_ids(self.config, False))
 
         HardcodedFixedFloorTables.set_monster_spawn_list(binary, boss_list, self.static_data)
         set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'], binary)

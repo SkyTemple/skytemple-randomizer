@@ -2,7 +2,8 @@
   "starters_npcs": {
     "starters": true,
     "npcs": true,
-    "global_items": true
+    "global_items": true,
+    "overworld_music": true
   },
   "dungeons": {
     "mode": 0,

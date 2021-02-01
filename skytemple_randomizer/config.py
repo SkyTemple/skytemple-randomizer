@@ -37,6 +37,7 @@ class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
     global_items: bool
+    overworld_music: bool
 
 
 class StartersNpcsConfigDoc:
@@ -48,6 +49,8 @@ class StartersNpcsConfigDoc:
         *: Some additional text in the game may also be affected (eg. some item names)."""
     global_items = \
         """If enabled, the Treasure Town shop item list, the dungeon reward item lists and all other global item lists are randomized."""
+    overworld_music = \
+        """If enabled, the music that plays outside of dungeons is randomized (for the most part)."""
 
 
 class DungeonModeConfig(Enum):
@@ -245,6 +248,8 @@ class ConfigFileLoader:
                 if field not in target:
                     # Compatibility:
                     if field == 'global_items' and field_type == bool:
+                        target[field] = True
+                    if field == 'overworld_music' and field_type == bool:
                         target[field] = True
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")

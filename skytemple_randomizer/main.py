@@ -27,6 +27,8 @@ from typing import Optional
 
 import gi
 
+from skytemple_randomizer.randomizer.util.util import clear_script_cache
+
 gi.require_version('Gtk', '3.0')
 
 import pkg_resources
@@ -211,6 +213,7 @@ class MainController:
         dialog.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            clear_script_cache()
             if '.' not in out_fn:
                 out_fn += '.nds'
             try:

@@ -19,7 +19,7 @@ from random import shuffle
 from skytemple_files.common.ppmdu_config.data import Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file
+from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_all_string_files
 from skytemple_randomizer.status import Status
 
 
@@ -33,14 +33,14 @@ class TextMainRandomizer(AbstractRandomizer):
         if not self.config['text']['main']:
             return status.done()
         status.step('Randomizing all main text...')
-        lang, strings = get_main_string_file(self.rom, self.static_data)
 
-        for string_block in self._collect_categories(self.static_data.string_index_data.string_blocks):
-            part = strings.strings[string_block.begin:string_block.end]
-            shuffle(part)
-            strings.strings[string_block.begin:string_block.end] = part
+        for lang, strings in get_all_string_files(self.rom, self.static_data):
+            for string_block in self._collect_categories(self.static_data.string_index_data.string_blocks):
+                part = strings.strings[string_block.begin:string_block.end]
+                shuffle(part)
+                strings.strings[string_block.begin:string_block.end] = part
 
-        self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
+            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
 
         status.done()
 

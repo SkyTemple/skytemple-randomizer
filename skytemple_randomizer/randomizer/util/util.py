@@ -15,9 +15,9 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import sample, choice
-from typing import List, Dict
+from typing import List, Dict, Union, Tuple, Iterable
 
-from skytemple_files.common.ppmdu_config.data import Pmd2Data
+from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2Language
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES
@@ -29,7 +29,7 @@ ALLOWED_MD_IDS_BASE = set(x for x in range(1, 537) if x not in [383, 384])
 UNOWN_IDS = set(range(201, 229))
 
 
-def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data):
+def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> Tuple[Pmd2Language, Str]:
     lang = None
     for l in static_data.string_index_data.languages:
         if l.locale == 'en-US':
@@ -39,6 +39,11 @@ def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data):
     if lang is None:
         lang = static_data.string_index_data.languages[0]
     return lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
+
+
+def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[Tuple[Pmd2Language, Str]]:
+    for lang in static_data.string_index_data.languages:
+        yield lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
 
 
 def clone_missing_portraits(kao: Kao, index: int):
@@ -82,16 +87,34 @@ def replace_text_main(string_file: Str, replace_map: Dict[str, str], start_idx, 
     string_file.strings = new_strings
 
 
-def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data, replace_map: Dict[str, str]):
+def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data,
+                        replace_map_lang: Dict[Pmd2Language, Dict[str, str]]):
     new_dict = {}
-    for a, b in replace_map.items():
-        new_dict[a.upper()] = b.upper()
-    replace_map.update(new_dict)
-    for file_path in get_files_from_rom_with_extension(rom, 'ssb'):
-        script = FileType.SSB.deserialize(rom.getFileByName(file_path), static_data)
-        script.constants = [replace_strings(string, replace_map) for string in script.constants]
-        for langname, strings in script.strings.items():
-            script.strings[langname] = [replace_strings(string, replace_map) for string in strings]
+    for lang, replace_map in replace_map_lang.items():
+        for a, b in replace_map.items():
+            new_dict[a.upper()] = b.upper()
+        replace_map.update(new_dict)
+        for file_path in get_files_from_rom_with_extension(rom, 'ssb'):
+            script = get_script(file_path, rom, static_data)
+            script.constants = [replace_strings(string, replace_map) for string in script.constants]
+            script.strings[lang.name.lower()] = [replace_strings(string, replace_map) for string in script.strings[lang.name.lower()]]
+
+
+_ssb_file_cache = {}
+def clear_script_cache():
+    global _ssb_file_cache
+    _ssb_file_cache = {}
+
+
+def get_script(file_path, rom, static_data):
+    global _ssb_file_cache
+    if file_path not in _ssb_file_cache:
+        _ssb_file_cache[file_path] = FileType.SSB.deserialize(rom.getFileByName(file_path), static_data)
+    return _ssb_file_cache[file_path]
+
+
+def save_scripts(rom, static_data):
+    for file_path, script in _ssb_file_cache.items():
         rom.setFileByName(file_path, FileType.SSB.serialize(script, static_data))
 
 

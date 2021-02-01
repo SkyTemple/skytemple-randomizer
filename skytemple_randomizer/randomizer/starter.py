@@ -26,7 +26,8 @@ from skytemple_files.data.md.model import NUM_ENTITIES
 from skytemple_files.data.str.model import Str
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_ids, clone_missing_portraits
+from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_ids, clone_missing_portraits, \
+    replace_strings, get_all_string_files
 from skytemple_randomizer.status import Status
 
 
@@ -42,7 +43,7 @@ class StarterRandomizer(AbstractRandomizer):
         status.step("Randomizing Partner Starters...")
         overlay13 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'])
         pokemon_string_data = self.static_data.string_index_data.string_blocks["Pokemon Names"]
-        lang, string_file = get_main_string_file(self.rom, self.static_data)
+        langs = list(get_all_string_files(self.rom, self.static_data))
 
         orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
         new_partner_ids = [
@@ -60,9 +61,15 @@ class StarterRandomizer(AbstractRandomizer):
             new_id = choice(get_allowed_md_ids(self.config))
             if k % 3 == 0:
                 k += 1
-            personality_message = f"Will be a [CS:K]{self._get_name(string_file, new_id, pokemon_string_data)}[CR]!"
-            #assert "Will be a" in string_file.strings[0x67C + k]
-            string_file.strings[0x67C + k] = personality_message
+            # todo: refactor, this isn't really efficient.
+            for lang, string_file in langs:
+                string_file.strings[0x67C + k] = replace_strings(
+                    string_file.strings[0x67C + k],
+                    {
+                        self._get_name(string_file, orig_player_ids[i], pokemon_string_data):
+                        self._get_name(string_file, new_id, pokemon_string_data)
+                    }
+                )
             if i % 2 == 1 and new_id + NUM_ENTITIES <= 1154:
                 new_id += NUM_ENTITIES
             new_player_ids.append(new_id)
@@ -76,7 +83,8 @@ class StarterRandomizer(AbstractRandomizer):
             clone_missing_portraits(kao, new_base - 1)
 
         set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'], overlay13)
-        self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
+        for lang, string_file in langs:
+            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
         self.rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
 
         status.done()

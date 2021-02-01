@@ -24,7 +24,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_ids, replace_text_main, \
-    replace_text_script, clone_missing_portraits
+    replace_text_script, clone_missing_portraits, get_all_string_files
 from skytemple_randomizer.status import Status
 
 
@@ -49,18 +49,21 @@ class NpcRandomizer(AbstractRandomizer):
         mapped_actors = self._randomize_actors(string_file, pokemon_string_data)
 
         status.step("Replacing main text that mentions NPCs...")
-        names_mapped = {}
-        for old, new in mapped_actors.items():
-            old_base = old % 600
-            new_base = new % 600
-            old_name = self._get_name(string_file, old_base, pokemon_string_data)
-            new_name = self._get_name(string_file, new_base, pokemon_string_data)
-            names_mapped[old_name] = new_name
-        replace_text_main(string_file, names_mapped, pokemon_string_data.begin, pokemon_string_data.end)
-        self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
+        names_mapped_all = {}
+        for lang, string_file in get_all_string_files(self.rom, self.static_data):
+            names_mapped = {}
+            names_mapped_all[lang] = names_mapped
+            for old, new in mapped_actors.items():
+                old_base = old % 600
+                new_base = new % 600
+                old_name = self._get_name(string_file, old_base, pokemon_string_data)
+                new_name = self._get_name(string_file, new_base, pokemon_string_data)
+                names_mapped[old_name] = new_name
+            replace_text_main(string_file, names_mapped, pokemon_string_data.begin, pokemon_string_data.end)
+            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
 
         status.step("Replacing script text that mentions NPCs...")
-        replace_text_script(self.rom, self.static_data, names_mapped)
+        replace_text_script(self.rom, self.static_data, names_mapped_all)
 
         status.step("Cloning missing NPC portraits...")
         kao = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))

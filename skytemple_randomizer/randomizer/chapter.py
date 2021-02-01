@@ -17,7 +17,8 @@
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.script.ssb.model import Ssb
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import replace_text_script, random_txt_line
+from skytemple_randomizer.randomizer.util.util import replace_text_script, random_txt_line, get_script, \
+    get_all_string_files
 from skytemple_randomizer.status import Status
 
 
@@ -55,15 +56,14 @@ class ChapterRandomizer(AbstractRandomizer):
         status.step("Randomizing Chapter Names...")
 
         for script_name in SCRIPTS_WITH_CHAPTER_NAMES:
-            ssb: Ssb = FileType.SSB.deserialize(self.rom.getFileByName(script_name), self.static_data)
+            ssb: Ssb = get_script(script_name, self.rom, self.static_data)
 
             chapter_name = random_txt_line(self.config['chapters']['text'])
             for rtn in ssb.routine_ops:
                 for op in rtn:
                     if op.op_code.name == 'back_SetBanner2':
                         string_index = op.params[5] - len(ssb.constants)
-                        ssb.strings['english'][string_index] = chapter_name
-
-            self.rom.setFileByName(script_name, FileType.SSB.serialize(ssb, self.static_data))
+                        for lang, _ in get_all_string_files(self.rom, self.static_data):
+                            ssb.strings[lang.name.lower()][string_index] = chapter_name
 
         status.done()

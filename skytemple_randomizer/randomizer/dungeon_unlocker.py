@@ -26,6 +26,7 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_files.script.ssb.model import Ssb, SkyTempleSsbOperation
 from skytemple_files.script.ssb.script_compiler import ScriptCompiler
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
+from skytemple_randomizer.randomizer.util.util import get_script
 from skytemple_randomizer.status import Status
 
 
@@ -41,8 +42,8 @@ class DungeonUnlocker(AbstractRandomizer):
         ops = self.static_data.script_data.op_codes__by_name
 
         # DECOMPILE
-        ssb: Ssb = FileType.SSB.deserialize(
-            self.rom.getFileByName('SCRIPT/COMMON/unionall.ssb'), static_data=self.static_data
+        ssb: Ssb = get_script(
+            'SCRIPT/COMMON/unionall.ssb', self.rom, static_data=self.static_data
         )
         routine_ops = list(OpsLabelJumpToResolver(ssb.get_filled_routine_ops()))
 
@@ -93,9 +94,5 @@ class DungeonUnlocker(AbstractRandomizer):
             [x.name for x in self.static_data.script_data.common_routine_info__by_id],
             SourceMap.create_empty()
         )
-
-        self.rom.setFileByName('SCRIPT/COMMON/unionall.ssb', FileType.SSB.serialize(
-            new_ssb, static_data=self.static_data
-        ))
 
         status.done()

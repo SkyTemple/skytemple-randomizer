@@ -38,6 +38,7 @@ from skytemple_randomizer.randomizer.recruitment_table import RecruitmentTableRa
 from skytemple_randomizer.randomizer.starter import StarterRandomizer
 from skytemple_randomizer.randomizer.text_main import TextMainRandomizer
 from skytemple_randomizer.randomizer.text_script import TextScriptRandomizer
+from skytemple_randomizer.randomizer.util.util import save_scripts
 from skytemple_randomizer.status import Status
 
 
@@ -64,12 +65,12 @@ class RandomizerThread(Thread):
         self.lock = Lock()
         self.done = False
 
-        staic_data = get_ppmdu_config_for_rom(rom)
+        self.static_data = get_ppmdu_config_for_rom(rom)
         self.randomizers: List[AbstractRandomizer] = []
         for cls in RANDOMIZERS:
-            self.randomizers.append(cls(config, rom, staic_data))
+            self.randomizers.append(cls(config, rom, self.static_data))
 
-        self.total_steps = sum(x.step_count() for x in self.randomizers)
+        self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None
 
     def run(self):
@@ -90,6 +91,8 @@ class RandomizerThread(Thread):
 
                 local_status.subscribe(local_status_fn)
                 randomizer.run(local_status)
+            self.status.step('Saving scripts...')
+            save_scripts(self.rom, self.static_data)
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)
             self.error = error

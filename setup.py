@@ -19,7 +19,7 @@ setup(
     url='https://github.com/SkyTemple/skytemple-randomizer/',
     install_requires=[
         'ndspy >= 3.0.0',
-        'skytemple-files >= 1.1.0',
+        'skytemple-files >= 1.1.2.post0',
         'explorerscript >= 0.0.7',
         'skytemple-icons >= 0.1.0',
         'pygobject >= 3.26.0'

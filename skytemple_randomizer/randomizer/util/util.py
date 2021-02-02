@@ -106,6 +106,11 @@ def clear_script_cache():
     _ssb_file_cache = {}
 
 
+def clear_script_cache_for(file_path):
+    global _ssb_file_cache
+    del _ssb_file_cache[file_path]
+
+
 def get_script(file_path, rom, static_data):
     global _ssb_file_cache
     if file_path not in _ssb_file_cache:

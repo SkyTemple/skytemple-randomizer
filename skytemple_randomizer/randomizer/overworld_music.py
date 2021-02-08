@@ -24,6 +24,10 @@ from skytemple_randomizer.status import Status
 
 
 class OverworldMusicRandomizer(AbstractRandomizer):
+    def __init__(self, config, rom, static_data):
+        super().__init__(config, rom, static_data)
+        self.bgs = [b for b in self.static_data.script_data.bgms if b.loops]
+
     def step_count(self) -> int:
         if self.config['starters_npcs']['overworld_music']:
             return 1
@@ -42,12 +46,16 @@ class OverworldMusicRandomizer(AbstractRandomizer):
                     op_c = self.static_data.script_data.op_codes__by_name[op.op_code.name][0]
                     for i, param_spec in enumerate(op_c.arguments):
                         if param_spec.type == 'Bgm':
-                            op.params[i] = self._get_random_music_id()
+                            # Only randomize real music (looping tracks)
+                            if any((b.id == op.params[i] for b in self.bgs)):
+                                op.params[i] = self._get_random_music_id()
+                    # We don't really support those, so replace them with 1 sec wait.
+                    if op_c.name == 'WaitBgmSignal' or op_c.name == 'WaitBgm' or op_c.name == 'WaitBgm2':
+                        op.op_code = self.static_data.script_data.op_codes__by_name['Wait'][0]
+                        op.params = [60]
 
         status.done()
 
     def _get_random_music_id(self):
-        r = choice(self.static_data.script_data.bgms)
-        while r.id == 0:
-            r = choice(self.static_data.script_data.bgms)
+        r = choice(self.bgs)
         return r.id

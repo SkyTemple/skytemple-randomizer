@@ -45,8 +45,8 @@ from skytemple_randomizer.status import Status
 
 
 RANDOMIZERS = [
-    NpcRandomizer, StarterRandomizer, BossRandomizer, RecruitmentTableRandomizer, DungeonRandomizer,
-    FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader, PatchApplier, MonsterRandomizer, MovesetRandomizer,
+    PatchApplier, NpcRandomizer, StarterRandomizer, BossRandomizer, RecruitmentTableRandomizer, DungeonRandomizer,
+    FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader, MonsterRandomizer, MovesetRandomizer,
     LocationRandomizer, ChapterRandomizer, TextMainRandomizer, TextScriptRandomizer, GlobalItemsRandomizer,
     OverworldMusicRandomizer
 ]

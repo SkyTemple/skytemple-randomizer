@@ -113,6 +113,7 @@ class ImprovementsConfig(TypedDict):
     download_portraits: bool
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
+    patch_totalteamcontrol: bool
 
 
 class ImprovementsConfigDoc:
@@ -124,6 +125,9 @@ class ImprovementsConfigDoc:
     patch_unuseddungeonchance = \
         f"""Installs the patch '{UnusedDungeonChancePatch().name}' by {UnusedDungeonChancePatch().author}: 
         {UnusedDungeonChancePatch().description}"""
+    patch_totalteamcontrol = \
+        f"""Installs patches that allow you to control your team members manually in dungeons. Press Start+R to toggle.
+        Patch by Cipnit."""
 
 
 class MovesetConfig(Enum):
@@ -249,8 +253,10 @@ class ConfigFileLoader:
                     # Compatibility:
                     if field == 'global_items' and field_type == bool:
                         target[field] = True
-                    if field == 'overworld_music' and field_type == bool:
+                    elif field == 'overworld_music' and field_type == bool:
                         target[field] = True
+                    elif field == 'patch_totalteamcontrol' and field_type == bool:
+                        target[field] = False
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)

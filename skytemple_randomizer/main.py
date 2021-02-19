@@ -185,7 +185,7 @@ class MainController:
         about.run()
 
     def on_discord_clicked(self, *args):
-        webbrowser.open_new_tab('https://discord.gg/4e3X36f')
+        webbrowser.open_new_tab('https://discord.gg/skytemple')
 
     def on_skytemple_clicked(self, *args):
         webbrowser.open_new_tab('https://skytemple.org')

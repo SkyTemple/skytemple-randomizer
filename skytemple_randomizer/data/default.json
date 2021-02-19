@@ -191,7 +191,8 @@
   "improvements": {
     "download_portraits": true,
     "patch_moveshortcuts": true,
-    "patch_unuseddungeonchance": true
+    "patch_unuseddungeonchance": true,
+    "patch_totalteamcontrol": false
   },
   "pokemon": {
     "iq_groups": true,

@@ -211,6 +211,8 @@ ALLOWED_ITEM_CATS = [
     MappaItemCategory.ORBS,
     MappaItemCategory.OTHER
 ]
+SKY_PEAK_MAPPA_IDX = 72
+SHAYMIN_IDS = [534, 535]
 
 MAX_TRAP_LISTS = 100
 MAX_ITEM_LISTS = 150
@@ -281,7 +283,8 @@ class DungeonRandomizer(AbstractRandomizer):
                     if self.config['dungeons']['pokemon']:
                         floor.monsters = self._randomize_monsters(
                             min(m.level for m in floor.monsters if m.weight > 0),
-                            max(m.level for m in floor.monsters if m.weight > 0)
+                            max(m.level for m in floor.monsters if m.weight > 0),
+                            floor_list_index != SKY_PEAK_MAPPA_IDX
                         )
                     if trap_lists is not None:
                         floor.traps = choice(trap_lists)
@@ -375,10 +378,15 @@ class DungeonRandomizer(AbstractRandomizer):
             iq_booster_allowed=choice((True, False))
         )
 
-    def _randomize_monsters(self, min_level, max_level):
+    def _randomize_monsters(self, min_level, max_level, allow_shaymin=True):
         monsters = []
+        allowed = get_allowed_md_ids(self.config)
+        if not allow_shaymin:
+            for idx in SHAYMIN_IDS:
+                if idx in allowed:
+                    allowed.remove(idx)
         md_ids = sorted(
-            set(choice(get_allowed_md_ids(self.config)) for _ in range(0, randrange(MIN_MONSTERS_PER_LIST, MAX_MONSTERS_PER_LIST + 1))))
+            set(choice(allowed) for _ in range(0, randrange(MIN_MONSTERS_PER_LIST, MAX_MONSTERS_PER_LIST + 1))))
         weights = sorted(self._random_weights(len(md_ids)))
         for md_id, weight in zip(md_ids, weights):
             level = min(100,

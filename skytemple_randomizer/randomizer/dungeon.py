@@ -225,8 +225,8 @@ MAX_ITEMS_PER_CAT = 18
 
 
 class DungeonRandomizer(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data):
-        super().__init__(config, rom, static_data)
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
+        super().__init__(config, rom, static_data, seed)
 
         self.dungeons = HardcodedDungeons.get_dungeon_list(
             get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']),

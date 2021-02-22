@@ -41,8 +41,8 @@ START_DUNGEON_BGS = 170
 
 
 class FixedRoomRandomizer(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data):
-        super().__init__(config, rom, static_data)
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
+        super().__init__(config, rom, static_data, seed)
 
         self.dungeons = HardcodedDungeons.get_dungeon_list(
             get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']),
@@ -127,7 +127,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
         return width, height, actions
 
     def _get_random_room_txt(self):
-        from skytemple_randomizer.main import data_dir
+        from skytemple_randomizer.config import data_dir
         i = randrange(0, 1000)
         with open_utf8(os.path.join(data_dir(), 'fixed_floor_layouts', f'{i}.txt')) as f:
             return f.read().splitlines()

@@ -16,12 +16,14 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import json
+import os
 import sys
 import time
 from enum import Enum
 from functools import partial
 from typing import TypedDict, Optional, List, Dict
 
+import pkg_resources
 from gi.repository import Gtk
 
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon
@@ -464,3 +466,21 @@ class EnumJsonEncoder(json.JSONEncoder):
         if isinstance(obj, Enum):
             return obj.value
         return json.JSONEncoder.default(self, obj)
+
+
+def version():
+    try:
+        return pkg_resources.get_distribution("skytemple-randomizer").version
+    except pkg_resources.DistributionNotFound:
+        # Try reading from a VERISON file instead
+        version_file = os.path.join(data_dir(), 'VERSION')
+        if os.path.exists(version_file):
+            with open(version_file) as f:
+                return f.read()
+        return 'unknown'
+
+
+def data_dir():
+    if getattr(sys, 'frozen', False):
+        return os.path.join(os.path.dirname(sys.executable), 'data')
+    return os.path.join(os.path.dirname(__file__), 'data')

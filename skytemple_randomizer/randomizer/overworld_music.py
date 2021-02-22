@@ -24,8 +24,8 @@ from skytemple_randomizer.status import Status
 
 
 class OverworldMusicRandomizer(AbstractRandomizer):
-    def __init__(self, config, rom, static_data):
-        super().__init__(config, rom, static_data)
+    def __init__(self, config, rom, static_data, seed):
+        super().__init__(config, rom, static_data, seed)
         self.bgs = [b for b in self.static_data.script_data.bgms if b.loops]
 
     def step_count(self) -> int:

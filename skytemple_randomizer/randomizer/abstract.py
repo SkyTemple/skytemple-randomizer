@@ -24,10 +24,11 @@ from skytemple_randomizer.status import Status
 
 
 class AbstractRandomizer(ABC):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data):
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
         self.config = config
         self.rom = rom
         self.static_data = static_data
+        self.seed = seed
 
     @abstractmethod
     def step_count(self) -> int:

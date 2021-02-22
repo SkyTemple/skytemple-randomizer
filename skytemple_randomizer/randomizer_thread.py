@@ -37,6 +37,7 @@ from skytemple_randomizer.randomizer.overworld_music import OverworldMusicRandom
 from skytemple_randomizer.randomizer.patch_applier import PatchApplier
 from skytemple_randomizer.randomizer.portrait_downloader import PortraitDownloader
 from skytemple_randomizer.randomizer.recruitment_table import RecruitmentTableRandomizer
+from skytemple_randomizer.randomizer.seed_info import SeedInfo
 from skytemple_randomizer.randomizer.starter import StarterRandomizer
 from skytemple_randomizer.randomizer.text_main import TextMainRandomizer
 from skytemple_randomizer.randomizer.text_script import TextScriptRandomizer
@@ -48,13 +49,13 @@ RANDOMIZERS = [
     PatchApplier, NpcRandomizer, StarterRandomizer, BossRandomizer, RecruitmentTableRandomizer, DungeonRandomizer,
     FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader, MonsterRandomizer, MovesetRandomizer,
     LocationRandomizer, ChapterRandomizer, TextMainRandomizer, TextScriptRandomizer, GlobalItemsRandomizer,
-    OverworldMusicRandomizer
+    OverworldMusicRandomizer, SeedInfo
 ]
 logger = logging.getLogger(__name__)
 
 
 class RandomizerThread(Thread):
-    def __init__(self, status: Status, rom: NintendoDSRom, config: RandomizerConfig):
+    def __init__(self, status: Status, rom: NintendoDSRom, config: RandomizerConfig, seed: str):
         """
         Inits the thread. If it's started() access to rom and config MUST NOT be done until is_done().
         is_done is also signaled by the status object's done() event.
@@ -71,7 +72,7 @@ class RandomizerThread(Thread):
         self.static_data = get_ppmdu_config_for_rom(rom)
         self.randomizers: List[AbstractRandomizer] = []
         for cls in RANDOMIZERS:
-            self.randomizers.append(cls(config, rom, self.static_data))
+            self.randomizers.append(cls(config, rom, self.static_data, seed))
 
         self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None

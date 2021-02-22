@@ -31,14 +31,13 @@ from skytemple_randomizer.randomizer.util.util import clear_script_cache
 
 gi.require_version('Gtk', '3.0')
 
-import pkg_resources
 from ndspy.rom import NintendoDSRom
 
 from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
 from skytemple_files.common.util import open_utf8
 from skytemple_icons import icons
 from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder, \
-    get_effective_seed, ConfigDocApplier
+    get_effective_seed, ConfigDocApplier, version, data_dir
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
@@ -255,7 +254,7 @@ class MainController:
                 seed = get_effective_seed(config['seed'])
                 random.seed(seed)
                 self.builder.get_object('seed_label').set_text('Your Seed: ' + str(seed))
-                randomizer = RandomizerThread(status, rom, config)
+                randomizer = RandomizerThread(status, rom, config, seed)
                 randomizer.start()
 
                 # SHOW DIALOG
@@ -339,27 +338,9 @@ def main():
     Gtk.main()
 
 
-def data_dir():
-    if getattr(sys, 'frozen', False):
-        return os.path.join(os.path.dirname(sys.executable), 'data')
-    return os.path.join(os.path.dirname(__file__), 'data')
-
-
 def _load_theme():
     settings = Gtk.Settings.get_default()
     settings.set_property("gtk-theme-name", 'Arc-Dark')
-
-
-def version():
-    try:
-        return pkg_resources.get_distribution("skytemple-randomizer").version
-    except pkg_resources.DistributionNotFound:
-        # Try reading from a VERISON file instead
-        version_file = os.path.join(data_dir(), 'VERSION')
-        if os.path.exists(version_file):
-            with open(version_file) as f:
-                return f.read()
-        return 'unknown'
 
 
 if __name__ == '__main__':

@@ -50,8 +50,8 @@ ITEM_LIST_COUNT = 25
 
 
 class GlobalItemsRandomizer(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data):
-        super().__init__(config, rom, static_data)
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
+        super().__init__(config, rom, static_data, seed)
 
     def step_count(self) -> int:
         return 2 if self.config['starters_npcs']['global_items'] else 0

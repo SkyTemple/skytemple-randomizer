@@ -128,7 +128,7 @@ class ImprovementsConfigDoc:
         f"""Installs the patch '{UnusedDungeonChancePatch().name}' by {UnusedDungeonChancePatch().author}: 
         {UnusedDungeonChancePatch().description}"""
     patch_totalteamcontrol = \
-        f"""Installs patches that allow you to control your team members manually in dungeons. Press Start+R to toggle.
+        f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
         Patch by Cipnit."""
 
 

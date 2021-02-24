@@ -212,7 +212,6 @@ macro patches() {{
     }}
 }}  
 """
-        print(exps)
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
             exps, 'script.exps', lookup_paths=[]
         )

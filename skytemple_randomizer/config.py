@@ -35,6 +35,10 @@ from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonCha
 CLASSREF = '__classref'
 
 
+class Global:
+    main_builder = None
+
+
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses

@@ -37,7 +37,7 @@ from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
 from skytemple_files.common.util import open_utf8
 from skytemple_icons import icons
 from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder, \
-    get_effective_seed, ConfigDocApplier, version, data_dir
+    get_effective_seed, ConfigDocApplier, version, data_dir, Global
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
@@ -48,7 +48,13 @@ from gi.repository.Gtk import Window
 class MainController:
     def __init__(self, builder: Gtk.Builder, window: Window):
         self.builder = builder
-        self.window = window
+        Global.main_builder = builder
+        self.window: Window = window
+
+        accel = Gtk.AccelGroup()
+        accel.connect(Gdk.KEY_space, Gdk.ModifierType.CONTROL_MASK, 0, self.on_show_debug)
+        self.window.add_accel_group(accel)
+        self.builder.get_object('progress').add_accel_group(accel)
 
         self.static_config = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
 
@@ -73,6 +79,9 @@ class MainController:
     def gtk_widget_hide_on_delete(self, w: Gtk.Widget, *args):
         w.hide_on_delete()
         return True
+
+    def on_show_debug(self, *args):
+        self.builder.get_object('portrait_debug').show()
 
     def on_cr_dungeons_settings_randomize_toggled(self, widget, path):
         store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
@@ -273,6 +282,9 @@ class MainController:
 
     def on_progress_close_clicked(self, *args):
         self.builder.get_object('progress').hide()
+
+    def on_portrait_close_clicked(self, *args):
+        self.builder.get_object('portrait_debug').hide()
 
     def display_error(self, error_message, error_title='SkyTemple Randomizer - Error'):
         md = Gtk.MessageDialog(self.window,

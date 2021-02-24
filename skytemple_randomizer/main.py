@@ -236,7 +236,8 @@ class MainController:
                     if randomizer.error:
                         img: Gtk.Image = self.builder.get_object('img_portrait_duskako')
                         img.set_from_file(os.path.join(data_dir(), 'duskako_sad.png'))
-                        progress_label.set_text(f"Error: {randomizer.error.__class__.__name__}\n{randomizer.error}")
+                        traceback_str = ''.join(traceback.format_exception(*randomizer.error))
+                        progress_label.set_text(f"Error: {traceback_str}")
                         progress_diag.set_title('Randomizing failed!')
                     else:
                         rom.saveToFile(out_fn)

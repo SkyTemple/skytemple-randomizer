@@ -15,6 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import logging
+import sys
 from threading import Thread, Lock
 from typing import List
 
@@ -99,7 +100,7 @@ class RandomizerThread(Thread):
             save_scripts(self.rom, self.static_data)
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)
-            self.error = error
+            self.error = sys.exc_info()
 
         with self.lock:
             self.done = True

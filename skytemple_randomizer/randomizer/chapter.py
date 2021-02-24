@@ -58,10 +58,10 @@ class ChapterRandomizer(AbstractRandomizer):
         for script_name in SCRIPTS_WITH_CHAPTER_NAMES:
             ssb: Ssb = get_script(script_name, self.rom, self.static_data)
 
-            chapter_name = random_txt_line(self.config['chapters']['text'])
             for rtn in ssb.routine_ops:
                 for op in rtn:
                     if op.op_code.name == 'back_SetBanner2':
+                        chapter_name = random_txt_line(self.config['chapters']['text'])
                         string_index = op.params[5] - len(ssb.constants)
                         for lang, _ in get_all_string_files(self.rom, self.static_data):
                             ssb.strings[lang.name.lower()][string_index] = chapter_name

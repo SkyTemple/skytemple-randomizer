@@ -55,6 +55,10 @@ TWO_NPC_X = 18
 TWO_NPC_Y = 21
 
 
+def escape(s):
+    return s.replace('"', '\\"').replace("'", "\\'")
+
+
 class ArtistCredits:
     def __init__(self, name: str, actor: Optional[Pmd2ScriptEntity], main_artist: str, other_artists: List[str], id_str: str):
         self.name = name
@@ -291,6 +295,7 @@ macro patches() {{
         full = ""
         single = "message_Mail(\""
         line = ""
+        i = 0
         for i in range(0, len(param)):
             ability_name = Ability(param[i]).print_name
             if i != 0 and i % 2 == 0:
@@ -299,13 +304,16 @@ macro patches() {{
             if i != 0 and i % 18 == 0:
                 full += single + "\");"
                 single = "message_Mail(\""
-            line += ability_name + ", "
+            line += escape(ability_name) + ", "
+        if i % 18 != 0 and i != 0:
+            full += single + "\");"
         return full
 
     def _locs_chaps(self, param: str):
         full = ""
         single = "message_Mail(\""
         line = ""
+        i = 0
         for i, entry in enumerate(param.splitlines()):
             if i != 0 and i % 2 == 0:
                 single += line.strip(", ") + "\\n"
@@ -313,7 +321,9 @@ macro patches() {{
             if i != 0 and i % 18 == 0:
                 full += single + "\");"
                 single = "message_Mail(\""
-            line += entry + ", "
+            line += escape(entry) + ", "
+        if i % 18 != 0 and i != 0:
+            full += single + "\");"
         return full
 
     def _movesets(self, param: MovesetConfig):
@@ -390,7 +400,7 @@ macro patches() {{
             credits += f"""
         case menu("{entry.name}"):
             {setface}
-            message_Talk("Last Author: [CS:A]{entry.main_artist}[CR]\\n{others}\\nsprites.pmdcollab.org/portrait.html?id={entry.id_str}");
+            message_Talk("Last Author: [CS:A]{escape(entry.main_artist)}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/portrait.html?id={escape(entry.id_str)}");
             jump @l_artists;
 """
         return credits
@@ -398,13 +408,16 @@ macro patches() {{
     def _patch_credits(self):
         credits = ""
         for patch in Patcher(self.rom, self.static_data).list():
-            if patch.is_applied(self.rom, self.static_data):
-                desc = patch.description.replace('\n', '\\n')
-                credits += f"""
+            try:
+                if patch.is_applied(self.rom, self.static_data):
+                    desc = patch.description.replace('\n', '\\n')
+                    credits += f"""
         case menu("{patch.name}"):
-            message_Mail("[CS:A]{patch.name}[CR]\\nby [CS:A]{patch.author}[CR]\\n\\n{desc}");
+            message_Mail("[CS:A]{escape(patch.name)}[CR]\\nby [CS:A]{escape(patch.author)}[CR]\\n\\n{escape(desc)}");
             jump @l_patches; 
 """
+            except NotImplementedError:
+                pass
         return credits
 
     def _process_portrait(self, credit_map: Dict[str, ArtistCredits], config, credits_config, mdidx, md: MdEntry, actor: Optional[Pmd2ScriptEntity]):

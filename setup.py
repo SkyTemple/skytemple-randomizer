@@ -1,4 +1,4 @@
-__version__ = '1.0.6'
+__version__ = '1.0.7'
 from setuptools import setup, find_packages
 
 # README read-in
@@ -20,7 +20,7 @@ setup(
     install_requires=[
         'ndspy >= 3.0.0',
         'skytemple-files >= 1.1.5',
-        'explorerscript >= 0.0.7',
+        'explorerscript >= 0.1.0',
         'skytemple-icons >= 0.1.0',
         'pygobject >= 3.26.0'
     ],

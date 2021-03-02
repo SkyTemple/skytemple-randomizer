@@ -474,13 +474,13 @@ class EnumJsonEncoder(json.JSONEncoder):
 
 def version():
     try:
-        return pkg_resources.get_distribution("skytemple-randomizer").version
+        return pkg_resources.get_distribution("skytemple-randomizer").version.strip()
     except pkg_resources.DistributionNotFound:
         # Try reading from a VERISON file instead
         version_file = os.path.join(data_dir(), 'VERSION')
         if os.path.exists(version_file):
             with open(version_file) as f:
-                return f.read()
+                return f.read().strip()
         return 'unknown'
 
 

@@ -18,6 +18,7 @@ import json
 import urllib.request
 from typing import List, Optional, Dict
 
+from explorerscript.error import ParseError
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
 from skytemple_files.common.ppmdu_config.script_data import Pmd2ScriptEntity
 from skytemple_files.common.types.file_types import FileType
@@ -132,8 +133,11 @@ on Crossroads."""
                 unkE=-1,
             ))
         self.rom.setFileByName(f'SCRIPT/{MAP}/{SCENE}', FileType.SSA.serialize(scene))
-        # Fill talk script 1
-        exps = f"""
+
+        exps = "n/a"
+        try:
+            # Fill talk script 1
+            exps = f"""
 def 0 {{
     with (actor ACTOR_TALK_MAIN) {{
         ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
@@ -215,19 +219,19 @@ macro patches() {{
             break;
     }}
 }}  
-"""
-        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            exps, 'script.exps', lookup_paths=[]
-        )
+    """
+            script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+                exps, 'script.exps', lookup_paths=[]
+            )
 
-        script_fn = f'SCRIPT/{MAP}/{TALK_SCRIPT_NAME}'
-        script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
-        try:
-            create_file_in_rom(self.rom, script_fn, script_sera)
-        except FileExistsError:
-            self.rom.setFileByName(script_fn, script_sera)
+            script_fn = f'SCRIPT/{MAP}/{TALK_SCRIPT_NAME}'
+            script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
+            try:
+                create_file_in_rom(self.rom, script_fn, script_sera)
+            except FileExistsError:
+                self.rom.setFileByName(script_fn, script_sera)
 
-        exps = f"""
+            exps = f"""
         def 0 {{
             with (actor ACTOR_TALK_MAIN) {{
                 ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
@@ -268,16 +272,18 @@ macro patches() {{
             message_ResetActor();
         }}
 """
-        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            exps, 'script.exps', lookup_paths=[]
-        )
+            script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+                exps, 'script.exps', lookup_paths=[]
+            )
 
-        script_fn = f'SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}'
-        script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
-        try:
-            create_file_in_rom(self.rom, script_fn, script_sera)
-        except FileExistsError:
-            self.rom.setFileByName(script_fn, script_sera)
+            script_fn = f'SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}'
+            script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
+            try:
+                create_file_in_rom(self.rom, script_fn, script_sera)
+            except FileExistsError:
+                self.rom.setFileByName(script_fn, script_sera)
+        except ParseError as err:
+            raise RuntimeError(f"Parse error while trying to generate a scropt.\nError:{str(err)}\n\nScript:\n----\n{exps}")
 
         status.done()
 

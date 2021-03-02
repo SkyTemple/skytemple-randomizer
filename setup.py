@@ -1,4 +1,4 @@
-__version__ = '1.0.6rc0'
+__version__ = '1.0.6'
 from setuptools import setup, find_packages
 
 # README read-in
@@ -19,7 +19,7 @@ setup(
     url='https://github.com/SkyTemple/skytemple-randomizer/',
     install_requires=[
         'ndspy >= 3.0.0',
-        'skytemple-files >= 1.1.4',
+        'skytemple-files >= 1.1.5',
         'explorerscript >= 0.0.7',
         'skytemple-icons >= 0.1.0',
         'pygobject >= 3.26.0'

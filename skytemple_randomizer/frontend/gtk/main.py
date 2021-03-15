@@ -14,6 +14,21 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+#
+#  This file is part of SkyTemple.
+#
+#  SkyTemple is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  SkyTemple is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import json
 import logging
 import os
@@ -23,11 +38,13 @@ import traceback
 import webbrowser
 from functools import partial
 from math import floor
-from typing import Optional
+from typing import Optional, Callable
 
 import gi
 
 gi.require_version('Gtk', '3.0')
+
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 
 import packaging.version
 
@@ -39,13 +56,19 @@ from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
 from skytemple_files.common.util import open_utf8
 from skytemple_icons import icons
-from skytemple_randomizer.config import ConfigUIApplier, ConfigUIReader, ConfigFileLoader, EnumJsonEncoder, \
-    get_effective_seed, ConfigDocApplier, version, data_dir, Global
+from skytemple_randomizer.config import ConfigFileLoader, EnumJsonEncoder, \
+    get_effective_seed, version, data_dir, Global
+from skytemple_randomizer.frontend.gtk.config import ConfigUIApplier, ConfigUIReader, ConfigDocApplier
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
 from gi.repository import Gtk, GLib, Gdk
 from gi.repository.Gtk import Window
+
+
+class GtkFrontend(AbstractFrontend):
+    def idle_add(self, fn: Callable):
+        GLib.idle_add(fn)
 
 
 class MainController:
@@ -271,7 +294,7 @@ class MainController:
                 seed = get_effective_seed(config['seed'])
                 random.seed(seed)
                 self.builder.get_object('seed_label').set_text('Your Seed: ' + str(seed))
-                randomizer = RandomizerThread(status, rom, config, seed)
+                randomizer = RandomizerThread(status, rom, config, seed, GtkFrontend())
                 randomizer.start()
 
                 # SHOW DIALOG

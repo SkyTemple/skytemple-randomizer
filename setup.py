@@ -33,9 +33,9 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9'
     ],
-    package_data={'skytemple_randomizer': ['*.glade', 'data/*/*/*/*/*', 'data/*', 'data/*/*']},
+    package_data={'skytemple_randomizer': ['frontend/gtk/*.glade', 'frontend/gtk/*.css', 'data/*/*/*/*/*', 'data/*', 'data/*/*']},
     entry_points='''
         [console_scripts]
-        skytemple_randomizer=skytemple_randomizer.main:main
+        skytemple_randomizer=skytemple_randomizer.frontend.gtk.main:main
     ''',
 )

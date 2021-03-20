@@ -1,0 +1,4 @@
+tornado==6.1
+#python-for-android==2020.6.2
+cython
+# ccache system package

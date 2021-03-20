@@ -172,9 +172,9 @@ class ConfigDocApplier:
                     field_full = field_name + '_' + field
                 self._handle(typ, field_type, field_full, field)
         if hasattr(parent_typ, '__name__'):
-            current_module = sys.modules[__name__]
+            current_module = sys.modules['skytemple_randomizer.config']
             if parent_typ.__name__ + 'Doc' in current_module.__dict__:
-                cls = sys.modules[__name__].__dict__[parent_typ.__name__ + 'Doc']
+                cls = current_module.__dict__[parent_typ.__name__ + 'Doc']
                 if field_name_short in cls.__dict__:
                     help_name = 'help_' + field_name
                     help_btn = self.builder.get_object(help_name)

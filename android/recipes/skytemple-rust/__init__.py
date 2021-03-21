@@ -19,7 +19,7 @@ import os
 
 import sh
 from pythonforandroid.logger import info, shprint
-from pythonforandroid.recipe import CompiledComponentsPythonRecipe
+from pythonforandroid.recipe import CompiledComponentsPythonRecipe, NDKRecipe
 from pythonforandroid.util import current_directory
 
 
@@ -32,18 +32,22 @@ class SkyTempleRustRecipe(CompiledComponentsPythonRecipe):
     conflicts = []
 
     def get_recipe_env(self, arch=None, with_flags_in_cc=True):
-        # sudo cp /opt/android-sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libunwind.a /opt/android-sdk/ndk/19.2.5345600/platforms/android-21/arch-arm/usr/lib/libunwind.a
         env = super().get_recipe_env(arch, with_flags_in_cc)
         env['RUST_LOG'] = 'debug'
         env['CARGO_TERM_VERBOSE'] = 'verbose'
         env['PKG_CONFIG_ALLOW_CROSS'] = '1'
         env['CARGO_BUILD_TARGET'] = 'armv7-linux-androideabi'
-        env['PYO3_CROSS_LIB_DIR'] = self.ctx.python_recipe.link_root(arch)
+        link_root = self.ctx.python_recipe.link_root(arch)
+        env['PYO3_CROSS_LIB_DIR'] = link_root
         env['PYO3_CROSS_INCLUDE_DIR'] = self.ctx.python_recipe.include_root(arch)
+        env["LD_LIBRARY_PATH"] = link_root
         env['TARGET'] = 'armv7a-linux-androideabi'
-        env['CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_LINKER'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/clang'
-        env['RUSTFLAGS'] = f'-C link-args=--target=armv7a-linux-androideabi ' \
-                           f'-C link-args=--sysroot={self.ctx.ndk_dir}/platforms/android-21/arch-arm'
+        env['CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_LINKER'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang'
+        env['CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_AR'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar'
+        env['CC_ARMV7_LINUX_ANDROIDEABI'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang'
+        env['CXX_ARMV7_LINUX_ANDROIDEABI'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang++'
+        env['AR_ARMV7_LINUX_ANDROIDEABI'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar'
+        env['RUSTFLAGS'] = f'-C link-args=-L{link_root} -lpython3.8'
         assert os.path.exists(env['PYO3_CROSS_LIB_DIR']), env['PYO3_CROSS_LIB_DIR']
         assert os.path.exists(env['PYO3_CROSS_INCLUDE_DIR']), env['PYO3_CROSS_INCLUDE_DIR']
         return env

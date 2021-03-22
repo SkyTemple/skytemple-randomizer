@@ -27,7 +27,7 @@ additional_binaries = [
 block_cipher = None
 
 
-a = Analysis(['../skytemple_randomizer/main.py'],
+a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
              pathex=[os.path.abspath(os.path.join('..', 'skytemple_randomizer'))],
              binaries=additional_binaries,
              datas=additional_datas,

@@ -23,7 +23,8 @@ os.chdir(os.path.join('..', 'skytemple_randomizer', 'frontend', 'common_web'))
 os.system(f'npm install')
 os.system(f'npm run-script build')
 os.chdir(absp)
-install_requires = [f'{x.project_name}=={x.version}' for x in recursive_reqs if x.project_name not in IGNORE_REQS]
+# fix for igraph
+install_requires = [f'{x.project_name}=={x.version if x.project_name != "python-igraph" else "master"}' for x in recursive_reqs if x.project_name not in IGNORE_REQS]
 
 options = {
     'dist-name': 'skytemple_randomizer',

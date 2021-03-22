@@ -19,7 +19,7 @@ import os
 
 import sh
 from pythonforandroid.logger import info, shprint
-from pythonforandroid.recipe import CompiledComponentsPythonRecipe, NDKRecipe
+from pythonforandroid.recipe import CompiledComponentsPythonRecipe
 from pythonforandroid.util import current_directory
 
 
@@ -44,9 +44,6 @@ class SkyTempleRustRecipe(CompiledComponentsPythonRecipe):
         env['TARGET'] = 'armv7a-linux-androideabi'
         env['CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_LINKER'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang'
         env['CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_AR'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar'
-        env['CC_ARMV7_LINUX_ANDROIDEABI'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang'
-        env['CXX_ARMV7_LINUX_ANDROIDEABI'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang++'
-        env['AR_ARMV7_LINUX_ANDROIDEABI'] = self.ctx.ndk_dir + '/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar'
         env['RUSTFLAGS'] = f'-C link-args=-L{link_root} -lpython3.8'
         assert os.path.exists(env['PYO3_CROSS_LIB_DIR']), env['PYO3_CROSS_LIB_DIR']
         assert os.path.exists(env['PYO3_CROSS_INCLUDE_DIR']), env['PYO3_CROSS_INCLUDE_DIR']

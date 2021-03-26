@@ -26,7 +26,9 @@ from math import floor
 from typing import Optional
 
 import gi
+import packaging.version
 
+from skytemple_files.common.version_util import check_newest_release, ReleaseType
 from skytemple_randomizer.randomizer.util.util import clear_script_cache
 
 gi.require_version('Gtk', '3.0')
@@ -66,6 +68,7 @@ class MainController:
         self.ui_reader = ConfigUIReader(self.builder)
         self.ui_applier.apply(ConfigFileLoader.load(os.path.join(data_dir(), 'default.json')))
         ConfigDocApplier(self.window, self.builder).apply()
+        self._check_for_updates()
 
         self.builder.connect_signals(self)
 
@@ -79,6 +82,9 @@ class MainController:
     def gtk_widget_hide_on_delete(self, w: Gtk.Widget, *args):
         w.hide_on_delete()
         return True
+
+    def on_update_button_clicked(self, *args):
+        webbrowser.open_new_tab("https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/")
 
     def on_show_debug(self, *args):
         self.builder.get_object('portrait_debug').show()
@@ -294,6 +300,17 @@ class MainController:
                                title=error_title)
         md.run()
         md.destroy()
+
+    def _check_for_updates(self):
+        try:
+            new_version = check_newest_release(ReleaseType.SKYTEMPLE_RANDOMIZER)
+            if packaging.version.parse(version()) < packaging.version.parse(new_version):
+                self.builder.get_object('update_new_version').set_text(new_version)
+                return
+        except Exception:
+            pass
+        # else/except:
+        self.builder.get_object('update_info').hide()
 
 
 def main():

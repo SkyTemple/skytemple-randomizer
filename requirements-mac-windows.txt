@@ -1,3 +1,4 @@
 ndspy==3.0.0
 skytemple-files==1.1.6
 skytemple-icons==0.1.0
+packaging

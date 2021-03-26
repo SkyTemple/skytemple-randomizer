@@ -31,6 +31,8 @@
     "extract-loader": "^5.1.0",
     "file-loader": "^6.2.0",
     "postcss-loader": "^5.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sass": "^1.32.8",
     "webpack": "^5.26.3",
     "webpack-cli": "^4.5.0",

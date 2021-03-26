@@ -37,7 +37,7 @@ import TabContext from "@material-ui/lab/TabContext";
 
 var handleChange = function () {
 }
-var value = 1
+var value = "1"
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>

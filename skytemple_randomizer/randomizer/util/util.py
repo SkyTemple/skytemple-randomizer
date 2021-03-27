@@ -46,16 +46,19 @@ def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[
         yield lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
 
 
-def clone_missing_portraits(kao: Kao, index: int):
+def clone_missing_portraits(kao: Kao, index: int, *, force=False):
     """Fills all missing kao subindex slots for index with the first portrait."""
     cloned = kao.get(index, 0)
     # Skip mirrored slots.
     for i in range(2, SUBENTRIES, 2):
         if kao.get(index, i) is None:
             kao.set(index, i, cloned)
+        elif force:
+            kao.get(index, i).set(cloned.get())
 
 
 def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False) -> List[int]:
+    from skytemple_randomizer.randomizer.special import fun
     if conf['pokemon']['ban_unowns']:
         ents = ALLOWED_MD_IDS_BASE - UNOWN_IDS
     else:
@@ -66,6 +69,8 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False) -> List[int]
             if ent + NUM_ENTITIES <= 1154:
                 to_add.add(ent + NUM_ENTITIES)
         ents.update(to_add)
+    if fun.is_fun_allowed():
+        return fun.get_allowed_md_ids(ents)
     return list(ents)
 
 

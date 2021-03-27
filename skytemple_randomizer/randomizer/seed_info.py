@@ -33,6 +33,7 @@ from skytemple_files.script.ssb.constants import SsbConstant
 from skytemple_files.script.ssb.script_compiler import ScriptCompiler
 from skytemple_randomizer.config import version, MovesetConfig, DungeonWeatherConfig, DungeonModeConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
+from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
 from skytemple_randomizer.status import Status
 
@@ -356,6 +357,8 @@ macro patches() {{
         return cases
 
     def _artist_credits(self):
+        if fun.is_fun_allowed():
+            return fun.get_artist_credits(self.rom, self.static_data)
         credit_map: Dict[str, ArtistCredits] = {}
         credits = ""
 

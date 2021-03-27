@@ -37,6 +37,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import Global, RandomizerConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
+from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.status import Status
 
 
@@ -47,6 +48,8 @@ class PortraitDownloader(AbstractRandomizer):
 
     def step_count(self) -> int:
         if self.config['improvements']['download_portraits']:
+            if fun.is_fun_allowed():
+                return 1
             return 4
         return 0
 
@@ -71,6 +74,11 @@ class PortraitDownloader(AbstractRandomizer):
             config = json.loads(url.read().decode())
 
         kao = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
+
+        if fun.is_fun_allowed():
+            status.step("Downloading portraits...")
+            fun.replace_portraits(self.rom, self.static_data)
+            return status.done()
 
         status.step("Downloading portraits for NPCs...")
         for actor in actor_list.list:

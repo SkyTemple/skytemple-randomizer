@@ -14,7 +14,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
+from random import choice, randrange
 from typing import Dict
 
 from skytemple_files.common.types.file_types import FileType
@@ -94,6 +94,9 @@ class NpcRandomizer(AbstractRandomizer):
                         new_entid -= NUM_ENTITIES
                 else:
                     new_entid = choice(get_allowed_md_ids(self.config, True))
+                    # Make it less likely to get duplicates
+                    while new_entid in mapped.values() and randrange(0, 4) != 0:
+                        new_entid = choice(get_allowed_md_ids(self.config, True))
                     # Due to the way the string replacing works we don't want anything that previously existed.
                     while md.get_by_index(new_entid).gender == Gender.INVALID or new_entid % NUM_ENTITIES in old_entid_bases:
                         new_entid = choice(get_allowed_md_ids(self.config, True))

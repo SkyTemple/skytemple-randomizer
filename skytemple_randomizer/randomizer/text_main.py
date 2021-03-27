@@ -49,6 +49,6 @@ class TextMainRandomizer(AbstractRandomizer):
         for cat in sorted(string_cats.values(), key=lambda c: c.begin):
             if cat.begin > current_index:
                 # yield a placeholder category
-                yield Pmd2StringBlock(f"({current_index} - {cat.begin - 1})", current_index, cat.begin)
+                yield Pmd2StringBlock(f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin)
             yield cat
             current_index = cat.end

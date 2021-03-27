@@ -26,12 +26,13 @@ from math import floor
 from typing import Optional
 
 import gi
+
+gi.require_version('Gtk', '3.0')
+
 import packaging.version
 
 from skytemple_files.common.version_util import check_newest_release, ReleaseType
 from skytemple_randomizer.randomizer.util.util import clear_script_cache
-
-gi.require_version('Gtk', '3.0')
 
 from ndspy.rom import NintendoDSRom
 

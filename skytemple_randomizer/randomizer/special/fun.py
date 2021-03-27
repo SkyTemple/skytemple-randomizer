@@ -97,7 +97,7 @@ class FunPortrait(Enum):
     SHANX = 438, FunArtistCredit.NOIVERN
     BUNEARY = 469, FunArtistCredit.REA
     PROBOPASS = 518, FunArtistCredit.DONKIN_DO
-    DIALGA = 525, FunArtistCredit.ADVOS
+    DIALGA = 525, FunArtistCredit.NOIVERN
     PDIALGA = 552, FunArtistCredit.ADVOS
     PALKIA = 528, FunArtistCredit.NOIVERN
     SHAYMIN = 534, FunArtistCredit.WINGCAPMAN

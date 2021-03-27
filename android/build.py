@@ -2,6 +2,7 @@
 import os
 import shutil
 import sys
+import traceback
 
 IGNORE_REQS = ['PyGObject', 'pycairo']
 ADDITIONAL_REQS = ['pillow == 7.0.0']
@@ -42,11 +43,13 @@ options = {
     'local-recipes': './recipes'
 }
 
+error = False
 os.makedirs('_prebuild')
 try:
-    # sudo cp /opt/android-sdk/ndk/19.2.5345600/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libunwind.a /opt/android-sdk/ndk/19.2.5345600/platforms/android-21/arch-arm/usr/lib/libunwind.a
     shutil.copy('main.py', '_prebuild/main.py')
     shutil.copytree('../skytemple_randomizer', '_prebuild/skytemple_randomizer')
+    with open('_prebuild/skytemple_randomizer/data/VERSION', 'w') as f:
+        f.write(__version__)
     shutil.rmtree('_prebuild/skytemple_randomizer/frontend/common_web/node_modules')
     os.chdir(os.path.join('_prebuild', 'skytemple_randomizer', 'frontend', 'common_web'))
     os.system(f'npm install --only=prod')
@@ -61,5 +64,13 @@ try:
         ToolchainCL()
     except BuildInterruptingException as exc:
         handle_build_exception(exc)
+        error = True
+except Exception as ex:
+    traceback.print_exc()
+    error = True
 finally:
     shutil.rmtree(os.path.join(absp, '_prebuild'))
+
+if error:
+    print("Build error.")
+    exit(1)

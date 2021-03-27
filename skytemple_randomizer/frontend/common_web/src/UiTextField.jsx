@@ -16,30 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
  */
-var autoprefixer = require('autoprefixer');
 
-module.exports = [{
-  entry: ['./src/view.jsx'],
-  mode: 'production',
-  output: {
-    filename: 'bundle.js',
-  },
-  devtool: 'source-map',
-  resolve: {
-    extensions: [".js", ".json", ".jsx"]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx$/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-react-jsx']
-          }
-        }]
-      }
-    ]
-  }
-}];
+import Paper from "@material-ui/core/Paper";
+import TextField from "@material-ui/core/TextField";
+import React from "react";
+import {useSettingsStyles} from "./theme";
+
+export function UiTextField(props) {
+    const classes = useSettingsStyles();
+    return (
+        <Paper className={classes.paper}>
+            <TextField
+                id={props.id}
+                label={props.label}
+                placeholder={props.label}
+                value={props.initial}
+                margin="none"
+                multiline
+                rows={24}
+            />
+        </Paper>
+    )
+}

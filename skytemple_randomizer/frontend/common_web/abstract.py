@@ -19,7 +19,10 @@ import os
 import sys
 
 import tornado.web
-from skytemple_randomizer.config import data_dir, RandomizerConfig
+
+from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
+from skytemple_files.data.md.model import Ability
+from skytemple_randomizer.config import data_dir, RandomizerConfig, version
 from abc import ABC, abstractmethod
 
 
@@ -48,10 +51,13 @@ class ConfigDocDumper:
 class AbstractWebHandler(tornado.web.RequestHandler, ABC):
     async def get(self, *args, **kwargs):
         await self.render(
-            'view.html.jinja2',
+            'view.html.jinja2',  # Note: Tornado does not actually use jinja2! But it's close.
             additional_scripts=self.get_additional_scripts(),
             default_randomizer_config=self.get_default_config(),
-            help_texts=json.dumps(self.get_help_texts())
+            help_texts=json.dumps(self.get_help_texts()),
+            version=version(),
+            dungeon_names=self.get_dungeon_names(),
+            ability_names=self.get_ability_names()
         )
 
     def get_default_config(self):
@@ -60,6 +66,13 @@ class AbstractWebHandler(tornado.web.RequestHandler, ABC):
 
     def get_help_texts(self):
         return ConfigDocDumper().apply()
+
+    def get_dungeon_names(self):
+        static_data = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
+        return {dungeon.id: dungeon.name for dungeon in static_data.dungeon_data.dungeons}
+
+    def get_ability_names(self):
+        return {ability.value: ability.print_name for ability in Ability if ability.value != 0xFF}
 
     @abstractmethod
     def get_additional_scripts(self):
@@ -78,6 +91,8 @@ def get_base_tornado_config(handler_cls, handler_arguments=None):
          {'path': os.path.join(DEFAULT_APP_CONFIG['static_path'], 'favicon.ico')}),
         (r'/modules/(.*)', tornado.web.StaticFileHandler,
          {'path': os.path.join(os.path.dirname(__file__), 'node_modules')}),
+        (r'/back_illust/(.*)', tornado.web.StaticFileHandler,
+         {'path': os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'back_illust')}),
     ]
 
     return DEFAULT_APP_CONFIG, DEFAULT_ROUTES

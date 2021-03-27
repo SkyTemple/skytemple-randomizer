@@ -24,14 +24,16 @@
     <meta name="theme-color" content="#2f343f">
     <link rel="stylesheet" href="/modules/material-icons/iconfont/material-icons.css">
     <link rel="stylesheet" href="/modules/material-icons/css/material-icons.min.css">
-    <style type="text/css">body {margin: 0; background-color: #383c4a;}</style>
-    <link rel="stylesheet" href="/static/dist/bundle.css">
+    <style type="text/css">body, html, #root {margin: 0; background-color: #383c4a; height: 100%;}</style>
 </head>
 <body>
 <div id="root"></div>
 <script>
     window.loadedConfig = JSON.parse({% raw json_encode(default_randomizer_config) %});
-    window.helpTexts = JSON.parse({% raw json_encode(help_texts) %});
+    window.HELP_TEXTS = JSON.parse({% raw json_encode(help_texts) %});
+    window.VERSION = "{{ version }}";
+    window.DUNGEON_NAMES = {% raw json_encode(dungeon_names) %};
+    window.ABILITY_NAMES = {% raw json_encode(ability_names) %};
 </script>
 <script src="/static/dist/bundle.js"></script>
 {% for script in additional_scripts %}

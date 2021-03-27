@@ -18,7 +18,7 @@
  */
 
 import {red} from '@material-ui/core/colors';
-import {createMuiTheme} from '@material-ui/core/styles';
+import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 
 // A custom theme for this app
 const theme = createMuiTheme({
@@ -38,8 +38,30 @@ const theme = createMuiTheme({
         },
         background: {
             default: '#383c4a',
+            paper: '#404552'
         },
     },
 });
-//#e7ecf3;
+
 export default theme;
+
+export const useSettingsStyles = makeStyles((theme) => ({
+    appbar: {
+        backgroundColor: '#2f343f'
+    },
+    paper: {
+        padding: theme.spacing(2),
+        position: "relative",
+    },
+    toolbar: {
+        position: "relative",
+    },
+    helpButton: {
+        position: "absolute",
+        right: theme.spacing(2),
+        top: "calc(50% - 16px)"
+    },
+    elem: {
+        maxWidth: "85%"
+    }
+}));

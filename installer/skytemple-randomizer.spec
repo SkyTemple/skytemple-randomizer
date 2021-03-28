@@ -11,8 +11,8 @@ mingw = os.getenv("MINGW_VERSION", "mingw64")
 additional_files = []
 additional_datas = [
     (os.path.join(pkg_path, 'data'), 'data'),
-    (os.path.join(pkg_path, '*.glade'), '.'),
-    (os.path.join(pkg_path, '*.css'), '.'),
+    (os.path.join(pkg_path, 'frontend', 'gtk', '*.glade'), '.'),
+    (os.path.join(pkg_path, 'frontend', 'gtk', '*.css'), '.'),
     (os.path.join(site_packages, 'skytemple_icons', 'hicolor'), 'skytemple_icons/hicolor'),
     (os.path.join(site_packages, 'skytemple_files', '_resources'), 'skytemple_files/_resources'),
     (os.path.join('.', 'armips.exe'), 'skytemple_files/_resources'),

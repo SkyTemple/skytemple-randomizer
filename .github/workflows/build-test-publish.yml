@@ -134,7 +134,7 @@ jobs:
         with:
           name: skytemple-windows-app-${{ matrix.arch }}
           path: |
-            installer/skytemple-randomizer-*-install-*.exe
+            installer/skytemple-randomizer-*.exe
 
   package-mac:
     needs: build

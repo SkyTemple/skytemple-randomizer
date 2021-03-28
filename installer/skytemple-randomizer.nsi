@@ -25,7 +25,7 @@ RequestExecutionLevel admin
 
 Name "${PRODUCT_NAME} - ${PRODUCT_VERSION}"
 Icon "skytemple_randomizer.ico"
-OutFile "skytemple-randomizer-${PRODUCT_VERSION}-install.exe"
+OutFile "skytemple-randomizer-${PRODUCT_VERSION}-x64-install.exe"
 InstallDir "$PROGRAMFILES64\${PRODUCT_NAME}"
 ShowInstDetails show
 

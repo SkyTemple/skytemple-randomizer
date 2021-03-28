@@ -50,7 +50,7 @@ def clone_missing_portraits(kao: Kao, index: int, *, force=False):
     """Fills all missing kao subindex slots for index with the first portrait."""
     cloned = kao.get(index, 0)
     # Skip mirrored slots.
-    for i in range(2, SUBENTRIES, 2):
+    for i in range(2, SUBENTRIES, 1 if force else 2):
         if kao.get(index, i) is None:
             kao.set(index, i, cloned)
         elif force:

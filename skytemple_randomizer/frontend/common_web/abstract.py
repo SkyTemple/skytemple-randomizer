@@ -91,8 +91,8 @@ def get_base_tornado_config(handler_cls, handler_arguments=None):
          {'path': os.path.join(DEFAULT_APP_CONFIG['static_path'], 'favicon.ico')}),
         (r'/modules/(.*)', tornado.web.StaticFileHandler,
          {'path': os.path.join(os.path.dirname(__file__), 'node_modules')}),
-        (r'/back_illust/(.*)', tornado.web.StaticFileHandler,
-         {'path': os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'back_illust')}),
+        (r'/data/(.*)', tornado.web.StaticFileHandler,
+         {'path': os.path.join(os.path.dirname(__file__), '..', '..', 'data')}),
     ]
 
     return DEFAULT_APP_CONFIG, DEFAULT_ROUTES

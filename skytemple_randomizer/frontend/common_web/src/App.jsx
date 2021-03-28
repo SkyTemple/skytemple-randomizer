@@ -36,6 +36,8 @@ import Welcome from "./Welcome";
 import Drawer from "@material-ui/core/Drawer";
 import About from "./About";
 import Settings from "./Settings";
+import Dialog from "@material-ui/core/Dialog";
+import {RandomizerPanel} from "./RandomizerPanel";
 
 const useStyles = makeStyles((theme) => ({
     appbar: {
@@ -67,6 +69,7 @@ function a11yProps(index) {
 export default function App() {
     const [activeTab, setActiveTab] = useState(0);
     const [aboutDrawer, setAboutDrawer] = useState(false);
+    const [randomizeViewOpen, setRandomizeViewOpen] = useState(false);
     const classes = useStyles();
     const theme = useTheme();
 
@@ -80,6 +83,14 @@ export default function App() {
             return;
         }
         setAboutDrawer(open);
+    };
+
+    const handleOpenRandomizeView = () => {
+        setRandomizeViewOpen(true);
+    };
+
+    const handleCloseRandomizeView = () => {
+        setRandomizeViewOpen(false);
     };
 
     return (
@@ -144,9 +155,10 @@ export default function App() {
                     <Settings for="text" />
                 </TabPanel>
             </SwipeableViews>
-            <Fab color="primary" className={classes.fab}>
+            <Fab color="primary" className={classes.fab} onClick={handleOpenRandomizeView}>
                 <Shuffle/>
             </Fab>
+            <RandomizerPanel open={randomizeViewOpen} onClose={handleCloseRandomizeView}/>
             <Drawer anchor='right' open={aboutDrawer} onClose={toggleAboutDrawer(false)}>
                 <About onClose={toggleAboutDrawer(false)}/>
             </Drawer>

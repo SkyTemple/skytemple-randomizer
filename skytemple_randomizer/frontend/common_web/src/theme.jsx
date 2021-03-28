@@ -63,5 +63,5 @@ export const useSettingsStyles = makeStyles((theme) => ({
     },
     elem: {
         maxWidth: "85%"
-    }
+    },
 }));

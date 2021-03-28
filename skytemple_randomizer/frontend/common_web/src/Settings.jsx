@@ -46,8 +46,8 @@ const SETTINGS_CONFIG = {
         traps: ["Randomize Traps?", UiSwitch],
         fixed_rooms: ["Randomize Boss Room Layouts?", UiSwitch],
         settings: ["Dungeon Settings", UiGridTable, {
-            _name: ["Dungeon", String, (id) => window.DUNGEON_NAMES[id]],
-            randomize: ["Ramdomize?", UiSwitch],
+            _name: ["Dungeon", String, (id) => id.toString() + ': ' + window.DUNGEON_NAMES[id]],
+            randomize: ["Randomize?", UiSwitch],
             monster_houses: ["Allow Monster Houses?", UiSwitch],
             randomize_weather: ["Randomize Weather?", UiSwitch],
             enemy_iq: ["Randomize IQ?", UiSwitch],
@@ -128,11 +128,11 @@ export default function Settings(props) {
                 let adata = {};
                 for (const ability_id in window.ABILITY_NAMES) {
                     const ability_name = window.ABILITY_NAMES[ability_id];
-                    adata[ability_id] = ([ability_id, window.loadedConfig[props.for][fieldName].includes(parseInt(ability_id)), ability_name]);
+                    adata[ability_id] = ([ability_id.toString() + ': ' + ability_name, window.loadedConfig[props.for][fieldName].includes(parseInt(ability_id))]);
                 }
                 field = <UiGridTable
                     id={id}
-                    headings={["ID", "Use?", "Ability"]}
+                    headings={["Ability", "Use?"]}
                     switches={[1]}
                     data={adata}
                     title={fieldConfig[0]}

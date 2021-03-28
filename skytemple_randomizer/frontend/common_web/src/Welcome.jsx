@@ -37,7 +37,7 @@ export default function Welcome() {
     return (
         <Container maxWidth="sm">
             <Box>
-                <img src="/static/logo.png" className={classes.logo} />
+                <img src="/data/icons/hicolor/512x512/apps/skytemple.png" className={classes.logo} />
                 <Typography variant="h5" align="center">
                     <p>
                         Welcome to the SkyTemple Randomizer!
@@ -48,7 +48,7 @@ export default function Welcome() {
                         Have fun creating a new and unique Explorers of Sky Experience!
                     </p>
                     <p>
-                        Get started by clicking the play icon.<br/>
+                        Get started by clicking the 'shuffle' icon.<br/>
                         You can customize randomization settings in the other tabs.
                     </p>
                     <p>

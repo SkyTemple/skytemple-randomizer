@@ -138,6 +138,7 @@ FunPortraitLike = Union[CustomFunPortrait, FunPortrait]
 
 
 def is_fun_allowed():
+    return True  # force enable fun
     if 'SKYTEMPLE_FUN' in os.environ:
         return bool(int(os.environ['SKYTEMPLE_FUN']))
     now = datetime.now()

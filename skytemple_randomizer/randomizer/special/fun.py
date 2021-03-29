@@ -110,6 +110,14 @@ class FunPortrait(Enum):
     DRAGONITE = 149, FunArtistCredit.NOIVERN
     SABLEYE = 330, FunArtistCredit.BORZOI
     SABLEYE2 = 573, FunArtistCredit.BORZOI
+    EEVEE = 133, FunArtistCredit.REPPAMON
+    VAPOREON = 134, FunArtistCredit.REPPAMON
+    JOLTEON = 135, FunArtistCredit.REPPAMON
+    FLAREON = 136, FunArtistCredit.REPPAMON
+    ESPEON = 196, FunArtistCredit.REPPAMON
+    UMBREON = 197, FunArtistCredit.REPPAMON
+    LEAFEON = 512, FunArtistCredit.REPPAMON
+    GLACEON = 513, FunArtistCredit.REPPAMON
 
     def __new__(cls, *args, **kwargs):
         obj = object.__new__(cls)

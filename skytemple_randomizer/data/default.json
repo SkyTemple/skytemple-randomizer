@@ -192,7 +192,8 @@
     "download_portraits": true,
     "patch_moveshortcuts": true,
     "patch_unuseddungeonchance": true,
-    "patch_totalteamcontrol": false
+    "patch_totalteamcontrol": false,
+    "personality_test": 1
   },
   "pokemon": {
     "iq_groups": true,

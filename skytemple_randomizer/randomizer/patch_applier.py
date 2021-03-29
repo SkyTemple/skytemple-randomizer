@@ -17,6 +17,7 @@
 from time import sleep
 
 from skytemple_files.patch.patches import Patcher
+from skytemple_randomizer.config import PersonalityTestConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
 
@@ -29,6 +30,8 @@ class PatchApplier(AbstractRandomizer):
         if self.config['improvements']['patch_unuseddungeonchance']:
             i += 1
         if self.config['improvements']['patch_totalteamcontrol']:
+            i += 1
+        if self.config['improvements']['personality_test'] != PersonalityTestConfig.TEST:
             i += 1
         return i
 
@@ -64,5 +67,13 @@ class PatchApplier(AbstractRandomizer):
                 patcher.apply('PartnersTriggerHiddenTraps')
             if not patcher.is_applied('ReduceJumpcutPauseTime'):
                 patcher.apply('ReduceJumpcutPauseTime')
+
+        if self.config['improvements']['personality_test'] != PersonalityTestConfig.TEST:
+            status.step("Apply personality test patches...")
+            if not patcher.is_applied('ChooseStarter'):
+                patcher.apply('ChooseStarter')
+            if self.config['improvements']['personality_test'] == PersonalityTestConfig.ASK:
+                if not patcher.is_applied('SkipQuiz'):
+                    patcher.apply('SkipQuiz')
 
         status.done()

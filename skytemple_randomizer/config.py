@@ -115,11 +115,18 @@ class DungeonsConfigDoc:
         Please note that entering story dungeons prematurely can mess with the game's story progression."""
 
 
+class PersonalityTestConfig(Enum):
+    TEST = 0
+    TEST_AND_ASK = 1
+    ASK = 2
+
+
 class ImprovementsConfig(TypedDict):
     download_portraits: bool
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
     patch_totalteamcontrol: bool
+    personality_test: PersonalityTestConfig
 
 
 class ImprovementsConfigDoc:
@@ -134,6 +141,10 @@ class ImprovementsConfigDoc:
     patch_totalteamcontrol = \
         f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
         Patch by Cipnit."""
+    personality_test = \
+        f"""Change the behaviour of the hero starter selection in the personality test, using patches by irdkwia. 
+        You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely. 
+        Please note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again."""
 
 
 class MovesetConfig(Enum):
@@ -263,6 +274,8 @@ class ConfigFileLoader:
                         target[field] = True
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
                         target[field] = False
+                    elif field == 'personality_test':
+                        target[field] = 1
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)

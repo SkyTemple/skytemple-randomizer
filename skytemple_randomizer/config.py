@@ -279,6 +279,11 @@ class ConfigFileLoader:
             v[CLASSREF] = typ
             return v
         elif hasattr(typ, '__bases__') and Enum in typ.__bases__:
+            if isinstance(target, str):
+                try:
+                    target = int(target)
+                except ValueError:
+                    pass
             if not isinstance(target, int):
                 raise ValueError(f"Value in JSON must be an integer for {typ}.")
             return typ(target)

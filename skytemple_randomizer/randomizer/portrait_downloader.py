@@ -95,10 +95,11 @@ class PortraitDownloader(AbstractRandomizer):
         self.rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
 
         def add_rows():
-            o = Global.main_builder.get_object('store_debug_portraits')
-            o.clear()
-            for row in self._debugs:
-                o.append(row)
+            if Global.main_builder:
+                o = Global.main_builder.get_object('store_debug_portraits')
+                o.clear()
+                for row in self._debugs:
+                    o.append(row)
 
         self.frontend.idle_add(add_rows)
 

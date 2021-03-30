@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import glob
 import os
+from os.path import exists, join
 
 import sh
 from pythonforandroid.logger import info, shprint
@@ -48,6 +49,9 @@ class SkyTempleRustRecipe(CompiledComponentsPythonRecipe):
         assert os.path.exists(env['PYO3_CROSS_LIB_DIR']), env['PYO3_CROSS_LIB_DIR']
         assert os.path.exists(env['PYO3_CROSS_INCLUDE_DIR']), env['PYO3_CROSS_INCLUDE_DIR']
         return env
+
+    def should_build(self, arch):
+        return len(glob.glob(os.path.join(self.get_build_dir(arch.arch), 'build', 'lib', 'skytemple_rust', '*.so'))) < 1
 
     def build_compiled_components(self, arch):
         info('Building compiled components in {}'.format(self.name))

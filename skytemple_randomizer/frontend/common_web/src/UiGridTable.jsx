@@ -42,6 +42,7 @@ import Collapse from "@material-ui/core/Collapse";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
+import TextField from "@material-ui/core/TextField";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -133,6 +134,7 @@ function cutObjectIntoChunks(object, size) {
 export function UiGridTable(props) {
     const classes = useSettingsStyles();
     const states = {}
+    const mapping = {}
     for (const rowId in props.data) {
         for (const cellId in props.data[rowId]) {
             if (props.switches.includes(parseInt(cellId))) {
@@ -140,6 +142,7 @@ export function UiGridTable(props) {
                 const data = props.data[rowId][cellId] instanceof Function ? props.data[rowId][cellId](rowId) : props.data[rowId][cellId];
                 const [state, setState] = useState(data);
                 states[id] = {val: state, set: setState};
+                mapping[id] = {rowId, cellId};
             }
         }
     }
@@ -147,6 +150,7 @@ export function UiGridTable(props) {
     const handleChange = (id) => {
         return (event, newValue) => {
             states[id].set(newValue);
+            props.onChange(props.id, mapping[id].rowId, mapping[id].cellId, newValue);
         }
     };
 

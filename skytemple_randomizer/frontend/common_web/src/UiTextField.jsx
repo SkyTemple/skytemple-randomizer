@@ -30,10 +30,11 @@ export function UiTextField(props) {
                 id={props.id}
                 label={props.label}
                 placeholder={props.label}
-                value={props.initial}
+                defaultValue={props.initial}
                 margin="none"
                 multiline
                 rows={24}
+                onChange={(event) => props.onChange(props.id, event.target.value)}
             />
         </Paper>
     )

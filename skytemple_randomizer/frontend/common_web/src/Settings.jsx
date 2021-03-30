@@ -24,74 +24,13 @@ import {UiTextField} from "./UiTextField";
 import {UiSwitch} from "./UiSwitch";
 import {UiGridTable} from "./UiGridTable";
 import {UiSelect} from "./UiSelect";
-
-const SETTINGS_CONFIG = {
-    starters_npcs: {
-        starters: ["Randomize Starters?", UiSwitch],
-        npcs: ["Randomize NPCs and Bosses?", UiSwitch],
-        global_items: ["Randomize Treasure Town shop and dungeon rewards?", UiSwitch],
-        overworld_music: ["Randomize Overworld Music?", UiSwitch]
-    },
-    dungeons: {
-        mode: ["Mode", UiSelect, {0: "Fully random floors", 1: "Keep floors in a dungeon similar"}],
-        layouts: ["Randomize Layouts and Tilesets?", UiSwitch],
-        weather: ["Randomize Weather?", UiSelect, {
-            0: "Don't randomize",
-            1: "Fully random every visit",
-            2: "Random pre-generated",
-            3: "Random pre-generated, lower chance of damaging weather"
-        }],
-        items: ["Randomize Items?", UiSwitch],
-        pokemon: ["Randomize Pokémon Spawns?", UiSwitch],
-        traps: ["Randomize Traps?", UiSwitch],
-        fixed_rooms: ["Randomize Boss Room Layouts?", UiSwitch],
-        settings: ["Dungeon Settings", UiGridTable, {
-            _name: ["Dungeon", String, (id) => id.toString() + ': ' + window.DUNGEON_NAMES[id]],
-            randomize: ["Randomize?", UiSwitch],
-            monster_houses: ["Allow Monster Houses?", UiSwitch],
-            randomize_weather: ["Randomize Weather?", UiSwitch],
-            enemy_iq: ["Randomize IQ?", UiSwitch],
-            unlock: ["Unlock?", UiSwitch],
-        }]
-    },
-    improvements: {
-        download_portraits: ["Download missing portraits?", UiSwitch],
-        patch_moveshortcuts: ["Apply \"MoveShortcuts\" patch?", UiSwitch],
-        patch_unuseddungeonchance: ["Apply \"UnusedDungeonChance\" patch?", UiSwitch],
-        patch_totalteamcontrol: ["Apply \"Complete Team Control\" patches?", UiSwitch],
-        personality_test:  ["Personality Test Starter Settings", UiSelect, {
-            0: "Default: Ask for Personality",
-            1: "Ask for Personality + Allow Selection",
-            2: "Select Manually"
-        }],
-    },
-    pokemon: {
-        iq_groups: ["Randomize IQ Groups?", UiSwitch],
-        abilities: ["Randomize Abilities?", UiSwitch],
-        typings: ["Randomize Typings?", UiSwitch],
-        movesets: ["Randomize Movesets?", UiSelect, {
-            0: "No",
-            1: "Yes, fully random",
-            2: "Yes, first move deals damage",
-            3: "Yes, first move deals damage + STAB"
-        }],
-        ban_unowns: ["Ban Unowns?", UiSwitch],
-        abilities_enabled: ["Enabled Abilities", 'abilities_enabled']
-    },
-    locations: {
-        randomize: ["Randomize Location Names?", UiSwitch],
-        first: ["First Word", UiTextField],
-        second: ["Second Word", UiTextField],
-    },
-    chapters: {
-        randomize: ["Randomize Chapter Names?", UiSwitch],
-        text: ["Name List", UiTextField]
-    },
-    text: {
-        main: ["Randomize Main Texts?", UiSwitch],
-        story: ["Randomize Story Dialogue?", UiSwitch],
-    }
-}
+import {
+    ID_PREFIX,
+    SETTINGS_CONFIG,
+    updateAbilitiesEnabledInConfig,
+    updateGenericGridInConfig,
+    updateInConfig
+} from "./config";
 
 function parseHelp(txt) {
     return txt ? txt : 'No help available.';
@@ -102,7 +41,7 @@ export default function Settings(props) {
     for (const fieldName in SETTINGS_CONFIG[props.for]) {
         const fieldConfig = SETTINGS_CONFIG[props.for][fieldName];
         let field;
-        const id = props.for + '-' + fieldName;
+        const id = ID_PREFIX + props.for + '-' + fieldName;
         switch (fieldConfig[1]) {
             case UiSwitch:
                 field = <UiSwitch
@@ -110,6 +49,7 @@ export default function Settings(props) {
                     initial={window.loadedConfig[props.for][fieldName]}
                     label={fieldConfig[0]}
                     help={parseHelp(window.HELP_TEXTS[props.for][fieldName])}
+                    onChange={updateInConfig}
                 />
                 break;
             case UiSelect:
@@ -119,6 +59,7 @@ export default function Settings(props) {
                     options={fieldConfig[2]}
                     label={fieldConfig[0]}
                     help={parseHelp(window.HELP_TEXTS[props.for][fieldName])}
+                    onChange={updateInConfig}
                 />
                 break;
             case UiTextField:
@@ -126,6 +67,7 @@ export default function Settings(props) {
                     id={id}
                     initial={window.loadedConfig[props.for][fieldName]}
                     label={fieldConfig[0]}
+                    onChange={updateInConfig}
                 />
                 break;
             case 'abilities_enabled':
@@ -142,6 +84,7 @@ export default function Settings(props) {
                     data={adata}
                     title={fieldConfig[0]}
                     help={parseHelp(window.HELP_TEXTS[props.for][fieldName])}
+                    onChange={updateAbilitiesEnabledInConfig}
                 />
                 break;
             case UiGridTable:
@@ -186,6 +129,7 @@ export default function Settings(props) {
                     data={data}
                     title={fieldConfig[0]}
                     help={parseHelp(window.HELP_TEXTS[props.for][fieldName])}
+                    onChange={updateGenericGridInConfig}
                 />
                 break;
             default:

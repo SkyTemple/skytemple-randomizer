@@ -31,6 +31,7 @@ export function UiSelect(props) {
 
     const handleChange = (event) => {
         setState(event.target.value);
+        props.onChange(props.id, event.target.value);
     };
     const items = [];
     for (const option in props.options) {
@@ -44,8 +45,8 @@ export function UiSelect(props) {
             <FormControl className={classes.formControl}>
                 <InputLabel id={props.id + '-label'}>{props.label}</InputLabel>
                 <NativeSelect
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
+                    labelId={props.id + '-label'}
+                    id={props.id}
                     value={state}
                     onChange={handleChange}
                     className={classes.elem}

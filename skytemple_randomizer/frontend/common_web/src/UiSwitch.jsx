@@ -32,6 +32,7 @@ export function UiSwitch(props) {
 
     const handleChange = (event, newValue) => {
         setState(newValue);
+        props.onChange(props.id, newValue);
     };
 
     return (

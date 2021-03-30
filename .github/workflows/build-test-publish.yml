@@ -203,3 +203,72 @@ jobs:
           name: skytemple-randomizer-mac-dmg
           path: |
             installer/SkyTempleRandomizer*.dmg
+
+  package-android:
+    runs-on: ubuntu-20.04
+    name: Build Android APK
+    steps:
+      # For tags we assume the version in setup.py is correct!
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Rewrite version for dev if not tag
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        run: |
+          perl -i -pe "s/__version__\s*=\s*'(.*?)(rc.*|a.*|post.*)?'/__version__='\1.dev0+${GITHUB_SHA::8}'/" setup.py
+          echo "SKYTEMPLE_USE_MASTER=1" >> $GITHUB_ENV
+      - name: Ubuntu deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 lld ccache
+      - name: Checkout python-for-android
+        uses: actions/checkout@v2
+        with:
+          repository: Parakoopa/python-for-android
+          path: android/python-for-android
+          ref: skytemple-randomizer
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+          target: armv7-linux-androideabi
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+      - name: Install NDK & platforms
+        run: sdkmanager "platforms;android-27" "platforms;android-21" "ndk;19.2.5345600" "build-tools;30.0.3" "tools"
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+      - name: Install p4a
+        run: |
+          python -m pip install -e android/python-for-android
+      - name: Build
+        run: |
+          cd android
+          python ./build.py
+        env:
+          SKYTEMPLE_BUILD_PRODUCTION: "1"
+          ANDROIDSDK: "${{ env.ANDROID_SDK_ROOT}}"
+          ANDROIDNDK: "${{ env.ANDROID_SDK_ROOT}}/ndk/19.2.5345600"
+      - uses: r0adkll/sign-android-release@v1
+        name: Sign app APK
+        # ID used to access action output
+        id: sign_app
+        with:
+          releaseDirectory: .
+          signingKeyBase64: ${{ secrets.ANDROID_SIGNING_KEY }}
+          alias: ${{ secrets.ANDROID_ALIAS }}
+          keyStorePassword: ${{ secrets.ANDROID_KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: android-apk
+          path: ${{steps.sign_app.outputs.signedReleaseFile}}

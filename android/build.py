@@ -69,6 +69,8 @@ try:
     for k, v in options.items():
         sys.argv += [f'--{k}', str(v)]
     sys.argv += ['--no-optimize-python']
+    if os.getenv('SKYTEMPLE_BUILD_PRODUCTION', False):
+        sys.argv += ['--release']
 
     try:
         from pythonforandroid.toolchain import ToolchainCL

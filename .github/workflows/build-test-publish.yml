@@ -243,4 +243,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: android-apk
-          path: ${{steps.sign_app.outputs.signedReleaseFile}}
+          path: "android/*.apk"

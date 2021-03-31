@@ -46,7 +46,7 @@ options = {
     'requirements': 'tornado>=6.1,' + ','.join(install_requires).replace(' ', ''),
     'sdk-dir': os.getenv('ANDROIDSDK', '/opt/android-sdk'),
     'ndk-dir': os.getenv('ANDROIDNDK', '/opt/android-sdk/ndk/19.2.5345600'),
-    'android-api': int(os.getenv('ANDROIDAPI', '27')),
+    'android-api': int(os.getenv('ANDROIDAPI', '29')),
     'ndk-api': int(os.getenv('NDKAPI', '21')),
     'port': 44235,
     'private': '_prebuild',

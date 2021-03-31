@@ -35,6 +35,7 @@ from skytemple_files.dungeon_data.mappa_bin.trap_list import MappaTrapList
 from skytemple_files.dungeon_data.mappa_g_bin.mappa_converter import convert_mappa_to_mappag
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons
 from skytemple_randomizer.config import DungeonWeatherConfig, RandomizerConfig, DungeonModeConfig
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import sample_with_minimum_distance, get_allowed_md_ids
 from skytemple_randomizer.status import Status
@@ -225,8 +226,8 @@ MAX_ITEMS_PER_CAT = 18
 
 
 class DungeonRandomizer(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
-        super().__init__(config, rom, static_data, seed)
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
+        super().__init__(config, rom, static_data, seed, frontend)
 
         self.dungeons = HardcodedDungeons.get_dungeon_list(
             get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']),

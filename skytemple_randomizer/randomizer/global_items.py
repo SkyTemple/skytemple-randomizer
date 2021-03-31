@@ -41,6 +41,7 @@ from skytemple_files.dungeon_data.mappa_bin.item_list import MappaItemCategory, 
 from skytemple_files.list.items.handler import ItemListHandler
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.dungeon import ALLOWED_ITEM_CATS, ALLOWED_ITEM_IDS, \
     MAX_ITEMS_PER_CAT, MIN_ITEMS_PER_CAT
@@ -50,8 +51,8 @@ ITEM_LIST_COUNT = 25
 
 
 class GlobalItemsRandomizer(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
-        super().__init__(config, rom, static_data, seed)
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
+        super().__init__(config, rom, static_data, seed, frontend)
 
     def step_count(self) -> int:
         return 2 if self.config['starters_npcs']['global_items'] else 0

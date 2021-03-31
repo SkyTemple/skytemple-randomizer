@@ -203,3 +203,44 @@ jobs:
           name: skytemple-randomizer-mac-dmg
           path: |
             installer/SkyTempleRandomizer*.dmg
+
+  package-android:
+    runs-on: ubuntu-20.04
+    name: Build Android APK
+    # For whatever reason, I just could not get this build to work with a regular Ubuntu runner.
+    container: parakoopa/skytemple-randomizer-apk-buildenv
+    steps:
+      # For tags we assume the version in setup.py is correct!
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Rewrite version for dev if not tag
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        run: |
+          perl -i -pe "s/__version__\s*=\s*'(.*?)(rc.*|a.*|post.*)?'/__version__='\1.dev0+${GITHUB_SHA::8}'/" setup.py
+          echo "SKYTEMPLE_USE_MASTER=1" >> $GITHUB_ENV
+      - name: Checkout python-for-android
+        uses: actions/checkout@v2
+        with:
+          repository: Parakoopa/python-for-android
+          path: android/python-for-android
+          ref: skytemple-randomizer
+      - name: Install p4a
+        run: |
+          python -m pip install --ignore-installed -e android/python-for-android
+      - name: Load keystore file
+        run: |
+          echo '${{ secrets.ANDROID_SIGNING_KEY }}' | base64 -d > /tmp/keystore.jks
+      - name: Build
+        run: |
+          cd android
+          python ./build.py
+        env:
+          SKYTEMPLE_BUILD_PRODUCTION: "1"
+          P4A_RELEASE_KEYSTORE: /tmp/keystore.jks
+          P4A_RELEASE_KEYALIAS: ${{ secrets.ANDROID_ALIAS }}
+          P4A_RELEASE_KEYSTORE_PASSWD: ${{ secrets.ANDROID_KEY_STORE_PASSWORD }}
+          P4A_RELEASE_KEYALIAS_PASSWD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: android-apk
+          path: "android/*.apk"

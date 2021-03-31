@@ -20,15 +20,17 @@ from ndspy.rom import NintendoDSRom
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.status import Status
 
 
 class AbstractRandomizer(ABC):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
         self.config = config
         self.rom = rom
         self.static_data = static_data
         self.seed = seed
+        self.frontend = frontend
 
     @abstractmethod
     def step_count(self) -> int:

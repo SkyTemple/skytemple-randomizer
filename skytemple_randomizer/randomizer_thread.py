@@ -23,6 +23,7 @@ from ndspy.rom import NintendoDSRom
 
 from skytemple_files.common.util import get_ppmdu_config_for_rom
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.boss import BossRandomizer
 from skytemple_randomizer.randomizer.chapter import ChapterRandomizer
@@ -57,7 +58,7 @@ logger = logging.getLogger(__name__)
 
 
 class RandomizerThread(Thread):
-    def __init__(self, status: Status, rom: NintendoDSRom, config: RandomizerConfig, seed: str):
+    def __init__(self, status: Status, rom: NintendoDSRom, config: RandomizerConfig, seed: str, frontend: AbstractFrontend):
         """
         Inits the thread. If it's started() access to rom and config MUST NOT be done until is_done().
         is_done is also signaled by the status object's done() event.
@@ -74,7 +75,7 @@ class RandomizerThread(Thread):
         self.static_data = get_ppmdu_config_for_rom(rom)
         self.randomizers: List[AbstractRandomizer] = []
         for cls in RANDOMIZERS:
-            self.randomizers.append(cls(config, rom, self.static_data, seed))
+            self.randomizers.append(cls(config, rom, self.static_data, seed, frontend))
 
         self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None

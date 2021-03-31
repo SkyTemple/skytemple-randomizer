@@ -18,14 +18,15 @@ from random import choice
 
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.script.ssb.model import Ssb
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script
 from skytemple_randomizer.status import Status
 
 
 class OverworldMusicRandomizer(AbstractRandomizer):
-    def __init__(self, config, rom, static_data, seed):
-        super().__init__(config, rom, static_data, seed)
+    def __init__(self, config, rom, static_data, seed, frontend: AbstractFrontend):
+        super().__init__(config, rom, static_data, seed, frontend)
         self.bgs = [b for b in self.static_data.script_data.bgms if b.loops]
 
     def step_count(self) -> int:

@@ -22,8 +22,6 @@ import traceback
 import math
 import urllib.request
 
-from PIL import Image
-from gi.repository import GLib
 from ndspy.rom import NintendoDSRom
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
@@ -36,14 +34,15 @@ from skytemple_files.hardcoded.personality_test_starters import HardcodedPersona
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import Global, RandomizerConfig
+from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.status import Status
 
 
 class PortraitDownloader(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str):
-        super().__init__(config, rom, static_data, seed)
+    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
+        super().__init__(config, rom, static_data, seed, frontend)
         self._debugs = []
 
     def step_count(self) -> int:
@@ -96,12 +95,13 @@ class PortraitDownloader(AbstractRandomizer):
         self.rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
 
         def add_rows():
-            o = Global.main_builder.get_object('store_debug_portraits')
-            o.clear()
-            for row in self._debugs:
-                o.append(row)
+            if Global.main_builder:
+                o = Global.main_builder.get_object('store_debug_portraits')
+                o.clear()
+                for row in self._debugs:
+                    o.append(row)
 
-        GLib.idle_add(add_rows)
+        self.frontend.idle_add(add_rows)
 
         status.done()
 

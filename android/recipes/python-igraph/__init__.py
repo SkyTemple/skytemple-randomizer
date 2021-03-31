@@ -49,9 +49,6 @@ class PythonIgraphVersionRecipe(CppCompiledComponentsPythonRecipe):
         env['LDFLAGS'] += env.get('LDFLAGS', '') + " -l{}".format(
                 self.stl_lib_name
             )
-        env['MAKE'] = 'make -j2'
-        os.system('ls -la /usr/local/lib/android/sdk/ndk/19.2.5345600/sources/cxx-stl/llvm-libc++/include')
-        exit(1)
         # Fix PATH:
         env['PATH'] = env['PATH'].replace('\n', '')
         return env

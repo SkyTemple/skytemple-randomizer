@@ -35,7 +35,6 @@ class SkyTempleRustRecipe(CompiledComponentsPythonRecipe):
     def get_recipe_env(self, arch=None, with_flags_in_cc=True):
         env = super().get_recipe_env(arch, with_flags_in_cc)
         env['RUST_LOG'] = 'debug'
-        env['CARGO_TERM_VERBOSE'] = 'verbose'
         env['PKG_CONFIG_ALLOW_CROSS'] = '1'
         env['CARGO_BUILD_TARGET'] = 'armv7-linux-androideabi'
         link_root = self.ctx.python_recipe.link_root(arch)

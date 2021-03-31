@@ -70,7 +70,7 @@ try:
         sys.argv += [f'--{k}', str(v)]
     sys.argv += ['--no-optimize-python']
     if os.getenv('SKYTEMPLE_BUILD_PRODUCTION', False):
-        sys.argv += ['--release']
+        sys.argv += ['--release', '--sign']
 
     try:
         from pythonforandroid.toolchain import ToolchainCL

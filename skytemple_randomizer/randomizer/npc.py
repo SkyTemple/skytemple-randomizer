@@ -24,7 +24,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_ids, replace_text_main, \
-    replace_text_script, clone_missing_portraits, get_all_string_files
+    replace_text_script, clone_missing_portraits, get_all_string_files, Roster
 from skytemple_randomizer.status import Status
 
 
@@ -93,13 +93,13 @@ class NpcRandomizer(AbstractRandomizer):
                     if new_entid >= 1154:
                         new_entid -= NUM_ENTITIES
                 else:
-                    new_entid = choice(get_allowed_md_ids(self.config, True))
+                    new_entid = choice(get_allowed_md_ids(self.config, True, roster=Roster.NPCS))
                     # Make it less likely to get duplicates
                     while new_entid in mapped.values() and randrange(0, 4) != 0:
-                        new_entid = choice(get_allowed_md_ids(self.config, True))
+                        new_entid = choice(get_allowed_md_ids(self.config, True, roster=Roster.NPCS))
                     # Due to the way the string replacing works we don't want anything that previously existed.
                     while md.get_by_index(new_entid).gender == Gender.INVALID or new_entid % NUM_ENTITIES in old_entid_bases:
-                        new_entid = choice(get_allowed_md_ids(self.config, True))
+                        new_entid = choice(get_allowed_md_ids(self.config, True, roster=Roster.NPCS))
                 mapped[actor.entid] = new_entid
                 mapped_for_names[old_name] = new_entid
                 actor.entid = new_entid

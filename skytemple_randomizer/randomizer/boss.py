@@ -22,7 +22,7 @@ from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids
+from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids, Roster
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to fixed room monster spawn indices.
@@ -82,7 +82,7 @@ class BossRandomizer(AbstractRandomizer):
                     boss_list[bi].md_idx = actor.entid
 
         for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
-            boss_list[extra_id].md_idx = choice(get_allowed_md_ids(self.config, False))
+            boss_list[extra_id].md_idx = choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS))
 
         HardcodedFixedFloorTables.set_monster_spawn_list(binary, boss_list, self.static_data)
         set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'], binary)

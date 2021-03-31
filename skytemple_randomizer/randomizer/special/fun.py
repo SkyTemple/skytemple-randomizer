@@ -32,7 +32,7 @@ from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
 from skytemple_randomizer.randomizer.util.util import clone_missing_portraits, get_main_string_file, \
-    get_all_string_files, get_script
+    get_all_string_files, get_script, Roster
 from skytemple_randomizer.status import Status
 
 
@@ -164,6 +164,8 @@ def _init_random_chosen_three() -> List[CustomFunPortrait]:
             CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
             CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
             CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
+            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
+            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
         ]
     return random_chosen_three
 
@@ -172,12 +174,23 @@ def _get_fun_portraits() -> List[FunPortraitLike]:
     return _init_random_chosen_three() + list(FunPortrait)
 
 
-def get_allowed_md_ids(base_set: Set[int]) -> List[int]:
+def get_allowed_md_ids(base_set: Set[int], roster: Roster) -> List[int]:
     s = set()
     for x in _get_fun_portraits():
         s.add(x.value)
         if x.value + NUM_ENTITIES <= 1154:
             s.add(x.value + NUM_ENTITIES)
+    extra_candidates = list(base_set - s)
+    extras_max = 0
+    if roster == Roster.NPCS:
+        extras_max = 5
+    elif roster == Roster.DUNGEON:
+        extras_max = 50
+    for _ in range(0, extras_max):
+        x = choice(extra_candidates)
+        s.add(x)
+        if x + NUM_ENTITIES <= 1154:
+            s.add(x + NUM_ENTITIES)
     return list(base_set & s)
 
 

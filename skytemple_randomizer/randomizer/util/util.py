@@ -14,6 +14,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from enum import Enum, auto
 from random import sample, choice
 from typing import List, Dict, Union, Tuple, Iterable
 
@@ -57,7 +58,13 @@ def clone_missing_portraits(kao: Kao, index: int, *, force=False):
             kao.get(index, i).set(cloned.get())
 
 
-def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False) -> List[int]:
+class Roster(Enum):
+    DUNGEON = auto()
+    NPCS = auto()
+    STARTERS = auto()
+
+
+def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[int]:
     from skytemple_randomizer.randomizer.special import fun
     if conf['pokemon']['ban_unowns']:
         ents = ALLOWED_MD_IDS_BASE - UNOWN_IDS
@@ -70,7 +77,7 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False) -> List[int]
                 to_add.add(ent + NUM_ENTITIES)
         ents.update(to_add)
     if fun.is_fun_allowed():
-        return fun.get_allowed_md_ids(ents)
+        return fun.get_allowed_md_ids(ents, roster)
     return list(ents)
 
 

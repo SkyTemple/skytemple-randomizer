@@ -35,6 +35,13 @@ class Global:
     main_builder = None
 
 
+class IntRange:
+    """Represents a config integer with a minimum and maximum value (defined in the UI)"""
+    value: int
+
+    def __init__(self, value: int):
+        self.value = value
+
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
@@ -83,6 +90,8 @@ class DungeonsConfig(TypedDict):
     pokemon: bool
     traps: bool
     fixed_rooms: bool
+    max_sticky_chance: IntRange
+    max_mh_chance: IntRange
     settings: Dict[int, DungeonSettingsConfig]
 
 
@@ -105,6 +114,10 @@ class DungeonsConfigDoc:
         """Whether or not to replace all boss fight rooms with randomly generated room layouts.
         
         THIS MAY BE UNBALANCED OR UNSTABLE."""
+    max_sticky_chance = \
+        """Sticky item chance will be randomized between 0% and this value (inclusive)."""
+    max_mh_chance = \
+        """Monster house chance will be randomized between 0% and this value (inclusive)."""
     settings = \
         """Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.
         You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked. 
@@ -272,6 +285,10 @@ class ConfigFileLoader:
                         target[field] = False
                     elif field == 'personality_test':
                         target[field] = 1
+                    elif field == 'max_sticky_chance':
+                        target[field] = 100
+                    elif field == 'max_mh_chance':
+                        target[field] = 100
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)
@@ -295,6 +312,10 @@ class ConfigFileLoader:
             if not isinstance(target, int):
                 raise ValueError(f"Expected an integer for a field, but got {target.__class__.__name__}")
             return target
+        elif typ == IntRange:
+            if not isinstance(target, int):
+                raise ValueError(f"Expected an IntRange for a field, but got {target.__class__.__name__}")
+            return typ(target)
         elif typ == str:
             if not isinstance(target, str):
                 raise ValueError(f"Expected a string for a field, but got {target.__class__.__name__}")
@@ -317,6 +338,8 @@ class ConfigFileLoader:
 class EnumJsonEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Enum):
+            return obj.value
+        if isinstance(obj, IntRange):
             return obj.value
         return json.JSONEncoder.default(self, obj)
 

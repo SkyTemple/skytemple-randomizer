@@ -24,7 +24,7 @@ from gi.repository import Gtk
 
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon
 from skytemple_files.data.md.model import Ability
-from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig
+from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange
 
 
 class ConfigUIApplier:
@@ -59,6 +59,10 @@ class ConfigUIApplier:
             assert field_name, "Field name must be set for primitive"
             w: Gtk.ComboBox = self._ui_get('cb_' + field_name)
             w.set_active_id(str(config))
+        elif typ == IntRange:
+            assert field_name, "Field name must be set for primitive"
+            w: Gtk.Scale = self._ui_get('scale_' + field_name)
+            w.set_value(getattr(config, 'value'))
         elif typ == str:
             assert field_name, "Field name must be set for primitive"
             try:
@@ -120,6 +124,10 @@ class ConfigUIReader:
             assert field_name, "Field name must be set for primitive"
             w: Gtk.ComboBox = self._ui_get('cb_' + field_name)
             return int(w.get_active_id())
+        elif typ == IntRange:
+            assert field_name, "Field name must be set for primitive"
+            w: Gtk.Scale = self._ui_get('scale_' + field_name)
+            return typ(int(w.get_value()))
         elif typ == str:
             assert field_name, "Field name must be set for primitive"
             try:

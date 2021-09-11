@@ -31,6 +31,7 @@ from skytemple_randomizer.randomizer.dungeon import DungeonRandomizer
 from skytemple_randomizer.randomizer.dungeon_unlocker import DungeonUnlocker
 from skytemple_randomizer.randomizer.fixed_room import FixedRoomRandomizer
 from skytemple_randomizer.randomizer.global_items import GlobalItemsRandomizer
+from skytemple_randomizer.randomizer.guest import GuestRandomizer
 from skytemple_randomizer.randomizer.location import LocationRandomizer
 from skytemple_randomizer.randomizer.misc import MiscRandomizer
 from skytemple_randomizer.randomizer.monster import MonsterRandomizer
@@ -50,8 +51,8 @@ from skytemple_randomizer.status import Status
 
 
 RANDOMIZERS = [
-    PatchApplier, NpcRandomizer, StarterRandomizer, BossRandomizer, RecruitmentTableRandomizer, DungeonRandomizer,
-    FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader, MonsterRandomizer, MovesetRandomizer,
+    PatchApplier, NpcRandomizer, StarterRandomizer, BossRandomizer, GuestRandomizer, RecruitmentTableRandomizer,
+    DungeonRandomizer, FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader, MonsterRandomizer, MovesetRandomizer,
     LocationRandomizer, ChapterRandomizer, TextMainRandomizer, TextScriptRandomizer, GlobalItemsRandomizer,
     OverworldMusicRandomizer, MiscRandomizer, SpecialFunRandomizer, SeedInfo
 ]

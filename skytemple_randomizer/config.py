@@ -55,7 +55,10 @@ class StartersNpcsConfigDoc:
     starters = \
         """If enabled, starter and partner choices are randomized between all available Pokémon."""
     npcs = \
-        """If enabled all NPCs are randomized and all mentions of them in the script*. Additionally boss fights are also changed to use these new NPCs.
+        """If enabled all NPCs are randomized and all mentions of them in the script*. 
+        Additionally the following things are also randomized with these new NPCs:
+          - Boss fights
+          - Guest Pokémon
         
         *: Some additional text in the game may also be affected (eg. some item names)."""
     global_items = \

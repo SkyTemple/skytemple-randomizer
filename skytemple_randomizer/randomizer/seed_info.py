@@ -45,15 +45,22 @@ SCENE = 'enter.sse'
 TALK_SCRIPT = 80
 TALK_SCRIPT_NAME = f'enter{TALK_SCRIPT}.ssb'
 NPC_SECTOR = 0
-NPC_X = 13
+NPC_X = 10
 NPC_Y = 21
 
 TWO_ACTOR_TO_USE = 77
 TWO_TALK_SCRIPT = 81
 TWO_TALK_SCRIPT_NAME = f'enter{TWO_TALK_SCRIPT}.ssb'
 TWO_NPC_SECTOR = 0
-TWO_NPC_X = 18
+TWO_NPC_X = 15
 TWO_NPC_Y = 21
+
+THREE_ACTOR_TO_USE = 76
+THREE_TALK_SCRIPT = 83
+THREE_TALK_SCRIPT_NAME = f'enter{THREE_TALK_SCRIPT}.ssb'
+THREE_NPC_SECTOR = 0
+THREE_NPC_X = 20
+THREE_NPC_Y = 21
 
 
 def escape(s):
@@ -132,6 +139,21 @@ on Crossroads."""
                 script_id=TWO_TALK_SCRIPT,
                 unkE=-1,
             ))
+        already_exists = any(a.script_id == THREE_TALK_SCRIPT for a in layer.actors)
+        if not already_exists:
+            layer.actors.append(SsaActor(
+                scriptdata=self.static_data.script_data,
+                actor_id=THREE_ACTOR_TO_USE,
+                pos=SsaPosition(
+                    scriptdata=self.static_data.script_data,
+                    direction=self.static_data.script_data.directions__by_name['Down'].ssa_id,
+                    x_pos=THREE_NPC_X,
+                    y_pos=THREE_NPC_Y,
+                    x_offset=0, y_offset=0
+                ),
+                script_id=THREE_TALK_SCRIPT,
+                unkE=-1,
+            ))
         self.rom.setFileByName(f'SCRIPT/{MAP}/{SCENE}', FileType.SSA.serialize(scene))
         # Fill talk script 1
         exps = f"""
@@ -149,15 +171,12 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST010, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Parakoopa[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
     
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Show Settings"):
             ~settings();
-            jump @l_menu;
-        case menu("Patch Credits"):
-            ~patches();
             jump @l_menu;
         case menu("Goodbye!"):
         default:
@@ -206,16 +225,6 @@ macro settings() {{
             break;
     }}
 }}
-
-macro patches() {{
-    §l_patches;
-    switch ( message_SwitchMenu(0, 1) ) {{
-        {self._patch_credits()}
-        case menu("Goodbye!"):
-        default:
-            break;
-    }}
-}}  
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
             exps, 'script.exps', lookup_paths=[]
@@ -243,7 +252,7 @@ macro patches() {{
             message_SetFace(ACTOR_NPC_TEST009, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
             message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
             message_ResetActor();
-            message_Notice("SkyTemple Randomizer by [CS:A]Parakoopa[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+            message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
             §l_menu;
             switch ( message_SwitchMenu(0, 1) ) {{
@@ -274,6 +283,57 @@ macro patches() {{
         )
 
         script_fn = f'SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}'
+        script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
+        try:
+            create_file_in_rom(self.rom, script_fn, script_sera)
+        except FileExistsError:
+            self.rom.setFileByName(script_fn, script_sera)
+
+        exps = f"""
+def 0 {{
+    with (actor ACTOR_TALK_MAIN) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_TALK_SUB) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_ATTENDANT1) {{
+        SetAnimation(2);
+    }}
+    
+    message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
+    message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
+    message_ResetActor();
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    
+    §l_menu;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        case menu("Patch Credits"):
+            ~patches();
+            jump @l_menu;
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+    
+    JumpCommon(CORO_END_TALK);
+}}
+
+macro patches() {{
+    §l_patches;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        {self._patch_credits()}
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+}}  
+"""
+        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+            exps, 'script.exps', lookup_paths=[]
+        )
+
+        script_fn = f'SCRIPT/{MAP}/{THREE_TALK_SCRIPT_NAME}'
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)

@@ -2903,7 +2903,7 @@ Settings</property>
     <property name="comments" translatable="yes">Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky (EU/US).</property>
     <property name="website">https://github.com/SkyTemple/skytemple</property>
     <property name="website-label" translatable="yes">https://github.com/SkyTemple/skytemple-randomizer</property>
-    <property name="authors">Marco "Parakoopa" Köpcke http://github.com/parakoopa
+    <property name="authors">Marco "Capypara" Köpcke http://github.com/theCapypara
 
 Contributors:
 irdkwia https://github.com/irdkwia

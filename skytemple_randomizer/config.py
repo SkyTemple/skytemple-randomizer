@@ -59,6 +59,7 @@ class StartersNpcsConfigDoc:
         Additionally the following things are also randomized with these new NPCs:
           - Boss fights
           - Guest Pokémon
+          - Special Episode Player Characters
         
         *: Some additional text in the game may also be affected (eg. some item names)."""
     global_items = \

@@ -23,6 +23,7 @@ import {UiGridTable} from "./UiGridTable";
 import {UiTextField} from "./UiTextField";
 import {default as set} from 'set-value';
 import {default as get} from 'get-value';
+import {UiSlider} from "./UiSlider";
 
 export const SETTINGS_CONFIG = {
     starters_npcs: {
@@ -44,6 +45,8 @@ export const SETTINGS_CONFIG = {
         pokemon: ["Randomize Pokémon Spawns?", UiSwitch],
         traps: ["Randomize Traps?", UiSwitch],
         fixed_rooms: ["Randomize Boss Room Layouts?", UiSwitch],
+        max_sticky_chance: ["Max sticky item chance", UiSlider, 100],
+        max_mh_chance: ["Max monster house chance", UiSlider, 100],
         settings: ["Dungeon Settings", UiGridTable, {
             _name: ["Dungeon", String, (id) => id.toString() + ': ' + window.DUNGEON_NAMES[id]],
             randomize: ["Randomize?", UiSwitch],

@@ -30,6 +30,7 @@ export const SETTINGS_CONFIG = {
         starters: ["Randomize Starters?", UiSwitch],
         npcs: ["Randomize NPCs and Bosses?", UiSwitch],
         global_items: ["Randomize Treasure Town shop and dungeon rewards?", UiSwitch],
+        topmenu_music: ["Randomize Titlescreen Music?", UiSwitch],
         overworld_music: ["Randomize Overworld Music?", UiSwitch]
     },
     dungeons: {

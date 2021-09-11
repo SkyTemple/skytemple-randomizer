@@ -16,7 +16,9 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice
 
-from skytemple_files.common.util import get_files_from_rom_with_extension
+from skytemple_files.common.util import get_files_from_rom_with_extension, get_binary_from_rom_ppmdu, \
+    set_binary_in_rom_ppmdu
+from skytemple_files.hardcoded.main_menu_music import HardcodedMainMenuMusic
 from skytemple_files.script.ssb.model import Ssb
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -30,13 +32,28 @@ class OverworldMusicRandomizer(AbstractRandomizer):
         self.bgs = [b for b in self.static_data.script_data.bgms if b.loops]
 
     def step_count(self) -> int:
+        i = 0
+        if self.config['starters_npcs']['topmenu_music']:
+            i += 1
         if self.config['starters_npcs']['overworld_music']:
-            return 1
-        return 0
+            i += 1
+        return i
 
     def run(self, status: Status):
+        if self.config['starters_npcs']['topmenu_music']:
+            status.step("Randomizing Titlescreen Music...")
+            ov0 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0000.bin']))
+            ov9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0009.bin']))
+            HardcodedMainMenuMusic.set_main_menu_music(
+                self._get_random_music_id(), ov0, self.static_data, ov9
+            )
+            set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0000.bin'], ov0)
+            set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0009.bin'], ov9)
+
         if not self.config['starters_npcs']['overworld_music']:
+            status.done()
             return
+
         status.step("Randomizing Overworld Music...")
 
         for script_name in get_files_from_rom_with_extension(self.rom, 'ssb'):

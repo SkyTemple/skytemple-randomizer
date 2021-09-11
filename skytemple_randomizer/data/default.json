@@ -3,6 +3,7 @@
     "starters": true,
     "npcs": true,
     "global_items": true,
+    "topmenu_music": true,
     "overworld_music": false
   },
   "dungeons": {

@@ -42,6 +42,7 @@ class IntRange:
     def __init__(self, value: int):
         self.value = value
 
+
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
@@ -209,6 +210,7 @@ class ChaptersConfigDoc:
 class TextConfig(TypedDict):
     main: bool
     story: bool
+    instant: bool
 
 
 class TextConfigDoc:
@@ -221,6 +223,8 @@ class TextConfigDoc:
         """Randomize the game's overworld scene text. ALL overworld text is shuffled.
         
         THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
+    instant = \
+        """If enabled, text will be displayed instantly."""
 
 
 class RandomizerConfig(TypedDict):
@@ -289,6 +293,8 @@ class ConfigFileLoader:
                         target[field] = 100
                     elif field == 'max_mh_chance':
                         target[field] = 100
+                    elif field == 'instant':
+                        target[field] = False
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)

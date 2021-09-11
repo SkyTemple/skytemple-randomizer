@@ -90,6 +90,7 @@ export const SETTINGS_CONFIG = {
         text: ["Name List", UiTextField]
     },
     text: {
+        instant: ["Instant Text?", UiSwitch],
         main: ["Randomize Main Texts?", UiSwitch],
         story: ["Randomize Story Dialogue?", UiSwitch],
     }

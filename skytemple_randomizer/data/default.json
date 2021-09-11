@@ -216,7 +216,8 @@
   },
   "text": {
     "main": false,
-    "story": false
+    "story": false,
+    "instant": false
   },
   "seed": ""
 }

@@ -206,9 +206,10 @@ class DungeonRandomizer(AbstractRandomizer):
             floor_connectivity=randrange(5, 51),
             initial_enemy_density=randrange(1, 14),
             kecleon_shop_chance=randrange(0, 101),
-            monster_house_chance=randrange(0, 101) if allow_monster_houses else 0,
+            monster_house_chance=
+                randrange(0, self.config['dungeons']['max_mh_chance'].value + 1) if allow_monster_houses else 0,
             unusued_chance=randrange(0, 101),
-            sticky_item_chance=randrange(0, 101),
+            sticky_item_chance=randrange(0, self.config['dungeons']['max_sticky_chance'].value + 1),
             dead_ends=choice((True, False)),
             secondary_terrain=SECONDARY_TERRAIN_TILESET_MAP[tileset],
             terrain_settings=MappaFloorTerrainSettings(

@@ -31,6 +31,7 @@ import {
     updateGenericGridInConfig,
     updateInConfig
 } from "./config";
+import {UiSlider} from "./UiSlider";
 
 function parseHelp(txt) {
     return txt ? txt : 'No help available.';
@@ -67,6 +68,16 @@ export default function Settings(props) {
                     id={id}
                     initial={window.loadedConfig[props.for][fieldName]}
                     label={fieldConfig[0]}
+                    onChange={updateInConfig}
+                />
+                break;
+            case UiSlider:
+                field = <UiSlider
+                    id={id}
+                    initial={window.loadedConfig[props.for][fieldName]}
+                    label={fieldConfig[0]}
+                    help={parseHelp(window.HELP_TEXTS[props.for][fieldName])}
+                    max={fieldConfig[2]}
                     onChange={updateInConfig}
                 />
                 break;

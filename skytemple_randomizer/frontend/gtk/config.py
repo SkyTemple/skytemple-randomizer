@@ -22,20 +22,26 @@ from typing import List, Dict
 
 from gi.repository import Gtk
 
-from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon
+from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon, Pmd2DungeonItem
 from skytemple_files.data.md.model import Ability
+from skytemple_files.dungeon_data.mappa_bin.item_list import MAX_ITEM_ID
 from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange
+from skytemple_randomizer.lists import MOVES, MONSTERS
 
 
 class ConfigUIApplier:
     """Applies configuration to the UI widgets."""
-    def __init__(self, builder: Gtk.Builder, dungeons: List[Pmd2DungeonDungeon]):
+    def __init__(self, builder: Gtk.Builder, dungeons: List[Pmd2DungeonDungeon], items: List[Pmd2DungeonItem]):
         self.builder = builder
         self.dungeons = dungeons
+        self.items = items
 
     def apply(self, config: RandomizerConfig):
         self.builder.get_object('store_tree_dungeons_dungeons').clear()
         self.builder.get_object('store_tree_monsters_abilities').clear()
+        self.builder.get_object('store_tree_monsters_monsters').clear()
+        self.builder.get_object('store_tree_monsters_moves').clear()
+        self.builder.get_object('store_tree_dungeons_items').clear()
         self._handle(config)
 
     def _handle(self, config, field_name=None):
@@ -81,9 +87,20 @@ class ConfigUIApplier:
         elif typ == list and (len(config) < 1 or isinstance(next(iter(config)), int)):
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
-            for a in Ability:
-                if a.value != 0xFF:
-                    s.append([a.value, a.print_name, a.value in config])
+            if field_name == 'pokemon_abilities_enabled':
+                for a in Ability:
+                    if a.value != 0xFF:
+                        s.append([a.value, a.print_name, a.value in config])
+            elif field_name == 'dungeons_items_enabled':
+                for item in self.items:
+                    if item.id <= MAX_ITEM_ID:
+                        s.append([item.id, item.name, item.id in config])
+            elif field_name == 'pokemon_moves_enabled':
+                for a, name in MOVES.items():
+                    s.append([a, name, a in config])
+            elif field_name == 'pokemon_monsters_enabled':
+                for a, name in MONSTERS.items():
+                    s.append([a, name, a in config])
         else:
             raise TypeError(f"Unknown type for {self.__class__.__name__}: {typ}")
 

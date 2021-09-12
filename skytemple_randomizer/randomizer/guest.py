@@ -24,7 +24,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.moveset import VALID_MOVE_IDS, DAMAGING_MOVES, STAB_DICT
+from skytemple_randomizer.randomizer.util.util import MoveRoster, get_allowed_move_ids
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to guest Pokémon indices
@@ -72,18 +72,20 @@ class GuestRandomizer(AbstractRandomizer):
 
         if self.config['pokemon']['movesets'] != MovesetConfig.NO:
             status.step("Updating guest Pokémon movesets...")
+
+            valid_move_ids = get_allowed_move_ids(self.config)
+            damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
+        
             md: Md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
             for guest in guests:
                 if self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:
-                    guest.moves = [choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS)]
+                    guest.moves = [choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_DAMAGE:
-                    guest.moves = [choice(DAMAGING_MOVES), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS)]
+                    guest.moves = [choice(damaging_move_ids), choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[guest.poke_id]
-                    if md_entry.type_primary not in STAB_DICT:
-                        guest.moves = [choice(DAMAGING_MOVES), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS)]
-                    else:
-                        guest.moves = [choice(STAB_DICT[md_entry.type_primary]), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS), choice(VALID_MOVE_IDS)]
+                    first = choice(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
+                    guest.moves = [first, choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
 
         GuestPokemonList.write(guests, arm9, self.static_data)
         set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)

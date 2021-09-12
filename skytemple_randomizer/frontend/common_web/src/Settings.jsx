@@ -27,7 +27,7 @@ import {UiSelect} from "./UiSelect";
 import {
     ID_PREFIX,
     SETTINGS_CONFIG,
-    updateAbilitiesEnabledInConfig,
+    updateListEnabledInConfig,
     updateGenericGridInConfig,
     updateInConfig
 } from "./config";
@@ -82,20 +82,51 @@ export default function Settings(props) {
                 />
                 break;
             case 'abilities_enabled':
-                // This one is a bit special...
+            case 'items_enabled':
+            case 'moves_enabled':
+            case 'monsters_enabled':
+                // These ones are a bit special...
+                let heading;
                 let adata = {};
-                for (const ability_id in window.ABILITY_NAMES) {
-                    const ability_name = window.ABILITY_NAMES[ability_id];
-                    adata[ability_id] = ([ability_id.toString() + ': ' + ability_name, window.loadedConfig[props.for][fieldName].includes(parseInt(ability_id))]);
+                let updateFn;
+                switch (fieldConfig[1]) {
+                    case 'abilities_enabled':
+                        heading = ["Ability", "Use?"];
+                        for (const ability_id in window.ABILITY_NAMES) {
+                            const ability_name = window.ABILITY_NAMES[ability_id];
+                            adata[ability_id] = ([ability_id.toString() + ': ' + ability_name, window.loadedConfig[props.for][fieldName].includes(parseInt(ability_id))]);
+                        }
+                        break;
+                    case 'items_enabled':
+                        heading = ["Item", "Use?"];
+                        for (const item_id in window.ITEM_NAMES) {
+                            const item_name = window.ITEM_NAMES[item_id];
+                            adata[item_id] = ([item_id.toString() + ': ' + item_name, window.loadedConfig[props.for][fieldName].includes(parseInt(item_id))]);
+                        }
+                        break;
+                    case 'moves_enabled':
+                        heading = ["Move", "Use?"];
+                        for (const move_id in window.MOVE_NAMES) {
+                            const move_name = window.MOVE_NAMES[move_id];
+                            adata[move_id] = ([move_id.toString() + ': ' + move_name, window.loadedConfig[props.for][fieldName].includes(parseInt(move_id))]);
+                        }
+                        break;
+                    case 'monsters_enabled':
+                        heading = ["Pokémon", "Use?"];
+                        for (const monster_id in window.MONSTER_NAMES) {
+                            const monster_name = window.MONSTER_NAMES[monster_id];
+                            adata[monster_id] = ([monster_id.toString() + ': ' + monster_name, window.loadedConfig[props.for][fieldName].includes(parseInt(monster_id))]);
+                        }
+                        break;
                 }
                 field = <UiGridTable
                     id={id}
-                    headings={["Ability", "Use?"]}
+                    headings={heading}
                     switches={[1]}
                     data={adata}
                     title={fieldConfig[0]}
                     help={parseHelp(window.HELP_TEXTS[props.for][fieldName])}
-                    onChange={updateAbilitiesEnabledInConfig}
+                    onChange={updateListEnabledInConfig}
                 />
                 break;
             case UiGridTable:

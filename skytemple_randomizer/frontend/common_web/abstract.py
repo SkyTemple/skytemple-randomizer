@@ -22,8 +22,11 @@ import tornado.web
 
 from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
 from skytemple_files.data.md.model import Ability
+from skytemple_files.dungeon_data.mappa_bin.item_list import MAX_ITEM_ID
 from skytemple_randomizer.config import data_dir, RandomizerConfig, version
 from abc import ABC, abstractmethod
+
+from skytemple_randomizer.lists import MONSTERS, MOVES
 
 
 class ConfigDocDumper:
@@ -57,7 +60,10 @@ class AbstractWebHandler(tornado.web.RequestHandler, ABC):
             help_texts=json.dumps(self.get_help_texts()),
             version=version(),
             dungeon_names=self.get_dungeon_names(),
-            ability_names=self.get_ability_names()
+            ability_names=self.get_ability_names(),
+            item_names=self.get_item_names(),
+            move_names=self.get_move_names(),
+            monster_names=self.get_monster_names()
         )
 
     def get_default_config(self):
@@ -70,6 +76,16 @@ class AbstractWebHandler(tornado.web.RequestHandler, ABC):
     def get_dungeon_names(self):
         static_data = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
         return {dungeon.id: dungeon.name for dungeon in static_data.dungeon_data.dungeons}
+
+    def get_monster_names(self):
+        return MONSTERS
+
+    def get_item_names(self):
+        static_data = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
+        return {item.id: item.name for item in static_data.dungeon_data.items if item.id <= MAX_ITEM_ID}
+
+    def get_move_names(self):
+        return MOVES
 
     def get_ability_names(self):
         return {ability.value: ability.print_name for ability in Ability if ability.value != 0xFF}

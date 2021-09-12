@@ -21,13 +21,47 @@ from typing import List, Dict, Union, Tuple, Iterable
 from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2Language
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
-from skytemple_files.data.md.model import NUM_ENTITIES
+from skytemple_files.data.md.model import NUM_ENTITIES, PokeType
 from skytemple_files.data.str.model import Str
 from skytemple_files.graphics.kao.model import SUBENTRIES, Kao, NintendoDSRom
 from skytemple_randomizer.config import RandomizerConfig
 
-ALLOWED_MD_IDS_BASE = set(x for x in range(1, 537) if x not in [383, 384])
-UNOWN_IDS = set(range(201, 229))
+
+DAMAGING_MOVES = {1, 2, 8, 9, 16, 18, 25, 28, 30, 31, 32, 36, 39, 41, 42, 44, 46, 52, 53, 57, 60, 62, 63, 64, 65, 67,
+                  68, 69, 71, 72, 73, 75, 76, 77, 78, 80, 81, 82, 87, 90, 91, 92, 93, 96, 97, 100, 101, 103, 105, 107,
+                  109, 110, 113, 114, 116, 118, 120, 121, 125, 126, 127, 129, 132, 133, 135, 136, 139, 140, 143, 144,
+                  145, 147, 149, 151, 153, 154, 156, 157, 158, 159, 161, 162, 163, 164, 166, 167, 168, 174, 175, 176,
+                  178, 179, 180, 182, 188, 189, 190, 193, 198, 200, 201, 203, 204, 205, 206, 207, 208, 210, 211, 213,
+                  214, 219, 221, 222, 226, 228, 230, 234, 235, 238, 239, 240, 241, 242, 243, 244, 245, 246, 248, 250,
+                  251, 253, 255, 260, 261, 262, 263, 264, 270, 271, 272, 275, 276, 278, 279, 280, 283, 285, 287, 289,
+                  290, 291, 292, 297, 299, 300, 303, 306, 308, 309, 310, 311, 312, 314, 320, 321, 322, 323, 325, 331,
+                  332, 335, 336, 342, 344, 345, 346, 347, 348, 350, 352, 353, 354, 430, 431, 432, 433, 435, 436, 437,
+                  440, 441, 442, 443, 445, 446, 451, 452, 453, 454, 455, 457, 458, 459, 460, 461, 462, 463, 468, 469,
+                  470, 471, 473, 474, 475, 476, 477, 479, 481, 484, 485, 486, 487, 488, 489, 490, 491, 494, 495, 497,
+                  498, 500, 501, 502, 505, 507, 508, 510, 511, 512, 515, 516, 517, 518, 519, 521, 522, 523, 524, 527,
+                  529, 530, 531, 533, 535, 536, 537, 538, 539, 541}
+STAB_DICT = {
+    PokeType.STEEL: {1, 103, 244, 325, 431, 475, 510, 523, 527, 536},
+    PokeType.ICE: {2, 42, 97, 101, 180, 270, 344, 345, 461, 462, 535},
+    PokeType.GROUND: {8, 118, 143, 213, 285, 289, 290, 299, 484, 501},
+    PokeType.NORMAL: {9, 18, 25, 31, 39, 60, 67, 71, 78, 81, 96, 121, 125, 132, 139, 140, 145, 154, 161, 166, 168, 176,
+                      190, 201, 203, 207, 226, 228, 235, 241, 242, 245, 248, 250, 260, 261, 263, 264, 271, 275, 287,
+                      311, 312, 314, 321, 322, 347, 348, 352, 455, 457, 471, 474, 487, 497, 505, 516, 541},
+    PokeType.WATER: {16, 32, 44, 69, 87, 113, 156, 158, 159, 219, 239, 240, 255, 308, 310, 432, 433, 469},
+    PokeType.ROCK: {28, 30, 73, 93, 105, 350, 453, 481, 512, 533},
+    PokeType.FLYING: {36, 57, 100, 153, 174, 178, 179, 205, 211, 353, 442, 446, 490, 518},
+    PokeType.FIRE: {41, 52, 53, 149, 157, 230, 262, 272, 276, 278, 291, 292, 517, 519, 522, 524},
+    PokeType.GHOST: {46, 120, 126, 127, 437, 451, 476, 477},
+    PokeType.DARK: {62, 63, 167, 214, 436, 445, 488, 491, 515},
+    PokeType.ELECTRIC: {64, 65, 129, 144, 188, 189, 193, 354, 452, 489, 521},
+    PokeType.FIGHTING: {68, 72, 75, 77, 90, 92, 116, 136, 175, 204, 206, 210, 222, 243, 246, 300, 303, 430, 440, 454,
+                        479, 500, 507, 508, 531},
+    PokeType.GRASS: {76, 135, 151, 163, 182, 221, 238, 251, 253, 297, 320, 336, 441, 443, 458, 468, 486, 511, 537},
+    PokeType.BUG: {80, 82, 114, 164, 306, 323, 346, 460, 470, 502, 529, 530},
+    PokeType.DRAGON: {91, 162, 208, 342, 435, 494, 498, 538, 539},
+    PokeType.PSYCHIC: {107, 109, 110, 133, 234, 309, 331, 335, 463, 473},
+    PokeType.POISON: {147, 198, 200, 279, 280, 283, 332, 459, 485, 495}
+}
 
 
 def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> Tuple[Pmd2Language, Str]:
@@ -64,12 +98,15 @@ class Roster(Enum):
     STARTERS = auto()
 
 
+class MoveRoster(Enum):
+    DEFAULT = auto()
+    DAMAGING = auto()
+    STAB = auto()
+
+
 def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[int]:
     from skytemple_randomizer.randomizer.special import fun
-    if conf['pokemon']['ban_unowns']:
-        ents = ALLOWED_MD_IDS_BASE - UNOWN_IDS
-    else:
-        ents = ALLOWED_MD_IDS_BASE
+    ents = set(conf['pokemon']['monsters_enabled'])
     if with_plus_600:
         to_add = set()
         for ent in ents:
@@ -79,6 +116,31 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Ro
     if fun.is_fun_allowed():
         return fun.get_allowed_md_ids(ents, roster)
     return list(ents)
+
+
+def get_allowed_item_ids(conf: RandomizerConfig) -> List[int]:
+    return conf['dungeons']['items_enabled']
+
+
+def _assert_not_empty(l):
+    if len(l) < 1:
+        raise ValueError("Could not generate a valid move with the given settings.")
+    return l
+
+
+def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: PokeType = None) -> List[int]:
+    base = set(conf['pokemon']['moves_enabled'])
+    if roster == MoveRoster.DEFAULT:
+        return list(base)
+    elif roster == MoveRoster.DAMAGING:
+        return _assert_not_empty(list(base.intersection(DAMAGING_MOVES)))
+    elif roster == MoveRoster.STAB:
+        if stab_type not in STAB_DICT:
+            return _assert_not_empty(list(base.intersection(DAMAGING_MOVES)))
+        l = list(base.intersection(STAB_DICT[stab_type]))
+        if len(l) < 1:
+            return _assert_not_empty(list(base.intersection(DAMAGING_MOVES)))
+        return l
 
 
 def replace_strings(original: str, replacement_map: Dict[str, str]):

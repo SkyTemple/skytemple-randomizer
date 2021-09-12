@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CREDITS = {
     "Project Lead:": [
-        ["Marco \"Parakoopa\" Köpcke", "http://github.com/parakoopa"]
+        ["Marco \"Capypara\" Köpcke", "http://github.com/parakoopa"]
     ],
     "Contributors": [
         ["irdkwia", "https://github.com/irdkwia"],

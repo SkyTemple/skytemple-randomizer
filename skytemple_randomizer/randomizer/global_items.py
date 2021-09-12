@@ -37,15 +37,15 @@ from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonItem
 from skytemple_files.dungeon_data.mappa_bin import MAX_WEIGHT
-from skytemple_files.dungeon_data.mappa_bin.item_list import MappaItemCategory, MappaItemList
+from skytemple_files.dungeon_data.mappa_bin.item_list import MappaItemList
 from skytemple_files.list.items.handler import ItemListHandler
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.dungeon import ALLOWED_ITEM_CATS, ALLOWED_ITEM_IDS, \
+from skytemple_randomizer.randomizer.dungeon import ALLOWED_ITEM_CATS, \
     MAX_ITEMS_PER_CAT, MIN_ITEMS_PER_CAT
-from skytemple_randomizer.randomizer.util.util import sample_with_minimum_distance
+from skytemple_randomizer.randomizer.util.util import sample_with_minimum_distance, get_allowed_item_ids
 from skytemple_randomizer.status import Status
 ITEM_LIST_COUNT = 25
 
@@ -99,30 +99,36 @@ class GlobalItemsRandomizer(AbstractRandomizer):
 
         # 1/8 chance for money to get a chance
         if choice([True] + [False] * 7):
-            cats_as_list.append(MappaItemCategory.POKE)
+            cats_as_list.append(6)
 
         # 1/8 chance for Link Box to get a chance
         if choice([True] + [False] * 7):
-            cats_as_list.append(MappaItemCategory.LINK_BOX)
+            cats_as_list.append(10)
 
-        cats_as_list.sort(key=lambda x: x.value)
+        cats_as_list.sort()
         weights = sorted(self._random_weights(len(cats_as_list)))
-        for i, cat in enumerate(cats_as_list):
+        for i, cat_id in enumerate(cats_as_list):
+            cat = self.static_data.dungeon_data.item_categories[cat_id]
             categories[cat] = weights[i]
 
+            cat_item_ids = []
             if cat.number_of_items is not None:
-                allowed_cat_item_ids = [x for x in cat.item_ids() if x in ALLOWED_ITEM_IDS]
+                allowed_cat_item_ids = [x for x in cat.item_ids() if x in get_allowed_item_ids(self.config)]
                 upper_limit = min(MAX_ITEMS_PER_CAT, len(allowed_cat_item_ids))
                 if upper_limit <= MIN_ITEMS_PER_CAT:
                     n_items = MIN_ITEMS_PER_CAT
                 else:
                     n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
-                cat_item_ids = sorted(set(
-                    (choice(allowed_cat_item_ids) for _ in range(0, n_items))
-                ))
-                cat_weights = sorted(self._random_weights(len(cat_item_ids)))
+                cat_item_ids = []
+                if len(allowed_cat_item_ids) > 0:
+                    cat_item_ids = sorted(set(
+                        (choice(allowed_cat_item_ids) for _ in range(0, n_items))
+                    ))
+                    cat_weights = sorted(self._random_weights(len(cat_item_ids)))
 
-                for item_id, weight in zip(cat_item_ids, cat_weights):
-                    items[Pmd2DungeonItem(item_id, '???')] = weight
+                    for item_id, weight in zip(cat_item_ids, cat_weights):
+                        items[Pmd2DungeonItem(item_id, '???')] = weight
+            if len(cat_item_ids) == 0:
+                categories[cat] = 0
 
         return MappaItemList(categories, OrderedDict(sorted(items.items(), key=lambda i: i[0].id)))

@@ -199,7 +199,7 @@ macro settings() {{
             message_Mail("Download portraits?: {self._bool(self.config['improvements']['download_portraits'])}\\nApply 'MoveShortcuts'?: {self._bool(self.config['improvements']['patch_moveshortcuts'])}\\nApply 'UnusedDungeonChance'?: {self._bool(self.config['improvements']['patch_unuseddungeonchance'])}\\nApply 'CTC'?: {self._bool(self.config['improvements']['patch_totalteamcontrol'])}");
             jump @l_settings;
         case menu("Pokémon: General"):
-            message_Mail("Randomize IQ Groups?: {self._bool(self.config['pokemon']['iq_groups'])}\\nRandomize Abilities?: {self._bool(self.config['pokemon']['abilities'])}\\nRandomize Typings?: {self._bool(self.config['pokemon']['typings'])}\\nRandomize Movesets?: {self._movesets(self.config['pokemon']['movesets'])}\\nBan Unowns?: {self._bool(self.config['pokemon']['ban_unowns'])}");
+            message_Mail("Randomize IQ Groups?: {self._bool(self.config['pokemon']['iq_groups'])}\\nRandomize Abilities?: {self._bool(self.config['pokemon']['abilities'])}\\nRandomize Typings?: {self._bool(self.config['pokemon']['typings'])}\\nRandomize Movesets?: {self._movesets(self.config['pokemon']['movesets'])}");
             jump @l_settings;
         case menu("Pokémon: Abilities"):
             {self._abilities(self.config['pokemon']['abilities_enabled'])}

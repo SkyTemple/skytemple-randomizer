@@ -55,7 +55,8 @@ export const SETTINGS_CONFIG = {
             randomize_weather: ["Randomize Weather?", UiSwitch],
             enemy_iq: ["Randomize IQ?", UiSwitch],
             unlock: ["Unlock?", UiSwitch],
-        }]
+        }],
+        items_enabled: ["Enabled Items", 'items_enabled']
     },
     improvements: {
         download_portraits: ["Download missing portraits?", UiSwitch],
@@ -78,8 +79,9 @@ export const SETTINGS_CONFIG = {
             2: "Yes, first move deals damage",
             3: "Yes, first move deals damage + STAB"
         }],
-        ban_unowns: ["Ban Unowns?", UiSwitch],
-        abilities_enabled: ["Enabled Abilities", 'abilities_enabled']
+        abilities_enabled: ["Enabled Abilities", 'abilities_enabled'],
+        monsters_enabled: ["Enabled Pokémon", 'monsters_enabled'],
+        moves_enabled: ["Enabled Moves", 'moves_enabled']
     },
     locations: {
         randomize: ["Randomize Location Names?", UiSwitch],
@@ -117,20 +119,20 @@ export function updateInConfig(id, newVal) {
  * @param {number} colIdx
  * @param {any} newVal
  */
-export function updateAbilitiesEnabledInConfig(id, rowIdx, colIdx, newVal) {
-    let abilities = get(self.loadedConfig, _s(id));
+export function updateListEnabledInConfig(id, rowIdx, colIdx, newVal) {
+    let values = get(self.loadedConfig, _s(id));
     if (newVal) {
-        if (!abilities.includes(parseInt(rowIdx))) {
-            abilities.push(parseInt(rowIdx));
+        if (!values.includes(parseInt(rowIdx))) {
+            values.push(parseInt(rowIdx));
         }
     } else {
-        if (abilities.includes(parseInt(rowIdx))) {
-            abilities = abilities.filter(function(value, index, arr){
+        if (values.includes(parseInt(rowIdx))) {
+            values = values.filter(function(value, index, arr){
                 return value !== parseInt(rowIdx);
             });
         }
     }
-    set(self.loadedConfig, _s(id), abilities);
+    set(self.loadedConfig, _s(id), values);
 }
 
 /**

@@ -28,7 +28,7 @@ from skytemple_files.dungeon_data.mappa_bin import MAX_WEIGHT
 from skytemple_files.dungeon_data.mappa_bin.floor import MappaFloor
 from skytemple_files.dungeon_data.mappa_bin.floor_layout import MappaFloorLayout, \
     MappaFloorStructureType, MappaFloorWeather, MappaFloorTerrainSettings, MappaFloorDarknessLevel
-from skytemple_files.dungeon_data.mappa_bin.item_list import MAX_ITEM_ID, MappaItemCategory, MappaItemList
+from skytemple_files.dungeon_data.mappa_bin.item_list import MappaItemList
 from skytemple_files.dungeon_data.mappa_bin.model import MappaBin
 from skytemple_files.dungeon_data.mappa_bin.monster import MappaMonster, DUMMY_MD_INDEX
 from skytemple_files.dungeon_data.mappa_bin.trap_list import MappaTrapList
@@ -37,7 +37,8 @@ from skytemple_files.hardcoded.dungeons import HardcodedDungeons
 from skytemple_randomizer.config import DungeonWeatherConfig, RandomizerConfig, DungeonModeConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import sample_with_minimum_distance, get_allowed_md_ids
+from skytemple_randomizer.randomizer.util.util import sample_with_minimum_distance, get_allowed_md_ids, \
+    get_allowed_item_ids
 from skytemple_randomizer.status import Status
 
 ALLOWED_TILESET_IDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27,
@@ -51,19 +52,8 @@ KECLEON_MD_INDEX = 383
 # TODO: Make configurable?
 MONSTER_LEVEL_VARIANCE = 3
 
-# Invalid items:
-DISALLOWED_ITEM_IDS = [11, 12, 98, 113, 114, 138, 166, 175, 176, 177, 181, 184, 185, 198, 205, 219, 224, 226, 236, 258,
-                       259, 293, 294, 295, 296, 297, 298, 299, 300, 324, 339, 345, 349, 353, 360, 361]
-ALLOWED_ITEM_IDS = [x for x in range(1, MAX_ITEM_ID + 1) if x not in DISALLOWED_ITEM_IDS]
 ALLOWED_ITEM_CATS = [
-    MappaItemCategory.THROWN_PIERCE,
-    MappaItemCategory.THROWN_ROCK,
-    MappaItemCategory.BERRIES_SEEDS_VITAMINS,
-    MappaItemCategory.FOODS_GUMMIES,
-    MappaItemCategory.HOLD,
-    MappaItemCategory.TMS,
-    MappaItemCategory.ORBS,
-    MappaItemCategory.OTHER
+    0, 1, 2, 3, 4, 5, 9, 8
 ]
 SKY_PEAK_MAPPA_IDX = 72
 SHAYMIN_IDS = [534, 535]
@@ -157,7 +147,7 @@ class DungeonRandomizer(AbstractRandomizer):
                         floor.layout.music_id = first_floor.layout.music_id
                         floor.layout.secondary_terrain = first_floor.layout.secondary_terrain
                         floor.layout.darkness_level = first_floor.layout.darkness_level
-                        floor.layout.iq_booster_enabled = first_floor.layout.iq_booster_enabled
+                        floor.layout.iq_booster_boost = first_floor.layout.iq_booster_boost
                         floor.layout.enemy_iq = first_floor.layout.enemy_iq
 
     def _get_dungeon_for_fl(self, floor_index: int):
@@ -195,7 +185,7 @@ class DungeonRandomizer(AbstractRandomizer):
         if structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH:
             if choice((True, False)):
                 structure = choice(list(MappaFloorStructureType))
-        while not allow_monster_houses and ( structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH):
+        while not allow_monster_houses and (structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH):
             structure = choice(list(MappaFloorStructureType))
         return MappaFloorLayout(
             structure=structure,
@@ -211,7 +201,7 @@ class DungeonRandomizer(AbstractRandomizer):
             unusued_chance=randrange(0, 101),
             sticky_item_chance=randrange(0, self.config['dungeons']['max_sticky_chance'].value + 1),
             dead_ends=choice((True, False)),
-            secondary_terrain=SECONDARY_TERRAIN_TILESET_MAP[tileset],
+            secondary_terrain=randrange(0, 30),
             terrain_settings=MappaFloorTerrainSettings(
                 choice((True, False)), False, choice((True, False)), False, False, False, False, False
             ),
@@ -230,7 +220,7 @@ class DungeonRandomizer(AbstractRandomizer):
             unk_hidden_stairs=choice((0, 255)),
             hidden_stairs_spawn_chance=randrange(0, 101),
             enemy_iq=randrange(1, 601) if randomize_iq else original_layout.enemy_iq,
-            iq_booster_allowed=choice((True, False))
+            iq_booster_boost=choice((0, 1))
         )
 
     def _randomize_monsters(self, min_level, max_level, allow_shaymin=True):
@@ -266,31 +256,37 @@ class DungeonRandomizer(AbstractRandomizer):
 
         # 1/8 chance for money to get a chance
         if choice([True] + [False] * 7):
-            cats_as_list.append(MappaItemCategory.POKE)
+            cats_as_list.append(6)
 
         # 1/8 chance for Link Box to get a chance
         if choice([True] + [False] * 7):
-            cats_as_list.append(MappaItemCategory.LINK_BOX)
+            cats_as_list.append(10)
 
-        cats_as_list.sort(key=lambda x: x.value)
+        cats_as_list.sort()
         weights = sorted(self._random_weights(len(cats_as_list)))
-        for i, cat in enumerate(cats_as_list):
+        for i, cat_id in enumerate(cats_as_list):
+            cat = self.static_data.dungeon_data.item_categories[cat_id]
             categories[cat] = weights[i]
 
+            cat_item_ids = []
             if cat.number_of_items is not None:
-                allowed_cat_item_ids = [x for x in cat.item_ids() if x in ALLOWED_ITEM_IDS]
+                allowed_cat_item_ids = [x for x in cat.item_ids() if x in get_allowed_item_ids(self.config)]
                 upper_limit = min(MAX_ITEMS_PER_CAT, len(allowed_cat_item_ids))
                 if upper_limit <= MIN_ITEMS_PER_CAT:
                     n_items = MIN_ITEMS_PER_CAT
                 else:
                     n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
-                cat_item_ids = sorted(set(
-                    (choice(allowed_cat_item_ids) for _ in range(0, n_items))
-                ))
-                cat_weights = sorted(self._random_weights(len(cat_item_ids)))
+                cat_item_ids = []
+                if len(allowed_cat_item_ids) > 0:
+                    cat_item_ids = sorted(set(
+                        (choice(allowed_cat_item_ids) for _ in range(0, n_items))
+                    ))
+                    cat_weights = sorted(self._random_weights(len(cat_item_ids)))
 
-                for item_id, weight in zip(cat_item_ids, cat_weights):
-                    items[Pmd2DungeonItem(item_id, '???')] = weight
+                    for item_id, weight in zip(cat_item_ids, cat_weights):
+                        items[Pmd2DungeonItem(item_id, '???')] = weight
+            if len(cat_item_ids) == 0:
+                categories[cat] = 0
 
         return MappaItemList(categories, OrderedDict(sorted(items.items(), key=lambda i: i[0].id)))
 

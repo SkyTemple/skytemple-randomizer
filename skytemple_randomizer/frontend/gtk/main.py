@@ -74,7 +74,8 @@ class MainController:
 
         # Load default configuration
         self.ui_applier = ConfigUIApplier(self.builder,
-                                          self.static_config.dungeon_data.dungeons)
+                                          self.static_config.dungeon_data.dungeons,
+                                          self.static_config.dungeon_data.items)
         self.ui_reader = ConfigUIReader(self.builder)
         self.ui_applier.apply(ConfigFileLoader.load(os.path.join(data_dir(), 'default.json')))
         ConfigDocApplier(self.window, self.builder).apply()
@@ -117,6 +118,18 @@ class MainController:
 
     def on_cr_pokemon_abilities_enabled_use_toggled(self, widget, path):
         store: Gtk.Store = self.builder.get_object('store_tree_monsters_abilities')
+        store[path][2] = not widget.get_active()
+
+    def on_cr_pokemon_monsters_enabled_use_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_monsters_monsters')
+        store[path][2] = not widget.get_active()
+
+    def on_cr_pokemon_moves_enabled_use_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_monsters_moves')
+        store[path][2] = not widget.get_active()
+
+    def on_cr_dungeons_items_enabled_use_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_items')
         store[path][2] = not widget.get_active()
 
     def on_cr_dungeons_settings_enemy_iq_toggled(self, widget, path):

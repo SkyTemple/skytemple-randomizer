@@ -34,6 +34,10 @@
     window.VERSION = "{{ version }}";
     window.DUNGEON_NAMES = {% raw json_encode(dungeon_names) %};
     window.ABILITY_NAMES = {% raw json_encode(ability_names) %};
+    window.ITEM_NAMES = {% raw json_encode(item_names) %};
+    window.MONSTER_NAMES = {% raw json_encode(monster_names) %};
+    window.MOVE_NAMES = {% raw json_encode(move_names) %};
+    window.ABILITY_NAMES = {% raw json_encode(ability_names) %};
 </script>
 <script src="/static/dist/bundle.js"></script>
 {% for script in additional_scripts %}

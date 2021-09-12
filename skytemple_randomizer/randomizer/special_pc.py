@@ -23,7 +23,7 @@ from skytemple_files.hardcoded.default_starters import HardcodedDefaultStarters
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.moveset import VALID_MOVE_IDS, DAMAGING_MOVES, STAB_DICT
+from skytemple_randomizer.randomizer.util.util import get_allowed_move_ids, MoveRoster
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to special PC indices
@@ -66,22 +66,23 @@ class SpecialPcRandomizer(AbstractRandomizer):
 
         if self.config['pokemon']['movesets'] != MovesetConfig.NO:
             status.step("Updating special episode Pokémon movesets...")
+
+            valid_move_ids = get_allowed_move_ids(self.config)
+            damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
+        
             md: Md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
             for pc in pcs:
-                pc.move2 = choice(VALID_MOVE_IDS)
-                pc.move3 = choice(VALID_MOVE_IDS)
-                pc.move4 = choice(VALID_MOVE_IDS)
+                pc.move2 = choice(valid_move_ids)
+                pc.move3 = choice(valid_move_ids)
+                pc.move4 = choice(valid_move_ids)
                 pc.do_not_fix_entire_moveset = False
                 if self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:
-                    pc.move1 = choice(VALID_MOVE_IDS)
+                    pc.move1 = choice(valid_move_ids)
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_DAMAGE:
-                    pc.move1 = choice(DAMAGING_MOVES)
+                    pc.move1 = choice(damaging_move_ids)
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[pc.poke_id]
-                    if md_entry.type_primary not in STAB_DICT:
-                        pc.move1 = choice(DAMAGING_MOVES)
-                    else:
-                        pc.move1 = choice(STAB_DICT[md_entry.type_primary])
+                    pc.move1 = choice(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
 
         HardcodedDefaultStarters.set_special_episode_pcs(pcs, arm9, self.static_data)
         set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)

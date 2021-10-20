@@ -15,6 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import json
+import traceback
 import urllib.request
 from typing import List, Optional, Dict
 
@@ -430,40 +431,48 @@ macro patches() {{
         partners = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
         md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
 
-        with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/pokemons.json") as url:
-            config = json.loads(url.read().decode())
+        try:
+            with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/pokemons.json") as url:
+                config = json.loads(url.read().decode())
 
-        with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/credits.json") as url:
-            credits_config = json.loads(url.read().decode())
+            with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/credits.json") as url:
+                credits_config = json.loads(url.read().decode())
 
-        for starter in starters:
-            self._process_portrait(credit_map, config, credits_config, starter, md.entries[starter], None)
+            for starter in starters:
+                self._process_portrait(credit_map, config, credits_config, starter, md.entries[starter], None)
 
-        for partner in partners:
-            self._process_portrait(credit_map, config, credits_config, partner, md.entries[partner], None)
+            for partner in partners:
+                self._process_portrait(credit_map, config, credits_config, partner, md.entries[partner], None)
 
-        for actor in actor_list.list:
-            if actor.entid > 0:
-                self._process_portrait(credit_map, config, credits_config, actor.entid, md.entries[actor.entid], actor)
+            for actor in actor_list.list:
+                if actor.entid > 0:
+                    self._process_portrait(credit_map, config, credits_config, actor.entid, md.entries[actor.entid], actor)
 
-        credit_map = {k: credit_map[k] for k in sorted(credit_map)}
+            credit_map = {k: credit_map[k] for k in sorted(credit_map)}
 
-        for entry in credit_map.values():
-            setface = ""
-            if entry.actor:
-                setface = f"message_SetFaceEmpty({SsbConstant.create_for(entry.actor).name}, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);"
-            others = ""
-            if entry.other_artists:
-                others = list(set(entry.other_artists))
-                main = ''
-                others_short = others[:3]
-                if len(others_short) != len(others):
-                    main += ' + more'
-                others = f"More Authors: [CS:A]{', '.join(others_short) + main}[CR]"
-            credits += f"""
+            for entry in credit_map.values():
+                setface = ""
+                if entry.actor:
+                    setface = f"message_SetFaceEmpty({SsbConstant.create_for(entry.actor).name}, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);"
+                others = ""
+                if entry.other_artists:
+                    others = list(set(entry.other_artists))
+                    main = ''
+                    others_short = others[:3]
+                    if len(others_short) != len(others):
+                        main += ' + more'
+                    others = f"More Authors: [CS:A]{', '.join(others_short) + main}[CR]"
+                credits += f"""
         case menu("{entry.name}"):
             {setface}
             message_Talk("Last Author: [CS:A]{escape(entry.main_artist)}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/portrait.html?id={escape(entry.id_str)}");
+            jump @l_artists;
+"""
+        except:
+            traceback.print_exc()
+            return """
+        case menu("Error!"):
+            message_Mail("Sorry! We There was a critical error while \\ncollecting the data during randomization!\\nPlease visit sprites.pmdcollab.org for credits!");
             jump @l_artists;
 """
         return credits
@@ -509,13 +518,15 @@ macro patches() {{
         others = []
         for credit in credits:
             artist_id = credit[1]
-            artist_credits = credits_config[str(artist_id)]
-            name = artist_credits['name']
-            if name == "":
-                name = artist_credits['id']
+            name = '<Failed to get :(>'
             link = ""
-            if artist_credits['contact'] != "":
-                link = f" ({artist_credits['contact']})"
+            if str(artist_id) in credits_config:
+                artist_credits = credits_config[str(artist_id)]
+                name = artist_credits['name']
+                if name == "":
+                    name = artist_credits['id']
+                if artist_credits['contact'] != "":
+                    link = f" ({artist_credits['contact']})"
             if main is None:
                 main = f'{name}{link}'
             else:

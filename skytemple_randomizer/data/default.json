@@ -13,6 +13,8 @@
     "items": true,
     "pokemon": true,
     "traps": true,
+    "min_floor_change_percent": 10,
+    "max_floor_change_percent": 10,
     "fixed_rooms": false,
     "max_sticky_chance": 100,
     "max_mh_chance": 100,

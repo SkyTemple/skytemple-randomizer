@@ -386,6 +386,17 @@ def main():
     # Load main window + controller
     MainController(builder, main_window)
 
+    try:
+        wa = Gdk.Display.get_default().get_primary_monitor().get_workarea()
+        main_window.resize(
+            min(1280, wa.width),
+            min(768, wa.height)
+        )
+    except:
+        main_window.resize(
+            1280, 768
+        )
+    main_window.set_position(Gtk.WindowPosition.CENTER)
     main_window.present()
     main_window.set_icon_name('skytemple_randomizer')
     Gtk.main()

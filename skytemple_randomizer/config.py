@@ -97,6 +97,8 @@ class DungeonsConfig(TypedDict):
     items: bool
     pokemon: bool
     traps: bool
+    min_floor_change_percent: IntRange
+    max_floor_change_percent: IntRange
     fixed_rooms: bool
     max_sticky_chance: IntRange
     max_mh_chance: IntRange
@@ -119,6 +121,16 @@ class DungeonsConfigDoc:
         Levels of Pokémon on a floor are randomized to be -/+3 of the original game's weakest/strongest Pokémon on the floor."""
     traps = \
         """Whether or not to randomize traps and Wonder Tile spawn chances."""
+    min_floor_change_percent = \
+        """Maximum amount of change in floor count in the lower direction 
+        (eg. if this is 10%, a dungeon can have up to 10% less floors). 
+        A dungeon will never have less than 1 floor.
+        This setting has no effect if layouts are not randomized."""
+    max_floor_change_percent = \
+        """Maximum amount of change in floor count in the upper direction 
+        (eg. if this is 10%, a dungeon can have up to 10% more floors). 
+        A dungeon will never have more than 99 floors.
+        This setting has no effect if layouts are not randomized."""
     fixed_rooms = \
         """Whether or not to replace all boss fight rooms with randomly generated room layouts.
         
@@ -308,6 +320,10 @@ class ConfigFileLoader:
                         target[field] = 100
                     elif field == 'max_mh_chance':
                         target[field] = 100
+                    elif field == 'min_floor_change_percent':
+                        target[field] = 0
+                    elif field == 'max_floor_change_percent':
+                        target[field] = 0
                     elif field == 'instant':
                         target[field] = False
                     elif field == 'topmenu_music':

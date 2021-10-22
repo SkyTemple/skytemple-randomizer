@@ -45,6 +45,8 @@ export const SETTINGS_CONFIG = {
         items: ["Randomize Items?", UiSwitch],
         pokemon: ["Randomize Pokémon Spawns?", UiSwitch],
         traps: ["Randomize Traps?", UiSwitch],
+        min_floor_change_percent: ["Randomize Floor count (down; %)", UiSlider, 10],
+        max_floor_change_percent: ["Randomize Floor count (up; %)", UiSlider, 10],
         fixed_rooms: ["Randomize Boss Room Layouts?", UiSwitch],
         max_sticky_chance: ["Max sticky item chance", UiSlider, 100],
         max_mh_chance: ["Max monster house chance", UiSlider, 100],

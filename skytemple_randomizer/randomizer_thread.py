@@ -40,6 +40,7 @@ from skytemple_randomizer.randomizer.npc import NpcRandomizer
 from skytemple_randomizer.randomizer.overworld_music import OverworldMusicRandomizer
 from skytemple_randomizer.randomizer.patch_applier import PatchApplier
 from skytemple_randomizer.randomizer.portrait_downloader import PortraitDownloader
+from skytemple_randomizer.randomizer.quiz import QuizRandomizer
 from skytemple_randomizer.randomizer.recruitment_table import RecruitmentTableRandomizer
 from skytemple_randomizer.randomizer.seed_info import SeedInfo
 from skytemple_randomizer.randomizer.special.fun import SpecialFunRandomizer
@@ -54,7 +55,7 @@ from skytemple_randomizer.status import Status
 RANDOMIZERS = [
     PatchApplier, NpcRandomizer, StarterRandomizer, BossRandomizer, GuestRandomizer, SpecialPcRandomizer,
     RecruitmentTableRandomizer, DungeonRandomizer, FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader,
-    MonsterRandomizer, MovesetRandomizer, LocationRandomizer, ChapterRandomizer, TextMainRandomizer,
+    MonsterRandomizer, MovesetRandomizer, LocationRandomizer, ChapterRandomizer, QuizRandomizer, TextMainRandomizer,
     TextScriptRandomizer, GlobalItemsRandomizer, OverworldMusicRandomizer, MiscRandomizer, SpecialFunRandomizer,
     SeedInfo
 ]

@@ -23,6 +23,7 @@ from enum import Enum
 from typing import TypedDict, Optional, List, Dict
 
 import pkg_resources
+from jsonschema import validate
 
 from skytemple_files.common.util import open_utf8
 from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
@@ -147,18 +148,11 @@ class DungeonsConfigDoc:
         """Only these items will spawn on dungeon floors."""
 
 
-class PersonalityTestConfig(Enum):
-    TEST = 0
-    TEST_AND_ASK = 1
-    ASK = 2
-
-
 class ImprovementsConfig(TypedDict):
     download_portraits: bool
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
     patch_totalteamcontrol: bool
-    personality_test: PersonalityTestConfig
 
 
 class ImprovementsConfigDoc:
@@ -173,10 +167,61 @@ class ImprovementsConfigDoc:
     patch_totalteamcontrol = \
         f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
         Patch by Cipnit."""
-    personality_test = \
+
+
+class QuizMode(Enum):
+    TEST = 0
+    TEST_AND_ASK = 1
+    ASK = 2
+
+
+QUIZ_QUESTIONS_JSON_SCHEMA = {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "question",
+      "answers"
+    ],
+    "additionalProperties": False,
+    "properties": {
+      "question": {
+        "type": "string"
+      },
+      "answers": {
+        "minItems": 2,
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+
+
+class QuizQuestion(TypedDict):
+    question: str
+    answers: List[str]
+
+
+class QuizConfig(TypedDict):
+    mode: QuizMode
+    randomize: bool
+    questions: List[QuizQuestion]
+
+
+class QuizConfigDoc:
+    mode = \
         f"""Change the behaviour of the hero starter selection in the personality test, using patches by irdkwia. 
         You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely. 
         Please note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again."""
+    randomize = \
+        f"""If enabled, the personality quiz questions will be randomized using the qustions below. 
+        Enter them as a list of YAML objects (see the examples). You need to define at least two answers, 2-4 answers will be randomly picked.
+        If you pick "Select Manually" above, this is irrelevant as no quiz will be used.
+        """
 
 
 class MovesetConfig(Enum):
@@ -263,6 +308,7 @@ class RandomizerConfig(TypedDict):
     locations: LocationsConfig
     chapters: ChaptersConfig
     text: TextConfig
+    quiz: QuizConfig
     seed: str  # see get_effective_seed
 
 
@@ -314,8 +360,6 @@ class ConfigFileLoader:
                         target[field] = True
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
                         target[field] = False
-                    elif field == 'personality_test':
-                        target[field] = 1
                     elif field == 'max_sticky_chance':
                         target[field] = 100
                     elif field == 'max_mh_chance':
@@ -334,6 +378,8 @@ class ConfigFileLoader:
                         target[field] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 360, 394, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541]
                     elif field == 'monsters_enabled':
                         target[field] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536]
+                    elif field == 'quiz' and field_type == QuizConfig:
+                        target[field] = {'mode': 1, 'randomize': False, 'questions': []}
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)
@@ -375,6 +421,9 @@ class ConfigFileLoader:
         elif typ == List[int]:
             if not isinstance(target, list) or not all(isinstance(x, int) for x in target):
                 raise ValueError(f"Value in JSON must be a list of integers for {typ}.")
+            return target
+        elif typ == List[QuizQuestion]:
+            validate(target, QUIZ_QUESTIONS_JSON_SCHEMA)
             return target
         else:
             raise TypeError(f"Unknown type for {cls.__name__}: {typ}")

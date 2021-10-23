@@ -20,12 +20,15 @@ from enum import Enum
 from functools import partial
 from typing import List, Dict
 
-from gi.repository import Gtk
+import yaml
+from gi.repository import Gtk, GtkSource
+from jsonschema import validate
 
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon, Pmd2DungeonItem
 from skytemple_files.data.md.model import Ability
 from skytemple_files.dungeon_data.mappa_bin.item_list import MAX_ITEM_ID
-from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange
+from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange, QuizQuestion, \
+    QUIZ_QUESTIONS_JSON_SCHEMA
 from skytemple_randomizer.lists import MOVES, MONSTERS
 
 
@@ -49,7 +52,11 @@ class ConfigUIApplier:
             typ = config[CLASSREF]
         else:
             typ = config.__class__
-        if hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
+        if typ == list and field_name == 'quiz_questions':
+            buffer: GtkSource.Buffer = self.builder.get_object('text_quiz_content').get_buffer()
+            validate(config, QUIZ_QUESTIONS_JSON_SCHEMA)
+            buffer.set_text(yaml.safe_dump(config, default_flow_style=False, sort_keys=False, allow_unicode=True))
+        elif hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
             for field, field_type in typ.__annotations__.items():
                 field_full = field
                 if field_name is not None:
@@ -123,6 +130,12 @@ class ConfigUIReader:
         return self._handle(RandomizerConfig)
 
     def _handle(self, typ: type, field_name=None):
+        if typ == List[QuizQuestion]:
+            buffer: GtkSource.Buffer = self.builder.get_object('text_quiz_content').get_buffer()
+            yaml_content = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
+            yaml_obj = yaml.safe_load(yaml_content)
+            validate(yaml_obj, QUIZ_QUESTIONS_JSON_SCHEMA)
+            return yaml_obj
         if hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
             d = {}
             for field, field_type in typ.__annotations__.items():

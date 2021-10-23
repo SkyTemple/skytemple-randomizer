@@ -24,9 +24,14 @@ import traceback
 import webbrowser
 from functools import partial
 from math import floor
-from typing import Optional, Callable
+from typing import Optional, Callable, Dict
 
 import gi
+import yaml
+from gi.repository.GtkSource import StyleSchemeManager, LanguageManager
+from jsonschema import ValidationError
+from yaml.parser import ParserError
+from yaml.scanner import ScannerError
 
 gi.require_version('Gtk', '3.0')
 
@@ -48,7 +53,7 @@ from skytemple_randomizer.frontend.gtk.config import ConfigUIApplier, ConfigUIRe
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
-from gi.repository import Gtk, GLib, Gdk
+from gi.repository import Gtk, GLib, Gdk, GtkSource
 from gi.repository.Gtk import Window
 
 
@@ -71,6 +76,30 @@ class MainController:
         self.static_config = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
 
         self.chosen_file = None
+
+        # Source view
+        view: GtkSource.View = self.builder.get_object('text_quiz_content')
+        buffer: GtkSource.Buffer = GtkSource.Buffer.new_with_language(LanguageManager.get_default().get_language('yaml'))
+        view.set_show_line_numbers(True)
+        view.set_show_line_marks(True)
+        view.set_auto_indent(True)
+        view.set_insert_spaces_instead_of_tabs(True)
+        view.set_indent_width(4)
+        view.set_show_right_margin(True)
+        view.set_indent_on_tab(True)
+        view.set_highlight_current_line(True)
+        view.set_smart_backspace(True)
+        view.set_smart_home_end(True)
+        view.set_monospace(True)
+        buffer.set_highlight_matching_brackets(True)
+        buffer.set_highlight_syntax(True)
+        style_scheme_manager = StyleSchemeManager()
+        selected_style_scheme_id = None
+        for style_id in style_scheme_manager.get_scheme_ids():
+            if not selected_style_scheme_id or style_id == 'oblivion':
+                selected_style_scheme_id = style_id
+        buffer.set_style_scheme(style_scheme_manager.get_scheme(selected_style_scheme_id))
+        view.set_buffer(buffer)
 
         # Load default configuration
         self.ui_applier = ConfigUIApplier(self.builder,
@@ -197,13 +226,20 @@ class MainController:
         save_diag.add_filter(filter)
         response = save_diag.run()
         fn = save_diag.get_filename()
-        if '.' not in fn:
-            fn += '.json'
         save_diag.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            if '.' not in fn:
+                fn += '.json'
             with open_utf8(fn, 'w') as f:
-                json.dump(self.ui_reader.read(), f, indent=4, cls=EnumJsonEncoder)
+                try:
+                    json.dump(self.ui_reader.read(), f, indent=4, cls=EnumJsonEncoder, ensure_ascii=False)
+                except Exception as err:
+                    tb = ""
+                    if not isinstance(err, ValidationError) and not isinstance(err, ScannerError) and not isinstance(err, ParserError):
+                        tb = traceback.format_exc()
+                        print(tb)
+                    self.display_error(f"Error saving these settings:\n{err}\n{tb}")
 
     def on_about_clicked(self, *args):
         about: Gtk.AboutDialog = self.builder.get_object("about_dialog")
@@ -288,7 +324,15 @@ class MainController:
                 rom = NintendoDSRom.fromFile(self.chosen_file)
                 status = Status()
                 status.subscribe(lambda a, b: GLib.idle_add(partial(update_fn, a, b)))
-                config = self.ui_reader.read()
+                try:
+                    config = self.ui_reader.read()
+                except Exception as err:
+                    tb = ""
+                    if not isinstance(err, ValidationError) and not isinstance(err, ScannerError) and not isinstance(err, ParserError):
+                        tb = traceback.format_exc()
+                        print(tb)
+                    self.display_error(f"There is an error in your settings:\n{err}\n{tb}")
+                    return
                 # Set the seed
                 seed = get_effective_seed(config['seed'])
                 random.seed(seed)
@@ -408,6 +452,15 @@ def _load_theme():
 
 
 if __name__ == '__main__':
+    def str_presenter(dumper, data):
+        if len(data.splitlines()) > 1:
+            return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+        return dumper.represent_scalar('tag:yaml.org,2002:str', data)
+
+
+    yaml.add_representer(str, str_presenter)
+    yaml.representer.SafeRepresenter.add_representer(str, str_presenter)
+
     # TODO: At the moment doesn't support any cli arguments.
     logging.basicConfig()
     logging.getLogger().setLevel(logging.DEBUG)

@@ -18,8 +18,7 @@ from random import choice
 
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file, replace_text_script, random_txt_line, \
-    get_all_string_files
+from skytemple_randomizer.randomizer.util.util import replace_text_script, random_txt_line, get_all_string_files
 from skytemple_randomizer.status import Status
 
 

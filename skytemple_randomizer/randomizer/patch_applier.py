@@ -17,7 +17,7 @@
 from time import sleep
 
 from skytemple_files.patch.patches import Patcher
-from skytemple_randomizer.config import PersonalityTestConfig
+from skytemple_randomizer.config import QuizMode
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
 
@@ -31,7 +31,7 @@ class PatchApplier(AbstractRandomizer):
             i += 1
         if self.config['improvements']['patch_totalteamcontrol']:
             i += 1
-        if self.config['improvements']['personality_test'] != PersonalityTestConfig.TEST:
+        if self.config['quiz']['mode'] != QuizMode.TEST:
             i += 1
         return i
 
@@ -68,11 +68,11 @@ class PatchApplier(AbstractRandomizer):
             if not patcher.is_applied('ReduceJumpcutPauseTime'):
                 patcher.apply('ReduceJumpcutPauseTime')
 
-        if self.config['improvements']['personality_test'] != PersonalityTestConfig.TEST:
+        if self.config['quiz']['mode'] != QuizMode.TEST:
             status.step("Apply personality test patches...")
             if not patcher.is_applied('ChooseStarter'):
                 patcher.apply('ChooseStarter')
-            if self.config['improvements']['personality_test'] == PersonalityTestConfig.ASK:
+            if self.config['quiz']['mode'] == QuizMode.ASK:
                 if not patcher.is_applied('SkipQuiz'):
                     patcher.apply('SkipQuiz')
 

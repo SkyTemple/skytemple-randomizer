@@ -118,10 +118,11 @@ export default function App() {
                     <Tab label="Starters & More" {...a11yProps(1)} />
                     <Tab label="Dungeons" {...a11yProps(2)} />
                     <Tab label="Improvements" {...a11yProps(3)} />
-                    <Tab label="Pokémon" {...a11yProps(4)} />
-                    <Tab label="Locations" {...a11yProps(5)} />
-                    <Tab label="Chapters" {...a11yProps(6)} />
-                    <Tab label="Text" {...a11yProps(7)} />
+                    <Tab label="P. Quiz" {...a11yProps(4)} />
+                    <Tab label="Pokémon" {...a11yProps(5)} />
+                    <Tab label="Locations" {...a11yProps(6)} />
+                    <Tab label="Chapters" {...a11yProps(7)} />
+                    <Tab label="Text" {...a11yProps(8)} />
                 </Tabs>
             </AppBar>
             <SwipeableViews
@@ -143,15 +144,18 @@ export default function App() {
                     <Settings for="improvements" />
                 </TabPanel>
                 <TabPanel value={activeTab} index={4} dir={theme.direction}>
-                    <Settings for="pokemon" />
+                    <Settings for="quiz" />
                 </TabPanel>
                 <TabPanel value={activeTab} index={5} dir={theme.direction}>
-                    <Settings for="locations" />
+                    <Settings for="pokemon" />
                 </TabPanel>
                 <TabPanel value={activeTab} index={6} dir={theme.direction}>
-                    <Settings for="chapters" />
+                    <Settings for="locations" />
                 </TabPanel>
                 <TabPanel value={activeTab} index={7} dir={theme.direction}>
+                    <Settings for="chapters" />
+                </TabPanel>
+                <TabPanel value={activeTab} index={8} dir={theme.direction}>
                     <Settings for="text" />
                 </TabPanel>
             </SwipeableViews>

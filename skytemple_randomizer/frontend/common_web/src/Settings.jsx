@@ -175,7 +175,11 @@ export default function Settings(props) {
                 />
                 break;
             default:
-                throw Error("Unknown field.");
+                if (typeof fieldConfig[1] == 'string') {
+                    field = <em>{fieldConfig[1]}</em>
+                } else {
+                    throw Error("Unknown field.");
+                }
         }
         rows.push(<Grid item xs={12}>{field}</Grid>)
     }

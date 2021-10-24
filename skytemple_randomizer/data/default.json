@@ -4,7 +4,9 @@
     "npcs": true,
     "global_items": true,
     "topmenu_music": true,
-    "overworld_music": false
+    "overworld_music": false,
+    "explorer_rank_unlocks": false,
+    "explorer_rank_rewards": true
   },
   "dungeons": {
     "mode": 0,
@@ -226,6 +228,12 @@
     "main": false,
     "story": false,
     "instant": false
+  },
+  "iq": {
+    "randomize_tactics": false,
+    "randomize_iq_gain": false,
+    "randomize_iq_skills": false,
+    "randomize_iq_groups": false
   },
   "quiz": {
     "mode": 1,

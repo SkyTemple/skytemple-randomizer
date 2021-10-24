@@ -51,6 +51,8 @@ class StartersNpcsConfig(TypedDict):
     global_items: bool
     topmenu_music: bool
     overworld_music: bool
+    explorer_rank_unlocks: bool
+    explorer_rank_rewards: bool
 
 
 class StartersNpcsConfigDoc:
@@ -70,6 +72,10 @@ class StartersNpcsConfigDoc:
         """If enabled, the music that plays on the titlescreen is randomized."""
     overworld_music = \
         """If enabled, the music that plays outside of dungeons is randomized (for the most part)."""
+    explorer_rank_unlocks = \
+        """If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."""
+    explorer_rank_rewards = \
+        """If enabled, Explorer Ranks give random items as rewards upon unlocking a new level."""
 
 
 class DungeonModeConfig(Enum):
@@ -304,6 +310,23 @@ class TextConfigDoc:
         """If enabled, text will be displayed instantly."""
 
 
+class IqConfig(TypedDict):
+    randomize_tactics: bool
+    randomize_iq_gain: bool
+    randomize_iq_skills: bool
+    randomize_iq_groups: bool
+
+
+class IqConfigDoc:
+    randomize_tactics = \
+        """If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."""
+    randomize_iq_gain = \
+        """If enabled, the amount of belly the gummies fill and the amount of IQ they give are fully random for each type."""
+    randomize_iq_skills = \
+        """If enabled, IQ skills are unlocked at random IQ amounts. Item Master is always unlocked."""
+    randomize_iq_groups = \
+        """If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."""
+
 class RandomizerConfig(TypedDict):
     """Configuration for the randomizer."""
     starters_npcs: StartersNpcsConfig
@@ -313,6 +336,7 @@ class RandomizerConfig(TypedDict):
     locations: LocationsConfig
     chapters: ChaptersConfig
     text: TextConfig
+    iq: IqConfig
     quiz: QuizConfig
     seed: str  # see get_effective_seed
 
@@ -364,6 +388,18 @@ class ConfigFileLoader:
                     elif field == 'overworld_music' and field_type == bool:
                         target[field] = True
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
+                        target[field] = False
+                    elif field == 'explorer_rank_unlocks' and field_type == bool:
+                        target[field] = False
+                    elif field == 'explorer_rank_rewards' and field_type == bool:
+                        target[field] = True
+                    elif field == 'randomize_tactics' and field_type == bool:
+                        target[field] = False
+                    elif field == 'randomize_iq_gain' and field_type == bool:
+                        target[field] = False
+                    elif field == 'randomize_iq_skills' and field_type == bool:
+                        target[field] = False
+                    elif field == 'randomize_iq_groups' and field_type == bool:
                         target[field] = False
                     elif field == 'patch_fixmemorysoftlock' and field_type == bool:
                         target[field] = True

@@ -31,7 +31,9 @@ export const SETTINGS_CONFIG = {
         npcs: ["Randomize NPCs and Bosses?", UiSwitch],
         global_items: ["Randomize Treasure Town shop and dungeon rewards?", UiSwitch],
         topmenu_music: ["Randomize Titlescreen Music?", UiSwitch],
-        overworld_music: ["Randomize Overworld Music?", UiSwitch]
+        overworld_music: ["Randomize Overworld Music?", UiSwitch],
+        explorer_rank_unlocks: ["Randomize Explorer Rank Unlocks?", UiSwitch],
+        explorer_rank_rewards: ["Randomize Explorer Rank Rewards?", UiSwitch]
     },
     dungeons: {
         mode: ["Mode", UiSelect, {0: "Fully random floors", 1: "Keep floors in a dungeon similar"}],
@@ -94,6 +96,12 @@ export const SETTINGS_CONFIG = {
         instant: ["Instant Text?", UiSwitch],
         main: ["Randomize Main Texts?", UiSwitch],
         story: ["Randomize Story Dialogue?", UiSwitch],
+    },
+    iq: {
+        randomize_tactics: ["Randomize Tactics Unlock Levels?", UiSwitch],
+        randomize_iq_gain: ["Randomize IQ Gain?", UiSwitch],
+        randomize_iq_skills: ["Randomize IQ Skill Unlocks?", UiSwitch],
+        randomize_iq_groups: ["Randomize IQ Groups?", UiSwitch],
     },
     quiz: {
         mode: ["Personality Test Starter Settings", UiSelect, {

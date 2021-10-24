@@ -54,3 +54,7 @@
 .back_illust.text {
    background-image: url("data/back_illust/text.png");
 }
+
+.back_illust.bboard {
+   background-image: url("data/back_illust/bboard.png");
+}

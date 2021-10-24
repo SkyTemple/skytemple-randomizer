@@ -88,6 +88,7 @@ jobs:
             mingw-w64-${{ matrix.arch }}-gtk3
             mingw-w64-${{ matrix.arch }}-python3-gobject
             mingw-w64-${{ matrix.arch }}-openssl
+            mingw-w64-${{ matrix.arch }}-python-yaml
       - name: Checkout
         uses: actions/checkout@v2
       - name: Rewrite version for dev if not tag

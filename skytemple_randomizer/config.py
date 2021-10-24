@@ -241,6 +241,8 @@ class MonsterConfig(TypedDict):
     abilities: bool
     typings: bool
     movesets: MovesetConfig
+    tm_hm_movesets: bool
+    tms_hms: bool
     abilities_enabled: List[int]
     monsters_enabled: List[int]
     moves_enabled: List[int]
@@ -254,7 +256,11 @@ class MonsterConfigDoc:
     typings = \
         """Assigns all Pokémon one to two random types."""
     movesets = \
-        """If enabled, assignes all Pokémon random TM/HM, egg move and level up movesets. You can control the properties of the starting move."""
+        """If enabled, assignes all Pokémon random level up movesets. You can control the properties of the starting move."""
+    tm_hm_movesets = \
+        """If enabled, assignes all Pokémon random TM/HM movesets."""
+    tms_hms = \
+        """If enabled, randomizes which moves TMs and HMs contain."""
     abilities_enabled = \
         """Only these abilities will be chosen, if abilities are randomized."""
     monsters_enabled = \
@@ -366,6 +372,10 @@ class ConfigFileLoader:
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
                         target[field] = False
                     elif field == 'patch_fixmemorysoftlock' and field_type == bool:
+                        target[field] = True
+                    elif field == 'tm_hm_movesets' and field_type == bool:
+                        target[field] = True
+                    elif field == 'tms_hms' and field_type == bool:
                         target[field] = True
                     elif field == 'max_sticky_chance':
                         target[field] = 100

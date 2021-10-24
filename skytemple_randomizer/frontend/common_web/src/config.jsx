@@ -71,12 +71,14 @@ export const SETTINGS_CONFIG = {
         iq_groups: ["Randomize IQ Groups?", UiSwitch],
         abilities: ["Randomize Abilities?", UiSwitch],
         typings: ["Randomize Typings?", UiSwitch],
-        movesets: ["Randomize Movesets?", UiSelect, {
+        movesets: ["Randomize Level-Up Movesets?", UiSelect, {
             0: "No",
             1: "Yes, fully random",
             2: "Yes, first move deals damage",
             3: "Yes, first move deals damage + STAB"
         }],
+        tm_hm_movesets: ["Randomize TM/HM Movesets?", UiSwitch],
+        tms_hms: ["Randomize TMs/HMs?", UiSwitch],
         abilities_enabled: ["Enabled Abilities", 'abilities_enabled'],
         monsters_enabled: ["Enabled Pokémon", 'monsters_enabled'],
         moves_enabled: ["Enabled Moves", 'moves_enabled']

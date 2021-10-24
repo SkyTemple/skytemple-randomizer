@@ -191,19 +191,16 @@ macro settings() {{
     §l_settings;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Starters & More"):
-            message_Mail("Randomize Starters?: {self._bool(self.config['starters_npcs']['starters'])}\\nRandomize NPCs and Bosses?: {self._bool(self.config['starters_npcs']['npcs'])}\\nRandomize Shops?: {self._bool(self.config['starters_npcs']['global_items'])}\\nRandomize OW Music?: {self._bool(self.config['starters_npcs']['overworld_music'])}");
+            message_Mail("Randomize Starters?: {self._bool(self.config['starters_npcs']['starters'])}\\nRandomize NPCs and Bosses?: {self._bool(self.config['starters_npcs']['npcs'])}\\nRandomize Shops?: {self._bool(self.config['starters_npcs']['global_items'])}\\nRandomize OW Music?: {self._bool(self.config['starters_npcs']['overworld_music'])}\\nRandomize Top-Menu Music?: {self._bool(self.config['starters_npcs']['topmenu_music'])}\\nRandomize Explorer Rank Unlocks?: {self._bool(self.config['starters_npcs']['explorer_rank_unlocks'])}\\nRandomize Explorer Rank Rewards?: {self._bool(self.config['starters_npcs']['explorer_rank_rewards'])}");
             jump @l_settings;
         case menu("Dungeons: General"):
-            message_Mail("Mode: {self._dungeon_mode(self.config['dungeons']['mode'])}\\nLayouts and Tilesets?: {self._bool(self.config['dungeons']['layouts'])}\\nRandomize Weather?: {self._weather(self.config['dungeons']['weather'])}\\nRandomize Items?: {self._bool(self.config['dungeons']['items'])}\\nRandomize Pokémon?: {self._bool(self.config['dungeons']['pokemon'])}\\nRandomize Traps?: {self._bool(self.config['dungeons']['traps'])}\\nRandomize Boss Rooms?: {self._bool(self.config['dungeons']['fixed_rooms'])}");
+            message_Mail("Mode: {self._dungeon_mode(self.config['dungeons']['mode'])}\\nLayouts and Tilesets?: {self._bool(self.config['dungeons']['layouts'])}\\nRandomize Weather?: {self._weather(self.config['dungeons']['weather'])}\\nRandomize Items?: {self._bool(self.config['dungeons']['items'])}\\nRandomize Pokémon?: {self._bool(self.config['dungeons']['pokemon'])}\\nRandomize Traps?: {self._bool(self.config['dungeons']['traps'])}\\nRandomize Boss Rooms?: {self._bool(self.config['dungeons']['fixed_rooms'])}\\Max Sticky Item Chance: {self.config['dungeons']['max_sticky_chance']}%\\nMax Monster House Chance: {self.config['dungeons']['max_mh_chance']}%\\nRandomize Floor count (down): {self.config['dungeons']['min_floor_change_percent']}%\\nRandomize Floor count (up): {self.config['dungeons']['max_floor_change_percent']}%");
             jump @l_settings;
         case menu("Improvements"):
-            message_Mail("Download portraits?: {self._bool(self.config['improvements']['download_portraits'])}\\nApply 'MoveShortcuts'?: {self._bool(self.config['improvements']['patch_moveshortcuts'])}\\nApply 'UnusedDungeonChance'?: {self._bool(self.config['improvements']['patch_unuseddungeonchance'])}\\nApply 'CTC'?: {self._bool(self.config['improvements']['patch_totalteamcontrol'])}");
+            message_Mail("Download portraits?: {self._bool(self.config['improvements']['download_portraits'])}\\nApply 'MoveShortcuts'?: {self._bool(self.config['improvements']['patch_moveshortcuts'])}\\nApply 'UnusedDungeonChance'?: {self._bool(self.config['improvements']['patch_unuseddungeonchance'])}\\nApply 'CTC'?: {self._bool(self.config['improvements']['patch_totalteamcontrol'])}\\nApply 'FixMemorySoftlock'?: {self._bool(self.config['improvements']['patch_fixmemorysoftlock'])}");
             jump @l_settings;
         case menu("Pokémon: General"):
-            message_Mail("Randomize IQ Groups?: {self._bool(self.config['pokemon']['iq_groups'])}\\nRandomize Abilities?: {self._bool(self.config['pokemon']['abilities'])}\\nRandomize Typings?: {self._bool(self.config['pokemon']['typings'])}\\nRandomize Movesets?: {self._movesets(self.config['pokemon']['movesets'])}");
-            jump @l_settings;
-        case menu("Pokémon: Abilities"):
-            {self._abilities(self.config['pokemon']['abilities_enabled'])}
+            message_Mail("Randomize IQ Groups?: {self._bool(self.config['pokemon']['iq_groups'])}\\nRandomize Abilities?: {self._bool(self.config['pokemon']['abilities'])}\\nRandomize Typings?: {self._bool(self.config['pokemon']['typings'])}\\nRandomize Level-Up Movesets?: {self._movesets(self.config['pokemon']['movesets'])}\\nRandomize TM/HM Movesets?: {self._bool(self.config['pokemon']['tm_hm_movesets'])}\\nRandomize TM/HMs?: {self._bool(self.config['pokemon']['tms_hms'])}");
             jump @l_settings;
         case menu("Locations (First)"):
             message_Mail("Randomize?: {self._bool(self.config['locations']['randomize'])}");
@@ -218,7 +215,10 @@ macro settings() {{
             {self._locs_chaps(self.config['chapters']['text'])}
             jump @l_settings;
         case menu("Text"):
-            message_Mail("Randomize Main Texts?: {self._bool(self.config['text']['main'])}\\nRandomize Story Dialogue: {self._bool(self.config['text']['story'])}");
+            message_Mail("Randomize Main Texts?: {self._bool(self.config['text']['main'])}\\nRandomize Story Dialogue: {self._bool(self.config['text']['story'])}\\nInstant Text?: {self._bool(self.config['text']['instant'])}");
+            jump @l_settings;
+        case menu("Tactics and IQ"):
+            message_Mail("Randomize Tactics Unlock Levels?: {self._bool(self.config['iq']['randomize_tactics'])}\\nRandomize IQ Gain?: {self._bool(self.config['iq']['randomize_iq_gain'])}\\nRandomize IQ Skill Unlocks?: {self._bool(self.config['iq']['randomize_iq_skills'])}\\nRandomize IQ Groups?: {self._bool(self.config['iq']['randomize_iq_groups'])}");
             jump @l_settings;
         {self._dungeon_cases()}
         case menu("Goodbye!"):
@@ -352,24 +352,6 @@ macro patches() {{
         if param == DungeonModeConfig.FULLY_RANDOM:
             return "[CS:H]Fully random floors[CR]"
         return "[CS:H]Keep floors in a dungeon similar[CR]"
-
-    def _abilities(self, param: List[int]):
-        full = ""
-        single = "message_Mail(\""
-        line = ""
-        i = 0
-        for i in range(0, len(param)):
-            ability_name = Ability(param[i]).print_name
-            if i != 0 and i % 2 == 0:
-                single += line.strip(", ") + "\\n"
-                line = ""
-            if i != 0 and i % 18 == 0:
-                full += single + "\");"
-                single = "message_Mail(\""
-            line += escape(ability_name) + ", "
-        if i % 18 != 0 and i != 0:
-            full += single + "\");"
-        return full
 
     def _locs_chaps(self, param: str):
         full = ""

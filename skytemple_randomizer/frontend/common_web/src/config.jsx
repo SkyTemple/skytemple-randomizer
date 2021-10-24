@@ -65,6 +65,7 @@ export const SETTINGS_CONFIG = {
         patch_moveshortcuts: ["Apply \"MoveShortcuts\" patch?", UiSwitch],
         patch_unuseddungeonchance: ["Apply \"UnusedDungeonChance\" patch?", UiSwitch],
         patch_totalteamcontrol: ["Apply \"Complete Team Control\" patches?", UiSwitch],
+        patch_fixmemorysoftlock: ["Apply \"Fix Memory Softlock\" patch?", UiSwitch]
     },
     pokemon: {
         iq_groups: ["Randomize IQ Groups?", UiSwitch],

@@ -26,6 +26,7 @@ import pkg_resources
 from jsonschema import validate
 
 from skytemple_files.common.util import open_utf8
+from skytemple_files.patch.handler.fix_memory_softlock import FixMemorySoftlockPatchHandler
 from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
@@ -153,6 +154,7 @@ class ImprovementsConfig(TypedDict):
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
     patch_totalteamcontrol: bool
+    patch_fixmemorysoftlock: bool
 
 
 class ImprovementsConfigDoc:
@@ -167,6 +169,9 @@ class ImprovementsConfigDoc:
     patch_totalteamcontrol = \
         f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
         Patch by Cipnit."""
+    patch_fixmemorysoftlock = \
+        f"""Installs the patch '{FixMemorySoftlockPatchHandler().name}' by {FixMemorySoftlockPatchHandler().author}: 
+        {FixMemorySoftlockPatchHandler().description}"""
 
 
 class QuizMode(Enum):
@@ -360,6 +365,8 @@ class ConfigFileLoader:
                         target[field] = True
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
                         target[field] = False
+                    elif field == 'patch_fixmemorysoftlock' and field_type == bool:
+                        target[field] = True
                     elif field == 'max_sticky_chance':
                         target[field] = 100
                     elif field == 'max_mh_chance':

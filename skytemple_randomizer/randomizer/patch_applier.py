@@ -31,6 +31,8 @@ class PatchApplier(AbstractRandomizer):
             i += 1
         if self.config['improvements']['patch_totalteamcontrol']:
             i += 1
+        if self.config['improvements']['patch_fixmemorysoftlock']:
+            i += 1
         if self.config['quiz']['mode'] != QuizMode.TEST:
             i += 1
         return i
@@ -75,5 +77,10 @@ class PatchApplier(AbstractRandomizer):
             if self.config['quiz']['mode'] == QuizMode.ASK:
                 if not patcher.is_applied('SkipQuiz'):
                     patcher.apply('SkipQuiz')
+
+        if self.config['improvements']['patch_fixmemorysoftlock']:
+            status.step("Apply 'FixMemorySoftlock' patch...")
+            if not patcher.is_applied('FixMemorySoftlock'):
+                patcher.apply('FixMemorySoftlock')
 
         status.done()

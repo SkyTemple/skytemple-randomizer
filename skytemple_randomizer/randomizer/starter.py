@@ -43,6 +43,7 @@ class StarterRandomizer(AbstractRandomizer):
         status.step("Randomizing Partner Starters...")
         overlay13 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'])
         pokemon_string_data = self.static_data.string_index_data.string_blocks["Pokemon Names"]
+        results_string_start = self.static_data.string_index_data.string_blocks["Personality Quiz result strings"].begin
         langs = list(get_all_string_files(self.rom, self.static_data))
 
         orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
@@ -63,11 +64,11 @@ class StarterRandomizer(AbstractRandomizer):
                 k += 1
             # todo: refactor, this isn't really efficient.
             for lang, string_file in langs:
-                string_file.strings[0x67C + k] = replace_strings(
-                    string_file.strings[0x67C + k],
+                string_file.strings[results_string_start + k] = replace_strings(
+                    string_file.strings[results_string_start + k],
                     {
-                        self._get_name(string_file, orig_player_ids[i], pokemon_string_data):
-                        self._get_name(string_file, new_id, pokemon_string_data)
+                        self._get_name(string_file, orig_player_ids[i] % NUM_ENTITIES, pokemon_string_data):
+                        self._get_name(string_file, new_id % NUM_ENTITIES, pokemon_string_data)
                     }
                 )
             if i % 2 == 1 and new_id + NUM_ENTITIES <= 1154:

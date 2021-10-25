@@ -37,7 +37,7 @@ export function UiSlider(props) {
     };
     return (
         <Paper className={classes.paper}>
-            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl} style={{width: '80%'}}>
                 <Typography id={props.id + '-label'}>{props.label}</Typography>
                 <div style={{width: '500px', maxWidth: '100%'}}>
                     <Slider

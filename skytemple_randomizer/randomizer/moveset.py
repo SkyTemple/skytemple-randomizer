@@ -44,7 +44,7 @@ class MovesetRandomizer(AbstractRandomizer):
         md: Md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
         waza_p: WazaP = FileType.WAZA_P.deserialize(self.rom.getFileByName('BALANCE/waza_p.bin'))
 
-        if self.config['pokemon']['movesets'] == MovesetConfig.NO:
+        if self.config['pokemon']['movesets'] != MovesetConfig.NO:
             status.step("Randomizing Level-Up movesets...")
 
             valid_move_ids = get_allowed_move_ids(self.config)

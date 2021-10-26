@@ -93,7 +93,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
             HardcodedIq.set_gummi_iq_gains(new_iq_gains, arm9, self.static_data, additional_types_patch_applied)
             HardcodedIq.set_gummi_belly_heal(new_belly_gains, arm9, self.static_data, additional_types_patch_applied)
             HardcodedIq.set_wonder_gummi_gain(randrange(5, 20), arm9, self.static_data)
-            HardcodedIq.set_nectar_gain(randrange(5, 20), arm9, self.static_data)
+            HardcodedIq.set_nectar_gain(randrange(5, 20), ov29, self.static_data)
             HardcodedIq.set_juice_bar_nectar_gain(randrange(5, 20), arm9, self.static_data)
 
         if self.config['iq']['randomize_iq_groups']:

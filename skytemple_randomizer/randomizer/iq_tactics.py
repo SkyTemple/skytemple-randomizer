@@ -38,13 +38,13 @@ class IqTacticsRandomizer(AbstractRandomizer):
         return i
 
     def run(self, status: Status):
-        ov10 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0010.bin'])
-        ov29 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'])
         patcher = Patcher(self.rom, self.static_data)
         additional_types_patch_applied = patcher.is_applied('AddTypes')
         if self.config['iq']['randomize_iq_groups']:
             if not patcher.is_applied('CompressIQData'):
                 patcher.apply('CompressIQData')
+        ov10 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0010.bin'])
+        ov29 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'])
         arm9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']))
 
         if self.config['iq']['randomize_tactics']:

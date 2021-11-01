@@ -24,7 +24,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import MoveRoster, get_allowed_move_ids
+from skytemple_randomizer.randomizer.util.util import MoveRoster, get_allowed_move_ids, assert_not_empty
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to guest Pokémon indices
@@ -81,10 +81,11 @@ class GuestRandomizer(AbstractRandomizer):
                 if self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:
                     guest.moves = [choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_DAMAGE:
+                    assert_not_empty(damaging_move_ids)
                     guest.moves = [choice(damaging_move_ids), choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[guest.poke_id]
-                    first = choice(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
+                    first = choice(assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary)))
                     guest.moves = [first, choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
 
         GuestPokemonList.write(guests, arm9, self.static_data)

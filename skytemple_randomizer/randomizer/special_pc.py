@@ -23,7 +23,7 @@ from skytemple_files.hardcoded.default_starters import HardcodedDefaultStarters
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_allowed_move_ids, MoveRoster
+from skytemple_randomizer.randomizer.util.util import get_allowed_move_ids, MoveRoster, assert_not_empty
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to special PC indices
@@ -79,10 +79,11 @@ class SpecialPcRandomizer(AbstractRandomizer):
                 if self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:
                     pc.move1 = choice(valid_move_ids)
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_DAMAGE:
+                    assert_not_empty(damaging_move_ids)
                     pc.move1 = choice(damaging_move_ids)
                 elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[pc.poke_id]
-                    pc.move1 = choice(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
+                    pc.move1 = choice(assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary)))
 
         HardcodedDefaultStarters.set_special_episode_pcs(pcs, arm9, self.static_data)
         set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)

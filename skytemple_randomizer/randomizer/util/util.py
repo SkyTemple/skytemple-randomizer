@@ -122,7 +122,7 @@ def get_allowed_item_ids(conf: RandomizerConfig) -> List[int]:
     return conf['dungeons']['items_enabled']
 
 
-def _assert_not_empty(l):
+def assert_not_empty(l):
     if len(l) < 1:
         raise ValueError("Could not generate a valid move with the given settings.")
     return l
@@ -133,13 +133,13 @@ def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab
     if roster == MoveRoster.DEFAULT:
         return list(base)
     elif roster == MoveRoster.DAMAGING:
-        return _assert_not_empty(list(base.intersection(DAMAGING_MOVES)))
+        return list(base.intersection(DAMAGING_MOVES))
     elif roster == MoveRoster.STAB:
         if stab_type not in STAB_DICT:
-            return _assert_not_empty(list(base.intersection(DAMAGING_MOVES)))
+            return list(base.intersection(DAMAGING_MOVES))
         l = list(base.intersection(STAB_DICT[stab_type]))
         if len(l) < 1:
-            return _assert_not_empty(list(base.intersection(DAMAGING_MOVES)))
+            return list(base.intersection(DAMAGING_MOVES))
         return l
 
 

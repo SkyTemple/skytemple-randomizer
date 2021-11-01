@@ -25,7 +25,8 @@ from skytemple_files.data.str.model import Str
 from skytemple_files.data.waza_p.model import WazaP
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_allowed_move_ids, MoveRoster, get_all_string_files
+from skytemple_randomizer.randomizer.util.util import get_allowed_move_ids, MoveRoster, get_all_string_files, \
+    assert_not_empty
 from skytemple_randomizer.status import Status
 
 
@@ -57,9 +58,10 @@ class MovesetRandomizer(AbstractRandomizer):
                     if idx > 0 or self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:
                         e.move_id = choice(valid_move_ids)
                     elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_DAMAGE:
+                        assert_not_empty(damaging_move_ids)
                         e.move_id = choice(damaging_move_ids)
                     elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_STAB:
-                        e.move_id = choice(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
+                        e.move_id = choice(assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary)))
 
         allowed_move_ids = get_allowed_move_ids(self.config, MoveRoster.DEFAULT)
         if self.config['pokemon']['tms_hms']:

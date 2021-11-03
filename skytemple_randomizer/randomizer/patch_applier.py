@@ -33,6 +33,8 @@ class PatchApplier(AbstractRandomizer):
             i += 1
         if self.config['improvements']['patch_fixmemorysoftlock']:
             i += 1
+        if self.config['improvements']['patch_disarm_monster_houses']:
+            i += 1
         if self.config['quiz']['mode'] != QuizMode.TEST:
             i += 1
         return i
@@ -82,5 +84,10 @@ class PatchApplier(AbstractRandomizer):
             status.step("Apply 'FixMemorySoftlock' patch...")
             if not patcher.is_applied('FixMemorySoftlock'):
                 patcher.apply('FixMemorySoftlock')
+
+        if self.config['improvements']['patch_disarm_monster_houses']:
+            status.step("Apply 'DisarmOneRoomMonsterHouses' patch...")
+            if not patcher.is_applied('DisarmOneRoomMonsterHouses'):
+                patcher.apply('DisarmOneRoomMonsterHouses')
 
         status.done()

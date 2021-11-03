@@ -26,6 +26,7 @@ import pkg_resources
 from jsonschema import validate
 
 from skytemple_files.common.util import open_utf8
+from skytemple_files.patch.handler.disarm_one_room_mh import DisarmOneRoomMHPatchHandler
 from skytemple_files.patch.handler.fix_memory_softlock import FixMemorySoftlockPatchHandler
 from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
@@ -160,6 +161,7 @@ class ImprovementsConfig(TypedDict):
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
     patch_totalteamcontrol: bool
+    patch_disarm_monster_houses: bool
     patch_fixmemorysoftlock: bool
 
 
@@ -172,6 +174,9 @@ class ImprovementsConfigDoc:
     patch_unuseddungeonchance = \
         f"""Installs the patch '{UnusedDungeonChancePatch().name}' by {UnusedDungeonChancePatch().author}: 
         {UnusedDungeonChancePatch().description}"""
+    patch_disarm_monster_houses = \
+        f"""Installs the patch '{DisarmOneRoomMHPatchHandler().name}' by {DisarmOneRoomMHPatchHandler().author}: 
+        {DisarmOneRoomMHPatchHandler().description}"""
     patch_totalteamcontrol = \
         f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
         Patch by Cipnit."""
@@ -392,6 +397,8 @@ class ConfigFileLoader:
                     if field == 'global_items' and field_type == bool:
                         target[field] = True
                     elif field == 'overworld_music' and field_type == bool:
+                        target[field] = True
+                    elif field == 'patch_disarm_monster_houses' and field_type == bool:
                         target[field] = True
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
                         target[field] = False

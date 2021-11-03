@@ -31,6 +31,8 @@ class PatchApplier(AbstractRandomizer):
             i += 1
         if self.config['improvements']['patch_totalteamcontrol']:
             i += 1
+        if self.config['improvements']['patch_disarm_monster_houses']:
+            i += 1
         if self.config['improvements']['personality_test'] != PersonalityTestConfig.TEST:
             i += 1
         return i
@@ -75,5 +77,10 @@ class PatchApplier(AbstractRandomizer):
             if self.config['improvements']['personality_test'] == PersonalityTestConfig.ASK:
                 if not patcher.is_applied('SkipQuiz'):
                     patcher.apply('SkipQuiz')
+
+        if self.config['improvements']['patch_disarm_monster_houses']:
+            status.step("Apply 'DisarmOneRoomMonsterHouses' patch...")
+            if not patcher.is_applied('DisarmOneRoomMonsterHouses'):
+                patcher.apply('DisarmOneRoomMonsterHouses')
 
         status.done()

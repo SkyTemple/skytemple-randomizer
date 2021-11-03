@@ -196,6 +196,7 @@
     "download_portraits": true,
     "patch_moveshortcuts": true,
     "patch_unuseddungeonchance": true,
+    "patch_disarm_monster_houses": true,
     "patch_totalteamcontrol": false,
     "personality_test": 1
   },

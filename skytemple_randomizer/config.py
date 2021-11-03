@@ -25,6 +25,7 @@ from typing import TypedDict, Optional, List, Dict
 import pkg_resources
 
 from skytemple_files.common.util import open_utf8
+from skytemple_files.patch.handler.disarm_one_room_mh import DisarmOneRoomMHPatchHandler
 from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
@@ -146,6 +147,7 @@ class ImprovementsConfig(TypedDict):
     patch_moveshortcuts: bool
     patch_unuseddungeonchance: bool
     patch_totalteamcontrol: bool
+    patch_disarm_monster_houses: bool
     personality_test: PersonalityTestConfig
 
 
@@ -161,6 +163,9 @@ class ImprovementsConfigDoc:
     patch_totalteamcontrol = \
         f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
         Patch by Cipnit."""
+    patch_disarm_monster_houses = \
+        f"""Installs the patch '{DisarmOneRoomMHPatchHandler().name}' by {DisarmOneRoomMHPatchHandler().author}: 
+        {DisarmOneRoomMHPatchHandler().description}"""
     personality_test = \
         f"""Change the behaviour of the hero starter selection in the personality test, using patches by irdkwia. 
         You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely. 
@@ -299,6 +304,8 @@ class ConfigFileLoader:
                     if field == 'global_items' and field_type == bool:
                         target[field] = True
                     elif field == 'overworld_music' and field_type == bool:
+                        target[field] = True
+                    elif field == 'patch_disarm_monster_houses' and field_type == bool:
                         target[field] = True
                     elif field == 'patch_totalteamcontrol' and field_type == bool:
                         target[field] = False

@@ -63,6 +63,7 @@ export const SETTINGS_CONFIG = {
         patch_moveshortcuts: ["Apply \"MoveShortcuts\" patch?", UiSwitch],
         patch_unuseddungeonchance: ["Apply \"UnusedDungeonChance\" patch?", UiSwitch],
         patch_totalteamcontrol: ["Apply \"Complete Team Control\" patches?", UiSwitch],
+        patch_disarm_monster_houses: ["Apply \"Disarm Monster Houses\" patches?", UiSwitch],
         personality_test: ["Personality Test Starter Settings", UiSelect, {
             0: "Default: Ask for Personality",
             1: "Ask for Personality + Allow Selection",

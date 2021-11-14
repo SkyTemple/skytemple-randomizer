@@ -18,7 +18,7 @@ install_requires = [
     'jsonschema >= 4.1.2',
     'packaging'
 ]
-package_data = ['frontend/gtk/*.glade', 'frontend/gtk/*.css', 'data/*/*/*/*/*', 'data/*', 'data/*/*']
+package_data = ['frontend/gtk/*.glade', 'frontend/gtk/*.css', 'data/*/*/*/*/*', 'data/*', 'data/*/*', 'py.typed']
 
 if __name__ == '__main__':
     setup(

@@ -16,6 +16,8 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice, randrange
 
+from typing import List
+
 from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
 from skytemple_files.hardcoded.iq import HardcodedIq, IqGroupsSkills
 from skytemple_files.hardcoded.tactics import HardcodedTactics
@@ -78,7 +80,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             new_iq_gains = []
             for l in iq_gains:
-                li = []
+                li: List[int] = []
                 new_iq_gains.append(li)
                 for e in l:
                     li.append(randrange(1, 6))

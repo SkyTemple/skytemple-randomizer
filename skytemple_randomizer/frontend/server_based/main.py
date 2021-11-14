@@ -27,7 +27,7 @@ import traceback
 from asyncio import sleep
 from datetime import datetime
 from functools import partial
-from typing import Callable, Dict
+from typing import Callable, Dict, Any
 
 import tornado.web
 from ndspy.rom import NintendoDSRom
@@ -43,7 +43,7 @@ import os
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
-PORT = os.getenv('PORT', 44235)
+PORT = int(os.getenv('PORT', 44235))
 LOOP = asyncio.get_event_loop()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -79,7 +79,7 @@ class ServerBasedWebHandler(AbstractWebHandler):
 
 class RomStorage:
     # we are never cleaning this. fine for Android, not fine for a REAL web server based approach!
-    roms: Dict[any, NintendoDSRom] = {}
+    roms: Dict[Any, NintendoDSRom] = {}
 
 
 class UploadHandler(tornado.web.RequestHandler):
@@ -110,7 +110,7 @@ class DownloadHandler(tornado.web.RequestHandler):
 
 # noinspection PyAbstractClass
 class WebsocketHandler(websocket.WebSocketHandler):
-    def __init__(self, application: tornado.web.Application, request: httputil.HTTPServerRequest, **kwargs: any):
+    def __init__(self, application: tornado.web.Application, request: httputil.HTTPServerRequest, **kwargs):
         super().__init__(application, request, **kwargs)
         self.randomization_is_running = False
         self.rom = None

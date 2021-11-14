@@ -95,11 +95,11 @@ class FixedRoomRandomizer(AbstractRandomizer):
     def _get_special_in_floor(self, floor: FixedFloor):
         l = []
         for action in floor.actions:
-            if isinstance(action, EntityRule) or \
+            if isinstance(action, EntityRule) or (isinstance(action, TileRule) and ( \
                     action.tr_type == TileRuleType.LEADER_SPAWN or \
                     action.tr_type == TileRuleType.ATTENDANT1_SPAWN or \
                     action.tr_type == TileRuleType.ATTENDANT2_SPAWN or \
-                    action.tr_type == TileRuleType.ATTENDANT3_SPAWN:
+                    action.tr_type == TileRuleType.ATTENDANT3_SPAWN)):
                 l.append(action)
         return l
 
@@ -123,7 +123,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
         while len(entities_and_special_tiles_to_preserve) > 0:
             index = randrange(0, len(actions))
             if actions[index] == FLOOR:
-                actions[index] = entities_and_special_tiles_to_preserve.pop()
+                actions[index] = entities_and_special_tiles_to_preserve.pop()  # type: ignore
 
         return width, height, actions
 

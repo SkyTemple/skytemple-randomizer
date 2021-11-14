@@ -479,6 +479,7 @@ class DungeonRandomizer(AbstractRandomizer):
     # ---------------- Deal with dungeon errors; copied from SkyTemple dungeon module
 
     def _fix_error(self, e: DungeonValidatorError):
+        assert self.mappa
         if isinstance(e, DungeonTotalFloorCountInvalidError):
             self.dungeons[e.dungeon_id].number_floors_in_group = e.expected_floor_count_in_group
         elif isinstance(e, InvalidFloorListReferencedError) or isinstance(e, FloorReusedError):
@@ -520,7 +521,7 @@ class DungeonRandomizer(AbstractRandomizer):
 
     def _mappa_generate_new_floor(self) -> MappaFloor:
         """Copies the first floor of test dungeon and returns it"""
-        return MappaFloor.from_xml(self.mappa.floor_lists[0][0].to_xml())
+        return MappaFloor.from_xml(self.mappa.floor_lists[0][0].to_xml())  # type: ignore
 
 
 def check_consecutive(l):

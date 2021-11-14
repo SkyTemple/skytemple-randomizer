@@ -82,7 +82,7 @@ class RandomizerThread(Thread):
         self.static_data = get_ppmdu_config_for_rom(rom)
         self.randomizers: List[AbstractRandomizer] = []
         for cls in RANDOMIZERS:
-            self.randomizers.append(cls(config, rom, self.static_data, seed, frontend))
+            self.randomizers.append(cls(config, rom, self.static_data, seed, frontend))  # type: ignore
 
         self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None

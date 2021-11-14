@@ -84,12 +84,13 @@ def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[
 def clone_missing_portraits(kao: Kao, index: int, *, force=False):
     """Fills all missing kao subindex slots for index with the first portrait."""
     cloned = kao.get(index, 0)
+    assert cloned
     # Skip mirrored slots.
     for i in range(1 if force else 2, SUBENTRIES, 1 if force else 2):
         if kao.get(index, i) is None:
             kao.set(index, i, cloned)
         elif force:
-            kao.get(index, i).set(cloned.get())
+            kao.get(index, i).set(cloned.get())  # type: ignore
 
 
 class Roster(Enum):
@@ -134,13 +135,13 @@ def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab
         return list(base)
     elif roster == MoveRoster.DAMAGING:
         return list(base.intersection(DAMAGING_MOVES))
-    elif roster == MoveRoster.STAB:
-        if stab_type not in STAB_DICT:
-            return list(base.intersection(DAMAGING_MOVES))
-        l = list(base.intersection(STAB_DICT[stab_type]))
-        if len(l) < 1:
-            return list(base.intersection(DAMAGING_MOVES))
-        return l
+    #elif roster == MoveRoster.STAB:
+    if stab_type not in STAB_DICT:
+        return list(base.intersection(DAMAGING_MOVES))
+    l = list(base.intersection(STAB_DICT[stab_type]))
+    if len(l) < 1:
+        return list(base.intersection(DAMAGING_MOVES))
+    return l
 
 
 def replace_strings(original: str, replacement_map: Dict[str, str]):

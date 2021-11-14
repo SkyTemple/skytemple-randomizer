@@ -148,27 +148,27 @@ class ConfigUIReader:
             return typ(self._handle(int, field_name))
         elif typ == bool:
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.Switch = self._ui_get('switch_' + field_name)
+            w = self._ui_get('switch_' + field_name)
             return w.get_active()
         elif typ == int:
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.ComboBox = self._ui_get('cb_' + field_name)
+            w = self._ui_get('cb_' + field_name)
             return int(w.get_active_id())
         elif typ == IntRange:
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.Scale = self._ui_get('scale_' + field_name)
+            w = self._ui_get('scale_' + field_name)
             return typ(int(w.get_value()))
         elif typ == str:
             assert field_name, "Field name must be set for primitive"
             try:
-                w: Gtk.Entry = self._ui_get('entry_' + field_name)
+                w = self._ui_get('entry_' + field_name)
                 return w.get_text()
             except ValueError:
-                w: Gtk.TextView = self._ui_get('text_' + field_name)
+                w = self._ui_get('text_' + field_name)
                 buffer = w.get_buffer()
                 return buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         elif typ == Dict[int, DungeonSettingsConfig]:
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)
+            w = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
             d = {}
             for idx, name, randomize, monster_houses, randomize_weather, unlock, enemy_iq in s:
@@ -176,15 +176,15 @@ class ConfigUIReader:
                           'randomize_weather': randomize_weather, 'unlock': unlock, 'enemy_iq': enemy_iq}
             return d
         elif typ == List[int]:
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)
-            s: Gtk.ListStore = w.get_model()
-            d = []
+            w = self._ui_get('tree_' + field_name)
+            s = w.get_model()
+            dd: List[int] = []
             for idx, name, use in s:
                 if use:
-                    d.append(idx)
-            return d
+                    dd.append(idx)
+            return dd
         else:
-            raise TypeError(f"Unknown type for {self.__name__}: {typ}")
+            raise TypeError(f"Unknown type for {self.__name__}: {typ}")  # type: ignore
 
     def _ui_get(self, n):
         w: Gtk.Switch = self.builder.get_object(n)

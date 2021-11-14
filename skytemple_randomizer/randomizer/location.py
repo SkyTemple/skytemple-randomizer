@@ -16,6 +16,8 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice
 
+from typing import Dict
+
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import replace_text_script, random_txt_line, get_all_string_files
@@ -40,7 +42,7 @@ class LocationRandomizer(AbstractRandomizer):
 
         rename_dungeon_map_all = {}
         for lang, strings in get_all_string_files(self.rom, self.static_data):
-            rename_dungeon_map = {}
+            rename_dungeon_map: Dict[str, str] = {}
             rename_dungeon_map_all[lang] = rename_dungeon_map
             for main, sele, sdba, bann in zip(
                     range(dunge_names_main.begin, dunge_names_main.end),

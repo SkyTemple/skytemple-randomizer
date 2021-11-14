@@ -6,3 +6,4 @@ explorerscript==0.1.0
 PyYAML==5.4.1
 jsonschema==4.1.2
 packaging
+types-PyYAML

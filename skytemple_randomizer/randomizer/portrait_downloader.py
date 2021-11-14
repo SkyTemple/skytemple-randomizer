@@ -23,6 +23,7 @@ import math
 import urllib.request
 
 from ndspy.rom import NintendoDSRom
+from typing import List, Tuple
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
@@ -43,7 +44,7 @@ from skytemple_randomizer.status import Status
 class PortraitDownloader(AbstractRandomizer):
     def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
         super().__init__(config, rom, static_data, seed, frontend)
-        self._debugs = []
+        self._debugs: List[Tuple[str, str, int, str, str]] = []
 
     def step_count(self) -> int:
         if self.config['improvements']['download_portraits']:

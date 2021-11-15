@@ -20,6 +20,7 @@ from typing import Dict
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.data.md.model import Gender, NUM_ENTITIES
 from skytemple_files.data.str.model import Str
+from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -66,7 +67,7 @@ class NpcRandomizer(AbstractRandomizer):
         replace_text_script(self.rom, self.static_data, names_mapped_all)
 
         status.step("Cloning missing NPC portraits...")
-        kao = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
+        kao: KaoProtocol = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
         for new in mapped_actors.values():
             new_base = new % 600
             clone_missing_portraits(kao, new_base - 1)

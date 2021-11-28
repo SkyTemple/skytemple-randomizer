@@ -131,7 +131,7 @@ class PortraitDownloader(AbstractRandomizer):
                 url = f'http://sprites.pmdcollab.org/resources/portraits/{filename}'
                 with urllib.request.urlopen(url) as download:
                     for subindex, image in SpriteBotSheet.load(io.BytesIO(download.read()), self._get_portrait_name):
-                        kaos.set(mdidx - 1, subindex, image)
+                        kaos.set_from_img(mdidx - 1, subindex, image)
                 self._debugs.append([f'{pokedex_number:04}', poke_name, form_id, form_name, '✓'])
         except BaseException:
             traceback_str = ''.join(traceback.format_exception(*sys.exc_info()))

@@ -91,7 +91,9 @@ def clone_missing_portraits(kao: KaoProtocol, index: int, *, force=False):
         if kao.get(index, i) is None:
             kao.set(index, i, cloned)
         elif force:
-            kao.get(index, i).set(cloned.get())  # type: ignore
+            kao_img = kao.get(index, i)
+            kao_img.set(cloned.get())  # type: ignore
+            kao.set(index, i, kao_img)
 
 
 class Roster(Enum):

@@ -14,6 +14,8 @@ jobs:
         python-version: [ "3.8", "3.9", "3.10" ]
     steps:
     - uses: actions/checkout@v1
+    # todo: quickfix for android recipes being scanned...
+    - run: rm -rf android
     - uses: theCapypara/mypy-check@rust-support
       name: Run type checks
       with:

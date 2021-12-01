@@ -18,7 +18,7 @@ import os
 from datetime import datetime
 from enum import Enum
 from random import choice, randrange
-from typing import List, Union, Dict, Optional, Set
+from typing import List, Union, Dict, Optional, Set, Sequence
 
 from PIL import Image
 from ndspy.rom import NintendoDSRom
@@ -27,7 +27,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES
-from skytemple_files.graphics.kao.model import KaoImage
+from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
@@ -158,8 +158,7 @@ random_chosen_three: Optional[List[CustomFunPortrait]] = None
 def _init_random_chosen_three() -> List[CustomFunPortrait]:
     global random_chosen_three
     if random_chosen_three is None:
-        from skytemple_randomizer.randomizer.util.util import UNOWN_IDS, ALLOWED_MD_IDS_BASE
-        s = list(ALLOWED_MD_IDS_BASE - UNOWN_IDS - set(x.value for x in FunPortrait))
+        s = list(x.value for x in FunPortrait)
         random_chosen_three = [
             CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
             CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
@@ -170,7 +169,7 @@ def _init_random_chosen_three() -> List[CustomFunPortrait]:
     return random_chosen_three
 
 
-def _get_fun_portraits() -> List[FunPortraitLike]:
+def _get_fun_portraits() -> Sequence[FunPortraitLike]:
     return _init_random_chosen_three() + list(FunPortrait)
 
 
@@ -180,30 +179,26 @@ def get_allowed_md_ids(base_set: Set[int], roster: Roster) -> List[int]:
         s.add(x.value)
         if x.value + NUM_ENTITIES <= 1154:
             s.add(x.value + NUM_ENTITIES)
-    extra_candidates = list(base_set - s)
+    extra_candidates: List[int] = list(base_set - s)
     extras_max = 0
     if roster == Roster.NPCS:
         extras_max = 5
     elif roster == Roster.DUNGEON:
         extras_max = 50
     for _ in range(0, extras_max):
-        x = choice(extra_candidates)
-        s.add(x)
-        if x + NUM_ENTITIES <= 1154:
-            s.add(x + NUM_ENTITIES)
+        y = choice(extra_candidates)
+        s.add(y)
+        if y + NUM_ENTITIES <= 1154:
+            s.add(y + NUM_ENTITIES)
     return list(base_set & s)
 
 
 def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
-    kao = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
+    kao: KaoProtocol = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
     for portrait in _get_fun_portraits():
         portrait_id = portrait.value - 1
         pil_img = Image.open(os.path.join(data_dir(), 'fun', portrait.file_name))
-        kaoimg = kao.get(portrait_id, 0)
-        if kaoimg is None:
-            kao.set(portrait_id, 0, KaoImage.new(pil_img))
-        else:
-            kaoimg.set(pil_img)
+        kao.set_from_img(portrait_id, 0, pil_img)
         clone_missing_portraits(kao, portrait_id, force=True)
 
     rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))

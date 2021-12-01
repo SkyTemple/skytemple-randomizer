@@ -15,7 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import shuffle
-from typing import Dict
+from typing import Dict, List
 
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
@@ -38,7 +38,7 @@ class TextScriptRandomizer(AbstractRandomizer):
 
         all_strings_langs = {}
         for lang, _ in get_all_string_files(self.rom, self.static_data):
-            all_strings = []
+            all_strings: List[str] = []
             ssb_map: Dict[str, Ssb] = {}
             all_strings_langs[lang] = all_strings, ssb_map
             for file_path in get_files_from_rom_with_extension(self.rom, 'ssb'):

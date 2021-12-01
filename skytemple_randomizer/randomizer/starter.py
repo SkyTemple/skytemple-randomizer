@@ -24,6 +24,7 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
 from skytemple_files.data.md.model import NUM_ENTITIES
 from skytemple_files.data.str.model import Str
+from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_ids, clone_missing_portraits, \
@@ -78,7 +79,7 @@ class StarterRandomizer(AbstractRandomizer):
         HardcodedPersonalityTestStarters.set_player_md_ids(new_player_ids, overlay13, self.static_data)
 
         status.step("Cloning missing starter portraits...")
-        kao = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
+        kao: KaoProtocol = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
         for new in new_player_ids + new_partner_ids:
             new_base = new % 600
             clone_missing_portraits(kao, new_base - 1)

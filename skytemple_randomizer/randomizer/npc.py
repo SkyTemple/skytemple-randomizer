@@ -20,6 +20,7 @@ from typing import Dict
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.data.md.model import Gender, NUM_ENTITIES
 from skytemple_files.data.str.model import Str
+from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -51,7 +52,7 @@ class NpcRandomizer(AbstractRandomizer):
         status.step("Replacing main text that mentions NPCs...")
         names_mapped_all = {}
         for lang, string_file in get_all_string_files(self.rom, self.static_data):
-            names_mapped = {}
+            names_mapped: Dict[str, str] = {}
             names_mapped_all[lang] = names_mapped
             for old, new in mapped_actors.items():
                 old_base = old % 600
@@ -66,7 +67,7 @@ class NpcRandomizer(AbstractRandomizer):
         replace_text_script(self.rom, self.static_data, names_mapped_all)
 
         status.step("Cloning missing NPC portraits...")
-        kao = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
+        kao: KaoProtocol = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
         for new in mapped_actors.values():
             new_base = new % 600
             clone_missing_portraits(kao, new_base - 1)
@@ -81,9 +82,9 @@ class NpcRandomizer(AbstractRandomizer):
         )
         md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
 
-        mapped = {}
+        mapped: Dict[int, int] = {}
         # We want to map actors with the same name to the same ID
-        mapped_for_names = {}
+        mapped_for_names: Dict[str, int] = {}
         old_entid_bases = [actor.entid % NUM_ENTITIES for actor in actor_list.list]
         for actor in actor_list.list:
             if actor.entid > 0:

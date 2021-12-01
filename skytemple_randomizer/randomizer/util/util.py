@@ -23,7 +23,8 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES, PokeType
 from skytemple_files.data.str.model import Str
-from skytemple_files.graphics.kao.model import SUBENTRIES, Kao, NintendoDSRom
+from skytemple_files.graphics.kao.model import SUBENTRIES, NintendoDSRom
+from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_randomizer.config import RandomizerConfig
 
 
@@ -81,15 +82,18 @@ def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[
         yield lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
 
 
-def clone_missing_portraits(kao: Kao, index: int, *, force=False):
+def clone_missing_portraits(kao: KaoProtocol, index: int, *, force=False):
     """Fills all missing kao subindex slots for index with the first portrait."""
     cloned = kao.get(index, 0)
+    assert cloned
     # Skip mirrored slots.
     for i in range(1 if force else 2, SUBENTRIES, 1 if force else 2):
         if kao.get(index, i) is None:
             kao.set(index, i, cloned)
         elif force:
-            kao.get(index, i).set(cloned.get())
+            kao_img = kao.get(index, i)
+            kao_img.set(cloned.get())  # type: ignore
+            kao.set(index, i, kao_img)
 
 
 class Roster(Enum):
@@ -134,13 +138,13 @@ def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab
         return list(base)
     elif roster == MoveRoster.DAMAGING:
         return list(base.intersection(DAMAGING_MOVES))
-    elif roster == MoveRoster.STAB:
-        if stab_type not in STAB_DICT:
-            return list(base.intersection(DAMAGING_MOVES))
-        l = list(base.intersection(STAB_DICT[stab_type]))
-        if len(l) < 1:
-            return list(base.intersection(DAMAGING_MOVES))
-        return l
+    #elif roster == MoveRoster.STAB:
+    if stab_type not in STAB_DICT:
+        return list(base.intersection(DAMAGING_MOVES))
+    l = list(base.intersection(STAB_DICT[stab_type]))
+    if len(l) < 1:
+        return list(base.intersection(DAMAGING_MOVES))
+    return l
 
 
 def replace_strings(original: str, replacement_map: Dict[str, str]):

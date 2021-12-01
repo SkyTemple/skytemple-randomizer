@@ -15,12 +15,14 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from typing import List
+
 from explorerscript.source_map import SourceMap
 from explorerscript.ssb_converting.compiler.label_finalizer import LabelFinalizer
 from explorerscript.ssb_converting.compiler.label_jump_to_remover import OpsLabelJumpToRemover
 from explorerscript.ssb_converting.compiler.utils import strip_last_label, Counter
 from explorerscript.ssb_converting.decompiler.label_jump_to_resolver import OpsLabelJumpToResolver
-from explorerscript.ssb_converting.ssb_data_types import SsbOpParamConstString
+from explorerscript.ssb_converting.ssb_data_types import SsbOpParamConstString, SsbOperation
 from explorerscript.ssb_converting.ssb_special_ops import SsbLabel, SsbLabelJump
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.script.ssb.model import Ssb, SkyTempleSsbOperation
@@ -37,7 +39,7 @@ class DungeonUnlocker(AbstractRandomizer):
     def run(self, status: Status):
         status.step('Unlocking dungeons...')
 
-        new_ops = []
+        new_ops: List[SsbOperation] = []
         coro_id = self.static_data.script_data.common_routine_info__by_name['EVENT_DIVIDE'].id
         ops = self.static_data.script_data.op_codes__by_name
 

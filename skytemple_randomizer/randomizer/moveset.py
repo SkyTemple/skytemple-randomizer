@@ -88,7 +88,7 @@ class MovesetRandomizer(AbstractRandomizer):
 
         if self.config['pokemon']['tm_hm_movesets']:
             status.step("Randomizing TM/HM movesets...")
-            item_p: ItemP = FileType.ITEM_P.deserialize(self.rom.getFileByName('BALANCE/item_p.bin'))
+            item_p = FileType.ITEM_P.deserialize(self.rom.getFileByName('BALANCE/item_p.bin'))
             move_ids = []
             for item in item_p.item_list:
                 if item.category == 5:

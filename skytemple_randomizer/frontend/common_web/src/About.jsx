@@ -59,7 +59,6 @@ const CREDITS = {
         ["Marco \"Capypara\" Köpcke", "http://github.com/parakoopa"]
     ],
     "Contributors": [
-        ["irdkwia", "https://github.com/irdkwia"],
         ["Aikku93 (via tilequant)", "http://github.com/aikku93"],
         ["techticks (MacOS packaging)", "https://github.com/tech-ticks"],
         ["marius851000 (via skytemple-rust)", "http://github.com/marius851000"]

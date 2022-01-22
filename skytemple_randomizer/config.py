@@ -230,7 +230,7 @@ class QuizConfig(TypedDict):
 
 class QuizConfigDoc:
     mode = \
-        f"""Change the behaviour of the hero starter selection in the personality test, using patches by irdkwia. 
+        f"""Change the behaviour of the hero starter selection in the personality test, using patches by an anonymous contributor. 
         You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely. 
         Please note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again."""
     randomize = \

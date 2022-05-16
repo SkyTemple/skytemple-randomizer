@@ -23,7 +23,7 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES, PokeType
 from skytemple_files.data.str.model import Str
-from skytemple_files.graphics.kao.model import SUBENTRIES, NintendoDSRom
+from skytemple_files.graphics.kao._model import SUBENTRIES, NintendoDSRom
 from skytemple_randomizer.config import RandomizerConfig
 
 

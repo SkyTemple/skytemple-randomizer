@@ -27,7 +27,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES
-from skytemple_files.graphics.kao.model import KaoImage
+from skytemple_files.graphics.kao._model import KaoImage
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape

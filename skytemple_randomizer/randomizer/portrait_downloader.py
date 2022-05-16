@@ -29,7 +29,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom_ppmdu
 from skytemple_files.data.md.model import NUM_ENTITIES, Gender
-from skytemple_files.graphics.kao.model import KaoImage
+from skytemple_files.graphics.kao._model import KaoImage
 from skytemple_files.graphics.kao.sprite_bot_sheet import SpriteBotSheet
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_files.list.actor.model import ActorListBin

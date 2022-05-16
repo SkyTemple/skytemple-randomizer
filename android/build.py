@@ -65,7 +65,7 @@ try:
     os.system(f'npm install --only=prod')
     os.chdir(absp)
 
-    sys.argv = ['p4a', 'apk']
+    sys.argv = ['p4a', 'apk', '--arch', 'armeabi-v7a']
     for k, v in options.items():
         sys.argv += [f'--{k}', str(v)]
     sys.argv += ['--no-optimize-python']

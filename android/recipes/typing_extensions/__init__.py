@@ -14,27 +14,19 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import os
+
 from pythonforandroid.recipe import PythonRecipe
 
 
-class SetuptoolsRustRecipe(PythonRecipe):
-    version = 'v1.3.0'
-    url = 'https://github.com/PyO3/setuptools-rust/archive/refs/tags/{version}.tar.gz'
+class TypingExtensionsRecipe(PythonRecipe):
+    version = '3.7.4.3'
+    url = 'https://skytemple.org/build_deps/typing_extensions.tar.xz'
 
-    depends = ['setuptools', 'semantic-version', 'typing_extensions']
+    depends = ['setuptools']
     conflicts = []
     call_hostpython_via_targetpython = False
     install_in_hostpython = True
     install_in_targetpython = False
 
-    def get_recipe_env(self, arch=None, with_flags_in_cc=True):
-        env = super().get_recipe_env(arch, with_flags_in_cc)
-        env['SETUPTOOLS_SCM_PRETEND_VERSION'] = self.version
-        return env
-
-    def get_hostrecipe_env(self, arch=None):
-        env = super().get_hostrecipe_env(arch)
-        env['SETUPTOOLS_SCM_PRETEND_VERSION'] = self.version
-        return env
-
-recipe = SetuptoolsRustRecipe()
+recipe = TypingExtensionsRecipe()

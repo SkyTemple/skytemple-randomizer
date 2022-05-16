@@ -25,7 +25,7 @@ from pythonforandroid.util import current_directory
 
 
 class SkyTempleRustRecipe(CompiledComponentsPythonRecipe):
-    version = '0.0.1.post0'
+    version = '1.3.7'
     url = 'https://github.com/SkyTemple/skytemple-rust/archive/refs/tags/{version}.tar.gz'
 
     call_hostpython_via_targetpython = False

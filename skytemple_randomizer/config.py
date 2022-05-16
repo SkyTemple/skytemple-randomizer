@@ -45,6 +45,9 @@ class IntRange:
     def __init__(self, value: int):
         self.value = value
 
+    def __str__(self):
+        return f"{self.value}"
+
 
 class StartersNpcsConfig(TypedDict):
     starters: bool

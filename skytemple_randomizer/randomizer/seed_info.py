@@ -414,10 +414,10 @@ macro patches() {{
         md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
 
         try:
-            with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/pokemons.json") as url:
+            with urllib.request.urlopen("http://portraits.pmdcollab.org/resources/pokemons.json") as url:
                 config = json.loads(url.read().decode())
 
-            with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/credits.json") as url:
+            with urllib.request.urlopen("http://portraits.pmdcollab.org/resources/credits.json") as url:
                 credits_config = json.loads(url.read().decode())
 
             for starter in starters:
@@ -447,14 +447,14 @@ macro patches() {{
                 credits += f"""
         case menu("{entry.name}"):
             {setface}
-            message_Talk("Last Author: [CS:A]{escape(entry.main_artist)}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/portrait.html?id={escape(entry.id_str)}");
+            message_Talk("Last Author: [CS:A]{escape(entry.main_artist)}[CR]\\n{escape(others)}\\nportraits.pmdcollab.org/portrait.html?id={escape(entry.id_str)}");
             jump @l_artists;
 """
         except:
             traceback.print_exc()
             return """
         case menu("Error!"):
-            message_Mail("Sorry! We There was a critical error while \\ncollecting the data during randomization!\\nPlease visit sprites.pmdcollab.org for credits!");
+            message_Mail("Sorry! We There was a critical error while \\ncollecting the data during randomization!\\nPlease visit portraits.pmdcollab.org for credits!");
             jump @l_artists;
 """
         return credits

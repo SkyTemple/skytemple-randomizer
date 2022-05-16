@@ -70,7 +70,7 @@ class PortraitDownloader(AbstractRandomizer):
         partners = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
         md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
 
-        with urllib.request.urlopen("http://sprites.pmdcollab.org/resources/pokemons.json") as url:
+        with urllib.request.urlopen("http://portraits.pmdcollab.org/resources/pokemons.json") as url:
             config = json.loads(url.read().decode())
 
         kao: KaoProtocol = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
@@ -128,7 +128,7 @@ class PortraitDownloader(AbstractRandomizer):
                     return
                 poke_name = config[f'{pokedex_number:04}']['name']
                 form_name = config[f'{pokedex_number:04}']['forms'][form_id]['name']
-                url = f'http://sprites.pmdcollab.org/resources/portraits/{filename}'
+                url = f'http://portraits.pmdcollab.org/resources/portraits/{filename}'
                 with urllib.request.urlopen(url) as download:
                     for subindex, image in SpriteBotSheet.load(io.BytesIO(download.read()), self._get_portrait_name):
                         kaos.set_from_img(mdidx - 1, subindex, image)

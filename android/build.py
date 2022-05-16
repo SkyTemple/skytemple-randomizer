@@ -45,7 +45,7 @@ options = {
     'bootstrap': 'webview',
     'requirements': 'tornado>=6.1,' + ','.join(install_requires).replace(' ', ''),
     'sdk-dir': os.getenv('ANDROIDSDK', '/opt/android-sdk'),
-    'ndk-dir': os.getenv('ANDROIDNDK', '/opt/android-sdk/ndk/19.2.5345600'),
+    'ndk-dir': os.getenv('ANDROIDNDK', '/opt/android-sdk/ndk/23.1.7779620'),
     'android-api': int(os.getenv('ANDROIDAPI', '27')),
     'ndk-api': int(os.getenv('NDKAPI', '23')),
     'port': 44235,

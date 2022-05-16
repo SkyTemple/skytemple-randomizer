@@ -15,6 +15,11 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 
+import gi
+
+gi.require_version('Gtk', '3.0')
+gi.require_version('GtkSource', '3.0')
+
 import json
 import logging
 import os
@@ -25,15 +30,11 @@ import webbrowser
 from functools import partial
 from math import floor
 from typing import Optional, Callable, Dict
-
-import gi
 import yaml
 from gi.repository.GtkSource import StyleSchemeManager, LanguageManager
 from jsonschema import ValidationError
 from yaml.parser import ParserError
 from yaml.scanner import ScannerError
-
-gi.require_version('Gtk', '3.0')
 
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 

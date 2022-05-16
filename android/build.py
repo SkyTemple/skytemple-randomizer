@@ -47,7 +47,7 @@ options = {
     'sdk-dir': os.getenv('ANDROIDSDK', '/opt/android-sdk'),
     'ndk-dir': os.getenv('ANDROIDNDK', '/opt/android-sdk/ndk/19.2.5345600'),
     'android-api': int(os.getenv('ANDROIDAPI', '27')),
-    'ndk-api': int(os.getenv('NDKAPI', '21')),
+    'ndk-api': int(os.getenv('NDKAPI', '23')),
     'port': 44235,
     'private': '_prebuild',
     'local-recipes': './recipes'

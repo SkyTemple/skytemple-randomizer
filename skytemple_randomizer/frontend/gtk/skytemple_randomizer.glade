@@ -65,7 +65,7 @@
       </row>
       <row>
         <col id="0">3</col>
-        <col id="1" translatable="yes">Random pre-generated, lower chance of damaging weather</col>
+        <col id="1" translatable="yes">Random pre-gen., fewer damaging</col>
       </row>
     </data>
   </object>

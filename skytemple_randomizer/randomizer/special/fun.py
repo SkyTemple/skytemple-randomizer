@@ -27,7 +27,6 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES
-from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
@@ -194,7 +193,7 @@ def get_allowed_md_ids(base_set: Set[int], roster: Roster) -> List[int]:
 
 
 def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
-    kao: KaoProtocol = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
+    kao = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
     for portrait in _get_fun_portraits():
         portrait_id = portrait.value - 1
         pil_img = Image.open(os.path.join(data_dir(), 'fun', portrait.file_name))

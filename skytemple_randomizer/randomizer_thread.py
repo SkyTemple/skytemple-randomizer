@@ -31,6 +31,7 @@ from skytemple_randomizer.randomizer.dungeon import DungeonRandomizer
 from skytemple_randomizer.randomizer.dungeon_unlocker import DungeonUnlocker
 from skytemple_randomizer.randomizer.explorer_ranks import ExplorerRanksRandomizer
 from skytemple_randomizer.randomizer.fixed_room import FixedRoomRandomizer
+from skytemple_randomizer.randomizer.fixes.quicksand_pit import FixQuicksandPit
 from skytemple_randomizer.randomizer.global_items import GlobalItemsRandomizer
 from skytemple_randomizer.randomizer.guest import GuestRandomizer
 from skytemple_randomizer.randomizer.iq_tactics import IqTacticsRandomizer
@@ -59,7 +60,9 @@ RANDOMIZERS = [
     RecruitmentTableRandomizer, DungeonRandomizer, FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader,
     MonsterRandomizer, MovesetRandomizer, LocationRandomizer, ChapterRandomizer, QuizRandomizer, TextMainRandomizer,
     TextScriptRandomizer, GlobalItemsRandomizer, OverworldMusicRandomizer, ExplorerRanksRandomizer, IqTacticsRandomizer,
-    MiscRandomizer, SpecialFunRandomizer, SeedInfo
+    MiscRandomizer,
+    FixQuicksandPit,
+    SpecialFunRandomizer, SeedInfo
 ]
 logger = logging.getLogger(__name__)
 

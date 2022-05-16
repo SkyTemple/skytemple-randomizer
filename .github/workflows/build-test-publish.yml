@@ -237,12 +237,6 @@ jobs:
         run: |
           perl -i -pe "s/__version__\s*=\s*'(.*?)(rc.*|a.*|post.*)?'/__version__='\1.dev0+${GITHUB_SHA::8}'/" setup.py
           echo "SKYTEMPLE_USE_MASTER=1" >> $GITHUB_ENV
-      - name: Install Rust Toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: nightly
-          profile: minimal
-          override: true
       - name: Checkout python-for-android
         uses: actions/checkout@v2
         with:

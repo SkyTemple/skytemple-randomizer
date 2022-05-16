@@ -24,7 +24,6 @@ from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES, PokeType
 from skytemple_files.data.str.model import Str
 from skytemple_files.graphics.kao.model import SUBENTRIES, NintendoDSRom
-from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_randomizer.config import RandomizerConfig
 
 
@@ -82,7 +81,7 @@ def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[
         yield lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
 
 
-def clone_missing_portraits(kao: KaoProtocol, index: int, *, force=False):
+def clone_missing_portraits(kao, index: int, *, force=False):
     """Fills all missing kao subindex slots for index with the first portrait."""
     cloned = kao.get(index, 0)
     assert cloned

@@ -27,6 +27,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.model import NUM_ENTITIES
+from skytemple_files.graphics.kao.model import KaoImage
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
@@ -197,8 +198,16 @@ def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
     for portrait in _get_fun_portraits():
         portrait_id = portrait.value - 1
         pil_img = Image.open(os.path.join(data_dir(), 'fun', portrait.file_name))
-        kao.set_from_img(portrait_id, 0, pil_img)
-        clone_missing_portraits(kao, portrait_id, force=True)
+        kaoimg = kao.get(portrait_id, 0)
+        try:
+            if kaoimg is None:
+                kao.set(portrait_id, 0, KaoImage.new(pil_img))
+            else:
+                kaoimg.set(pil_img)
+            clone_missing_portraits(kao, portrait_id, force=True)
+        except AttributeError as ex:
+            if "compress well" not in str(ex):
+                raise ex
 
     rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
 
@@ -208,7 +217,10 @@ def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
         for string_block in _collect_text_categories(static_data.string_index_data.string_blocks):
             for i in range(9, string_block.end - string_block.begin):
                 if randrange(0, 500) == 0:
-                    strings.strings[string_block.begin + i] = "April Fools!"
+                    try:
+                        strings.strings[string_block.begin + i] = "April Fools!"
+                    except IndexError:
+                        pass
 
         rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
 

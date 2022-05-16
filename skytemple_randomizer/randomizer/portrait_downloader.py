@@ -29,6 +29,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom_ppmdu
 from skytemple_files.data.md.model import NUM_ENTITIES, Gender
+from skytemple_files.graphics.kao.model import KaoImage
 from skytemple_files.graphics.kao.sprite_bot_sheet import SpriteBotSheet
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_files.list.actor.model import ActorListBin
@@ -130,7 +131,13 @@ class PortraitDownloader(AbstractRandomizer):
                 url = f'http://portraits.pmdcollab.org/resources/portraits/{filename}'
                 with urllib.request.urlopen(url) as download:
                     for subindex, image in SpriteBotSheet.load(io.BytesIO(download.read()), self._get_portrait_name):
-                        kaos.set_from_img(mdidx - 1, subindex, image)
+                        kao = kaos.get(mdidx - 1, subindex)
+                        if kao:
+                            # Replace
+                            kao.set(image)
+                        else:
+                            # New
+                            kaos.set(mdidx - 1, subindex, KaoImage.new(image))
                 self._debugs.append([f'{pokedex_number:04}', poke_name, form_id, form_name, '✓'])
         except BaseException:
             traceback_str = ''.join(traceback.format_exception(*sys.exc_info()))

@@ -1,5 +1,5 @@
 ndspy==3.0.0
-git+https://github.com/skytemple/skytemple-files@master#egg=skytemple_files
+git+https://github.com/skytemple/skytemple-files@version/1.3.x#egg=skytemple_files
 git+https://github.com/skytemple/skytemple-icons@main#egg=skytemple_icons
 pygobject==3.36.0
 explorerscript==0.1.1

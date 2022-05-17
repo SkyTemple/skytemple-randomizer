@@ -33,6 +33,7 @@ additional_datas = [
 additional_binaries = [
     (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libcrypto-1_1*.dll"), '.'),
     (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libssl-1_1*.dll"), '.'),
+    (os.path.join(site_packages, 'skytemple_rust*.pyd'), '.'),
 ]
 
 block_cipher = None
@@ -43,8 +44,7 @@ a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
              binaries=additional_binaries,
              datas=additional_datas,
              hiddenimports=['pkg_resources.py2_warn', 'packaging.version', 'packaging.specifiers',
-                            'packaging.requirements', 'packaging.markers', '_sysconfigdata__win32_', 'win32api',
-                            'skytemple_rust'],
+                            'packaging.requirements', 'packaging.markers', '_sysconfigdata__win32_', 'win32api'],
              hookspath=[os.path.abspath(os.path.join('.', 'hooks'))],
              runtime_hooks=[],
              excludes=[],

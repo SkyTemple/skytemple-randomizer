@@ -19,6 +19,7 @@ import traceback
 import urllib.request
 from typing import List, Optional, Dict
 
+from skytemple_files.common import string_codec
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
 from skytemple_files.common.ppmdu_config.script_data import Pmd2ScriptEntity
 from skytemple_files.common.types.file_types import FileType
@@ -83,6 +84,7 @@ class SeedInfo(AbstractRandomizer):
 
     def run(self, status: Status):
         status.step("Loading Seed Info...")
+        string_codec.init()
 
         langs = list(get_all_string_files(self.rom, self.static_data))
         str_offset = STR_EU
@@ -507,10 +509,19 @@ macro patches() {{
                 name = artist_credits['name']
                 if name == "":
                     name = artist_credits['id']
-                if artist_credits['contact'] != "":
+                artist_credits['contact'] = " 정수기#1834"
+                if artist_credits['contact'] != "" and self.printable(artist_credits['contact']):
                     link = f" ({artist_credits['contact']})"
             if main is None:
                 main = f'{name}{link}'
             else:
                 others.append(name)
         return main, others
+
+    @staticmethod
+    def printable(s: str):
+        try:
+            s.encode(string_codec.PMD2_STR_ENCODER)
+        except Exception:
+            return False
+        return True

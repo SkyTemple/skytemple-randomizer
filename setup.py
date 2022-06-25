@@ -10,7 +10,7 @@ with open(path.join(this_directory, 'README.rst'), encoding='utf-8') as f:
 
 install_requires = [
     'ndspy >= 3.0.0',
-    'skytemple-files >= 1.3.9',
+    'skytemple-files[spritecollab] >= 1.4.0a1',
     'explorerscript >= 0.1.0',
     'skytemple-icons >= 1.3.2',
     'pygobject >= 3.26.0',

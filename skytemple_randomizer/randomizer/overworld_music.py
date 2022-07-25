@@ -16,8 +16,9 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice
 
-from skytemple_files.common.util import get_files_from_rom_with_extension, get_binary_from_rom_ppmdu, \
-    set_binary_in_rom_ppmdu
+from range_typed_integers import u8
+from skytemple_files.common.util import get_files_from_rom_with_extension, get_binary_from_rom, \
+    set_binary_in_rom
 from skytemple_files.hardcoded.main_menu_music import HardcodedMainMenuMusic
 from skytemple_files.script.ssb.model import Ssb
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
@@ -29,7 +30,7 @@ from skytemple_randomizer.status import Status
 class OverworldMusicRandomizer(AbstractRandomizer):
     def __init__(self, config, rom, static_data, seed, frontend: AbstractFrontend):
         super().__init__(config, rom, static_data, seed, frontend)
-        self.bgs = [b for b in self.static_data.script_data.bgms if b.loops]
+        self.bgs = [u8(b.id) for b in self.static_data.script_data.bgms if b.loops]
 
     def step_count(self) -> int:
         i = 0
@@ -42,13 +43,13 @@ class OverworldMusicRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if self.config['starters_npcs']['topmenu_music']:
             status.step("Randomizing Titlescreen Music...")
-            ov0 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0000.bin']))
-            ov9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0009.bin']))
+            ov0 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay0))
+            ov9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay9))
             HardcodedMainMenuMusic.set_main_menu_music(
                 self._get_random_music_id(), ov0, self.static_data, ov9
             )
-            set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0000.bin'], ov0)
-            set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0009.bin'], ov9)
+            set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay0, ov0)
+            set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay9, ov9)
 
         if not self.config['starters_npcs']['overworld_music']:
             status.done()
@@ -65,7 +66,7 @@ class OverworldMusicRandomizer(AbstractRandomizer):
                     for i, param_spec in enumerate(op_c.arguments):
                         if param_spec.type == 'Bgm':
                             # Only randomize real music (looping tracks)
-                            if any((b.id == op.params[i] for b in self.bgs)):
+                            if any((b == op.params[i] for b in self.bgs)):
                                 op.params[i] = self._get_random_music_id()
                     # We don't really support those, so replace them with 1 sec wait.
                     if op_c.name == 'WaitBgmSignal' or op_c.name == 'WaitBgm' or op_c.name == 'WaitBgm2':
@@ -76,4 +77,4 @@ class OverworldMusicRandomizer(AbstractRandomizer):
 
     def _get_random_music_id(self):
         r = choice(self.bgs)
-        return r.id
+        return r

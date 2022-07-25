@@ -24,6 +24,7 @@ from typing import TypedDict, Optional, List, Dict
 
 import pkg_resources
 from jsonschema import validate
+from range_typed_integers import u16, u8, u32
 
 from skytemple_files.common.util import open_utf8
 from skytemple_files.patch.handler.disarm_one_room_mh import DisarmOneRoomMHPatchHandler
@@ -258,8 +259,8 @@ class MonsterConfig(TypedDict):
     tm_hm_movesets: bool
     tms_hms: bool
     abilities_enabled: List[int]
-    monsters_enabled: List[int]
-    moves_enabled: List[int]
+    monsters_enabled: List[u16]
+    moves_enabled: List[u16]
 
 
 class MonsterConfigDoc:
@@ -376,6 +377,10 @@ def get_effective_seed(seed: Optional[str]):
             return seed
 
 
+def is_int(typ):
+    return typ == int or typ == u8 or typ == u16 or typ == u32
+
+
 class ConfigFileLoader:
     """Loads configuration from JSON files. The JSON should have a structure equivalent of RandomizerConfig.
     Unknown fields are ignored, numbers converted into Enums."""
@@ -469,7 +474,7 @@ class ConfigFileLoader:
             if not isinstance(target, bool):
                 raise ValueError(f"Expected a boolean for a field, but got {target.__class__.__name__}")
             return target
-        elif typ == int:
+        elif is_int(typ):
             if not isinstance(target, int):
                 raise ValueError(f"Expected an integer for a field, but got {target.__class__.__name__}")
             return target
@@ -488,7 +493,7 @@ class ConfigFileLoader:
             for idx, conf in target.items():
                 d[int(idx)] = cls._handle(conf, DungeonSettingsConfig)
             return d
-        elif typ == List[int]:
+        elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
             if not isinstance(target, list) or not all(isinstance(x, int) for x in target):
                 raise ValueError(f"Value in JSON must be a list of integers for {typ}.")
             return target

@@ -16,13 +16,14 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import randint, choice
 
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
+from range_typed_integers import u32
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.rank_up_table import HardcodedRankUpTable
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_allowed_item_ids
 from skytemple_randomizer.status import Status
-MIN_PNTS = 1
-MAX_UNLOCK_PNTS = 200000
+MIN_PNTS = u32(1)
+MAX_UNLOCK_PNTS = u32(200000)
 
 
 class ExplorerRanksRandomizer(AbstractRandomizer):
@@ -38,13 +39,13 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
             return status.done()
 
         status.step("Randomizing rank data...")
-        arm9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']))
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         ranks = HardcodedRankUpTable.get_rank_up_table(arm9, self.static_data)
 
         if rand_unlocks:
             unlocks = []
             for i in range(len(ranks) - 1):
-                unlocks.append(randint(MIN_PNTS, MAX_UNLOCK_PNTS))
+                unlocks.append(u32(randint(MIN_PNTS, MAX_UNLOCK_PNTS)))
             unlocks.append(ranks[-1].points_needed_next)
             unlocks.sort()
 
@@ -53,9 +54,9 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
                 # noinspection PyUnboundLocalVariable
                 ranks[i].points_needed_next = unlocks[i]
             if rand_rewards:
-                ranks[i].item_awarded = choice(get_allowed_item_ids(self.config))
+                ranks[i].item_awarded = u32(choice(get_allowed_item_ids(self.config)))
 
         HardcodedRankUpTable.set_rank_up_table(ranks, arm9, self.static_data)
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
         status.done()

@@ -16,14 +16,16 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from enum import Enum, auto
 from random import sample, choice
-from typing import List, Dict, Union, Tuple, Iterable
+from typing import List, Dict, Tuple, Iterable, Set
 
+from ndspy.rom import NintendoDSRom
+from range_typed_integers import u16
 from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2Language
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
-from skytemple_files.data.md.model import NUM_ENTITIES, PokeType
+from skytemple_files.data.md.protocol import PokeType
 from skytemple_files.data.str.model import Str
-from skytemple_files.graphics.kao.model import SUBENTRIES, NintendoDSRom
+from skytemple_files.graphics.kao import SUBENTRIES
 from skytemple_randomizer.config import RandomizerConfig
 
 
@@ -105,14 +107,15 @@ class MoveRoster(Enum):
     STAB = auto()
 
 
-def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[int]:
+def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[u16]:
     from skytemple_randomizer.randomizer.special import fun
+    num_entities = FileType.MD.properties().num_entities
     ents = set(conf['pokemon']['monsters_enabled'])
     if with_plus_600:
         to_add = set()
         for ent in ents:
-            if ent + NUM_ENTITIES <= 1154:
-                to_add.add(ent + NUM_ENTITIES)
+            if ent + num_entities <= 1154:
+                to_add.add(u16(ent + num_entities))
         ents.update(to_add)
     if fun.is_fun_allowed():
         return fun.get_allowed_md_ids(ents, roster)
@@ -129,8 +132,8 @@ def assert_not_empty(l):
     return l
 
 
-def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: PokeType = None) -> List[int]:
-    base = set(conf['pokemon']['moves_enabled'])
+def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: PokeType = None) -> List[u16]:
+    base: Set[u16] = set(conf['pokemon']['moves_enabled'])
     if roster == MoveRoster.DEFAULT:
         return list(base)
     elif roster == MoveRoster.DAMAGING:

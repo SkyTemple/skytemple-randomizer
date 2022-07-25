@@ -15,7 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.recruitment_tables import HardcodedRecruitmentTables
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
@@ -51,7 +51,7 @@ class RecruitmentTableRandomizer(AbstractRandomizer):
             FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
         )
 
-        binary = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0011.bin'])
+        binary = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay11)
         sp_list = HardcodedRecruitmentTables.get_monster_species_list(binary, self.static_data)
 
         for i, actor in enumerate(actor_list.list):
@@ -60,6 +60,6 @@ class RecruitmentTableRandomizer(AbstractRandomizer):
                     sp_list[bi] = actor.entid
 
         HardcodedRecruitmentTables.set_monster_species_list(sp_list, binary, self.static_data)
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0011.bin'], binary)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay11, binary)
 
         status.done()

@@ -27,9 +27,8 @@ from typing import List, Tuple
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu
-from skytemple_files.data.md.model import NUM_ENTITIES, Gender
-from skytemple_files.graphics.kao.model import KaoImage
+from skytemple_files.common.util import get_binary_from_rom
+from skytemple_files.data.md.protocol import Gender
 from skytemple_files.graphics.kao.sprite_bot_sheet import SpriteBotSheet
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_files.list.actor.model import ActorListBin
@@ -62,7 +61,7 @@ class PortraitDownloader(AbstractRandomizer):
         if not patcher.is_applied('ActorAndLevelLoader'):
             patcher.apply('ActorAndLevelLoader')
 
-        overlay13 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'])
+        overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
             FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
         )
@@ -137,7 +136,7 @@ class PortraitDownloader(AbstractRandomizer):
                             kao.set(image)
                         else:
                             # New
-                            kaos.set(mdidx - 1, subindex, KaoImage.new(image))
+                            kaos.set_from_img(mdidx - 1, subindex, image)
                 self._debugs.append([f'{pokedex_number:04}', poke_name, form_id, form_name, '✓'])
         except BaseException:
             traceback_str = ''.join(traceback.format_exception(*sys.exc_info()))

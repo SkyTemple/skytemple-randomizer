@@ -14,13 +14,12 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from skytemple_files.common.types.file_types import FileType
 from skytemple_files.script.ssb.model import Ssb
+
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import replace_text_script, random_txt_line, get_script, \
+from skytemple_randomizer.randomizer.util.util import random_txt_line, get_script, \
     get_all_string_files
 from skytemple_randomizer.status import Status
-
 
 SCRIPTS_WITH_CHAPTER_NAMES = [
     'SCRIPT/D01P11A/m20a0101.ssb',

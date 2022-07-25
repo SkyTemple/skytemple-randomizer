@@ -20,9 +20,9 @@ Based on mdrngzer.
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice
 
+from range_typed_integers import u16
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
-from skytemple_files.data.md.model import NUM_ENTITIES
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.data.str.model import Str
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -41,7 +41,8 @@ class StarterRandomizer(AbstractRandomizer):
         if not self.config['starters_npcs']['starters']:
             return status.done()
         status.step("Randomizing Partner Starters...")
-        overlay13 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'])
+        num_entities = FileType.MD.properties().num_entities
+        overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
         pokemon_string_data = self.static_data.string_index_data.string_blocks["Pokemon Names"]
         results_string_start = self.static_data.string_index_data.string_blocks["Personality Quiz result strings"].begin
         langs = list(get_all_string_files(self.rom, self.static_data))
@@ -57,6 +58,7 @@ class StarterRandomizer(AbstractRandomizer):
         # The player options are put into two-pairs for each nature, first male then female.
         orig_player_ids = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
         new_player_ids = []
+        new_id: u16
         k = 0  # Index of text for "Will be..."
         for i in range(0, len(orig_player_ids)):
             new_id = choice(get_allowed_md_ids(self.config, roster=Roster.STARTERS))
@@ -67,12 +69,12 @@ class StarterRandomizer(AbstractRandomizer):
                 string_file.strings[results_string_start + k] = replace_strings(
                     string_file.strings[results_string_start + k],
                     {
-                        self._get_name(string_file, orig_player_ids[i] % NUM_ENTITIES, pokemon_string_data):
-                        self._get_name(string_file, new_id % NUM_ENTITIES, pokemon_string_data)
+                        self._get_name(string_file, orig_player_ids[i] % num_entities, pokemon_string_data):
+                        self._get_name(string_file, new_id % num_entities, pokemon_string_data)
                     }
                 )
-            if i % 2 == 1 and new_id + NUM_ENTITIES <= 1154:
-                new_id += NUM_ENTITIES
+            if i % 2 == 1 and new_id + num_entities <= 1154:
+                new_id += u16(num_entities)  # type: ignore
             new_player_ids.append(new_id)
             k += 1
         HardcodedPersonalityTestStarters.set_player_md_ids(new_player_ids, overlay13, self.static_data)
@@ -83,7 +85,7 @@ class StarterRandomizer(AbstractRandomizer):
             new_base = new % 600
             clone_missing_portraits(kao, new_base - 1)
 
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'], overlay13)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay13, overlay13)
         for lang, string_file in langs:
             self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
         self.rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
@@ -93,10 +95,11 @@ class StarterRandomizer(AbstractRandomizer):
     @staticmethod
     def _random_gender(orig_value):
         """50% male (nothing added to index), 50% female (+600 added to index)"""
-        if orig_value + NUM_ENTITIES > 1154:
+        num_entities = FileType.MD.properties().num_entities
+        if orig_value + num_entities > 1154:
             return orig_value
         if choice([True, False]):
-            return orig_value + NUM_ENTITIES
+            return orig_value + num_entities
         return orig_value
 
     @staticmethod

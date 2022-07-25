@@ -19,22 +19,30 @@ from collections import OrderedDict
 from enum import Enum, auto
 from itertools import chain
 from random import choice, randrange, randint
-from typing import Optional, List, Dict, Tuple
+from typing import Optional, List, Dict, Tuple, Sequence
 
 from ndspy.rom import NintendoDSRom
+from range_typed_integers import u8, i8, u16, i16, u8_checked
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonItem
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.dungeon_data.mappa_bin import MAX_WEIGHT
-from skytemple_files.dungeon_data.mappa_bin.floor import MappaFloor
-from skytemple_files.dungeon_data.mappa_bin.floor_layout import MappaFloorLayout, \
-    MappaFloorStructureType, MappaFloorWeather, MappaFloorTerrainSettings, MappaFloorDarknessLevel
-from skytemple_files.dungeon_data.mappa_bin.item_list import MappaItemList
-from skytemple_files.dungeon_data.mappa_bin.model import MappaBin
-from skytemple_files.dungeon_data.mappa_bin.monster import MappaMonster, DUMMY_MD_INDEX
-from skytemple_files.dungeon_data.mappa_bin.trap_list import MappaTrapList
+from skytemple_files.dungeon_data.mappa_bin.mappa_xml import mappa_floor_from_xml, mappa_floor_to_xml
+from skytemple_files.dungeon_data.mappa_bin.protocol import (
+    MappaFloorProtocol,
+    MappaFloorLayoutProtocol,
+    MappaFloorStructureType,
+    MappaFloorWeather,
+    MappaFloorTerrainSettingsProtocol,
+    MappaFloorDarknessLevel,
+    MappaItemListProtocol,
+    MappaBinProtocol,
+    MappaMonsterProtocol,
+    DUMMY_MD_INDEX,
+    MappaTrapListProtocol
+)
 from skytemple_files.dungeon_data.mappa_bin.validator.exception import DungeonValidatorError, \
     DungeonTotalFloorCountInvalidError, InvalidFloorListReferencedError, InvalidFloorReferencedError, \
     DungeonMissingFloorError, FloorReusedError
@@ -85,10 +93,10 @@ class DungeonRandomizer(AbstractRandomizer):
         super().__init__(config, rom, static_data, seed, frontend)
 
         self.dungeons = HardcodedDungeons.get_dungeon_list(
-            get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']),
+            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9),
             self.static_data
         )
-        self.mappa: Optional[MappaBin] = None
+        self.mappa: Optional[MappaBinProtocol] = None
 
     def step_count(self) -> int:
         i = 2
@@ -104,11 +112,11 @@ class DungeonRandomizer(AbstractRandomizer):
         status.step("Fixing dungeon errors...")
         # We may need to do this twice
         for _ in range(2):
-            validator = DungeonValidator(self.mappa.floor_lists)
+            validator = DungeonValidator(self.mappa)
             validator.validate(self.dungeons)
             for error in validator.errors:
                 self._fix_error(error)
-        assert DungeonValidator(self.mappa.floor_lists).validate(self.dungeons)
+        assert DungeonValidator(self.mappa).validate(self.dungeons)
 
         item_lists = None
         trap_lists = None
@@ -136,9 +144,9 @@ class DungeonRandomizer(AbstractRandomizer):
         status.done()
 
     def _randomize(
-            self, mappa: MappaBin, trap_lists: Optional[List[MappaTrapList]], item_lists: Optional[List[MappaItemList]]
+            self, mappa: MappaBinProtocol, trap_lists: Optional[List[MappaTrapListProtocol]], item_lists: Optional[List[MappaItemListProtocol]]
     ):
-        mappa.floor_lists = self._randomize_floor_count(mappa.floor_lists)
+        self._randomize_floor_count(mappa)
         for floor_list_index, floor_list in enumerate(mappa.floor_lists):
             dungeon_id = self._get_dungeon_for_fl(floor_list_index)
             if dungeon_id not in self.config['dungeons']['settings'] or not self.config['dungeons']['settings'][dungeon_id]['randomize']:
@@ -195,11 +203,11 @@ class DungeonRandomizer(AbstractRandomizer):
         return weights
 
     @staticmethod
-    def _can_be_randomized(floor: MappaFloor):
+    def _can_be_randomized(floor: MappaFloorProtocol):
         # We don't randomize fixed floors
         return floor.layout.fixed_floor_id == 0
 
-    def _randomize_layout(self, original_layout: MappaFloorLayout, dungeon_id: int):
+    def _randomize_layout(self, original_layout: MappaFloorLayoutProtocol, dungeon_id: int):
         tileset = choice(ALLOWED_TILESET_IDS)
         structure = choice(list(MappaFloorStructureType))
         allow_monster_houses = self.config['dungeons']['settings'][dungeon_id]['monster_houses']
@@ -210,40 +218,39 @@ class DungeonRandomizer(AbstractRandomizer):
                 structure = choice(list(MappaFloorStructureType))
         while not allow_monster_houses and (structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH):
             structure = choice(list(MappaFloorStructureType))
-        return MappaFloorLayout(
-            structure=structure,
-            room_density=randrange(3, 21),
-            tileset_id=tileset,
-            music_id=randrange(1, 118),
+        return FileType.MAPPA_BIN.get_floor_layout_model()(
+            structure=structure.value,
+            room_density=i8(randrange(3, 21)),
+            tileset_id=u8(tileset),
+            music_id=u8(randrange(1, 118)),
             weather=self._randomize_weather(original_layout, dungeon_id),
-            floor_connectivity=randrange(5, 51),
-            initial_enemy_density=randrange(1, 7),
-            kecleon_shop_chance=randrange(0, 101),
-            monster_house_chance=
-                randrange(0, self.config['dungeons']['max_mh_chance'].value + 1) if allow_monster_houses else 0,
-            unusued_chance=randrange(0, 101),
-            sticky_item_chance=randrange(0, self.config['dungeons']['max_sticky_chance'].value + 1),
+            floor_connectivity=u8(randrange(5, 51)),
+            initial_enemy_density=i8(randrange(1, 7)),
+            kecleon_shop_chance=u8(randrange(0, 101)),
+            monster_house_chance=u8(randrange(0, self.config['dungeons']['max_mh_chance'].value + 1) if allow_monster_houses else 0),
+            unused_chance=u8(randrange(0, 101)),
+            sticky_item_chance=u8(randrange(0, self.config['dungeons']['max_sticky_chance'].value + 1)),
             dead_ends=choice((True, False)),
-            secondary_terrain=randrange(0, 30),
-            terrain_settings=MappaFloorTerrainSettings(
+            secondary_terrain=u8(randrange(0, 30)),
+            terrain_settings=FileType.MAPPA_BIN.get_terrain_settings_model()(
                 choice((True, False)), False, choice((True, False)), False, False, False, False, False
             ),
             unk_e=choice((True, False)),
-            item_density=randrange(0, 11),
-            trap_density=randrange(0, 16),
+            item_density=u8(randrange(0, 11)),
+            trap_density=u8(randrange(0, 16)),
             floor_number=original_layout.floor_number,
             fixed_floor_id=original_layout.fixed_floor_id,
-            extra_hallway_density=randrange(0, 36),
-            buried_item_density=randrange(0, 11),
-            water_density=randrange(0, 41),
-            darkness_level=choice(list(MappaFloorDarknessLevel)),
+            extra_hallway_density=u8(randrange(0, 36)),
+            buried_item_density=u8(randrange(0, 11)),
+            water_density=u8(randrange(0, 41)),
+            darkness_level=choice(list(MappaFloorDarknessLevel)).value,
             max_coin_amount=randrange(0, 181) * 5,
-            kecleon_shop_item_positions=randrange(0, 14),
-            empty_monster_house_chance=randrange(0, 101),
-            unk_hidden_stairs=choice((0, 255)),
-            hidden_stairs_spawn_chance=randrange(0, 101),
-            enemy_iq=randrange(1, 601) if randomize_iq else original_layout.enemy_iq,
-            iq_booster_boost=choice((0, 1))
+            kecleon_shop_item_positions=u8(randrange(0, 14)),
+            empty_monster_house_chance=u8(randrange(0, 101)),
+            unk_hidden_stairs=u8(choice((0, 255))),
+            hidden_stairs_spawn_chance=u8(randrange(0, 101)),
+            enemy_iq=u16(randrange(1, 601) if randomize_iq else original_layout.enemy_iq),
+            iq_booster_boost=i16(choice((0, 1)))
         )
 
     def _randomize_monsters(self, min_level, max_level, allow_shaymin=True):
@@ -259,18 +266,18 @@ class DungeonRandomizer(AbstractRandomizer):
         for md_id, weight in zip(md_ids, weights):
             level = min(100,
                         max(1, randrange(min_level - MONSTER_LEVEL_VARIANCE, max_level + MONSTER_LEVEL_VARIANCE + 1)))
-            monsters.append(MappaMonster(level, weight, weight, md_id))
+            monsters.append(FileType.MAPPA_BIN.get_monster_model()(level, weight, weight, md_id))
 
         # Add Kecleon and Dummy
-        monsters.append(MappaMonster(42, 0, 0, KECLEON_MD_INDEX))
-        monsters.append(MappaMonster(1, 0, 0, DUMMY_MD_INDEX))
+        monsters.append(FileType.MAPPA_BIN.get_monster_model()(42, 0, 0, KECLEON_MD_INDEX))
+        monsters.append(FileType.MAPPA_BIN.get_monster_model()(1, 0, 0, DUMMY_MD_INDEX))
 
         return sorted(monsters, key=lambda m: m.md_index)
 
     def _randomize_traps(self):
         # Unusued trap + 24 traps
         ws = sorted(self._random_weights(24))
-        return MappaTrapList([0] + ws)
+        return FileType.MAPPA_BIN.get_trap_list_model()([0] + ws)
 
     def _randomize_items(self):
         categories = {}
@@ -289,7 +296,7 @@ class DungeonRandomizer(AbstractRandomizer):
         weights = sorted(self._random_weights(len(cats_as_list)))
         for i, cat_id in enumerate(cats_as_list):
             cat = self.static_data.dungeon_data.item_categories[cat_id]
-            categories[cat] = weights[i]
+            categories[cat.id] = weights[i]
 
             cat_item_ids = []
             if cat.number_of_items is not None:
@@ -307,33 +314,34 @@ class DungeonRandomizer(AbstractRandomizer):
                     cat_weights = sorted(self._random_weights(len(cat_item_ids)))
 
                     for item_id, weight in zip(cat_item_ids, cat_weights):
-                        items[Pmd2DungeonItem(item_id, '???')] = weight
+                        items[item_id] = weight
             if len(cat_item_ids) == 0:
-                categories[cat] = 0
+                categories[cat.id] = 0
 
-        return MappaItemList(categories, OrderedDict(sorted(items.items(), key=lambda i: i[0].id)))
+        return FileType.MAPPA_BIN.get_item_list_model()(categories, dict(sorted(items.items(), key=lambda i: i[0])))
 
-    def _randomize_weather(self, original_layout, dungeon_id):
+    def _randomize_weather(self, original_layout, dungeon_id) -> int:
         if not self.config['dungeons']['settings'][dungeon_id]['randomize_weather']:
             return original_layout.weather
         if self.config['dungeons']['weather'] == DungeonWeatherConfig.NO_RANDOMIZE:
             return original_layout.weather
         if self.config['dungeons']['weather'] == DungeonWeatherConfig.ONLY_RANDOM:
-            return MappaFloorWeather.RANDOM
+            return MappaFloorWeather.RANDOM.value
         if self.config['dungeons']['weather'] == DungeonWeatherConfig.SHUFFLED:
-            return choice(list(MappaFloorWeather))
+            return choice(list(MappaFloorWeather)).value
         if self.config['dungeons']['weather'] == DungeonWeatherConfig.SHUFFLED_LOWER_BAD_CHANCE:
             weather = choice(list(MappaFloorWeather))
             # Re-roll once if we get bad weather
             if weather in (MappaFloorWeather.HAIL, MappaFloorWeather.SANDSTORM, MappaFloorWeather.RANDOM):
                 weather = choice(list(MappaFloorWeather))
-            return weather
+            return weather.value
+        raise RuntimeError("Invalid weather config value.")
 
-    def _randomize_floor_count(self, floor_lists: List[List[MappaFloor]]) -> List[List[MappaFloor]]:
+    def _randomize_floor_count(self, mappa: MappaBinProtocol):
         if self.config['dungeons']['min_floor_change_percent'].value == 0 and self.config['dungeons']['max_floor_change_percent'].value == 0:
-            return floor_lists
+            return
         new_floor_lists = []
-        for i in range(0, len(floor_lists)):
+        for i in range(0, len(mappa.floor_lists)):
             dungeons: Dict[int, DungeonDefinition] = {}
             do_continue = False
             for dungeon_id, dungeon in enumerate(self.dungeons):
@@ -343,10 +351,10 @@ class DungeonRandomizer(AbstractRandomizer):
                         break
                     dungeons[dungeon_id] = dungeon
             if do_continue:
-                new_floor_lists.append(floor_lists[i])
+                new_floor_lists.append(mappa.floor_lists[i])
                 continue
 
-            old_list = floor_lists[i]
+            old_list = mappa.floor_lists[i]
             try:
                 new_dungeon_size = randrange(
                     len(old_list) - round(len(old_list) * (self.config['dungeons']['min_floor_change_percent'].value / 100)),
@@ -366,24 +374,27 @@ class DungeonRandomizer(AbstractRandomizer):
                     for i, d in enumerate(dungeons.values()):
                         d.__dict__.update(old_dungeons[i])
             new_floor_lists.append(new_floor_list)
-        assert DungeonValidator(new_floor_lists).validate(self.dungeons)
-        arm9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']))
+        mappa.floor_lists = new_floor_lists
+        assert DungeonValidator(mappa).validate(self.dungeons)
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         HardcodedDungeons.set_dungeon_list(
             self.dungeons, arm9, self.static_data
         )
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)
-        return new_floor_lists
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
-    def _copy_randomly_into_until_size(self, lst: List[MappaFloor], expected_length):
+    def _copy_randomly_into_until_size(self, lst: List[MappaFloorProtocol], expected_length):
         if len(lst) < 1:
             lst.append(self._mappa_generate_new_floor())
         while len(lst) < expected_length:
             idx = brandint(0, len(lst) - 1)
-            lst.insert(brandint(0, len(lst)), MappaFloor.from_xml(lst[idx].to_xml()))
+            lst.insert(brandint(0, len(lst)), mappa_floor_from_xml(
+                mappa_floor_to_xml(lst[idx], self.static_data.dungeon_data.item_categories),
+                {x.name: x for x in self.static_data.dungeon_data.item_categories.values()}
+            ))
 
-    def _resize_floor_list(self, dungeons: Dict[int, DungeonDefinition], new_dungeon_size: int, old_list: List[MappaFloor]):
-        fixed_floors_per_dungeon: Dict[int, List[Tuple[FixedRoomPosition, MappaFloor]]] = {}
-        list_parts: Dict[int, List[MappaFloor]] = {}
+    def _resize_floor_list(self, dungeons: Dict[int, DungeonDefinition], new_dungeon_size: int, old_list: Sequence[MappaFloorProtocol]):
+        fixed_floors_per_dungeon: Dict[int, List[Tuple[FixedRoomPosition, MappaFloorProtocol]]] = {}
+        list_parts: Dict[int, List[MappaFloorProtocol]] = {}
 
         # Re-distribute floors - if the dungeon only had one floor, leave it at length 1
         # + collect all fixed floors per dungeon
@@ -407,14 +418,14 @@ class DungeonRandomizer(AbstractRandomizer):
                 list_parts[dungeon_id] = [old_list[dungeon.start_after]]
             else:
                 # Redistribute
-                list_parts[dungeon_id] = old_list[dungeon.start_after:dungeon.start_after + dungeon.number_floors]
+                list_parts[dungeon_id] = list(old_list[dungeon.start_after:dungeon.start_after + dungeon.number_floors])
                 new_length = max(1, math.floor(dungeon.number_floors * increase_percent))
                 self._copy_randomly_into_until_size(list_parts[dungeon_id], new_length)
                 while len(list_parts[dungeon_id]) > new_length:
                     idx = brandint(0, len(list_parts[dungeon_id]) - 1)
                     del list_parts[dungeon_id][idx]
-            dungeon.number_floors = new_length
-            dungeon.number_floors_in_group = new_dungeon_size
+            dungeon.number_floors = u8(new_length)
+            dungeon.number_floors_in_group = u8(new_dungeon_size)
         difference = new_dungeon_size - len(list(chain.from_iterable(list_parts.values())))
         # OK but if all dungeons are length 1 or smaller, we bail out
         while difference < 0:
@@ -423,7 +434,7 @@ class DungeonRandomizer(AbstractRandomizer):
                     difference += 1
                     idx = brandint(0, len(list_parts[dungeon_id]) - 1)
                     del list_parts[dungeon_id][idx]
-                    dungeon.number_floors -= 1
+                    dungeon.number_floors -= u8(1)  # type: ignore
                 if difference == 0:
                     break
         # fill up remaining empty spaces due to rounding
@@ -432,9 +443,12 @@ class DungeonRandomizer(AbstractRandomizer):
                 if dungeon.number_floors > 1 or not any(d.layout.fixed_floor_id != 0 for d in list_parts[dungeon_id]):
                     difference -= 1
                     idx = brandint(0, len(list_parts[dungeon_id]) - 1)
-                    list_parts[dungeon_id].insert(brandint(0, len(list_parts[dungeon_id]) - 1),
-                                                  MappaFloor.from_xml(list_parts[dungeon_id][idx].to_xml()))
-                    dungeon.number_floors += 1
+                    new_floor = mappa_floor_from_xml(
+                        mappa_floor_to_xml(list_parts[dungeon_id][idx], self.static_data.dungeon_data.item_categories),
+                        {x.name: x for x in self.static_data.dungeon_data.item_categories.values()}
+                    )
+                    list_parts[dungeon_id].insert(brandint(0, len(list_parts[dungeon_id]) - 1), new_floor)
+                    dungeon.number_floors += u8(1)  # type: ignore
                 if difference == 0:
                     break
 
@@ -451,8 +465,8 @@ class DungeonRandomizer(AbstractRandomizer):
             while len(lst) > expected_length:
                 idx = brandint(0, len(lst) - 1)
                 del lst[idx]
-            ff_begin: List[MappaFloor] = []
-            ff_end: List[MappaFloor] = []
+            ff_begin: List[MappaFloorProtocol] = []
+            ff_end: List[MappaFloorProtocol] = []
             for pos, ff in ffs:
                 if pos == FixedRoomPosition.BEGIN:
                     ff_begin.append(ff)
@@ -468,7 +482,7 @@ class DungeonRandomizer(AbstractRandomizer):
         # Correct start_after
         current_cursor = 0
         for dungeon, lst in zip(dungeons.values(), list_parts.values()):
-            dungeon.start_after = current_cursor
+            dungeon.start_after = u8(current_cursor)
             current_cursor += dungeon.number_floors
             assert dungeon.number_floors == len(lst)
 
@@ -484,30 +498,39 @@ class DungeonRandomizer(AbstractRandomizer):
             self.dungeons[e.dungeon_id].number_floors_in_group = e.expected_floor_count_in_group
         elif isinstance(e, InvalidFloorListReferencedError) or isinstance(e, FloorReusedError):
             self.dungeons[e.dungeon_id].mappa_index = self._mappa_generate_and_insert_new_floor_list()
-            self.dungeons[e.dungeon_id].start_after = 0
-            self.dungeons[e.dungeon_id].number_floors = 1
-            self.dungeons[e.dungeon_id].number_floors_in_group = 1
+            self.dungeons[e.dungeon_id].start_after = u8(0)
+            self.dungeons[e.dungeon_id].number_floors = u8(1)
+            self.dungeons[e.dungeon_id].number_floors_in_group = u8(1)
         elif isinstance(e, InvalidFloorReferencedError):
             valid_floors = len(self.mappa.floor_lists[e.dungeon.mappa_index]) - e.dungeon.start_after
             if valid_floors > 0:
-                self.dungeons[e.dungeon_id].number_floors = valid_floors
+                self.dungeons[e.dungeon_id].number_floors = u8_checked(valid_floors)
             else:
-                self.mappa.floor_lists[e.dungeon.mappa_index].append(self._mappa_generate_new_floor())
-                self.dungeons[e.dungeon_id].number_floors = 1
+                self.mappa.add_floor_to_floor_list(e.dungeon.mappa_index, self._mappa_generate_new_floor())
+                self.dungeons[e.dungeon_id].number_floors = u8(1)
         elif isinstance(e, DungeonMissingFloorError):
             # Special case for Regigigas Chamber
             if self._is_regigias_special_case(self.dungeons, e):
                 # Remove additional floors
-                self.mappa.floor_lists[e.dungeon.mappa_index] = [
-                    f for i, f in enumerate(self.mappa.floor_lists[e.dungeon.mappa_index])
+                # Collect floors to keep
+                floor_list = [
+                    floor for i, floor in enumerate(self.mappa.floor_lists[e.dungeon.mappa_index])
                     if i not in e.floors_in_mappa_not_referenced
                 ]
+                # Then first remove all
+                while len(self.mappa.floor_lists[e.dungeon.mappa_index]) > 0:
+                    self.mappa.remove_floor_from_floor_list(e.dungeon.mappa_index, 0)
+                # Re-add floors to keep
+                for floor in floor_list:
+                    self.mappa.add_floor_to_floor_list(e.dungeon.mappa_index, floor)
             else:
                 # Add additional floors
                 if min(e.floors_in_mappa_not_referenced) == e.dungeon.start_after + e.dungeon.number_floors:
                     if check_consecutive(e.floors_in_mappa_not_referenced):
                         max_floor_id = max(e.floors_in_mappa_not_referenced)
-                        self.dungeons[e.dungeon_id].number_floors = max_floor_id - self.dungeons[e.dungeon_id].start_after + 1
+                        self.dungeons[e.dungeon_id].number_floors = u8_checked(
+                            max_floor_id - self.dungeons[e.dungeon_id].start_after + 1
+                        )
 
     @staticmethod
     def _is_regigias_special_case(dungeons, e):
@@ -516,12 +539,16 @@ class DungeonRandomizer(AbstractRandomizer):
 
     def _mappa_generate_and_insert_new_floor_list(self):
         index = len(self.mappa.floor_lists)
-        self.mappa.floor_lists.append([self._mappa_generate_new_floor()])
+        self.mappa.add_floor_list([self._mappa_generate_new_floor()])
         return index
 
-    def _mappa_generate_new_floor(self) -> MappaFloor:
+    def _mappa_generate_new_floor(self) -> MappaFloorProtocol:
         """Copies the first floor of test dungeon and returns it"""
-        return MappaFloor.from_xml(self.mappa.floor_lists[0][0].to_xml())  # type: ignore
+        assert self.mappa is not None
+        return mappa_floor_from_xml(
+            mappa_floor_to_xml(self.mappa.floor_lists[0][0], self.static_data.dungeon_data.item_categories),
+            {x.name: x for x in self.static_data.dungeon_data.item_categories.values()}
+        )
 
 
 def check_consecutive(l):

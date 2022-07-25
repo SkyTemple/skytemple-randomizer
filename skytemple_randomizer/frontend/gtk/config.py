@@ -23,13 +23,18 @@ from typing import List, Dict
 import yaml
 from gi.repository import Gtk, GtkSource
 from jsonschema import validate
+from range_typed_integers import u8, u16, u32
 
 from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon, Pmd2DungeonItem
-from skytemple_files.data.md.model import Ability
-from skytemple_files.dungeon_data.mappa_bin.item_list import MAX_ITEM_ID
+from skytemple_files.data.md.protocol import Ability
+from skytemple_files.dungeon_data.mappa_bin.protocol import MAX_ITEM_ID
 from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange, QuizQuestion, \
     QUIZ_QUESTIONS_JSON_SCHEMA
 from skytemple_randomizer.lists import MOVES, MONSTERS
+
+
+def is_int(typ):
+    return typ == int or typ == u8 or typ == u16 or typ == u32
 
 
 class ConfigUIApplier:
@@ -68,7 +73,7 @@ class ConfigUIApplier:
             assert field_name, "Field name must be set for primitive"
             w: Gtk.Switch = self._ui_get('switch_' + field_name)
             w.set_active(config)
-        elif typ == int:
+        elif is_int(typ):
             assert field_name, "Field name must be set for primitive"
             w: Gtk.ComboBox = self._ui_get('cb_' + field_name)
             w.set_active_id(str(config))
@@ -150,7 +155,7 @@ class ConfigUIReader:
             assert field_name, "Field name must be set for primitive"
             w = self._ui_get('switch_' + field_name)
             return w.get_active()
-        elif typ == int:
+        elif is_int(typ):
             assert field_name, "Field name must be set for primitive"
             w = self._ui_get('cb_' + field_name)
             return int(w.get_active_id())
@@ -175,7 +180,7 @@ class ConfigUIReader:
                 d[idx] = {'randomize': randomize, 'monster_houses': monster_houses,
                           'randomize_weather': randomize_weather, 'unlock': unlock, 'enemy_iq': enemy_iq}
             return d
-        elif typ == List[int]:
+        elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
             w = self._ui_get('tree_' + field_name)
             s = w.get_model()
             dd: List[int] = []

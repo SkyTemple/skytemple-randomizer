@@ -17,8 +17,8 @@
 from random import choice
 
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
-from skytemple_files.data.md.model import Md
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
+from skytemple_files.data.md.protocol import MdProtocol
 from skytemple_files.hardcoded.guest_pokemon import GuestPokemonList
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
@@ -55,7 +55,7 @@ class GuestRandomizer(AbstractRandomizer):
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied('EditExtraPokemon'):
             patcher.apply('EditExtraPokemon')
-        arm9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']))
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         guests = GuestPokemonList.read(arm9, self.static_data)
 
         if self.config['starters_npcs']['npcs']:
@@ -76,7 +76,7 @@ class GuestRandomizer(AbstractRandomizer):
             valid_move_ids = get_allowed_move_ids(self.config)
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
         
-            md: Md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
+            md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
             for guest in guests:
                 if self.config['pokemon']['movesets'] == MovesetConfig.FULLY_RANDOM:
                     guest.moves = [choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
@@ -89,6 +89,6 @@ class GuestRandomizer(AbstractRandomizer):
                     guest.moves = [first, choice(valid_move_ids), choice(valid_move_ids), choice(valid_move_ids)]
 
         GuestPokemonList.write(guests, arm9, self.static_data)
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
         status.done()

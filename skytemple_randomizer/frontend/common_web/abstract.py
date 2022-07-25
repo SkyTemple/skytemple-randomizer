@@ -21,8 +21,8 @@ import sys
 import tornado.web
 
 from skytemple_files.common.ppmdu_config.xml_reader import Pmd2XmlReader
-from skytemple_files.data.md.model import Ability
-from skytemple_files.dungeon_data.mappa_bin.item_list import MAX_ITEM_ID
+from skytemple_files.data.md.protocol import Ability
+from skytemple_files.dungeon_data.mappa_bin.protocol import MAX_ITEM_ID
 from skytemple_randomizer.config import data_dir, RandomizerConfig, version
 from abc import ABC, abstractmethod
 

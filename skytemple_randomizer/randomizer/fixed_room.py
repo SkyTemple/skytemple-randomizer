@@ -16,17 +16,16 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
 from random import randrange
-from typing import List, Tuple, Iterable
+from typing import List, Tuple, Iterable, Sequence
 
 from ndspy.rom import NintendoDSRom
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import open_utf8, get_binary_from_rom_ppmdu
+from skytemple_files.common.util import open_utf8, get_binary_from_rom
 from skytemple_files.dungeon_data.fixed_bin.model import FixedFloorActionRule, TileRule, TileRuleType, FixedBin, \
     FixedFloor, EntityRule
-from skytemple_files.dungeon_data.mappa_bin.floor import MappaFloor
-from skytemple_files.dungeon_data.mappa_bin.model import MappaBin
+from skytemple_files.dungeon_data.mappa_bin.protocol import MappaFloorProtocol, MappaBinProtocol
 from skytemple_files.dungeon_data.mappa_g_bin.mappa_converter import convert_mappa_to_mappag
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons
 from skytemple_randomizer.config import RandomizerConfig
@@ -46,7 +45,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
         super().__init__(config, rom, static_data, seed, frontend)
 
         self.dungeons = HardcodedDungeons.get_dungeon_list(
-            get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']),
+            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9),
             self.static_data
         )
 
@@ -59,9 +58,8 @@ class FixedRoomRandomizer(AbstractRandomizer):
         if not self.config['dungeons']['fixed_rooms']:
             return status.done()
 
-        mappa: MappaBin = FileType.MAPPA_BIN.deserialize(self.rom.getFileByName('BALANCE/mappa_s.bin'))
-        fixed: FixedBin = FileType.FIXED_BIN.deserialize(self.rom.getFileByName('BALANCE/fixed.bin'),
-                                                         static_data=self.static_data)
+        mappa: MappaBinProtocol = FileType.MAPPA_BIN.deserialize(self.rom.getFileByName('BALANCE/mappa_s.bin'))
+        fixed: FixedBin = FileType.FIXED_BIN.deserialize(self.rom.getFileByName('BALANCE/fixed.bin'))
 
         status.step('Randomizing Boss Floor Layouts...')
         for i in BOSS_ROOMS:
@@ -81,14 +79,14 @@ class FixedRoomRandomizer(AbstractRandomizer):
         status.done()
 
     def _get_dungeon_floors_for_fixed_room(
-            self, floor_lists: List[List[MappaFloor]], ff_id: int
-    ) -> Iterable[Tuple[List[MappaFloor], int]]:
+            self, floor_lists: Sequence[Sequence[MappaFloorProtocol]], ff_id: int
+    ) -> Iterable[Tuple[Sequence[MappaFloorProtocol], int]]:
         for fl in floor_lists:
             for flooridx, floor in enumerate(fl):
                 if floor.layout.fixed_floor_id == ff_id:
                     yield fl, flooridx
 
-    def _assign_dungeon_floor_regular_tileset(self, floor_list: List[MappaFloor], floor_id: int):
+    def _assign_dungeon_floor_regular_tileset(self, floor_list: Sequence[MappaFloorProtocol], floor_id: int):
         if floor_list[floor_id].layout.tileset_id >= START_DUNGEON_BGS:
             floor_list[floor_id].layout.tileset_id = floor_list[floor_id - 1].layout.tileset_id
 

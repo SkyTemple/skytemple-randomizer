@@ -22,12 +22,12 @@ from typing import List, Union, Dict, Optional, Set, Sequence
 
 from PIL import Image
 from ndspy.rom import NintendoDSRom
+from range_typed_integers import u16
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
-from skytemple_files.data.md.model import NUM_ENTITIES
-from skytemple_files.graphics.kao.model import KaoImage
+from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
@@ -173,13 +173,14 @@ def _get_fun_portraits() -> Sequence[FunPortraitLike]:
     return _init_random_chosen_three() + list(FunPortrait)
 
 
-def get_allowed_md_ids(base_set: Set[int], roster: Roster) -> List[int]:
+def get_allowed_md_ids(base_set: Set[u16], roster: Roster) -> List[u16]:
     s = set()
+    num_entities = FileType.MD.properties().num_entities
     for x in _get_fun_portraits():
-        s.add(x.value)
-        if x.value + NUM_ENTITIES <= 1154:
-            s.add(x.value + NUM_ENTITIES)
-    extra_candidates: List[int] = list(base_set - s)
+        s.add(u16(x.value))
+        if x.value + num_entities <= 1154:
+            s.add(u16(x.value + num_entities))
+    extra_candidates: List[u16] = list(base_set - s)
     extras_max = 0
     if roster == Roster.NPCS:
         extras_max = 5
@@ -188,20 +189,20 @@ def get_allowed_md_ids(base_set: Set[int], roster: Roster) -> List[int]:
     for _ in range(0, extras_max):
         y = choice(extra_candidates)
         s.add(y)
-        if y + NUM_ENTITIES <= 1154:
-            s.add(y + NUM_ENTITIES)
+        if y + num_entities <= 1154:
+            s.add(u16(y + num_entities))
     return list(base_set & s)
 
 
 def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
-    kao = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
+    kao: KaoProtocol = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
     for portrait in _get_fun_portraits():
         portrait_id = portrait.value - 1
         pil_img = Image.open(os.path.join(data_dir(), 'fun', portrait.file_name))
         kaoimg = kao.get(portrait_id, 0)
         try:
             if kaoimg is None:
-                kao.set(portrait_id, 0, KaoImage.new(pil_img))
+                kao.set_from_img(portrait_id, 0, pil_img)
             else:
                 kaoimg.set(pil_img)
             clone_missing_portraits(kao, portrait_id, force=True)

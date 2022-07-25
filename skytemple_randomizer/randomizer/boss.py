@@ -16,8 +16,9 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice
 
+from range_typed_integers import u16
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
@@ -73,7 +74,7 @@ class BossRandomizer(AbstractRandomizer):
             FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
         )
 
-        binary = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'])
+        binary = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay29)
         boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(binary, self.static_data)
 
         for i, actor in enumerate(actor_list.list):
@@ -82,10 +83,10 @@ class BossRandomizer(AbstractRandomizer):
                     boss_list[bi].md_idx = actor.entid
 
         for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
-            boss_list[extra_id].md_idx = choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS))
+            boss_list[extra_id].md_idx = u16(choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS)))
 
         HardcodedFixedFloorTables.set_monster_spawn_list(binary, boss_list, self.static_data)
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'], binary)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay29, binary)
 
         status.done()
 
@@ -101,16 +102,16 @@ def create_mapping():
     patcher.apply('ActorAndLevelLoader')
 
     from skytemple_files.common.types.file_types import FileType
-    from skytemple_files.data.md.model import Md
-    md: Md = FileType.MD.deserialize(rom.getFileByName('BALANCE/monster.md'))
+    from skytemple_files.data.md.protocol import MdProtocol
+    md: MdProtocol = FileType.MD.deserialize(rom.getFileByName('BALANCE/monster.md'))
     from skytemple_files.list.actor.model import ActorListBin
     actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
         FileType.SIR0.deserialize(rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
     )
     from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
-    from skytemple_files.common.util import get_binary_from_rom_ppmdu
+    from skytemple_files.common.util import get_binary_from_rom
     boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(
-        get_binary_from_rom_ppmdu(rom, static_data.binaries['overlay/overlay_0029.bin']),
+        set_binary_in_rom(rom, static_data.bin_sections.overlay29),
         static_data
     )
 

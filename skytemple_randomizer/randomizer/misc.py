@@ -14,16 +14,12 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import shuffle
-
-from skytemple_files.common.ppmdu_config.data import Pmd2StringBlock
-from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
+from range_typed_integers import u8
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.text_speed import HardcodedTextSpeed
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_all_string_files
 from skytemple_randomizer.status import Status
-DEBUG_SPEED = 255
+DEBUG_SPEED = u8(255)
 
 
 class MiscRandomizer(AbstractRandomizer):
@@ -37,10 +33,10 @@ class MiscRandomizer(AbstractRandomizer):
             return status.done()
         status.step('Enabling instant text...')
 
-        arm9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']))
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         HardcodedTextSpeed.set_text_speed(
             DEBUG_SPEED, arm9, self.static_data
         )
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
         status.done()

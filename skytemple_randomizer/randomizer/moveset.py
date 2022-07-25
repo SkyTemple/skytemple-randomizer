@@ -19,10 +19,10 @@ from typing import List, Tuple
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Language
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.data.item_p.model import ItemP
-from skytemple_files.data.md.model import PokeType, Md
+from skytemple_files.data.item_p.protocol import ItemPProtocol
+from skytemple_files.data.md.protocol import PokeType, MdProtocol
 from skytemple_files.data.str.model import Str
-from skytemple_files.data.waza_p.model import WazaP
+from skytemple_files.data.waza_p.protocol import WazaPProtocol
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_allowed_move_ids, MoveRoster, get_all_string_files, \
@@ -42,8 +42,8 @@ class MovesetRandomizer(AbstractRandomizer):
         return i
 
     def run(self, status: Status):
-        md: Md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
-        waza_p: WazaP = FileType.WAZA_P.deserialize(self.rom.getFileByName('BALANCE/waza_p.bin'))
+        md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
+        waza_p: WazaPProtocol = FileType.WAZA_P.deserialize(self.rom.getFileByName('BALANCE/waza_p.bin'))
 
         if self.config['pokemon']['movesets'] != MovesetConfig.NO:
             status.step("Randomizing Level-Up movesets...")
@@ -61,12 +61,14 @@ class MovesetRandomizer(AbstractRandomizer):
                         assert_not_empty(damaging_move_ids)
                         e.move_id = choice(damaging_move_ids)
                     elif self.config['pokemon']['movesets'] == MovesetConfig.FIRST_STAB:
-                        e.move_id = choice(assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary)))
+                        e.move_id = choice(assert_not_empty(get_allowed_move_ids(
+                            self.config, MoveRoster.STAB, PokeType(md_entry.type_primary)
+                        )))
 
         allowed_move_ids = get_allowed_move_ids(self.config, MoveRoster.DEFAULT)
         if self.config['pokemon']['tms_hms']:
             status.step("Randomizing TMs/HMs...")
-            item_p: ItemP = FileType.ITEM_P.deserialize(self.rom.getFileByName('BALANCE/item_p.bin'))
+            item_p: ItemPProtocol = FileType.ITEM_P.deserialize(self.rom.getFileByName('BALANCE/item_p.bin'))
             move_names = self.static_data.string_index_data.string_blocks["Move Names"]
             item_names = self.static_data.string_index_data.string_blocks["Item Names"]
             long_descs = self.static_data.string_index_data.string_blocks["Item Long Descriptions"]

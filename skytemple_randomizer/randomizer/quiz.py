@@ -15,18 +15,16 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import randint
-from time import sleep
 
 from ndspy.rom import NintendoDSRom
-
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.patch.patches import Patcher
-from skytemple_randomizer.config import QuizMode, RandomizerConfig, QuizQuestion
+from skytemple_randomizer.config import RandomizerConfig, QuizQuestion
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
 from skytemple_randomizer.status import Status
+
 QUESTION_MAPPING = {
     0: [0, 1, 2],
     1: [3, 4, 5],

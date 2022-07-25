@@ -18,7 +18,8 @@ from random import choice, randrange
 
 from typing import List
 
-from skytemple_files.common.util import get_binary_from_rom_ppmdu, set_binary_in_rom_ppmdu
+from range_typed_integers import u8, i32, i16
+from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.iq import HardcodedIq, IqGroupsSkills
 from skytemple_files.hardcoded.tactics import HardcodedTactics
 from skytemple_files.patch.patches import Patcher
@@ -45,9 +46,9 @@ class IqTacticsRandomizer(AbstractRandomizer):
         if self.config['iq']['randomize_iq_groups']:
             if not patcher.is_applied('CompressIQData'):
                 patcher.apply('CompressIQData')
-        ov10 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0010.bin'])
-        ov29 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'])
-        arm9 = bytearray(get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin']))
+        ov10 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay10)
+        ov29 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay29)
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
 
         if self.config['iq']['randomize_tactics']:
             status.step('Randomizing tactics...')
@@ -60,15 +61,15 @@ class IqTacticsRandomizer(AbstractRandomizer):
                     new_tactics.append(tactic)
                 else:
                     if choice([True] + [False] * 12):
-                        new_tactics.append(-1)
+                        new_tactics.append(i16(-1))
                         minus_one_added = True
                     else:
-                        new_tactics.append(randrange(6, 51))
+                        new_tactics.append(i16(randrange(6, 51)))
 
             while not minus_one_added:
                 idx = randrange(0, len(new_tactics))
                 if new_tactics[idx] != 999:
-                    new_tactics[idx] = -1
+                    new_tactics[idx] = i16(-1)
                     minus_one_added = True
 
             HardcodedTactics.set_unlock_levels(new_tactics, arm9, self.static_data)
@@ -94,9 +95,9 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             HardcodedIq.set_gummi_iq_gains(new_iq_gains, arm9, self.static_data, additional_types_patch_applied)
             HardcodedIq.set_gummi_belly_heal(new_belly_gains, arm9, self.static_data, additional_types_patch_applied)
-            HardcodedIq.set_wonder_gummi_gain(randrange(5, 20), arm9, self.static_data)
-            HardcodedIq.set_nectar_gain(randrange(5, 20), ov29, self.static_data)
-            HardcodedIq.set_juice_bar_nectar_gain(randrange(5, 20), arm9, self.static_data)
+            HardcodedIq.set_wonder_gummi_gain(u8(randrange(5, 20)), arm9, self.static_data)
+            HardcodedIq.set_nectar_gain(u8(randrange(5, 20)), ov29, self.static_data)
+            HardcodedIq.set_juice_bar_nectar_gain(u8(randrange(5, 20)), arm9, self.static_data)
 
         if self.config['iq']['randomize_iq_groups']:
             status.step('Randomizing IQ groups...')
@@ -106,13 +107,13 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
 
-            new_iq_groups = []
+            new_iq_groups: List[List[u8]] = []
             for _ in iq_groups:
-                li = []
-                new_iq_groups.append(li)
+                li2: List[u8] = []
+                new_iq_groups.append(li2)
                 for idx in range(len(iq_skills)):
                     if idx == 22 or choice([True, False]):
-                        li.append(idx)
+                        li2.append(u8(idx))
 
             IqGroupsSkills.write_compressed(arm9, new_iq_groups, self.static_data)
 
@@ -123,13 +124,13 @@ class IqTacticsRandomizer(AbstractRandomizer):
             for skill_idx, skill in enumerate(iq_skills):
                 if skill.iq_required != 9999:
                     if skill_idx == 22 or choice([True] + [False] * 12):
-                        skill.iq_required = -1
+                        skill.iq_required = i32(-1)
                     else:
-                        skill.iq_required = randrange(1, 900)
+                        skill.iq_required = i32(randrange(1, 900))
 
             HardcodedIq.set_iq_skills(iq_skills, arm9, self.static_data)
 
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['arm9.bin'], arm9)
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0010.bin'], ov10)
-        set_binary_in_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0029.bin'], ov29)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay10, ov10)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay29, ov29)
         status.done()

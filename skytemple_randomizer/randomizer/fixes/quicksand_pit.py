@@ -14,16 +14,14 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
 
-from skytemple_files.common.util import get_files_from_rom_with_extension, get_binary_from_rom_ppmdu, \
-    set_binary_in_rom_ppmdu
-from skytemple_files.hardcoded.main_menu_music import HardcodedMainMenuMusic
 from skytemple_files.script.ssb.model import Ssb
+
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script
 from skytemple_randomizer.status import Status
+
 SCRIPT_NAME = "SCRIPT/D14P12A/m14a0103.ssb"
 
 

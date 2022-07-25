@@ -19,12 +19,13 @@ import traceback
 import urllib.request
 from typing import List, Optional, Dict
 
+from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
 from skytemple_files.common.ppmdu_config.script_data import Pmd2ScriptEntity
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import create_file_in_rom, get_binary_from_rom_ppmdu
-from skytemple_files.data.md.model import Ability, Md, MdEntry, Gender
+from skytemple_files.common.util import create_file_in_rom, get_binary_from_rom
+from skytemple_files.data.md.protocol import Ability, MdProtocol, MdEntryProtocol, Gender
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
@@ -41,28 +42,28 @@ from skytemple_randomizer.status import Status
 
 STR_EU = 16330
 STR_US = 16328
-ACTOR_TO_USE = 78
+ACTOR_TO_USE = u16(78)
 MAP = 'P01P01A'
 SCENE = 'enter.sse'
-TALK_SCRIPT = 80
+TALK_SCRIPT = i16(80)
 TALK_SCRIPT_NAME = f'enter{TALK_SCRIPT}.ssb'
 NPC_SECTOR = 0
-NPC_X = 10
-NPC_Y = 21
+NPC_X = u16(10)
+NPC_Y = u16(21)
 
-TWO_ACTOR_TO_USE = 77
-TWO_TALK_SCRIPT = 81
+TWO_ACTOR_TO_USE = u16(77)
+TWO_TALK_SCRIPT = i16(81)
 TWO_TALK_SCRIPT_NAME = f'enter{TWO_TALK_SCRIPT}.ssb'
 TWO_NPC_SECTOR = 0
-TWO_NPC_X = 15
-TWO_NPC_Y = 21
+TWO_NPC_X = u16(15)
+TWO_NPC_Y = u16(21)
 
-THREE_ACTOR_TO_USE = 76
-THREE_TALK_SCRIPT = 83
+THREE_ACTOR_TO_USE = u16(76)
+THREE_TALK_SCRIPT = i16(83)
 THREE_TALK_SCRIPT_NAME = f'enter{THREE_TALK_SCRIPT}.ssb'
 THREE_NPC_SECTOR = 0
-THREE_NPC_X = 20
-THREE_NPC_Y = 21
+THREE_NPC_X = u16(20)
+THREE_NPC_Y = u16(21)
 
 
 def escape(s):
@@ -119,13 +120,13 @@ on Crossroads."""
                 actor_id=ACTOR_TO_USE,
                 pos=SsaPosition(
                     scriptdata=self.static_data.script_data,
-                    direction=self.static_data.script_data.directions__by_name['Down'].ssa_id,
+                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
                     x_pos=NPC_X,
                     y_pos=NPC_Y,
-                    x_offset=0, y_offset=0
+                    x_offset=u16(0), y_offset=u16(0)
                 ),
                 script_id=TALK_SCRIPT,
-                unkE=-1,
+                unkE=i16(-1),
             ))
         already_exists = any(a.script_id == TWO_TALK_SCRIPT for a in layer.actors)
         if not already_exists:
@@ -134,13 +135,13 @@ on Crossroads."""
                 actor_id=TWO_ACTOR_TO_USE,
                 pos=SsaPosition(
                     scriptdata=self.static_data.script_data,
-                    direction=self.static_data.script_data.directions__by_name['Down'].ssa_id,
+                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
                     x_pos=TWO_NPC_X,
                     y_pos=TWO_NPC_Y,
-                    x_offset=0, y_offset=0
+                    x_offset=u16(0), y_offset=u16(0)
                 ),
                 script_id=TWO_TALK_SCRIPT,
-                unkE=-1,
+                unkE=i16(-1),
             ))
         already_exists = any(a.script_id == THREE_TALK_SCRIPT for a in layer.actors)
         if not already_exists:
@@ -149,13 +150,13 @@ on Crossroads."""
                 actor_id=THREE_ACTOR_TO_USE,
                 pos=SsaPosition(
                     scriptdata=self.static_data.script_data,
-                    direction=self.static_data.script_data.directions__by_name['Down'].ssa_id,
+                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
                     x_pos=THREE_NPC_X,
                     y_pos=THREE_NPC_Y,
-                    x_offset=0, y_offset=0
+                    x_offset=u16(0), y_offset=u16(0)
                 ),
                 script_id=THREE_TALK_SCRIPT,
-                unkE=-1,
+                unkE=i16(-1),
             ))
         self.rom.setFileByName(f'SCRIPT/{MAP}/{SCENE}', FileType.SSA.serialize(scene))
         # Fill talk script 1
@@ -407,7 +408,7 @@ macro patches() {{
         credit_map: Dict[str, ArtistCredits] = {}
         credits = ""
 
-        overlay13 = get_binary_from_rom_ppmdu(self.rom, self.static_data.binaries['overlay/overlay_0013.bin'])
+        overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
             FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
         )
@@ -476,7 +477,7 @@ macro patches() {{
                 pass
         return credits
 
-    def _process_portrait(self, credit_map: Dict[str, ArtistCredits], config, credits_config, mdidx, md: MdEntry, actor: Optional[Pmd2ScriptEntity]):
+    def _process_portrait(self, credit_map: Dict[str, ArtistCredits], config, credits_config, mdidx, md: MdEntryProtocol, actor: Optional[Pmd2ScriptEntity]):
         pokedex_number = md.national_pokedex_number
         forms_to_try = ['0000']
         if md.gender == Gender.FEMALE:

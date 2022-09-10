@@ -490,7 +490,7 @@ macro patches() {{
 
         out_credits = ""
         try:
-            for (name, form_path), entry in credits.items():
+            for (name, monster_id), entry in credits.items():
                 others = ""
                 if len(entry) > 1:
                     raw_others = entry[1:]
@@ -502,7 +502,7 @@ macro patches() {{
                     others = f"More Authors: [CS:A]{', '.join(others_short_f) + main}[CR]"
                 out_credits += f"""
         case menu("{name}"):
-            message_Talk("Last Author: [CS:A]{escape(parse_credit(entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(form_path)}");
+            message_Talk("Main Author: [CS:A]{escape(parse_credit(entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
             jump @l_artists;
 """
         except:

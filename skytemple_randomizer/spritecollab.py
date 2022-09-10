@@ -57,7 +57,7 @@ async def get_details_and_portraits(
     details = await session.monster_form_details([x for x in valid_forms_to_try if x in involved_forms])
     #   - update credits
     for detail in details:
-        _COLLECTED_PORTRAITS[(detail.full_form_name, detail.form_path)] = list(detail.portrait_credits)
+        _COLLECTED_PORTRAITS[(detail.full_form_name, f'{detail.monster_id:04}')] = list(detail.portrait_credits)
     return details[0], final_portraits
 
 
@@ -86,7 +86,7 @@ async def get_sprites(
             details = await session.monster_form_details([form_path])
             #   - update credits
             for detail in details:
-                _COLLECTED_SPRITES[(detail.full_form_name, detail.form_path)] = list(detail.sprite_credits)
+                _COLLECTED_SPRITES[(detail.full_form_name, f'{detail.monster_id:04}')] = list(detail.sprite_credits)
             return form
     return None
 

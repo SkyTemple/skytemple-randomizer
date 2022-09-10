@@ -454,5 +454,5 @@ def _load_theme():
 if __name__ == '__main__':
     # TODO: At the moment doesn't support any cli arguments.
     logging.basicConfig()
-    logging.getLogger().setLevel(logging.DEBUG)
+    logging.getLogger().setLevel(logging.INFO)
     main()

@@ -171,7 +171,8 @@ class ImprovementsConfig(TypedDict):
 
 class ImprovementsConfigDoc:
     download_portraits = \
-        """If enabled existing Pokémon portraits for starters and NPCs will be downloaded from https://portraits.pmdcollab.org."""
+        """If enabled existing Pokémon portraits for starters and NPCs will be downloaded from https://sprites.pmdcollab.org.
+        Additionally missing sprites for starters are downloaded."""
     patch_moveshortcuts = \
         f"""Installs the patch '{MoveShortcutsPatch().name}' by {MoveShortcutsPatch().author}: 
         {MoveShortcutsPatch().description}"""

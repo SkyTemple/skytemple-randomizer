@@ -33,7 +33,7 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
 
-BOSS_ROOMS = range(1, 110)
+BOSS_ROOMS = range(1, 81)
 FLOOR = TileRule(TileRuleType.FLOOR_ROOM)
 WALL = TileRule(TileRuleType.WALL_HALLWAY_IMPASSABLE)
 SECONDARY = TileRule(TileRuleType.SECONDARY_ROOM)

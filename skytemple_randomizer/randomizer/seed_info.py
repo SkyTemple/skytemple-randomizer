@@ -14,30 +14,25 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-import json
 import traceback
-import urllib.request
-from typing import List, Optional, Dict
+from typing import Mapping, Sequence, Tuple
 
 from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
-from skytemple_files.common.ppmdu_config.script_data import Pmd2ScriptEntity
+from skytemple_files.common.spritecollab.schema import Credit
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import create_file_in_rom, get_binary_from_rom
-from skytemple_files.data.md.protocol import Ability, MdProtocol, MdEntryProtocol, Gender
-from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
-from skytemple_files.list.actor.model import ActorListBin
+from skytemple_files.common.util import create_file_in_rom
 from skytemple_files.patch.patches import Patcher
 from skytemple_files.script.ssa_sse_sss.actor import SsaActor
 from skytemple_files.script.ssa_sse_sss.model import Ssa
 from skytemple_files.script.ssa_sse_sss.position import SsaPosition
-from skytemple_files.script.ssb.constants import SsbConstant
 from skytemple_files.script.ssb.script_compiler import ScriptCompiler
 from skytemple_randomizer.config import version, MovesetConfig, DungeonWeatherConfig, DungeonModeConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
+from skytemple_randomizer.spritecollab import portrait_credits, sprite_credits
 from skytemple_randomizer.status import Status
 
 STR_EU = 16330
@@ -48,35 +43,33 @@ SCENE = 'enter.sse'
 TALK_SCRIPT = i16(80)
 TALK_SCRIPT_NAME = f'enter{TALK_SCRIPT}.ssb'
 NPC_SECTOR = 0
-NPC_X = u16(10)
+NPC_X = u16(5)
 NPC_Y = u16(21)
 
 TWO_ACTOR_TO_USE = u16(77)
 TWO_TALK_SCRIPT = i16(81)
 TWO_TALK_SCRIPT_NAME = f'enter{TWO_TALK_SCRIPT}.ssb'
 TWO_NPC_SECTOR = 0
-TWO_NPC_X = u16(15)
+TWO_NPC_X = u16(10)
 TWO_NPC_Y = u16(21)
 
 THREE_ACTOR_TO_USE = u16(76)
 THREE_TALK_SCRIPT = i16(83)
 THREE_TALK_SCRIPT_NAME = f'enter{THREE_TALK_SCRIPT}.ssb'
 THREE_NPC_SECTOR = 0
-THREE_NPC_X = u16(20)
+THREE_NPC_X = u16(15)
 THREE_NPC_Y = u16(21)
+
+FOUR_ACTOR_TO_USE = u16(75)
+FOUR_TALK_SCRIPT = i16(84)
+FOUR_TALK_SCRIPT_NAME = f'enter{FOUR_TALK_SCRIPT}.ssb'
+FOUR_NPC_SECTOR = 0
+FOUR_NPC_X = u16(20)
+FOUR_NPC_Y = u16(21)
 
 
 def escape(s):
     return s.replace('"', '\\"').replace("'", "\\'")
-
-
-class ArtistCredits:
-    def __init__(self, name: str, actor: Optional[Pmd2ScriptEntity], main_artist: str, other_artists: List[str], id_str: str):
-        self.name = name
-        self.id_str = id_str
-        self.other_artists = other_artists
-        self.main_artist = main_artist
-        self.actor = actor
 
 
 class SeedInfo(AbstractRandomizer):
@@ -158,6 +151,21 @@ on Crossroads."""
                 script_id=THREE_TALK_SCRIPT,
                 unkE=i16(-1),
             ))
+        already_exists = any(a.script_id == FOUR_TALK_SCRIPT for a in layer.actors)
+        if not already_exists:
+            layer.actors.append(SsaActor(
+                scriptdata=self.static_data.script_data,
+                actor_id=FOUR_ACTOR_TO_USE,
+                pos=SsaPosition(
+                    scriptdata=self.static_data.script_data,
+                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
+                    x_pos=FOUR_NPC_X,
+                    y_pos=FOUR_NPC_Y,
+                    x_offset=u16(0), y_offset=u16(0)
+                ),
+                script_id=FOUR_TALK_SCRIPT,
+                unkE=i16(-1),
+            ))
         self.rom.setFileByName(f'SCRIPT/{MAP}/{SCENE}', FileType.SSA.serialize(scene))
         # Fill talk script 1
         exps = f"""
@@ -171,12 +179,12 @@ def 0 {{
     with (actor ACTOR_ATTENDANT1) {{
         SetAnimation(2);
     }}
-    
+
     message_SetFace(ACTOR_NPC_TEST010, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
     message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
-    
+
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Show Settings"):
@@ -186,7 +194,7 @@ def 0 {{
         default:
             break;
     }}
-    
+
     JumpCommon(CORO_END_TALK);
 }}
 
@@ -242,51 +250,125 @@ macro settings() {{
             self.rom.setFileByName(script_fn, script_sera)
 
         exps = f"""
-        def 0 {{
-            with (actor ACTOR_TALK_MAIN) {{
-                ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
-            }}
-            with (actor ACTOR_TALK_SUB) {{
-                ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
-            }}
-            with (actor ACTOR_ATTENDANT1) {{
-                SetAnimation(2);
-            }}
+def 0 {{
+    with (actor ACTOR_TALK_MAIN) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_TALK_SUB) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_ATTENDANT1) {{
+        SetAnimation(2);
+    }}
 
-            message_SetFace(ACTOR_NPC_TEST009, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
-            message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
-            message_ResetActor();
-            message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_SetFace(ACTOR_NPC_TEST009, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
+    message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
+    message_ResetActor();
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
-            §l_menu;
-            switch ( message_SwitchMenu(0, 1) ) {{
-                case menu("Artist Credits"):
-                    ~artists();
-                    jump @l_menu;
-                case menu("Goodbye!"):
-                default:
-                    break;
-            }}
+    §l_menu;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        case menu("Portrait Credits"):
+            ~artists();
+            jump @l_menu;
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
 
-            JumpCommon(CORO_END_TALK);
-        }}
+    JumpCommon(CORO_END_TALK);
+}}
 
-        macro artists() {{
-            §l_artists;
-            switch ( message_SwitchMenu(0, 1) ) {{
-                {self._artist_credits()}
-                case menu("Goodbye!"):
-                default:
-                    break;
-            }}
-            message_ResetActor();
-        }}
+macro artists() {{
+    §l_artists;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        {self._artist_credits(portrait_credits())}
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+    message_ResetActor();
+}}
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
             exps, 'script.exps', lookup_paths=[]
         )
 
         script_fn = f'SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}'
+        script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
+        try:
+            create_file_in_rom(self.rom, script_fn, script_sera)
+        except FileExistsError:
+            self.rom.setFileByName(script_fn, script_sera)
+
+        if not fun.is_fun_allowed():
+            exps = f"""
+def 0 {{
+    with (actor ACTOR_TALK_MAIN) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_TALK_SUB) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_ATTENDANT1) {{
+        SetAnimation(2);
+    }}
+
+    message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
+    message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
+    message_ResetActor();
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+
+    §l_menu;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        case menu("Sprite Credits"):
+            ~artists();
+            jump @l_menu;
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+
+    JumpCommon(CORO_END_TALK);
+}}
+
+macro artists() {{
+    §l_artists;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        {self._artist_credits(sprite_credits())}
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+    message_ResetActor();
+}}
+    """
+
+        else:
+            exps = f"""
+def 0 {{
+    with (actor ACTOR_TALK_MAIN) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_TALK_SUB) {{
+        ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+    }}
+    with (actor ACTOR_ATTENDANT1) {{
+        SetAnimation(2);
+    }}
+
+    message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
+    message_Talk(" :)");
+
+    JumpCommon(CORO_END_TALK);
+}}
+                """
+
+        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+            exps, 'script.exps', lookup_paths=[]
+        )
+
+        script_fn = f'SCRIPT/{MAP}/{THREE_TALK_SCRIPT_NAME}'
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)
@@ -304,12 +386,12 @@ def 0 {{
     with (actor ACTOR_ATTENDANT1) {{
         SetAnimation(2);
     }}
-    
-    message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
+
+    message_SetFace(ACTOR_NPC_TEST007, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
     message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
-    
+
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Patch Credits"):
@@ -319,7 +401,7 @@ def 0 {{
         default:
             break;
     }}
-    
+
     JumpCommon(CORO_END_TALK);
 }}
 
@@ -337,7 +419,7 @@ macro patches() {{
             exps, 'script.exps', lookup_paths=[]
         )
 
-        script_fn = f'SCRIPT/{MAP}/{THREE_TALK_SCRIPT_NAME}'
+        script_fn = f'SCRIPT/{MAP}/{FOUR_TALK_SCRIPT_NAME}'
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)
@@ -402,65 +484,35 @@ macro patches() {{
 """
         return cases
 
-    def _artist_credits(self):
+    def _artist_credits(self, credits: Mapping[Tuple[str, str], Sequence[Credit]]):
         if fun.is_fun_allowed():
             return fun.get_artist_credits(self.rom, self.static_data)
-        credit_map: Dict[str, ArtistCredits] = {}
-        credits = ""
 
-        overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
-        actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-            FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
-        )
-        starters = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
-        partners = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
-        md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
-
+        out_credits = ""
         try:
-            with urllib.request.urlopen("http://portraits.pmdcollab.org/resources/pokemons.json") as url:
-                config = json.loads(url.read().decode())
-
-            with urllib.request.urlopen("http://portraits.pmdcollab.org/resources/credits.json") as url:
-                credits_config = json.loads(url.read().decode())
-
-            for starter in starters:
-                self._process_portrait(credit_map, config, credits_config, starter, md.entries[starter], None)
-
-            for partner in partners:
-                self._process_portrait(credit_map, config, credits_config, partner, md.entries[partner], None)
-
-            for actor in actor_list.list:
-                if actor.entid > 0:
-                    self._process_portrait(credit_map, config, credits_config, actor.entid, md.entries[actor.entid], actor)
-
-            credit_map = {k: credit_map[k] for k in sorted(credit_map)}
-
-            for entry in credit_map.values():
-                setface = ""
-                if entry.actor:
-                    setface = f"message_SetFaceEmpty({SsbConstant.create_for(entry.actor).name}, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);"
+            for (name, monster_id), entry in credits.items():
                 others = ""
-                if entry.other_artists:
-                    others = list(set(entry.other_artists))
+                if len(entry) > 1:
+                    raw_others = entry[1:]
                     main = ''
-                    others_short = others[:3]
+                    others_short = raw_others[:3]
                     if len(others_short) != len(others):
                         main += ' + more'
-                    others = f"More Authors: [CS:A]{', '.join(others_short) + main}[CR]"
-                credits += f"""
-        case menu("{entry.name}"):
-            {setface}
-            message_Talk("Last Author: [CS:A]{escape(entry.main_artist)}[CR]\\n{escape(others)}\\nportraits.pmdcollab.org/portrait.html?id={escape(entry.id_str)}");
+                    others_short_f = [parse_credit(x, False) for x in others_short]
+                    others = f"More Authors: [CS:A]{', '.join(others_short_f) + main}[CR]"
+                out_credits += f"""
+        case menu("{name}"):
+            message_Talk("Main Author: [CS:A]{escape(parse_credit(entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
             jump @l_artists;
 """
         except:
             traceback.print_exc()
             return """
         case menu("Error!"):
-            message_Mail("Sorry! We There was a critical error while \\ncollecting the data during randomization!\\nPlease visit portraits.pmdcollab.org for credits!");
+            message_Mail("Sorry! There was a critical error while \\ncollecting the data during randomization!\\nPlease visit sprites.pmdcollab.org for credits!");
             jump @l_artists;
 """
-        return credits
+        return out_credits
 
     def _patch_credits(self):
         credits = ""
@@ -477,48 +529,6 @@ macro patches() {{
                 pass
         return credits
 
-    def _process_portrait(self, credit_map: Dict[str, ArtistCredits], config, credits_config, mdidx, md: MdEntryProtocol, actor: Optional[Pmd2ScriptEntity]):
-        pokedex_number = md.national_pokedex_number
-        forms_to_try = ['0000']
-        if md.gender == Gender.FEMALE:
-            forms_to_try.insert(0, '0000f')
-        if mdidx == 279:  # Celebi Shiny
-            forms_to_try.insert(0, '0000s')
-        if f'{pokedex_number:04}' in config and '0000' in config[f'{pokedex_number:04}']['forms']:
-            decided_form = None
-            for form in forms_to_try:
-                if form in config[f'{pokedex_number:04}']['forms']:
-                    decided_form = config[f'{pokedex_number:04}']['forms'][form]
-                    break
-            if not decided_form:
-                return
-            name = config[f'{pokedex_number:04}']['name'] + " (" + decided_form['name'] + ")"
-            main_artist, other_artists = self._resolve_credits(credits_config, reversed(decided_form['credits']))
-            credit_map[name] = ArtistCredits(
-                name, actor, main_artist, other_artists, f'{pokedex_number:04}'
-            )
-
-    def _resolve_credits(self, credits_config, credits):
-        main = None
-        others = []
-        for credit in credits:
-            artist_id = credit[1]
-            name = '<Failed to get :(>'
-            link = ""
-            if str(artist_id) in credits_config:
-                artist_credits = credits_config[str(artist_id)]
-                name = artist_credits['name']
-                if name == "":
-                    name = artist_credits['id']
-                artist_credits['contact'] = " 정수기#1834"
-                if artist_credits['contact'] != "" and self.printable(artist_credits['contact']):
-                    link = f" ({artist_credits['contact']})"
-            if main is None:
-                main = f'{name}{link}'
-            else:
-                others.append(name)
-        return main, others
-
     @staticmethod
     def printable(s: str):
         try:
@@ -526,3 +536,17 @@ macro patches() {{
         except Exception:
             return False
         return True
+
+
+def parse_credit(credit: Credit, long: bool) -> str:
+    artist_name = credit['id']
+    if credit['name'] is not None:
+        artist_name = credit['name']
+    elif credit['discordHandle'] is not None:
+        artist_name = credit['discordHandle']
+    if long:
+        link = ''
+        if credit['contact'] is not None:
+            link = f" ({credit['contact']})"
+        return f'{artist_name}{link}'
+    return artist_name

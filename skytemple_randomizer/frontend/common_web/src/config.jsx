@@ -63,7 +63,7 @@ export const SETTINGS_CONFIG = {
         items_enabled: ["Enabled Items", 'items_enabled']
     },
     improvements: {
-        download_portraits: ["Download missing portraits?", UiSwitch],
+        download_portraits: ["Download missing portraits & sprites?", UiSwitch],
         patch_moveshortcuts: ["Apply \"MoveShortcuts\" patch?", UiSwitch],
         patch_unuseddungeonchance: ["Apply \"UnusedDungeonChance\" patch?", UiSwitch],
         patch_totalteamcontrol: ["Apply \"Complete Team Control\" patches?", UiSwitch],

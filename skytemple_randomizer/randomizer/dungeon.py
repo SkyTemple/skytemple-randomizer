@@ -320,7 +320,7 @@ class DungeonRandomizer(AbstractRandomizer):
 
         return FileType.MAPPA_BIN.get_item_list_model()(categories, dict(sorted(items.items(), key=lambda i: i[0])))
 
-    def _randomize_weather(self, original_layout, dungeon_id) -> int:
+    def _randomize_weather(self, original_layout, dungeon_id) -> u8:
         if not self.config['dungeons']['settings'][dungeon_id]['randomize_weather']:
             return original_layout.weather
         if self.config['dungeons']['weather'] == DungeonWeatherConfig.NO_RANDOMIZE:

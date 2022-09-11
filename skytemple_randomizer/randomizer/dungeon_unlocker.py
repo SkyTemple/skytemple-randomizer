@@ -93,7 +93,7 @@ class DungeonUnlocker(AbstractRandomizer):
         new_ssb, _ = ScriptCompiler(self.static_data).compile_structured(
             [b for a, b in ssb.routine_info],
             routine_ops,
-            [x.name for x in self.static_data.script_data.common_routine_info__by_id],
+            [x.name for x in self.static_data.script_data.common_routine_info__by_id.values()],
             SourceMap.create_empty()
         )
 

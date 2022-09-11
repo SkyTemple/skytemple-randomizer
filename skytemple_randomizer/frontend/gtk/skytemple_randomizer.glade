@@ -359,7 +359,7 @@
                     <property name="can-focus">False</property>
                     <property name="halign">center</property>
                     <property name="label" translatable="yes">Welcome to the SkyTemple Randomizer!
-Have fun creating a new and unique Explorers of Sky Experience!</property>
+Have fun creating a new and unique Explorers of Sky experience!</property>
                     <property name="justify">center</property>
                     <property name="wrap">True</property>
                   </object>
@@ -1803,7 +1803,7 @@ shop and dungeon rewards?</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="halign">end</property>
-                            <property name="label" translatable="yes">Download missing portraits?</property>
+                            <property name="label" translatable="yes">Download missing portraits &amp; sprites?</property>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>

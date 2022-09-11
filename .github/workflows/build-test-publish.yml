@@ -106,7 +106,9 @@ jobs:
             mingw-w64-${{ matrix.arch }}-gtk3
             mingw-w64-${{ matrix.arch }}-python3-gobject
             mingw-w64-${{ matrix.arch }}-openssl
-            mingw-w64-${{ matrix.arch }}-python-yaml
+            mingw-w64-${{ matrix.arch }}-python-multidict
+            mingw-w64-${{ matrix.arch }}-python-yarl
+            mingw-w64-${{ matrix.arch }}-python-aiohttp
       - name: Checkout
         uses: actions/checkout@v2
       - name: Rewrite version for dev if not tag
@@ -173,8 +175,8 @@ jobs:
       - name: Install and package
         run: |
           # git is already installed
-          brew install pygobject3 gtk+3 python@3.9 gtksourceview3 adwaita-icon-theme sdl cmake
-          PATH=/usr/local/opt/python@3.9/bin:/usr/local/bin:$PATH
+          brew install pygobject3 gtk+3 python@3.10 gtksourceview3 adwaita-icon-theme sdl cmake
+          PATH=/usr/local/opt/python@3.10/bin:/usr/local/bin:$PATH
 
 
           # Install other dependencies and SkyTemple Randomizer itself

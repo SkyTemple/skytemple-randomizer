@@ -173,8 +173,8 @@ jobs:
       - name: Install and package
         run: |
           # git is already installed
-          brew install pygobject3 gtk+3 python@3.9 gtksourceview3 adwaita-icon-theme sdl cmake
-          PATH=/usr/local/opt/python@3.9/bin:/usr/local/bin:$PATH
+          brew install pygobject3 gtk+3 python@3.10 gtksourceview3 adwaita-icon-theme sdl cmake
+          PATH=/usr/local/opt/python@3.10/bin:/usr/local/bin:$PATH
 
 
           # Install other dependencies and SkyTemple Randomizer itself

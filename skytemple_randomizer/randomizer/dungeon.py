@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import math
-from collections import OrderedDict
 from enum import Enum, auto
 from itertools import chain
 from random import choice, randrange, randint
@@ -23,23 +22,18 @@ from typing import Optional, List, Dict, Tuple, Sequence
 
 from ndspy.rom import NintendoDSRom
 from range_typed_integers import u8, i8, u16, i16, u8_checked
-
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
-from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonItem
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
-from skytemple_files.dungeon_data.mappa_bin import MAX_WEIGHT
 from skytemple_files.dungeon_data.mappa_bin.mappa_xml import mappa_floor_from_xml, mappa_floor_to_xml
 from skytemple_files.dungeon_data.mappa_bin.protocol import (
     MappaFloorProtocol,
     MappaFloorLayoutProtocol,
     MappaFloorStructureType,
     MappaFloorWeather,
-    MappaFloorTerrainSettingsProtocol,
     MappaFloorDarknessLevel,
     MappaItemListProtocol,
     MappaBinProtocol,
-    MappaMonsterProtocol,
     DUMMY_MD_INDEX,
     MappaTrapListProtocol
 )
@@ -49,11 +43,13 @@ from skytemple_files.dungeon_data.mappa_bin.validator.exception import DungeonVa
 from skytemple_files.dungeon_data.mappa_bin.validator.validator import DungeonValidator
 from skytemple_files.dungeon_data.mappa_g_bin.mappa_converter import convert_mappa_to_mappag
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons, DungeonDefinition
+
 from skytemple_randomizer.config import DungeonWeatherConfig, RandomizerConfig, DungeonModeConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import sample_with_minimum_distance, get_allowed_md_ids, \
-    get_allowed_item_ids
+from skytemple_randomizer.randomizer.common.items import randomize_items
+from skytemple_randomizer.randomizer.common.weights import random_weights
+from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids
 from skytemple_randomizer.status import Status
 
 ALLOWED_TILESET_IDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27,
@@ -66,9 +62,6 @@ KECLEON_MD_INDEX = 383
 # TODO: Make configurable?
 MONSTER_LEVEL_VARIANCE = 3
 
-ALLOWED_ITEM_CATS = [
-    0, 1, 2, 3, 4, 5, 9, 8
-]
 SKY_PEAK_MAPPA_IDX = 72
 SHAYMIN_IDS = [534, 535]
 
@@ -76,10 +69,7 @@ MAX_TRAP_LISTS = 100
 MAX_ITEM_LISTS = 150
 MIN_MONSTERS_PER_LIST = 5
 MAX_MONSTERS_PER_LIST = 30  # 48 is theoretical limit [=max used by vanilla game]
-#MIN_ITEMS_PER_LIST = 20
-#MAX_ITEMS_PER_LIST = 100  # 196 is theoretical limit [=max used by vanilla game]
-MIN_ITEMS_PER_CAT = 4
-MAX_ITEMS_PER_CAT = 18
+
 
 
 class FixedRoomPosition(Enum):
@@ -125,7 +115,7 @@ class DungeonRandomizer(AbstractRandomizer):
             status.step("Randomizing dungeon items...")
             item_lists = []
             for _ in range(0, MAX_ITEM_LISTS):
-                item_lists.append(self._randomize_items())
+                item_lists.append(randomize_items(self.config, self.static_data))
 
         if self.config['dungeons']['traps']:
             status.step("Randomizing dungeon traps...")
@@ -188,21 +178,6 @@ class DungeonRandomizer(AbstractRandomizer):
         return 0
 
     @staticmethod
-    def _random_weights(k):
-        """
-        Returns k random weights, with relative equal distance, in a range of *0.75-*1
-        """
-        smallest_possible_d = int(MAX_WEIGHT / k)
-        d = int(smallest_possible_d * (randrange(75, 100) / 100))
-        # We actually subtract the d and add it later to all of the items,
-        # to make the first entry also a bit more likely
-        weights = [w + d for w in sample_with_minimum_distance(MAX_WEIGHT - d, k, d)]
-        # The last weight needs to have 10000
-        highest_index = weights.index(max(weights))
-        weights[highest_index] = MAX_WEIGHT
-        return weights
-
-    @staticmethod
     def _can_be_randomized(floor: MappaFloorProtocol):
         # We don't randomize fixed floors
         return floor.layout.fixed_floor_id == 0
@@ -262,7 +237,7 @@ class DungeonRandomizer(AbstractRandomizer):
                     allowed.remove(idx)
         md_ids = sorted(
             set(choice(allowed) for _ in range(0, randrange(MIN_MONSTERS_PER_LIST, MAX_MONSTERS_PER_LIST + 1))))
-        weights = sorted(self._random_weights(len(md_ids)))
+        weights = sorted(random_weights(len(md_ids)))
         for md_id, weight in zip(md_ids, weights):
             level = min(100,
                         max(1, randrange(min_level - MONSTER_LEVEL_VARIANCE, max_level + MONSTER_LEVEL_VARIANCE + 1)))
@@ -276,49 +251,8 @@ class DungeonRandomizer(AbstractRandomizer):
 
     def _randomize_traps(self):
         # Unusued trap + 24 traps
-        ws = sorted(self._random_weights(24))
+        ws = sorted(random_weights(24))
         return FileType.MAPPA_BIN.get_trap_list_model()([0] + ws)
-
-    def _randomize_items(self):
-        categories = {}
-        items = OrderedDict()
-        cats_as_list = list(ALLOWED_ITEM_CATS)
-
-        # 1/8 chance for money to get a chance
-        if choice([True] + [False] * 7):
-            cats_as_list.append(6)
-
-        # 1/8 chance for Link Box to get a chance
-        if choice([True] + [False] * 7):
-            cats_as_list.append(10)
-
-        cats_as_list.sort()
-        weights = sorted(self._random_weights(len(cats_as_list)))
-        for i, cat_id in enumerate(cats_as_list):
-            cat = self.static_data.dungeon_data.item_categories[cat_id]
-            categories[cat.id] = weights[i]
-
-            cat_item_ids = []
-            if cat.number_of_items is not None:
-                allowed_cat_item_ids = [x for x in cat.item_ids() if x in get_allowed_item_ids(self.config)]
-                upper_limit = min(MAX_ITEMS_PER_CAT, len(allowed_cat_item_ids))
-                if upper_limit <= MIN_ITEMS_PER_CAT:
-                    n_items = MIN_ITEMS_PER_CAT
-                else:
-                    n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
-                cat_item_ids = []
-                if len(allowed_cat_item_ids) > 0:
-                    cat_item_ids = sorted(set(
-                        (choice(allowed_cat_item_ids) for _ in range(0, n_items))
-                    ))
-                    cat_weights = sorted(self._random_weights(len(cat_item_ids)))
-
-                    for item_id, weight in zip(cat_item_ids, cat_weights):
-                        items[item_id] = weight
-            if len(cat_item_ids) == 0:
-                categories[cat.id] = 0
-
-        return FileType.MAPPA_BIN.get_item_list_model()(categories, dict(sorted(items.items(), key=lambda i: i[0])))
 
     def _randomize_weather(self, original_layout, dungeon_id) -> u8:
         if not self.config['dungeons']['settings'][dungeon_id]['randomize_weather']:

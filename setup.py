@@ -14,7 +14,7 @@ install_requires = [
     'explorerscript >= 0.1.0',
     'skytemple-icons >= 1.3.2',
     'pygobject >= 3.26.0',
-    'PyYAML >= 6.0.0',
+    'strictyaml >= 1.6.0',
     'jsonschema >= 4.1.2',
     'packaging'
 ]

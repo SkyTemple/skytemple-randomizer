@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 
 import gi
+from strictyaml import YAMLError
 
 gi.require_version('Gtk', '3.0')
 gi.require_version('GtkSource', '3.0')
@@ -30,11 +31,9 @@ import webbrowser
 from functools import partial
 from math import floor
 from typing import Optional, Callable, Dict
-import yaml
+import strictyaml
 from gi.repository.GtkSource import StyleSchemeManager, LanguageManager
 from jsonschema import ValidationError
-from yaml.parser import ParserError
-from yaml.scanner import ScannerError
 
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 
@@ -237,7 +236,7 @@ class MainController:
                     json.dump(self.ui_reader.read(), f, indent=4, cls=EnumJsonEncoder, ensure_ascii=False)
                 except Exception as err:
                     tb = ""
-                    if not isinstance(err, ValidationError) and not isinstance(err, ScannerError) and not isinstance(err, ParserError):
+                    if not isinstance(err, ValidationError) and not isinstance(err, YAMLError):
                         tb = traceback.format_exc()
                         print(tb)
                     self.display_error(f"Error saving these settings:\n{err}\n{tb}")
@@ -329,7 +328,7 @@ class MainController:
                     config = self.ui_reader.read()
                 except Exception as err:
                     tb = ""
-                    if not isinstance(err, ValidationError) and not isinstance(err, ScannerError) and not isinstance(err, ParserError):
+                    if not isinstance(err, ValidationError) and not isinstance(err, YAMLError):
                         tb = traceback.format_exc()
                         print(tb)
                     self.display_error(f"There is an error in your settings:\n{err}\n{tb}")
@@ -453,15 +452,6 @@ def _load_theme():
 
 
 if __name__ == '__main__':
-    def str_presenter(dumper, data):
-        if len(data.splitlines()) > 1:
-            return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
-        return dumper.represent_scalar('tag:yaml.org,2002:str', data)
-
-
-    yaml.add_representer(str, str_presenter)
-    yaml.representer.SafeRepresenter.add_representer(str, str_presenter)
-
     # TODO: At the moment doesn't support any cli arguments.
     logging.basicConfig()
     logging.getLogger().setLevel(logging.DEBUG)

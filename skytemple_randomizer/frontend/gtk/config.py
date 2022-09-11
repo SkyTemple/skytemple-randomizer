@@ -20,7 +20,7 @@ from enum import Enum
 from functools import partial
 from typing import List, Dict
 
-import yaml
+import strictyaml
 from gi.repository import Gtk, GtkSource
 from jsonschema import validate
 from range_typed_integers import u8, u16, u32
@@ -60,7 +60,7 @@ class ConfigUIApplier:
         if typ == list and field_name == 'quiz_questions':
             buffer: GtkSource.Buffer = self.builder.get_object('text_quiz_content').get_buffer()
             validate(config, QUIZ_QUESTIONS_JSON_SCHEMA)
-            buffer.set_text(yaml.safe_dump(config, default_flow_style=False, sort_keys=False, allow_unicode=True))
+            buffer.set_text(strictyaml.as_document(config).as_yaml())
         elif hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
             for field, field_type in typ.__annotations__.items():
                 field_full = field
@@ -138,7 +138,7 @@ class ConfigUIReader:
         if typ == List[QuizQuestion]:
             buffer: GtkSource.Buffer = self.builder.get_object('text_quiz_content').get_buffer()
             yaml_content = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
-            yaml_obj = yaml.safe_load(yaml_content)
+            yaml_obj = strictyaml.load(yaml_content).data
             validate(yaml_obj, QUIZ_QUESTIONS_JSON_SCHEMA)
             return yaml_obj
         if hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:

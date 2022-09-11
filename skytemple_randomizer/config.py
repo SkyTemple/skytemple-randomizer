@@ -343,6 +343,19 @@ class IqConfigDoc:
     randomize_iq_groups = \
         """If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."""
 
+
+class MiscConfig(TypedDict):
+    native_file_handlers: bool
+
+
+class MiscConfigDoc:
+    native_file_handlers = \
+        """If enabled, the randomizer uses faster implementations to manipulate the files in the ROM. 
+        This can affect the random values rolled during the randomization. 
+        
+        This should only be disabled if you run into issues."""
+
+
 class RandomizerConfig(TypedDict):
     """Configuration for the randomizer."""
     starters_npcs: StartersNpcsConfig
@@ -354,6 +367,7 @@ class RandomizerConfig(TypedDict):
     text: TextConfig
     iq: IqConfig
     quiz: QuizConfig
+    misc: MiscConfig
     seed: str  # see get_effective_seed
 
 
@@ -455,6 +469,10 @@ class ConfigFileLoader:
                             'randomize_iq_gain': False,
                             'randomize_iq_skills': False,
                             'randomize_iq_groups': False
+                        }
+                    elif field == 'misc' and field_type == MiscConfig:
+                        target[field] = {
+                            'native_file_handlers': True
                         }
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")

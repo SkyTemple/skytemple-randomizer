@@ -114,6 +114,9 @@ export const SETTINGS_CONFIG = {
         }],
         randomize: ["Randomize Personality Quiz Questions?", UiSwitch],
         questions: ["Personaility Test Questions:", "To edit the pool of random personality test questions, please use the desktop version of the Randomizer."]
+    },
+    misc: {
+        native_file_handlers: ["Use Native File Handlers", UiSwitch],
     }
 }
 

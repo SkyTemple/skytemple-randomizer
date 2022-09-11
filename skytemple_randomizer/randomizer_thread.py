@@ -20,6 +20,7 @@ from threading import Thread, Lock
 from typing import List
 
 from ndspy.rom import NintendoDSRom
+from skytemple_files.common.impl_cfg import change_implementation_type, ImplementationType
 
 from skytemple_files.common.util import get_ppmdu_config_for_rom
 from skytemple_randomizer.config import RandomizerConfig
@@ -81,6 +82,12 @@ class RandomizerThread(Thread):
         self.config = config
         self.lock = Lock()
         self.done = False
+
+        # Configure file handler implementation
+        impl_type = ImplementationType.PYTHON
+        if config['misc']['native_file_handlers']:
+            impl_type = ImplementationType.NATIVE
+        change_implementation_type(impl_type)
 
         self.static_data = get_ppmdu_config_for_rom(rom)
         self.randomizers: List[AbstractRandomizer] = []

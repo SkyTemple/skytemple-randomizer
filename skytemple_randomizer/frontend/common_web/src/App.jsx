@@ -124,6 +124,7 @@ export default function App() {
                     <Tab label="Locations" {...a11yProps(7)} />
                     <Tab label="Chapters" {...a11yProps(8)} />
                     <Tab label="Text" {...a11yProps(9)} />
+                    <Tab label="Misc." {...a11yProps(10)} />
                 </Tabs>
             </AppBar>
             <SwipeableViews
@@ -161,6 +162,9 @@ export default function App() {
                 </TabPanel>
                 <TabPanel value={activeTab} index={9} dir={theme.direction}>
                     <Settings for="text" />
+                </TabPanel>
+                <TabPanel value={activeTab} index={10} dir={theme.direction}>
+                    <Settings for="misc" />
                 </TabPanel>
             </SwipeableViews>
             <Fab color="primary" className={classes.fab} onClick={handleOpenRandomizeView}>

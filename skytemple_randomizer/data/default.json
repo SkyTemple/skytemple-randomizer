@@ -1646,5 +1646,8 @@
       }
     ]
   },
+  "misc": {
+    "native_file_handlers": true
+  },
   "seed": ""
 }

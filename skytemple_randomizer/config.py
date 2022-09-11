@@ -344,11 +344,27 @@ class IqConfigDoc:
         """If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."""
 
 
+class ItemAlgorithm(Enum):
+    BALANCED = 0
+    CLASSIC = 1
+
+
 class MiscConfig(TypedDict):
+    item_algorithm: ItemAlgorithm
     native_file_handlers: bool
 
 
 class MiscConfigDoc:
+    item_algorithm = \
+        """Controls how item lists are randomly filled.
+        
+        Balanced: Tries to make it equally likely to find any item in the game, 
+        the only exception being Poké which is boosted.
+        
+        Classic: Algorithm that was used in the Randomizer prior to version 1.4.
+        It doesn't attempt to balance out the different item categories, making items
+        from categories with fewer total items easier to find.
+        """
     native_file_handlers = \
         """If enabled, the randomizer uses faster implementations to manipulate the files in the ROM. 
         This can affect the random values rolled during the randomization. 
@@ -472,6 +488,7 @@ class ConfigFileLoader:
                         }
                     elif field == 'misc' and field_type == MiscConfig:
                         target[field] = {
+                            'item_algorithm': 0,
                             'native_file_handlers': True
                         }
                     else:

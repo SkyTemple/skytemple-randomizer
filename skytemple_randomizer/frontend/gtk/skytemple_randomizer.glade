@@ -25,6 +25,90 @@
     <property name="margin-end">5</property>
     <property name="icon-name">skytemple-folder-open-symbolic</property>
   </object>
+  <object class="GtkListStore" id="store_cb_dungeons_mode">
+    <columns>
+      <!-- column-name id -->
+      <column type="gchararray"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+        <col id="1" translatable="yes">Fully random floors</col>
+      </row>
+      <row>
+        <col id="0">1</col>
+        <col id="1" translatable="yes">Keep floors in a dungeon similar</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="store_cb_dungeons_weather">
+    <columns>
+      <!-- column-name id -->
+      <column type="gchararray"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+        <col id="1" translatable="yes">Don't randomize</col>
+      </row>
+      <row>
+        <col id="0">1</col>
+        <col id="1" translatable="yes">Fully random every visit</col>
+      </row>
+      <row>
+        <col id="0">2</col>
+        <col id="1" translatable="yes">Random pre-generated</col>
+      </row>
+      <row>
+        <col id="0">3</col>
+        <col id="1" translatable="yes">Random pre-gen., fewer damaging</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="store_cb_improvements_personality_test">
+    <columns>
+      <!-- column-name id -->
+      <column type="gchararray"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+        <col id="1" translatable="yes">Default: Ask for Personality</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">1</col>
+        <col id="1" translatable="yes">Ask for Personality + Allow Selection</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">2</col>
+        <col id="1" translatable="yes">Select Manually</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="store_cb_misc_item_algorithm">
+    <columns>
+      <!-- column-name id -->
+      <column type="gchararray"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+        <col id="1" translatable="yes">Balanced</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">1</col>
+        <col id="1" translatable="yes">Classic</col>
+      </row>
+    </data>
+  </object>
   <object class="GtkWindow" id="main_window">
     <property name="can-focus">False</property>
     <property name="icon-name">skytemple</property>
@@ -3631,7 +3715,7 @@ shop and dungeon rewards?</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <child>
-                      <!-- n-columns=3 n-rows=1 -->
+                      <!-- n-columns=3 n-rows=2 -->
                       <object class="GtkGrid">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
@@ -3652,7 +3736,7 @@ shop and dungeon rewards?</property>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
-                            <property name="top-attach">0</property>
+                            <property name="top-attach">1</property>
                           </packing>
                         </child>
                         <child>
@@ -3672,7 +3756,7 @@ shop and dungeon rewards?</property>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
-                            <property name="top-attach">0</property>
+                            <property name="top-attach">1</property>
                           </packing>
                         </child>
                         <child>
@@ -3681,6 +3765,57 @@ shop and dungeon rewards?</property>
                             <property name="can-focus">True</property>
                             <property name="halign">start</property>
                             <property name="valign">center</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">end</property>
+                            <property name="label" translatable="yes">Item Randomization Algorithm</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="help_misc_item_algorithm">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="halign">start</property>
+                            <property name="valign">center</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="icon-name">skytemple-help-about-symbolic</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBox" id="cb_misc_item_algorithm">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="model">store_cb_misc_item_algorithm</property>
+                            <property name="active">0</property>
+                            <property name="id-column">0</property>
+                            <child>
+                              <object class="GtkCellRendererText"/>
+                              <attributes>
+                                <attribute name="text">1</attribute>
+                              </attributes>
+                            </child>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -4220,72 +4355,6 @@ MrStrouder</property>
     <action-widgets>
       <action-widget response="-7">progress_close</action-widget>
     </action-widgets>
-  </object>
-  <object class="GtkListStore" id="store_cb_dungeons_mode">
-    <columns>
-      <!-- column-name id -->
-      <column type="gchararray"/>
-      <!-- column-name name -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">0</col>
-        <col id="1" translatable="yes">Fully random floors</col>
-      </row>
-      <row>
-        <col id="0">1</col>
-        <col id="1" translatable="yes">Keep floors in a dungeon similar</col>
-      </row>
-    </data>
-  </object>
-  <object class="GtkListStore" id="store_cb_dungeons_weather">
-    <columns>
-      <!-- column-name id -->
-      <column type="gchararray"/>
-      <!-- column-name name -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">0</col>
-        <col id="1" translatable="yes">Don't randomize</col>
-      </row>
-      <row>
-        <col id="0">1</col>
-        <col id="1" translatable="yes">Fully random every visit</col>
-      </row>
-      <row>
-        <col id="0">2</col>
-        <col id="1" translatable="yes">Random pre-generated</col>
-      </row>
-      <row>
-        <col id="0">3</col>
-        <col id="1" translatable="yes">Random pre-gen., fewer damaging</col>
-      </row>
-    </data>
-  </object>
-  <object class="GtkListStore" id="store_cb_improvements_personality_test">
-    <columns>
-      <!-- column-name id -->
-      <column type="gchararray"/>
-      <!-- column-name name -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">0</col>
-        <col id="1" translatable="yes">Default: Ask for Personality</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">1</col>
-        <col id="1" translatable="yes">Ask for Personality + Allow Selection</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">2</col>
-        <col id="1" translatable="yes">Select Manually</col>
-      </row>
-    </data>
   </object>
   <object class="GtkListStore" id="store_cb_monster_movesets">
     <columns>

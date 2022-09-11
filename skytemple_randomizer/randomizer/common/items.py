@@ -22,7 +22,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.dungeon_data.mappa_bin.protocol import MappaItemListProtocol
 
-from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.config import RandomizerConfig, ItemAlgorithm
 from skytemple_randomizer.randomizer.common.weights import random_weights
 from skytemple_randomizer.randomizer.util.util import get_allowed_item_ids
 
@@ -34,6 +34,15 @@ MAX_ITEMS_PER_CAT = 18
 
 
 def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+    if config['misc']['item_algorithm'] == ItemAlgorithm.BALANCED:
+        return balanced_item_randomizer(config, static_data)
+    if config['misc']['item_algorithm'] == ItemAlgorithm.CLASSIC:
+        return classic_item_randomizer(config, static_data)
+
+    raise NotImplementedError("Unknown item algorithm.")
+
+
+def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     categories = {}
     items = OrderedDict()
     cats_as_list = list(ALLOWED_ITEM_CATS)
@@ -77,3 +86,6 @@ def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaIte
         dict(sorted(items.items(), key=lambda i: i[0]))
     )
 
+
+def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+    raise NotImplementedError()

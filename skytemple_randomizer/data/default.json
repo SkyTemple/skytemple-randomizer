@@ -1647,6 +1647,7 @@
     ]
   },
   "misc": {
+    "item_algorithm": 0,
     "native_file_handlers": true
   },
   "seed": ""

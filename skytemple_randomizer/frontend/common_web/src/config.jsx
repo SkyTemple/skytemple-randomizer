@@ -117,6 +117,10 @@ export const SETTINGS_CONFIG = {
     },
     misc: {
         native_file_handlers: ["Use Native File Handlers", UiSwitch],
+        item_algorithm: ["Item Randomization Algorithm", UiSelect, {
+            0: "Balanced",
+            1: "Classic",
+        }],
     }
 }
 

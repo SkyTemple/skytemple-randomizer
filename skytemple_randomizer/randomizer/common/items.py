@@ -15,11 +15,13 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from collections import OrderedDict
+from math import ceil
 from random import choice, randrange
-from typing import List
+from typing import List, Dict
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
+from skytemple_files.dungeon_data.mappa_bin import MAX_WEIGHT
 from skytemple_files.dungeon_data.mappa_bin.protocol import MappaItemListProtocol
 
 from skytemple_randomizer.config import RandomizerConfig, ItemAlgorithm
@@ -88,4 +90,61 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
 
 
 def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
-    raise NotImplementedError()
+    categories = OrderedDict()
+    items = OrderedDict()
+
+    min_items = MIN_ITEMS_PER_CAT * len(ALLOWED_ITEM_CATS)
+    max_items = MAX_ITEMS_PER_CAT * len(ALLOWED_ITEM_CATS)
+    items_in_cats: Dict[int, List[int]] = {}
+    chosen_items_per_cat: Dict[int, List[int]] = {}
+
+    cats_as_list = list(ALLOWED_ITEM_CATS)
+    # Link Box cat:
+    cats_as_list.append(10)
+
+    # Take note of all allowed items and which categories they are in
+    all_allowed_item_ids = []
+    for cat_id in cats_as_list:
+        cat = static_data.dungeon_data.item_categories[cat_id]
+        items_in_cats[cat_id] = [x for x in cat.item_ids() if x in get_allowed_item_ids(config)]
+        all_allowed_item_ids.extend(items_in_cats[cat_id])
+
+    # We roll random items and then check their category.
+    # We also take note of the items for that category in chosen_items_per_cat.
+    for _ in range(0, randrange(min_items, max_items)):
+        item_index = choice(range(0, len(all_allowed_item_ids)))
+        item_id = all_allowed_item_ids.pop(item_index)
+        item_cat_id = -1
+        for cat_id, items_in_this_cat in items_in_cats.items():
+            if item_id in items_in_this_cat:
+                item_cat_id = cat_id
+                break
+        if item_cat_id not in chosen_items_per_cat:
+            chosen_items_per_cat[item_cat_id] = []
+        chosen_items_per_cat[item_cat_id].append(item_id)
+
+    # 1/8 chance for money to get a chance (cat 6)
+    if choice([True] + [False] * 7):
+        chosen_items_per_cat[6] = [x for x in static_data.dungeon_data.item_categories[6].item_ids() if x in get_allowed_item_ids(config)]
+
+    chosen_items_per_cat = dict(sorted(chosen_items_per_cat.items()))
+
+    # Calculate the category weights based on the number of items in each category
+    weights_before = 0
+    total_items = sum(len(chosen_items) for chosen_items in chosen_items_per_cat.values())
+    for cat_id, chosen_items in chosen_items_per_cat.items():
+        categories[cat_id] = weights_before + ceil(MAX_WEIGHT * (len(chosen_items) / total_items))
+        weights_before = categories[cat_id]
+
+        # Randomize the item weights in each category
+        cat_weights = sorted(random_weights(len(chosen_items)))
+
+        for item_id, weight in zip(sorted(chosen_items), cat_weights):
+            items[item_id] = weight
+
+    categories[next(reversed(categories))] = MAX_WEIGHT
+
+    return FileType.MAPPA_BIN.get_item_list_model()(
+        categories,
+        dict(sorted(items.items(), key=lambda i: i[0]))
+    )

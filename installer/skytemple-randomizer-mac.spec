@@ -14,6 +14,7 @@ additional_datas = [
     (os.path.join(pkg_path, 'frontend', 'gtk', '*.css'), '.'),
     (os.path.join(site_packages, 'skytemple_icons', 'hicolor'), 'skytemple_icons/hicolor'),
     (os.path.join(site_packages, 'skytemple_files', '_resources'), 'skytemple_files/_resources'),
+    (os.path.join(site_packages, 'certifi', 'cacert.pem'), 'certifi'),
     (os.path.join('.', 'armips'), 'skytemple_files/_resources'),
 
     # Themes
@@ -33,7 +34,8 @@ a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
              binaries=additional_binaries,
              datas=additional_datas,
              hiddenimports=['pkg_resources.py2_warn', 'packaging.version', 'packaging.specifiers',
-                            'packaging.requirements', 'packaging.markers', '_sysconfigdata__win32_', 'win32api'],
+                            'packaging.requirements', 'packaging.markers', '_sysconfigdata__win32_', 'win32api',
+                            'certifi'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],

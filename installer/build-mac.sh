@@ -4,6 +4,8 @@
 # The version from the current pip install of SkyTemple is used if no version number is set.
 set -e
 
+pip3 install -U certifi
+
 # Create the icon
 # https://www.codingforentrepreneurs.com/blog/create-icns-icons-for-macos-apps
 mkdir skytemple_randomizer.iconset

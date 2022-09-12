@@ -57,6 +57,13 @@ from gi.repository import Gtk, GLib, Gdk, GtkSource
 from gi.repository.Gtk import Window
 
 
+if getattr(sys, 'frozen', False):
+    # Running via PyInstaller. Fix SSL configuration
+    os.environ["SSL_CERT_FILE"] = os.path.join(
+        os.path.dirname(sys.executable), "certifi", "cacert.pem"
+    )
+
+
 class GtkFrontend(AbstractFrontend):
     def idle_add(self, fn: Callable):
         GLib.idle_add(fn)

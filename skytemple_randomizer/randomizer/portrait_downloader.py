@@ -58,13 +58,17 @@ class PortraitDownloader(AbstractRandomizer):
         if self.config['improvements']['download_portraits']:
             if fun.is_fun_allowed():
                 return 1
-            actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-                FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
-            )
+            try:
+                actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
+                    FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
+                )
+                actors = len(actor_list.list)
+            except ValueError:
+                actors = len(self.static_data.script_data.level_entities)
             overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
             starters = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
             partners = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
-            total = len(actor_list.list) + len(starters) + len(partners)
+            total = actors + len(starters) + len(partners)
             self.total = str(total)
             return total
         return 0

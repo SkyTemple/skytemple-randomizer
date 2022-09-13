@@ -3823,8 +3823,8 @@ shop and dungeon rewards?</property>
                           </packing>
                         </child>
                         <style>
-                          <class name="back_bboard"/>
-                          <class name="text"/>
+                          <class name="back_illust"/>
+                          <class name="bboard"/>
                         </style>
                       </object>
                     </child>
@@ -3844,7 +3844,7 @@ shop and dungeon rewards?</property>
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="icon-name">skytemple-e-string-symbolic</property>
+                    <property name="icon-name">skytemple-e-dungeon-floor-symbolic</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>

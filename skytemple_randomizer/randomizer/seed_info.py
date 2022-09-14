@@ -15,7 +15,8 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import traceback
-from typing import Mapping, Sequence, Tuple
+from numbers import Number
+from typing import Mapping, Sequence, Tuple, Dict
 
 from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
@@ -28,7 +29,7 @@ from skytemple_files.script.ssa_sse_sss.actor import SsaActor
 from skytemple_files.script.ssa_sse_sss.model import Ssa
 from skytemple_files.script.ssa_sse_sss.position import SsaPosition
 from skytemple_files.script.ssb.script_compiler import ScriptCompiler
-from skytemple_randomizer.config import version, MovesetConfig, DungeonWeatherConfig, DungeonModeConfig
+from skytemple_randomizer.config import version, MovesetConfig, DungeonWeatherConfig, DungeonModeConfig, ItemAlgorithm
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
@@ -201,8 +202,13 @@ def 0 {{
 macro settings() {{
     §l_settings;
     switch ( message_SwitchMenu(0, 1) ) {{
-        case menu("Starters & More"):
-            message_Mail("Randomize Starters?: {self._bool(self.config['starters_npcs']['starters'])}\\nRandomize NPCs and Bosses?: {self._bool(self.config['starters_npcs']['npcs'])}\\nRandomize Shops?: {self._bool(self.config['starters_npcs']['global_items'])}\\nRandomize OW Music?: {self._bool(self.config['starters_npcs']['overworld_music'])}\\nRandomize Top-Menu Music?: {self._bool(self.config['starters_npcs']['topmenu_music'])}\\nRandomize Explorer Rank Unlocks?: {self._bool(self.config['starters_npcs']['explorer_rank_unlocks'])}\\nRandomize Explorer Rank Rewards?: {self._bool(self.config['starters_npcs']['explorer_rank_rewards'])}");
+        case menu("General"):
+            message_Mail("Randomize Starters?: {self._bool(self.config['starters_npcs']['starters'])}\\nRandomize NPCs and Bosses?: {self._bool(self.config['starters_npcs']['npcs'])}\\nRandomize OW Music?: {self._bool(self.config['starters_npcs']['overworld_music'])}\\nRandomize Top-Menu Music?: {self._bool(self.config['starters_npcs']['topmenu_music'])}\\nRandomize Explorer Rank Unlocks?: {self._bool(self.config['starters_npcs']['explorer_rank_unlocks'])}\\nRandomize Explorer Rank Rewards?: {self._bool(self.config['starters_npcs']['explorer_rank_rewards'])}\\Use Native File Handlers: {self._bool(self.config['starters_npcs']['native_file_handlers'])}");
+            jump @l_settings;
+        case menu("Items"):
+            message_Mail("Item Randomization Algorithm: {self._item_algo(self.config['item']['algorithm'])}\\nRandomize Shops?: {self._bool(self.config['item']['global_items'])}\\n");
+            message_Mail("Next are the item category weights...");
+            message_Mail("{self._item_weights(self.config['item']['weights'])}");
             jump @l_settings;
         case menu("Dungeons: General"):
             message_Mail("Mode: {self._dungeon_mode(self.config['dungeons']['mode'])}\\nLayouts and Tilesets?: {self._bool(self.config['dungeons']['layouts'])}\\nRandomize Weather?: {self._weather(self.config['dungeons']['weather'])}\\nRandomize Items?: {self._bool(self.config['dungeons']['items'])}\\nRandomize Pokémon?: {self._bool(self.config['dungeons']['pokemon'])}\\nRandomize Traps?: {self._bool(self.config['dungeons']['traps'])}\\nRandomize Boss Rooms?: {self._bool(self.config['dungeons']['fixed_rooms'])}\\Max Sticky Item Chance: {self.config['dungeons']['max_sticky_chance']}%\\nMax Monster House Chance: {self.config['dungeons']['max_mh_chance']}%\\nRandomize Floor count (down): {self.config['dungeons']['min_floor_change_percent']}%\\nRandomize Floor count (up): {self.config['dungeons']['max_floor_change_percent']}%");
@@ -437,6 +443,18 @@ macro patches() {{
         if param == DungeonModeConfig.FULLY_RANDOM:
             return "[CS:H]Fully random floors[CR]"
         return "[CS:H]Keep floors in a dungeon similar[CR]"
+
+    def _item_algo(self, param: ItemAlgorithm):
+        if param == ItemAlgorithm.CLASSIC:
+            return "[CS:H]Classic[CR]"
+        return "[CS:H]Balanced[CR]"
+
+    def _item_weights(self, param: Dict[int, Number]):
+        out = ""
+        for idx, weight_multi in param.items():
+            cat_name = self.static_data.dungeon_data.item_categories[idx].name
+            out += f"> {cat_name}: {weight_multi}\\n"
+        return out.rstrip()
 
     def _locs_chaps(self, param: str):
         full = ""

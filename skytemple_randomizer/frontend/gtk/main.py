@@ -111,7 +111,8 @@ class MainController:
         # Load default configuration
         self.ui_applier = ConfigUIApplier(self.builder,
                                           self.static_config.dungeon_data.dungeons,
-                                          self.static_config.dungeon_data.items)
+                                          self.static_config.dungeon_data.items,
+                                          self.static_config.dungeon_data.item_categories)
         self.ui_reader = ConfigUIReader(self.builder)
         self.ui_applier.apply(ConfigFileLoader.load(os.path.join(data_dir(), 'default.json')))
         ConfigDocApplier(self.window, self.builder).apply()
@@ -171,6 +172,15 @@ class MainController:
     def on_cr_dungeons_settings_enemy_iq_toggled(self, widget, path):
         store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
         store[path][6] = not widget.get_active()
+
+    def on_cr_item_weights_multiplier_edited(self, _widget, path, text):
+        try:
+            float(text)
+        except ValueError:
+            return
+        store: Gtk.ListStore = self.builder.get_object('store_tree_item_weights')
+        store[path][2] = text
+
 
     def on_btn_rom_clicked(self, *args):
         dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(

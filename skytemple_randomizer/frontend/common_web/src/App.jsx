@@ -115,7 +115,7 @@ export default function App() {
                     aria-label="main tabs"
                 >
                     <Tab label="Start" {...a11yProps(0)} />
-                    <Tab label="Starters & More" {...a11yProps(1)} />
+                    <Tab label="General" {...a11yProps(1)} />
                     <Tab label="Dungeons" {...a11yProps(2)} />
                     <Tab label="Improvements" {...a11yProps(3)} />
                     <Tab label="P. Quiz" {...a11yProps(4)} />

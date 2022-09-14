@@ -85,7 +85,7 @@ class RandomizerThread(Thread):
 
         # Configure file handler implementation
         impl_type = ImplementationType.PYTHON
-        if config['misc']['native_file_handlers']:
+        if config['starters_npcs']['native_file_handlers']:
             impl_type = ImplementationType.NATIVE
         change_implementation_type(impl_type)
 

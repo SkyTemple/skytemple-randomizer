@@ -20,6 +20,7 @@ import os
 import sys
 import time
 from enum import Enum
+from numbers import Number
 from typing import TypedDict, Optional, List, Dict
 
 import pkg_resources
@@ -53,11 +54,11 @@ class IntRange:
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
-    global_items: bool
     topmenu_music: bool
     overworld_music: bool
     explorer_rank_unlocks: bool
     explorer_rank_rewards: bool
+    native_file_handlers: bool
 
 
 class StartersNpcsConfigDoc:
@@ -71,8 +72,6 @@ class StartersNpcsConfigDoc:
           - Special Episode Player Characters
         
         *: Some additional text in the game may also be affected (eg. some item names)."""
-    global_items = \
-        """If enabled, the Treasure Town shop item list, the dungeon reward item lists and all other global item lists are randomized."""
     topmenu_music = \
         """If enabled, the music that plays on the titlescreen is randomized."""
     overworld_music = \
@@ -81,6 +80,11 @@ class StartersNpcsConfigDoc:
         """If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."""
     explorer_rank_rewards = \
         """If enabled, Explorer Ranks give random items as rewards upon unlocking a new level."""
+    native_file_handlers = \
+        """If enabled, the randomizer uses faster implementations to manipulate the files in the ROM. 
+        This can affect the random values rolled during the randomization. 
+        
+        This should only be disabled if you run into issues."""
 
 
 class DungeonModeConfig(Enum):
@@ -349,13 +353,14 @@ class ItemAlgorithm(Enum):
     CLASSIC = 1
 
 
-class MiscConfig(TypedDict):
-    item_algorithm: ItemAlgorithm
-    native_file_handlers: bool
+class ItemConfig(TypedDict):
+    algorithm: ItemAlgorithm
+    global_items: bool
+    weights: Dict[int, Number]
 
 
-class MiscConfigDoc:
-    item_algorithm = \
+class ItemConfigDoc:
+    algorithm = \
         """Controls how item lists are randomly filled.
         
         Balanced: Tries to make it equally likely to find any item in the game, 
@@ -365,11 +370,13 @@ class MiscConfigDoc:
         It doesn't attempt to balance out the different item categories, making items
         from categories with fewer total items easier to find.
         """
-    native_file_handlers = \
-        """If enabled, the randomizer uses faster implementations to manipulate the files in the ROM. 
-        This can affect the random values rolled during the randomization. 
+    global_items = \
+        """If enabled, the Treasure Town shop item list, the dungeon reward item lists and all other global item lists are randomized."""
+    weights = \
+        """Controls weight biases when randomizing items. 
+        A higher multiplier compared to other categories means that items from that category are more likely to spawn than others.
         
-        This should only be disabled if you run into issues."""
+        This only applies to the 'Balanced' item algorithm!"""
 
 
 class RandomizerConfig(TypedDict):
@@ -383,7 +390,7 @@ class RandomizerConfig(TypedDict):
     text: TextConfig
     iq: IqConfig
     quiz: QuizConfig
-    misc: MiscConfig
+    item: ItemConfig
     seed: str  # see get_effective_seed
 
 
@@ -433,9 +440,7 @@ class ConfigFileLoader:
             for field, field_type in typ.__annotations__.items():
                 if field not in target:
                     # Compatibility:
-                    if field == 'global_items' and field_type == bool:
-                        target[field] = True
-                    elif field == 'overworld_music' and field_type == bool:
+                    if field == 'overworld_music' and field_type == bool:
                         target[field] = True
                     elif field == 'patch_disarm_monster_houses' and field_type == bool:
                         target[field] = True
@@ -479,6 +484,8 @@ class ConfigFileLoader:
                         target[field] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536]
                     elif field == 'quiz' and field_type == QuizConfig:
                         target[field] = {'mode': 1, 'randomize': False, 'questions': []}
+                    elif field == 'native_file_handlers':
+                        target[field] = 1
                     elif field == 'iq' and field_type == IqConfig:
                         target[field] = {
                             'randomize_tactics': False,
@@ -486,10 +493,22 @@ class ConfigFileLoader:
                             'randomize_iq_skills': False,
                             'randomize_iq_groups': False
                         }
-                    elif field == 'misc' and field_type == MiscConfig:
+                    elif field == 'item' and field_type == ItemConfig:
                         target[field] = {
-                            'item_algorithm': 0,
-                            'native_file_handlers': True
+                            'algorithm': 0,
+                            'global_items': True,
+                            'weights': {
+                                '0': 1,
+                                '1': 1,
+                                '2': 1,
+                                '3': 1,
+                                '4': 1,
+                                '5': 0.3,
+                                '6': 3,
+                                '8': 1,
+                                '9': 1,
+                                '10': 1
+                            }
                         }
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
@@ -528,6 +547,13 @@ class ConfigFileLoader:
             d = {}
             for idx, conf in target.items():
                 d[int(idx)] = cls._handle(conf, DungeonSettingsConfig)
+            return d
+        elif typ == Dict[int, Number]:
+            if not isinstance(target, dict):
+                raise ValueError(f"Value in JSON must be an object for {typ}.")
+            d = {}
+            for idx, conf in target.items():
+                d[int(idx)] = conf
             return d
         elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
             if not isinstance(target, list) or not all(isinstance(x, int) for x in target):

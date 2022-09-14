@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from collections import OrderedDict
 from math import ceil
+from numbers import Number
 from random import choice, randrange
 from typing import List, Dict
 
@@ -28,17 +29,20 @@ from skytemple_randomizer.config import RandomizerConfig, ItemAlgorithm
 from skytemple_randomizer.randomizer.common.weights import random_weights
 from skytemple_randomizer.randomizer.util.util import get_allowed_item_ids
 
+CLASSIC_ALLOWED_ITEM_CATS = [
+    0, 1, 2, 3, 4, 5, 8, 9
+]
 ALLOWED_ITEM_CATS = [
-    0, 1, 2, 3, 4, 5, 9, 8
+    0, 1, 2, 3, 4, 5, 6, 8, 9, 10
 ]
 MIN_ITEMS_PER_CAT = 4
 MAX_ITEMS_PER_CAT = 18
 
 
 def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
-    if config['misc']['item_algorithm'] == ItemAlgorithm.BALANCED:
+    if config['item']['algorithm'] == ItemAlgorithm.BALANCED:
         return balanced_item_randomizer(config, static_data)
-    if config['misc']['item_algorithm'] == ItemAlgorithm.CLASSIC:
+    if config['item']['algorithm'] == ItemAlgorithm.CLASSIC:
         return classic_item_randomizer(config, static_data)
 
     raise NotImplementedError("Unknown item algorithm.")
@@ -47,7 +51,7 @@ def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaIte
 def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     categories = {}
     items = OrderedDict()
-    cats_as_list = list(ALLOWED_ITEM_CATS)
+    cats_as_list = list(CLASSIC_ALLOWED_ITEM_CATS)
 
     # 1/8 chance for money to get a chance
     if choice([True] + [False] * 7):
@@ -99,8 +103,6 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
     chosen_items_per_cat: Dict[int, List[int]] = {}
 
     cats_as_list = list(ALLOWED_ITEM_CATS)
-    # Link Box cat:
-    cats_as_list.append(10)
 
     # Take note of all allowed items and which categories they are in
     all_allowed_item_ids = []
@@ -123,17 +125,24 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
             chosen_items_per_cat[item_cat_id] = []
         chosen_items_per_cat[item_cat_id].append(item_id)
 
-    # 1/8 chance for money to get a chance (cat 6)
-    if choice([True] + [False] * 7):
-        chosen_items_per_cat[6] = [x for x in static_data.dungeon_data.item_categories[6].item_ids() if x in get_allowed_item_ids(config)]
-
     chosen_items_per_cat = dict(sorted(chosen_items_per_cat.items()))
 
     # Calculate the category weights based on the number of items in each category
-    weights_before = 0
-    total_items = sum(len(chosen_items) for chosen_items in chosen_items_per_cat.values())
+    # First we take into account the weight multipliers
+    weighted_chosen_items_per_cat_count = {}
     for cat_id, chosen_items in chosen_items_per_cat.items():
-        categories[cat_id] = weights_before + ceil(MAX_WEIGHT * (len(chosen_items) / total_items))
+        #  'int' is not a 'Number' according to mypy??
+        weight_multiplier: Number = 1  # type: ignore
+        if cat_id in config['item']['weights']:
+            weight_multiplier = config['item']['weights'][cat_id]
+            if weight_multiplier <= 0:  # type: ignore
+                weight_multiplier = 0.01  # type: ignore
+        weighted_chosen_items_per_cat_count[cat_id] = ceil(len(chosen_items) * weight_multiplier)  # type: ignore
+    weights_before = 0
+    total_items_weighted = sum(item_count_weighted for item_count_weighted in weighted_chosen_items_per_cat_count.values())
+    for cat_id, chosen_items in chosen_items_per_cat.items():
+        item_count_weighted = weighted_chosen_items_per_cat_count[cat_id]
+        categories[cat_id] = weights_before + ceil(MAX_WEIGHT * (item_count_weighted / total_items_weighted))
         weights_before = categories[cat_id]
 
         # Randomize the item weights in each category

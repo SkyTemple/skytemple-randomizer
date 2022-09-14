@@ -2,11 +2,11 @@
   "starters_npcs": {
     "starters": true,
     "npcs": true,
-    "global_items": true,
     "topmenu_music": true,
     "overworld_music": false,
     "explorer_rank_unlocks": false,
-    "explorer_rank_rewards": true
+    "explorer_rank_rewards": true,
+    "native_file_handlers": true
   },
   "dungeons": {
     "mode": 0,
@@ -1646,9 +1646,21 @@
       }
     ]
   },
-  "misc": {
-    "item_algorithm": 0,
-    "native_file_handlers": true
+  "item": {
+    "algorithm": 0,
+    "global_items": true,
+    "weights": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 0.3,
+      "6": 3,
+      "8": 1,
+      "9": 1,
+      "10": 1
+    }
   },
   "seed": ""
 }

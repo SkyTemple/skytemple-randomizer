@@ -18,6 +18,7 @@
 import sys
 from enum import Enum
 from functools import partial
+from numbers import Number
 from typing import List, Dict
 
 import strictyaml
@@ -25,12 +26,14 @@ from gi.repository import Gtk, GtkSource
 from jsonschema import validate
 from range_typed_integers import u8, u16, u32
 
-from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon, Pmd2DungeonItem
+from skytemple_files.common.ppmdu_config.dungeon_data import Pmd2DungeonDungeon, Pmd2DungeonItem, \
+    Pmd2DungeonItemCategory
 from skytemple_files.data.md.protocol import Ability
 from skytemple_files.dungeon_data.mappa_bin.protocol import MAX_ITEM_ID
 from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange, QuizQuestion, \
     QUIZ_QUESTIONS_JSON_SCHEMA
 from skytemple_randomizer.lists import MOVES, MONSTERS
+from skytemple_randomizer.randomizer.common.items import ALLOWED_ITEM_CATS
 
 
 def is_int(typ):
@@ -39,10 +42,17 @@ def is_int(typ):
 
 class ConfigUIApplier:
     """Applies configuration to the UI widgets."""
-    def __init__(self, builder: Gtk.Builder, dungeons: List[Pmd2DungeonDungeon], items: List[Pmd2DungeonItem]):
+    def __init__(
+            self,
+            builder: Gtk.Builder,
+            dungeons: List[Pmd2DungeonDungeon],
+            items: List[Pmd2DungeonItem],
+            item_cats: Dict[int, Pmd2DungeonItemCategory]
+    ):
         self.builder = builder
         self.dungeons = dungeons
         self.items = items
+        self.item_cats = item_cats
 
     def apply(self, config: RandomizerConfig):
         self.builder.get_object('store_tree_dungeons_dungeons').clear()
@@ -50,6 +60,7 @@ class ConfigUIApplier:
         self.builder.get_object('store_tree_monsters_monsters').clear()
         self.builder.get_object('store_tree_monsters_moves').clear()
         self.builder.get_object('store_tree_dungeons_items').clear()
+        self.builder.get_object('store_tree_item_weights').clear()
         self._handle(config)
 
     def _handle(self, config, field_name=None):
@@ -90,12 +101,21 @@ class ConfigUIApplier:
                 w: Gtk.TextView = self._ui_get('text_' + field_name)
                 w.get_buffer().set_text(config)
         elif typ == dict and len(config) > 0 and isinstance(next(iter(config.values())), dict):
+            # DUNGEON SETTINGS
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
             for idx, settings in config.items():
                 settings: DungeonSettingsConfig
                 s.append([idx, self._get_dungeon_name(idx), settings['randomize'], settings['monster_houses'],
                           settings['randomize_weather'], settings['unlock'], settings['enemy_iq']])
+        elif typ == dict and len(config) > 0 and isinstance(next(iter(config.values())), Number):
+            # ITEM WEIGHTS
+            w: Gtk.TreeView = self._ui_get('tree_' + field_name)
+            s: Gtk.ListStore = w.get_model()
+            for idx, weight in config.items():
+                idx = int(idx)
+                if idx in ALLOWED_ITEM_CATS:
+                    s.append([idx, self._get_cat_name(idx), str(weight)])
         elif typ == list and (len(config) < 1 or isinstance(next(iter(config)), int)):
             w: Gtk.TreeView = self._ui_get('tree_' + field_name)
             s: Gtk.ListStore = w.get_model()
@@ -124,6 +144,9 @@ class ConfigUIApplier:
 
     def _get_dungeon_name(self, idx):
         return self.dungeons[idx].name
+
+    def _get_cat_name(self, idx):
+        return self.item_cats[idx].name
 
 
 class ConfigUIReader:
@@ -179,6 +202,13 @@ class ConfigUIReader:
             for idx, name, randomize, monster_houses, randomize_weather, unlock, enemy_iq in s:
                 d[idx] = {'randomize': randomize, 'monster_houses': monster_houses,
                           'randomize_weather': randomize_weather, 'unlock': unlock, 'enemy_iq': enemy_iq}
+            return d
+        elif typ == Dict[int, Number]:
+            w = self._ui_get('tree_' + field_name)
+            s = w.get_model()
+            d = {}
+            for idx, name, weight in s:
+                d[idx] = float(weight)
             return d
         elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
             w = self._ui_get('tree_' + field_name)

@@ -29,11 +29,11 @@ export const SETTINGS_CONFIG = {
     starters_npcs: {
         starters: ["Randomize Starters?", UiSwitch],
         npcs: ["Randomize NPCs and Bosses?", UiSwitch],
-        global_items: ["Randomize Treasure Town shop and dungeon rewards?", UiSwitch],
         topmenu_music: ["Randomize Titlescreen Music?", UiSwitch],
         overworld_music: ["Randomize Overworld Music?", UiSwitch],
         explorer_rank_unlocks: ["Randomize Explorer Rank Unlocks?", UiSwitch],
-        explorer_rank_rewards: ["Randomize Explorer Rank Rewards?", UiSwitch]
+        explorer_rank_rewards: ["Randomize Explorer Rank Rewards?", UiSwitch],
+        native_file_handlers: ["Use Native File Handlers", UiSwitch],
     },
     dungeons: {
         mode: ["Mode", UiSelect, {0: "Fully random floors", 1: "Keep floors in a dungeon similar"}],
@@ -115,12 +115,13 @@ export const SETTINGS_CONFIG = {
         randomize: ["Randomize Personality Quiz Questions?", UiSwitch],
         questions: ["Personaility Test Questions:", "To edit the pool of random personality test questions, please use the desktop version of the Randomizer."]
     },
-    misc: {
-        native_file_handlers: ["Use Native File Handlers", UiSwitch],
-        item_algorithm: ["Item Randomization Algorithm", UiSelect, {
+    item: {
+        algorithm: ["Item Randomization Algorithm", UiSelect, {
             0: "Balanced",
             1: "Classic",
         }],
+        global_items: ["Randomize Treasure Town shop and dungeon rewards?", UiSwitch],
+        weights: ["Category Weights", "item_weights"],
     }
 }
 

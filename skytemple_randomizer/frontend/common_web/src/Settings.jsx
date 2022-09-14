@@ -129,6 +129,9 @@ export default function Settings(props) {
                     onChange={updateListEnabledInConfig}
                 />
                 break;
+            case 'item_weights':
+                field = <div>Not implemented.</div>
+                break;
             case UiGridTable:
                 let headings = [];
                 let switches = [];

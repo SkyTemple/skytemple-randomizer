@@ -20,6 +20,8 @@
     "fixed_rooms": false,
     "max_sticky_chance": 100,
     "max_mh_chance": 100,
+    "max_hs_chance": 100,
+    "max_ks_chance": 100,
     "settings": {
       "0": {"randomize": true, "unlock": true, "randomize_weather": true, "monster_houses": true, "enemy_iq": true },
       "1": {"randomize": true, "unlock": false, "randomize_weather": false, "monster_houses": false, "enemy_iq": false },

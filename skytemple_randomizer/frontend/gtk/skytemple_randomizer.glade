@@ -7,6 +7,14 @@
     <property name="upper">100</property>
     <property name="page-increment">10</property>
   </object>
+  <object class="GtkAdjustment" id="adjustment_max_hs_chance">
+    <property name="upper">100</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment_max_ks_chance">
+    <property name="upper">100</property>
+    <property name="page-increment">10</property>
+  </object>
   <object class="GtkAdjustment" id="adjustment_max_mh_chance">
     <property name="upper">100</property>
     <property name="page-increment">10</property>
@@ -1262,7 +1270,7 @@ can be configured in the "Dungeons" tab.</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <child>
-                              <!-- n-columns=6 n-rows=6 -->
+                              <!-- n-columns=6 n-rows=7 -->
                               <object class="GtkGrid">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
@@ -1701,11 +1709,11 @@ can be configured in the "Dungeons" tab.</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="halign">end</property>
-                                    <property name="label" translatable="yes">Randomize Floor count (down; %)</property>
+                                    <property name="label" translatable="yes">Randomize Floor count (up; %)</property>
                                   </object>
                                   <packing>
                                     <property name="left-attach">3</property>
-                                    <property name="top-attach">3</property>
+                                    <property name="top-attach">6</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -1713,31 +1721,11 @@ can be configured in the "Dungeons" tab.</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="halign">end</property>
-                                    <property name="label" translatable="yes">Randomize Floor count (up; %)</property>
+                                    <property name="label" translatable="yes">Randomize Floor count (down; %)</property>
                                   </object>
                                   <packing>
                                     <property name="left-attach">3</property>
-                                    <property name="top-attach">4</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="help_dungeons_min_floor_change_percent">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <property name="halign">start</property>
-                                    <property name="valign">center</property>
-                                    <child>
-                                      <object class="GtkImage">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <property name="icon-name">skytemple-help-about-symbolic</property>
-                                      </object>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="left-attach">4</property>
-                                    <property name="top-attach">3</property>
+                                    <property name="top-attach">5</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -1757,7 +1745,42 @@ can be configured in the "Dungeons" tab.</property>
                                   </object>
                                   <packing>
                                     <property name="left-attach">4</property>
-                                    <property name="top-attach">4</property>
+                                    <property name="top-attach">6</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkScale" id="scale_dungeons_max_floor_change_percent">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="adjustment">adjustment_max_floor_change_percent</property>
+                                    <property name="fill-level">100</property>
+                                    <property name="round-digits">0</property>
+                                    <property name="digits">0</property>
+                                    <property name="value-pos">right</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">5</property>
+                                    <property name="top-attach">6</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="help_dungeons_min_floor_change_percent">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="receives-default">True</property>
+                                    <property name="halign">start</property>
+                                    <property name="valign">center</property>
+                                    <child>
+                                      <object class="GtkImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="icon-name">skytemple-help-about-symbolic</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">4</property>
+                                    <property name="top-attach">5</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -1772,14 +1795,93 @@ can be configured in the "Dungeons" tab.</property>
                                   </object>
                                   <packing>
                                     <property name="left-attach">5</property>
+                                    <property name="top-attach">5</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="halign">end</property>
+                                    <property name="label" translatable="yes">Max hidden stairs chance</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">3</property>
                                     <property name="top-attach">3</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkScale" id="scale_dungeons_max_floor_change_percent">
+                                  <object class="GtkLabel">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="halign">end</property>
+                                    <property name="label" translatable="yes">Max Kecleon shop chance</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">3</property>
+                                    <property name="top-attach">4</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="help_dungeons_max_hs_chance">
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
-                                    <property name="adjustment">adjustment_max_floor_change_percent</property>
+                                    <property name="receives-default">True</property>
+                                    <property name="halign">start</property>
+                                    <property name="valign">center</property>
+                                    <child>
+                                      <object class="GtkImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="icon-name">skytemple-help-about-symbolic</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">4</property>
+                                    <property name="top-attach">3</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="help_dungeons_max_ks_chance">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="receives-default">True</property>
+                                    <property name="halign">start</property>
+                                    <property name="valign">center</property>
+                                    <child>
+                                      <object class="GtkImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="icon-name">skytemple-help-about-symbolic</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">4</property>
+                                    <property name="top-attach">4</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkScale" id="scale_dungeons_max_hs_chance">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="adjustment">adjustment_max_hs_chance</property>
+                                    <property name="fill-level">100</property>
+                                    <property name="round-digits">0</property>
+                                    <property name="digits">0</property>
+                                    <property name="value-pos">right</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left-attach">5</property>
+                                    <property name="top-attach">3</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkScale" id="scale_dungeons_max_ks_chance">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="adjustment">adjustment_max_ks_chance</property>
                                     <property name="fill-level">100</property>
                                     <property name="round-digits">0</property>
                                     <property name="digits">0</property>

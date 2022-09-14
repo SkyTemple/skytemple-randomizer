@@ -119,6 +119,8 @@ class DungeonsConfig(TypedDict):
     fixed_rooms: bool
     max_sticky_chance: IntRange
     max_mh_chance: IntRange
+    max_hs_chance: IntRange
+    max_ks_chance: IntRange
     settings: Dict[int, DungeonSettingsConfig]
     items_enabled: List[int]
 
@@ -156,6 +158,10 @@ class DungeonsConfigDoc:
         """Sticky item chance will be randomized between 0% and this value (inclusive)."""
     max_mh_chance = \
         """Monster house chance will be randomized between 0% and this value (inclusive)."""
+    max_hs_chance = \
+        """Hidden stairs chance will be randomized between 0% and this value (inclusive)."""
+    max_ks_chance = \
+        """Kecleon shop chance will be randomized between 0% and this value (inclusive)."""
     settings = \
         """Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.
         You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked. 
@@ -467,6 +473,10 @@ class ConfigFileLoader:
                     elif field == 'max_sticky_chance':
                         target[field] = 100
                     elif field == 'max_mh_chance':
+                        target[field] = 100
+                    elif field == 'max_hs_chance':
+                        target[field] = 100
+                    elif field == 'max_ks_chance':
                         target[field] = 100
                     elif field == 'min_floor_change_percent':
                         target[field] = 0

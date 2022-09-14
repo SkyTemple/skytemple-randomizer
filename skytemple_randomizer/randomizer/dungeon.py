@@ -201,7 +201,7 @@ class DungeonRandomizer(AbstractRandomizer):
             weather=self._randomize_weather(original_layout, dungeon_id),
             floor_connectivity=u8(randrange(5, 51)),
             initial_enemy_density=i8(randrange(1, 7)),
-            kecleon_shop_chance=u8(randrange(0, 101)),
+            kecleon_shop_chance=u8(randrange(0, self.config['dungeons']['max_ks_chance'].value + 1)),
             monster_house_chance=u8(randrange(0, self.config['dungeons']['max_mh_chance'].value + 1) if allow_monster_houses else 0),
             unused_chance=u8(randrange(0, 101)),
             sticky_item_chance=u8(randrange(0, self.config['dungeons']['max_sticky_chance'].value + 1)),
@@ -223,7 +223,7 @@ class DungeonRandomizer(AbstractRandomizer):
             kecleon_shop_item_positions=u8(randrange(0, 14)),
             empty_monster_house_chance=u8(randrange(0, 101)),
             unk_hidden_stairs=u8(choice((0, 255))),
-            hidden_stairs_spawn_chance=u8(randrange(0, 101)),
+            hidden_stairs_spawn_chance=u8(randrange(0, self.config['dungeons']['max_hs_chance'].value + 1)),
             enemy_iq=u16(randrange(1, 601) if randomize_iq else original_layout.enemy_iq),
             iq_booster_boost=i16(choice((0, 1)))
         )

@@ -52,6 +52,8 @@ export const SETTINGS_CONFIG = {
         fixed_rooms: ["Randomize Boss Room Layouts?", UiSwitch],
         max_sticky_chance: ["Max sticky item chance", UiSlider, 100],
         max_mh_chance: ["Max monster house chance", UiSlider, 100],
+        max_hs_chance: ["Max hidden stairs chance", UiSlider, 100],
+        max_ks_chance: ["Max Kecleon shop chance", UiSlider, 100],
         settings: ["Dungeon Settings", UiGridTable, {
             _name: ["Dungeon", String, (id) => id.toString() + ': ' + window.DUNGEON_NAMES[id]],
             randomize: ["Randomize?", UiSwitch],

@@ -1124,6 +1124,7 @@ can be configured in the "Dungeons" tab.</property>
                                 <property name="margin-left">5</property>
                                 <property name="margin-start">5</property>
                                 <property name="margin-top">5</property>
+                                <property name="margin-bottom">5</property>
                                 <child>
                                   <object class="GtkImage">
                                     <property name="visible">True</property>
@@ -1204,6 +1205,114 @@ can be configured in the "Dungeons" tab.</property>
                           </object>
                           <packing>
                             <property name="position">1</property>
+                            <property name="tab-fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">10</property>
+                            <child>
+                              <object class="GtkButton" id="help_dungeons_items_enabled">
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">True</property>
+                                <property name="halign">start</property>
+                                <property name="valign">center</property>
+                                <property name="margin-left">5</property>
+                                <property name="margin-start">5</property>
+                                <property name="margin-top">5</property>
+                                <child>
+                                  <object class="GtkImage">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="icon-name">skytemple-help-about-symbolic</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkScrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="hscrollbar-policy">never</property>
+                                <property name="shadow-type">in</property>
+                                <child>
+                                  <object class="GtkTreeView" id="tree_dungeons_items_enabled">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="margin-top">5</property>
+                                    <property name="hexpand">True</property>
+                                    <property name="vexpand">True</property>
+                                    <property name="model">store_tree_dungeons_items</property>
+                                    <property name="search-column">0</property>
+                                    <child internal-child="selection">
+                                      <object class="GtkTreeSelection"/>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTreeViewColumn">
+                                        <property name="title" translatable="yes">ID</property>
+                                        <child>
+                                          <object class="GtkCellRendererText"/>
+                                          <attributes>
+                                            <attribute name="text">0</attribute>
+                                          </attributes>
+                                        </child>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTreeViewColumn">
+                                        <property name="title" translatable="yes">Use?</property>
+                                        <child>
+                                          <object class="GtkCellRendererToggle" id="cr_dungeons_items_enabled_use">
+                                            <signal name="toggled" handler="on_cr_dungeons_items_enabled_use_toggled" swapped="no"/>
+                                          </object>
+                                          <attributes>
+                                            <attribute name="active">2</attribute>
+                                          </attributes>
+                                        </child>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkTreeViewColumn">
+                                        <property name="title" translatable="yes">Item</property>
+                                        <child>
+                                          <object class="GtkCellRendererText"/>
+                                          <attributes>
+                                            <attribute name="text">1</attribute>
+                                          </attributes>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child type="tab">
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Item Pool</property>
+                          </object>
+                          <packing>
+                            <property name="position">2</property>
                             <property name="tab-fill">False</property>
                           </packing>
                         </child>
@@ -1933,6 +2042,7 @@ can be configured in the "Dungeons" tab.</property>
                                     <property name="margin-left">5</property>
                                     <property name="margin-start">5</property>
                                     <property name="margin-top">5</property>
+                                    <property name="margin-bottom">5</property>
                                     <child>
                                       <object class="GtkImage">
                                         <property name="visible">True</property>
@@ -2078,114 +2188,6 @@ can be configured in the "Dungeons" tab.</property>
                               </object>
                               <packing>
                                 <property name="position">1</property>
-                                <property name="tab-fill">False</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkBox">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="orientation">vertical</property>
-                                <property name="spacing">10</property>
-                                <child>
-                                  <object class="GtkButton" id="help_dungeons_items_enabled">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <property name="halign">start</property>
-                                    <property name="valign">center</property>
-                                    <property name="margin-left">5</property>
-                                    <property name="margin-start">5</property>
-                                    <property name="margin-top">5</property>
-                                    <child>
-                                      <object class="GtkImage">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <property name="icon-name">skytemple-help-about-symbolic</property>
-                                      </object>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkScrolledWindow">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="hscrollbar-policy">never</property>
-                                    <property name="shadow-type">in</property>
-                                    <child>
-                                      <object class="GtkTreeView" id="tree_dungeons_items_enabled">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">True</property>
-                                        <property name="margin-top">5</property>
-                                        <property name="hexpand">True</property>
-                                        <property name="vexpand">True</property>
-                                        <property name="model">store_tree_dungeons_items</property>
-                                        <property name="search-column">0</property>
-                                        <child internal-child="selection">
-                                          <object class="GtkTreeSelection"/>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn">
-                                            <property name="title" translatable="yes">ID</property>
-                                            <child>
-                                              <object class="GtkCellRendererText"/>
-                                              <attributes>
-                                                <attribute name="text">0</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn">
-                                            <property name="title" translatable="yes">Use?</property>
-                                            <child>
-                                              <object class="GtkCellRendererToggle" id="cr_dungeons_items_enabled_use">
-                                                <signal name="toggled" handler="on_cr_dungeons_items_enabled_use_toggled" swapped="no"/>
-                                              </object>
-                                              <attributes>
-                                                <attribute name="active">2</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkTreeViewColumn">
-                                            <property name="title" translatable="yes">Item</property>
-                                            <child>
-                                              <object class="GtkCellRendererText"/>
-                                              <attributes>
-                                                <attribute name="text">1</attribute>
-                                              </attributes>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">True</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="position">2</property>
-                              </packing>
-                            </child>
-                            <child type="tab">
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">Item Pool</property>
-                              </object>
-                              <packing>
-                                <property name="position">2</property>
                                 <property name="tab-fill">False</property>
                               </packing>
                             </child>

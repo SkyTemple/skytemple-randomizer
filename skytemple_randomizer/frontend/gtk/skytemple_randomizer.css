@@ -58,3 +58,7 @@
 .back_illust.bboard {
    background-image: url("data/back_illust/bboard.png");
 }
+
+.back_illust.items {
+   background-image: url("data/back_illust/items.png");
+}

@@ -1094,7 +1094,7 @@ can be configured in the "Dungeons" tab.</property>
                             </child>
                             <style>
                               <class name="back_illust"/>
-                              <class name="bboard"/>
+                              <class name="items"/>
                             </style>
                           </object>
                         </child>

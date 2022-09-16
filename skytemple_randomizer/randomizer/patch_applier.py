@@ -50,6 +50,8 @@ class PatchApplier(AbstractRandomizer):
             patcher.apply('ProvideATUPXSupport')
         if not patcher.is_applied('ExtraSpace'):
             patcher.apply('ExtraSpace')
+        if not patches.is_applied('AntiSoftlock'):
+            patcher.apply('AntiSoftlock')
 
         if self.config['improvements']['patch_moveshortcuts']:
             status.step("Apply 'MoveShortcuts' patch...")

@@ -48,6 +48,14 @@ a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
                             'packaging.requirements', 'packaging.markers', '_sysconfigdata__win32_', 'win32api',
                             'certifi'],
              hookspath=[os.path.abspath(os.path.join('.', 'hooks'))],
+             hooksconfig={
+                 "gi": {
+                     "module-versions": {
+                         "Gtk": "3.0",
+                         "GtkSource": "4",
+                     },
+                 },
+             },
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,

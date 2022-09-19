@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.skytemple.Randomizer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>SkyTemple Randomizer</name>
+  <summary>Randomizer for Pokémon Mystery Dungeon Explorers of Sky</summary>
+
+  <description>
+    <p>
+      Randomizes almost everything in the game, fully configurable. This includes NPCs, starters, dungeon layouts and much more.
+    </p>
+    <p>SkyTemple Randomizer is in NO WAY affiliated with Nintendo, The Pokémon Company, Spike Chunsoft or any of their affiliates. This is an unofficial fan project.</p>
+  </description>
+
+  <launchable type="desktop-id">org.skytemple.Randomizer.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://skytemple.org/randomizer.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://skytemple.org</url>
+  <url type="vcs-browser">https://github.com/SkyTemple/skytemple-randomizer</url>
+  <url type="bugtracker">https://github.com/SkyTemple/skytemple-randomizer/issues</url>
+  <project_group>SkyTemple</project_group>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">mild</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="1.3.6" date="2022-09-18">
+      <description>Changelog can be found on Github (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.3.6).</description>
+      <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.3.6</url>
+    </release>
+  </releases>
+</component>

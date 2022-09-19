@@ -114,6 +114,8 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
     # We roll random items and then check their category.
     # We also take note of the items for that category in chosen_items_per_cat.
     for _ in range(0, randrange(min_items, max_items)):
+        if len(all_allowed_item_ids) < 1:
+            break
         item_index = choice(range(0, len(all_allowed_item_ids)))
         item_id = all_allowed_item_ids.pop(item_index)
         item_cat_id = -1

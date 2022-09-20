@@ -37,6 +37,19 @@ Randomizer for Pokémon Mystery Dungeon Explorers of Sky.
 
 It is available for Linux, macOS and Windows.
 
-This README is still TODO. Please check out our Discord for support!
+Downloads
+---------
+- Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
+- MacOS: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
+- Linux: https://flathub.org/apps/details/org.skytemple.Randomizer
+
+|flathub_badge|
+
+.. _Flathub: https://flathub.org/apps/details/org.skytemple.SkyTemple
+
+.. |flathub_badge| image:: https://flathub.org/assets/badges/flathub-badge-en.png
+    :target: https://flathub.org/apps/details/org.skytemple.SkyTemple
+    :alt: Install on Flathub
+    :width: 240px
 
 |kofi|

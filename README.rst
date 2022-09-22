@@ -52,4 +52,6 @@ Downloads
     :alt: Install on Flathub
     :width: 240px
 
+Source repository for the Flatpak: https://github.com/flathub/org.skytemple.Randomizer
+
 |kofi|

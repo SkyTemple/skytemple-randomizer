@@ -26,6 +26,12 @@ rm -rf skytemple_randomizer.iconset
 # Build the app
 pyinstaller skytemple-randomizer-mac.spec --noconfirm
 
+# Check if we need to move the certifi file
+if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then
+  echo "Moved cacert to correct place"
+  mv dist/skytemple_randomizer/certifi/cacert.pem dist/skytemple_randomizer/cacert.pem
+fi
+
 rm skytemple_randomizer.icns
 
 # Since the library search path for the app is wrong, execute a shell script that sets is correctly

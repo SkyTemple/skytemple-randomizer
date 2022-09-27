@@ -27,5 +27,11 @@ fi
 
 pyinstaller skytemple-randomizer.spec
 
+# Check if we need to move the certifi file
+if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then
+  echo "Moved cacert to correct place"
+  mv dist/skytemple_randomizer/certifi/cacert.pem dist/skytemple_randomizer/cacert.pem
+fi
+
 echo $1 > dist/skytemple_randomizer/VERSION
 echo $1 > dist/skytemple_randomizer/data/VERSION

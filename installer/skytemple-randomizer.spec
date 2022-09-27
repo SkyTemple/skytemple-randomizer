@@ -15,7 +15,7 @@ additional_datas = [
     (os.path.join(pkg_path, 'frontend', 'gtk', '*.css'), '.'),
     (os.path.join(site_packages, 'skytemple_icons', 'hicolor'), 'skytemple_icons/hicolor'),
     (os.path.join(site_packages, 'skytemple_files', '_resources'), 'skytemple_files/_resources'),
-    (os.path.join(site_packages, 'certifi', 'cacert.pem'), 'certifi'),
+    (os.path.join(site_packages, 'certifi', 'cacert.pem'), '.'),
     (os.path.join('.', 'armips.exe'), 'skytemple_files/_resources'),
 
     # These aren't auto dectected for some reason :(

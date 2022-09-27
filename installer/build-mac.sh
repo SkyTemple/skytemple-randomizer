@@ -26,10 +26,10 @@ rm -rf skytemple_randomizer.iconset
 # Build the app
 pyinstaller skytemple-randomizer-mac.spec --noconfirm
 
-# Check if we need to move the certifi file
+# Check if we need to copy the cacert file
 if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then
   echo "Moved cacert to correct place"
-  mv dist/skytemple_randomizer/certifi/cacert.pem dist/skytemple_randomizer/cacert.pem
+  cp -rf dist/skytemple_randomizer/certifi/cacert.pem dist/skytemple_randomizer/cacert.pem
 fi
 
 rm skytemple_randomizer.icns

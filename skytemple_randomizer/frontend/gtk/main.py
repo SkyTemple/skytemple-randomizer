@@ -89,7 +89,7 @@ class MainController:
         lang = LanguageManager.get_default().get_language('yaml')
         buffer: GtkSource.Buffer
         if lang is not None:
-            buffer = GtkSource.Buffer.new_with_language()
+            buffer = GtkSource.Buffer.new_with_language(lang)
         else:
             buffer = GtkSource.Buffer.new()
         view.set_show_line_numbers(True)

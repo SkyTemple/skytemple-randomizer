@@ -86,7 +86,12 @@ class MainController:
 
         # Source view
         view: GtkSource.View = self.builder.get_object('text_quiz_content')
-        buffer: GtkSource.Buffer = GtkSource.Buffer.new_with_language(LanguageManager.get_default().get_language('yaml'))
+        lang = LanguageManager.get_default().get_language('yaml')
+        buffer: GtkSource.Buffer
+        if lang is not None:
+            buffer = GtkSource.Buffer.new_with_language()
+        else:
+            buffer = GtkSource.Buffer.new()
         view.set_show_line_numbers(True)
         view.set_show_line_marks(True)
         view.set_auto_indent(True)

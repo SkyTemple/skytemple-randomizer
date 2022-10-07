@@ -26,6 +26,9 @@ rm -rf skytemple_randomizer.iconset
 # Build the app
 pyinstaller skytemple-randomizer-mac.spec --noconfirm
 
+# Bundle gtksourceview4
+cp -r /usr/local/Cellar/gtksourceview4/*/share/* dist/SkyTempleRandomizer.app/Contents/MacOS/share/
+
 # Check if we need to copy the cacert file
 if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then
   echo "Moved cacert to correct place"

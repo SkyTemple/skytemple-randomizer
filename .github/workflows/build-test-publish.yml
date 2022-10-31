@@ -11,7 +11,7 @@ jobs:
     strategy:
       max-parallel: 5
       matrix:
-        python-version: [ "3.8", "3.9", "3.10" ]
+        python-version: [ "3.8", "3.9", "3.10", "3.11" ]
     steps:
     - uses: actions/checkout@v1
     # todo: quickfix for android recipes being scanned...
@@ -37,15 +37,8 @@ jobs:
       - name: Note version
         run: |
           echo "PACKAGE_VERSION=$(python3 -- ./setup.py --version)" >> $GITHUB_ENV
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-      - name: Upgrade pip
-        run: |
-          python -m pip install --upgrade pip
       - name: Build Python wheels
-        uses: RalfG/python-wheels-manylinux-build@v0.3.4-manylinux2010_x86_64
+        uses: RalfG/python-wheels-manylinux-build@v0.5.0-manylinux2010_x86_64
         with:
           python-versions: 'cp38-cp38 cp39-cp39 cp310-cp310'
       - name: Upload wheels
@@ -63,10 +56,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: wheels
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: 3.11
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip

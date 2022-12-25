@@ -354,9 +354,9 @@ class IqConfigDoc:
     randomize_iq_groups = \
         """If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."""
     keep_universal_skills = \
-        """If enabled, all skills that are in all groups base game will also be in all groups when randomized.
-        Course Checker, Item Catcher, Item Master, and Exclusive Move-User will be unlocked from the start.
-        Status Checker, Nontraitor, and Lava Evader will have randomized values unless random IQ amounts is disabled."""
+        """If enabled, all skills that are included in all groups in the base game will also be added to all groups when randomizing\n.
+        On top of that, even if "randomize IQ skill unlocks" is enabled, Course Checker, Item Catcher, Item Master, and Exclusive Move-User will always be unlocked from the start.
+        However, Status Checker, Nontraitor, and Lava Evader will still have randomized IQ values."""
 
 
 class ItemAlgorithm(Enum):

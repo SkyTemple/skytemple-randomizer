@@ -24,7 +24,6 @@ from skytemple_files.hardcoded.iq import HardcodedIq, IqGroupsSkills
 from skytemple_files.hardcoded.tactics import HardcodedTactics
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file
 from skytemple_randomizer.status import Status
 
 
@@ -125,7 +124,6 @@ class IqTacticsRandomizer(AbstractRandomizer):
         if self.config['iq']['randomize_iq_skills']:
             status.step('Randomizing IQ skills...')
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
-            strings = get_main_string_file(self.rom, self.static_data)[1].strings
 
             for skill_idx, skill in enumerate(iq_skills):
                 if skill.iq_required != 9999:

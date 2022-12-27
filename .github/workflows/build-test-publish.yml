@@ -29,7 +29,7 @@ jobs:
     steps:
       # For tags we assume the version in setup.py is correct!
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Rewrite version for dev if not tag
         if: "!startsWith(github.ref, 'refs/tags/')"
         run: |
@@ -42,7 +42,7 @@ jobs:
         with:
           python-versions: 'cp38-cp38 cp39-cp39 cp310-cp310 cp311-cp311'
       - name: Upload wheels
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: wheels
           path: dist/*.whl
@@ -103,7 +103,7 @@ jobs:
             mingw-w64-${{ matrix.arch }}-python-yarl
             mingw-w64-${{ matrix.arch }}-python-aiohttp
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Rewrite version for dev if not tag
         if: "!startsWith(github.ref, 'refs/tags/')"
         shell: msys2 {0}
@@ -138,13 +138,13 @@ jobs:
         env:
           MINGW_VERSION: ${{ matrix.path }}
       - name: Create installer
-        uses: joncloud/makensis-action@v3.4
+        uses: joncloud/makensis-action@v3.7
         with:
           script-file: "${{ matrix.arch == 'i686' && 'installer/skytemple-randomizer32.nsi' || 'installer/skytemple-randomizer.nsi' }}"
           arguments: "/DPRODUCT_VERSION=${{ env.PACKAGE_VERSION }}"
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: skytemple-randomizer-windows-app-${{ matrix.arch }}
           path: |
@@ -156,7 +156,7 @@ jobs:
     name: Build and package for Mac OS
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Rewrite version for dev if not tag
         if: "!startsWith(github.ref, 'refs/tags/')"
         run: |
@@ -197,7 +197,7 @@ jobs:
           zip -r skytemple-randomizer-mac.zip dist/SkyTempleRandomizer.app > /dev/null
 
       - name: Upload .app
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: skytemple-randomizer-mac-app
           path: |
@@ -213,7 +213,7 @@ jobs:
           npx create-dmg --dmg-title=SkyTempleRandomizer installer/dist/SkyTempleRandomizer.app installer || true
 
       - name: Upload .dmg
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: skytemple-randomizer-mac-dmg
           path: |

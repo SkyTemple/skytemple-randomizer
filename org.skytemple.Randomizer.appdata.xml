@@ -31,6 +31,10 @@
   </content_rating>
 
   <releases>
+    <release version="1.4.3" date="2022-12-27">
+      <description>Changelog can be found on Github (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.4.3).</description>
+      <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.4.3</url>
+    </release>
     <release version="1.4.0" date="2022-09-27">
       <description>Changelog can be found on Github (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.4.0).</description>
       <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.4.0</url>

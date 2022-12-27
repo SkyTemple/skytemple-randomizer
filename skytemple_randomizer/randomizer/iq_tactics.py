@@ -112,8 +112,12 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 li2: List[u8] = []
                 new_iq_groups.append(li2)
                 for idx in range(len(iq_skills)):
-                    if idx == 22 or choice([True, False]):
-                        li2.append(u8(idx))
+                    if self.config['iq']['keep_universal_skills']:
+                        if idx in [2, 3, 7, 8, 20, 22, 23] or choice([True, False]):
+                            li2.append(u8(idx))
+                    else:
+                        if idx in [22] or choice([True, False]):
+                            li2.append(u8(idx))
 
             IqGroupsSkills.write_compressed(arm9, new_iq_groups, self.static_data)
 
@@ -123,10 +127,16 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             for skill_idx, skill in enumerate(iq_skills):
                 if skill.iq_required != 9999:
-                    if skill_idx == 22 or choice([True] + [False] * 12):
-                        skill.iq_required = i32(-1)
+                    if self.config['iq']['keep_universal_skills']:
+                        if skill_idx in [2, 3, 22, 23] or choice([True] + [False] * 12):
+                            skill.iq_required = i32(-1)
+                        else:
+                            skill.iq_required = i32(randrange(1, 900))
                     else:
-                        skill.iq_required = i32(randrange(1, 900))
+                        if skill_idx in [22] or choice([True] + [False] * 12):
+                            skill.iq_required = i32(-1)
+                        else:
+                            skill.iq_required = i32(randrange(1, 900))
 
             HardcodedIq.set_iq_skills(iq_skills, arm9, self.static_data)
 

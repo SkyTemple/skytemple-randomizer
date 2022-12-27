@@ -236,7 +236,8 @@
     "randomize_tactics": false,
     "randomize_iq_gain": false,
     "randomize_iq_skills": false,
-    "randomize_iq_groups": false
+    "randomize_iq_groups": false,
+    "keep_universal_skills": false
   },
   "quiz": {
     "mode": 1,

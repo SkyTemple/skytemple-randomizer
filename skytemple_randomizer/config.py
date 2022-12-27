@@ -341,6 +341,7 @@ class IqConfig(TypedDict):
     randomize_iq_gain: bool
     randomize_iq_skills: bool
     randomize_iq_groups: bool
+    keep_universal_skills: bool
 
 
 class IqConfigDoc:
@@ -352,6 +353,10 @@ class IqConfigDoc:
         """If enabled, IQ skills are unlocked at random IQ amounts. Item Master is always unlocked."""
     randomize_iq_groups = \
         """If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."""
+    keep_universal_skills = \
+        """If enabled, all skills that are included in all groups in the base game will also be added to all groups when randomizing\n.
+        On top of that, even if "randomize IQ skill unlocks" is enabled, Course Checker, Item Catcher, Item Master, and Exclusive Move-User will always be unlocked from the start.
+        However, Status Checker, Nontraitor, and Lava Evader will still have randomized IQ values."""
 
 
 class ItemAlgorithm(Enum):
@@ -501,7 +506,8 @@ class ConfigFileLoader:
                             'randomize_tactics': False,
                             'randomize_iq_gain': False,
                             'randomize_iq_skills': False,
-                            'randomize_iq_groups': False
+                            'randomize_iq_groups': False,
+                            'keep_universal_skills': False
                         }
                     elif field == 'item' and field_type == ItemConfig:
                         target[field] = {

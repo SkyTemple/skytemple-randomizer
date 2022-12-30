@@ -26,7 +26,7 @@ from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.data.str.model import Str
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_ids, clone_missing_portraits, \
+from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_starter_ids, clone_missing_portraits, \
     replace_strings, get_all_string_files, Roster
 from skytemple_randomizer.status import Status
 
@@ -49,7 +49,7 @@ class StarterRandomizer(AbstractRandomizer):
 
         orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
         new_partner_ids = [
-            self._random_gender(choice(get_allowed_md_ids(self.config, roster=Roster.STARTERS)))
+            self._random_gender(choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS)))
             for _ in range(0, len(orig_partner_ids))
         ]
         HardcodedPersonalityTestStarters.set_partner_md_ids(new_partner_ids, overlay13, self.static_data)
@@ -61,7 +61,7 @@ class StarterRandomizer(AbstractRandomizer):
         new_id: u16
         k = 0  # Index of text for "Will be..."
         for i in range(0, len(orig_player_ids)):
-            new_id = choice(get_allowed_md_ids(self.config, roster=Roster.STARTERS))
+            new_id = choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS))
             if k % 3 == 0:
                 k += 1
             # todo: refactor, this isn't really efficient.

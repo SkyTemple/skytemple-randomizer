@@ -121,6 +121,20 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Ro
         return fun.get_allowed_md_ids(ents, roster)
     return list(ents)
 
+def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[u16]:
+    from skytemple_randomizer.randomizer.special import fun
+    num_entities = FileType.MD.properties().num_entities
+    ents = set(conf['pokemon']['starters_enabled'])
+    if with_plus_600:
+        to_add = set()
+        for ent in ents:
+            if ent + num_entities <= 1154:
+                to_add.add(u16(ent + num_entities))
+        ents.update(to_add)
+    if fun.is_fun_allowed():
+        return fun.get_allowed_md_ids(ents, roster)
+    return list(ents)
+
 
 def get_allowed_item_ids(conf: RandomizerConfig) -> List[int]:
     return conf['dungeons']['items_enabled']

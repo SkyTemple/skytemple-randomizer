@@ -61,6 +61,7 @@ class ConfigUIApplier:
         self.builder.get_object('store_tree_monsters_moves').clear()
         self.builder.get_object('store_tree_dungeons_items').clear()
         self.builder.get_object('store_tree_item_weights').clear()
+        self.builder.get_object('store_tree_monsters_starters').clear()
         self._handle(config)
 
     def _handle(self, config, field_name=None):
@@ -131,6 +132,9 @@ class ConfigUIApplier:
                 for a, name in MOVES.items():
                     s.append([a, name, a in config])
             elif field_name == 'pokemon_monsters_enabled':
+                for a, name in MONSTERS.items():
+                    s.append([a, name, a in config])
+            elif field_name == 'pokemon_starters_enabled':
                 for a, name in MONSTERS.items():
                     s.append([a, name, a in config])
         else:

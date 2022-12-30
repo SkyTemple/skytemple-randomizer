@@ -166,6 +166,10 @@ class MainController:
         store: Gtk.Store = self.builder.get_object('store_tree_monsters_monsters')
         store[path][2] = not widget.get_active()
 
+    def on_cr_pokemon_starters_enabled_use_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_monsters_starters')
+        store[path][2] = not widget.get_active()
+
     def on_cr_pokemon_moves_enabled_use_toggled(self, widget, path):
         store: Gtk.Store = self.builder.get_object('store_tree_monsters_moves')
         store[path][2] = not widget.get_active()
@@ -186,6 +190,10 @@ class MainController:
         store: Gtk.ListStore = self.builder.get_object('store_tree_item_weights')
         store[path][2] = text
 
+    def on_btn_pokemon_starters_select_none(self, *args):
+        store: Gtk.ListStore = self.builder.get_object('store_tree_monsters_starters')
+        for x in store:
+            x[2] = False
 
     def on_btn_rom_clicked(self, *args):
         dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(

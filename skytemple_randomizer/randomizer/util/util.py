@@ -121,7 +121,7 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Ro
         return fun.get_allowed_md_ids(ents, roster)
     return list(ents)
 
-def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[u16]:
+def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS) -> List[u16]:
     from skytemple_randomizer.randomizer.special import fun
     num_entities = FileType.MD.properties().num_entities
     ents = set(conf['pokemon']['starters_enabled'])

@@ -190,9 +190,31 @@ class MainController:
         store: Gtk.ListStore = self.builder.get_object('store_tree_item_weights')
         store[path][2] = text
 
-    def on_btn_pokemon_starters_select_none(self, *args):
-        store: Gtk.ListStore = self.builder.get_object('store_tree_monsters_starters')
-        for x in store:
+    def on_btn_pokemon_copy(self, pool):
+        store: Gtk.ListStore = self.builder.get_object('store_tree_monsters_clipboard')
+        store.clear()
+        for x in pool:
+            a, b, c = x
+            store.append([a, b, c])
+
+    def on_btn_pokemon_paste(self, destination):
+        store: Gtk.ListStore = self.builder.get_object('store_tree_monsters_clipboard')
+        values = [x[2] for x in store]
+        if (len(values) == 0):
+            dialog = Gtk.MessageDialog(flags=0,
+                message_type=Gtk.MessageType.ERROR,
+                buttons=Gtk.ButtonsType.CANCEL,
+                text="There is no data to copy to this pool."
+            )
+            dialog.format_secondary_text("You need to copy either the Starter Pool or the Pokemon Pool before pasting to this pool.")
+            dialog.run()
+            dialog.destroy()
+            return
+        for idx, x in enumerate(destination):
+            x[2] = values[idx]
+
+    def on_btn_pokemon_select_none(self, pool):
+        for x in pool:
             x[2] = False
 
     def on_btn_rom_clicked(self, *args):

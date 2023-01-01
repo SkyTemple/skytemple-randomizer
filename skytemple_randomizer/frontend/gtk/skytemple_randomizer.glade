@@ -3330,22 +3330,6 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                     </child>
                                     <child>
                                       <object class="GtkButton">
-                                        <property name="label" translatable="yes">Select None</property>
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">True</property>
-                                        <property name="receives-default">True</property>
-                                        <property name="halign">end</property>
-                                        <property name="valign">center</property>
-                                        <property name="hexpand">True</property>
-                                        <signal name="clicked" handler="on_btn_pokemon_select_none" object="store_tree_monsters_monsters" swapped="no"/>
-                                      </object>
-                                      <packing>
-                                        <property name="left-attach">1</property>
-                                        <property name="top-attach">1</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkButton">
                                         <property name="label" translatable="yes">Copy from Starter Pool</property>
                                         <property name="visible">True</property>
                                         <property name="can-focus">True</property>
@@ -3357,6 +3341,49 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                       <packing>
                                         <property name="left-attach">1</property>
                                         <property name="top-attach">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">end</property>
+                                        <property name="spacing">10</property>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Reset to Default</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_reset" object="store_tree_monsters_monsters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Select None</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <property name="halign">end</property>
+                                            <property name="valign">center</property>
+                                            <property name="hexpand">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_select_none" object="store_tree_monsters_monsters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">1</property>
                                       </packing>
                                     </child>
                                     <child>
@@ -3487,22 +3514,6 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                     </child>
                                     <child>
                                       <object class="GtkButton">
-                                        <property name="label" translatable="yes">Select None</property>
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">True</property>
-                                        <property name="receives-default">True</property>
-                                        <property name="halign">end</property>
-                                        <property name="valign">end</property>
-                                        <property name="hexpand">True</property>
-                                        <signal name="clicked" handler="on_btn_pokemon_select_none" object="store_tree_monsters_starters" swapped="no"/>
-                                      </object>
-                                      <packing>
-                                        <property name="left-attach">1</property>
-                                        <property name="top-attach">1</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkButton">
                                         <property name="label" translatable="yes">Copy from Pokémon Pool</property>
                                         <property name="visible">True</property>
                                         <property name="can-focus">True</property>
@@ -3514,6 +3525,49 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                       <packing>
                                         <property name="left-attach">1</property>
                                         <property name="top-attach">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">end</property>
+                                        <property name="spacing">10</property>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Reset to Default</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_reset" object="store_tree_monsters_starters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Select None</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <property name="halign">start</property>
+                                            <property name="valign">end</property>
+                                            <property name="hexpand">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_select_none" object="store_tree_monsters_starters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">1</property>
                                       </packing>
                                     </child>
                                     <child>

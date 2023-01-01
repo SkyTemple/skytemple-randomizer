@@ -52,6 +52,7 @@ from skytemple_randomizer.config import ConfigFileLoader, EnumJsonEncoder, \
 from skytemple_randomizer.frontend.gtk.config import ConfigUIApplier, ConfigUIReader, ConfigDocApplier
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
+from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 
 from gi.repository import Gtk, GLib, Gdk, GtkSource
 from gi.repository.Gtk import Window
@@ -201,6 +202,10 @@ class MainController:
         values = [x[2] for x in source]
         for idx, x in enumerate(destination):
             x[2] = values[idx]
+
+    def on_btn_pokemon_reset(self, pool):
+        for x in pool:
+            x[2] = x[0] in DEFAULTMONSTERPOOL
 
     def on_btn_pokemon_select_none(self, pool):
         for x in pool:

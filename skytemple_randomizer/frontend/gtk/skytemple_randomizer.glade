@@ -4728,39 +4728,31 @@ Settings</property>
     <property name="comments" translatable="yes">Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky (EU/US).</property>
     <property name="website">https://github.com/SkyTemple/skytemple</property>
     <property name="website-label" translatable="yes">https://github.com/SkyTemple/skytemple-randomizer</property>
-    <property name="authors">Marco "Capypara" Köpcke http://github.com/theCapypara
+    <property name="authors">Project Lead:
+Marco "Capypara" Köpcke https://github.com/theCapypara
 
 Contributors:
-Aikku93 (via tilequant) http://github.com/aikku93
+Aikku93 (via tilequant) https://github.com/aikku93
 techticks (MacOS packaging) https://github.com/tech-ticks
-marius851000 (via skytemple-rust) http://github.com/marius851000
+marius851000 (via skytemple-rust) https://github.com/marius851000
+UsernameFodder (via pmdsky-debug) https://reddit.com/u/UsernameFodder
+End45 (via patches) https://github.com/End45
+Anonymous (via patches + contributions)
+Cipnit (via CTC patch) https://www.pokecommunity.com/member.php?u=751556
+Adex (via patches) https://github.com/Adex-8x
+Darkaim (JP support)
+Please see GitHub for more minor contributors.
 
 Lead Hackers:
-psy_commando http://github.com/psyCommando
-End45 http://github.com/End45
-
-Total Team Control Patch:
-Cipnit https://www.pokecommunity.com/member.php?u=751556
+End45 https://github.com/End45
+UsernameFodder https://reddit.com/u/UsernameFodder
+Anonymous
+psy_commando https://github.com/psyCommando
 
 Hackers:
-evandixon http://github.com/evandixon
+evandixon https://github.com/evandixon
 MegaMinerd
 Nerketur
-UsernameFodder http://reddit.com/u/UsernameFodder
-
-Documentation:
-frostibirb
-MaxSchersey
-
-Testing:
-DiST (MAN-K)
-Jester
-KingPriceman
-Maestroke
-MandL27
-NeroIntruder
-Scyrous
-yakkomon
 
 Artwork:
 Charburst (Logo and Illustrations) https://twitter.com/Charburst_
@@ -4768,16 +4760,11 @@ Aviivix (UI Icons) https://twitter.com/aviivix
 Edael (Duskako Sprites) https://twitter.com/Exodus_Drake
 
 Special Thanks:
-Audino https://github.com/audinowho
-Fireally https://www.youtube.com/channel/UCslMDS9pAH-ay6qqKlyyJzw
-Soniclink137
-DasK https://www.reddit.com/user/thedask
-Apuapua
-TheGoldCrow https://www.youtube.com/thegoldcrow
-DrGlutamate
-ケLV https://clv.carrd.co
-Quilavabom
-MrStrouder</property>
+Everyone testing &amp; documenting SkyTemple, the SkyTemple Discord mods (former and current)
+and everyone making hacks, organizing hack jams or creating community content!
+
+Especially thank you DasK, Audino, Keldaan and MaxSchersey!
+    </property>
     <property name="translator-credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
     <property name="logo-icon-name">skytemple</property>
     <property name="license-type">gpl-3-0</property>

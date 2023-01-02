@@ -52,6 +52,7 @@ from skytemple_randomizer.config import ConfigFileLoader, EnumJsonEncoder, \
 from skytemple_randomizer.frontend.gtk.config import ConfigUIApplier, ConfigUIReader, ConfigDocApplier
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
+from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 
 from gi.repository import Gtk, GLib, Gdk, GtkSource
 from gi.repository.Gtk import Window
@@ -166,6 +167,10 @@ class MainController:
         store: Gtk.Store = self.builder.get_object('store_tree_monsters_monsters')
         store[path][2] = not widget.get_active()
 
+    def on_cr_pokemon_starters_enabled_use_toggled(self, widget, path):
+        store: Gtk.Store = self.builder.get_object('store_tree_monsters_starters')
+        store[path][2] = not widget.get_active()
+
     def on_cr_pokemon_moves_enabled_use_toggled(self, widget, path):
         store: Gtk.Store = self.builder.get_object('store_tree_monsters_moves')
         store[path][2] = not widget.get_active()
@@ -186,6 +191,25 @@ class MainController:
         store: Gtk.ListStore = self.builder.get_object('store_tree_item_weights')
         store[path][2] = text
 
+    def on_btn_pokemon_copy_for_starters(self, source):
+        destination: Gtk.ListStore = self.builder.get_object('store_tree_monsters_starters')
+        values = [x[2] for x in source]
+        for idx, x in enumerate(destination):
+            x[2] = values[idx]
+
+    def on_btn_pokemon_copy_for_monsters(self, source):
+        destination: Gtk.ListStore = self.builder.get_object('store_tree_monsters_monsters')
+        values = [x[2] for x in source]
+        for idx, x in enumerate(destination):
+            x[2] = values[idx]
+
+    def on_btn_pokemon_reset(self, pool):
+        for x in pool:
+            x[2] = x[0] in DEFAULTMONSTERPOOL
+
+    def on_btn_pokemon_select_none(self, pool):
+        for x in pool:
+            x[2] = False
 
     def on_btn_rom_clicked(self, *args):
         dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(

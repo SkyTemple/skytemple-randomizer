@@ -328,6 +328,16 @@
       <column type="gboolean"/>
     </columns>
   </object>
+  <object class="GtkListStore" id="store_tree_monsters_clipboard">
+    <columns>
+      <!-- column-name idx -->
+      <column type="gint"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+      <!-- column-name use -->
+      <column type="gboolean"/>
+    </columns>
+  </object>
   <object class="GtkListStore" id="store_tree_monsters_monsters">
     <columns>
       <!-- column-name idx -->
@@ -339,6 +349,16 @@
     </columns>
   </object>
   <object class="GtkListStore" id="store_tree_monsters_moves">
+    <columns>
+      <!-- column-name idx -->
+      <column type="gint"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+      <!-- column-name use -->
+      <column type="gboolean"/>
+    </columns>
+  </object>
+  <object class="GtkListStore" id="store_tree_monsters_starters">
     <columns>
       <!-- column-name idx -->
       <column type="gint"/>
@@ -3280,21 +3300,94 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">10</property>
                                 <child>
-                                  <object class="GtkButton" id="help_pokemon_monsters_enabled">
+                                  <!-- n-columns=2 n-rows=2 -->
+                                  <object class="GtkGrid">
                                     <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                    <property name="halign">start</property>
-                                    <property name="valign">center</property>
-                                    <property name="margin-left">10</property>
-                                    <property name="margin-start">10</property>
-                                    <property name="margin-top">10</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="margin-end">10</property>
                                     <child>
-                                      <object class="GtkImage">
+                                      <object class="GtkButton" id="help_pokemon_monsters_enabled">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="receives-default">True</property>
+                                        <property name="halign">start</property>
+                                        <property name="valign">center</property>
+                                        <property name="margin-left">10</property>
+                                        <property name="margin-start">10</property>
+                                        <property name="margin-top">10</property>
+                                        <child>
+                                          <object class="GtkImage">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="icon-name">skytemple-help-about-symbolic</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">0</property>
+                                        <property name="top-attach">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkButton">
+                                        <property name="label" translatable="yes">Copy from Starter Pool</property>
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="receives-default">True</property>
+                                        <property name="halign">end</property>
+                                        <property name="valign">center</property>
+                                        <signal name="clicked" handler="on_btn_pokemon_copy_for_monsters" object="store_tree_monsters_starters" swapped="no"/>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="icon-name">skytemple-help-about-symbolic</property>
+                                        <property name="halign">end</property>
+                                        <property name="spacing">10</property>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Reset to Default</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_reset" object="store_tree_monsters_monsters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Select None</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <property name="halign">end</property>
+                                            <property name="valign">center</property>
+                                            <property name="hexpand">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_select_none" object="store_tree_monsters_monsters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
                                       </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <placeholder/>
                                     </child>
                                   </object>
                                   <packing>
@@ -3378,6 +3471,193 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                               </object>
                               <packing>
                                 <property name="position">2</property>
+                                <property name="tab-fill">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                                <child>
+                                  <!-- n-columns=2 n-rows=2 -->
+                                  <object class="GtkGrid">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="margin-end">10</property>
+                                    <child>
+                                      <object class="GtkButton" id="help_pokemon_starters_enabled">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="receives-default">True</property>
+                                        <property name="halign">start</property>
+                                        <property name="valign">center</property>
+                                        <property name="margin-left">10</property>
+                                        <property name="margin-start">10</property>
+                                        <property name="margin-top">10</property>
+                                        <child>
+                                          <object class="GtkImage">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="icon-name">skytemple-help-about-symbolic</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">0</property>
+                                        <property name="top-attach">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkButton">
+                                        <property name="label" translatable="yes">Copy from Pokémon Pool</property>
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="receives-default">True</property>
+                                        <property name="halign">end</property>
+                                        <property name="valign">center</property>
+                                        <signal name="clicked" handler="on_btn_pokemon_copy_for_starters" object="store_tree_monsters_monsters" swapped="no"/>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">end</property>
+                                        <property name="spacing">10</property>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Reset to Default</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_reset" object="store_tree_monsters_starters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton">
+                                            <property name="label" translatable="yes">Select None</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                            <property name="halign">start</property>
+                                            <property name="valign">end</property>
+                                            <property name="hexpand">True</property>
+                                            <signal name="clicked" handler="on_btn_pokemon_select_none" object="store_tree_monsters_starters" swapped="no"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <placeholder/>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkScrolledWindow">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">True</property>
+                                    <property name="hscrollbar-policy">never</property>
+                                    <property name="shadow-type">in</property>
+                                    <child>
+                                      <object class="GtkTreeView" id="tree_pokemon_starters_enabled">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">True</property>
+                                        <property name="margin-top">5</property>
+                                        <property name="hexpand">True</property>
+                                        <property name="vexpand">True</property>
+                                        <property name="model">store_tree_monsters_starters</property>
+                                        <property name="search-column">0</property>
+                                        <child internal-child="selection">
+                                          <object class="GtkTreeSelection"/>
+                                        </child>
+                                        <child>
+                                          <object class="GtkTreeViewColumn">
+                                            <property name="title" translatable="yes">ID</property>
+                                            <child>
+                                              <object class="GtkCellRendererText"/>
+                                              <attributes>
+                                                <attribute name="text">0</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkTreeViewColumn">
+                                            <property name="title" translatable="yes">Use?</property>
+                                            <child>
+                                              <object class="GtkCellRendererToggle" id="cr_pokemon_starters_enabled_use">
+                                                <signal name="toggled" handler="on_cr_pokemon_starters_enabled_use_toggled" swapped="no"/>
+                                              </object>
+                                              <attributes>
+                                                <attribute name="active">2</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkTreeViewColumn">
+                                            <property name="title" translatable="yes">Pokémon</property>
+                                            <child>
+                                              <object class="GtkCellRendererText"/>
+                                              <attributes>
+                                                <attribute name="text">1</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">True</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="position">3</property>
+                              </packing>
+                            </child>
+                            <child type="tab">
+                              <object class="GtkLabel">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="label" translatable="yes">Starter Pool</property>
+                              </object>
+                              <packing>
+                                <property name="position">3</property>
                                 <property name="tab-fill">False</property>
                               </packing>
                             </child>
@@ -3475,7 +3755,7 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                 </child>
                               </object>
                               <packing>
-                                <property name="position">3</property>
+                                <property name="position">4</property>
                               </packing>
                             </child>
                             <child type="tab">
@@ -3485,7 +3765,7 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
                                 <property name="label" translatable="yes">Move Pool</property>
                               </object>
                               <packing>
-                                <property name="position">3</property>
+                                <property name="position">4</property>
                                 <property name="tab-fill">False</property>
                               </packing>
                             </child>

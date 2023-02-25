@@ -22,6 +22,7 @@ from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
 from skytemple_files.common.spritecollab.schema import Credit
+from skytemple_files.common.string_codec import can_be_encoded
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import create_file_in_rom
 from skytemple_files.patch.patches import Patcher
@@ -70,7 +71,14 @@ FOUR_NPC_Y = u16(21)
 
 
 def escape(s):
-    return s.replace('"', '\\"').replace("'", "\\'")
+    """
+    Returns a modified version of s that can be written to an EoS script.
+    Quotes and double quotes are escaped with '\'. Characters that cannot be represented
+    using the PMD font are removed.
+    """
+    new_str = s.replace('"', '\\"').replace("'", "\\'")
+    new_str = "".join([c for c in new_str if can_be_encoded(c)])
+    return new_str
 
 
 class SeedInfo(AbstractRandomizer):

@@ -32,7 +32,7 @@ additional_datas = [
 ]
 
 additional_binaries = [
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libcrypto-1_1*.dll"), '.'),
+    (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libcrypto*.dll"), '.'),
     (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libssl-1_1*.dll"), '.'),
     (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libgmp-10.dll"), '.'),
     (os.path.join(site_packages, 'skytemple_rust*.pyd'), '.'),

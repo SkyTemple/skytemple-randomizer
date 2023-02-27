@@ -480,13 +480,13 @@ class ConfigFileLoader:
                     elif field == 'tms_hms' and field_type == bool:
                         target[field] = True
                     elif field == 'max_sticky_chance':
-                        target[field] = 100
+                        target[field] = 10
                     elif field == 'max_mh_chance':
-                        target[field] = 100
+                        target[field] = 10
                     elif field == 'max_hs_chance':
-                        target[field] = 100
+                        target[field] = 10
                     elif field == 'max_ks_chance':
-                        target[field] = 100
+                        target[field] = 10
                     elif field == 'min_floor_change_percent':
                         target[field] = 0
                     elif field == 'max_floor_change_percent':

@@ -69,9 +69,6 @@ class FunArtistCredit(Enum):
         return f'FunArtistCredit["{self.name}"]'
 
 
-RANDOM_PORTRAIT = 'random.png'
-
-
 class FunPortrait(Enum):
     PIKACHU = 25, FunArtistCredit.DECIMETER
     ODDISH = 43, FunArtistCredit.SPARKS
@@ -152,25 +149,8 @@ def is_fun_allowed():
     return now.month == 4 and now.day == 1
 
 
-random_chosen_three: Optional[List[CustomFunPortrait]] = None
-
-
-def _init_random_chosen_three() -> List[CustomFunPortrait]:
-    global random_chosen_three
-    if random_chosen_three is None:
-        s = list(x.value for x in FunPortrait)
-        random_chosen_three = [
-            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
-            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
-            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
-            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
-            CustomFunPortrait(choice(s), RANDOM_PORTRAIT, FunArtistCredit.NA),
-        ]
-    return random_chosen_three
-
-
 def _get_fun_portraits() -> Sequence[FunPortraitLike]:
-    return _init_random_chosen_three() + list(FunPortrait)
+    return list(FunPortrait)
 
 
 def get_allowed_md_ids(base_set: Set[u16], roster: Roster) -> List[u16]:

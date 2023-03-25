@@ -1,4 +1,4 @@
-__version__ = '1.4.7'
+__version__ = '1.4.8'
 from setuptools import setup, find_packages
 
 # README read-in

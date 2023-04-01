@@ -44,7 +44,7 @@ from skytemple_files.dungeon_data.mappa_bin.validator.validator import DungeonVa
 from skytemple_files.dungeon_data.mappa_g_bin.mappa_converter import convert_mappa_to_mappag
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons, DungeonDefinition
 
-from skytemple_randomizer.config import DungeonWeatherConfig, RandomizerConfig, DungeonModeConfig
+from skytemple_randomizer.config import RandomizerConfig, DungeonModeConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.common.items import randomize_items
@@ -257,21 +257,16 @@ class DungeonRandomizer(AbstractRandomizer):
         return FileType.MAPPA_BIN.get_trap_list_model()([0] + ws)
 
     def _randomize_weather(self, original_layout, dungeon_id) -> u8:
-        if not self.config['dungeons']['settings'][dungeon_id]['randomize_weather']:
+        if not self.config['dungeons']['weather'] or not self.config['dungeons']['settings'][dungeon_id]['randomize_weather']:
             return original_layout.weather
-        if self.config['dungeons']['weather'] == DungeonWeatherConfig.NO_RANDOMIZE:
-            return original_layout.weather
-        if self.config['dungeons']['weather'] == DungeonWeatherConfig.ONLY_RANDOM:
-            return MappaFloorWeather.RANDOM.value
-        if self.config['dungeons']['weather'] == DungeonWeatherConfig.SHUFFLED:
-            return choice(list(MappaFloorWeather)).value
-        if self.config['dungeons']['weather'] == DungeonWeatherConfig.SHUFFLED_LOWER_BAD_CHANCE:
-            weather = choice(list(MappaFloorWeather))
-            # Re-roll once if we get bad weather
-            if weather in (MappaFloorWeather.HAIL, MappaFloorWeather.SANDSTORM, MappaFloorWeather.RANDOM):
-                weather = choice(list(MappaFloorWeather))
+        if randrange(100) < self.config['dungeons']['random_weather_chance'].value:
+            possible_weathers = list(MappaFloorWeather)
+            possible_weathers.remove(MappaFloorWeather.CLEAR)
+            weather = choice(possible_weathers)
             return weather.value
-        raise RuntimeError("Invalid weather config value.")
+        else:
+            return MappaFloorWeather.CLEAR.value
+
 
     def _randomize_floor_count(self, mappa: MappaBinProtocol):
         if self.config['dungeons']['min_floor_change_percent'].value == 0 and self.config['dungeons']['max_floor_change_percent'].value == 0:

@@ -184,15 +184,17 @@ class DungeonRandomizer(AbstractRandomizer):
 
     def _randomize_layout(self, original_layout: MappaFloorLayoutProtocol, dungeon_id: int):
         tileset = choice(ALLOWED_TILESET_IDS)
-        structure = choice(list(MappaFloorStructureType))
+        possible_structures = list(MappaFloorStructureType)
+        possible_structures.remove(MappaFloorStructureType.TWO_ROOMS_ONE_MH)
+        structure = choice(possible_structures)
         allow_monster_houses = self.config['dungeons']['settings'][dungeon_id]['monster_houses']
         randomize_iq = self.config['dungeons']['settings'][dungeon_id]['enemy_iq']
         # Make Monster Houses less likely by re-rolling 50% of the time when it happens
-        if structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH:
+        if structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE:
             if choice((True, False)):
                 structure = choice(list(MappaFloorStructureType))
-        while not allow_monster_houses and (structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE or structure == MappaFloorStructureType.TWO_ROOMS_ONE_MH):
-            structure = choice(list(MappaFloorStructureType))
+        while not allow_monster_houses and (structure == MappaFloorStructureType.SINGLE_MONSTER_HOUSE):
+            structure = choice(possible_structures)
         return FileType.MAPPA_BIN.get_floor_layout_model()(
             structure=structure.value,
             room_density=i8(randrange(3, 21)),
@@ -203,7 +205,7 @@ class DungeonRandomizer(AbstractRandomizer):
             initial_enemy_density=i8(randrange(1, 7)),
             kecleon_shop_chance=u8(randrange(0, self.config['dungeons']['max_ks_chance'].value + 1)),
             monster_house_chance=u8(randrange(0, self.config['dungeons']['max_mh_chance'].value + 1) if allow_monster_houses else 0),
-            unused_chance=u8(randrange(0, 101)),
+            unused_chance=u8(randrange(0, 11)),
             sticky_item_chance=u8(randrange(0, self.config['dungeons']['max_sticky_chance'].value + 1)),
             dead_ends=choice((True, False)),
             secondary_terrain=u8(randrange(0, 30)),

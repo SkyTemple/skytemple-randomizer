@@ -23,7 +23,7 @@
     "max_hs_chance": 10,
     "max_ks_chance": 10,
     "settings": {
-      "0": {"randomize": true, "unlock": true, "randomize_weather": true, "monster_houses": true, "enemy_iq": true },
+      "0": {"randomize": true, "unlock": false, "randomize_weather": true, "monster_houses": true, "enemy_iq": true },
       "1": {"randomize": true, "unlock": false, "randomize_weather": false, "monster_houses": false, "enemy_iq": false },
       "2": {"randomize": true, "unlock": false, "randomize_weather": false, "monster_houses": false, "enemy_iq": false },
       "3": {"randomize": true, "unlock": false, "randomize_weather": false, "monster_houses": true, "enemy_iq": false },

@@ -93,13 +93,6 @@ class DungeonModeConfig(Enum):
     GROUPED_BY_DUNGEON = 1
 
 
-class DungeonWeatherConfig(Enum):
-    NO_RANDOMIZE = 0
-    ONLY_RANDOM = 1
-    SHUFFLED = 2
-    SHUFFLED_LOWER_BAD_CHANCE = 3
-
-
 class DungeonSettingsConfig(TypedDict):
     randomize: bool
     unlock: bool
@@ -111,7 +104,7 @@ class DungeonSettingsConfig(TypedDict):
 class DungeonsConfig(TypedDict):
     mode: DungeonModeConfig
     layouts: bool
-    weather: DungeonWeatherConfig
+    weather: bool
     items: bool
     pokemon: bool
     traps: bool
@@ -122,6 +115,7 @@ class DungeonsConfig(TypedDict):
     max_mh_chance: IntRange
     max_hs_chance: IntRange
     max_ks_chance: IntRange
+    random_weather_chance: IntRange
     settings: Dict[int, DungeonSettingsConfig]
     items_enabled: List[int]
 
@@ -133,7 +127,7 @@ class DungeonsConfigDoc:
     layouts = \
         """Whether or not to randomize general aspects of the dungeon's layout. This also includes tileset and music and most general settings."""
     weather = \
-        """Whether or not to randomize weather. You can choose to have harmful weather less option and you can also choose to have the game roll random weather, every time a floor is entered."""
+        """Whether or not to randomize weather."""
     items = \
         """Whether or not to randomize items on the floor, in shops, in monster houses and buried."""
     pokemon = \
@@ -163,6 +157,8 @@ class DungeonsConfigDoc:
         """Hidden stairs chance will be randomized between 0% and this value (inclusive)."""
     max_ks_chance = \
         """Kecleon shop chance will be randomized between 0% and this value (inclusive)."""
+    random_weather_chance = \
+        """Chance of applying a random weather that isn't "clear" to each floor. If the chance doesn't pass, "clear" weather will be used instead."""
     settings = \
         """Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.
         You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked. 
@@ -487,6 +483,8 @@ class ConfigFileLoader:
                         target[field] = 10
                     elif field == 'max_ks_chance':
                         target[field] = 10
+                    elif field == 'random_weather_chance':
+                        target[field] = 33
                     elif field == 'min_floor_change_percent':
                         target[field] = 0
                     elif field == 'max_floor_change_percent':

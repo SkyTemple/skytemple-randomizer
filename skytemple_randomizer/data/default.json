@@ -11,7 +11,7 @@
   "dungeons": {
     "mode": 0,
     "layouts": true,
-    "weather": 2,
+    "weather": true,
     "items": true,
     "pokemon": true,
     "traps": true,
@@ -22,6 +22,7 @@
     "max_mh_chance": 6,
     "max_hs_chance": 10,
     "max_ks_chance": 10,
+    "random_weather_chance": 33,
     "settings": {
       "0": {"randomize": true, "unlock": false, "randomize_weather": true, "monster_houses": true, "enemy_iq": true },
       "1": {"randomize": true, "unlock": false, "randomize_weather": false, "monster_houses": false, "enemy_iq": false },

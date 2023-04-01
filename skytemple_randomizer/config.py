@@ -485,7 +485,7 @@ class ConfigFileLoader:
                     elif field == 'max_sticky_chance':
                         target[field] = 10
                     elif field == 'max_mh_chance':
-                        target[field] = 10
+                        target[field] = 6
                     elif field == 'max_hs_chance':
                         target[field] = 10
                     elif field == 'max_ks_chance':

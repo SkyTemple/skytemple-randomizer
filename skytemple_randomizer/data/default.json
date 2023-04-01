@@ -221,12 +221,12 @@
   },
   "locations": {
     "randomize": true,
-    "first": "Wealthy\nProsperous\nAffluent\nAmusing\nEntertaining\nGoofy\nHilarious\nLaughable\nLudicrous\nNonsensical\nWhimsical\nHysterical\nWitty\nTowering\nHuge\nLarge\nGreat\nGigantic\nColossal\nGiant\nMassive\nTremendous\nFull\nCritical\nCrucial\nEssential\nFundamental\nMeaningful\nPrimary\nSignificant\nAbandoned\nBad\nBoring\nBrilliant\nCalm\nClassic\nClean\nCloudy\nCold\nCommon\nCrowded\nDangerous\nDeep\nDazzling\nDark\nDemanding\nDirty\nElastic\nElectric\nEmpty\nEuphoric\nEvil\nExotic\nFamous\nEverlasting\nEvil\nFancy\nFatal\nFilthy\nFlawed\nHandsome\nLuxurious\nMediocre\nMiserable\nNasty\nNautical\nNeat\nNice\nOrganic\nOrnate\nPrecious\nOrdinary\nQuestionable\nSad\nSandy\nSacred\nSecret\nPepperoni\nVulpix's",
+    "first": "Wealthy\nProsperous\nAffluent\nAmusing\nEntertaining\nGoofy\nHilarious\nLaughable\nLudicrous\nNonsensical\nWhimsical\nHysterical\nWitty\nTowering\nHuge\nLarge\nGreat\nGigantic\nColossal\nGiant\nMassive\nTremendous\nFull\nCritical\nCrucial\nEssential\nFundamental\nMeaningful\nPrimary\nSignificant\nAbandoned\nBad\nBoring\nBrilliant\nCalm\nClassic\nClean\nCloudy\nCold\nCommon\nCrowded\nDangerous\nDeep\nDazzling\nDark\nDemanding\nDirty\nElastic\nElectric\nEmpty\nEuphoric\nEvil\nExotic\nFamous\nEverlasting\nEvil\nFancy\nFatal\nFilthy\nFlawed\nHandsome\nLuxurious\nMediocre\nMiserable\nNasty\nNautical\nNeat\nNice\nOrganic\nOrnate\nPrecious\nOrdinary\nQuestionable\nSad\nSandy\nSacred\nSecret\nPepperoni\nVulpix's\nLigma",
     "second": "Wood\nForest\nCopse\nBush\nTrees\nStand\nSwamp\nMarsh\nWetland\nFen\nBog\nMoor\nHeath\nFells\nMorass\nJungle\nRainforest\nCloudforest\nPlains\nFields\nGrass\nGrassland\nSavannah\nFloodplain\nFlats\nPrairie\nTundra\nIceberg\nGlacier\nSnowfields\nHills\nHighland\nHeights\nPlateau\nBadland\nRidge\nHollow\nValley\nMountain\nPeak\nSummit\nRise\nPass\nNotch\nCrown\nMount\nCanyon\nCliff\nBluff\nRavine\nGully\nGorge\nDesert\nScrub\nWaste\nWasteland\nSands\nDunes\nVolcano\nCrater\nCone\nGeyser\nLavafields\nOcean\nSea\nCoast\nBeach\nShore\nStrand\nBay\nPort\nHarbour\nFjord\nVike\nCove\nShoals\nLagoon\nFirth\nBight\nGulf\nInlet\nLoch\nBayou\nDock\nPier\nAnchorage\nJetty\nWharf\nMarina\nLanding\nMooring\nBerth\nQuay\nStaith\nRiver\nStream\nCreek\nBrook\nWaterway\nRill\nDelta\nBank\nRunoff\nChannel\nBend\nMeander\nBackwater\nLake\nPool\nPond\nDugout\nFountain\nSpring\nOasis\nWell\nCistern\nReservoir\nWaterfall\nFalls\nRapids\nCataract\nCascade\nBridge\nCrossing\nCauseway\nViaduct\nAquaduct\nFord\nFerry\nDam\nDike\nBar\nCanal\nDitch\nPeninsula\nIsthmus\nIsland\nIsle\nSandbar\nReef\nAtoll\nArchipelago\nCay\nShipwreck\nDerelict\nClearing\nMeadow\nGrove\nGlade\nFairyring\nRuin\nAcropolis\nDesolation\nRemnant\nRemains\nHenge\nCairn\nCircle\nMound\nBarrow\nEarthworks\nPetroglyphs\nLookout\nAerie\nPromontory\nOutcropping\nLedge\nOverhang\nMesa\nButte\nOutland\nOutback\nTerritory\nReaches\nWild\nWilderness\nExpanse\nView\nVista\nTableau\nSpectacle\nLandscape\nSeascape\nAurora\nLandmark\nBattlefield\nTrenches\nGambit\nFolly\nConquest\nClaim\nMuster\nPost\nPath\nRoad\nTrack\nRoute\nHighway\nWay\nTrail\nLane\nPike\nAlley\nStreet\nAvenue\nBoulevard\nPromenade\nEsplande\nBoardwalk\nCrossroad\nJunction\nIntersection\nTurn\nCorner\nPlaza\nTerrace\nSquare\nCourtyard\nCourt\nPark\nMarketplace\nBazaar\nFairground\nRealm\nLand\nCountry\nNation\nState\nProtectorate\nEmpire\nKingdom\nPrincipality\nDomain\nDominion\nDemesne\nProvince\nCounty\nDuchy\nBarony\nBaronetcy\nMarch\nCanton\nEarldom\nFief\nShire\nPit\nHole\nAbyss\nSinkhole\nCrack\nChasm\nScar\nRift\nTrench\nFissure\nCavern\nCave\nGallery\nGrotto\nKarst\nMine\nQuarry\nVein\nDarkness\nShadow\nDepths\nVoid\nTomb\nGrave\nCrypt\nSepulchre\nMausoleum\nOssuary\nBoneyard\nGraveyard\nCemetery\nMaze\nLabyrinth\nNest\nBurrow\nLair\nDen\nBolt-hole\nWarren\nRoost\nRookery\nHome\nRest\nHideout\nHideaway\nRetreat\nSafehouse\nSanctuary\nRespite\nLodge\nSlum\nShantytown\nGhetto\nCamp\nBivouac\nCampsite\nEncampment\nTepee\nTent\nWigwam\nShelter\nLean-to\nYurt\nHouse\nMansion\nEstate\nVilla\nHut\nPalace\nHovel\nManor\nLonghouse\nCottage\nCabin\nParsonage\nRectory\nVicarge\nFriary\nPriory\nAbbey\nMonastery\nCloister\nConvent\nHermitage\nCastle\nKeep\nFort\nHold\nChateau\nOutpost\nRedoubt\nTown\nVillage\nHamlet\nCity\nSettlement\nCommune\nTemple\nShrine\nCathedral\nTabernacle\nArk\nSanctum\nParish\nChapel\nPyramid\nZiggurat\nPrison\nJail\nDungeon\nOubliette\nHospital\nHospice\nStocks\nGallows\nAsylum\nMadhouse\nBedlam\nStadium\nArena\nCircus\nAcademy\nHall\nOpening\nDoor\nGate\nEntrance\nMaw\nTunnel\nPassage\nCorridor\nHallway\nChute\nSlide\nTube\nTrapdoor\nTower\nPillar\nColumn\nFire\nFlame\nFireplace\nFurnace\nStove\nWindow\nGrate\nSecret\nVulpix"
   },
   "chapters": {
     "randomize": true,
-    "text": "oh god oh fuck\ni am no longer baby\ni am baby\nThis is the part\\nwhere he kills you\nFunny Title\nWRYYYYYYYYY\nThe Horror Won't End\nThe Kind-Hearted\\nHero Leomon Dies\nThe One With\\nThe Large Hole\nYou Will Cry or Else\nAdventures In\\nE For Everyone\nFatal Trouble\nReflex Retreat\nBattle of Impact\nVendetta of Payback\nHurricane Causes\\nDevastation\nIs Terrible\\nAnd Here's Why\nDungeon At 3 AM\\nChallenge Gone Wrong\nDoom seeds are bugged,\\nthey fill belly!\nThe Dashing Wanderer\nPrologue\nEpilogue\nI wanna say goodbye\nError: Chapter\\nnot randomized\nNo\nYes\nMaybe?\nChapter 3\nSpoiler: You die\nFiller Arc\nI don't even know\nMinecraft\nDiglett plays\\nhooky\nSaxaphone Sun\nI Do Not Vibe\\nWith This Universe\nJoin Our Discord\nSecret of\\nWigglytuff's Guild\nThose Who Come To\\nThis Planet and Those Who\\nLive on This Planet\nTeam Skull Dies lol\nOh no!\\nAnyway\nThe Good Chapter\nFirst Chapter\nFinal Chapter\nWill it ever end?\nFilled with Despair\nFuck the Oscars\nWash Your Hands\n358/2 Days Later\nBirth by Chain of Coded\nNew Funky Mode\n(Yeah, what the hell was\\nwith that first chapter \\ntitle? Seriously...)\nIt's really fucking bad\nGoing to the\\nhuman world\nDigimon attack!\nThe invasion of\\nthe Ultrabeast\nPMD\\nChristmas Special\nThe Beach Episode\nThe Hot Springs\\nEpisode\nComputer Warrior\\nPorygon\nThe Patrat Day\nPhantom Menace\nVulpix\n<Insert meme here>\nStealing from\\nKecleon is fun!\nWigglytuff dies\\nat the end\nWhy even bother?\nSunflora is sus\nGates is the best PMD\neeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\nSeveral people\\nare typing...\nYou're the\\nbad guy?\nYour partner\\nis a leaper\nLoudred has how\\nmany children???\nSo Chatot is\\nGod now\nTeam Skull are\\nthe Chosen Ones\nThe Relic Fragment Was\\nJust a Normal Rock\\nAfter All\nThe Perfect Apple\\nis a lie\nThere are no\\nbananas, its a myth\nPiracy is no Party\nThe death\\nof Bidoof\nThe D&D episode\nError: reset DS\\nand try again\nJoker's Trick\nWhen the programer\\ngets drunk\nDarkrai Used\\nSucker Punch\nNo Solicitors\nKidnapping for\\nFun and Profit\nTime to Look\\nBetween Their Legs\nTechnically,\\nthis is HM07\nCutscene Incompetence\nCo-Workers\\nYou Hate\nYou Might Need\\na Little Prep\nHave You\\nTried Defog?\nRailroading\nThe Part Where\\nHe Backstabs You\nRopes Can Be Cut\\nBy Sharp Objects\nCommunication Would\\nHave Been Nice\nThat is\\nThe Sun, Yes\nHot Spring\\nEpisode\nChatot Should\\nLearn Protect\nBut What If\\nYou Shot Him\nBasic Preparation\\nis Required\nFear and Loathing\\nin Treasure Town\nDrowzee the Meanie\nBidoof Ruined Everything\nGrovyle the Groovy\nFlying on a Disc\nBidoof's Butterfly Effect\nChatot Is A Piece of Crap\nI'm Fainting Inside\nBedtime\nSay No To Chimecho\nGo the F**k to Sloop\nLet's Trust This Man\nSo How's Your\\nRandomized Run Going?\nBreaking The Laws\\nOf Physics\nYour Best Nightmare\nVNGHHJKDFGHKMFCLKDHUDKLGDGIZWEFGDKZWEJDVHBDMJWD\n(Dimensional screaming)\nOops,\\nWrong Chapter\nOh God,\\nthe Horror\nExplorers of Time\\nto Take a Piss\nGee Willikers,\\nCrobatman!\nSpoilers:\\nDusknoir is the Antagonist!\nMy Uncle Works\\nfor Spike Chunsoft\nThe Sentence: Guild-ty\\nFor Life Imprisonment!\nIf you die in the game,\\nyou die for real\nWalucarioware:\\nMegaMicro Dungeons\nButt Stallion\\nThe Shiny Ponyta!\nI'm so Hungry I Could\\nEat an Octillery\nYou Have Died\\nof Dysentery.\nFurry Isekai\nThreat found -\\naction needed\\nAffected Items:\\nskytemple.exe\nHey, you,\\nyou're finally awake.\nNothing Bad Ever Happens\\nTo the Pokepals\nThis game is sponsored\\nby Raid Shadow Legends!\nballistic markings are like\\nthe fingerprints of a gun\nI'm Really\\nFeeling It\nancient sword of\\nthe meth king\nCan't Have\\nShit In Detroit\nHold B to\\nspeed up dialogue!\nOh no\\nnot again\nno\ntheir screams,\\nthey wont leave my head\nare time gears\\nedible?\ni dont like\\nChasm Cave very much\ni saw a Mud Crab\\nthe other day\nthis is what\\nthe left wants\nThe screams Mason,\\nwhat do they mean?\nalso try:\\nPMD Abridged\nso hows your\\nday going?\nPlot-twist:\\nYou do things\nDon't put your cat\\nin the microwave\nMax Elixirs,\\nNow administered orally\nGuys, the main character\\ndies at the end\nThe chapter\\nbefore you die\nDon't forget about\\nthe power of friendship!\nBidoof is a meanie he\\nliterally ate my rock\nTime Broke Again\nHey at least\\nit's not Chapter 6\nFuck You,\\n*Un-Primal's Your Dialga*\nSpoilers:\\nYou're A Human\nDarkness Within Darkness\nThe Same Flashback\\n17 Times\nWhy Do I Have the\\nDimensional Scream\\nAnyway?\nThe Guild\\nTakes Manhattan\nGrovyle takes\\nShock Therapy\nAurora\\nBorealis\nSteamed\\nHams\nTeam\\nStinky Skull\nHOLY CRAP\\nLAPRAS FLIES\nTotally Not\\nThe Last Adventure\nregretting your starter\\nchoice, arent you?\nGrovyle Fucking Dies\nGrovyle Fucking Lives\nBidoof destroys\\ntime and space\nIt's in Footprint Runes,\\nLet Me Read It\ngo commission\\nfledermaus\nthats a joke dont\\nput that in\nThrough the Looking Glass,\\nand What Your Partner\\nFound There\nwhy do they call it oven\\nwhen you of in the cold\\nfood of out hot\\neat the food\nHot Team Charm\\nSingles in your area!\nNow it gets\\nREALLY anime\nCelebi's down\\nbad for Dusknoir\nCapitalist Guild\nWigglytuff Says\\nTrans Rights\nNOW THIS IS\\nPOD RACING!!\nThe One Where Chatot\\nIs An A@@hole\nNot again, Grovyle's\\ngonna kill me\nNah...\nThe Quick and the Raging\\nstarring\\nGrovyle and Dusknoir\nHello There!\nYet Another PMD Episode\\nStarring Eevee?...\nJohn Cena and the\\nQuest for the REDACTED\nChatot Saw You Get\\nKidnapped He Was\\nRight There\nTreasure Town\\nDrift\nOn my way to\\nkidnap Grovyle\nAccording to Twitter,\\ngetting a Sassy nature\\nis not morally correct\nDon't step on\\nany Grudge Traps\nOmae wa\\nmou shindeiru.\nZA WARUDO!\nRecruit Drifloon\\nYou Won't Regret It!\nHow many Reviver Seeds\\ndo you have right now?\nThe Guild\\nStrikes Back\nTime to\\nabandon ship\nOops,\\nAll Oren Berries!\nWait,\\nhow am i breathing\\nunderwater?\nSpell\\n'stun seed'\\nbackwards\nWelcome to IKEA\nPurple Kecleo\\nisn't shiny\nwhy are we still here?\\nJust to suffer?\nDon't start with \\nKecleon worst mistake of\\nmy life\nwait this isnt google\nChapter Name\nWhatever Chapter 3\\nwas called\nDusknoir,\\nMore Like SUSknoir\nAAAAA\nWe're going to jail\nYou have\\nbeen warned\nthe agony\\nnever ends\nfuck it\nGrovyle commits\\nwar-crimes\nGrovyle pays for\\nhis war-crimes\nChatot commits\\ntax fraud\nWait, isn't this\\na game for children?\ngrovyle says fuck\nThe Reason This\\nGame is Rated M\nThe other chapter\\nwas better\nI want 2\\nnumber 9s\nI Walk to Burger King\nD E E P E S T L O R E\nMeet me in the\\nDenny's parking lot\\nat 3:00\nTHERE IS A POINT WHERE\\nWE NEEDED TO STOP\\nAND WE HAVE\\nCLEARLY PASSED IT\nMonster house\\nin 3... 2... 1...\nI bet $5 you can’t\\nspeedrun this chapter\nDialga's\\nEmo Phase\nDialga had a fucking\\nheart attack and\\nfucking died.\nSpell ICUP\nthe beach episode\nX-Eye seeds are\\none heck of\\na drug\nLet Bidoof\\nSay Fuck\nYou're up late,\\nagain\nWhat abour your\\nschool homework?\nSlugma\nForget about\\nFreeman\nDecimeter's\\nTower\nKris!\\nGet the banana!\nHey Niko,\\nLet’s Go Bowling!\nSandslash\\nFor Hire\n19USD fortnite card,\\nwho wants it?\noutdated meme\nDead chat xD\nWar…\\nWar Never Changes.\nBagon\nThreads may be temporary,\\nbut comedy is eternal\n\"I Can’t Believe\\nIt's Not Vanilla!\"\nI remember when we\\nhad Chestnuts\nChocolate,\\nwith/without Nuts\nWe need\\nmore channels\nGet Your Perfect\\nApples Here!\nTime for a\\nnew offtopic\nThis is where I watch\\nmy parents die,\\npartner.\ni dont have much time,\\nthe perfect apple\\nin item form\\ncan be found in-\nA S S\nHere comes General\\nA. S. Swipe\nI thlamed my\\nThpewpa in the car door\nPotassium\nCapypara was here,\\nDecimeter is a loser.\nAn Uneasy Truce\nDouble Trucies\nNo Triple Trucies\nWould you like\\nto eat moss?\nYou prepetuated the\\ncycle of moss eating\nFuck the Magnezone,\\nComming Straight from\\nthe Underground\nLuigi do be\\nballin tho\nSave data is\\nstored in the balls\nSorry,\\ncome back when\\nyour a little mmm richer\nCan I offer you a\\nReviser Seed in this\\ntrying time?\nSigned, Lancer\nHelp, I'm trapped in this\\nchapter title and I can't\\nget out\nSomewhere\\nin Nevada\nThe reason\\why u furry\nToasters\\ntoast toast\nhe was so ugly\\nthat everyone died.\nUsing attract on\\nmy partner in confusion\\nGONE WRONG\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nSeth Rogan\\n'Wigglytuff'\nIt's Gonna\\nGet Weird\nDarkrai was Gaster\\nThis Whole Time!\nCroagunk\\nis Ness\nDUSKNOIR\\nBETRAYED US!\nThe World Shall\\nTaste My Eggs!\nBeware the Miltank!\\nNot all Milk is Enriched!\nThis Rock Looks\\nLike Tibet!\nOncelerification\\nBeam\nyou stoopid\nRemembered to\\nuse your gummies?\nNothing personal,\\nkid.\nis that a jojo\\nreference?\nYo Chatot can I get\\nsome perfect apples?\nhow it feels\\nto chew 5 gum\nHaha magnitude\\ngo BRRRRRR\nWhy do I hear Dialga’s\\nFight to the Finish?\nSTOP POSTING ABOUT\\nTIME GEARS! IM TIRED\\nOF SEEING THEM!\nGreat canyo-\\nwait wrong game\nah f*ck,\\ni cant believe\\nyou've done this.\nI’ve come to make an\\nannouncement-\\nwait wrong script\nI didn't not hit her.\\nIt's not true!\noh hi mark\nYou are Tearing\\nMe Apart Dusknoir!!\nim running out of ideas,\\njust beat the game tbh\nChris Pratt\nYo dude check out these\\nweird yellow orbs\\n floating around me\nchange da world\\nmy final message\nDIAMONDS!!!\ngrovyle my beloved...\nhardmode\nHey Vsauce, Michael here.\\nHow much pain are you\\nable to endure?\nOne Eternity Later\nayo the pizza here\nI hope you saved\\nup some\\nreviver seeds\nnot funny,\\ndidn't laugh\nDusknoir actin a bit sus,\\ncan we vote em out?\nHey bro why is\\ndon't ever forget\\nfading in\nIf bread in french is pain,\\nthen I own a whole bakery\nAlso try\\nMinecraft!\nSo how's the weather?\nno u\nOnce upon a time\nFor their neutral special\\npartner wields a gun\nYou got games\\non your phone?\nOnly 1 percent\\ncan pass\\nthis chapter\nHeavy is dead\nItemizer orb moment\nWut is this\ni peed on\\nthe floor\nfighting the final boss\\nat 3am challenge\\nGONE SEXUAL\nHey Wigglytuff\\nwe're out of\\nPerfect Apples-\nHE STOLE THE\\nF*CKING TIME GEARS\nYoom-Tah,\\nbitch\nNow's your chance to\\nbe a big shot!\nProceed\n...I can still\\nhear their voice...\nFollow SkyTemplePMD\\non Twitter\nThe chapter\\nwhere Joe dies\ni use arch\\nbtw\nI only play \\nPMD for the lore.\\nI swear\nHey, Vsauce, Michael\\nhere. The future\\nis bright. Or is it?\nyou are dead.\\nnot big surprise.\nPOW!\\nyou are dead!\nPartner?\\nWhere's the door hole?\nGOD FUCKING damnit\\nKris, where the FUCK\\nare we?\nMDGKSNGKA\nQuiet people\\npiss me off.\nQuiet people\\nneed more love\\ntoo\nComplete.\\nGlobal.\\nParalization.\nsans\\n\"befriended\"\\nyour partner\nShitting Louder\nHappy Hour?\\nmore like\\nCrappy Hour!\nLater\nAs you can see,\\nthe world is\\nvery fucked!\nIs it over?\nIt's over my friend,\\nlet's face it,\\nyou're a furry.\nIt's been\\n3,000 years...\nGrovyle, its been\\n5 years. You still owe\\nme 16 dollars.\nI'm Afraid\\nIt's Been...\\nNine Years\nPartner used\\nSheer Cold!\nLeafeon is real\nCelebi is a\\nGrovyle Simp\ntechnically grovyle has\\nthe highest killcount\\nin the PMD franchise\nShhh, be vewy vewy quiet,\\nI’m hunting\\nBunnelbies…\\nbahahahahaha!\ncock\nGuys why does\\nBidoof have\\na knife\nDarkrai does\\ndrugs down\\nat dinner\nh\npara this was\\njust posted\nMidlife Crisis\nThis is just\\nfiller content\nIt's so sad that\\nGrovyle died\\nof ligma.\nComing soon...\nWe do a\\nlittle trolling\nAlpha Male\nThe Full\\nRelease Male\nMale with\\nfree dlc\nWhen the dungeon\\nis mysterious!!1!1!\nGet Doxxed\nYour IP Address\\nis\\n127.0.0.1\nGo drink\\nsome water\nAll Hail the\\nSentient Cloud\nDREAM WORLD?!\nWhatever you do,\\ndon't eat th\nHey Dusknoir,\\nsay Amogus\\nbackwards\nRemember guys,\\nthis game is\\nfor kids\nDialga can't hit\\ncan't what he\\ncan't see\nThe part where\\nyou become a plushie\nplot armor\\nwon't save\\nyou now\nWhy do I hear\\nboss music?\nyou're gonna\\nregret that\nhi chat!\nFeaturing Dante From\\nThe Devil May Cry\\nSeries!\nthis is so sad,\\ncan we get an\\nF in the chat?\nthis is so poggers\nEat the Rich\nWho is TAS and why\\nis he so good at\\nvideo games?\nIf it's not fun,\\nwhy bother?\nGlue\n02:43 speedrun\\nany percent\ngive up\nDon't give up\nWe're no\\nstranger to love\nYou know the\\nrules and so do I\nSay goodbye\nIt's a gun\nI Have\\nTeleported Bread\nYATTAAA!!!\nWHAT?\nHome Invasions\nIf an orphan takes a\\nselfie, it's technically\\na family photo.\nplease someone help me\\nthey trapped me in the\\ntitle screen someone\\nplease someone save me\\n it's been days\nYo guys check out\\nthis cool red stone\\nI just picked up\nOne Bed Only\nYou missed an\\nEaster Egg\nThis is a certified\\nSkyTemple(tm) moment\nApple Bottom Jeans\nobsession\nYou only have\\none shot.\nYou laugh,\\nyou lose\nYou may have\\nentered DLC content\nYou picked the\\nwrong shop, fool.\nNumber 34:\\nBurger Nidoking\\nFoot Lettuce\nHONEY! WHERE. IS.\\nMY. SUPER.\\nSUIT?!\nYOU SHALL\\nNOT PASS!!\nCELEBI!\\nWHERE. IS. MY.\\nTREASURE. BAG?!\nOne does not simply,\\nwalking into\\ngrudge trap\nYo dawg can\\nI get some\\ntime gears?\nYou may\\nSpank it...\\nOnce.\nI'm now\\nSans Undertale,\\ngo into my eyes\nMake chatot\\nsay fuck\nWHO GAVE GUILDMASTER\\nWIGGLYTUFF ALL THE\\n WEED?!?\nDawn of the first day\\n-72 hours remain- \na thief?\\nGROVYLE the thief?!\nThe answer is a\\nblast seed. And if\\nthat don’t work?\\nUse more blast seeds.\nSome items\\nare free\npiss and cry\n\nYour Apples have been\\nreplaced with Rare Fossils\nIs that the\\nBite of '87?\nsunflora what are\\nyou doing with\\nthat gun\nWelcome to the\\nAperture Science\\nEnrichment Center.\nI don't\\ncare anymore\nSulfurbunny we hope\\nyou are ok!"
+    "text": "oh god oh fuck\ni am no longer baby\nThis is the part\\nwhere he kills you\nFunny Title\nWRYYYYYYYYY\nThe Horror Won't End\nThe Kind-Hearted\\nHero Leomon Dies\nYou Will Cry or Else\nAdventures In\\nE For Everyone\nFatal Trouble\nBattle of Impact\nHurricane Causes\\nDevastation\nIs Terrible\\nAnd Here's Why\nDungeon At 3 AM\\nChallenge Gone Wrong\nDoom seeds are bugged,\\nthey fill belly!\nThe Dashing Wanderer\nPrologue\nEpilogue\nI wanna say goodbye\nError: Chapter\\nnot randomized\nNo\nYes\nMaybe?\nChapter 3\nSpoiler: You die\nFiller Arc\nI don't even know\nMinecraft\nDiglett plays\\nhooky\nSaxaphone Sun\nI Do Not Vibe\\nWith This Universe\nJoin Our Discord\nSecret of\\nWigglytuff's Guild\nThose Who Come To\\nThis Planet and Those Who\\nLive on This Planet\nTeam Skull Dies lol\nOh no!\\nAnyway\nThe Good Chapter\nFirst Chapter\nFinal Chapter\nWill it ever end?\nFilled with Despair\nWash Your Hands\n358/2 Days Later\nNew Funky Mode\n(Yeah, what the hell was\\nwith that first chapter \\ntitle? Seriously...)\nGoing to the\\nhuman world\nDigimon attack!\nThe invasion of\\nthe Ultrabeast\nPMD\\nChristmas Special\nComputer Warrior\\nPorygon\nPhantom Menace\nVulpix\nInsert meme here\nStealing from\\nKecleon is fun!\nWigglytuff dies\\nat the end\nWhy even bother?\nSunflora is sus\nSeveral people\\nare typing...\nYou're the\\nbad guy?\nYour partner\\nis a leaper\nLoudred has how\\nmany children???\nTeam Skull are\\nthe Chosen Ones\nThe Relic Fragment Was\\nJust a Normal Rock\\nAfter All\nThe Perfect Apple\\nis a lie\nThere are no\\nbananas, its a myth\nPiracy is no Party!\nThe death\\nof Bidoof\nThe D&D episode\nError: reset DS\\nand try again\nJoker's Trick\nWhen the programer\\ngets drunk\nDarkrai Used\\nSucker Punch\nKidnapping for\\nFun and Profit\nCutscene Incompetence\nCo-Workers\\nYou Hate\nYou Might Need\\na Little Prep\nHave You\\nTried Defog?\nRailroading\nRopes Can Be Cut\\nBy Sharp Objects\nCommunication Would\\nHave Been Nice\nThat is\\nThe Sun, Yes\nChatot Should\\nLearn Protect\nBut What If\\nYou Shot Him\nBasic Preparation\\nis Required\nFear and Loathing\\nin Treasure Town\nDrowzee the Meanie\nBidoof Ruined Everything\nGrovyle the Groovy\nFlying on a Disc\nBidoof's Butterfly Effect\nChatot Is A Piece of Crap\nI'm Fainting Inside\nBedtime\nSay No To Chimecho\nGo the F**k to Sloop\nLet's Trust This Man\nSo How's Your\\nRandomized Run Going?\nBreaking The Laws\\nOf Physics\nYour Best Nightmare\nVNGHHJKDFGHKMFCLKDHUDKLGDGIZWEFGDKZWEJDVHBDMJWD\n(Dimensional screaming)\nOops,\\nWrong Chapter\nOh God,\\nthe Horror\nExplorers of Time\\nto Take a Piss\nGee Willikers,\\nCrobatman!\nSpoilers:\\nDusknoir is the Antagonist!\nMy Uncle Works\\nfor Spike Chunsoft\nThe Sentence: Guild-ty\\nFor Life Imprisonment!\nIf you die in the game,\\nyou die for real\nWalucarioware:\\nMegaMicro Dungeons\nI'm so Hungry I Could\\nEat an Octillery\nYou Have Died\\nof Dysentery.\nThreat found -\\naction needed\\nAffected Items:\\nskytemple.exe\nHey, you,\\nyou're finally awake.\nNothing Bad Ever Happens\\nTo the Pokepals\nballistic markings are like\\nthe fingerprints of a gun\nI'm Really\\nFeeling It\nancient sword of\\nthe meth king\nCan't Have\\nShit In Detroit\nHold B to\\nspeed up dialogue!\nno\ntheir screams,\\nthey wont leave my head\nare time gears\\nedible?\ni dont like\\nChasm Cave very much\nso hows your\\nday going?\nPlot-twist:\\nYou do things\nDon't put your cat\\nin the microwave\nMax Elixirs,\\nNow administered orally\nGuys, the main character\\ndies at the end\nThe chapter\\nbefore you die\nDon't forget about\\nthe power of friendship!\nBidoof is a meanie he\\nliterally ate my rock\nTime Broke Again\nHey at least\\nit's not Chapter 6\nFuck You,\\n*Un-Primal's Your Dialga*\nDarkness Within Darkness\nThe Same Flashback\\n17 Times\nWhy Do I Have the\\nDimensional Scream\\nAnyway?\nGrovyle takes\\nShock Therapy\nAurora\\nBorealis\nSteamed\\nHams\nHOLY CRAP\\nLAPRAS FLIES\nTotally Not\\nThe Last Adventure\nregretting your starter\\nchoice, arent you?\nGrovyle Fucking Dies\nBidoof destroys\\ntime and space\nIt's in Footprint Runes,\\nLet Me Read It\nthats a joke dont\\nput that in\nThrough the Looking Glass,\\nand What Your Partner\\nFound There\nHot Team Charm\\nSingles in your area!\nNow it gets\\nREALLY anime\nCelebi's down\\nbad for Dusknoir\nCapitalist Guild\nWigglytuff Says\\nTrans Rights\nNOW THIS IS\\nPOD RACING!!\nNot again, Grovyle's\\ngonna kill me\nThe Quick and the Raging\\nstarring\\nGrovyle and Dusknoir\nHello There!\nYet Another PMD Episode\\nStarring Eevee?...\nChatot Saw You Get\\nKidnapped He Was\\nRight There\nAccording to Twitter,\\ngetting a Sassy nature\\nis not morally correct\nDon't step on\\nany Grudge Traps\nZA WARUDO!\nRecruit Drifloon\\nYou Won't Regret It!\nThe Guild\\nStrikes Back\nTime to\\nabandon ship\nWait,\\nhow am i breathing\\nunderwater?\nSpell\\n'stun seed'\\nbackwards\nWelcome to IKEA\nPurple Kecleo\\nisn't shiny\nwhy are we still here?\\nJust to suffer?\nDon't start with \\nKecleon worst mistake of\\nmy life\nwait this isnt google\nChapter Name\nWhatever Chapter 3\\nwas called\nDusknoir,\\nMore Like SUSknoir\nAAAAA\nWe're going to jail\nYou have\\nbeen warned\nthe agony\\nnever ends\nfuck it\nGrovyle commits\\nwar-crimes\nChatot commits\\ntax fraud\nWait, isn't this\\na game for children?\ngrovyle says fuck\nThe Reason This\\nGame is Rated M\nThe other chapter\\nwas better\nI want 2\\nnumber 9s\nI Walk to Burger King\nD E E P E S T L O R E\nTHERE IS A POINT WHERE\\nWE NEEDED TO STOP\\nAND WE HAVE\\nCLEARLY PASSED IT\nI bet $5 you can’t\\nspeedrun this chapter\nDialga had a fucking\\nheart attack and\\nfucking died.\nSpell ICUP\nX-Eye seeds are\\none heck of\\na drug\nYou're up late,\\nagain\nSlugma\nHey Niko,\\nLet’s Go Bowling!\nSandslash\\nFor Hire\n19USD fortnite card,\\nwho wants it?\noutdated meme\nDead chat xD\nWar…\\nWar Never Changes.\nBagon\nThreads may be temporary,\\nbut comedy is eternal\n\"I Can’t Believe\\nIt's Not Vanilla!\"\nI remember when we\\nhad Chestnuts\nGet Your Perfect\\nApples Here!\nThis is where I watch\\nmy parents die,\\npartner.\ni dont have much time,\\nthe perfect apple\\nin item form\\ncan be found in-\nPotassium\nAn Uneasy Truce\nNo Triple Trucies\nWould you like\\nto eat moss?\nFuck the Magnezone,\\nComming Straight from\\nthe Underground\nLuigi do be\\nballin tho\nSave data is\\nstored in the balls\nCan I offer you a\\nReviser Seed in this\\ntrying time?\nSigned, Lancer\nHelp, I'm trapped in this\\nchapter title and I can't\\nget out\nThe reason\\why u furry\nToasters\\ntoast toast\nUsing attract on\\nmy partner in confusion\\nGONE WRONG\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nSeth Rogan\\n'Wigglytuff'\nIt's Gonna\\nGet Weird\nDarkrai was Gaster\\nThis Whole Time!\nCroagunk\\nis Ness\nDUSKNOIR\\nBETRAYED US!\nThis Rock Looks\\nLike Tibet!\nOncelerification\\nBeam\nyou stoopid\nRemembered to\\nuse your gummies?\nNothing personal,\\nkid.\nis that a jojo\\nreference?\nhow it feels\\nto chew 5 gum\nHaha magnitude\\ngo BRRRRRR\nWhy do I hear Dialga’s\\nFight to the Finish?\nSTOP POSTING ABOUT\\nTIME GEARS! IM TIRED\\nOF SEEING THEM!\nGreat canyo-\\nwait wrong game\nah f*ck,\\ni cant believe\\nyou've done this.\nI’ve come to make an\\nannouncement-\\nwait wrong script\nim running out of ideas,\\njust beat the game tbh\nYo dude check out these\\nweird yellow orbs\\n floating around me\nDIAMONDS!!!\ngrovyle my beloved...\nhardmode\nHey Vsauce, Michael here.\\nHow much pain are you\\nable to endure?\nOne Eternity Later\nI hope you saved\\nup some\\nreviver seeds\nnot funny,\\ndidn't laugh\nIf bread in french is pain,\\nthen I own a whole bakery\nSo how's the weather?\nno u\nOnce upon a time\nFor their neutral special\\npartner wields a gun\nYou got games\\non your phone?\nOnly 1 percent\\ncan pass\\nthis chapter\nHeavy is dead\nItemizer orb moment\nWut is this\nHey Wigglytuff\\nwe're out of\\nPerfect Apples-\nYoom-Tah,\\nbitch\nNow's your chance to\\nbe a big shot!\nProceed\n...I can still\\nhear their voice...\ni use arch\\nbtw\nI only play \\nPMD for the lore.\\nI swear\nPOW!\\nyou are dead!\nPartner?\\nWhere's the door hole?\nComplete.\\nGlobal.\\nParalization.\nHappy Hour?\\nmore like\\nCrappy Hour!\nLater\nAs you can see,\\nthe world is\\nvery fucked!\nIs it over?\nIt's been\\n3,000 years...\nGrovyle, its been\\n5 years. You still owe\\nme 16 dollars.\nPartner used\\nSheer Cold!\nCelebi is a\\nGrovyle Simp\ntechnically grovyle has\\nthe highest killcount\\nin the PMD franchise\nShhh, be vewy vewy quiet,\\nI’m hunting\\nBunnelbies…\\nbahahahahaha!\nGuys why does\\nBidoof have\\na knife\nh\nMidlife Crisis\nIt's so sad that\\nGrovyle died\\nof ligma.\nComing soon...\nWe do a\\nlittle trolling\nThe Full\\nRelease Male\nMale with\\nfree dlc\nWhen the dungeon\\nis mysterious!!1!1!\nGet Doxxed\nYour IP Address\\nis\\n127.0.0.1\nGo drink\\nsome water\nAll Hail the\\nSentient Cloud\nWhatever you do,\\ndon't eat th\nRemember guys,\\nthis game is\\nfor kids\nThe part where\\nyou become a plushie\nplot armor\\nwon't save\\nyou now\nWhy do I hear\\nboss music?\nyou're gonna\\nregret that\nhi chat!\nFeaturing Dante From\\nThe Devil May Cry\\nSeries!\nthis is so sad,\\ncan we get an\\nF in the chat?\nEat the Rich\nWho is TAS and why\\nis he so good at\\nvideo games?\nIf it's not fun,\\nwhy bother?\nGlue\n02:43 speedrun\\nany percent\nDon't give up\nWe're no\\nstrangers to love\nSay goodbye\nI Have\\nTeleported Bread\nWHAT?\nplease someone help me\\nthey trapped me in the\\ntitle screen someone\\nplease someone save me\\n it's been days\nYo guys check out\\nthis cool red stone\\nI just picked up\nOne Bed Only\nYou missed an\\nEaster Egg\nThis is a certified\\nSkyTemple(tm) moment\nApple Bottom Jeans\nobsession\nYou only have\\none shot.\nYou laugh,\\nyou lose\nYou may have\\nentered DLC content\nYou picked the\\nwrong shop, fool.\nNumber 34:\\nBurger Nidoking\\nFoot Lettuce\nYOU SHALL\\nNOT PASS!!\nCELEBI!\\nWHERE. IS. MY.\\nTREASURE. BAG?!\nYo dawg can\\nI get some\\ntime gears?\nYou may\\nSpank it...\\nOnce.\nDawn of the first day\\n-72 hours remain- \na thief?\\nGROVYLE the thief?!\nThe answer is a\\nblast seed. And if\\nthat don’t work?\\nUse more blast seeds.\nSome items\\nare free\npiss and cry\n\nYour Apples have been\\nreplaced with Rare Fossils\nIs that the\\nBite of '87?\nsunflora what are\\nyou doing with\\nthat gun\nI don't\\ncare anymore\nSulfurbunny we hope\\nyou are ok!\nDefinitely No Monster\\nHouses in this Chapter\nSponsored by\\nWell Systems Inc.\nHm... what's the size\\nlimit to a chapter name?\nthe mail is mysterious\nWelcome to Bowser Level\nWhere’s That Damn\\nFOURTH Chaos Emerald?!\nThe glec is always\\nwatching\nPLACEHOLDER\\nCHAPTER NAME\n3D Pinball:\\nSpace Cadet\nYou've met with a\\nterrible fate, haven't\\nyou?\nThis statement is false\nWhat is the spirit?\nPP-Zero Trap Festival\nGrovyle!! are you /j\\nor /srs???\nSmiles go for kilometers\nyo what's the\\nwifi password\nDoes Loudred have a\\nsnooze button?\nDo not go too far.\nThe most pieceful kingdom\nThe Lore-Dump Chapter\nIntruder alert!\\nA red spy is in the base!\nThis is a bucket.\nThings To Do In The\\nSand Contintent:\\n- Leave\nwoag\nYou've had a great\\nadventure today!\\nYou should rest before\\nyou play more.\nBankruptcy\nLast chapter was a lie.\nInstalling update 3/79\nThe darkness is coming\nGhosts and Spirits\nMeaningful Decisions\n:/\\nYour PC has ran into a\\nproblem and needs to\\nrestart.\nRandom Chimp Event\nKing Dialga\\nsends his regards\nNoooo, not the mosquito\\nagain!\nAt least it's not\\nPokémon Ranger\nThe Planet’s Paralysis\nHeck\nGAME OVER\nThis font kind of looks\\nlike Comic Sans\nsomeone wrote this\nFurry Isekai\\nSimulator 2009\nA Cyber's World\nSuper Paper Mario is\\nworse than Sticker Star\nMinor Speling Mistake\nEpic Embed Fail\nN-no, chat, I'm not-\\nI'm not gonna steal the\\nTime Gears, alright?\nman\nOh the misery\nJohn Madden\nMore like misery dungeon\\nam I right\nI know you cheated on\\nthe personality quiz\nYou cheated not only\\nthe game, but yourself\nThe year is 20XX.\nWelcome back to my\\nTED Talk on how Special\\nEpisode 5 isn’t canon\nWitness\\nTestimony\nPlease Stop Using\\nMilk Drink\nV WHEEEEEEEEEEEL!!!!\nIt could be you,\\nit could be me,\\nit could even b-\nThink fast chucklenuts\nAll your moves were\\nreplaced with Explosion!\nHotel?\nStanding here...\\nI realize...\nEveryone died, the end.\nToday is opposite day!\nGrovyle Fails a\\nSaving Throw\nGrudge trap is\\nthe best trap\nYou are going to Brazil\nPoint and Laugh\nThe only road\\nthat I have ever road\nCar Battery\nThis game is\\na work of fiction.\nNo cost too great.\\nNo mind to think.\\nNo will to break.\nMisplaced-ass chapter\\ntitle that doesn't fit\\nwith the chapter itself.\nMy Clown Detector is\\noff the charts!\nIntermission\nThis title\\nwill never be used\nWelcome to Danganronpa\nPMD Autobattler\nIt was a pleasure\\nto burn.\nTo kill a Chatot\n...and That’s Why I\\nHave To Kill You\nA game for those\\nwho seek to find\\nA way to leave\\nthe world behind\nL\nA Sea at Storm\nHappy Birthday!\n:3\nThe Incident\nI saw what you deleted.\nMom said it’s my turn\\nwith Roar of Time\n'May the Force be\\nwith you'\\n-Spock from Harry Potter\nThis isn’t a Genocide\\nrun y’know.\nSo. What’s the\\ndeath counter at?\nSo gray things are\\nwhere time has stopped?\nWell, well, well. If it\\nisn’t the consequences\\nof your actions.\nHostile Reception\nSo that thing that\\none-shot you earlier?\\nYeah we’re gonna\\nspam that now.\nBut... the future\\nrefused to change\nGoogle En Passant\nMe When I\nBack to the Future\nHow many Reviver Seeds\\ndo you have?\\nOh.. good luck.\nChange da world\\nmy final message\\ngoodb ye\nDialga does his taxes\nYou can now play as Luigi.\nThis is fine.\nThe Fitnessgram Pacer Test is a multistage aerobic\\ncapacity test that progressively gets more\\ndifficult as it continues. The 20 meter pacer test will\\nbegin in 30 seconds. Line up at the start. The running speed starts slowly but gets faster \\neach minute after you hear this signal bodeboop. A single lap should be completed\nWhite Clouds\nIGN rating: 4.9\nLike, Comment,\\nand Subscribe\nCHAOS, CHAOS\nFive Nights\\nat Wigglytuff’s\nhi can I get uhhhhhhh\nMission Objective:\\nAssassinate Dugtrio.\nThe Game Was Rigged\\nFrom The Start\ndestroy berry\nMy lawyer has\\nadvised me to redact\\nthis chapter title\nThis is not legal advice\nAnd here comes Bidoof\\nwith the steel chair!\noh no not this shit again"
   },
   "text": {
     "main": false,
@@ -243,497 +243,8 @@
   "quiz": {
     "mode": 1,
     "randomize": true,
+    "include_vanilla_questions": false,
     "questions": [
-      {
-        "question": "You're at a movie theater. What are you there\nto see?",
-        "answers": [
-          "An action movie.",
-          "A drama.",
-          "A romantic movie."
-        ]
-      },
-      {
-        "question": "What's your studying style?",
-        "answers": [
-          "Working hard, every day.",
-          "If I remember to...",
-          "I just cover what I need to."
-        ]
-      },
-      {
-        "question": "You've been asked to do a difficult task.\nWhat will you do?",
-        "answers": [
-          "I can't really do it alone...",
-          "Do it myself.",
-          "Ask someone to help.",
-          "Make someone else do it!"
-        ]
-      },
-      {
-        "question": "Are you truly sincere when you apologize?",
-        "answers": [
-          "Of course.",
-          "That's not easy to admit!"
-        ]
-      },
-      {
-        "question": "Do you think you have good study habits?",
-        "answers": [
-          "Yes.",
-          "No.",
-          "Well, I never lose at sports!"
-        ]
-      },
-      {
-        "question": "There's a rumor around about a ghost haunting\nthe school bathrooms! What do you do?",
-        "answers": [
-          "Scary...bathrooms!",
-          "Go in there anyway."
-        ]
-      },
-      {
-        "question": "Everyone's sharing a dessert, and there's an\nextra piece. What do you do?",
-        "answers": [
-          "Don't tell anyone.",
-          "Let everyone know.",
-          "First come, first served!"
-        ]
-      },
-      {
-        "question": "How are your mornings?",
-        "answers": [
-          "Always in a rush!",
-          "Always perfect.",
-          "They are OK."
-        ]
-      },
-      {
-        "question": "Everyone around you is laughing hard at\nsomething you think is pretty boring.\nWhat do you do?",
-        "answers": [
-          "Nothing, really.",
-          "Laugh along.",
-          "It depends on the situation."
-        ]
-      },
-      {
-        "question": "You want to reveal that you like someone a\nwhole bunch! What do you do?",
-        "answers": [
-          "Show it a little by playing together.",
-          "Make it obvious by...playing a prank!",
-          "State it clearly for all to hear!",
-          "Keep it to myself! It's too risky!"
-        ]
-      },
-      {
-        "question": "You're on a stroll when a TV crew pounces\non you for an interview. What do you do?",
-        "answers": [
-          "Run away! How embarrassing!",
-          "Answer questions properly.",
-          "Yuck it up! Woo-hoo! I'm on TV!"
-        ]
-      },
-      {
-        "question": "Do you like lively parties?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "The people at the next table are singing for\nsomeone's birthday. What do you do?",
-        "answers": [
-          "Stay on the sidelines.",
-          "Sing along!",
-          "Walk away."
-        ]
-      },
-      {
-        "question": "You're in a completely silent assembly when\nyou suddenly hear someone pass gas!\nHow do you react?",
-        "answers": [
-          "Roll on the floor laughing!",
-          "Just let it go by...",
-          "Who was that?!"
-        ]
-      },
-      {
-        "question": "Do you like karaoke?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Do you prefer to play outside rather than\ninside?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "You see a big and comfortable bed.\nYour first reaction is to...",
-        "answers": [
-          "Jump on it!",
-          "Belly flop!",
-          "Curl up."
-        ]
-      },
-      {
-        "question": "You're hiking up a mountain when you reach\ndiverging paths. Which kind do you take?",
-        "answers": [
-          "Narrow.",
-          "Wide."
-        ]
-      },
-      {
-        "question": "You discover a beat-up-looking treasure chest\nin some ruins. What do you do?",
-        "answers": [
-          "Open it!",
-          "Get help opening it."
-        ]
-      },
-      {
-        "question": "Your friend takes a spectacular fall![K]\nWhat do you do?",
-        "answers": [
-          "Help my friend up!",
-          "Laugh! It's too funny!"
-        ]
-      },
-      {
-        "question": "You're daydreaming...when your friend sprays\nyou with water! What do you do?",
-        "answers": [
-          "Get mad!",
-          "Get sad.",
-          "Woo-hoo! Water fight!"
-        ]
-      },
-      {
-        "question": "Have you ever thought that if you dug in your\nbackyard you could find buried treasure?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Have you ever told a joke that just completely\nfell flat?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Hey, what's that?[K] There's someone behind you![K]\nSo...did you look just now?",
-        "answers": [
-          "Don't do that! It scared me!",
-          "OK, I admit it. You tricked me.",
-          "No way. I didn't fall for it.",
-          "Huh? What?"
-        ]
-      },
-      {
-        "question": "Your friend has made a meal that\ntastes terrible.[K]\nThey ask, \"How is it?\" You say...?",
-        "answers": [
-          "\"Terrible!\"",
-          "Just smile.",
-          "\"Um, it's...good.\""
-        ]
-      },
-      {
-        "question": "You run into a new person that you haven't\ntalked to very much before. What do you do?",
-        "answers": [
-          "Make small talk.",
-          "Say nothing!",
-          "Make an excuse to get away!"
-        ]
-      },
-      {
-        "question": "Good news and bad news... Which one do you\nwant to hear first?",
-        "answers": [
-          "The good news.",
-          "The bad news.",
-          "I don't want either."
-        ]
-      },
-      {
-        "question": "Have you ever realized you were hogging the\nconversation?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "When you see a switch, do you feel an\noverwhelming urge to flip it?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "You find something at a great bargain price!\nWhat do you do?",
-        "answers": [
-          "Buy it right away!",
-          "Think about whether you need it.",
-          "Demand an even bigger discount!"
-        ]
-      },
-      {
-        "question": "You're packing your classroom's snacks for a\npicnic when you get hungry. What do you do?",
-        "answers": [
-          "Eat just a tiny bit.",
-          "Hold myself back and pack it all up.",
-          "What snacks? They're in my belly!"
-        ]
-      },
-      {
-        "question": "Do you want to be taller someday?",
-        "answers": [
-          "Totally!",
-          "Of course not."
-        ]
-      },
-      {
-        "question": "Do you think it's important to always aim to\nbe the best?",
-        "answers": [
-          "Of course!",
-          "No."
-        ]
-      },
-      {
-        "question": "Have you ever looked at your reflection in a\nmirror and thought, \"What a cool person\"?",
-        "answers": [
-          "Certainly!",
-          "Well, not really..."
-        ]
-      },
-      {
-        "question": "If you saw someone doing something bad, could\nyou scold them?",
-        "answers": [
-          "Of course!",
-          "Not really."
-        ]
-      },
-      {
-        "question": "Do you prefer to be busy or to have\na lot of free time?",
-        "answers": [
-          "Being busy.",
-          "Free time!",
-          "In between."
-        ]
-      },
-      {
-        "question": "You're about to buy a popular game when\nsomeone else gets the last copy!\nHow do you feel?",
-        "answers": [
-          "Whatever.",
-          "Annoyed. I was here first!",
-          "I shed a few tears."
-        ]
-      },
-      {
-        "question": "You notice that a toy you bought for full price\nyesterday is marked down to half price today!\nHow do you feel?",
-        "answers": [
-          "Heartbroken...",
-          "Aaaargh!",
-          "Bad timing, I guess..."
-        ]
-      },
-      {
-        "question": "Your friend is running a little late to meet you.\nIs that OK?",
-        "answers": [
-          "Yes.",
-          "Not at all!"
-        ]
-      },
-      {
-        "question": "You've just stuffed yourself with a good meal\nwhen a great dessert arrives. What do you do?",
-        "answers": [
-          "Eat it. Who cares if I'm stuffed?",
-          "Turn it down. It's too fattening!",
-          "Yum! I love dessert the most! ♪"
-        ]
-      },
-      {
-        "question": "You have a really important test tomorrow!\nWhat do you do?",
-        "answers": [
-          "Study all night long.",
-          "Wing it! I'm sure it will be fine!",
-          "Test?! I think I have a fever..."
-        ]
-      },
-      {
-        "question": "You've been invited to a wonderful party. It's\ntime for the party to start, but there's nobody\nthere! You think...?",
-        "answers": [
-          "Did something happen?",
-          "Maybe I have the day wrong?",
-          "Let's get this party started!"
-        ]
-      },
-      {
-        "question": "Do you think that, no matter what, life\ngoes on?",
-        "answers": [
-          "All the time!",
-          "Never."
-        ]
-      },
-      {
-        "question": "The phone's ringing![K] What do you do?",
-        "answers": [
-          "Answer right away!",
-          "Wait a bit before answering.",
-          "Ignore it and let it ring."
-        ]
-      },
-      {
-        "question": "Your friends seem to be making plans to hang\nout, just out of earshot. You think...",
-        "answers": [
-          "I want to go too!",
-          "No big deal.",
-          "Will they invite me?"
-        ]
-      },
-      {
-        "question": "Do you want to be famous?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "You've been handed a large bag as a souvenir.\nWhat do you do?",
-        "answers": [
-          "Wait until I get home to open it.",
-          "Shake it!",
-          "Open it!",
-          "It's smaller than everyone else's..."
-        ]
-      },
-      {
-        "question": "Have you ever forgotten you bought something\nand bought another one?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Once you've decided something, do you see it\nthrough to the end?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Have you ever said \"nice to meet you\" to\nsomeone you've met previously?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Did you make any New Year's resolutions?",
-        "answers": [
-          "Of course!",
-          "Nope.",
-          "What are those?"
-        ]
-      },
-      {
-        "question": "Do you think it's important to be fashionably\nlate?",
-        "answers": [
-          "Yes.",
-          "No.",
-          "I don't know."
-        ]
-      },
-      {
-        "question": "You've won big on a raffle ticket! You say...",
-        "answers": [
-          "Woo-hoo!",
-          "I can't believe it...",
-          "This is my little secret."
-        ]
-      },
-      {
-        "question": "Do you think blaming something you did on\nsomeone else is sometimes necessary?",
-        "answers": [
-          "Of course!",
-          "No way!"
-        ]
-      },
-      {
-        "question": "Your friend suddenly won't listen to you, when\neverything was fine yesterday.\nWhat happened?",
-        "answers": [
-          "Maybe they're sick.",
-          "They're lost in thought.",
-          "What?! Why?!"
-        ]
-      },
-      {
-        "question": "You take off your shoes to realize your socks\nare two different colors!\nWhat do you do?",
-        "answers": [
-          "Get embarrassed!",
-          "Again?!",
-          "I meant to do that!"
-        ]
-      },
-      {
-        "question": "You fail miserably! Everyone found out, and\nthey're disappointed in you... What do you do?",
-        "answers": [
-          "Try and hide.",
-          "Think of an excuse.",
-          "Drop down and play dead!"
-        ]
-      },
-      {
-        "question": "Have you ever accidentally called a teacher\n\"Mom\" or \"Dad\"?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "Have you ever blurted something out without\nthinking about the consequences first?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
-      {
-        "question": "You're in class when you realize that you really\nhave to go to the restroom! What do you do?",
-        "answers": [
-          "Ask for permission to leave.",
-          "Sneak out.",
-          "Hold on until class ends!"
-        ]
-      },
-      {
-        "question": "Your friend offers to treat you to dinner.\nWhat do you do?",
-        "answers": [
-          "I'm there!",
-          "Allow me.",
-          "Thanks..."
-        ]
-      },
-      {
-        "question": "You see a cake that is past its expiration date,\nbut only by one day. What do you do?",
-        "answers": [
-          "Not a problem! Chow time!",
-          "Think about it briefly, then decide.",
-          "Get someone to try it first."
-        ]
-      },
-      {
-        "question": "You're eating at a very fancy restaurant known\nfor its food. Which course do you select?",
-        "answers": [
-          "Seared steak.",
-          "Healthy fish.",
-          "Anything! It's all good!"
-        ]
-      },
-      {
-        "question": "Did you play \"Explorers of Time\" or \"Explorers\nof Darkness\"?",
-        "answers": [
-          "Yes.",
-          "No."
-        ]
-      },
       {
         "question": "Two trains leave the station at the same time,\none heading west and the other east.[K]\nThe westbound train travels at 42 miles\nper hour. The eastbound train travels at\n69 miles per hour.[K]\nHow long will it take for the two trains to be\n101 miles apart?\"",
         "answers": [
@@ -806,37 +317,12 @@
         ]
       },
       {
-        "question": "Mud",
-        "answers": [
-          "Kip",
-          "Mud",
-          "Kip"
-        ]
-      },
-      {
-        "question": "Do you exist?",
-        "answers": [
-          "Yes",
-          "No"
-        ]
-      },
-      {
         "question": "To be, or not to be, that is the question.",
         "answers": [
           "To Be",
           "Not to Be",
           "Uhh.. both?",
-          "Neither, I'm nonexistent",
-          "WHAT EVEN IS THE QUESTION!?"
-        ]
-      },
-      {
-        "question": "Which person would you steal lunch\nmoney from?",
-        "answers": [
-          "Dwayne Johnson",
-          "Jack Black",
-          "John Cena",
-          "Mike Tyson"
+          "Neither, I'm nonexistent"
         ]
       },
       {
@@ -957,13 +443,6 @@
         ]
       },
       {
-        "question": "Is Taiwan a country?",
-        "answers": [
-          "Yes, they gained independence",
-          "No, glory to the CCP"
-        ]
-      },
-      {
         "question": "Good lord what is happening here?",
         "answers": [
           "Aurora Borealis",
@@ -976,21 +455,6 @@
         "answers": [
           "Yes",
           "Yes"
-        ]
-      },
-      {
-        "question": "if two men were on the moon and one of\nthem killed the other with a rock",
-        "answers": [
-          "would that be fucked up or what",
-          "actually this is perfectly ok!"
-        ]
-      },
-      {
-        "question": "What's 9 + 10?",
-        "answers": [
-          "19",
-          "21",
-          "September 10th of 2021 is when the d---"
         ]
       },
       {
@@ -1007,15 +471,6 @@
           "Yes",
           "What?!",
           "PARA"
-        ]
-      },
-      {
-        "question": "What's your definition of funny?",
-        "answers": [
-          "Randomizers",
-          "My sad life",
-          "Abridged",
-          "John Cena + Quest f. t. Undertale Sleepover"
         ]
       },
       {
@@ -1037,15 +492,12 @@
         "question": "I’m getting a present for my girlfriend…\nHmm… [K]I could give her this water stone,\nbut who knows? It might cause her to evolve!",
         "answers": [
           "Excuse me, what?",
-          "Damn bro, that would suck.",
-          "PARA THIS WAS JUST POSTED"
+          "Damn bro, that would suck."
         ]
       },
       {
         "question": "What's your definition of Pain?",
         "answers": [
-          "Being a Grass or Fighting Type in Rescue Team",
-          "Being a Fire or Ground Type in Explorers",
           "Playing Gates",
           "Chikorita",
           "Playing the Adventure Squad entries",
@@ -1057,7 +509,6 @@
         "answers": [
           "Yes",
           "Probably",
-          "Don't know",
           "Probably not",
           "No"
         ]
@@ -1078,24 +529,10 @@
         ]
       },
       {
-        "question": "Are you made of beans?",
-        "answers": [
-          "?",
-          "?"
-        ]
-      },
-      {
-        "question": "Do you know?",
-        "answers": [
-          "Yes",
-          "No"
-        ]
-      },
-      {
         "question": "Trans Rights?",
         "answers": [
-          "Yes",
-          "Definitely",
+          "YES",
+          "DEFINITELY",
           "ABSOLUTELY!!!"
         ]
       },
@@ -1159,10 +596,9 @@
         "question": "Which one is better?",
         "answers": [
           "PMD Rescue Team",
-          "PMD Adventure Squad",
           "PMD Gates Of Infinity",
           "PSMD",
-          "PMD Explorer of Sky Randomizer"
+          "PMD Explorers of Sky Randomizer"
         ]
       },
       {
@@ -1270,13 +706,6 @@
         ]
       },
       {
-        "question": "What's the bottom of the sea like?\nJust once I would so love to go!",
-        "answers": [
-          "Yes",
-          "No"
-        ]
-      },
-      {
         "question": "You drink a glass of water halfway.\nWhat is the glass of water now?",
         "answers": [
           "Half Full",
@@ -1343,14 +772,6 @@
         ]
       },
       {
-        "question": "What do you want outta life?",
-        "answers": [
-          "To see rare sights.",
-          "To broaden my horizons.",
-          "To be strong."
-        ]
-      },
-      {
         "question": "Albert and Bernard just became friends with\nCheryl, and they want to know when her\nbirthday is. Cheryl gives them a list of\n10 possible dates. (May 15th, May 16th,\nMay 19th, June 17th, June 18th , July 14th,\nJuly 16th , August 14th, August 15th, and\nAugust 17th).\n\nCheryl then tells Albert and Bernard separately\nthe month and the day of her birthday\nrespectively.\n\nAlbert: I don't know when Cheryl's birthday is,\nbut I know that Bernard does not know too.\nBernard: At first I don't know when Cheryl's\nbirthday is, but I know now.\nAlbert: Then I also know when Cheryl's\nbirthday is.\n\nSo when is Cheryl's birthday?",
         "answers": [
           "August 17th",
@@ -1381,15 +802,6 @@
           "At this time of day?",
           "In this part of the quiz?",
           "Localised entirely within this randomized ROM?"
-        ]
-      },
-      {
-        "question": "How do you play this rom?",
-        "answers": [
-          "With an emulator",
-          "With an R4",
-          "With a custom firmware",
-          "I made a custom DS cartdrige for it"
         ]
       },
       {
@@ -1475,34 +887,11 @@
         ]
       },
       {
-        "question": "Have you ever been in an accident that\nresulted with your death?",
-        "answers": [
-          "Yes",
-          "No"
-        ]
-      },
-      {
-        "question": "Would you like something new, or something\nfamiliar?",
-        "answers": [
-          "Familiar",
-          "New"
-        ]
-      },
-      {
         "question": "Where were you when club penguin is kil?",
         "answers": [
           "at home",
           "eating dorito",
           "no"
-        ]
-      },
-      {
-        "question": "What is the best Pokémon?\"",
-        "answers": [
-          "[CS:K]Duskako[CR]",
-          "[CS:K]Duskako[CR]",
-          "[CS:K]Duskako[CR]",
-          "Not [CS:K]Duskako[CR]"
         ]
       },
       {
@@ -1529,13 +918,6 @@
         ]
       },
       {
-        "question": "By playing this randomizer, you agree that\n[CS:K]Duskako[CR] is best and only good Pokémon.",
-        "answers": [
-          "I accept these terms and conditions",
-          "I do not accept these terms and conditions"
-        ]
-      },
-      {
         "question": "Do you often play stall teams on\nPokémon Showdown?",
         "answers": [
           "No.",
@@ -1557,16 +939,6 @@
           "Rock.",
           "Paper.",
           "Scissors."
-        ]
-      },
-      {
-        "question": "Mew and Decimeter are continuing their\n'no u' battle. [K]How do you react?",
-        "answers": [
-          "Join in",
-          "How did this start again?",
-          "When will it end?",
-          "Complain to Para",
-          "Cry"
         ]
       },
       {
@@ -1634,18 +1006,531 @@
         ]
       },
       {
-        "question": "Who's the real Protagonist in Starter Squad?",
-        "answers": [
-          "Charmander",
-          "Squirtle",
-          "Bulbasaur"
-        ]
-      },
-      {
         "question": "I give up just pretend this is funny",
         "answers": [
           "haha, that was hilarious",
           "no"
+        ]
+      },
+      {
+        "question": "A human hand reaches out of a toilet!\nWhat do you do?",
+        "answers": [
+          "Take a dump anyway",
+          "Flush",
+          "Give the hand some toilet paper"
+        ]
+      },
+      {
+        "question": "Does the set of all sets that don't contain\nthemselves contain itself?",
+        "answers": [
+          "Yes",
+          "No",
+          "Nice job, Russel, you broke maths"
+        ]
+      },
+      {
+        "question": "Mewtwo needs friends.\nWill you be Mewtwo's friend?",
+        "answers": [
+          "Yes, of course",
+          "No, I'm mean and rude"
+        ]
+      },
+      {
+        "question": "What's your ideal weather for a picnic?",
+        "answers": [
+          "Fog",
+          "Smog",
+          "Frogs"
+        ]
+      },
+      {
+        "question": "You are offered a choice of two gifts.\nWhich one will you take?",
+        "answers": [
+          "Big box",
+          "Bigger box",
+          "...they both have a gift card inside, don't they?"
+        ]
+      },
+      {
+        "question": "Is the glass half-empty or half-full?",
+        "answers": [
+          "Half-empty",
+          "Half-full\n",
+          "Depends on how full it was beforehand",
+          "I ordered a milkshake..."
+        ]
+      },
+      {
+        "question": "combee",
+        "answers": [
+          "wher bee?",
+          "comb bee",
+          "cornby",
+          "bee"
+        ]
+      },
+      {
+        "question": "What is a tortilla?",
+        "answers": [
+          "A burrito",
+          "A brick",
+          "Both"
+        ]
+      },
+      {
+        "question": "What's your sleep schedule like?",
+        "answers": [
+          "Early to bed, early to rise!",
+          "I usually stay up late",
+          "What sleep schedule?"
+        ]
+      },
+      {
+        "question": "Have you vacuumed your room in the past\ntwo weeks?",
+        "answers": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "question": "What is the most overrated starter of\nall time?",
+        "answers": [
+          "Pikachu",
+          "Eevee",
+          "Riolu"
+        ]
+      },
+      {
+        "question": "Where are you from",
+        "answers": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "question": "Touch grass",
+        "answers": [
+          "Ok",
+          "Does petting leafeon count?"
+        ]
+      },
+      {
+        "question": "I am in your house. Look behind you.",
+        "answers": [
+          "I'm looking",
+          "Not scary dude",
+          "AAAAAAAAAAAAAH"
+        ]
+      },
+      {
+        "question": "Would you like to save your adventure?",
+        "answers": [
+          "Save and Continue",
+          "Save and Return to Top Menu",
+          "Don't Save"
+        ]
+      },
+      {
+        "question": "How are you feeling right now?",
+        "answers": [
+          "Pretty good",
+          "Could be better",
+          "Just give me Riolu already"
+        ]
+      },
+      {
+        "question": "Which of the following quotes better\nrepresents your playstyle?",
+        "answers": [
+          "\"No no Pin Missile why Pin Missile\"",
+          "\"What do you mean 69????\"",
+          "\"Google. Google. G O O G L E.\"",
+          "\"idk I don't play this game I only hack it\""
+        ]
+      },
+      {
+        "question": "You and a friend are playing with foam swords.\nYour friend trips and falls. What do you do?",
+        "answers": [
+          "Help them up",
+          "Ask if they're OK from afar",
+          "No mercy."
+        ]
+      },
+      {
+        "question": "You notice that your partner fainted.\nHow do you react?",
+        "answers": [
+          "FUUUUUU-",
+          "...Sigh.",
+          "Skill issue."
+        ]
+      },
+      {
+        "question": "- This passport is forged.\n- I know nothing about this.",
+        "answers": [
+          "Approve",
+          "Deny",
+          "DETAIN"
+        ]
+      },
+      {
+        "question": "Are you a Nintendo Ninja?",
+        "answers": [
+          "No",
+          "I just wanna play",
+          "How did you know????"
+        ]
+      },
+      {
+        "question": "What is the most edible Pokémon?",
+        "answers": [
+          "Appletun",
+          "Fidough",
+          "Sobble"
+        ]
+      },
+      {
+        "question": "This piece of evidence proves the witness\nis lying!",
+        "answers": [
+          "Objection!",
+          "Hold it!",
+          "Take that!"
+        ]
+      },
+      {
+        "question": "Who are you?",
+        "answers": [
+          "A clown",
+          "The entire circus"
+        ]
+      },
+      {
+        "question": "You killed my father. Prepare to die.",
+        "answers": [
+          "Now now, let's be reasonable...",
+          "Not if I kill you first!",
+          "Do you know how little that narrows it down?"
+        ]
+      },
+      {
+        "question": "A friend offers you a snack, but there's not\nmuch food in the house. What do you take?",
+        "answers": [
+          "A lemon",
+          "Raw clams",
+          "Plain flour"
+        ]
+      },
+      {
+        "question": "Smile for the camera!",
+        "answers": [
+          ":)",
+          ":D",
+          ">:(",
+          ":/"
+        ]
+      },
+      {
+        "question": "Do you like me? [M:H8][M:H8][M:H8][M:H8][M:H8]",
+        "answers": [
+          "YES",
+          "DEFINITELY",
+          "ABSOLUTELY!!!"
+        ]
+      },
+      {
+        "question": "Do you like traps?",
+        "answers": [
+          "Yes.",
+          "NO!"
+        ]
+      },
+      {
+        "question": "What, you're done already?\nWhat kind of a plumber are you?",
+        "answers": [
+          "A platypus plumber?",
+          "Perry the platypus plumber?",
+          "PERRY THE PLATYPUS?!"
+        ]
+      },
+      {
+        "question": "You mean you've never heard the story of the...\nhash-slinging slasher?",
+        "answers": [
+          "The slash-bringing...?",
+          "The sash-wringing...?",
+          "The trash-thinging...?",
+          "The flash-springing...?"
+        ]
+      },
+      {
+        "question": "What's 9+10?",
+        "answers": [
+          "19",
+          "21",
+          "You stupid"
+        ]
+      },
+      {
+        "question": "Is stealing from Kecleon morally correct?",
+        "answers": [
+          "Theft is based, so yes.",
+          "Too expensive, so yes.",
+          "YOLO!!!!!",
+          "No"
+        ]
+      },
+      {
+        "question": "How many?",
+        "answers": [
+          "Twelve.",
+          "What?",
+          "Sixty two",
+          "Could you repeat the question?"
+        ]
+      },
+      {
+        "question": "Are you now or ever have been a sponge?",
+        "answers": [
+          "I'm ready!",
+          "Oh my aching tentacles",
+          "Meow"
+        ]
+      },
+      {
+        "question": "Are you left-handed, right-handed,\nor ambidextrous?",
+        "answers": [
+          "Left-handed",
+          "Right-handed",
+          "Ambidextrous",
+          "Left handed is NOT a personality"
+        ]
+      },
+      {
+        "question": "Your favorite song comes on. What do you do?",
+        "answers": [
+          "Sing along",
+          "Just vibe",
+          "1v1 the sun"
+        ]
+      },
+      {
+        "question": "Would you mention this randomizer on a first date?",
+        "answers": [
+          "You bet!",
+          "Too embarassing...",
+          "Dates? Ew."
+        ]
+      },
+      {
+        "question": "Are you a boy or a girl?",
+        "answers": [
+          "Boy",
+          "Girl",
+          "Special Episode"
+        ]
+      },
+      {
+        "question": "What do you do in your free time?",
+        "answers": [
+          "Play games",
+          "Walk outside",
+          "What free time?"
+        ]
+      },
+      {
+        "question": "What do you think of this cool background?",
+        "answers": [
+          "Boo! I hate rainbows!",
+          "It's OK...",
+          "I love it!",
+          "You mean the Aurora Borealis?"
+        ]
+      },
+      {
+        "question": "You have an appointment at 8 AM and your\nalarm blares at 7. How would you react?",
+        "answers": [
+          "I'm up, I'm up",
+          "Five more minutes...",
+          "Zzz... zzz..."
+        ]
+      },
+      {
+        "question": "Stop! You have violated the Law!\nPay the court a fine or serve your sentance.\nYour stolen goods are now forfeit.",
+        "answers": [
+          "Go to jail",
+          "Resist arrest",
+          "Pay [M:S0]"
+        ]
+      },
+      {
+        "question": "You've been arrested for a crime you never\ncommitted! What do you do?",
+        "answers": [
+          "Cooperate to clear my name",
+          "I want a lawyer!",
+          "You'll never catch me alive!"
+        ]
+      },
+      {
+        "question": "You have been accused of being the imposter!",
+        "answers": [
+          "\"I was doing tasks!\"",
+          "Blame someone else",
+          "Say nothing",
+          "\"Why me\""
+        ]
+      },
+      {
+        "question": "A trolley is about to run over 5 people. You can\npull a lever to divert the trolley onto a track\nwith one person on it instead. What do you do?",
+        "answers": [
+          "Pull the lever",
+          "Do nothing",
+          "Multi-track drifting!"
+        ]
+      },
+      {
+        "question": "What's your favorite season?",
+        "answers": [
+          "Spring",
+          "Summer",
+          "Fall",
+          "Winter"
+        ]
+      },
+      {
+        "question": "What difficulty do you usually play games on?",
+        "answers": [
+          "Easiest available difficulty",
+          "Normal difficulty",
+          "Hardest available difficulty"
+        ]
+      },
+      {
+        "question": "I am...",
+        "answers": [
+          "Your father",
+          "Death, straight up",
+          "Here to kill chaos",
+          "Quincy, son of Quincy"
+        ]
+      },
+      {
+        "question": "This sentence is false",
+        "answers": [
+          "True",
+          "False",
+          "Don't think about it"
+        ]
+      },
+      {
+        "question": "(Which house will I choose...?)",
+        "answers": [
+          "Black Eagles",
+          "Blue Lions",
+          "Golden Deer"
+        ]
+      },
+      {
+        "question": "You must cross a map full of enemies to reach\nand defeat the boss, who is sitting at the\nother side. How do you approach this?",
+        "answers": [
+          "FRONTAL ASSAULT!!!",
+          "Slowly conquer each area on the map",
+          "Maybe I could try going stealth",
+          "WARP STAFF"
+        ]
+      },
+      {
+        "question": "I will...",
+        "answers": [
+          "Burn my dread",
+          "Burn my bread"
+        ]
+      },
+      {
+        "question": "You're taking a walk through the forest but\nsuddenly you see bigfoot walk by.\nHow do you react?",
+        "answers": [
+          "Try to start a conversation",
+          "I take a picture with my phone",
+          "Run like heck! Bigfoot is scary!"
+        ]
+      },
+      {
+        "question": "You're now the leader of the entire world!\nHow do you run the planet?",
+        "answers": [
+          "Help the environment",
+          "Everyone gets free cake every day!",
+          "I admit. I'd be a tyrant."
+        ]
+      },
+      {
+        "question": "You discover that your best friend\nis secretly a shapeshifter! What do\nyou say to them in response?",
+        "answers": [
+          "Can you turn into me?",
+          "Our prank game just got better",
+          "I say nothing! I'm too scared!"
+        ]
+      },
+      {
+        "question": "When you look in the mirror, what do you see?",
+        "answers": [
+          "A cool and respectable person!",
+          "It's only me.",
+          "Someone I can't bare to look at.",
+          "There's something behind me..."
+        ]
+      },
+      {
+        "question": "OK, pop quiz!\nA Beatles song, \"___terday\".\nCan you fill in the blank?",
+        "answers": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "question": "What's the prize for answering correctly?",
+        "answers": [
+          "Love",
+          "Money",
+          "EXP",
+          "More questions"
+        ]
+      },
+      {
+        "question": "How many miles are in a year?",
+        "answers": [
+          "7 gallons",
+          "420 centimeters",
+          "69 cheeseburgers"
+        ]
+      },
+      {
+        "question": "How high are you?",
+        "answers": [
+          "5 foot 9 inches",
+          "Are you a Cwop?",
+          "Yes"
+        ]
+      },
+      {
+        "question": "[CS:B]Error: [CR]The value for setting \"[CS:L]Monster House\nChance[CS:B][CR]\" has been lost. Please input new value.",
+        "answers": [
+          "100%",
+          "200%",
+          "999%"
+        ]
+      },
+      {
+        "question": "[M:R4][M:S3][M:T1][M:T2][M:B26][M:S5][M:H3][M:B20][M:T0][M:B6][M:S0][M:R6][M:I0][M:B0][M:S7][M:B4] ?",
+        "answers": [
+          "[M:R7]",
+          "[M:T5]",
+          "[M:I1]",
+          "[M:R8]"
+        ]
+      },
+      {
+        "question": "What's the name of the ARM ASM instruction\nused to load multiple values into a register list\nwhile incrementing the base register before\nthe load operation and, at the same time,\nperforming a return call by loading a value\ninto the PC, switching to THUMB mode and\nrestoring the value of CPSR?\nAssume the processor is currently running in\nexception and ARM mode.",
+        "answers": [
+          "50:50",
+          "Ask the audience",
+          "Phone a friend",
+          "Cut the question"
         ]
       }
     ]

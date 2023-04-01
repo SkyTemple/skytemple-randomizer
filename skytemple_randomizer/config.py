@@ -241,6 +241,7 @@ class QuizQuestion(TypedDict):
 class QuizConfig(TypedDict):
     mode: QuizMode
     randomize: bool
+    include_vanilla_questions: bool
     questions: List[QuizQuestion]
 
 
@@ -254,6 +255,8 @@ class QuizConfigDoc:
         Enter them as a list of YAML objects (see the examples). You need to define at least two answers, 2-4 answers will be randomly picked.
         If you pick "Select Manually" above, this is irrelevant as no quiz will be used.
         """
+    include_vanilla_questions = \
+        f"""If enabled, the questions from the base game will also be included in the pool of possible questions."""
 
 
 class MovesetConfig(Enum):
@@ -532,6 +535,8 @@ class ConfigFileLoader:
                                 '10': 1
                             }
                         }
+                    elif field == 'include_vanilla_questions':
+                        target[field] = False
                     else:
                         raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)

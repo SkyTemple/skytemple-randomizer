@@ -4845,7 +4845,7 @@ Try pressing A+B+X+Y if you get stuck in a cutscene.</property>
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Input ROM</property>
+                <property name="label" translatable="yes">Input ROM (.nds file)</property>
               </object>
               <packing>
                 <property name="left-attach">0</property>
@@ -4941,7 +4941,7 @@ Settings</property>
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Load</property>
+                            <property name="label" translatable="yes">Load Settings</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -4986,7 +4986,7 @@ Settings</property>
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Save</property>
+                            <property name="label" translatable="yes">Save Settings</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -5062,12 +5062,22 @@ Settings</property>
         </child>
         <child>
           <object class="GtkButton" id="randomize">
-            <property name="label" translatable="yes">Randomize!</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
             <property name="margin-top">20</property>
             <signal name="clicked" handler="on_randomize_clicked" swapped="no"/>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Randomize!</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="scale" value="2"/>
+                </attributes>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>

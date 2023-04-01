@@ -212,6 +212,11 @@ class MainController:
             x[2] = False
 
     def on_btn_rom_clicked(self, *args):
+        self.show_info("The input file must be an EU or US .nds ROM of Explorers of Sky, which is not included in the "
+                       "randomizer, you must acquire it yourself. Wii U Virtual Console ROMs are not supported.\n"
+                       "Re-randomizing a ROM that has already been randomized is not supported and might not work "
+                       "properly.")
+
         dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
             "Open ROM...",
             self.window,
@@ -314,6 +319,9 @@ class MainController:
             self.display_error("Please choose an input file.")
             return
 
+        self.show_info("Choose the folder where you want to save the randomized ROM. You also need to give it a name. "
+                       "For Windows users, do not try to save it inside Program Files as it might not work.")
+
         dialog = Gtk.FileChooserNative.new(
             "Output ROM filename...",
             self.window,
@@ -411,6 +419,13 @@ class MainController:
                                Gtk.ButtonsType.OK,
                                error_message,
                                title=error_title)
+        md.run()
+        md.destroy()
+
+    def show_info(self, info, *args):
+        md = Gtk.MessageDialog(self.window,
+                               Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.INFO,
+                               Gtk.ButtonsType.OK, info)
         md.run()
         md.destroy()
 

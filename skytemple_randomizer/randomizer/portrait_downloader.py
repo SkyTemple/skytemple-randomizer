@@ -17,17 +17,19 @@
 import asyncio
 import sys
 import traceback
-from typing import List, Tuple, Coroutine
+from typing import List, Tuple, Coroutine, Optional
 
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
+from skytemple_files.common.sprite_util import check_and_correct_monster_sprite_size
 from skytemple_files.common.spritecollab.client import SpriteCollabSession
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom, MONSTER_BIN, chunks
-from skytemple_files.data.md.protocol import Gender, MdEntryProtocol, ShadowSize
+from skytemple_files.common.util import get_binary_from_rom, MONSTER_BIN, chunks, set_binary_in_rom
+from skytemple_files.data.md.protocol import Gender, MdEntryProtocol, ShadowSize, MdProtocol
 from skytemple_files.data.sprconf.handler import SprconfType, SPRCONF_FILENAME
 from skytemple_files.graphics.chara_wan.model import WanFile
 from skytemple_files.graphics.kao.protocol import KaoProtocol
+from skytemple_files.hardcoded.monster_sprite_data_table import HardcodedMonsterSpriteDataTable
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
@@ -51,6 +53,9 @@ class PortraitDownloader(AbstractRandomizer):
         self.monster_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(MONSTER_BIN))
         self.monster_ground_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(GROUND_BIN))
         self.monster_attack_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(ATTACK_BIN))
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
+        self.sprite_size_table = HardcodedMonsterSpriteDataTable.get(arm9, self.static_data)
+        self.is_expand_poke_list_applied = False
         self.current = 0
         self.total = "?"
 
@@ -76,6 +81,9 @@ class PortraitDownloader(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config['improvements']['download_portraits']:
             return status.done()
+
+        patcher = Patcher(self.rom, self.static_data)
+        self.is_expand_poke_list_applied = patcher.is_applied("ExpandPokeList")
 
         status.step("Apply 'ActorAndLevelLoader' patch...")
         patcher = Patcher(self.rom, self.static_data)
@@ -103,8 +111,9 @@ class PortraitDownloader(AbstractRandomizer):
                 if actor.entid > 0:
                     task_params.append({
                         "kaos": kao,
+                        "md": md,
                         "mdidx": actor.entid,
-                        "md": md.entries[actor.entid],
+                        "md_entry": md.entries[actor.entid],
                         "sprconf": sprconf,
                         "status": status,
                         "sprites": False
@@ -113,8 +122,9 @@ class PortraitDownloader(AbstractRandomizer):
             for starter in starters:
                 task_params.append({
                     "kaos": kao,
+                    "md": md,
                     "mdidx": starter,
-                    "md": md.entries[starter],
+                    "md_entry": md.entries[starter],
                     "sprconf": sprconf,
                     "status": status,
                     "sprites": True
@@ -123,8 +133,9 @@ class PortraitDownloader(AbstractRandomizer):
             for partner in partners:
                 task_params.append({
                     "kaos": kao,
+                    "md": md,
                     "mdidx": partner,
-                    "md": md.entries[partner],
+                    "md_entry": md.entries[partner],
                     "sprconf": sprconf,
                     "status": status,
                     "sprites": True
@@ -148,6 +159,9 @@ class PortraitDownloader(AbstractRandomizer):
         self.rom.setFileByName(MONSTER_BIN, FileType.BIN_PACK.serialize(self.monster_bin))
         self.rom.setFileByName(GROUND_BIN, FileType.BIN_PACK.serialize(self.monster_ground_bin))
         self.rom.setFileByName(ATTACK_BIN, FileType.BIN_PACK.serialize(self.monster_attack_bin))
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
+        HardcodedMonsterSpriteDataTable.set(self.sprite_size_table, arm9, self.static_data)
+        set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
         def add_rows():
             if Global.main_builder:
@@ -298,19 +312,20 @@ class PortraitDownloader(AbstractRandomizer):
     async def _import_portrait(
             self,
             sc: SpriteCollabSession,
+            md: MdProtocol,
             kaos: KaoProtocol,
             mdidx: int,
-            md: MdEntryProtocol,
+            md_entry: MdEntryProtocol,
             sprconf: SprconfType,
             status: Status,
             sprites: bool = False
     ):
-        pokedex_number = md.national_pokedex_number
+        pokedex_number = md_entry.national_pokedex_number
         form_id = '???'
         poke_name = '???'
         form_name = '???'
 
-        forms = self._match_form(mdidx, pokedex_number, md.gender)
+        forms = self._match_form(mdidx, pokedex_number, md_entry.gender)
 
         try:
             form_id = forms[0][1]
@@ -332,22 +347,43 @@ class PortraitDownloader(AbstractRandomizer):
                 spr_result = await get_sprites(sc, forms)
                 if spr_result is not None:
                     wan_file, pmd2_sprite, shadow_size_id = spr_result
-                    pmd2_sprite.id = md.sprite_index
+                    pmd2_sprite.id = md_entry.sprite_index
                     monster, ground, attack = FileType.WAN.CHARA.split_wan(wan_file)
                     # update sprite
-                    self.save_monster_monster_sprite(md.sprite_index, monster)
-                    self.save_monster_ground_sprite(md.sprite_index, ground)
-                    self.save_monster_attack_sprite(md.sprite_index, attack)
+                    self.save_monster_monster_sprite(md_entry.sprite_index, monster)
+                    self.save_monster_ground_sprite(md_entry.sprite_index, ground)
+                    self.save_monster_attack_sprite(md_entry.sprite_index, attack)
                     # update shadow size
-                    md.shadow_size = ShadowSize(shadow_size_id).value  # type: ignore
+                    md_entry.shadow_size = ShadowSize(shadow_size_id).value  # type: ignore
                     # update sprconf.json
                     FileType.SPRCONF.update(sprconf, pmd2_sprite)
+
+                    # update sprite size, if needed
+                    effective_base_attr = 'md_index_base'
+                    if self.is_expand_poke_list_applied:
+                        effective_base_attr = 'entid'
+                    md_gender1, md_gender2 = self.get_both_md_entries(md, getattr(md_entry, effective_base_attr))
+                    check_and_correct_monster_sprite_size(
+                        md_entry,
+                        md_gender1=md_gender1,
+                        md_gender2=md_gender2,
+                        monster_bin=self.monster_bin,
+                        sprite_size_table=self.sprite_size_table,
+                        is_expand_poke_list_patch_applied=self.is_expand_poke_list_applied
+                    )
         except Exception:
             traceback_str = ''.join(traceback.format_exception(*sys.exc_info()))
             self._debugs.append((f'{pokedex_number:04}', poke_name, form_id, form_name, traceback_str))
 
         self.current += 1
         status.step(f"Downloading portraits and sprites... {self.current}/{self.total}")
+
+    @staticmethod
+    def get_both_md_entries(md: MdProtocol, item_id: int) -> Tuple[MdEntryProtocol, Optional[MdEntryProtocol]]:
+        num_entites = FileType.MD.properties().num_entities
+        if item_id + num_entites < len(md):
+            return md[item_id], md[item_id + num_entites]
+        return md[item_id], None
 
     def save_monster_monster_sprite(self, id: int, data: WanFile):
         wdata = FileType.WAN.CHARA.serialize(data)

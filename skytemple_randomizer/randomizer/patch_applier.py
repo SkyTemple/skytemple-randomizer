@@ -74,6 +74,9 @@ class PatchApplier(AbstractRandomizer):
             if not patcher.is_applied('ReduceJumpcutPauseTime'):
                 patcher.apply('ReduceJumpcutPauseTime')
 
+        if not patcher.is_applied('NoWeatherStop'):
+            patcher.apply('NoWeatherStop')
+
         if self.config['quiz']['mode'] != QuizMode.TEST:
             status.step("Apply personality test patches...")
             if not patcher.is_applied('ChooseStarter'):

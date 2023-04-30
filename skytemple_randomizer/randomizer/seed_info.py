@@ -30,7 +30,7 @@ from skytemple_files.script.ssa_sse_sss.actor import SsaActor
 from skytemple_files.script.ssa_sse_sss.model import Ssa
 from skytemple_files.script.ssa_sse_sss.position import SsaPosition
 from skytemple_files.script.ssb.script_compiler import ScriptCompiler
-from skytemple_randomizer.config import version, MovesetConfig, DungeonWeatherConfig, DungeonModeConfig, ItemAlgorithm
+from skytemple_randomizer.config import version, MovesetConfig, DungeonModeConfig, ItemAlgorithm
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
@@ -219,7 +219,7 @@ macro settings() {{
             message_Mail("{self._item_weights(self.config['item']['weights'])}");
             jump @l_settings;
         case menu("Dungeons: General"):
-            message_Mail("Mode: {self._dungeon_mode(self.config['dungeons']['mode'])}\\nLayouts and Tilesets?: {self._bool(self.config['dungeons']['layouts'])}\\nRandomize Weather?: {self._weather(self.config['dungeons']['weather'])}\\nRandomize Items?: {self._bool(self.config['dungeons']['items'])}\\nRandomize Pokémon?: {self._bool(self.config['dungeons']['pokemon'])}\\nRandomize Traps?: {self._bool(self.config['dungeons']['traps'])}\\nRandomize Boss Rooms?: {self._bool(self.config['dungeons']['fixed_rooms'])}\\Max Sticky Item Chance: {self.config['dungeons']['max_sticky_chance']}%\\nMax Monster House Chance: {self.config['dungeons']['max_mh_chance']}%\\nRandomize Floor count (down): {self.config['dungeons']['min_floor_change_percent']}%\\nRandomize Floor count (up): {self.config['dungeons']['max_floor_change_percent']}%");
+            message_Mail("Mode: {self._dungeon_mode(self.config['dungeons']['mode'])}\\nLayouts and Tilesets?: {self._bool(self.config['dungeons']['layouts'])}\\nRandomize Weather?: {self._bool(self.config['dungeons']['weather'])}\\nRandomize Items?: {self._bool(self.config['dungeons']['items'])}\\nRandomize Pokémon?: {self._bool(self.config['dungeons']['pokemon'])}\\nRandomize Traps?: {self._bool(self.config['dungeons']['traps'])}\\nRandomize Boss Rooms?: {self._bool(self.config['dungeons']['fixed_rooms'])}\\Max Sticky Item Chance: {self.config['dungeons']['max_sticky_chance']}%\\nMax Monster House Chance: {self.config['dungeons']['max_mh_chance']}%\\nMax Hidden Stairs Chance: {self.config['dungeons']['max_hs_chance']}%\\nMax Kecleon Shop Chance: {self.config['dungeons']['max_ks_chance']}%\\Random Weather Chance: {self.config['dungeons']['random_weather_chance']}%\\nRandomize Floor count (down): {self.config['dungeons']['min_floor_change_percent']}%\\nRandomize Floor count (up): {self.config['dungeons']['max_floor_change_percent']}%");
             jump @l_settings;
         case menu("Improvements"):
             message_Mail("Download portraits?: {self._bool(self.config['improvements']['download_portraits'])}\\nApply 'MoveShortcuts'?: {self._bool(self.config['improvements']['patch_moveshortcuts'])}\\nApply 'UnusedDungeonChance'?: {self._bool(self.config['improvements']['patch_unuseddungeonchance'])}\\nApply 'CTC'?: {self._bool(self.config['improvements']['patch_totalteamcontrol'])}\\nApply 'FixMemorySoftlock'?: {self._bool(self.config['improvements']['patch_fixmemorysoftlock'])}");
@@ -488,15 +488,6 @@ macro patches() {{
             return "[CS:H]Yes, first move deals damage[CR]"
         if param == MovesetConfig.FIRST_STAB:
             return "[CS:H]Yes, first move deals damage + STAB[CR]"
-        return "[CS:B]No[CR]"
-
-    def _weather(self, param: DungeonWeatherConfig):
-        if param == DungeonWeatherConfig.ONLY_RANDOM:
-            return "[CS:H]Fully random every visit[CR]"
-        if param == DungeonWeatherConfig.SHUFFLED:
-            return "[CS:H]Pre-generated[CR]"
-        if param == DungeonWeatherConfig.SHUFFLED_LOWER_BAD_CHANCE:
-            return "[CS:H]Pre-generated (less damage)[CR]"
         return "[CS:B]No[CR]"
 
     def _dungeon_cases(self):

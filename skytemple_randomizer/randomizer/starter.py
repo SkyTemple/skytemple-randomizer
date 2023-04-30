@@ -23,6 +23,7 @@ from random import choice
 from range_typed_integers import u16
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
+from skytemple_files.data.md.protocol import MdProtocol, MdEntryProtocol, Gender
 from skytemple_files.data.str.model import Str
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -41,6 +42,7 @@ class StarterRandomizer(AbstractRandomizer):
         if not self.config['starters_npcs']['starters']:
             return status.done()
         status.step("Randomizing Partner Starters...")
+        md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
         num_entities = FileType.MD.properties().num_entities
         overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
         pokemon_string_data = self.static_data.string_index_data.string_blocks["Pokemon Names"]
@@ -49,7 +51,7 @@ class StarterRandomizer(AbstractRandomizer):
 
         orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
         new_partner_ids = [
-            self._random_gender(choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS)))
+            self._random_gender(md.get_by_index(choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS))), md)
             for _ in range(0, len(orig_partner_ids))
         ]
         HardcodedPersonalityTestStarters.set_partner_md_ids(new_partner_ids, overlay13, self.static_data)
@@ -93,14 +95,20 @@ class StarterRandomizer(AbstractRandomizer):
         status.done()
 
     @staticmethod
-    def _random_gender(orig_value):
+    def _random_gender(entry: MdEntryProtocol, md: MdProtocol):
         """50% male (nothing added to index), 50% female (+600 added to index)"""
         num_entities = FileType.MD.properties().num_entities
-        if orig_value + num_entities > 1154:
-            return orig_value
+        original_index = entry.md_index
+        if original_index + num_entities > 1154:
+            return original_index
         if choice([True, False]):
-            return orig_value + num_entities
-        return orig_value
+            new_index = original_index + num_entities
+            if Gender(md.get_by_index(new_index).gender) == Gender.INVALID:
+                return original_index
+            else:
+                return new_index
+        else:
+            return original_index
 
     @staticmethod
     def _get_name(string_file: Str, index: int, pokemon_string_data):

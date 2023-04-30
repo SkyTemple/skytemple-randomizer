@@ -14,12 +14,16 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import os
 from random import randint
+from typing import List
 
+import strictyaml
+from jsonschema import validate
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
-from skytemple_randomizer.config import RandomizerConfig, QuizQuestion
+from skytemple_randomizer.config import RandomizerConfig, QuizQuestion, data_dir, QUIZ_QUESTIONS_JSON_SCHEMA
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
@@ -119,7 +123,7 @@ class QuizRandomizer(AbstractRandomizer):
             three_answers_pool = []
             four_or_more_answers_pool = []
 
-            for q in self.config['quiz']['questions']:
+            for q in self.config['quiz']['questions'] + self._get_vanilla_questions():
                 if len(q['answers']) == 2:
                     two_answers_pool.append(q)
                 elif len(q['answers']) == 3:
@@ -167,11 +171,20 @@ class QuizRandomizer(AbstractRandomizer):
             'answers': [FALLBACK_ANSWER for _ in range(answer_len)]
         }
 
+    def _get_vanilla_questions(self) -> List[QuizQuestion]:
+        if self.config['quiz']['include_vanilla_questions']:
+            with open(os.path.join(data_dir(), 'vanilla_questions.yml')) as f:
+                yaml_obj = strictyaml.load(f.read()).data
+                validate(yaml_obj, QUIZ_QUESTIONS_JSON_SCHEMA)
+                return yaml_obj
+        else:
+            return []
+
 
 if __name__ == '__main__':
     import json
-    with open('/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json') as f:
-        data = json.load(f)
+    with open('/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json') as f_test:
+        data = json.load(f_test)
     for question in data['quiz']['questions']:
         for answer in question['answers']:
             if len(answer) > 22:

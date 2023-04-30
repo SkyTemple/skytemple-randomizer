@@ -1,0 +1,412 @@
+- question: |-
+    You're at a movie theater. What are you there
+    to see?
+  answers:
+  - An action movie.
+  - A drama.
+  - A romantic movie.
+- question: What's your studying style?
+  answers:
+  - Working hard, every day.
+  - If I remember to...
+  - I just cover what I need to.
+- question: |-
+    You've been asked to do a difficult task.
+    What will you do?
+  answers:
+  - I can't really do it alone...
+  - Do it myself.
+  - Ask someone to help.
+  - Make someone else do it!
+- question: Are you truly sincere when you apologize?
+  answers:
+  - Of course.
+  - That's not easy to admit!
+- question: Do you think you have good study habits?
+  answers:
+  - Yes.
+  - No.
+  - Well, I never lose at sports!
+- question: |-
+    There's a rumor around about a ghost haunting
+    the school bathrooms! What do you do?
+  answers:
+  - Scary...bathrooms!
+  - Go in there anyway.
+- question: |-
+    Everyone's sharing a dessert, and there's an
+    extra piece. What do you do?
+  answers:
+  - Don't tell anyone.
+  - Let everyone know.
+  - First come, first served!
+- question: How are your mornings?
+  answers:
+  - Always in a rush!
+  - Always perfect.
+  - They are OK.
+- question: |-
+    Everyone around you is laughing hard at
+    something you think is pretty boring.
+    What do you do?
+  answers:
+  - Nothing, really.
+  - Laugh along.
+  - It depends on the situation.
+- question: |-
+    You want to reveal that you like someone a
+    whole bunch! What do you do?
+  answers:
+  - Show it a little by playing together.
+  - Make it obvious by...playing a prank!
+  - State it clearly for all to hear!
+  - Keep it to myself! It's too risky!
+- question: |-
+    You're on a stroll when a TV crew pounces
+    on you for an interview. What do you do?
+  answers:
+  - Run away! How embarrassing!
+  - Answer questions properly.
+  - Yuck it up! Woo-hoo! I'm on TV!
+- question: Do you like lively parties?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    The people at the next table are singing for
+    someone's birthday. What do you do?
+  answers:
+  - Stay on the sidelines.
+  - Sing along!
+  - Walk away.
+- question: |-
+    You're in a completely silent assembly when
+    you suddenly hear someone pass gas!
+    How do you react?
+  answers:
+  - Roll on the floor laughing!
+  - Just let it go by...
+  - Who was that?!
+- question: Do you like karaoke?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    Do you prefer to play outside rather than
+    inside?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    You see a big and comfortable bed.
+    Your first reaction is to...
+  answers:
+  - Jump on it!
+  - Belly flop!
+  - Curl up.
+- question: |-
+    You're hiking up a mountain when you reach
+    diverging paths. Which kind do you take?
+  answers:
+  - Narrow.
+  - Wide.
+- question: |-
+    You discover a beat-up-looking treasure chest
+    in some ruins. What do you do?
+  answers:
+  - Open it!
+  - Get help opening it.
+- question: |-
+    Your friend takes a spectacular fall![K]
+    What do you do?
+  answers:
+  - Help my friend up!
+  - Laugh! It's too funny!
+- question: |-
+    You're daydreaming...when your friend sprays
+    you with water! What do you do?
+  answers:
+  - Get mad!
+  - Get sad.
+  - Woo-hoo! Water fight!
+- question: |-
+    Have you ever thought that if you dug in your
+    backyard you could find buried treasure?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    Have you ever told a joke that just completely
+    fell flat?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    Hey, what's that?[K] There's someone behind you![K]
+    So...did you look just now?
+  answers:
+  - Don't do that! It scared me!
+  - OK, I admit it. You tricked me.
+  - No way. I didn't fall for it.
+  - Huh? What?
+- question: |-
+    Your friend has made a meal that
+    tastes terrible.[K]
+    They ask, "How is it?" You say...?
+  answers:
+  - '"Terrible!"'
+  - Just smile.
+  - "\"Um, it's...good.\""
+- question: |-
+    You run into a new person that you haven't
+    talked to very much before. What do you do?
+  answers:
+  - Make small talk.
+  - Say nothing!
+  - Make an excuse to get away!
+- question: |-
+    Good news and bad news... Which one do you
+    want to hear first?
+  answers:
+  - The good news.
+  - The bad news.
+  - I don't want either.
+- question: |-
+    Have you ever realized you were hogging the
+    conversation?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    When you see a switch, do you feel an
+    overwhelming urge to flip it?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    You find something at a great bargain price!
+    What do you do?
+  answers:
+  - Buy it right away!
+  - Think about whether you need it.
+  - Demand an even bigger discount!
+- question: |-
+    You're packing your classroom's snacks for a
+    picnic when you get hungry. What do you do?
+  answers:
+  - Eat just a tiny bit.
+  - Hold myself back and pack it all up.
+  - What snacks? They're in my belly!
+- question: Do you want to be taller someday?
+  answers:
+  - Totally!
+  - Of course not.
+- question: |-
+    Do you think it's important to always aim to
+    be the best?
+  answers:
+  - Of course!
+  - No.
+- question: |-
+    Have you ever looked at your reflection in a
+    mirror and thought, "What a cool person"?
+  answers:
+  - Certainly!
+  - Well, not really...
+- question: |-
+    If you saw someone doing something bad, could
+    you scold them?
+  answers:
+  - Of course!
+  - Not really.
+- question: |-
+    Do you prefer to be busy or to have
+    a lot of free time?
+  answers:
+  - Being busy.
+  - Free time!
+  - In between.
+- question: |-
+    You're about to buy a popular game when
+    someone else gets the last copy!
+    How do you feel?
+  answers:
+  - Whatever.
+  - Annoyed. I was here first!
+  - I shed a few tears.
+- question: |-
+    You notice that a toy you bought for full price
+    yesterday is marked down to half price today!
+    How do you feel?
+  answers:
+  - Heartbroken...
+  - Aaaargh!
+  - Bad timing, I guess...
+- question: |-
+    Your friend is running a little late to meet you.
+    Is that OK?
+  answers:
+  - Yes.
+  - Not at all!
+- question: |-
+    You've just stuffed yourself with a good meal
+    when a great dessert arrives. What do you do?
+  answers:
+  - Eat it. Who cares if I'm stuffed?
+  - Turn it down. It's too fattening!
+  - Yum! I love dessert the most! ♪
+- question: |-
+    You have a really important test tomorrow!
+    What do you do?
+  answers:
+  - Study all night long.
+  - Wing it! I'm sure it will be fine!
+  - Test?! I think I have a fever...
+- question: |-
+    You've been invited to a wonderful party. It's
+    time for the party to start, but there's nobody
+    there! You think...?
+  answers:
+  - Did something happen?
+  - Maybe I have the day wrong?
+  - Let's get this party started!
+- question: |-
+    Do you think that, no matter what, life
+    goes on?
+  answers:
+  - All the time!
+  - Never.
+- question: The phone's ringing![K] What do you do?
+  answers:
+  - Answer right away!
+  - Wait a bit before answering.
+  - Ignore it and let it ring.
+- question: |-
+    Your friends seem to be making plans to hang
+    out, just out of earshot. You think...
+  answers:
+  - I want to go too!
+  - No big deal.
+  - Will they invite me?
+- question: Do you want to be famous?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    You've been handed a large bag as a souvenir.
+    What do you do?
+  answers:
+  - Wait until I get home to open it.
+  - Shake it!
+  - Open it!
+  - It's smaller than everyone else's...
+- question: |-
+    Have you ever forgotten you bought something
+    and bought another one?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    Once you've decided something, do you see it
+    through to the end?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    Have you ever said "nice to meet you" to
+    someone you've met previously?
+  answers:
+  - Yes.
+  - No.
+- question: Did you make any New Year's resolutions?
+  answers:
+  - Of course!
+  - Nope.
+  - What are those?
+- question: |-
+    Do you think it's important to be fashionably
+    late?
+  answers:
+  - Yes.
+  - No.
+  - I don't know.
+- question: You've won big on a raffle ticket! You say...
+  answers:
+  - Woo-hoo!
+  - I can't believe it...
+  - This is my little secret.
+- question: |-
+    Do you think blaming something you did on
+    someone else is sometimes necessary?
+  answers:
+  - Of course!
+  - No way!
+- question: |-
+    Your friend suddenly won't listen to you, when
+    everything was fine yesterday.
+    What happened?
+  answers:
+  - Maybe they're sick.
+  - They're lost in thought.
+  - What?! Why?!
+- question: |-
+    You take off your shoes to realize your socks
+    are two different colors!
+    What do you do?
+  answers:
+  - Get embarrassed!
+  - Again?!
+  - I meant to do that!
+- question: |-
+    You fail miserably! Everyone found out, and
+    they're disappointed in you... What do you do?
+  answers:
+  - Try and hide.
+  - Think of an excuse.
+  - Drop down and play dead!
+- question: |-
+    Have you ever accidentally called a teacher
+    "Mom" or "Dad"?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    Have you ever blurted something out without
+    thinking about the consequences first?
+  answers:
+  - Yes.
+  - No.
+- question: |-
+    You're in class when you realize that you really
+    have to go to the restroom! What do you do?
+  answers:
+  - Ask for permission to leave.
+  - Sneak out.
+  - Hold on until class ends!
+- question: |-
+    Your friend offers to treat you to dinner.
+    What do you do?
+  answers:
+  - I'm there!
+  - Allow me.
+  - Thanks...
+- question: |-
+    You see a cake that is past its expiration date,
+    but only by one day. What do you do?
+  answers:
+  - Not a problem! Chow time!
+  - Think about it briefly, then decide.
+  - Get someone to try it first.
+- question: |-
+    You're eating at a very fancy restaurant known
+    for its food. Which course do you select?
+  answers:
+  - Seared steak.
+  - Healthy fish.
+  - Anything! It's all good!
+- question: |-
+    Did you play "Explorers of Time" or "Explorers
+    of Darkness"?
+  answers:
+  - Yes.
+  - No.

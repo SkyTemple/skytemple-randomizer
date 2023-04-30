@@ -452,8 +452,11 @@ class ConfigFileLoader:
                 raise ValueError(f"Value in JSON must be an object for {typ}.")
             kwargs = {}
             for field, field_type in typ.__annotations__.items():
-                if field not in target:
-                    # Compatibility:
+                # Compatibility:
+                if field in target:
+                    if field == 'weather' and type(target[field]) == int:
+                        target[field] = bool(target[field])
+                else:
                     if field == 'overworld_music' and field_type == bool:
                         target[field] = True
                     elif field == 'patch_disarm_monster_houses' and field_type == bool:

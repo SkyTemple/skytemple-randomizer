@@ -360,7 +360,7 @@ class MainController:
                         progress_label.set_text(f"Error: {traceback_str}")
                         progress_diag.set_title('Randomizing failed!')
                     else:
-                        rom.saveToFile(out_fn)
+                        rom.saveToFile(out_fn, updateDeviceCapacity=True)
                         img: Gtk.Image = self.builder.get_object('img_portrait_duskako')
                         img.set_from_file(os.path.join(data_dir(), 'duskako_happy.png'))
                         progress_label.set_text("Randomizing complete!")

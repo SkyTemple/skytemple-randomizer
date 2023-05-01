@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from time import sleep
 
+from skytemple_files.common.types.file_types import FileType
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import QuizMode
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -94,5 +95,14 @@ class PatchApplier(AbstractRandomizer):
             status.step("Apply 'DisarmOneRoomMonsterHouses' patch...")
             if not patcher.is_applied('DisarmOneRoomMonsterHouses'):
                 patcher.apply('DisarmOneRoomMonsterHouses')
+
+        # Change MD properties if ExpandPokeList patch is applied
+        md_properties = FileType.MD.properties()
+        if patcher.is_applied("ExpandPokeList"):
+            md_properties.num_entities = 2048
+            md_properties.max_possible = 2048
+        else:
+            md_properties.num_entities = 600
+            md_properties.max_possible = 554
 
         status.done()

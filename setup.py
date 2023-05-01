@@ -1,4 +1,4 @@
-__version__ = '1.4.8'
+__version__ = '1.5.0'
 from setuptools import setup, find_packages
 
 # README read-in
@@ -10,7 +10,7 @@ with open(path.join(this_directory, 'README.rst'), encoding='utf-8') as f:
 
 install_requires = [
     'ndspy >= 3.0.0',
-    'skytemple-files[spritecollab] >= 1.4.4',
+    'skytemple-files[spritecollab] >= 1.5.0',
     'explorerscript >= 0.1.0',
     'skytemple-icons >= 1.3.2',
     'pygobject >= 3.26.0',

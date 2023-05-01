@@ -3,7 +3,7 @@ git+https://github.com/skytemple/skytemple-files@master#egg=skytemple_files[spri
 git+https://github.com/skytemple/skytemple-icons@main#egg=skytemple_icons
 pygobject>=3.36.0
 explorerscript==0.1.2
-strictyaml==1.6.1
+strictyaml==1.7.3
 jsonschema==4.1.2
 tornado==6.1
 packaging

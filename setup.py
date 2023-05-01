@@ -30,11 +30,6 @@ if __name__ == '__main__':
         long_description_content_type='text/x-rst',
         url='https://github.com/SkyTemple/skytemple-randomizer/',
         install_requires=install_requires,
-        extras_require={
-            'web': [
-                'tornado >= 6.1'
-            ],
-        },
         classifiers=[
             'Development Status :: 4 - Beta',
             'Programming Language :: Python',

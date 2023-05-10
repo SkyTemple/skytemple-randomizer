@@ -1,0 +1,1 @@
+skytemple-files[spritecollab]==1.4.7

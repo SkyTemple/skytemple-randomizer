@@ -60,9 +60,9 @@ class PatchApplier(AbstractRandomizer):
                 patcher.apply('MoveShortcuts')
 
         if self.config['improvements']['patch_unuseddungeonchance']:
-            status.step("Apply 'UnusedDungeonChancePatch' patch...")
-            if not patcher.is_applied('UnusedDungeonChancePatch'):
-                patcher.apply('UnusedDungeonChancePatch')
+            status.step("Apply 'UnusedDungeonChance' patch...")
+            if not patcher.is_applied('UnusedDungeonChance'):
+                patcher.apply('UnusedDungeonChance')
 
         if self.config['improvements']['patch_totalteamcontrol']:
             status.step("Apply 'Complete Team Control' patches...")

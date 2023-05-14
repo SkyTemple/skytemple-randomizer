@@ -178,7 +178,6 @@ jobs:
             installer/skytemple-randomizer-*.exe
 
   package-mac:
-    needs: build
     runs-on: macos-11
     name: Build and package for Mac OS
     steps:

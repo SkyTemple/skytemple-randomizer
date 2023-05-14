@@ -21,7 +21,9 @@ additional_datas = [
     ('Arc-Dark', 'share/themes/Arc-Dark')
 ]
 
-additional_binaries = []
+additional_binaries = [
+    (os.path.join(site_packages, 'skytemple_rust*.pyd'), '.'),
+]
 
 block_cipher = None
 

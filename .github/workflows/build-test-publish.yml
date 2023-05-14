@@ -161,9 +161,6 @@ jobs:
           if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
               return 1
           }
-          
-          # Install latest skytemple-rust
-          bash .\install-skytemple-rust.sh
       - name: Create installer
         uses: joncloud/makensis-action@v3.7
         with:

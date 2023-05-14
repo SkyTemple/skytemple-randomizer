@@ -38,7 +38,7 @@ pip3 install -U certifi
 pip3 install -r ../requirements-mac-windows.txt
 pip3 install ..
 
-if (-not $env:IS_DEV_BUILD) {
+if ($env:IS_DEV_BUILD) {
   bash .\install-skytemple-components-from-git.sh
 }
 

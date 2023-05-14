@@ -6,8 +6,6 @@ from pathlib import PurePosixPath, Path
 pkg_path = os.path.abspath(os.path.join('..', 'skytemple_randomizer'))
 site_packages = next(p for p in sys.path if 'site-packages' in p)
 
-mingw = os.getenv("MINGW_VERSION", "mingw64")
-
 additional_files = []
 additional_datas = [
     (os.path.join(pkg_path, 'data'), 'data'),
@@ -16,32 +14,19 @@ additional_datas = [
     (os.path.join(site_packages, 'skytemple_icons', 'hicolor'), 'skytemple_icons/hicolor'),
     (os.path.join(site_packages, 'skytemple_files', '_resources'), 'skytemple_files/_resources'),
     (os.path.join(site_packages, 'certifi', 'cacert.pem'), 'certifi'),
-    (os.path.join('.', 'armips.exe'), 'skytemple_files/_resources'),
-
-    # These aren't auto dectected for some reason :(
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, 'share', 'fontconfig'), 'share/fontconfig'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, 'share', 'glib-2.0'), 'share/glib-2.0'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, 'share', 'gtksourceview-4'), 'share/gtksourceview-4'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, 'share', 'icons'), 'share/icons'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, 'share', 'locale'), 'share/locale'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, 'share', 'themes'), 'share/themes'),
+    (os.path.abspath(os.path.join('.', 'armips.exe')), 'skytemple_files/_resources'),
 
     # Themes
     ('Arc', 'share/themes/Arc'),
     ('Arc-Dark', 'share/themes/Arc-Dark')
 ]
 
-additional_binaries = [
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libcrypto*.dll"), '.'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libssl*.dll"), '.'),
-    (os.path.join("D:/", "a", "_temp", "msys64", mingw, "bin", "libgmp-10.dll"), '.'),
-    (os.path.join(site_packages, 'skytemple_rust*.pyd'), '.'),
-]
+additional_binaries = []
 
 block_cipher = None
 
 
-a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
+a = Analysis([os.path.join('..', 'skytemple_randomizer', 'frontend', 'gtk', 'main.py')],
              pathex=[os.path.abspath(os.path.join('..', 'skytemple_randomizer'))],
              binaries=additional_binaries,
              datas=additional_datas,

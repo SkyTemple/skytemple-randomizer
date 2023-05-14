@@ -43,6 +43,8 @@ Downloads
 - MacOS: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
 - Linux: https://flathub.org/apps/details/org.skytemple.Randomizer
 
+For build instructions, see the SkyTemple_ repository.
+
 |flathub_badge|
 
 .. _Flathub: https://flathub.org/apps/details/org.skytemple.SkyTemple
@@ -51,6 +53,8 @@ Downloads
     :target: https://flathub.org/apps/details/org.skytemple.SkyTemple
     :alt: Install on Flathub
     :width: 240px
+
+.. |SkyTemple| https://github.com/SkyTemple/SkyTemple
 
 Source repository for the Flatpak: https://github.com/flathub/org.skytemple.Randomizer
 

@@ -16,7 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from enum import Enum, auto
 from random import sample, choice
-from typing import List, Dict, Tuple, Iterable, Set
+from typing import Optional, List, Dict, Tuple, Iterable, Set
 
 from ndspy.rom import NintendoDSRom
 from range_typed_integers import u16
@@ -146,7 +146,7 @@ def assert_not_empty(l):
     return l
 
 
-def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: PokeType = None) -> List[u16]:
+def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: Optional[PokeType] = None) -> List[u16]:
     base: Set[u16] = set(conf['pokemon']['moves_enabled'])
     if roster == MoveRoster.DEFAULT:
         return list(base)

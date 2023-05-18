@@ -5,7 +5,6 @@ pygobject>=3.36.0
 explorerscript==0.1.2
 strictyaml==1.7.3
 jsonschema==4.17.3
-tornado==6.1
 packaging
 types-PyYAML
 types-setuptools

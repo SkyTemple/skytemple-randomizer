@@ -54,7 +54,7 @@ For build instructions, see the SkyTemple_ repository.
     :alt: Install on Flathub
     :width: 240px
 
-.. |SkyTemple| https://github.com/SkyTemple/SkyTemple
+.. _SkyTemple: https://github.com/SkyTemple/SkyTemple
 
 Source repository for the Flatpak: https://github.com/flathub/org.skytemple.Randomizer
 

@@ -14,9 +14,12 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import hashlib
 
 import gi
 from strictyaml import YAMLError
+
+from skytemple_randomizer.frontend.gtk.settings import SkyTempleRandomizerSettingsStoreGtk
 
 gi.require_version('Gtk', '3.0')
 gi.require_version('GtkSource', '4')
@@ -83,6 +86,7 @@ class MainController:
         self.builder.get_object('progress').add_accel_group(accel)
 
         self.static_config = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
+        self.settings = SkyTempleRandomizerSettingsStoreGtk()
 
         self.chosen_file = None
 
@@ -124,6 +128,8 @@ class MainController:
         self.ui_applier.apply(ConfigFileLoader.load(os.path.join(data_dir(), 'default.json')))
         ConfigDocApplier(self.window, self.builder).apply()
         self._check_for_updates()
+
+        self.banner_hash: Optional[str] = None
         self._check_for_banner()
 
         self.builder.connect_signals(self)
@@ -415,6 +421,11 @@ class MainController:
     def on_portrait_close_clicked(self, *args):
         self.builder.get_object('portrait_debug').hide()
 
+    def on_dismiss_banner_clicked(self, *args):
+        if self.banner_hash is not None:
+            self.settings.set_hash_last_dismissed_banner(self.banner_hash)
+        self.builder.get_object('banner_info_wrapper').hide()
+
     def display_error(self, error_message, error_title='SkyTemple Randomizer - Error'):
         md = Gtk.MessageDialog(self.window,
                                Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.ERROR,
@@ -446,31 +457,33 @@ class MainController:
         try:
             img_banner, url = get_event_banner()
             if img_banner is not None:
-                input_stream = Gio.MemoryInputStream.new_from_data(img_banner, None)
-                pixbuf = Pixbuf.new_from_stream(input_stream, None)
-                image = Gtk.Image()
-                image.show()
-                image.set_from_pixbuf(pixbuf)
+                self.banner_hash = hashlib.sha1(img_banner).hexdigest()
+                if self.banner_hash != self.settings.get_hash_last_dismissed_banner():
+                    input_stream = Gio.MemoryInputStream.new_from_data(img_banner, None)
+                    pixbuf = Pixbuf.new_from_stream(input_stream, None)
+                    image = Gtk.Image()
+                    image.show()
+                    image.set_from_pixbuf(pixbuf)
 
-                def open_web(*args):
-                    if url is not None:
-                        webbrowser.open_new_tab(url)
+                    def open_web(*args):
+                        if url is not None:
+                            webbrowser.open_new_tab(url)
 
-                def cursor_change(w: Gtk.Widget, evt: Gdk.EventCrossing):
-                    cursor = None
-                    if evt.get_event_type() == Gdk.EventType.ENTER_NOTIFY:
-                        cursor = Gdk.Cursor.new_from_name(w.get_display(), "pointer")
-                    elif evt.get_event_type() == Gdk.EventType.LEAVE_NOTIFY:
-                        cursor = Gdk.Cursor.new_from_name(w.get_display(), "default")
-                    if cursor:
-                        w.get_window().set_cursor(cursor)
-                b_info = self.builder.get_object('banner_info')
-                b_info.connect('button-release-event', open_web)
-                b_info.connect('enter-notify-event', cursor_change)
-                b_info.connect('leave-notify-event', cursor_change)
-                b_info.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
-                b_info.add(image)
-                return
+                    def cursor_change(w: Gtk.Widget, evt: Gdk.EventCrossing):
+                        cursor = None
+                        if evt.get_event_type() == Gdk.EventType.ENTER_NOTIFY:
+                            cursor = Gdk.Cursor.new_from_name(w.get_display(), "pointer")
+                        elif evt.get_event_type() == Gdk.EventType.LEAVE_NOTIFY:
+                            cursor = Gdk.Cursor.new_from_name(w.get_display(), "default")
+                        if cursor:
+                            w.get_window().set_cursor(cursor)
+                    b_info = self.builder.get_object('banner_info')
+                    b_info.connect('button-release-event', open_web)
+                    b_info.connect('enter-notify-event', cursor_change)
+                    b_info.connect('leave-notify-event', cursor_change)
+                    b_info.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
+                    b_info.add(image)
+                    return
         except Exception:
             pass
         # else/except:

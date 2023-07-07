@@ -2,7 +2,6 @@ ndspy==3.0.0
 git+https://github.com/skytemple/skytemple-files@master#egg=skytemple_files[spritecollab]
 git+https://github.com/skytemple/skytemple-icons@main#egg=skytemple_icons
 pygobject>=3.36.0
-explorerscript==0.1.2
 strictyaml==1.7.3
 jsonschema==4.17.3
 packaging

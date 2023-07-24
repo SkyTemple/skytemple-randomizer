@@ -3,7 +3,7 @@ git+https://github.com/skytemple/skytemple-files@master#egg=skytemple_files[spri
 git+https://github.com/skytemple/skytemple-icons@main#egg=skytemple_icons
 pygobject>=3.36.0
 strictyaml==1.7.3
-jsonschema==4.17.3
+jsonschema==4.18.4
 packaging
 types-PyYAML
 types-setuptools

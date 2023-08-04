@@ -60,6 +60,7 @@ from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 from gi.repository import Gtk, GLib, Gdk, GtkSource, Gio
 from gi.repository.Gtk import Window
 from gi.repository.GdkPixbuf import Pixbuf
+SKYTEMPLE_WIKI_LINK = 'https://wiki.skytemple.org'
 
 
 if getattr(sys, 'frozen', False):
@@ -316,8 +317,8 @@ class MainController:
         about.set_version(version())
         about.run()
 
-    def on_discord_clicked(self, *args):
-        webbrowser.open_new_tab('https://discord.gg/skytemple')
+    def on_help_clicked(self, *args):
+        webbrowser.open(f"{SKYTEMPLE_WIKI_LINK}/index.php/SkyTemple:UI-Link/skytemple-randomizer")
 
     def on_skytemple_clicked(self, *args):
         webbrowser.open_new_tab('https://skytemple.org')

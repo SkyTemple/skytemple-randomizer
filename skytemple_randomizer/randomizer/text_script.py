@@ -17,7 +17,6 @@
 from random import shuffle
 from typing import Dict, List
 
-from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.script.ssb.model import Ssb
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer

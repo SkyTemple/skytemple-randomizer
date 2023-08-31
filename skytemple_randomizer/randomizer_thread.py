@@ -119,7 +119,7 @@ class RandomizerThread(Thread):
             save_scripts(self.rom, self.static_data)
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)
-            self.error = sys.exc_info()
+            self.error = sys.exc_info()  #  type: ignore
 
         with self.lock:
             self.done = True

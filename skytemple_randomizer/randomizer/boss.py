@@ -111,7 +111,7 @@ def create_mapping():
     from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
     from skytemple_files.common.util import get_binary_from_rom
     boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(
-        set_binary_in_rom(rom, static_data.bin_sections.overlay29),
+        get_binary_from_rom(rom, static_data.bin_sections.overlay29),
         static_data
     )
 

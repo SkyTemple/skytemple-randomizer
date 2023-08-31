@@ -27,7 +27,7 @@ from skytemple_files.data.md.protocol import MdProtocol, MdEntryProtocol, Gender
 from skytemple_files.data.str.model import Str
 from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_allowed_md_starter_ids, clone_missing_portraits, \
+from skytemple_randomizer.randomizer.util.util import get_allowed_md_starter_ids, clone_missing_portraits, \
     replace_strings, get_all_string_files, Roster
 from skytemple_randomizer.status import Status
 

@@ -14,6 +14,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
 import math
 from enum import Enum, auto
 from itertools import chain
@@ -35,7 +36,9 @@ from skytemple_files.dungeon_data.mappa_bin.protocol import (
     MappaItemListProtocol,
     MappaBinProtocol,
     DUMMY_MD_INDEX,
-    MappaTrapListProtocol
+    MappaTrapListProtocol,
+    MappaMonsterProtocol,
+    MappaFloorTerrainSettingsProtocol
 )
 from skytemple_files.dungeon_data.mappa_bin.validator.exception import DungeonValidatorError, \
     DungeonTotalFloorCountInvalidError, InvalidFloorListReferencedError, InvalidFloorReferencedError, \
@@ -69,6 +72,8 @@ MAX_TRAP_LISTS = 100
 MAX_ITEM_LISTS = 150
 MIN_MONSTERS_PER_LIST = 5
 MAX_MONSTERS_PER_LIST = 30  # 48 is theoretical limit [=max used by vanilla game]
+
+GenericMappa = MappaBinProtocol[MappaFloorProtocol[MappaFloorLayoutProtocol[MappaFloorTerrainSettingsProtocol], MappaMonsterProtocol, MappaTrapListProtocol, MappaItemListProtocol]]
 
 
 
@@ -134,7 +139,7 @@ class DungeonRandomizer(AbstractRandomizer):
         status.done()
 
     def _randomize(
-            self, mappa: MappaBinProtocol, trap_lists: Optional[List[MappaTrapListProtocol]], item_lists: Optional[List[MappaItemListProtocol]]
+            self, mappa: GenericMappa, trap_lists: Optional[List[MappaTrapListProtocol]], item_lists: Optional[List[MappaItemListProtocol]]
     ):
         self._randomize_floor_count(mappa)
         for floor_list_index, floor_list in enumerate(mappa.floor_lists):
@@ -147,8 +152,8 @@ class DungeonRandomizer(AbstractRandomizer):
                         floor.layout = self._randomize_layout(floor.layout, dungeon_id)
                     if self.config['dungeons']['pokemon']:
                         floor.monsters = self._randomize_monsters(
-                            min(m.level for m in floor.monsters if m.weight > 0),
-                            max(m.level for m in floor.monsters if m.weight > 0),
+                            min(m.level for m in floor.monsters if m.main_spawn_weight > 0),
+                            max(m.level for m in floor.monsters if m.main_spawn_weight > 0),
                             floor_list_index != SKY_PEAK_MAPPA_IDX
                         )
                     if trap_lists is not None:

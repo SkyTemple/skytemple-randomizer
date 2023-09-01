@@ -87,39 +87,39 @@ class ConfigUIApplier:
             w.set_active(config)
         elif is_int(typ):
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.ComboBox = self._ui_get('cb_' + field_name)
+            w: Gtk.ComboBox = self._ui_get('cb_' + field_name)  #  type: ignore
             w.set_active_id(str(config))
         elif typ == IntRange:
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.Scale = self._ui_get('scale_' + field_name)
+            w: Gtk.Scale = self._ui_get('scale_' + field_name)  #  type: ignore
             w.set_value(getattr(config, 'value'))
         elif typ == str:
             assert field_name, "Field name must be set for primitive"
             try:
-                w: Gtk.Entry = self._ui_get('entry_' + field_name)
+                w: Gtk.Entry = self._ui_get('entry_' + field_name)  #  type: ignore
                 w.set_text(config)
             except ValueError:
-                w: Gtk.TextView = self._ui_get('text_' + field_name)
+                w: Gtk.TextView = self._ui_get('text_' + field_name)  #  type: ignore
                 w.get_buffer().set_text(config)
         elif typ == dict and len(config) > 0 and isinstance(next(iter(config.values())), dict):
             # DUNGEON SETTINGS
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)
+            w: Gtk.TreeView = self._ui_get('tree_' + field_name)  #  type: ignore
             s: Gtk.ListStore = w.get_model()
             for idx, settings in config.items():
-                settings: DungeonSettingsConfig
+                settings: DungeonSettingsConfig  #  type: ignore
                 s.append([idx, self._get_dungeon_name(idx), settings['randomize'], settings['monster_houses'],
                           settings['randomize_weather'], settings['unlock'], settings['enemy_iq']])
         elif typ == dict and len(config) > 0 and isinstance(next(iter(config.values())), Number):
             # ITEM WEIGHTS
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)
-            s: Gtk.ListStore = w.get_model()
+            w: Gtk.TreeView = self._ui_get('tree_' + field_name)  #  type: ignore
+            s: Gtk.ListStore = w.get_model()  #  type: ignore
             for idx, weight in config.items():
                 idx = int(idx)
                 if idx in ALLOWED_ITEM_CATS:
                     s.append([idx, self._get_cat_name(idx), str(weight)])
         elif typ == list and (len(config) < 1 or isinstance(next(iter(config)), int)):
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)
-            s: Gtk.ListStore = w.get_model()
+            w: Gtk.TreeView = self._ui_get('tree_' + field_name)  #  type: ignore
+            s: Gtk.ListStore = w.get_model()  #  type: ignore
             if field_name == 'pokemon_abilities_enabled':
                 for a in Ability:
                     if a.value != 0xFF:
@@ -129,13 +129,13 @@ class ConfigUIApplier:
                     if item.id <= MAX_ITEM_ID:
                         s.append([item.id, item.name, item.id in config])
             elif field_name == 'pokemon_moves_enabled':
-                for a, name in MOVES.items():
+                for a, name in MOVES.items():  #  type: ignore
                     s.append([a, name, a in config])
             elif field_name == 'pokemon_monsters_enabled':
-                for a, name in MONSTERS.items():
+                for a, name in MONSTERS.items():  #  type: ignore
                     s.append([a, name, a in config])
             elif field_name == 'pokemon_starters_enabled':
-                for a, name in MONSTERS.items():
+                for a, name in MONSTERS.items():  #  type: ignore
                     s.append([a, name, a in config])
         else:
             raise TypeError(f"Unknown type for {self.__class__.__name__}: {typ}")

@@ -18,7 +18,7 @@ import os
 from datetime import datetime
 from enum import Enum
 from random import choice, randrange
-from typing import List, Union, Dict, Optional, Set, Sequence
+from typing import List, Union, Dict, Set, Sequence
 
 from PIL import Image
 from ndspy.rom import NintendoDSRom

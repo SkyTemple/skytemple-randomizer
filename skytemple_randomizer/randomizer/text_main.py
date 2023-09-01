@@ -19,7 +19,7 @@ from random import shuffle
 from skytemple_files.common.ppmdu_config.data import Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_main_string_file, get_all_string_files
+from skytemple_randomizer.randomizer.util.util import get_all_string_files
 from skytemple_randomizer.status import Status
 
 

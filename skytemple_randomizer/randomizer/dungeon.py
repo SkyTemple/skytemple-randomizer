@@ -14,6 +14,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
 import math
 from enum import Enum, auto
 from itertools import chain
@@ -35,7 +36,9 @@ from skytemple_files.dungeon_data.mappa_bin.protocol import (
     MappaItemListProtocol,
     MappaBinProtocol,
     DUMMY_MD_INDEX,
-    MappaTrapListProtocol
+    MappaTrapListProtocol,
+    MappaMonsterProtocol,
+    MappaFloorTerrainSettingsProtocol
 )
 from skytemple_files.dungeon_data.mappa_bin.validator.exception import DungeonValidatorError, \
     DungeonTotalFloorCountInvalidError, InvalidFloorListReferencedError, InvalidFloorReferencedError, \
@@ -58,7 +61,7 @@ ALLOWED_TILESET_IDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17,
                        84, 85, 87, 88, 89, 90, 91, 94, 96, 97, 99, 101, 102, 103, 104, 105, 106, 108, 109, 110, 111,
                        112, 113, 114, 115, 116, 117, 118, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132,
                        133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143]
-KECLEON_MD_INDEX = 383
+KECLEON_MD_INDEX = u16(383)
 # TODO: Make configurable?
 MONSTER_LEVEL_VARIANCE = 3
 
@@ -69,6 +72,8 @@ MAX_TRAP_LISTS = 100
 MAX_ITEM_LISTS = 150
 MIN_MONSTERS_PER_LIST = 5
 MAX_MONSTERS_PER_LIST = 30  # 48 is theoretical limit [=max used by vanilla game]
+
+GenericMappa = MappaBinProtocol[MappaFloorProtocol[MappaFloorLayoutProtocol[MappaFloorTerrainSettingsProtocol], MappaMonsterProtocol, MappaTrapListProtocol, MappaItemListProtocol]]
 
 
 
@@ -134,7 +139,7 @@ class DungeonRandomizer(AbstractRandomizer):
         status.done()
 
     def _randomize(
-            self, mappa: MappaBinProtocol, trap_lists: Optional[List[MappaTrapListProtocol]], item_lists: Optional[List[MappaItemListProtocol]]
+            self, mappa: GenericMappa, trap_lists: Optional[List[MappaTrapListProtocol]], item_lists: Optional[List[MappaItemListProtocol]]
     ):
         self._randomize_floor_count(mappa)
         for floor_list_index, floor_list in enumerate(mappa.floor_lists):
@@ -147,8 +152,8 @@ class DungeonRandomizer(AbstractRandomizer):
                         floor.layout = self._randomize_layout(floor.layout, dungeon_id)
                     if self.config['dungeons']['pokemon']:
                         floor.monsters = self._randomize_monsters(
-                            min(m.level for m in floor.monsters if m.weight > 0),
-                            max(m.level for m in floor.monsters if m.weight > 0),
+                            min(m.level for m in floor.monsters if m.main_spawn_weight > 0),
+                            max(m.level for m in floor.monsters if m.main_spawn_weight > 0),
                             floor_list_index != SKY_PEAK_MAPPA_IDX
                         )
                     if trap_lists is not None:
@@ -236,18 +241,18 @@ class DungeonRandomizer(AbstractRandomizer):
         if not allow_shaymin:
             for idx in SHAYMIN_IDS:
                 if idx in allowed:
-                    allowed.remove(idx)
+                    allowed.remove(u16(idx))
         md_ids = sorted(
             set(choice(allowed) for _ in range(0, randrange(MIN_MONSTERS_PER_LIST, MAX_MONSTERS_PER_LIST + 1))))
         weights = sorted(random_weights(len(md_ids)))
         for md_id, weight in zip(md_ids, weights):
             level = min(100,
                         max(1, randrange(min_level - MONSTER_LEVEL_VARIANCE, max_level + MONSTER_LEVEL_VARIANCE + 1)))
-            monsters.append(FileType.MAPPA_BIN.get_monster_model()(level, weight, weight, md_id))
+            monsters.append(FileType.MAPPA_BIN.get_monster_model()(u8(level), weight, weight, md_id))
 
         # Add Kecleon and Dummy
-        monsters.append(FileType.MAPPA_BIN.get_monster_model()(42, 0, 0, KECLEON_MD_INDEX))
-        monsters.append(FileType.MAPPA_BIN.get_monster_model()(1, 0, 0, DUMMY_MD_INDEX))
+        monsters.append(FileType.MAPPA_BIN.get_monster_model()(u8(42), u16(0), u16(0), KECLEON_MD_INDEX))
+        monsters.append(FileType.MAPPA_BIN.get_monster_model()(u8(1), u16(0), u16(0), u16(DUMMY_MD_INDEX)))
 
         return sorted(monsters, key=lambda m: m.md_index)
 
@@ -469,6 +474,7 @@ class DungeonRandomizer(AbstractRandomizer):
                     dungeons[e.dungeon_id].start_after == 18 and e.floors_in_mappa_not_referenced == [19]
 
     def _mappa_generate_and_insert_new_floor_list(self):
+        assert self.mappa is not None
         index = len(self.mappa.floor_lists)
         self.mappa.add_floor_list([self._mappa_generate_new_floor()])
         return index

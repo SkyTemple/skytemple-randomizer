@@ -33,8 +33,7 @@ import traceback
 import webbrowser
 from functools import partial
 from math import floor
-from typing import Optional, Callable, Dict
-import strictyaml
+from typing import Optional, Callable
 from gi.repository.GtkSource import StyleSchemeManager, LanguageManager
 from jsonschema import ValidationError
 
@@ -377,7 +376,7 @@ class MainController:
                         progress_diag.set_title('Randomizing failed!')
                     else:
                         rom.saveToFile(out_fn, updateDeviceCapacity=True)
-                        img: Gtk.Image = self.builder.get_object('img_portrait_duskako')
+                        img: Gtk.Image = self.builder.get_object('img_portrait_duskako')  # type: ignore
                         img.set_from_file(os.path.join(data_dir(), 'duskako_happy.png'))
                         progress_label.set_text("Randomizing complete!")
                         progress_diag.set_title('Randomizing complete!')

@@ -14,6 +14,8 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
 from enum import Enum, auto
 from random import sample, choice
 from typing import Optional, List, Dict, Tuple, Iterable, Set
@@ -26,6 +28,8 @@ from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.protocol import PokeType
 from skytemple_files.data.str.model import Str
 from skytemple_files.graphics.kao import SUBENTRIES
+from skytemple_files.script.ssb.model import Ssb
+
 from skytemple_randomizer.config import RandomizerConfig
 
 
@@ -192,7 +196,7 @@ def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data,
             script.strings[lang.name.lower()] = [replace_strings(string, replace_map) for string in script.strings[lang.name.lower()]]
 
 
-_ssb_file_cache = {}
+_ssb_file_cache: Dict[str, Ssb] = {}
 def clear_script_cache():
     global _ssb_file_cache
     _ssb_file_cache = {}

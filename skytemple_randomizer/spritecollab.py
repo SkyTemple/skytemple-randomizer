@@ -1,4 +1,5 @@
 """Global instance of the SpriteCollab client."""
+import platform
 from typing import Optional, List, Sequence, Dict, Mapping, Tuple
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Sprite
@@ -20,7 +21,7 @@ _COLLECTED_SPRITES: Dict[Tuple[str, str], List[Credit]] = {}
 def sprite_collab() -> SpriteCollabClient:
     global _INSTANCE
     if _INSTANCE is None:
-        _INSTANCE = SpriteCollabClient(cache_size=5_000)
+        _INSTANCE = SpriteCollabClient(cache_size=5_000, use_certifi_ssl=platform.system() == "Windows")
     return _INSTANCE
 
 

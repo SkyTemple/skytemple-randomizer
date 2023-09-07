@@ -15,6 +15,8 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
 import json
 import os
 import sys
@@ -23,7 +25,6 @@ from enum import Enum
 from numbers import Number
 from typing import TypedDict, Optional, List, Dict
 
-import pkg_resources
 from jsonschema import validate
 from range_typed_integers import u16, u8, u32
 
@@ -34,6 +35,12 @@ from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
+
+if sys.version_info >= (3, 9):
+    import importlib.metadata as importlib_metadata
+else:
+    import importlib_metadata
+
 
 CLASSREF = '__classref'
 
@@ -605,8 +612,8 @@ class EnumJsonEncoder(json.JSONEncoder):
 
 def version():
     try:
-        return pkg_resources.get_distribution("skytemple-randomizer").version.strip()
-    except pkg_resources.DistributionNotFound:
+        return importlib_metadata.metadata("skytemple-randomizer")["version"]
+    except importlib_metadata.PackageNotFoundError:
         # Try reading from a VERISON file instead
         version_file = os.path.join(data_dir(), 'VERSION')
         if os.path.exists(version_file):

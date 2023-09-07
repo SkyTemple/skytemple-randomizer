@@ -16,7 +16,8 @@ install_requires = [
     'pygobject >= 3.26.0',
     'strictyaml >= 1.6.0',
     'jsonschema >= 4.1.2',
-    'packaging'
+    'packaging',
+    'importlib_metadata>=1.3; python_version < "3.9"'
 ]
 package_data = ['frontend/gtk/*.glade', 'frontend/gtk/*.css', 'data/*/*/*/*/*', 'data/*', 'data/*/*', 'py.typed']
 

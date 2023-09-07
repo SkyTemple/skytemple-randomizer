@@ -7,3 +7,4 @@ jsonschema==4.19.0
 packaging
 types-PyYAML
 types-setuptools
+importlib_metadata>=1.3; python_version < "3.9"

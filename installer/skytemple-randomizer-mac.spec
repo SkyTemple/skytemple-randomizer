@@ -2,7 +2,6 @@
 import os
 import sys
 import shutil
-import pkg_resources
 from pathlib import PurePosixPath, Path
 
 pkg_path = os.path.abspath(os.path.join('..', 'skytemple_randomizer'))

@@ -19,7 +19,7 @@ import sys
 from enum import Enum
 from functools import partial
 from numbers import Number
-from typing import List, Dict
+from typing import List, Dict, cast
 
 import strictyaml
 from gi.repository import Gtk, GtkSource
@@ -32,6 +32,7 @@ from skytemple_files.data.md.protocol import Ability
 from skytemple_files.dungeon_data.mappa_bin.protocol import MAX_ITEM_ID
 from skytemple_randomizer.config import RandomizerConfig, CLASSREF, DungeonSettingsConfig, IntRange, QuizQuestion, \
     QUIZ_QUESTIONS_JSON_SCHEMA
+from skytemple_randomizer.frontend.gtk.ui_util import builder_get_assert, builder_get_assert_exist, iter_tree_model
 from skytemple_randomizer.lists import MOVES, MONSTERS
 from skytemple_randomizer.randomizer.common.items import ALLOWED_ITEM_CATS
 
@@ -55,13 +56,13 @@ class ConfigUIApplier:
         self.item_cats = item_cats
 
     def apply(self, config: RandomizerConfig):
-        self.builder.get_object('store_tree_dungeons_dungeons').clear()
-        self.builder.get_object('store_tree_monsters_abilities').clear()
-        self.builder.get_object('store_tree_monsters_monsters').clear()
-        self.builder.get_object('store_tree_monsters_moves').clear()
-        self.builder.get_object('store_tree_dungeons_items').clear()
-        self.builder.get_object('store_tree_item_weights').clear()
-        self.builder.get_object('store_tree_monsters_starters').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_dungeons').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_abilities').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_monsters').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_moves').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_items').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_item_weights').clear()
+        builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_starters').clear()
         self._handle(config)
 
     def _handle(self, config, field_name=None):
@@ -70,7 +71,7 @@ class ConfigUIApplier:
         else:
             typ = config.__class__
         if typ == list and field_name == 'quiz_questions':
-            buffer: GtkSource.Buffer = self.builder.get_object('text_quiz_content').get_buffer()
+            buffer: GtkSource.Buffer = builder_get_assert(self.builder, GtkSource.View, 'text_quiz_content').get_buffer()
             validate(config, QUIZ_QUESTIONS_JSON_SCHEMA)
             buffer.set_text(strictyaml.as_document(config).as_yaml())
         elif hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
@@ -83,68 +84,62 @@ class ConfigUIApplier:
             self._handle(config.value, field_name)
         elif typ == bool:
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.Switch = self._ui_get('switch_' + field_name)
-            w.set_active(config)
+            w1 = builder_get_assert_exist(self.builder, Gtk.Switch, 'switch_' + field_name)
+            w1.set_active(config)
         elif is_int(typ):
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.ComboBox = self._ui_get('cb_' + field_name)  #  type: ignore
-            w.set_active_id(str(config))
+            w2 = builder_get_assert_exist(self.builder, Gtk.ComboBox, 'cb_' + field_name)
+            w2.set_active_id(str(config))
         elif typ == IntRange:
             assert field_name, "Field name must be set for primitive"
-            w: Gtk.Scale = self._ui_get('scale_' + field_name)  #  type: ignore
-            w.set_value(getattr(config, 'value'))
+            w3 = builder_get_assert_exist(self.builder, Gtk.Scale, 'scale_' + field_name)
+            w3.set_value(getattr(config, 'value'))
         elif typ == str:
             assert field_name, "Field name must be set for primitive"
             try:
-                w: Gtk.Entry = self._ui_get('entry_' + field_name)  #  type: ignore
-                w.set_text(config)
+                w4 = builder_get_assert_exist(self.builder, Gtk.Entry, 'entry_' + field_name)
+                w4.set_text(config)
             except ValueError:
-                w: Gtk.TextView = self._ui_get('text_' + field_name)  #  type: ignore
-                w.get_buffer().set_text(config)
+                w5 = builder_get_assert_exist(self.builder, Gtk.TextView, 'text_' + field_name)
+                w5.get_buffer().set_text(config)
         elif typ == dict and len(config) > 0 and isinstance(next(iter(config.values())), dict):
             # DUNGEON SETTINGS
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)  #  type: ignore
-            s: Gtk.ListStore = w.get_model()
+            w6 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
+            s6 = cast(Gtk.ListStore, w6.get_model())
             for idx, settings in config.items():
-                settings: DungeonSettingsConfig  #  type: ignore
-                s.append([idx, self._get_dungeon_name(idx), settings['randomize'], settings['monster_houses'],
-                          settings['randomize_weather'], settings['unlock'], settings['enemy_iq']])
+                settings6 = cast(DungeonSettingsConfig, settings)
+                s6.append([idx, self._get_dungeon_name(idx), settings6['randomize'], settings6['monster_houses'],
+                           settings6['randomize_weather'], settings6['unlock'], settings6['enemy_iq']])
         elif typ == dict and len(config) > 0 and isinstance(next(iter(config.values())), Number):
             # ITEM WEIGHTS
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)  #  type: ignore
-            s: Gtk.ListStore = w.get_model()  #  type: ignore
+            w7 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
+            s7 = cast(Gtk.ListStore, w7.get_model())
             for idx, weight in config.items():
                 idx = int(idx)
                 if idx in ALLOWED_ITEM_CATS:
-                    s.append([idx, self._get_cat_name(idx), str(weight)])
+                    s7.append([idx, self._get_cat_name(idx), str(weight)])
         elif typ == list and (len(config) < 1 or isinstance(next(iter(config)), int)):
-            w: Gtk.TreeView = self._ui_get('tree_' + field_name)  #  type: ignore
-            s: Gtk.ListStore = w.get_model()  #  type: ignore
+            w8: Gtk.TreeView = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
+            s8 = cast(Gtk.ListStore, w8.get_model())
             if field_name == 'pokemon_abilities_enabled':
                 for a in Ability:
                     if a.value != 0xFF:
-                        s.append([a.value, a.print_name, a.value in config])
+                        s8.append([a.value, a.print_name, a.value in config])
             elif field_name == 'dungeons_items_enabled':
                 for item in self.items:
                     if item.id <= MAX_ITEM_ID:
-                        s.append([item.id, item.name, item.id in config])
+                        s8.append([item.id, item.name, item.id in config])
             elif field_name == 'pokemon_moves_enabled':
-                for a, name in MOVES.items():  #  type: ignore
-                    s.append([a, name, a in config])
+                for a_mov, name in MOVES.items():
+                    s8.append([a_mov, name, a_mov in config])
             elif field_name == 'pokemon_monsters_enabled':
-                for a, name in MONSTERS.items():  #  type: ignore
-                    s.append([a, name, a in config])
+                for a_mon, name in MONSTERS.items():
+                    s8.append([a_mon, name, a_mon in config])
             elif field_name == 'pokemon_starters_enabled':
-                for a, name in MONSTERS.items():  #  type: ignore
-                    s.append([a, name, a in config])
+                for a_itm, name in MONSTERS.items():
+                    s8.append([a_itm, name, a_itm in config])
         else:
             raise TypeError(f"Unknown type for {self.__class__.__name__}: {typ}")
-
-    def _ui_get(self, n):
-        w: Gtk.Switch = self.builder.get_object(n)
-        if w is None:
-            raise ValueError(f"UI element '{n}' not found.")
-        return w
 
     def _get_dungeon_name(self, idx):
         return self.dungeons[idx].name
@@ -163,7 +158,7 @@ class ConfigUIReader:
 
     def _handle(self, typ: type, field_name=None):
         if typ == List[QuizQuestion]:
-            buffer: GtkSource.Buffer = self.builder.get_object('text_quiz_content').get_buffer()
+            buffer = builder_get_assert(self.builder, GtkSource.View, 'text_quiz_content').get_buffer()
             yaml_content = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
             yaml_obj = strictyaml.load(yaml_content).data
             validate(yaml_obj, QUIZ_QUESTIONS_JSON_SCHEMA)
@@ -180,56 +175,53 @@ class ConfigUIReader:
             return typ(self._handle(int, field_name))
         elif typ == bool:
             assert field_name, "Field name must be set for primitive"
-            w = self._ui_get('switch_' + field_name)
-            return w.get_active()
+            w1 = builder_get_assert_exist(self.builder, Gtk.Switch, 'switch_' + field_name)
+            return w1.get_active()
         elif is_int(typ):
             assert field_name, "Field name must be set for primitive"
-            w = self._ui_get('cb_' + field_name)
-            return int(w.get_active_id())
+            w2 = builder_get_assert_exist(self.builder, Gtk.ComboBox, 'cb_' + field_name)
+            active = w2.get_active_id()
+            if active:
+                return int(active)
+            return 0
         elif typ == IntRange:
             assert field_name, "Field name must be set for primitive"
-            w = self._ui_get('scale_' + field_name)
-            return typ(int(w.get_value()))
+            w3 = builder_get_assert_exist(self.builder, Gtk.Scale, 'scale_' + field_name)
+            return typ(int(w3.get_value()))
         elif typ == str:
             assert field_name, "Field name must be set for primitive"
             try:
-                w = self._ui_get('entry_' + field_name)
-                return w.get_text()
+                w4 = builder_get_assert_exist(self.builder, Gtk.Entry, 'entry_' + field_name)
+                return w4.get_text()
             except ValueError:
-                w = self._ui_get('text_' + field_name)
-                buffer = w.get_buffer()
-                return buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
+                w5 = builder_get_assert_exist(self.builder, Gtk.TextView, 'text_' + field_name)
+                buffer5 = w5.get_buffer()
+                return buffer5.get_text(buffer5.get_start_iter(), buffer5.get_end_iter(), False)
         elif typ == Dict[int, DungeonSettingsConfig]:
-            w = self._ui_get('tree_' + field_name)
-            s: Gtk.ListStore = w.get_model()
+            w6 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
+            s6 = cast(Gtk.ListStore, w6.get_model())
             d = {}
-            for idx, name, randomize, monster_houses, randomize_weather, unlock, enemy_iq in s:
+            for idx, name, randomize, monster_houses, randomize_weather, unlock, enemy_iq in iter_tree_model(s6):
                 d[idx] = {'randomize': randomize, 'monster_houses': monster_houses,
                           'randomize_weather': randomize_weather, 'unlock': unlock, 'enemy_iq': enemy_iq}
             return d
         elif typ == Dict[int, Number]:
-            w = self._ui_get('tree_' + field_name)
-            s = w.get_model()
+            w7 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
+            s7 = cast(Gtk.ListStore, w7.get_model())
             d = {}
-            for idx, name, weight in s:
+            for idx, name, weight in iter_tree_model(s7):
                 d[idx] = float(weight)
             return d
         elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
-            w = self._ui_get('tree_' + field_name)
-            s = w.get_model()
+            w8 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
+            s8 = cast(Gtk.ListStore, w8.get_model())
             dd: List[int] = []
-            for idx, name, use in s:
+            for idx, name, use in iter_tree_model(s8):
                 if use:
                     dd.append(idx)
             return dd
         else:
             raise TypeError(f"Unknown type for {self.__name__}: {typ}")  # type: ignore
-
-    def _ui_get(self, n):
-        w: Gtk.Switch = self.builder.get_object(n)
-        if w is None:
-            raise ValueError(f"UI element '{n}' not found.")
-        return w
 
 
 class ConfigDocApplier:
@@ -262,8 +254,10 @@ class ConfigDocApplier:
                     ))
 
     def show_help(self, info, *args):
-        md = Gtk.MessageDialog(self.window,
-                               Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.INFO,
-                               Gtk.ButtonsType.OK, info)
+        md = Gtk.MessageDialog(parent=self.window,
+                               destroy_with_parent=True,
+                               message_type=Gtk.MessageType.INFO,
+                               buttons=Gtk.ButtonsType.OK,
+                               text=info)
         md.run()
         md.destroy()

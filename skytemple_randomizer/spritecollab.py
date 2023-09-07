@@ -21,7 +21,7 @@ _COLLECTED_SPRITES: Dict[Tuple[str, str], List[Credit]] = {}
 def sprite_collab() -> SpriteCollabClient:
     global _INSTANCE
     if _INSTANCE is None:
-        _INSTANCE = SpriteCollabClient(cache_size=5_000, use_certifi_ssl=platform.system() == "Windows")
+        _INSTANCE = SpriteCollabClient(cache_size=5_000, use_ssl=platform.system() != "Windows")
     return _INSTANCE
 
 

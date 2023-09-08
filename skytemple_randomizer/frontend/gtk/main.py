@@ -54,7 +54,6 @@ class MainWindow(Adw.ApplicationWindow):
 class MainApp(Adw.Application):
     def __init__(self):
         # Load Builder and Window
-        path = os.path.abspath(os.path.dirname(__file__))
         super().__init__(application_id="org.skytemple.Randomizer")
         GLib.set_application_name("SkyTemple Randomizer")
 

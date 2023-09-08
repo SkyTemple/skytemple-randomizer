@@ -106,4 +106,4 @@ venv.bak/
 ### JetBrains
 .idea/
 ### skytemple
-*.glade~
+*.glade

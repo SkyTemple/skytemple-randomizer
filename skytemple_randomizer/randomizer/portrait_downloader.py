@@ -35,7 +35,7 @@ from skytemple_files.hardcoded.personality_test_starters import HardcodedPersona
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 
-from skytemple_randomizer.config import Global, RandomizerConfig
+from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
@@ -169,11 +169,8 @@ class PortraitDownloader(AbstractRandomizer):
         set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
         def add_rows():
-            if Global.main_builder:
-                o = Global.main_builder.get_object('store_debug_portraits')
-                o.clear()
-                for row in self._debugs:
-                    o.append(row)
+            # TODO
+            pass
 
         self.frontend.idle_add(add_rows)
 

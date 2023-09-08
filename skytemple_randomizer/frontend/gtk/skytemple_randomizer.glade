@@ -372,7 +372,7 @@
       <column type="gboolean"/>
     </columns>
   </object>
-  <object class="GtkWindow" id="main_window">
+  <object class="GtkApplicationWindow" id="main_window">
     <property name="can-focus">False</property>
     <property name="icon-name">skytemple</property>
     <signal name="delete-event" handler="on_main_window_delete_event" swapped="no"/>

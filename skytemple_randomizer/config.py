@@ -46,9 +46,6 @@ else:
 
 CLASSREF = '__classref'
 
-class Global:
-    main_builder: Any = None
-
 
 class IntRange:
     """Represents a config integer with a minimum and maximum value (defined in the UI)"""

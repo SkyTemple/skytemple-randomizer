@@ -33,6 +33,11 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 
 from gi.repository import Adw, Gtk, GLib, Gdk
 
+if getattr(sys, 'frozen', False):
+    MAIN_PATH = os.path.dirname(sys.executable)
+else:
+    MAIN_PATH = os.path.dirname(__file__)
+
 
 if getattr(sys, 'frozen', False):
     # Running via PyInstaller. Fix SSL configuration
@@ -46,7 +51,7 @@ class GtkFrontend(AbstractFrontend):
         GLib.idle_add(fn)
 
 
-@Gtk.Template(filename=os.path.join(os.path.dirname(__file__), "skytemple_randomizer.ui"))
+@Gtk.Template(filename=os.path.join(MAIN_PATH, "skytemple_randomizer.ui"))
 class MainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "main_window"
 
@@ -63,8 +68,6 @@ class MainApp(Adw.Application):
 
 
 def main():
-    path = os.path.abspath(os.path.dirname(__file__))
-
     if sys.platform.startswith('win'):
         # Solve issue #12
         try:
@@ -73,11 +76,6 @@ def main():
         except BaseException:
             # This really shouldn't fail, but it's not important enough to crash over
             pass
-
-    if sys.platform.startswith('darwin'):
-        # The search path is wrong if SkyTemple is executed as an .app bundle
-        if getattr(sys, 'frozen', False):
-            path = os.path.dirname(sys.executable)
 
     display = Gdk.Display.get_default()
     assert display is not None

@@ -20,8 +20,8 @@ import hashlib
 
 import gi
 
-gi.require_version('Gtk', '3.0')
-gi.require_version('GtkSource', '4')
+gi.require_version('Gtk', '4.0')
+gi.require_version('GtkSource', '5')
 
 from strictyaml import YAMLError
 

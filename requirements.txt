@@ -1,11 +1,11 @@
 ndspy==3.0.0
 git+https://github.com/skytemple/skytemple-files@master#egg=skytemple_files[spritecollab]
 git+https://github.com/skytemple/skytemple-icons@main#egg=skytemple_icons
-pygobject>=3.36.0
+pygobject>=3.44.0
 strictyaml==1.7.3
 jsonschema==4.19.1
 packaging
 types-PyYAML
 types-setuptools
 importlib_metadata>=1.3; python_version < "3.9"
-pygobject-stubs --config-settings=config=Gtk3,Gdk3,GtkSource4
+pygobject-stubs --config-settings=config=Gtk4,Gdk4,GtkSource5

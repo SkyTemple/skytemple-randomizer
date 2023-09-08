@@ -25,7 +25,7 @@ gi.require_version('GtkSource', '5')
 import logging
 import os
 import sys
-from typing import Callable
+from typing import Callable, cast
 
 from skytemple_icons import icons
 from skytemple_randomizer.config import data_dir
@@ -54,6 +54,13 @@ class GtkFrontend(AbstractFrontend):
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "skytemple_randomizer.ui"))
 class MainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "main_window"
+
+    header_bar = cast(Gtk.HeaderBar, Gtk.Template.Child())
+
+    @Gtk.Template.Callback()
+    def on_main_window_realize(self, *args):
+        if sys.platform.startswith('darwin'):
+            self.header_bar.set_decoration_layout("close,minimize,maximize:")
 
 
 class MainApp(Adw.Application):

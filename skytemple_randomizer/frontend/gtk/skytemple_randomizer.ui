@@ -9,12 +9,12 @@
       <object class="GtkBox">
         <property name="orientation">1</property>
         <child>
-          <object class="AdwHeaderBar">
+          <object class="AdwHeaderBar" id="header_bar">
             <property name="centering-policy">1</property>
             <property name="title-widget">
               <object class="AdwViewSwitcherTitle" id="switcher_title">
                 <property name="stack">stack</property>
-                <property name="title" translatable="yes">AdwViewSwitcher Demo</property>
+                <property name="title">SkyTemple Randomizer</property>
               </object>
             </property>
           </object>
@@ -161,5 +161,6 @@
     </property>
     <property name="icon-name">skytemple_randomizer</property>
     <property name="title">SkyTemple Randomizer</property>
+    <signal name="realize" handler="on_main_window_realize"/>
   </template>
 </interface>

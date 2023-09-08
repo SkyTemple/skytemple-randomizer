@@ -25,7 +25,7 @@ import sys
 import time
 from enum import Enum
 from numbers import Number
-from typing import TypedDict, Optional, List, Dict
+from typing import TypedDict, Optional, List, Dict, Any
 
 from jsonschema import validate
 from range_typed_integers import u16, u8, u32
@@ -47,7 +47,7 @@ else:
 CLASSREF = '__classref'
 
 class Global:
-    main_builder = None
+    main_builder: Any = None
 
 
 class IntRange:

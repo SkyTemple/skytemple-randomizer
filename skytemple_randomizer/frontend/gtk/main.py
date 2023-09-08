@@ -14,15 +14,19 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
 import hashlib
 
 import gi
-from strictyaml import YAMLError
-
-from skytemple_randomizer.frontend.gtk.settings import SkyTempleRandomizerSettingsStoreGtk
 
 gi.require_version('Gtk', '3.0')
 gi.require_version('GtkSource', '4')
+
+from strictyaml import YAMLError
+
+from skytemple_randomizer.frontend.gtk.settings import SkyTempleRandomizerSettingsStoreGtk
+from skytemple_randomizer.frontend.gtk.ui_util import builder_get_assert, iter_maybe, iter_tree_model
 
 import json
 import logging
@@ -34,7 +38,7 @@ import webbrowser
 from functools import partial
 from math import floor
 from typing import Optional, Callable
-from gi.repository.GtkSource import StyleSchemeManager, LanguageManager
+from gi.repository.GtkSource import StyleSchemeManager, LanguageManager, SmartHomeEndType
 from jsonschema import ValidationError
 
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
@@ -80,17 +84,17 @@ class MainController:
         self.window: Window = window
 
         accel = Gtk.AccelGroup()
-        accel.connect(Gdk.KEY_space, Gdk.ModifierType.CONTROL_MASK, 0, self.on_show_debug)
+        accel.connect(Gdk.KEY_space, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags(0), self.on_show_debug)
         self.window.add_accel_group(accel)
-        self.builder.get_object('progress').add_accel_group(accel)
+        builder_get_assert(builder, Gtk.Dialog, 'progress').add_accel_group(accel)
 
         self.static_config = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
         self.settings = SkyTempleRandomizerSettingsStoreGtk()
 
-        self.chosen_file = None
+        self.chosen_file: Optional[str] = None
 
         # Source view
-        view: GtkSource.View = self.builder.get_object('text_quiz_content')
+        view = builder_get_assert(builder, GtkSource.View, 'text_quiz_content')
         lang = LanguageManager.get_default().get_language('yaml')
         buffer: GtkSource.Buffer
         if lang is not None:
@@ -106,16 +110,17 @@ class MainController:
         view.set_indent_on_tab(True)
         view.set_highlight_current_line(True)
         view.set_smart_backspace(True)
-        view.set_smart_home_end(True)
+        view.set_smart_home_end(SmartHomeEndType.BEFORE)
         view.set_monospace(True)
         buffer.set_highlight_matching_brackets(True)
         buffer.set_highlight_syntax(True)
         style_scheme_manager = StyleSchemeManager()
         selected_style_scheme_id = None
-        for style_id in style_scheme_manager.get_scheme_ids():
+        for style_id in iter_maybe(style_scheme_manager.get_scheme_ids()):
             if not selected_style_scheme_id or style_id == 'oblivion':
                 selected_style_scheme_id = style_id
-        buffer.set_style_scheme(style_scheme_manager.get_scheme(selected_style_scheme_id))
+        if selected_style_scheme_id is not None:
+            buffer.set_style_scheme(style_scheme_manager.get_scheme(selected_style_scheme_id))
         view.set_buffer(buffer)
 
         # Load default configuration
@@ -148,46 +153,46 @@ class MainController:
         webbrowser.open_new_tab("https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/")
 
     def on_show_debug(self, *args):
-        self.builder.get_object('portrait_debug').show()
+        builder_get_assert(self.builder, Gtk.Dialog, 'portrait_debug').show()
 
     def on_cr_dungeons_settings_randomize_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_dungeons')
         store[path][2] = not widget.get_active()
 
     def on_cr_dungeons_settings_monster_houses_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_dungeons')
         store[path][3] = not widget.get_active()
 
     def on_cr_dungeons_settings_randomize_weather_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_dungeons')
         store[path][4] = not widget.get_active()
 
     def on_cr_dungeons_settings_unlock_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_dungeons')
         store[path][5] = not widget.get_active()
 
     def on_cr_pokemon_abilities_enabled_use_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_monsters_abilities')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_abilities')
         store[path][2] = not widget.get_active()
 
     def on_cr_pokemon_monsters_enabled_use_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_monsters_monsters')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_monsters')
         store[path][2] = not widget.get_active()
 
     def on_cr_pokemon_starters_enabled_use_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_monsters_starters')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_starters')
         store[path][2] = not widget.get_active()
 
     def on_cr_pokemon_moves_enabled_use_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_monsters_moves')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_moves')
         store[path][2] = not widget.get_active()
 
     def on_cr_dungeons_items_enabled_use_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_items')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_items')
         store[path][2] = not widget.get_active()
 
     def on_cr_dungeons_settings_enemy_iq_toggled(self, widget, path):
-        store: Gtk.Store = self.builder.get_object('store_tree_dungeons_dungeons')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_dungeons_dungeons')
         store[path][6] = not widget.get_active()
 
     def on_cr_item_weights_multiplier_edited(self, _widget, path, text):
@@ -195,19 +200,19 @@ class MainController:
             float(text)
         except ValueError:
             return
-        store: Gtk.ListStore = self.builder.get_object('store_tree_item_weights')
+        store = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_item_weights')
         store[path][2] = text
 
     def on_btn_pokemon_copy_for_starters(self, source):
-        destination: Gtk.ListStore = self.builder.get_object('store_tree_monsters_starters')
+        destination = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_starters')
         values = [x[2] for x in source]
-        for idx, x in enumerate(destination):
+        for idx, x in enumerate(iter_tree_model(destination)):
             x[2] = values[idx]
 
     def on_btn_pokemon_copy_for_monsters(self, source):
-        destination: Gtk.ListStore = self.builder.get_object('store_tree_monsters_monsters')
+        destination = builder_get_assert(self.builder, Gtk.ListStore, 'store_tree_monsters_monsters')
         values = [x[2] for x in source]
-        for idx, x in enumerate(destination):
+        for idx, x in enumerate(iter_tree_model(destination)):
             x[2] = values[idx]
 
     def on_btn_pokemon_reset(self, pool):
@@ -242,8 +247,9 @@ class MainController:
         dialog.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            assert fn is not None
             self.chosen_file = fn
-            self.builder.get_object('label_rom').set_text(os.path.basename(fn))
+            builder_get_assert(self.builder, Gtk.Label, 'label_rom').set_text(os.path.basename(fn))
 
     def on_import_clicked(self, *args):
         dialog: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
@@ -264,6 +270,7 @@ class MainController:
         dialog.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            assert fn is not None
             try:
                 self.ui_applier.apply(ConfigFileLoader.load(fn))
             except BaseException as e:
@@ -287,6 +294,7 @@ class MainController:
         save_diag.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            assert fn is not None
             if '.' not in fn:
                 fn += '.json'
             with open_utf8(fn, 'w') as f:
@@ -300,7 +308,7 @@ class MainController:
                     self.display_error(f"Error saving these settings:\n{err}\n{tb}")
 
     def on_about_clicked(self, *args):
-        about: Gtk.AboutDialog = self.builder.get_object("about_dialog")
+        about = builder_get_assert(self.builder, Gtk.AboutDialog, "about_dialog")
         about.connect("response", lambda d, r: d.hide())
 
         def activate_link(l, uri, *args):
@@ -347,14 +355,15 @@ class MainController:
         dialog.destroy()
 
         if response == Gtk.ResponseType.ACCEPT:
+            assert out_fn is not None
             clear_script_cache()
             if '.' not in out_fn:
                 out_fn += '.nds'
             try:
-                self.builder.get_object('progress_close').set_sensitive(False)
-                progress_bar: Gtk.ProgressBar = self.builder.get_object('progress_bar')
-                progress_label: Gtk.Label = self.builder.get_object('progress_label')
-                progress_diag: Gtk.Dialog = self.builder.get_object('progress')
+                builder_get_assert(self.builder, Gtk.Button, 'progress_close').set_sensitive(False)
+                progress_bar = builder_get_assert(self.builder, Gtk.ProgressBar, 'progress_bar')
+                progress_label = builder_get_assert(self.builder, Gtk.Label, 'progress_label')
+                progress_diag = builder_get_assert(self.builder, Gtk.Dialog, 'progress')
                 progress_diag.set_title('Randomizing...')
 
                 def update_fn(progress, desc):
@@ -367,16 +376,17 @@ class MainController:
                 def check_done():
                     if not randomizer.is_done():
                         return True
-                    self.builder.get_object('progress_close').set_sensitive(True)
+                    builder_get_assert(self.builder, Gtk.Button, 'progress_close').set_sensitive(True)
                     if randomizer.error:
-                        img: Gtk.Image = self.builder.get_object('img_portrait_duskako')
+                        img = builder_get_assert(self.builder, Gtk.Image, 'img_portrait_duskako')
                         img.set_from_file(os.path.join(data_dir(), 'duskako_sad.png'))
                         traceback_str = ''.join(traceback.format_exception(*randomizer.error))
                         progress_label.set_text(f"Error: {traceback_str}")
                         progress_diag.set_title('Randomizing failed!')
                     else:
+                        assert out_fn is not None
                         rom.saveToFile(out_fn, updateDeviceCapacity=True)
-                        img: Gtk.Image = self.builder.get_object('img_portrait_duskako')  # type: ignore
+                        img = builder_get_assert(self.builder, Gtk.Image, 'img_portrait_duskako')
                         img.set_from_file(os.path.join(data_dir(), 'duskako_happy.png'))
                         progress_label.set_text("Randomizing complete!")
                         progress_diag.set_title('Randomizing complete!')
@@ -397,12 +407,12 @@ class MainController:
                 # Set the seed
                 seed = get_effective_seed(config['seed'])
                 random.seed(seed)
-                self.builder.get_object('seed_label').set_text('Your Seed: ' + str(seed))
+                builder_get_assert(self.builder, Gtk.Label, 'seed_label').set_text('Your Seed: ' + str(seed))
                 randomizer = RandomizerThread(status, rom, config, seed, GtkFrontend())
                 randomizer.start()
 
                 # SHOW DIALOG
-                img: Gtk.Image = self.builder.get_object('img_portrait_duskako')
+                img = builder_get_assert(self.builder, Gtk.Image, 'img_portrait_duskako')
                 img.set_from_file(os.path.join(data_dir(), 'duskako_neutral.png'))
 
                 GLib.timeout_add(100, check_done)
@@ -415,29 +425,32 @@ class MainController:
                 return
 
     def on_progress_close_clicked(self, *args):
-        self.builder.get_object('progress').hide()
+        builder_get_assert(self.builder, Gtk.Dialog, 'progress').hide()
 
     def on_portrait_close_clicked(self, *args):
-        self.builder.get_object('portrait_debug').hide()
+        builder_get_assert(self.builder, Gtk.Dialog, 'portrait_debug').hide()
 
     def on_dismiss_banner_clicked(self, *args):
         if self.banner_hash is not None:
             self.settings.set_hash_last_dismissed_banner(self.banner_hash)
-        self.builder.get_object('banner_info_wrapper').hide()
+        builder_get_assert(self.builder, Gtk.Box, 'banner_info_wrapper').hide()
 
     def display_error(self, error_message, error_title='SkyTemple Randomizer - Error'):
-        md = Gtk.MessageDialog(self.window,
-                               Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.ERROR,
-                               Gtk.ButtonsType.OK,
-                               error_message,
+        md = Gtk.MessageDialog(parent=self.window,
+                               destroy_with_parent=True,
+                               message_type=Gtk.MessageType.ERROR,
+                               buttons=Gtk.ButtonsType.OK,
+                               text=error_message,
                                title=error_title)
         md.run()
         md.destroy()
 
     def show_info(self, info, *args):
-        md = Gtk.MessageDialog(self.window,
-                               Gtk.DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.INFO,
-                               Gtk.ButtonsType.OK, info)
+        md = Gtk.MessageDialog(parent=self.window,
+                               destroy_with_parent=True,
+                               message_type=Gtk.MessageType.INFO,
+                               buttons=Gtk.ButtonsType.OK,
+                               text=info)
         md.run()
         md.destroy()
 
@@ -445,12 +458,12 @@ class MainController:
         try:
             new_version = check_newest_release(ReleaseType.SKYTEMPLE_RANDOMIZER)
             if packaging.version.parse(version()) < packaging.version.parse(new_version):
-                self.builder.get_object('update_new_version').set_text(new_version)
+                builder_get_assert(self.builder, Gtk.Label, 'update_new_version').set_text(new_version)
                 return
         except Exception:
             pass
         # else/except:
-        self.builder.get_object('update_info').hide()
+        builder_get_assert(self.builder, Gtk.Box, 'update_info').hide()
 
     def _check_for_banner(self):
         try:
@@ -474,9 +487,11 @@ class MainController:
                             cursor = Gdk.Cursor.new_from_name(w.get_display(), "pointer")
                         elif evt.get_event_type() == Gdk.EventType.LEAVE_NOTIFY:
                             cursor = Gdk.Cursor.new_from_name(w.get_display(), "default")
-                        if cursor:
-                            w.get_window().set_cursor(cursor)
-                    b_info = self.builder.get_object('banner_info')
+                        if cursor is not None:
+                            window = w.get_window()
+                            if window is not None:
+                                window.set_cursor(cursor)
+                    b_info = builder_get_assert(self.builder, Gtk.EventBox, 'banner_info')
                     b_info.connect('button-release-event', open_web)
                     b_info.connect('enter-notify-event', cursor_change)
                     b_info.connect('leave-notify-event', cursor_change)
@@ -486,7 +501,7 @@ class MainController:
         except Exception:
             pass
         # else/except:
-        self.builder.get_object('banner_info_wrapper').hide()
+        builder_get_assert(self.builder, Gtk.Box, 'banner_info_wrapper').hide()
 
 
 def main():
@@ -521,15 +536,17 @@ def main():
     with open(os.path.join(path, "skytemple_randomizer.css"), 'rb') as f:
         css = f.read()
     style_provider.load_from_data(css)
-    Gtk.StyleContext.add_provider_for_screen(
-        Gdk.Screen.get_default(), style_provider,
-        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-    )
+    default_screen = Gdk.Screen.get_default()
+    if default_screen is not None:
+        Gtk.StyleContext.add_provider_for_screen(
+            default_screen, style_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
 
     # Load Builder and Window
     builder = Gtk.Builder()
     builder.add_from_file(os.path.join(path, "skytemple_randomizer.glade"))
-    main_window: Window = builder.get_object("main_window")
+    main_window = builder_get_assert(builder, Window, "main_window")
     main_window.set_role("SkyTemple Randomizer")
     GLib.set_application_name("SkyTemple Randomizer")
     GLib.set_prgname("skytemple_randomizer")
@@ -540,7 +557,11 @@ def main():
     MainController(builder, main_window)
 
     try:
-        wa = Gdk.Display.get_default().get_primary_monitor().get_workarea()
+        default_display = Gdk.Display.get_default()
+        assert default_display is not None
+        primary_monitor = default_display.get_primary_monitor()
+        assert primary_monitor is not None
+        wa = primary_monitor.get_workarea()
         main_window.resize(
             min(1280, wa.width),
             min(768, wa.height)
@@ -557,7 +578,8 @@ def main():
 
 def _load_theme():
     settings = Gtk.Settings.get_default()
-    settings.set_property("gtk-theme-name", 'Arc-Dark')
+    if settings is not None:
+        settings.set_property("gtk-theme-name", 'Arc-Dark')
 
 
 if __name__ == '__main__':

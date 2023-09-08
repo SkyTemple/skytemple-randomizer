@@ -96,7 +96,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: "C:\\gtk-build"
-          key: win-gtk-build-vgtk4-1
+          key: win-gtk-build-vgtk4-2
           restore-keys: |
             win-gtk-build-vgtk4-
       - name: Checkout
@@ -131,7 +131,7 @@ jobs:
         run: |
           $env:path = "C:\pipx_bin;" + $env:path
           
-          gvsbuild build --fast-build --ninja-opts -j2 --enable-gi --py-wheel gtk4 pygobject openssl gettext gtksourceview5 hicolor-icon-theme adwaita-icon-theme
+          gvsbuild build --fast-build --ninja-opts -j2 --enable-gi --py-wheel gtk4 pygobject openssl gettext gtksourceview5 libadwaita hicolor-icon-theme adwaita-icon-theme
       - name: Restore git binary
         run: |
           Move-Item "C:\Program Files\Git\usr\notbin" "C:\Program Files\Git\usr\bin"

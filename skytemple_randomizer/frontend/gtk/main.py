@@ -60,9 +60,7 @@ from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 
-from gi.repository import Gtk, GLib, Gdk, GtkSource, Gio
-from gi.repository.Gtk import Window
-from gi.repository.GdkPixbuf import Pixbuf
+from gi.repository import Gtk, GLib, Gdk, GtkSource, Gio, GdkPixbuf
 
 
 if getattr(sys, 'frozen', False):
@@ -77,11 +75,18 @@ class GtkFrontend(AbstractFrontend):
         GLib.idle_add(fn)
 
 
-class MainController:
-    def __init__(self, builder: Gtk.Builder, window: Window):
+class MainController(Gtk.Application):
+    def __init__(self):
+        # Load Builder and Window
+        path = os.path.abspath(os.path.dirname(__file__))
+        builder = Gtk.Builder()
+        builder.add_from_file(os.path.join(path, "skytemple_randomizer.glade"))
+        self.window = builder_get_assert(builder, Gtk.ApplicationWindow, "main_window")
+        super().__init__(application_id="org.skytemple.Randomizer")
+        GLib.set_application_name("SkyTemple Randomizer")
+
         self.builder = builder
         Global.main_builder = builder
-        self.window: Window = window
 
         accel = Gtk.AccelGroup()
         accel.connect(Gdk.KEY_space, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags(0), self.on_show_debug)
@@ -137,6 +142,27 @@ class MainController:
         self._check_for_banner()
 
         self.builder.connect_signals(self)
+
+        try:
+            default_display = Gdk.Display.get_default()
+            assert default_display is not None
+            primary_monitor = default_display.get_primary_monitor()
+            assert primary_monitor is not None
+            wa = primary_monitor.get_workarea()
+            self.window.resize(
+                min(1280, wa.width),
+                min(768, wa.height)
+            )
+        except:
+            self.window.resize(
+                1280, 768
+            )
+        self.window.set_position(Gtk.WindowPosition.CENTER)
+        self.window.set_icon_name('skytemple_randomizer')
+
+    def do_activate(self) -> None:
+        self.window.set_application(self)
+        self.window.present()
 
     def on_destroy(self, *args):
         Gtk.main_quit()
@@ -472,7 +498,7 @@ class MainController:
                 self.banner_hash = hashlib.sha1(img_banner).hexdigest()
                 if self.banner_hash != self.settings.get_hash_last_dismissed_banner():
                     input_stream = Gio.MemoryInputStream.new_from_data(img_banner, None)
-                    pixbuf = Pixbuf.new_from_stream(input_stream, None)
+                    pixbuf = GdkPixbuf.Pixbuf.new_from_stream(input_stream, None)
                     image = Gtk.Image()
                     image.show()
                     image.set_from_pixbuf(pixbuf)
@@ -543,37 +569,9 @@ def main():
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-    # Load Builder and Window
-    builder = Gtk.Builder()
-    builder.add_from_file(os.path.join(path, "skytemple_randomizer.glade"))
-    main_window = builder_get_assert(builder, Window, "main_window")
-    main_window.set_role("SkyTemple Randomizer")
-    GLib.set_application_name("SkyTemple Randomizer")
-    GLib.set_prgname("skytemple_randomizer")
-    # TODO: Deprecated but the only way to set the app title on GNOME...?
-    main_window.set_wmclass("SkyTemple Randomizer", "SkyTemple Randomizer")
-
     # Load main window + controller
-    MainController(builder, main_window)
-
-    try:
-        default_display = Gdk.Display.get_default()
-        assert default_display is not None
-        primary_monitor = default_display.get_primary_monitor()
-        assert primary_monitor is not None
-        wa = primary_monitor.get_workarea()
-        main_window.resize(
-            min(1280, wa.width),
-            min(768, wa.height)
-        )
-    except:
-        main_window.resize(
-            1280, 768
-        )
-    main_window.set_position(Gtk.WindowPosition.CENTER)
-    main_window.present()
-    main_window.set_icon_name('skytemple_randomizer')
-    Gtk.main()
+    app = MainController()
+    sys.exit(app.run(sys.argv))
 
 
 def _load_theme():

@@ -31,7 +31,7 @@ from skytemple_icons import icons
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 
-from gi.repository import Adw, Gtk, GLib, Gdk
+from gi.repository import Adw, Gtk, GLib, Gdk, GtkSource
 
 if getattr(sys, 'frozen', False):
     MAIN_PATH = os.path.dirname(sys.executable)

@@ -24,7 +24,7 @@
 .back_illust {
    background-repeat: no-repeat;
    background-size: 50%;
-   background-position: -20% calc(100% + 60px)
+   background-position: -20% calc(100% + 60px);
 }
 
 .back_illust.starters {

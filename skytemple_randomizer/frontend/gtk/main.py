@@ -85,11 +85,6 @@ def main():
     itheme.add_search_path(os.path.abspath(icons()))
     itheme.add_search_path(os.path.abspath(os.path.join(data_dir(), "icons")))
 
-    # Load CSS
-    style_provider = Gtk.CssProvider()
-    style_provider.load_from_path(os.path.join(path, "skytemple_randomizer.css"))
-    Gtk.StyleContext.add_provider_for_display(display, style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
     # Load main window + controller
     app = MainApp()
     sys.exit(app.run(sys.argv))

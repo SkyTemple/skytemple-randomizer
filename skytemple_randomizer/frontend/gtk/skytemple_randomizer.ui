@@ -48,7 +48,7 @@
                     <property name="title" bind-source="page1" bind-property="title" bind-flags="sync-create"/>
                   </object>
                 </property>
-                <property name="icon-name">star-filled-rounded-symbolic</property>
+                <property name="icon-name">skytemple_randomizer</property>
                 <property name="name">page1</property>
                 <property name="title" translatable="yes">Favorites</property>
                 <property name="use-underline">true</property>

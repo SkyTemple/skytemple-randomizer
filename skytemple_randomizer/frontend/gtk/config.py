@@ -22,7 +22,7 @@ from numbers import Number
 from typing import List, Dict, cast
 
 import strictyaml
-from gi.repository import Gtk, GtkSource
+from gi.repository import Gtk, GtkSource, Adw
 from jsonschema import validate
 from range_typed_integers import u8, u16, u32
 
@@ -226,7 +226,8 @@ class ConfigUIReader:
 
 class ConfigDocApplier:
     """Connects the help buttons with the text of the *Doc classes."""
-    def __init__(self, window, builder: Gtk.Builder):
+    def __init__(self, application: Adw.Application, window: Adw.ApplicationWindow, builder: Gtk.Builder):
+        self.application = application
         self.window = window
         self.builder = builder
 
@@ -254,10 +255,9 @@ class ConfigDocApplier:
                     ))
 
     def show_help(self, info, *args):
-        md = Gtk.MessageDialog(parent=self.window,
+        md = Adw.MessageDialog(application=self.application,
+                               transient_for=self.window,
                                destroy_with_parent=True,
-                               message_type=Gtk.MessageType.INFO,
-                               buttons=Gtk.ButtonsType.OK,
-                               text=info)
-        md.run()
-        md.destroy()
+                               body=info)
+        md.add_response("ok", "Ok")
+        md.present()

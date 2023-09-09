@@ -25,18 +25,15 @@ gi.require_version('GtkSource', '5')
 import logging
 import os
 import sys
-from typing import Callable, cast
+from typing import Callable
 
 from skytemple_icons import icons
 from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 
-from gi.repository import Adw, Gtk, GLib, Gdk, GtkSource
+from gi.repository import Adw, Gtk, GLib, Gdk, GtkSource  # noqa
 
-if getattr(sys, 'frozen', False):
-    MAIN_PATH = os.path.dirname(sys.executable)
-else:
-    MAIN_PATH = os.path.dirname(__file__)
+from skytemple_randomizer.frontend.gtk.widgets import MainWindow
 
 
 if getattr(sys, 'frozen', False):
@@ -49,18 +46,6 @@ if getattr(sys, 'frozen', False):
 class GtkFrontend(AbstractFrontend):
     def idle_add(self, fn: Callable):
         GLib.idle_add(fn)
-
-
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "skytemple_randomizer.ui"))
-class MainWindow(Adw.ApplicationWindow):
-    __gtype_name__ = "main_window"
-
-    header_bar = cast(Gtk.HeaderBar, Gtk.Template.Child())
-
-    @Gtk.Template.Callback()
-    def on_main_window_realize(self, *args):
-        if sys.platform.startswith('darwin'):
-            self.header_bar.set_decoration_layout("close,minimize,maximize:")
 
 
 class MainApp(Adw.Application):

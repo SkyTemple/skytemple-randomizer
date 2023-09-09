@@ -612,6 +612,8 @@ class EnumJsonEncoder(json.JSONEncoder):
 
 
 def version():
+    if os.path.exists(os.path.abspath(os.path.join(data_dir(), '..', '..', '.git'))):
+        return 'dev'
     try:
         return importlib_metadata.metadata("skytemple-randomizer")["version"]
     except importlib_metadata.PackageNotFoundError:

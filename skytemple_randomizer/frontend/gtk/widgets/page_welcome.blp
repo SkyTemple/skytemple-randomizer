@@ -1,0 +1,123 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StWelcomePage: Adw.Bin {
+    child: Box {
+        orientation: vertical;
+
+        Adw.Banner update_info {
+            revealed: true;
+            title: _('New version available: {version}');
+            button-label: _('Update now');
+            button-clicked => $on_update_info_button_clicked ();
+        }
+
+        Adw.StatusPage {
+            child: Adw.Clamp {
+                maximum-size: 600;
+
+                child: Box {
+                    orientation: vertical;
+                    spacing: 15;
+
+                    Stack info_stack {
+                        StackPage info_stack_text {
+                            name: 'info_stack_text';
+
+                            child: Label {
+                                wrap: true;
+                                justify: center;
+                                label: _('Welcome to the Randomizer! Click the "Randomize" button to begin, or configure options by selecting a page.');
+                            }
+                            ;
+                        }
+
+                        StackPage info_stack_banner {
+                            name: 'info_stack_banner';
+
+                            child: Adw.Clamp banner_info_wrapper {
+                                maximum-size: 500;
+                                unit: px;
+
+                                child: Box banner_info {
+                                }
+                                ;
+                            }
+                            ;
+                        }
+                    }
+
+                    Grid link_container {
+                        halign: center;
+                        valign: start;
+                        column-homogeneous: true;
+                        row-homogeneous: true;
+                        row-spacing: 5;
+                        column-spacing: 5;
+
+                        Button about_button {
+                            clicked => $on_about_button_clicked ();
+
+                            styles [
+                                'pill',
+                            ]
+                            label: _('About');
+
+                            layout {
+                                column: '0';
+                                row: '0';
+                            }
+                        }
+
+                        Button {
+                            clicked => $on_button_wiki_clicked ();
+
+                            styles [
+                                'pill',
+                            ]
+                            label: 'Wiki';
+
+                            layout {
+                                column: '1';
+                                row: '0';
+                            }
+                        }
+
+                        Button {
+                            clicked => $on_button_discord_clicked ();
+
+                            styles [
+                                'pill',
+                            ]
+                            label: 'Discord';
+
+                            layout {
+                                column: '0';
+                                row: '1';
+                            }
+                        }
+
+                        Button {
+                            clicked => $on_button_skytemple_clicked ();
+
+                            styles [
+                                'pill',
+                            ]
+                            label: 'SkyTemple';
+
+                            layout {
+                                column: '1';
+                                row: '1';
+                            }
+                        }
+                    }
+                }
+                ;
+            }
+            ;
+            icon-name: 'skytemple_randomizer';
+            title: _('SkyTemple Randomizer');
+        }
+    }
+    ;
+}

@@ -107,3 +107,6 @@ venv.bak/
 .idea/
 ### skytemple
 *.glade
+*.ui
+
+/subprojects/blueprint-compiler

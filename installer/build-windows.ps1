@@ -21,10 +21,6 @@ C:\skytemple-venv\Scripts\activate.ps1
 # Install PyInstaller
 pip install setuptools wheel 'pyinstaller~=5.0'
 
-# Install PyGObject and pycairo
-pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
-pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
-
 # Install certifi for cert handling
 pip3 install -U certifi
 
@@ -37,9 +33,10 @@ if ($env:IS_DEV_BUILD) {
 }
 
 pyinstaller skytemple-randomizer.spec
+if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
-    return 1
+    exit 1
 }
 
 # Check if we need to copy the cacert file

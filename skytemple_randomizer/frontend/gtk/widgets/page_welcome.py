@@ -38,27 +38,28 @@ class WelcomePage(Adw.Bin):
     update_info = cast(Adw.Banner, Gtk.Template.Child())
     info_stack = cast(Gtk.Stack, Gtk.Template.Child())
     banner_info = cast(Gtk.Box, Gtk.Template.Child())
-    link_button_wiki = cast(Gtk.LinkButton, Gtk.Template.Child())
-    link_button_discord = cast(Gtk.LinkButton, Gtk.Template.Child())
-    link_button_skytemple = cast(Gtk.LinkButton, Gtk.Template.Child())
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self._check_for_updates()
         self._check_for_banner()
-        self.link_button_wiki.set_cursor_from_name("default")
-        self.link_button_discord.set_cursor_from_name("default")
-        self.link_button_skytemple.set_cursor_from_name("default")
 
     @Gtk.Template.Callback()
     def on_update_info_button_clicked(self, *args):
         webbrowser.open_new_tab("https://download.skytemple.org/randomizer/latest")
 
     @Gtk.Template.Callback()
-    def on_any_link_button_activate_link(self, w: Gtk.LinkButton, *args):
-        webbrowser.open_new_tab(w.get_uri())
-        return True
+    def on_button_wiki_clicked(self, *args):
+        webbrowser.open_new_tab("https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer")
+
+    @Gtk.Template.Callback()
+    def on_button_discord_clicked(self, *args):
+        webbrowser.open_new_tab("https://discord.gg/skytemple")
+
+    @Gtk.Template.Callback()
+    def on_button_skytemple_clicked(self, *args):
+        webbrowser.open_new_tab("https://skytemple.org")
 
     @Gtk.Template.Callback()
     def on_about_button_clicked(self, *args):

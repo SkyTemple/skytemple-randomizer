@@ -39,6 +39,8 @@ jobs:
       # For tags we assume the version in pyproject.toml is correct!
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Rewrite version for dev if not tag
         if: "!startsWith(github.ref, 'refs/tags/')"
         run: |
@@ -46,6 +48,10 @@ jobs:
       - name: Note version
         run: |
           echo "PACKAGE_VERSION=$(tomlq '.project.version' pyproject.toml -r)" >> $GITHUB_ENV
+      - name: Install GObject Introspection
+        run: sudo apt-get install -y python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-gtksource-5
+      - name: Convert Blueprint files
+        run: ./build-blp-to-ui.sh
       - name: Build Python wheels
         uses: RalfG/python-wheels-manylinux-build@v0.5.0-manylinux2014_x86_64
         with:
@@ -99,6 +105,8 @@ jobs:
             win-gtk-build-vgtk4-
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
       # Temporarily move the preinstalled git, it causes errors related to cygwin.
       - name: Move git binary
         run: |
@@ -151,17 +159,27 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
 
+          $env:pathext = $env:pathext + ";.PY"
           $env:path = "C:\gtk-build\gtk\x64\release\bin;" + $env:path
           $env:LIB = "C:\gtk-build\gtk\x64\release\lib;" + $env:LIB
           $env:INCLUDE = "C:\gtk-build\gtk\x64\release\include;C:\gtk-build\gtk\x64\release\include\cairo;C:\gtk-build\gtk\x64\release\include\glib-2.0;C:\gtk-build\gtk\x64\release\include\gobject-introspection-1.0;C:\gtk-build\gtk\x64\release\lib\glib-2.0\include;" + $env:INCLUDE
+
+          # Install PyGObject and pycairo
+          pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
+          pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
+          
+          # Convert Blueprint files
+          .\build-blp-to-ui.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
           cd installer
 
           # Package
           .\build-windows.ps1 $PACKAGE_VERSION
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
           if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
-              return 1
+              exit 1
           }
       - name: Create installer
         uses: joncloud/makensis-action@v3.7
@@ -182,6 +200,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Rewrite version for dev if not tag
         if: "!startsWith(github.ref, 'refs/tags/')"
         run: |
@@ -193,13 +213,17 @@ jobs:
           . .yq-venv/bin/activate
           pip install yq
           echo "PACKAGE_VERSION=$(tomlq '.project.version' pyproject.toml -r)" >> $GITHUB_ENV
+      - name: Install base packages
+        run: |
+          brew install pygobject3 gtk4 python@3.11 gtksourceview5 libadwaita adwaita-icon-theme sdl cmake
+          echo "PATH=/usr/local/opt/python@3.11/bin:/usr/local/bin:$PATH" >> $GITHUB_ENV
+      - name: Make sure PyGObject is available.
+        run: |
+          pip3 install "pygobject>=3.44.0"
+      - name: Convert Blueprint files
+        run: ./build-blp-to-ui.sh
       - name: Install and package
         run: |
-          # git is already installed
-          brew install pygobject3 gtk4 python@3.11 gtksourceview5 libadwaita adwaita-icon-theme sdl cmake
-          PATH=/usr/local/opt/python@3.11/bin:/usr/local/bin:$PATH
-
-
           # Install other dependencies and SkyTemple Randomizer itself
           pip3 install skytemple-rust 'pyinstaller~=5.0'
           pip3 install -r requirements-mac-windows.txt
@@ -229,8 +253,6 @@ jobs:
 
       - name: Create installer
         run: |
-          PATH=/usr/local/opt/python@3.11/bin:/usr/local/bin:$PATH
-          
           # See https://github.com/sindresorhus/create-dmg
           # create-dmg automatically generates an installer icon if imagemagick is installed
           brew install graphicsmagick imagemagick

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="adw" version="1.4"/>
+  <template class="StWelcomePage" parent="AdwBin">
+    <property name="child">
+      <object class="AdwStatusPage">
+        <property name="child">
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="valign">3</property>
+            <child>
+              <object class="GtkLinkButton">
+                <property name="label">API Reference</property>
+                <property name="uri">https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.3/class.ViewSwitcher.html</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLinkButton">
+                <property name="label">Human Interface Guidelines</property>
+                <property name="uri">https://developer.gnome.org/hig/patterns/nav/view-switchers.html</property>
+              </object>
+            </child>
+          </object>
+        </property>
+        <property name="icon-name">skytemple_randomizer</property>
+        <property name="title" translatable="true">SkyTemple Randomizer</property>
+      </object>
+    </property>
+  </template>
+</interface>

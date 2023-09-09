@@ -17,16 +17,18 @@
 import configparser
 import logging
 import os
-from typing import Optional
+from typing import Optional, Tuple
 
 from skytemple_files.common.project_file_manager import ProjectFileManager
 from skytemple_files.common.util import open_utf8
 
 CONFIG_FILE_NAME = 'randomizer.ini'
 
-SECT_GENERAL = 'General'
+SECT_WINDOW = 'Window'
 
-KEY_HASH_LAST_DISMISSED_BANNER = 'hash_last_dismissed_banner'
+KEY_WINDOW_SIZE_X = 'width'
+KEY_WINDOW_SIZE_Y = 'height'
+KEY_WINDOW_IS_MAX = 'is_max'
 
 logger = logging.getLogger(__name__)
 
@@ -44,16 +46,35 @@ class SkyTempleRandomizerSettingsStoreGtk:
             except BaseException as err:
                 logger.error("Error reading config, falling back to default.", exc_info=err)
 
-    def get_hash_last_dismissed_banner(self) -> Optional[str]:
-        if SECT_GENERAL in self.loaded_config:
-            if KEY_HASH_LAST_DISMISSED_BANNER in self.loaded_config[SECT_GENERAL]:
-                return self.loaded_config[SECT_GENERAL][KEY_HASH_LAST_DISMISSED_BANNER]
+    def get_window_size(self) -> Optional[Tuple[int, int]]:
+        if SECT_WINDOW in self.loaded_config:
+            if KEY_WINDOW_SIZE_X in self.loaded_config[SECT_WINDOW] and KEY_WINDOW_SIZE_Y in self.loaded_config[SECT_WINDOW]:
+                return int(self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_X]), int(
+                    self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_Y])
         return None
 
-    def set_hash_last_dismissed_banner(self, val: str):
-        if SECT_GENERAL not in self.loaded_config:
-            self.loaded_config[SECT_GENERAL] = {}
-        self.loaded_config[SECT_GENERAL][KEY_HASH_LAST_DISMISSED_BANNER] = val
+    def set_window_width(self, dim: int):
+        if SECT_WINDOW not in self.loaded_config:
+            self.loaded_config[SECT_WINDOW] = {}
+        self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_X] = str(dim)
+        self._save()
+
+    def set_window_height(self, dim: int):
+        if SECT_WINDOW not in self.loaded_config:
+            self.loaded_config[SECT_WINDOW] = {}
+        self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_Y] = str(dim)
+        self._save()
+
+    def get_window_maximized(self) -> bool:
+        if SECT_WINDOW in self.loaded_config:
+            if KEY_WINDOW_IS_MAX in self.loaded_config[SECT_WINDOW] and self.loaded_config[SECT_WINDOW][KEY_WINDOW_IS_MAX] == 'True':
+                return True
+        return False
+
+    def set_window_maximized(self, value: bool):
+        if SECT_WINDOW not in self.loaded_config:
+            self.loaded_config[SECT_WINDOW] = {}
+        self.loaded_config[SECT_WINDOW][KEY_WINDOW_IS_MAX] = str(value)
         self._save()
 
     def _save(self):

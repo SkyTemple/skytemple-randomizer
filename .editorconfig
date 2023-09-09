@@ -1,0 +1,7 @@
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.blp]
+indent_style = space
+indent_size = 4

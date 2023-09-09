@@ -25,14 +25,13 @@ gi.require_version('GtkSource', '5')
 import logging
 import os
 import sys
-from typing import Callable
 
 from skytemple_icons import icons
 from skytemple_randomizer.config import data_dir
-from skytemple_randomizer.frontend.abstract import AbstractFrontend
 
 from gi.repository import Adw, Gtk, GLib, Gdk, GtkSource  # noqa
 
+from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.widgets import MainWindow
 
 
@@ -43,16 +42,13 @@ if getattr(sys, 'frozen', False):
     )
 
 
-class GtkFrontend(AbstractFrontend):
-    def idle_add(self, fn: Callable):
-        GLib.idle_add(fn)
-
-
 class MainApp(Adw.Application):
     def __init__(self):
         # Load Builder and Window
         super().__init__(application_id="org.skytemple.Randomizer")
         GLib.set_application_name("SkyTemple Randomizer")
+        frontend = GtkFrontend.instance()
+        frontend.application = self
 
     def do_activate(self) -> None:
         window = MainWindow(application=self)

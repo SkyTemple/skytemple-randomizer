@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 # Make sure the imports are ordered in a way that they don't cause circular imports.
+from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import BaseSettingsDialog
 from skytemple_randomizer.frontend.gtk.widgets.dialog_randomize import RandomizeDialog
 from skytemple_randomizer.frontend.gtk.widgets.page_dungeons import DungeonsPage
 from skytemple_randomizer.frontend.gtk.widgets.page_monsters import MonstersPage
@@ -29,5 +30,5 @@ from skytemple_randomizer.frontend.gtk.widgets.window_main import MainWindow
 
 __all__ = [
     "RandomizeDialog", "SettingsDialog", "DungeonsPage", "MonstersPage", "TextPage",
-    "TweaksPage", "WelcomePage", "MainWindow"
+    "TweaksPage", "WelcomePage", "MainWindow", "BaseSettingsDialog"
 ]

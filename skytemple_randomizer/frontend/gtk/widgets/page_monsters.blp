@@ -1,8 +1,29 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $StMonstersPage: Adw.Bin {
-    child: Box {
+template $StMonstersPage: Adw.PreferencesPage {
+    title: 'Title';
+    name: 'Name';
+    description: 'Description';
+    icon-name: 'skytemple';
+
+    Adw.PreferencesGroup {
+        title: 'Title';
+        description: 'Description';
+
+        Adw.ActionRow test_row {
+            title: 'Title';
+            subtitle: 'Subtitle';
+            icon-name: 'skytemple_randomizer';
+            activatable: true;
+
+            activated => $on_action_row_activated_present();
+
+            [suffix]
+            Gtk.Image {
+              icon-name: 'go-next-symbolic';
+              styles ['dim-label']
+            }
+        }
     }
-    ;
 }

@@ -30,8 +30,7 @@ template $StMainWindow: Adw.ApplicationWindow {
             title-widget: Adw.ViewSwitcher view_switcher {
                 stack: stack;
                 policy: wide;
-            }
-            ;
+            };
         }
 
         content: Adw.ViewStack stack {
@@ -39,8 +38,7 @@ template $StMainWindow: Adw.ApplicationWindow {
 
             Adw.ViewStackPage page_start {
                 child: $StWelcomePage {
-                }
-                ;
+                };
                 icon-name: 'skytemple-e-worldmap-symbolic';
                 name: 'page_start';
                 title: _('Start');
@@ -49,8 +47,7 @@ template $StMainWindow: Adw.ApplicationWindow {
 
             Adw.ViewStackPage page_monsters {
                 child: $StMonstersPage {
-                }
-                ;
+                };
                 icon-name: 'skytemple-e-monster-symbolic';
                 name: 'page_monsters';
                 title: _('Pokémon');
@@ -59,8 +56,7 @@ template $StMainWindow: Adw.ApplicationWindow {
 
             Adw.ViewStackPage page_dungeons {
                 child: $StDungeonsPage {
-                }
-                ;
+                };
                 icon-name: 'skytemple-e-dungeon-symbolic';
                 name: 'page_dungeons';
                 title: _('Dungeons');
@@ -69,8 +65,7 @@ template $StMainWindow: Adw.ApplicationWindow {
 
             Adw.ViewStackPage page_text {
                 child: $StTextPage {
-                }
-                ;
+                };
                 icon-name: 'skytemple-e-string-symbolic';
                 name: 'page_text';
                 title: _('Text');
@@ -79,8 +74,7 @@ template $StMainWindow: Adw.ApplicationWindow {
 
             Adw.ViewStackPage page_tweaks {
                 child: $StTweaksPage {
-                }
-                ;
+                };
                 icon-name: 'skytemple-e-special-symbolic';
                 name: 'page_tweaks';
                 title: _('Tweaks');
@@ -100,8 +94,7 @@ template $StMainWindow: Adw.ApplicationWindow {
                         tooltip-text: _('Settings');
                         child: Adw.ButtonContent {
                             icon-name: 'skytemple-document-edit-symbolic';
-                        }
-                        ;
+                        };
                         clicked => $on_button_settings_clicked ();
                     }
                 }
@@ -112,12 +105,9 @@ template $StMainWindow: Adw.ApplicationWindow {
                         child: Adw.ButtonContent {
                             icon-name: 'skytemple-export-symbolic';
                             label: 'Randomize';
-                        }
-                        ;
+                        };
 
-                        styles [
-                            'suggested-action',
-                        ]
+                        styles ['suggested-action']
                         clicked => $on_button_randomize_clicked ();
                     }
                 }

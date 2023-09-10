@@ -13,6 +13,9 @@ template $StWelcomePage: Adw.Bin {
         }
 
         Adw.StatusPage {
+            icon-name: 'skytemple';
+            title: _('SkyTemple Randomizer');
+
             child: Adw.Clamp {
                 maximum-size: 600;
 
@@ -28,8 +31,7 @@ template $StWelcomePage: Adw.Bin {
                                 wrap: true;
                                 justify: center;
                                 label: _('Welcome to the Randomizer! Click the "Randomize" button to begin, or configure options by selecting a page.');
-                            }
-                            ;
+                            };
                         }
 
                         StackPage info_stack_banner {
@@ -40,10 +42,8 @@ template $StWelcomePage: Adw.Bin {
                                 unit: px;
 
                                 child: Box banner_info {
-                                }
-                                ;
-                            }
-                            ;
+                                };
+                            };
                         }
                     }
 
@@ -58,9 +58,7 @@ template $StWelcomePage: Adw.Bin {
                         Button about_button {
                             clicked => $on_about_button_clicked ();
 
-                            styles [
-                                'pill',
-                            ]
+                            styles ['pill']
                             label: _('About');
 
                             layout {
@@ -72,9 +70,7 @@ template $StWelcomePage: Adw.Bin {
                         Button {
                             clicked => $on_button_wiki_clicked ();
 
-                            styles [
-                                'pill',
-                            ]
+                            styles ['pill']
                             label: 'Wiki';
 
                             layout {
@@ -86,9 +82,7 @@ template $StWelcomePage: Adw.Bin {
                         Button {
                             clicked => $on_button_discord_clicked ();
 
-                            styles [
-                                'pill',
-                            ]
+                            styles ['pill']
                             label: 'Discord';
 
                             layout {
@@ -100,9 +94,7 @@ template $StWelcomePage: Adw.Bin {
                         Button {
                             clicked => $on_button_skytemple_clicked ();
 
-                            styles [
-                                'pill',
-                            ]
+                            styles ['pill']
                             label: 'SkyTemple';
 
                             layout {
@@ -111,13 +103,8 @@ template $StWelcomePage: Adw.Bin {
                             }
                         }
                     }
-                }
-                ;
-            }
-            ;
-            icon-name: 'skytemple_randomizer';
-            title: _('SkyTemple Randomizer');
+                };
+            };
         }
-    }
-    ;
+    };
 }

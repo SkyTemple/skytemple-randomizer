@@ -1,4 +1,18 @@
 using Gtk 4.0;
+using Adw 1;
 
-template $StSettingsDialog: Dialog {
+template $StSettingsDialog: Adw.Window {
+    title: _('Settings');
+    destroy-with-parent: true;
+    modal: true;
+    deletable: true;
+
+    realize => $on_realize();
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {}
+
+        Adw.Bin content {}
+    }
 }

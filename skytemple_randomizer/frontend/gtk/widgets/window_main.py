@@ -36,7 +36,7 @@ class MainWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_main_window_realize(self, *args):
-        if sys.platform.startswith('darwin'):
+        if sys.platform.startswith("darwin"):
             self.header_bar.set_decoration_layout("close,minimize,maximize:")
 
         frontend = GtkFrontend.instance()
@@ -51,13 +51,22 @@ class MainWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_button_randomize_clicked(self, *args):
-        dialog = RandomizeDialog(transient_for=self, destroy_with_parent=True, modal=True)
+        dialog = RandomizeDialog(
+            transient_for=self, destroy_with_parent=True, modal=True
+        )
         dialog.present()
 
     @Gtk.Template.Callback()
     def on_button_settings_clicked(self, *args):
-        dialog = SettingsDialog(transient_for=self, destroy_with_parent=True, modal=True)
+        dialog = SettingsDialog(
+            transient_for=self, destroy_with_parent=True, modal=True
+        )
         dialog.present()
+
+    @Gtk.Template.Callback()
+    def on_button_help_clicked(self, *args):
+        # TODO
+        pass
 
     @Gtk.Template.Callback()
     def on_main_window_notify_default_width(self, *args):
@@ -70,4 +79,3 @@ class MainWindow(Adw.ApplicationWindow):
     @Gtk.Template.Callback()
     def on_main_window_notify_maximized(self, *args):
         GtkFrontend.instance().settings.set_window_maximized(self.is_maximized())
-

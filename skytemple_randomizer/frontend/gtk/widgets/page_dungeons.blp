@@ -1,8 +1,80 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $StDungeonsPage: Adw.Bin {
-    child: Box {
+template $StDungeonsPage: Adw.PreferencesPage {
+    title: _('_Dungeons');
+    name: 'page_dungeons';
+    icon-name: 'skytemple-e-dungeon-symbolic';
+    use-underline: true;
+
+    Adw.PreferencesGroup {
+        Adw.ComboRow row_dungeon_mode {
+            title: _('Randomization Mode');
+            icon-name: 'skytemple-e-dungeon-symbolic';
+            activatable: true;
+            notify::selected => $on_row_dungeon_mode_starters_notify_selected();
+            model: StringList {
+                strings [_("Fully random"), _("Consistent per Dungeon")]
+            };
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: Popover {
+                        child: Label {
+                            max-width-chars: 52;
+                            wrap: true;
+                            label: _('Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\nIf you choose "Consistent per Dungeon" aspects like the music and tileset will be the same for all floors of a dungeon.');
+                        };
+                    };
+                    styles ['flat']
+                }
+            }
+        }
     }
-    ;
+
+    Adw.PreferencesGroup {
+        Adw.ActionRow row_randomization_settings {
+            title: _('Randomization Settings');
+            icon-name: 'skytemple-view-list-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+        Adw.ActionRow row_chance_thresholds {
+            title: _('Chance Thresholds');
+            icon-name: 'skytemple-e-dungeon-fixed-floor-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        Adw.ActionRow row_per_dungeon_settings {
+            title: _('Per-Dungeon Settings');
+            icon-name: 'skytemple-e-dungeon-tileset-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+    }
 }

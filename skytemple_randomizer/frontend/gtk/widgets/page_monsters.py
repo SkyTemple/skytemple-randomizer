@@ -30,13 +30,21 @@ from skytemple_randomizer.frontend.gtk.widgets import BaseSettingsDialog
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_monsters.ui"))
 class MonstersPage(Adw.PreferencesPage):
     __gtype_name__ = "StMonstersPage"
-    test_row = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_allowed_monsters = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_randomize_starters = cast(Adw.SwitchRow, Gtk.Template.Child())
+    button_randomize_starters = cast(Gtk.Button, Gtk.Template.Child())
+    row_randomize_npcs = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_randomize_abilities = cast(Adw.SwitchRow, Gtk.Template.Child())
+    button_randomize_abilities = cast(Gtk.Button, Gtk.Template.Child())
+    row_randomize_movesets = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_randomize_typings = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_tactics_iq = cast(Adw.ActionRow, Gtk.Template.Child())
 
     @Gtk.Template.Callback()
-    def on_action_row_activated_present(self, w: Adw.ActionRow, *args):
+    def on_signal_for_dialog(self, w: Gtk.Widget, *args):
         dialog = None
         if w == self.test_row:
-            dialog = BaseSettingsDialog(title=w.get_title())
+            dialog = BaseSettingsDialog(title=self.test_row.get_title())
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
@@ -44,3 +52,19 @@ class MonstersPage(Adw.PreferencesPage):
             dialog.set_application(frontend.application)
             dialog.present()
             return False
+
+    @Gtk.Template.Callback()
+    def on_row_randomize_starters_notify_active(self, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_randomize_npcs_notify_active(self, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_randomize_abilities_notify_active(self, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_randomize_typings_notify_active(self, *args):
+        pass

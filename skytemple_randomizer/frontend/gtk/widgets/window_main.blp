@@ -6,7 +6,7 @@ template $StMainWindow: Adw.ApplicationWindow {
     title: 'SkyTemple Randomizer';
     width-request: 420;
     height-request: 360;
-    realize => $on_main_window_realize ();
+    realize => $on_main_window_realize();
     notify::default-width => $on_main_window_notify_default_width ();
     notify::default-height => $on_main_window_notify_default_height ();
     notify::maximized => $on_main_window_notify_maximized ();
@@ -41,7 +41,7 @@ template $StMainWindow: Adw.ApplicationWindow {
                 };
                 icon-name: 'skytemple-e-worldmap-symbolic';
                 name: 'page_start';
-                title: _('Start');
+                title: _('_Start');
                 use-underline: true;
             }
 
@@ -50,7 +50,7 @@ template $StMainWindow: Adw.ApplicationWindow {
                 };
                 icon-name: 'skytemple-e-monster-symbolic';
                 name: 'page_monsters';
-                title: _('Pokémon');
+                title: _('_Pokémon');
                 use-underline: true;
             }
 
@@ -59,7 +59,7 @@ template $StMainWindow: Adw.ApplicationWindow {
                 };
                 icon-name: 'skytemple-e-dungeon-symbolic';
                 name: 'page_dungeons';
-                title: _('Dungeons');
+                title: _('_Dungeons');
                 use-underline: true;
             }
 
@@ -68,7 +68,7 @@ template $StMainWindow: Adw.ApplicationWindow {
                 };
                 icon-name: 'skytemple-e-string-symbolic';
                 name: 'page_text';
-                title: _('Text');
+                title: _('_Text');
                 use-underline: true;
             }
 
@@ -77,7 +77,7 @@ template $StMainWindow: Adw.ApplicationWindow {
                 };
                 icon-name: 'skytemple-e-special-symbolic';
                 name: 'page_tweaks';
-                title: _('Tweaks');
+                title: _('T_weaks');
                 use-underline: true;
             }
         }
@@ -90,12 +90,20 @@ template $StMainWindow: Adw.ApplicationWindow {
             ActionBar {
                 [start]
                 Box {
+                    spacing: 10;
                     Button button_settings {
                         tooltip-text: _('Settings');
                         child: Adw.ButtonContent {
                             icon-name: 'skytemple-document-edit-symbolic';
                         };
                         clicked => $on_button_settings_clicked ();
+                    }
+                    Button button_help {
+                        tooltip-text: _('Help (online)');
+                        child: Adw.ButtonContent {
+                            icon-name: 'skytemple-help-about-symbolic';
+                        };
+                        clicked => $on_button_help_clicked ();
                     }
                 }
 
@@ -104,7 +112,8 @@ template $StMainWindow: Adw.ApplicationWindow {
                     Button button_randomize {
                         child: Adw.ButtonContent {
                             icon-name: 'skytemple-export-symbolic';
-                            label: 'Randomize';
+                            label: '_Randomize';
+                            use-underline: true;
                         };
 
                         styles ['suggested-action']

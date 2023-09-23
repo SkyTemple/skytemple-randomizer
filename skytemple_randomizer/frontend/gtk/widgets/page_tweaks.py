@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import os
+from typing import cast
 
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
@@ -24,5 +25,19 @@ from gi.repository import Gtk, Adw
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_tweaks.ui"))
-class TweaksPage(Adw.Bin):
+class TweaksPage(Adw.PreferencesPage):
     __gtype_name__ = "StTweaksPage"
+    row_item_randomization_settings = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_item_pool = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_download_sprites = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_patches = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_music = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_explorer_rank = cast(Adw.ActionRow, Gtk.Template.Child())
+
+    @Gtk.Template.Callback()
+    def on_signal_for_dialog(self, w: Gtk.Widget, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_download_sprites_notify_active(self, *args):
+        pass

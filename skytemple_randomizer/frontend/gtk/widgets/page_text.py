@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import os
+from typing import cast
 
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
@@ -24,5 +25,28 @@ from gi.repository import Gtk, Adw
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_text.ui"))
-class TextPage(Adw.Bin):
+class TextPage(Adw.PreferencesPage):
     __gtype_name__ = "StTextPage"
+
+    row_personality_quiz = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_location_names = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_chapter_titles = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_randomize_main_text = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_randomize_story_dialogue = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_enable_instant_text = cast(Adw.SwitchRow, Gtk.Template.Child())
+
+    @Gtk.Template.Callback()
+    def on_signal_for_dialog(self, w: Gtk.Widget, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_randomize_main_text_notify_active(self, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_randomize_story_dialogue_notify_active(self, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_enable_instant_text_notify_active(self, *args):
+        pass

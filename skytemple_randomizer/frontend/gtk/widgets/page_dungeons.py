@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import os
+from typing import cast
 
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
@@ -24,5 +25,17 @@ from gi.repository import Gtk, Adw
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_dungeons.ui"))
-class DungeonsPage(Adw.Bin):
+class DungeonsPage(Adw.PreferencesPage):
     __gtype_name__ = "StDungeonsPage"
+    row_dungeon_mode = cast(Adw.ComboRow, Gtk.Template.Child())
+    row_randomization_settings = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_chance_thresholds = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_per_dungeon_settings = cast(Adw.ActionRow, Gtk.Template.Child())
+
+    @Gtk.Template.Callback()
+    def on_signal_for_dialog(self, w: Gtk.Widget, *args):
+        pass
+
+    @Gtk.Template.Callback()
+    def on_row_dungeon_mode_starters_notify_selected(self, *args):
+        pass

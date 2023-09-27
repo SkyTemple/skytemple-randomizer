@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import os
 import sys
+import webbrowser
 from typing import cast
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
@@ -65,8 +66,9 @@ class MainWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_button_help_clicked(self, *args):
-        # TODO
-        pass
+        webbrowser.open_new_tab(
+            "https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer"
+        )
 
     @Gtk.Template.Callback()
     def on_main_window_notify_default_width(self, *args):

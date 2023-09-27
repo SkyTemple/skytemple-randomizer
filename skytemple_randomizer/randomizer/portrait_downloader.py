@@ -83,7 +83,11 @@ class PortraitDownloader(AbstractRandomizer):
             return status.done()
 
         patcher = Patcher(self.rom, self.static_data)
-        self.is_expand_poke_list_applied = patcher.is_applied("ExpandPokeList")
+        self.is_expand_poke_list_applied = False
+        try:
+            self.is_expand_poke_list_applied = patcher.is_applied("ExpandPokeList")
+        except NotImplementedError:
+            pass
 
         status.step("Apply 'ActorAndLevelLoader' patch...")
         patcher = Patcher(self.rom, self.static_data)

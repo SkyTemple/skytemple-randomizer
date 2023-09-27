@@ -98,7 +98,13 @@ class PatchApplier(AbstractRandomizer):
 
         # Change MD properties if ExpandPokeList patch is applied
         md_properties = FileType.MD.properties()
-        if patcher.is_applied("ExpandPokeList"):
+        expand_poke_applied = False
+        try:
+            expand_poke_applied = patcher.is_applied("ExpandPokeList")
+        except NotImplementedError:
+            pass
+
+        if expand_poke_applied:
             md_properties.num_entities = 2048
             md_properties.max_possible = 2048
         else:

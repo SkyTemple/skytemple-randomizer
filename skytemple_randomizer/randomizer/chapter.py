@@ -18,7 +18,7 @@ from skytemple_files.script.ssb.model import Ssb
 
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import random_txt_line, get_script, \
-    get_all_string_files
+    get_all_string_files, strlossy
 from skytemple_randomizer.status import Status
 
 SCRIPTS_WITH_CHAPTER_NAMES = [
@@ -62,7 +62,14 @@ class ChapterRandomizer(AbstractRandomizer):
                     if op.op_code.name == 'back_SetBanner2':
                         chapter_name = random_txt_line(self.config['chapters']['text'])
                         string_index = op.params[5] - len(ssb.constants)
-                        for lang, _ in get_all_string_files(self.rom, self.static_data):
-                            ssb.strings[lang.name.lower()][string_index] = chapter_name
+                        if len(ssb.strings) > 0:  # for jp this is empty.
+                            for lang, _ in get_all_string_files(self.rom, self.static_data):
+                                ssb.strings[lang.name.lower()][string_index] = strlossy(
+                                    chapter_name, self.static_data.string_encoding
+                                )
+                        else:  # jp
+                            ssb.constants[op.params[5]] = strlossy(
+                                chapter_name, self.static_data.string_encoding
+                            )
 
         status.done()

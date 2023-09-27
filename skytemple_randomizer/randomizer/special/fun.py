@@ -32,7 +32,7 @@ from skytemple_randomizer.config import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
 from skytemple_randomizer.randomizer.util.util import clone_missing_portraits, get_main_string_file, \
-    get_all_string_files, get_script, Roster
+    get_all_string_files, get_script, Roster, SKIP_JP_INVALID_SSB
 from skytemple_randomizer.status import Status
 
 
@@ -209,6 +209,8 @@ def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
 def process_story_strings(rom: NintendoDSRom, static_data: Pmd2Data):
     for lang, _ in get_all_string_files(rom, static_data):
         for file_path in get_files_from_rom_with_extension(rom, 'ssb'):
+            if file_path in SKIP_JP_INVALID_SSB:
+                continue
             script = get_script(file_path, rom, static_data)
             for i in range(9, len(script.strings[lang.name.lower()])):
                 if randrange(0, 500) == 0:

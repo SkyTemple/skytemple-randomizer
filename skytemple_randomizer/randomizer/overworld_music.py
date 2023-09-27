@@ -23,7 +23,7 @@ from skytemple_files.hardcoded.main_menu_music import HardcodedMainMenuMusic
 from skytemple_files.script.ssb.model import Ssb
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_script
+from skytemple_randomizer.randomizer.util.util import get_script, SKIP_JP_INVALID_SSB
 from skytemple_randomizer.status import Status
 
 
@@ -58,6 +58,8 @@ class OverworldMusicRandomizer(AbstractRandomizer):
         status.step("Randomizing Overworld Music...")
 
         for script_name in get_files_from_rom_with_extension(self.rom, 'ssb'):
+            if script_name in SKIP_JP_INVALID_SSB:
+                continue
             ssb: Ssb = get_script(script_name, self.rom, self.static_data)
 
             for rtn in ssb.routine_ops:
@@ -68,10 +70,9 @@ class OverworldMusicRandomizer(AbstractRandomizer):
                             # Only randomize real music (looping tracks)
                             if any((b == op.params[i] for b in self.bgs)):
                                 op.params[i] = self._get_random_music_id()
-                    # We don't really support those, so replace them with 1 sec wait.
+                    # We don't really support those, so replace them with Null.
                     if op_c.name == 'WaitBgmSignal' or op_c.name == 'WaitBgm' or op_c.name == 'WaitBgm2':
-                        op.op_code = self.static_data.script_data.op_codes__by_name['Wait'][0]
-                        op.params = [60]
+                        op.op_code = self.static_data.script_data.op_codes__by_name['Null'][0]
 
         status.done()
 

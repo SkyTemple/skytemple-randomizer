@@ -20,7 +20,7 @@ from typing import Mapping, Sequence, Tuple, Dict
 
 from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
-from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
+from skytemple_files.common.ppmdu_config.data import GAME_REGION_US, GAME_REGION_JP
 from skytemple_files.common.spritecollab.schema import Credit
 from skytemple_files.common.string_codec import can_be_encoded
 from skytemple_files.common.types.file_types import FileType
@@ -33,12 +33,13 @@ from skytemple_files.script.ssb.script_compiler import ScriptCompiler
 from skytemple_randomizer.config import version, MovesetConfig, DungeonModeConfig, ItemAlgorithm
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
-from skytemple_randomizer.randomizer.util.util import get_all_string_files
+from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
 from skytemple_randomizer.spritecollab import portrait_credits, sprite_credits
 from skytemple_randomizer.status import Status
 
 STR_EU = 16330
 STR_US = 16328
+STR_JP = 18891
 ACTOR_TO_USE = u16(78)
 MAP = 'P01P01A'
 SCENE = 'enter.sse'
@@ -91,22 +92,25 @@ class SeedInfo(AbstractRandomizer):
 
         langs = list(get_all_string_files(self.rom, self.static_data))
         str_offset = STR_EU
-        if self.static_data.game_region == GAME_REGION_US:
-            str_offset = STR_US
-
-        for lang, string_file in langs:
-            string_file.strings[str_offset] = f"""Randomized with SkyTemple Randomizer.
-Version:[CS:Z]{version()}[CR]
+        info_text = f"""Randomized with SkyTemple Randomizer.
+Version: [CS:Z]{version()}[CR]
 Seed: [CS:C]{self.seed}[CR]
 
 [CS:H]PLEASE NOTE:[CR]
-This seed will only produce the same output
-when used with the exact same version
-and configuration of the randomizer that
-was used.
-You can see the configuration of the last
-randomization applied by talking to the NPC
+This seed will only produce the same 
+output when used with the exact same 
+version and configuration of the 
+randomizer that was used.
+You can see the configuration of the
+randomization by talking to the NPC
 on Crossroads."""
+        if self.static_data.game_region == GAME_REGION_US:
+            str_offset = STR_US
+        elif self.static_data.game_region == GAME_REGION_JP:
+            str_offset = STR_JP
+
+        for lang, string_file in langs:
+            string_file.strings[str_offset] = info_text
 
         for lang, string_file in langs:
             self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
@@ -253,7 +257,7 @@ macro settings() {{
 }}
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            exps, 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
         )
 
         script_fn = f'SCRIPT/{MAP}/{TALK_SCRIPT_NAME}'
@@ -305,7 +309,7 @@ macro artists() {{
 }}
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            exps, 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
         )
 
         script_fn = f'SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}'
@@ -379,7 +383,7 @@ def 0 {{
                 """
 
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            exps, 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
         )
 
         script_fn = f'SCRIPT/{MAP}/{THREE_TALK_SCRIPT_NAME}'
@@ -430,7 +434,7 @@ macro patches() {{
 }}  
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            exps, 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
         )
 
         script_fn = f'SCRIPT/{MAP}/{FOUR_TALK_SCRIPT_NAME}'

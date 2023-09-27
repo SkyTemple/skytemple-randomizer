@@ -70,6 +70,22 @@ STAB_DICT = {
 }
 
 
+# These files only exist in the JP ROM and are broken:
+SKIP_JP_INVALID_SSB = [
+    "SCRIPT/D42P21A/enter23.ssb",
+    "SCRIPT/D73P11A/us0303.ssb",
+    "SCRIPT/D73P11A/us0305.ssb",
+    "SCRIPT/D73P11A/us2003.ssb",
+    "SCRIPT/D73P11A/us2005.ssb",
+    "SCRIPT/D73P11A/us2103.ssb",
+    "SCRIPT/D73P11A/us2105.ssb",
+    "SCRIPT/D73P11A/us2203.ssb",
+    "SCRIPT/D73P11A/us2205.ssb",
+    "SCRIPT/D73P11A/us2303.ssb",
+    "SCRIPT/D73P11A/us2305.ssb",
+]
+
+
 def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> Tuple[Pmd2Language, Str]:
     lang = None
     for l in static_data.string_index_data.languages:
@@ -79,12 +95,18 @@ def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> Tuple[Pmd
     # If we didn't find english, just take the first
     if lang is None:
         lang = static_data.string_index_data.languages[0]
-    return lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
+    return lang, FileType.STR.deserialize(
+        rom.getFileByName(f'MESSAGE/{lang.filename}'),
+        string_encoding=static_data.string_encoding
+    )
 
 
 def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[Tuple[Pmd2Language, Str]]:
     for lang in static_data.string_index_data.languages:
-        yield lang, FileType.STR.deserialize(rom.getFileByName(f'MESSAGE/{lang.filename}'))
+        yield lang, FileType.STR.deserialize(
+            rom.getFileByName(f'MESSAGE/{lang.filename}'),
+            string_encoding=static_data.string_encoding
+        )
 
 
 def clone_missing_portraits(kao, index: int, *, force=False):
@@ -191,9 +213,12 @@ def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data,
             new_dict[a.upper()] = b.upper()
         replace_map.update(new_dict)
         for file_path in get_files_from_rom_with_extension(rom, 'ssb'):
+            if file_path in SKIP_JP_INVALID_SSB:
+                continue
             script = get_script(file_path, rom, static_data)
             script.constants = [replace_strings(string, replace_map) for string in script.constants]
-            script.strings[lang.name.lower()] = [replace_strings(string, replace_map) for string in script.strings[lang.name.lower()]]
+            if len(script.strings) > 0:  # for jp this is empty.
+                script.strings[lang.name.lower()] = [replace_strings(string, replace_map) for string in script.strings[lang.name.lower()]]
 
 
 _ssb_file_cache: Dict[str, Ssb] = {}
@@ -242,3 +267,13 @@ def random_txt_line(text: str):
         line = choice(lines)
     return line.strip().replace('\\n', '\n')
 
+
+def strlossy(text: str, encoding: str) -> str:
+    """
+    Replaces all characters that aren't representable in the target encoding with nothing.
+    May also contain special handling for certain characters and replace them with more appropriate
+    replacements
+    """
+    if encoding == "shift-jis":
+        text = text.replace("é", "e")
+    return text.encode(encoding, errors="ignore").decode(encoding)

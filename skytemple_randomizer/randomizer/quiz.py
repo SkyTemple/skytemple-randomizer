@@ -26,7 +26,7 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.config import RandomizerConfig, QuizQuestion, data_dir, QUIZ_QUESTIONS_JSON_SCHEMA
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_all_string_files
+from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
 from skytemple_randomizer.status import Status
 
 QUESTION_MAPPING = {
@@ -146,9 +146,13 @@ class QuizRandomizer(AbstractRandomizer):
                 else:
                     question = self._generate_fallback_question(len(game_answer_ids))
 
-                string_file.strings[question_block.begin + game_question_id] = question['question']
+                string_file.strings[question_block.begin + game_question_id] = strlossy(
+                    question['question'], self.static_data.string_encoding
+                )
                 for answer_id, answer in zip(game_answer_ids, question['answers']):
-                    string_file.strings[answer_block.begin + answer_id] = answer
+                    string_file.strings[answer_block.begin + answer_id] = strlossy(
+                        answer, self.static_data.string_encoding
+                    )
 
             self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
 

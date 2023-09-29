@@ -1,0 +1,4 @@
+include skytemple_randomizer/frontend/gtk/*.glade
+include skytemple_randomizer/frontend/gtk/*.css
+graft skytemple_randomizer/data
+include skytemple_randomizer/py.typed

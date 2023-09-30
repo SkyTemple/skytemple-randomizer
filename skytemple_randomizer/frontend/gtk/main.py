@@ -250,7 +250,7 @@ class MainController(Gtk.Application):
             x[2] = False
 
     def on_btn_rom_clicked(self, *args):
-        self.show_info("The input file must be an EU or US .nds ROM of Explorers of Sky, which is not included in the "
+        self.show_info("The input file must be an .nds ROM of Explorers of Sky, which is not included in the "
                        "randomizer, you must acquire it yourself. Wii U Virtual Console ROMs are not supported.\n"
                        "Re-randomizing a ROM that has already been randomized is not supported and might not work "
                        "properly.")

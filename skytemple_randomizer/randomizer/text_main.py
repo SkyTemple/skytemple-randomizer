@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import shuffle
 
+from skytemple_files.common.ppmdu_config.data import GAME_REGION_JP
 from skytemple_files.common.ppmdu_config.data import Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -34,6 +35,9 @@ class TextMainRandomizer(AbstractRandomizer):
             return status.done()
         status.step('Randomizing all main text...')
 
+        if self.static_data.game_region == GAME_REGION_JP:
+            return self.run_for_jp(status)
+
         for lang, strings in get_all_string_files(self.rom, self.static_data):
             for string_block in self._collect_categories(self.static_data.string_index_data.string_blocks):
                 part = strings.strings[string_block.begin:string_block.end]
@@ -42,6 +46,11 @@ class TextMainRandomizer(AbstractRandomizer):
 
             self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
 
+        status.done()
+
+    def run_for_jp(self, status: Status):
+        # TODO: Trying to shuffle strings in the JP ROM currently consistently results in a crash upon entering
+        #       the main menu.
         status.done()
 
     def _collect_categories(self, string_cats):

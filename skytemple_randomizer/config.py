@@ -339,10 +339,12 @@ class TextConfigDoc:
         """Randomize the game's main text file. This contains everything except for most of the overworld dialogue.
         The randomization is done in a way that (in most cases) similar categories of texts are shuffled, meaning for example, that Pokémon types and names are shuffled.
         
+        This is not supported for the Japanese ROM and will do nothing if enabled for it.
         THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
     story = \
         """Randomize the game's overworld scene text. ALL overworld text is shuffled.
         
+        This is not supported for the Japanese ROM and will do nothing if enabled for it.
         THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
     instant = \
         """If enabled, text will be displayed instantly."""

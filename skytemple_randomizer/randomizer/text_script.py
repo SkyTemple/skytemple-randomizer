@@ -62,24 +62,32 @@ class TextScriptRandomizer(AbstractRandomizer):
 
     def run_for_jp(self, status: Status):
         # The JP ROM uses constant strings.
-        all_strings: List[str] = []
-        ssb_map: Dict[str, Ssb] = {}
-        for file_path in get_files_from_rom_with_extension(self.rom, 'ssb'):
-            if file_path in SKIP_JP_INVALID_SSB:
-                continue
-            # Do not attempt to shuffle the text in the unionall
-            if file_path == 'SCRIPT/COMMON/unionall.ssb':
-                continue
-            script = get_script(file_path, self.rom, self.static_data)
-            all_strings += script.constants
-            ssb_map[file_path] = script
-
-        status.step('Randomizing all script text: Writing strings...')
-        shuffle(all_strings)
-        for file_path, script in ssb_map.items():
-            samples = []
-            for _ in range(0, len(script.constants)):
-                samples.append(all_strings.pop())
-            script.constants = samples
-
+        # TODO:
+        #   See https://github.com/SkyTemple/skytemple-randomizer/issues/153
+        #   This is not trivial to implement for the JP ROM. We need to make sure to only
+        #   the parameters for opcodes that use language strings in the EU/NA ROM are updated, because
+        #   the game also uses constant strings for things such as loading scenes. Randomizing these with the
+        #   rest WILL lead to problems.
+        #
+        #   However the approach used for EU/NA is way to simple and will not work here. We would need to go through
+        #   the parameters, note their position and then when rebuilding the constant table for an SSB script
+        #   make sure that somehow all strings we don't want to change are still there...
+        #
+        #   Opcode and parameter combinations that use language strings in the EU ROM:
+        #       ('message_Talk', 0)
+        #       ('CaseText', 1)
+        #       ('back_SetSpecialEpisodeBanner', 1)
+        #       ('message_Mail', 0)
+        #       ('DefaultText', 0)
+        #       ('back_SetBanner', 1)
+        #       ('back_SetTitleBanner', 1)
+        #       ('CaseMenu', 0)
+        #       ('back_SetBanner2', 5)
+        #       ('back_SetSpecialEpisodeBanner3', 1)
+        #       ('message_ImitationSound', 0)
+        #       ('back_SetSpecialEpisodeBanner2', 1)
+        #       ('message_Notice', 0)
+        #       ('message_Monologue', 0)
+        #       ('message_Narration', 1)
+        #       ('message_Explanation', 0)
         status.done()

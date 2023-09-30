@@ -70,10 +70,13 @@ class OverworldMusicRandomizer(AbstractRandomizer):
                             # Only randomize real music (looping tracks)
                             if any((b == op.params[i] for b in self.bgs)):
                                 op.params[i] = self._get_random_music_id()
-                    # We don't really support those, so replace them with Null.
-                    if op_c.name == 'WaitBgmSignal' or op_c.name == 'WaitBgm' or op_c.name == 'WaitBgm2':
+                    # We don't really support this, so replace it with Null.
+                    if op_c.name == 'WaitBgmSignal':
                         op.op_code = self.static_data.script_data.op_codes__by_name['Null'][0]
-
+                    # Replace with a generic Wait, maintaining the parameter count as opposed to Null.
+                    elif op_c.name == 'WaitBgm' or op_c.name == 'WaitBgm2':
+                        op.op_code = self.static_data.script_data.op_codes__by_name['Wait'][0]
+                        op.params = [60]
         status.done()
 
     def _get_random_music_id(self):

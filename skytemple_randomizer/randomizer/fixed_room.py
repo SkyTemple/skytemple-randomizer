@@ -16,7 +16,8 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
 from random import randrange
-from typing import List, Tuple, Iterable, Sequence
+from typing import List, Tuple
+from collections.abc import Iterable, Sequence
 
 from ndspy.rom import NintendoDSRom
 
@@ -80,7 +81,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
 
     def _get_dungeon_floors_for_fixed_room(
             self, floor_lists: Sequence[Sequence[MappaFloorProtocol]], ff_id: int
-    ) -> Iterable[Tuple[Sequence[MappaFloorProtocol], int]]:
+    ) -> Iterable[tuple[Sequence[MappaFloorProtocol], int]]:
         for fl in floor_lists:
             for flooridx, floor in enumerate(fl):
                 if floor.layout.fixed_floor_id == ff_id:
@@ -101,7 +102,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
                 l.append(action)
         return l
 
-    def _get_random_room(self, entities_and_special_tiles_to_preserve: List[FixedFloorActionRule]):
+    def _get_random_room(self, entities_and_special_tiles_to_preserve: list[FixedFloorActionRule]):
         room_data = self._get_random_room_txt()
         width = len(room_data[0])
         height = len(room_data)

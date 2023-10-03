@@ -19,7 +19,8 @@ import math
 from enum import Enum, auto
 from itertools import chain
 from random import choice, randrange, randint
-from typing import Optional, List, Dict, Tuple, Sequence
+from typing import Optional, List, Dict, Tuple
+from collections.abc import Sequence
 
 from ndspy.rom import NintendoDSRom
 from range_typed_integers import u8, i8, u16, i16, u8_checked
@@ -91,7 +92,7 @@ class DungeonRandomizer(AbstractRandomizer):
             get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9),
             self.static_data
         )
-        self.mappa: Optional[MappaBinProtocol] = None
+        self.mappa: MappaBinProtocol | None = None
 
     def step_count(self) -> int:
         i = 2
@@ -139,7 +140,7 @@ class DungeonRandomizer(AbstractRandomizer):
         status.done()
 
     def _randomize(
-            self, mappa: GenericMappa, trap_lists: Optional[List[MappaTrapListProtocol]], item_lists: Optional[List[MappaItemListProtocol]]
+            self, mappa: GenericMappa, trap_lists: list[MappaTrapListProtocol] | None, item_lists: list[MappaItemListProtocol] | None
     ):
         self._randomize_floor_count(mappa)
         for floor_list_index, floor_list in enumerate(mappa.floor_lists):
@@ -243,7 +244,7 @@ class DungeonRandomizer(AbstractRandomizer):
                 if idx in allowed:
                     allowed.remove(u16(idx))
         md_ids = sorted(
-            set(choice(allowed) for _ in range(0, randrange(MIN_MONSTERS_PER_LIST, MAX_MONSTERS_PER_LIST + 1))))
+            {choice(allowed) for _ in range(0, randrange(MIN_MONSTERS_PER_LIST, MAX_MONSTERS_PER_LIST + 1))})
         weights = sorted(random_weights(len(md_ids)))
         for md_id, weight in zip(md_ids, weights):
             level = min(100,
@@ -278,7 +279,7 @@ class DungeonRandomizer(AbstractRandomizer):
             return
         new_floor_lists = []
         for i in range(0, len(mappa.floor_lists)):
-            dungeons: Dict[int, DungeonDefinition] = {}
+            dungeons: dict[int, DungeonDefinition] = {}
             do_continue = False
             for dungeon_id, dungeon in enumerate(self.dungeons):
                 if dungeon.mappa_index == i:
@@ -318,7 +319,7 @@ class DungeonRandomizer(AbstractRandomizer):
         )
         set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
-    def _copy_randomly_into_until_size(self, lst: List[MappaFloorProtocol], expected_length):
+    def _copy_randomly_into_until_size(self, lst: list[MappaFloorProtocol], expected_length):
         if len(lst) < 1:
             lst.append(self._mappa_generate_new_floor())
         while len(lst) < expected_length:
@@ -328,9 +329,9 @@ class DungeonRandomizer(AbstractRandomizer):
                 {x.name: x for x in self.static_data.dungeon_data.item_categories.values()}
             ))
 
-    def _resize_floor_list(self, dungeons: Dict[int, DungeonDefinition], new_dungeon_size: int, old_list: Sequence[MappaFloorProtocol]):
-        fixed_floors_per_dungeon: Dict[int, List[Tuple[FixedRoomPosition, MappaFloorProtocol]]] = {}
-        list_parts: Dict[int, List[MappaFloorProtocol]] = {}
+    def _resize_floor_list(self, dungeons: dict[int, DungeonDefinition], new_dungeon_size: int, old_list: Sequence[MappaFloorProtocol]):
+        fixed_floors_per_dungeon: dict[int, list[tuple[FixedRoomPosition, MappaFloorProtocol]]] = {}
+        list_parts: dict[int, list[MappaFloorProtocol]] = {}
 
         # Re-distribute floors - if the dungeon only had one floor, leave it at length 1
         # + collect all fixed floors per dungeon
@@ -401,8 +402,8 @@ class DungeonRandomizer(AbstractRandomizer):
             while len(lst) > expected_length:
                 idx = brandint(0, len(lst) - 1)
                 del lst[idx]
-            ff_begin: List[MappaFloorProtocol] = []
-            ff_end: List[MappaFloorProtocol] = []
+            ff_begin: list[MappaFloorProtocol] = []
+            ff_end: list[MappaFloorProtocol] = []
             for pos, ff in ffs:
                 if pos == FixedRoomPosition.BEGIN:
                     ff_begin.append(ff)

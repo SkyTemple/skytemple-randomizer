@@ -16,7 +16,8 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import traceback
 from numbers import Number
-from typing import Mapping, Sequence, Tuple, Dict
+from typing import Tuple, Dict
+from collections.abc import Mapping, Sequence
 
 from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
@@ -461,7 +462,7 @@ macro patches() {{
             return "[CS:H]Classic[CR]"
         return "[CS:H]Balanced[CR]"
 
-    def _item_weights(self, param: Dict[int, Number]):
+    def _item_weights(self, param: dict[int, Number]):
         out = ""
         for idx, weight_multi in param.items():
             cat_name = self.static_data.dungeon_data.item_categories[idx].name
@@ -505,7 +506,7 @@ macro patches() {{
 """
         return cases
 
-    def _artist_credits(self, credits: Mapping[Tuple[str, str], Sequence[Credit]]):
+    def _artist_credits(self, credits: Mapping[tuple[str, str], Sequence[Credit]]):
         if fun.is_fun_allowed():
             return fun.get_artist_credits(self.rom, self.static_data)
 

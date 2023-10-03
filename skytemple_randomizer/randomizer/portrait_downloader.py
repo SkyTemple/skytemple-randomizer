@@ -17,7 +17,8 @@
 import asyncio
 import sys
 import traceback
-from typing import List, Tuple, Coroutine, Optional
+from typing import List, Tuple, Optional
+from collections.abc import Coroutine
 
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
@@ -48,7 +49,7 @@ ATTACK_BIN = 'MONSTER/m_attack.bin'
 class PortraitDownloader(AbstractRandomizer):
     def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
         super().__init__(config, rom, static_data, seed, frontend)
-        self._debugs: List[Tuple[str, str, str, str, str]] = []
+        self._debugs: list[tuple[str, str, str, str, str]] = []
 
         self.monster_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(MONSTER_BIN))
         self.monster_ground_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(GROUND_BIN))
@@ -149,7 +150,7 @@ class PortraitDownloader(AbstractRandomizer):
 
             for chunk in chunks(task_params, 30):
                 async with sprite_collab() as sc:
-                    tasks: List[Coroutine] = []
+                    tasks: list[Coroutine] = []
                     for task_param_kwargs in chunk:
                         tasks.append(self._import_portrait(sc, **task_param_kwargs))
 
@@ -178,7 +179,7 @@ class PortraitDownloader(AbstractRandomizer):
 
         status.done()
 
-    def _match_form(self, mdidx: int, pokedex_number: int, gender_id: int) -> List[Tuple[int, str]]:
+    def _match_form(self, mdidx: int, pokedex_number: int, gender_id: int) -> list[tuple[int, str]]:
         """
         Returns the monster ID and form paths (in preferred order) for this entry from the ROM.
         Maps some special cases in the vanilla ROM to special mon, if the expected dex
@@ -383,7 +384,7 @@ class PortraitDownloader(AbstractRandomizer):
         status.step(f"Downloading portraits and sprites... {self.current}/{self.total}")
 
     @staticmethod
-    def get_both_md_entries(md: MdProtocol, item_id: int) -> Tuple[MdEntryProtocol, Optional[MdEntryProtocol]]:
+    def get_both_md_entries(md: MdProtocol, item_id: int) -> tuple[MdEntryProtocol, Optional[MdEntryProtocol]]:
         num_entites = FileType.MD.properties().num_entities
         if item_id + num_entites < len(md):
             return md[item_id], md[item_id + num_entites]

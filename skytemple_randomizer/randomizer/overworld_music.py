@@ -68,7 +68,7 @@ class OverworldMusicRandomizer(AbstractRandomizer):
                     for i, param_spec in enumerate(op_c.arguments):
                         if param_spec.type == 'Bgm':
                             # Only randomize real music (looping tracks)
-                            if any((b == op.params[i] for b in self.bgs)):
+                            if any(b == op.params[i] for b in self.bgs):
                                 op.params[i] = self._get_random_music_id()
                     # We don't really support this, so replace it with Null.
                     if op_c.name == 'WaitBgmSignal':

@@ -39,7 +39,7 @@ class DungeonUnlocker(AbstractRandomizer):
     def run(self, status: Status):
         status.step('Unlocking dungeons...')
 
-        new_ops: List[SsbOperation] = []
+        new_ops: list[SsbOperation] = []
         coro_id = self.static_data.script_data.common_routine_info__by_name['EVENT_DIVIDE'].id
         ops = self.static_data.script_data.op_codes__by_name
 

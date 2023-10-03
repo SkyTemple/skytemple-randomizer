@@ -52,7 +52,7 @@ class NpcRandomizer(AbstractRandomizer):
         status.step("Replacing main text that mentions NPCs...")
         names_mapped_all = {}
         for lang, string_file in get_all_string_files(self.rom, self.static_data):
-            names_mapped: Dict[str, str] = {}
+            names_mapped: dict[str, str] = {}
             names_mapped_all[lang] = names_mapped
             for old, new in mapped_actors.items():
                 old_base = old % 600
@@ -75,16 +75,16 @@ class NpcRandomizer(AbstractRandomizer):
 
         status.done()
 
-    def _randomize_actors(self, string_file, pokemon_string_data) -> Dict[int, int]:
+    def _randomize_actors(self, string_file, pokemon_string_data) -> dict[int, int]:
         """Returns a dict that maps old entids -> new entids"""
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
             FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
         )
         md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
 
-        mapped: Dict[int, int] = {}
+        mapped: dict[int, int] = {}
         # We want to map actors with the same name to the same ID
-        mapped_for_names: Dict[str, u16] = {}
+        mapped_for_names: dict[str, u16] = {}
         num_entities = FileType.MD.properties().num_entities
         old_entid_bases = [actor.entid % num_entities for actor in actor_list.list]
         new_entid: u16

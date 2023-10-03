@@ -46,9 +46,9 @@ class ConfigUIApplier:
     def __init__(
             self,
             builder: Gtk.Builder,
-            dungeons: List[Pmd2DungeonDungeon],
-            items: List[Pmd2DungeonItem],
-            item_cats: Dict[int, Pmd2DungeonItemCategory]
+            dungeons: list[Pmd2DungeonDungeon],
+            items: list[Pmd2DungeonItem],
+            item_cats: dict[int, Pmd2DungeonItemCategory]
     ):
         self.builder = builder
         self.dungeons = dungeons
@@ -157,7 +157,7 @@ class ConfigUIReader:
         return self._handle(RandomizerConfig)
 
     def _handle(self, typ: type, field_name=None):
-        if typ == List[QuizQuestion]:
+        if typ == list[QuizQuestion]:
             buffer = builder_get_assert(self.builder, GtkSource.View, 'text_quiz_content').get_buffer()
             yaml_content = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
             yaml_obj = strictyaml.load(yaml_content).data
@@ -197,7 +197,7 @@ class ConfigUIReader:
                 w5 = builder_get_assert_exist(self.builder, Gtk.TextView, 'text_' + field_name)
                 buffer5 = w5.get_buffer()
                 return buffer5.get_text(buffer5.get_start_iter(), buffer5.get_end_iter(), False)
-        elif typ == Dict[int, DungeonSettingsConfig]:
+        elif typ == dict[int, DungeonSettingsConfig]:
             w6 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
             s6 = cast(Gtk.ListStore, w6.get_model())
             d = {}
@@ -205,7 +205,7 @@ class ConfigUIReader:
                 d[idx] = {'randomize': randomize, 'monster_houses': monster_houses,
                           'randomize_weather': randomize_weather, 'unlock': unlock, 'enemy_iq': enemy_iq}
             return d
-        elif typ == Dict[int, Number]:
+        elif typ == dict[int, Number]:
             w7 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
             s7 = cast(Gtk.ListStore, w7.get_model())
             d = {}
@@ -215,7 +215,7 @@ class ConfigUIReader:
         elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
             w8 = builder_get_assert_exist(self.builder, Gtk.TreeView, 'tree_' + field_name)
             s8 = cast(Gtk.ListStore, w8.get_model())
-            dd: List[int] = []
+            dd: list[int] = []
             for idx, name, use in iter_tree_model(s8):
                 if use:
                     dd.append(idx)

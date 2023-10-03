@@ -96,7 +96,7 @@ class MainController(Gtk.Application):
         self.static_config = Pmd2XmlReader.load_default('EoS_EU')  # version doesn't really matter for this
         self.settings = SkyTempleRandomizerSettingsStoreGtk()
 
-        self.chosen_file: Optional[str] = None
+        self.chosen_file: str | None = None
 
         # Source view
         view = builder_get_assert(builder, GtkSource.View, 'text_quiz_content')
@@ -138,7 +138,7 @@ class MainController(Gtk.Application):
         ConfigDocApplier(self.window, self.builder).apply()
         self._check_for_updates()
 
-        self.banner_hash: Optional[str] = None
+        self.banner_hash: str | None = None
         self._check_for_banner()
 
         self.builder.connect_signals(self)
@@ -342,7 +342,7 @@ class MainController(Gtk.Application):
             return True
 
         about.connect("activate-link", activate_link)
-        header_bar: Optional[Gtk.HeaderBar] = about.get_header_bar()
+        header_bar: Gtk.HeaderBar | None = about.get_header_bar()
         if header_bar is not None:
             # Cool bug??? And it only works on the left as well, wtf?
             header_bar.set_decoration_layout('close')

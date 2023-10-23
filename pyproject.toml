@@ -12,7 +12,7 @@ authors = [
 description = "Randomizer GUI to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky"
 readme = "README.rst"
 requires-python = ">=3.8"
-keywords = ["rom hacking", "game modding", "skytemple", "gtk", "randomizer"]
+keywords = ["rom-hacking", "game-modding", "skytemple", "gtk", "randomizer"]
 license = {text = "GPL-3.0-or-later"}
 classifiers = [
     "Development Status :: 4 - Beta",

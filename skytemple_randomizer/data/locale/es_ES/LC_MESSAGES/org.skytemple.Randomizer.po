@@ -1,0 +1,3193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: skytemple\n"
+"Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
+"POT-Creation-Date: 2023-10-30 14:58+0000\n"
+"PO-Revision-Date: 2023-10-30 15:35\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: skytemple\n"
+"X-Crowdin-Project-ID: 442656\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /[SkyTemple.skytemple-randomizer] gtk4/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot\n"
+"X-Crowdin-File-ID: 20\n"
+
+#: /dev/fd/63:1 /dev/fd/63:120
+msgid "English"
+msgstr "Inglés"
+
+#: /dev/fd/63:2 /dev/fd/63:125
+msgid "Explorer Ranks Names"
+msgstr ""
+
+#: /dev/fd/63:3 /dev/fd/63:126
+msgid "Default Team Names"
+msgstr ""
+
+#: /dev/fd/63:4 /dev/fd/63:127
+msgid "Job Debriefing Related Strings"
+msgstr ""
+
+#: /dev/fd/63:5 /dev/fd/63:128
+msgid "Member Joined Menu"
+msgstr ""
+
+#: /dev/fd/63:6 /dev/fd/63:129
+msgid "Some Item Menu Strings"
+msgstr ""
+
+#: /dev/fd/63:7 /dev/fd/63:130
+msgid "Gummi Eating Strings"
+msgstr ""
+
+#: /dev/fd/63:8 /dev/fd/63:131
+msgid "Items and Pokemon Menu Strings"
+msgstr ""
+
+#: /dev/fd/63:9 /dev/fd/63:132
+msgid "Kangaskhan Storage Strings"
+msgstr ""
+
+#: /dev/fd/63:10 /dev/fd/63:133
+msgid "Evolution Strings"
+msgstr ""
+
+#: /dev/fd/63:11 /dev/fd/63:134
+msgid "Music tracks names"
+msgstr ""
+
+#: /dev/fd/63:12 /dev/fd/63:135
+msgid "Personality Quiz Questions"
+msgstr ""
+
+#: /dev/fd/63:13 /dev/fd/63:136
+msgid "Personality Quiz Answers"
+msgstr ""
+
+#: /dev/fd/63:14 /dev/fd/63:137
+msgid "Personality Quiz result strings"
+msgstr ""
+
+#: /dev/fd/63:15 /dev/fd/63:138
+msgid "Personality string natures"
+msgstr ""
+
+#: /dev/fd/63:16 /dev/fd/63:139
+msgid "Weather Change Feedback"
+msgstr ""
+
+#: /dev/fd/63:17 /dev/fd/63:140
+msgid "Weather Names"
+msgstr ""
+
+#: /dev/fd/63:18 /dev/fd/63:141
+msgid "Floor-Wide Status Names+Desc"
+msgstr ""
+
+#: /dev/fd/63:19 /dev/fd/63:142
+msgid "IQ Skills Menu"
+msgstr ""
+
+#: /dev/fd/63:20 /dev/fd/63:143
+msgid "Test Dungeon"
+msgstr ""
+
+#: /dev/fd/63:21 /dev/fd/63:144
+msgid "Mission Objectives"
+msgstr ""
+
+#: /dev/fd/63:22 /dev/fd/63:145
+msgid "Mission Failure/Faint Strings"
+msgstr ""
+
+#: /dev/fd/63:23 /dev/fd/63:146
+msgid "Speed Change Feedback"
+msgstr ""
+
+#: /dev/fd/63:24 /dev/fd/63:147
+msgid "Potential Recruit Strings"
+msgstr ""
+
+#: /dev/fd/63:25 /dev/fd/63:148
+msgid "Gummi Feedback"
+msgstr ""
+
+#: /dev/fd/63:26 /dev/fd/63:149
+msgid "Traps Feedback"
+msgstr ""
+
+#: /dev/fd/63:27 /dev/fd/63:150
+msgid "More Dungeon Feedback"
+msgstr ""
+
+#: /dev/fd/63:28 /dev/fd/63:151
+msgid "Something's Stirring String"
+msgstr ""
+
+#: /dev/fd/63:29 /dev/fd/63:152
+msgid "Some Fake items Dialogue"
+msgstr ""
+
+#: /dev/fd/63:30 /dev/fd/63:153
+msgid "Shaymin Form Change Strings"
+msgstr ""
+
+#: /dev/fd/63:31 /dev/fd/63:154
+msgid "Recruited A Pokemon Strings"
+msgstr ""
+
+#: /dev/fd/63:32 /dev/fd/63:155
+msgid "Battle Feedback Messages"
+msgstr ""
+
+#: /dev/fd/63:33 /dev/fd/63:156
+msgid "Misson Feedback"
+msgstr ""
+
+#: /dev/fd/63:34 /dev/fd/63:157
+msgid "Kecleon Dungeon Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:35 /dev/fd/63:158
+msgid "Misc Battle Events Strings"
+msgstr ""
+
+#: /dev/fd/63:36 /dev/fd/63:159
+msgid "Secret Bazaar Stairs Found"
+msgstr ""
+
+#: /dev/fd/63:37 /dev/fd/63:160
+msgid "Kirlia Secret Bazaar Greeting"
+msgstr ""
+
+#: /dev/fd/63:38 /dev/fd/63:161
+msgid "Grab Bags Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:39 /dev/fd/63:162
+msgid "Shedinja Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:40 /dev/fd/63:163
+msgid "Mime Jr. Spa Strings"
+msgstr ""
+
+#: /dev/fd/63:41 /dev/fd/63:164
+msgid "Swalot's Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:42 /dev/fd/63:165
+msgid "Team Tactics Menu strings"
+msgstr ""
+
+#: /dev/fd/63:43 /dev/fd/63:166
+msgid "Item Became Sticky"
+msgstr ""
+
+#: /dev/fd/63:44 /dev/fd/63:167
+msgid "Pokemon LEVEL_UP Dialogue"
+msgstr ""
+
+#: /dev/fd/63:45 /dev/fd/63:168
+msgid "Pokemon WAIT Dialogue"
+msgstr ""
+
+#: /dev/fd/63:46 /dev/fd/63:169
+msgid "Pokemon HEALTHY Dialogue"
+msgstr ""
+
+#: /dev/fd/63:47 /dev/fd/63:170
+msgid "Pokemon HALF_LIFE Dialogue"
+msgstr ""
+
+#: /dev/fd/63:48 /dev/fd/63:171
+msgid "Pokemon PINCH Dialogue"
+msgstr ""
+
+#: /dev/fd/63:49 /dev/fd/63:172
+msgid "Pokemon GROUND_WAIT Dialogue"
+msgstr ""
+
+#: /dev/fd/63:50 /dev/fd/63:173
+msgid "Item Names"
+msgstr ""
+
+#: /dev/fd/63:51 /dev/fd/63:174
+msgid "Move Names"
+msgstr ""
+
+#: /dev/fd/63:52 /dev/fd/63:175
+msgid "Pokemon Names"
+msgstr ""
+
+#: /dev/fd/63:53 /dev/fd/63:176
+msgid "Pokemon Categories"
+msgstr ""
+
+#: /dev/fd/63:54 /dev/fd/63:177
+msgid "Tactics Names"
+msgstr ""
+
+#: /dev/fd/63:55 /dev/fd/63:178
+msgid "Tactics Descriptions"
+msgstr ""
+
+#: /dev/fd/63:56 /dev/fd/63:179
+msgid "IQ Skills Names"
+msgstr ""
+
+#: /dev/fd/63:57 /dev/fd/63:180
+msgid "IQ Skills Descriptions"
+msgstr ""
+
+#: /dev/fd/63:58 /dev/fd/63:181
+msgid "Move Targets Strings"
+msgstr ""
+
+#: /dev/fd/63:59 /dev/fd/63:182
+msgid "Accuracy/Power Stars Ratings"
+msgstr ""
+
+#: /dev/fd/63:60 /dev/fd/63:183
+msgid "Move Descriptions"
+msgstr ""
+
+#: /dev/fd/63:61 /dev/fd/63:184
+msgid "Item Long Descriptions"
+msgstr ""
+
+#: /dev/fd/63:62 /dev/fd/63:185
+msgid "Item Short Descriptions"
+msgstr ""
+
+#: /dev/fd/63:63 /dev/fd/63:186
+msgid "Trap Names"
+msgstr ""
+
+#: /dev/fd/63:64 /dev/fd/63:187
+msgid "Trap Descriptions"
+msgstr ""
+
+#: /dev/fd/63:65 /dev/fd/63:188
+msgid "Statuses Names and Descriptions"
+msgstr ""
+
+#: /dev/fd/63:66 /dev/fd/63:189
+msgid "Type Names"
+msgstr ""
+
+#: /dev/fd/63:67 /dev/fd/63:190
+msgid "Ability Names"
+msgstr ""
+
+#: /dev/fd/63:68 /dev/fd/63:191
+msgid "Ability Descriptions"
+msgstr ""
+
+#: /dev/fd/63:69 /dev/fd/63:192
+msgid "Debug Menu Strings"
+msgstr ""
+
+#: /dev/fd/63:70 /dev/fd/63:193
+msgid "Portrait Names"
+msgstr ""
+
+#: /dev/fd/63:71 /dev/fd/63:194
+msgid "Ground Map Names"
+msgstr ""
+
+#: /dev/fd/63:72 /dev/fd/63:195
+msgid "Dungeon Names (Main)"
+msgstr ""
+
+#: /dev/fd/63:73 /dev/fd/63:196
+msgid "Dungeon Names (Selection)"
+msgstr ""
+
+#: /dev/fd/63:74 /dev/fd/63:197
+msgid "Dungeon Names (SetDungeonBanner)"
+msgstr ""
+
+#: /dev/fd/63:75 /dev/fd/63:198
+msgid "Dungeon Names (Banner)"
+msgstr ""
+
+#: /dev/fd/63:76 /dev/fd/63:199
+msgid "Spinda's Juice Bar Strings"
+msgstr ""
+
+#: /dev/fd/63:77 /dev/fd/63:200
+msgid "Recycle Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:78 /dev/fd/63:201
+msgid "Staff Roll"
+msgstr ""
+
+#: /dev/fd/63:79 /dev/fd/63:202
+msgid "New Pokemon Names"
+msgstr ""
+
+#: /dev/fd/63:80 /dev/fd/63:203
+msgid "New Pokemon Categories"
+msgstr ""
+
+#: /dev/fd/63:81 /dev/fd/63:204
+msgid "Thrown - Pierce"
+msgstr "Arrojadizos - Punzantes"
+
+#: /dev/fd/63:82 /dev/fd/63:205
+msgid "Thrown - Rock"
+msgstr "Arrojadizos - Rocas"
+
+#: /dev/fd/63:83 /dev/fd/63:206
+msgid "Berries, Seeds, Vitamins"
+msgstr "Bayas, Semillas, Vitaminas"
+
+#: /dev/fd/63:84 /dev/fd/63:207
+msgid "Foods, Gummies"
+msgstr "Comida, Gomis"
+
+#: /dev/fd/63:85 /dev/fd/63:208
+msgid "Hold"
+msgstr "Equipables"
+
+#: /dev/fd/63:86 /dev/fd/63:209
+msgid "TMs, HMs"
+msgstr "MTs, MOs"
+
+#: /dev/fd/63:87 /dev/fd/63:210
+msgid "Poké (Money)"
+msgstr ""
+
+#: /dev/fd/63:88 /dev/fd/63:211
+msgid "Unknown 7"
+msgstr ""
+
+#: /dev/fd/63:89 /dev/fd/63:212
+msgid "Other"
+msgstr "Otro"
+
+#: /dev/fd/63:90 /dev/fd/63:213
+msgid "Orbs"
+msgstr "Esferas"
+
+#: /dev/fd/63:91 /dev/fd/63:214
+msgid "Link Box"
+msgstr ""
+
+#: /dev/fd/63:92 /dev/fd/63:215
+msgid "Used TM"
+msgstr ""
+
+#: /dev/fd/63:93 /dev/fd/63:216
+msgid "Treasure Box 1"
+msgstr ""
+
+#: /dev/fd/63:94 /dev/fd/63:217
+msgid "Treasure Box 2"
+msgstr ""
+
+#: /dev/fd/63:95 /dev/fd/63:218
+msgid "Treasure Box 3"
+msgstr ""
+
+#: /dev/fd/63:96 /dev/fd/63:219
+msgid "Exclusive Items"
+msgstr "Objetos exclusivos"
+
+#: /dev/fd/63:97 /dev/fd/63:220
+msgid "Red component"
+msgstr ""
+
+#: /dev/fd/63:98 /dev/fd/63:221
+msgid "Green component"
+msgstr ""
+
+#: /dev/fd/63:99 /dev/fd/63:222
+msgid "Blue component"
+msgstr ""
+
+#: /dev/fd/63:100 /dev/fd/63:223
+msgid "Alpha component"
+msgstr ""
+
+#: /dev/fd/63:101 /dev/fd/63:224
+msgid "Conversion 2 Type when hit by a Fairy move"
+msgstr ""
+
+#: /dev/fd/63:102 /dev/fd/63:225
+msgid "ID of the first icon in markfont.dat (23 entries used)"
+msgstr ""
+
+#: /dev/fd/63:103 /dev/fd/63:226
+msgid "Display accuracy and power values"
+msgstr ""
+
+#: /dev/fd/63:104 /dev/fd/63:227
+msgid "ID of the first icon in markfont.dat (24 entries used)"
+msgstr ""
+
+#: /dev/fd/63:105 /dev/fd/63:228
+msgid "String ID for push dialogue"
+msgstr ""
+
+#: /dev/fd/63:106 /dev/fd/63:229
+msgid "String mentioned above is replaced by a default text when applying"
+msgstr ""
+
+#: /dev/fd/63:107 /dev/fd/63:230
+msgid "Only interruptions don't heal HP"
+msgstr ""
+
+#: /dev/fd/63:108 /dev/fd/63:231
+#, c-format
+msgid "% of exp. shared"
+msgstr ""
+
+#: /dev/fd/63:109 /dev/fd/63:232
+msgid "String ID for the Menu Option"
+msgstr ""
+
+#: /dev/fd/63:110 /dev/fd/63:233
+msgid "String ID to confirm the appraise all"
+msgstr ""
+
+#: /dev/fd/63:111 /dev/fd/63:234
+msgid "String ID before revealing the items"
+msgstr ""
+
+#: /dev/fd/63:112 /dev/fd/63:235
+msgid "String ID when revealing an item"
+msgstr ""
+
+#: /dev/fd/63:113 /dev/fd/63:236
+msgid "All strings mentioned above are replaced by a default text when applying"
+msgstr ""
+
+#: /dev/fd/63:114 /dev/fd/63:237
+msgid "Cost of each Treasure Box (Only for Appraise All option)"
+msgstr ""
+
+#: /dev/fd/63:115 /dev/fd/63:238
+msgid "Update the level and stats of evolved enemies"
+msgstr ""
+
+#: /dev/fd/63:116 /dev/fd/63:239
+msgid "Fully heal enemies after evolving"
+msgstr ""
+
+#: /dev/fd/63:117 /dev/fd/63:240
+msgid "Update the moves of evolved enemies"
+msgstr ""
+
+#: /dev/fd/63:118 /dev/fd/63:241
+msgid "Increase Atk/SpAtk/Def/SpDef of evolved enemies by"
+msgstr ""
+
+#: /dev/fd/63:119 /dev/fd/63:242
+msgid "Let enemies evolve even if the defeated pokémon is revived"
+msgstr ""
+
+#: /dev/fd/63:121
+msgid "French"
+msgstr "Francés"
+
+#: /dev/fd/63:122
+msgid "German"
+msgstr "Alemán"
+
+#: /dev/fd/63:123
+msgid "Italian"
+msgstr "Italiano"
+
+#: /dev/fd/63:124
+msgid "Spanish"
+msgstr "Español"
+
+#: explorerscript/explorerscript/macro.py:85
+#, python-brace-format
+msgid "Value for macro variable {var_name} not provided."
+msgstr "Valor no proporcionado para la variable de la macro {var_name}."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_adventure_log.py:42
+msgid "No value for adventure_log set."
+msgstr "No se ha definido ningún valor para adventure_log."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_clear.py:42
+msgid "No variable for clear."
+msgstr "No hay variable para 'clear'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_dungeon_mode.py:43
+msgid "No variable for dungeon_mode set."
+msgstr "No hay ninguna variable establecida para dungeon_mode."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_dungeon_mode.py:45
+msgid "No value for dungeon_mode set."
+msgstr "No se ha definido ningún valor para dungeon_mode."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_initial.py:42
+msgid "No variable for init."
+msgstr "No hay variable para 'init'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:48
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:46
+msgid "No variable for assignment."
+msgstr "Variable no establecida para la asignación."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:50
+msgid "No operator set for assignment."
+msgstr "Operador no establecido para la asignación."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:52
+msgid "No value set for assignment."
+msgstr "Valor no establecido para la asignación."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:58
+#, python-brace-format
+msgid "value(X) can not be used with index based assignments (line {self.ctx.start.line})."
+msgstr "'value(X)' no puede usarse con asignaciones basadas en índices (línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_reset.py:43
+msgid "No target for reset."
+msgstr "Objetivo no establecido para 'reset'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_scenario.py:43
+msgid "No variable for assignment set."
+msgstr "Variable no establecida para la asignación."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/atoms/scn_var.py:41
+msgid "scn() without a variable."
+msgstr "'scn()' necesita una variable."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/atoms/value_of.py:41
+msgid "value() without a variable."
+msgstr "'value()' necesita una variable."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:53
+msgid "No target ID set for with(){} block."
+msgstr "ID de destino no establecido para el bloque 'with(){}'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:55
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:98
+msgid "A with(){} block needs exactly one statement."
+msgstr "Un bloque 'with(){}' necesita exactamente una sentencia."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:65
+#, python-brace-format
+msgid "Invalid with(){{}} target type '{for_type}'."
+msgstr "Argumento 'with(){{}}' inválido para el tipo de destino '{for_type}'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:70
+msgid "A with(){} block needs exactly one binary operation. The handler for it generated multiple operations."
+msgstr "Un bloque 'with(){}' necesita exactamente una operación binaria. El manipulador para él ha generado múltiples operaciones."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:87
+msgid "A with(){} block can not contain labels."
+msgstr "Un bloque with(){} no puede contener etiquetas."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/bit.py:44
+msgid "No variable in if condition."
+msgstr "No se ha definido ninguna variable en la condición 'if'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/bit.py:59
+#, python-brace-format
+msgid "The variable {var_target_name} can not be used with 'not' (line {self.ctx.start.line})."
+msgstr "La variable {var_target_name} no puede usarse con 'not' (línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:47
+msgid "No variable for if condition."
+msgstr "No se ha definido ninguna variable para la condición 'if'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:49
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:46
+msgid "No operator set for if condition."
+msgstr "No se ha definido ningún operador para la condición 'if'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:51
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:43
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:48
+msgid "No value set for if condition."
+msgstr "No se ha definido ningún valor para la condición 'if'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:48
+#, python-brace-format
+msgid "The only supported operators for scn if conditions are ==,<,<=,>,>= (line {self.ctx.start.line})"
+msgstr "Los únicos operadores soportados para las condiciones 'scn if' son ==, <, <=, >, >= (línea {self.ctx.start.line})"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:60
+msgid "Invalid content for an if-header"
+msgstr "Contenido inválido para 'if-header'"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:64
+#, python-brace-format
+msgid "Invalid operation for if condition: {op.op_code.name} (line {self.ctx.start.line})"
+msgstr "Operación no válida para la condición 'if': {op.op_code.name} (línea {self.ctx.start.line})"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:78
+#, python-brace-format
+msgid "Unknown if operation in line {self.ctx.start.line})."
+msgstr "Operación 'if' desconocida en la línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_block.py:57
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_block.py:72
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/default_case_block.py:49
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/default_case_block.py:63
+msgid "Invalid message switch case call."
+msgstr "Llamada inválida a caso de 'message switch'."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_header.py:58
+msgid "Unknown case operation."
+msgstr "Operación 'case' desconocida."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:55
+msgid "Invalid message switch."
+msgstr "'Message switch' inválido."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:59
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:72
+#, python-brace-format
+msgid "A message_ switch can only contain cases with strings (line {self.ctx.start.line})."
+msgstr "Un 'message_switch' solo puede contener casos con cadenas (línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:63
+#, python-brace-format
+msgid "Invalid case type for message_ switch (line {self.ctx.start.line})."
+msgstr "Tipo de 'case' inválido para un message_switch (línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:84
+#, python-brace-format
+msgid "A switch block can only have a single default case (line {self.ctx.start.line}"
+msgstr "Un bloque 'switch' solo puede tener un único caso 'default' (línea {self.ctx.start.line})"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:75
+#, python-brace-format
+msgid "A switch case must contain a list of statements (line {self.ctx.start.line})."
+msgstr "Un 'switch case' debe contener una lista de sentencias (línea{self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:121
+#, python-brace-format
+msgid "Unexpected switch end (line {self.ctx.start.line})"
+msgstr "Final inesperado de 'switch' (línea {self.ctx.start.line})"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:134
+#, python-brace-format
+msgid "A switch block can only have a single default case (line {self.ctx.start.line})."
+msgstr "Un bloque 'switch' solo puede tener un único caso 'default' (línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:63
+msgid "Invalid content for a switch-header"
+msgstr "Contenido inválido para un 'switch-header'"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:72
+msgid "Unknown switch operation."
+msgstr "Operación 'switch' desconocida."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/dungeon_mode.py:42
+msgid "No dungeon id set for dungeon_mode switch condition."
+msgstr "ID de territorio no establecido para la condición switch de dungeon_mode."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/random.py:42
+msgid "No value set for random switch condition."
+msgstr "Valor no establecido para la condición aleatoria de switch."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/scn.py:43
+msgid "No variable set for scn switch condition."
+msgstr "Variable no establecida para la condición aleatoria de scn."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/scn.py:50
+#, python-brace-format
+msgid "Index for scn() if condition must be 0 or 1 (line {self.ctx.start.line})."
+msgstr "El índice para la condición 'scn() if' debe ser 0 o 1 (línea {self.ctx.start.line})."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/operations/macro_call.py:46
+#, python-brace-format
+msgid "Macro {name} not found."
+msgstr "Macro {name} no encontrada."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_resolution_order.py:89
+#: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_resolution_order.py:93
+msgid "Dependency cycle detected while trying to resolve macros (for macro '{v['name']}')."
+msgstr "Ciclo de dependencias detectado al intentar resolver macros (para la macro '{v['name']}')."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_visitor.py:78
+msgid "Macros can not alias."
+msgstr "Las macros no pueden tener alias."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:285
+msgid "Fatal compilation error: Unexpected compilation handler on stack."
+msgstr "Error fatal de compilación: manipulador de compilación inesperado en la pila."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:286
+msgid "Fatal compilation error: Stack error."
+msgstr "Error de compilación fatal: error de pila."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/label_jump_to_remover.py:55
+#, python-brace-format
+msgid "Label {label_id} does not exist, but a jump to it does (remove it)."
+msgstr "La etiqueta {label_id} no existe, pero hay un salto a ella (elimínala)."
+
+#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:101
+#, python-brace-format
+msgid "Unexpected continue; in line {ctx.start.line}"
+msgstr "'continue' inesperado en la línea {ctx.start.line}"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:107
+#, python-brace-format
+msgid "Unexpected break_loop; in line {ctx.start.line}"
+msgstr "'Break_loop' inesperado en la línea {ctx.start.line}"
+
+#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:113
+#, python-brace-format
+msgid "Unexpected break; in line {ctx.start.line}"
+msgstr "'break' inesperado en la línea {ctx.start.line}"
+
+#: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:136
+#, python-brace-format
+msgid "Infinite recursion detected while trying to load an ExplorerScript file from {subfile_path}.\n"
+"Tried loading from: {file_name}."
+msgstr "Se ha detectado una recursión infinita al intentar cargar un archivo ExplorerScript desde {subfile_path}.\n"
+"Archivo de origen: {file_name}."
+
+#: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:162
+#, python-brace-format
+msgid "{fn}: Macro scripts must not contain any routines."
+msgstr "{fn}: Los scripts de macros no deben contener ninguna rutina."
+
+#: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:208
+#: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:222
+#, python-brace-format
+msgid "The file to import ('{import_file}') was not found."
+msgstr "No se encontró el archivo a importar ('{import_file}')."
+
+#: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:214
+#, python-brace-format
+msgid "Invalid import: '{import_file}'. Non absolute/relative imports must not contain relative paths."
+msgstr "Importación inválida: '{import_file}'. Las importaciones no absolutas/relativas no pueden contener rutas relativas."
+
+#: explorerscript/explorerscript/syntax_error_listener.py:38
+#, python-brace-format
+msgid "line {self.line}:{self.column}: {self.msg}"
+msgstr "línea {self.line}:{self.column}: {self.msg}"
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:89
+#, python-brace-format
+msgid "Invalid tileset. Tileset has chunk dimensions of {dim}px, but only {CHUNK_DIM}px are supported."
+msgstr "Tileset inválido. El tileset tiene dimensiones de chunk de {dim}px, pero solo se soportan de {CHUNK_DIM}px."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:113
+msgid "Invalid animation: Animation is only supported for palettes 10 and 11."
+msgstr "Animación inválida: la animación solo es compatible con paletas 10 y 11."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:127
+#, python-brace-format
+msgid "A required DTEF file is missing: {fn}. Please verify the DTEF package."
+msgstr "Falta un archivo DTEF necesario: {fn}. Por favor, comprueba el paquete DTEF."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:135
+#, python-brace-format
+msgid "Can not import image \"{basename}\" as dungeon tileset: Must be indexed image (=using a palette)"
+msgstr "No se puede importar la imagen \"{basename}\" como tileset del territorio: Debe ser una imagen indexada (usando una paleta)"
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:138
+#, python-brace-format
+msgid "Can not import image \"{basename}\" as dungeon tileset: Palette must contain  256 RGB colors."
+msgstr "No se puede importar la imagen \"{basename}\" como tileset del territorio: La paleta debe contener 256 colores RGB."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:143
+#, python-brace-format
+msgid "Can not import images as dungeon tilesets: The palettes of the images do not match. First image read that didn't match: \"{basename}\""
+msgstr "No se pueden importar las imágenes como tilesets de territorios: Las paletas de las imágenes no coinciden. Primera imagen leída que no coincide: \"{basename}\""
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:148
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:149
+#, python-brace-format
+msgid "Logic error: Tileset file {fn} was not loaded."
+msgstr "Error lógico: No se cargó el tileset {fn}."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:152
+msgid "Image '{fn}' is too small ({tileset.width}x{tileset.height}px), must be at least {bx+w}x{by+h}px."
+msgstr "La imagen '{fn}' es demasiado pequeña ({tileset.width}x{tileset.height}px), debe ser de al menos {bx+w}x{by+h}px."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:157
+msgid "A rule is missing in the import set"
+msgstr "Falta una regla en el conjunto importado"
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:233
+#, python-brace-format
+msgid "Error when importing mapping. Unknown type: '{mapping_type}'."
+msgstr "Error al importar el mapeado. Tipo desconocido: '{mapping_type}'."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:237
+#, python-brace-format
+msgid "Invalid variation index {var_idx}."
+msgstr "Índice de variación inválido {var_idx}."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:279
+msgid "Error in the XML: One of the animation frames doesn't have 16 colors. Each frame must have a value for each color."
+msgstr "Error en el archivo XML: Uno de los fotogramas de la animación no tiene 16 colores. Cada fotograma debe tener un valor para cada color."
+
+#: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:287
+msgid "Error in the XML: Durations for a palette or it's colors are not correctly defined."
+msgstr "Error en el archivo XML: Las duraciones de una paleta o de sus colores no están correctamente definidas."
+
+#: skytemple-dtef/skytemple_dtef/rules.py:119
+#, python-brace-format
+msgid "No match found for rule {orig_rule}. Input set correct?"
+msgstr "No se ha encontrado coincidencia para la regla {orig_rule}. ¿El conjunto de entrada es correcto?"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:139
+msgid "One Layer (#00)"
+msgstr "Una capa (#00)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
+msgid "One Layer (#01)"
+msgstr "Una capa (#01)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
+msgid "One Layer (#02)"
+msgstr "Una capa (#02)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
+msgid "One Layer (#03)"
+msgstr "Una capa (#03)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
+msgid "One Layer (#04)"
+msgstr "Una capa (#04)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
+msgid "Two Layers (#05)"
+msgstr "Dos capas (#05)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
+msgid "Two Layers (#06)"
+msgstr "Dos capas (#06)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
+msgid "Two Layers (#07)"
+msgstr "Dos capas (#07)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
+msgid "Two Layers (#08)"
+msgstr "Dos capas (#08)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
+msgid "Two Layers (#09)"
+msgstr "Dos capas (#09)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
+msgid "Dungeon Tileset (#10)"
+msgstr "Tilesets de territorio (#10)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
+msgid "Use Fixed Room (#11)"
+msgstr "Usa la sala fija (#11)"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:277
+msgid "This function has no description."
+msgstr "Esta función no tiene descripción."
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:319
+msgid "Down"
+msgstr "Abajo"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:321
+msgid "Down Right"
+msgstr "Abajo derecha"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:323
+msgid "Right"
+msgstr "Derecha"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:325
+msgid "Up Right"
+msgstr "Arriba derecha"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:327
+msgid "Up"
+msgstr "Arriba"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:329
+msgid "Up Left"
+msgstr "Arriba izquierda"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:331
+msgid "Left"
+msgstr "Izquierda"
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:333
+msgid "Down Left"
+msgstr "Abajo izquierda"
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:51
+msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
+msgstr "No se puede procesar el mapeado de tiles. El número de tiles referenciado ({idx}) es mayor que el máximo ({0x3FF}). Si estás importando una imagen, por favor intenta tener menos tiles únicos."
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:124
+msgid "Only 4bpp and 8bpp images are supported."
+msgstr "Solo se admiten imágenes de 4bpp y 8bpp."
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:257
+msgid "Can not convert PIL image to PMD tiled image: Must be indexed image (=using a palette)"
+msgstr "No se puede convertir la imagen PIL a imagen de tiles de PMM: Debe ser una imagen indexada (usando una paleta)"
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:268
+#, python-brace-format
+msgid "Can not convert PIL image to PMD tiled image: Palette must contain max {max_len_pal} RGB colors and be divisible by {single_palette_size}."
+msgstr "No se puede convertir la imagen PIL a una de tiles de PMM: la paleta debe contener un máximo de {max_len_pal} colores RGB y ser divisible por {single_palette_size}."
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:278
+#, python-brace-format
+msgid "Can not convert PIL image to PMD tiled image: Image dimensions must be {img_width}x{img_height}px."
+msgstr "No se puede convertir la imagen PIL a imagen de tiles de PMM: Las dimensiones de la imagen deben ser de {img_width}x{img_height}px."
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:356
+#: skytemple-files/skytemple_files/common/tiled_image.py:370
+msgid "Can not convert PIL image to PMD tiled image: The color {pix} (from palette {math.floor(pix / single_palette_size)}) used by pixel {x+(idx % 2)}x{y} in tile {tile_id} ({tile_x}x{tile_y} is out of range. Expected are colors from palette {tile_palette_indices[tile_id]} ({tile_palette_indices[tile_id] * single_palette_size} - {(tile_palette_indices[tile_id]+1) * single_palette_size - 1})."
+msgstr "No se puede convertir una imagen PIL en una imagen de tiles de PMM: El color {pix} (de la paleta {math.floor(pix / single_palette_size)}) utilizada por el píxel {x+(idx % 2)}x{y} en el tile {tile_id} ({tile_x}x{tile_y} está fuera de rango. Se esperaban los colores de la paleta {tile_palette_indices[tile_id]} ({tile_palette_indices[tile_id] * single_palette_size} - {(tile_palette_indices[tile_id]+1) * single_palette_size - 1})."
+
+#: skytemple-files/skytemple_files/common/tiled_image.py:422
+#, python-brace-format
+msgid "An image selected to import is too complex. It has too many unique tiles ({len_final_tiles}, max allowed are 1024).\n"
+"Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
+msgstr "La imagen seleccionada para importar es demasiado compleja. Tiene demasiados tiles únicos ({len_final_tiles} tiles, pero el máximo permitido es 1024).\n"
+"Intenta reducir los tiles únicos. Estos tiles son secciones 8x8 de las imágenes que no se pueden encontrar en ninguna otra parte de la imagen (ni siquiera invertidas o con una subpaleta diferente)."
+
+#: skytemple-files/skytemple_files/common/util.py:535
+msgid "The file you tried to open does not seem to be a valid NDS ROM file."
+msgstr "El archivo que intentaste abrir no es un archivo ROM NDS válido."
+
+#: skytemple-files/skytemple_files/common/util.py:549
+msgid "This ROM is not supported by SkyTemple."
+msgstr "Esta ROM no está soportada por SkyTemple."
+
+#: skytemple-files/skytemple_files/common/util.py:619
+#: skytemple-files/skytemple_files/common/util.py:638
+#, python-brace-format
+msgid "Binary {binary.name} not found."
+msgstr "Binario {binary.name} no encontrado."
+
+#: skytemple-files/skytemple_files/common/util.py:659
+#: skytemple-files/skytemple_files/common/util.py:690
+#, python-brace-format
+msgid "Folder {dir_name} does not exist."
+msgstr "La carpeta {dir_name} no existe."
+
+#: skytemple-files/skytemple_files/common/util.py:662
+#, python-brace-format
+msgid "File {file_name} already exists in this folder."
+msgstr "El archivo {file_name} ya existe en esta carpeta."
+
+#: skytemple-files/skytemple_files/common/util.py:685
+#, python-brace-format
+msgid "Folder {path} already exists."
+msgstr "La carpeta {path} ya existe."
+
+#: skytemple-files/skytemple_files/common/xml_util.py:35
+#, python-brace-format
+msgid "Invalid XML. Expected tag {tag}, got tag {ele.tag}."
+msgstr "XML inválido. Se esperaba la etiqueta {tag}, pero se obtuvo {ele.tag}."
+
+#: skytemple-files/skytemple_files/common/xml_util.py:43
+#, python-brace-format
+msgid "Invalid XML. Expected attribute {attrib} for XML tag {ele.tag}."
+msgstr "Archivo XML inválido. Se esperaba el atributo {attrib} para la etiqueta XML {ele.tag}."
+
+#: skytemple-files/skytemple_files/data/anim/model.py:46
+msgid "Head"
+msgstr "Cabeza"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:47
+msgid "Left Hand"
+msgstr "Mano izquierda"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:48
+msgid "Right Hand"
+msgstr "Mano derecha"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:49
+msgid "Center"
+msgstr "Centro"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:50
+#: skytemple-files/skytemple_files/data/item_s_p/model.py:36
+#: skytemple-files/skytemple_files/data/md/protocol.py:479
+msgid "None"
+msgstr "Ninguno"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:63
+#: skytemple-files/skytemple_files/data/md/protocol.py:66
+#: skytemple-files/skytemple_files/data/md/protocol.py:428
+msgid "Invalid"
+msgstr "Inválido"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:64
+msgid "WAN File 0"
+msgstr "Archivo WAN 0"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:65
+msgid "WAN File 1"
+msgstr "Archivo WAN 1"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:66
+msgid "WAN"
+msgstr "WAN"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:67
+msgid "WAT"
+msgstr "WAT"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:68
+msgid "Screen"
+msgstr "Pantalla"
+
+#: skytemple-files/skytemple_files/data/anim/model.py:69
+msgid "WBA"
+msgstr "WBA"
+
+#: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:77
+#: skytemple-files/skytemple_files/patch/arm_patcher.py:193
+msgid "ARMIPS could not be found. Make sure, that 'armips' is inside your system's PATH."
+msgstr "No se ha encontrado ARMIPS. Asegúrate de que 'armips' esté dentro de la variable 'path'."
+
+#: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:85
+#: skytemple-files/skytemple_files/patch/arm_patcher.py:207
+msgid "ARMIPS reported an error while applying the patch."
+msgstr "ARMIPS informó de un error al aplicar el parche."
+
+#: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:95
+#, python-brace-format
+msgid "The armips source file did not create a {OUT_BIN}."
+msgstr "El archivo de origen de armips no ha generado un {OUT_BIN}."
+
+#: skytemple-files/skytemple_files/data/data_cd/model.py:77
+msgid "To delete this effect, no items must use it."
+msgstr "Para eliminar este efecto, ningún objeto debe usarlo."
+
+#: skytemple-files/skytemple_files/data/inter_d/model.py:37
+msgid "Always"
+msgstr "Siempre"
+
+#: skytemple-files/skytemple_files/data/inter_d/model.py:38
+msgid "Flag Not Set"
+msgstr "Marca no establecida"
+
+#: skytemple-files/skytemple_files/data/inter_d/model.py:39
+msgid "Flag Set"
+msgstr "Marca establecida"
+
+#: skytemple-files/skytemple_files/data/inter_d/model.py:40
+msgid "Scenario Equals"
+msgstr "Escenario Igual a"
+
+#: skytemple-files/skytemple_files/data/inter_d/model.py:41
+msgid "Scenario Below or Equal"
+msgstr "Escenario Menor o Igual a"
+
+#: skytemple-files/skytemple_files/data/inter_d/model.py:42
+msgid "Scenario Greater or Equal"
+msgstr "Escenario Mayor o Igual a"
+
+#: skytemple-files/skytemple_files/data/item_s_p/model.py:37
+msgid "Pokémon"
+msgstr "Pokémon"
+
+#: skytemple-files/skytemple_files/data/item_s_p/model.py:38
+msgid "Type"
+msgstr "Tipo"
+
+#: skytemple-files/skytemple_files/data/item_s_p/model.py:71
+msgid "The Pokemon may hatch holding the item."
+msgstr "El Pokémon puede eclosionar sosteniendo el objeto."
+
+#: skytemple-files/skytemple_files/data/item_s_p/model.py:79
+msgid "? (Only all the Eeveelutions, and the Tyrogue line have items with this type!)"
+msgstr "? (¡Solo las Eeveeluciones y la línea de Tyrogue tienen objetos con este tipo!)"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:67
+msgid "Male"
+msgstr "Macho"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:68
+msgid "Female"
+msgstr "Hembra"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:69
+msgid "Genderless"
+msgstr "Sin género"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:421
+#: skytemple-files/skytemple_files/data/md/protocol.py:422
+#: skytemple-files/skytemple_files/data/md/protocol.py:425
+#: skytemple-files/skytemple_files/data/md/protocol.py:426
+#: skytemple-files/skytemple_files/data/md/protocol.py:427
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
+msgid "Unused"
+msgstr "(Sin usar)"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:451
+msgid "Not an Evolved Form."
+msgstr "No es una forma evolucionada."
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:452
+msgid "Level"
+msgstr "Nivel"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:453
+msgid "IQ"
+msgstr "CI"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:454
+msgid "Items"
+msgstr "Objetos"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:455
+msgid "Recruited"
+msgstr "Reclutado"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:456
+msgid "No Main Requirement"
+msgstr "Sin requisito principal"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:480
+msgid "Link Cable"
+msgstr "Cable Link"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:481
+msgid "Attack > Defense"
+msgstr "Ataque > Defensa"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:482
+msgid "Attack < Defense"
+msgstr "Ataque < Defensa"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:483
+msgid "Attack = Defense"
+msgstr "Ataque = Defensa"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:484
+msgid "Sun Ribbon"
+msgstr "Cinta Sol"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:485
+msgid "Lunar Ribbon"
+msgstr "Cinta Luna"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:486
+msgid "Beauty Scarf"
+msgstr "Pañuelo Belleza"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:487
+msgid "Internal Value 0x1 = 1"
+msgstr "Valor interno 0x1 = 1"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:488
+msgid "Internal Value 0x1 = 0"
+msgstr "Valor interno 0x1 = 0"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:489
+msgid "Male (1st form)"
+msgstr "Macho (1ª forma)"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:490
+msgid "Female (2nd form)"
+msgstr "Hembra (2ª forma)"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:491
+msgid "Knows AncientPower"
+msgstr "Conoce Poder Pasado"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:492
+msgid "Knows Rollout"
+msgstr "Conoce Desenrollar"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:493
+msgid "Knows Double Hit"
+msgstr "Conoce Doble Golpe"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:494
+msgid "Knows Mimic"
+msgstr "Conoce Mimético"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:517
+msgid "Standard"
+msgstr "Estándar"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:518
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:519
+msgid "Hovering"
+msgstr "Suspendido"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:520
+msgid "Phase Through Walls"
+msgstr "Puede atravesar las paredes"
+
+#. TRANSLATORS: Movement Type
+#: skytemple-files/skytemple_files/data/md/protocol.py:521
+msgid "Lava"
+msgstr "Lava"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:522
+msgid "Water"
+msgstr "Agua"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:545
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:59
+msgid "Small"
+msgstr "Pequeño"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:546
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:75
+msgid "Medium"
+msgstr "Mediano"
+
+#: skytemple-files/skytemple_files/data/md/protocol.py:547
+msgid "Large"
+msgstr "Grande"
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:221
+#, python-brace-format
+msgid "Invalid XML. '{XML_STRINGS__NAME}' missing for language {xml_lang.tag}."
+msgstr "XML inválido. '{XML_STRINGS__NAME}' falta para el idioma {xml_lang.tag}."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:229
+#, python-brace-format
+msgid "Invalid XML. '{XML_STRINGS__CATEGORY}' missing for language {xml_lang.tag}."
+msgstr "XML inválido. Falta '{XML_STRINGS__CATEGORY}' para el idioma {xml_lang.tag}."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:462
+#, python-brace-format
+msgid "Invalid XML. '{XML_GENENT_EXCLUSIVE_ITEMS}' needs four item IDs."
+msgstr "XML inválido. '{XML_GENENT_EXCLUSIVE_ITEMS}' necesita cuatro IDs de objeto."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:560
+#, python-brace-format
+msgid "Invalid XML. '{a}' missing for a {b}."
+msgstr "XML inválido. Falta '{a}' para {b}."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:609
+#, python-brace-format
+msgid "Invalid XML. '{XML_MOVESET_LEVEL_UP__LEVEL}' missing for a level up moveset entry."
+msgstr "XML inválido. Falta '{XML_MOVESET_LEVEL_UP__LEVEL}' para un movimiento de subida de nivel."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:617
+#, python-brace-format
+msgid "Invalid XML. '{XML_MOVESET__MOVE_ID}' missing for a level up moveset entry."
+msgstr "XML inválido. Falta '{XML_MOVESET__MOVE_ID}' para un movimiento de subida de nivel."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:680
+msgid "Invalid XML. StatsGrowth must have exactly 100 levels."
+msgstr "XML inválido. 'StatsGrowth' debe tener exactamente 100 niveles."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:706
+#: skytemple-files/skytemple_files/data/monster_xml.py:711
+#: skytemple-files/skytemple_files/data/monster_xml.py:716
+#: skytemple-files/skytemple_files/data/monster_xml.py:721
+#: skytemple-files/skytemple_files/data/monster_xml.py:726
+#: skytemple-files/skytemple_files/data/monster_xml.py:731
+#, python-brace-format
+msgid "Invalid XML. '{x}' missing for a stats growth level entry."
+msgstr "XML inválido. Falta '{x}' para una entrada de aumento de estadísticas de subida de nivel."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:761
+msgid "Incompatible XML. The number of portraits don't match with the expected value of {len(value_to_update)}"
+msgstr "XML incompatible. El número de retratos no coincide con el valor esperado de {len(value_to_update)}"
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:779
+#, python-brace-format
+msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__IMAGE}' missing for a portrait."
+msgstr "XML inválido. '{XML_PORTRAITS_PORTRAIT__IMAGE}' falta para un retrato."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:787
+#, python-brace-format
+msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__PALETTE}' missing for a portrait."
+msgstr "XML inválido. Falta '{XML_PORTRAITS_PORTRAIT__PALETTE}' para un retrato."
+
+#: skytemple-files/skytemple_files/data/monster_xml.py:802
+#, python-brace-format
+msgid "Invalid XML. The portrait data of one of the portraits is invalid: {err}"
+msgstr "XML inválido. Los datos de un retrato no son válidos: {err}"
+
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:30
+msgid "Healthy"
+msgstr "Saludable"
+
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:31
+msgid "Half Life"
+msgstr "Mitad de vida"
+
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:32
+msgid "Pinch"
+msgstr "En apuros"
+
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:33
+msgid "Level Up"
+msgstr "Subida de nivel"
+
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:34
+msgid "Wait"
+msgstr "Esperando"
+
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:35
+msgid "Ground Wait"
+msgstr "Esperando (en territorio)"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:34
+msgid "Physical Move"
+msgstr "Movimiento físico"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
+msgid "Special Move"
+msgstr "Movimiento especial"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
+msgid "Status Move"
+msgstr "Movimiento de estado"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:59
+msgid "Enemies"
+msgstr "Enemigos"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
+msgid "Allies"
+msgstr "Aliados"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:61
+msgid "Everyone"
+msgstr "Todos"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:106
+msgid "User"
+msgstr "Usuario"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
+msgid "Two-turn move"
+msgstr "Movimiento de dos turnos"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:64
+msgid "Everyone except user"
+msgstr "Todos excepto el usuario"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:65
+msgid "All allies except user"
+msgstr "Todos los aliados excepto el usuario"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:66
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:67
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:68
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:69
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:70
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:71
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:72
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:73
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:109
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:110
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:111
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:112
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:113
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:148
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:149
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:150
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:151
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:152
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:153
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:154
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:155
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:156
+msgid "Invalid "
+msgstr "Inválido "
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:74
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:114
+msgid "Special / Invalid"
+msgstr "Especial / Inválido"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:97
+msgid "In front"
+msgstr "En frente"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:98
+msgid "In front + adjacent (like Wide Slash)"
+msgstr "En frente + adyacente (como con Sablazo)"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:99
+msgid "8 tiles around user"
+msgstr "8 tiles alrededor del usuario"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:100
+msgid "Room"
+msgstr "Sala"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:102
+msgid "Two tiles away"
+msgstr "A dos casillas de distancia"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:104
+msgid "Straight line"
+msgstr "Línea recta"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:105
+msgid "Floor"
+msgstr "Piso"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:107
+msgid "In front; cuts corners"
+msgstr "En frente; corta esquinas"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
+msgid "Two tiles away; cuts corners"
+msgstr "A dos casillas de distancia; corta esquinas"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:139
+msgid "No condition"
+msgstr "Ninguna condición"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:140
+msgid "Based on AI Condition 1 Chance"
+msgstr "Basado en la probabilidad de la condición 1 de la IA"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:141
+msgid "Current HP <= 25%"
+msgstr "PS actuales <= 25%"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
+msgid "Has at least one negative status condition"
+msgstr "Tiene al menos un estado negativo"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
+msgid "Is asleep, in a nightmare or napping"
+msgstr "Está dormido, en una pesadilla o descansando"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
+msgid "Is a ghost-type Pokémon and does not have the exposed status"
+msgstr "Es un Pokémon de tipo fantasma y no tiene el estado expuesto"
+
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:146
+#, python-format
+msgid "Current HP <= 25% or has at least one negative status condition"
+msgstr "PS actuales <= 25% o tiene al menos un estado negativo"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:56
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:240
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:258
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:267
+msgid "Floor, Room"
+msgstr "Piso, Sala"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:65
+msgid "Wall, Hallway; Absolute Mover"
+msgstr "Pared, Pasillo; Híper-todoterreno"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:74
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:195
+msgid "Wall, Hallway; Impassable"
+msgstr "Pared, Pasillo; Intransitable"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:83
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:204
+msgid "Wall, Hallway"
+msgstr "Pared, Pasillo"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:92
+msgid "Leader Spawn Floor"
+msgstr "Lugar de aparición del líder"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:101
+msgid "Secondary, Room"
+msgstr "Terreno secundario, Sala"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:110
+msgid "Chasm, Hallway"
+msgstr "Abismo, Pasillo"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:116
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:157
+msgid "Tile type is forced to be \"Void / Chasm\" (Still rendered as tileset's secondary terrain!)."
+msgstr "El tipo de tile está forzado a ser \"Vacío / Abismo\" (¡Todavía se renderiza como terreno secundario del tileset!)."
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:121
+msgid "Chasm, Hallway; All Chasm"
+msgstr "Abismo, Pasillo; Todo es abismo"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:127
+msgid "Tile type is forced to be \"Void / Chasm\" (Still rendered as tileset's secondary terrain!). All tiles outside of defined room are made the tileset's defined secondary terrain."
+msgstr "El tipo de tile está forzado a ser \"Vacío / Abismo\" (¡Todavía se renderiza como terreno secundario del tileset!). Todos los tiles fuera de la sala definida se convierten en el terreno secundario del tileset."
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:133
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:249
+msgid "Warp Zone, Room"
+msgstr "Teletransporte, Sala"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:138
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:254
+msgid "Creates a Warp Zone."
+msgstr "Crea un teletransportador."
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:142
+msgid "Floor, Hallway"
+msgstr "Piso, Pasillo"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:151
+msgid "Chasm, Hallway; Impassable"
+msgstr "Abismo, Pasillo; Intransitable"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:162
+msgid "Floor, Hallway; Flag 0xA"
+msgstr "Piso, Pasillo; Marca 0xA"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:167
+msgid "Tile flag 0xA is set to 1 (Unknown what this does)."
+msgstr "La marca del tile 0xA se establece en 1 (Se desconoce la función de esto)."
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:171
+msgid "F/W, Room; Key Door (0xC)"
+msgstr "S/P, Sala; Puerta cerrada con llave (0xC)"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:177
+msgid "Tile flag 0xC is set to 1 and spawns a key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
+msgstr "El indicador del tile 0xC se establece en 1 y genera una Puerta cerrada con llave. Si el ID fijo de la sala es &lt; 0xA5, será una pared. De lo contrario, será suelo."
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:183
+msgid "F/W, Room; Key Door (0xD)"
+msgstr "S/P, Sala; Puerta cerrada con llave (0xD)"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:189
+msgid "Tile flag 0xD is set to 1 and spawns a key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
+msgstr "La marca del tile 0xD se establece en 1 y genera una Puerta cerrada con llave. Si el ID fijo de la sala es &lt; 0xA5, será una pared. De lo contrario, será suelo."
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:213
+msgid "Attendant1 Spawn Floor"
+msgstr "Posición del Acompañante 1"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:222
+msgid "Attendant2 Spawn Floor"
+msgstr "Posición del Acompañante 2"
+
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:231
+msgid "Attendant3 Spawn Floor"
+msgstr "Posición del Acompañante 3"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/_python_impl/floor.py:95
+#: skytemple-rust/src/st_mappa_bin/minimize.rs:211
+msgid "Could not save floor: It contains too much empty data.\n"
+"This probably happened because a lot of spawn lists are empty.\n"
+"Please check the floors you edited and fill them with more data. If you are using the randomizer, check your allowed item list."
+msgstr "No se ha guardado el piso: contiene demasiados datos vacíos.\n"
+"Es posible que se deba a la existencia muchas listas de generación de Pokémon vacías.\n"
+"Por favor, comprueba los pisos que has editado y llénalos con más datos. Si estás usando Randomizer, comprueba tu lista de elementos permitidos."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:297
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:353
+#, python-brace-format
+msgid "Floor parsing: Unexpected {child.tag}"
+msgstr "Análisis del piso: {child.tag} inesperado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:301
+#, python-brace-format
+msgid "Missing {k} for Floor data."
+msgstr "Falta {k} para los datos del piso."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:462
+#, python-brace-format
+msgid "Unexpected sub-node for {XML_FLOOR_LAYOUT}: {child.tag}"
+msgstr "Subnodo inesperado para {XML_FLOOR_LAYOUT}: {child.tag}"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:467
+#, python-brace-format
+msgid "{XML_FLOOR_LAYOUT__GENSET} missing for {XML_FLOOR_LAYOUT}."
+msgstr "{XML_FLOOR_LAYOUT__GENSET} falta para {XML_FLOOR_LAYOUT}."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:472
+#, python-brace-format
+msgid "{XML_FLOOR_LAYOUT__CHANCES} missing for {XML_FLOOR_LAYOUT}."
+msgstr "{XML_FLOOR_LAYOUT__CHANCES} falta para {XML_FLOOR_LAYOUT}."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:477
+#, python-brace-format
+msgid "{XML_FLOOR_LAYOUT__TERRAINSET} missing for {XML_FLOOR_LAYOUT}."
+msgstr "{XML_FLOOR_LAYOUT__TERRAINSET} falta para {XML_FLOOR_LAYOUT}."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:482
+#, python-brace-format
+msgid "{XML_FLOOR_LAYOUT__MISCSET} missing for {XML_FLOOR_LAYOUT}."
+msgstr "{XML_FLOOR_LAYOUT__MISCSET} falta para {XML_FLOOR_LAYOUT}."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:554
+msgid "Invalid structure type {ele.get(XML_FLOOR_LAYOUT__STRUCTURE)}"
+msgstr "Tipo de estructura inválida: {ele.get(XML_FLOOR_LAYOUT__STRUCTURE)}"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:562
+msgid "Invalid weather type {ele.get(XML_FLOOR_LAYOUT__WEATHER)}"
+msgstr "Tipo de clima inválido: {ele.get(XML_FLOOR_LAYOUT__WEATHER)}"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:570
+msgid "Invalid darkness level type {ele.get(XML_FLOOR_LAYOUT__DARKNESS_LEVEL)}"
+msgstr "Nivel de oscuridad inválido: {ele.get(XML_FLOOR_LAYOUT__DARKNESS_LEVEL)}"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:721
+#, python-brace-format
+msgid "Unknown trap {name}."
+msgstr "Trampa {name} desconocida."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:729
+msgid "Trap lists need an entry for all of the 25 traps"
+msgstr "Las listas de trampas necesitan una entrada para las 25 trampas"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:58
+msgid "Medium Large"
+msgstr "Mediano-Grande"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:60
+msgid "Single Monster House"
+msgstr "Solo un nido de monstruos"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:61
+msgid "Ring"
+msgstr "Sonar"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:63
+msgid "Crossroads"
+msgstr "Cruces"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:66
+msgid "Two Rooms, One Monster House"
+msgstr "Dos salas, un nido de monstruos"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:68
+msgid "Line"
+msgstr "Línea"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:69
+msgid "Cross"
+msgstr "Cruzado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:70
+msgid "Small Medium"
+msgstr "Pequeño-Mediano"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:71
+msgid "Beetle"
+msgstr "Escarabajo"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
+msgid "Outer Rooms"
+msgstr "Salas exteriores"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:76
+msgid "Medium Large (12)"
+msgstr "Mediano-Grande (12)"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:77
+msgid "Medium Large (13)"
+msgstr "Mediano-Grande (13)"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:78
+msgid "Medium Large (14)"
+msgstr "Mediano-Grande (14)"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:79
+msgid "Medium Large (15)"
+msgstr "Mediano-Grande (15)"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:102
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:369
+msgid "Clear"
+msgstr "Despejado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:103
+msgid "Sunny"
+msgstr "Soleado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:104
+msgid "Sandstorm"
+msgstr "Tormenta de arena"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
+msgid "Cloudy"
+msgstr "Nublado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:106
+msgid "Rainy"
+msgstr "Lluvioso"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:107
+msgid "Hail"
+msgstr "Granizo"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:108
+msgid "Fog"
+msgstr "Niebla"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:109
+msgid "Snow"
+msgstr "Nevado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:110
+msgid "Random"
+msgstr "Aleatorio"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:133
+msgid "No darkness"
+msgstr "Sin oscuridad"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:134
+msgid "1-tile vision (Heavy darkness)"
+msgstr "Visión de 1 tile (Oscuridad intensa)"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:135
+msgid "2-tile vision (Light darkness)"
+msgstr "Visión de 2 tiles (Oscuridad ligera)"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:136
+msgid "3-tile vision"
+msgstr "Visión de 3 tiles"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:137
+msgid "4-tile vision"
+msgstr "Visión de 4 tiles"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
+msgid "Mud Trap"
+msgstr "Trampa Lodo"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:162
+msgid "Sticky Trap"
+msgstr "Trampa Pegajosa"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
+msgid "Grimy Trap"
+msgstr "Trampa Apestosa"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
+msgid "Summon Trap"
+msgstr "Trampa Nido"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:165
+msgid "Pitfall Trap"
+msgstr "Trampa Trampilla"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:166
+msgid "Warp Trap"
+msgstr "Teletrampa"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:167
+msgid "Gust Trap"
+msgstr "Trampa Tornado"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:168
+msgid "Spin Trap"
+msgstr "Trampa Rotatoria"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:169
+msgid "Slumber Trap"
+msgstr "Trampa Somnífera"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:170
+msgid "Slow Trap"
+msgstr "Trampa Ralentí"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
+msgid "Seal Trap"
+msgstr "Trampa Sellante"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:172
+msgid "Poison Trap"
+msgstr "Trampa Venenosa"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
+msgid "Selfdestruct Trap"
+msgstr "Trampa Autodestructiva"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:174
+msgid "Explosion Trap"
+msgstr "Trampa Explosiva"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
+msgid "Pp Zero Trap"
+msgstr "Trampa Anula-PP"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
+msgid "Chestnut Trap"
+msgstr "Trampa Castañazo"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:177
+msgid "Wonder Tile"
+msgstr "Baldosa Mágica"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:178
+msgid "Pokemon Trap"
+msgstr "Trampa Pokémon"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:179
+msgid "Spiked Tile"
+msgstr "Baldosa de Púas"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:180
+msgid "Stealth Rock"
+msgstr "Trampa Rocas"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:181
+msgid "Toxic Spikes"
+msgstr "Púas Tóxicas"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:182
+msgid "Trip Trap"
+msgstr "Trampa Tropezón"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:183
+msgid "Random Trap"
+msgstr "Trampa Azar"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:184
+msgid "Grudge Trap"
+msgstr "Trampa Rabia"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:41
+msgid "Invalid Floor List"
+msgstr "Lista de pisos no válidos"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:44
+msgid "References a dungeon floor list that doesn't exist."
+msgstr "Referencias de una lista de pisos de territorio que no existe."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:50
+msgid "Invalid Floor"
+msgstr "Piso inválido"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:54
+msgid "References floor that is out of bounds in the floor list for this group."
+msgstr "Hace referencia al piso que está fuera de los límites en la lista de pisos para este grupo."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:71
+msgid "Re-uses Floor"
+msgstr "Reutiliza piso"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:79
+#, python-brace-format
+msgid "Re-uses floors that are already used by {name}."
+msgstr "Reutiliza los pisos que ya está usando {name}."
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:110
+msgid "Unused Floors"
+msgstr "Pisos no usados"
+
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:115
+msgid "Has {len(self.floors_in_mappa_not_referenced)} extra floors in it's floor list, which are not assigned to any dungeon."
+msgstr "Hay {len(self.floors_in_mappa_not_referenced)} pisos adicionales en tu lista de pisos que no están asignados a ningún territorio."
+
+#: skytemple-files/skytemple_files/graphics/bma/_model.py:519
+#, python-brace-format
+msgid "Can not import map background: Width of both images must match the current map width: {expected_width}px"
+msgstr "No se puede importar el fondo del mapa: la anchura de ambas imágenes debe coincidir con la anchura actual del mapa: {expected_width}px"
+
+#: skytemple-files/skytemple_files/graphics/bma/_model.py:530
+#, python-brace-format
+msgid "Can not import map background: Height of both images must match the current map height: {expected_height}px"
+msgstr "No se puede importar el fondo del mapa: la altura ambas imágenes debe coincidir con la altura actual del mapa: {expected_height}px"
+
+#: skytemple-files/skytemple_files/graphics/bpa/_model.py:214
+#: skytemple-rust/src/st_bpa.rs:234
+msgid "The dimensions of all images must be the same."
+msgstr "Las dimensiones de todas las imágenes deben ser iguales."
+
+#: skytemple-files/skytemple_files/graphics/chr/model.py:82
+msgid "Cannot convert PIL image to CHR: Must be indexed image (=using a palette)"
+msgstr "No se puede convertir la imagen PIL a CHR: Debe ser una imagen indexada (usando una paleta)"
+
+#: skytemple-files/skytemple_files/graphics/chr/model.py:89
+#, python-brace-format
+msgid "Cannot convert PIL image to CHR: width and height must be a multiple of {CHR_TILE_WIDTH}"
+msgstr "No se puede convertir la imagen PIL a CHR: la anchura y altura deben ser un múltiplo de {CHR_TILE_WIDTH}"
+
+#: skytemple-files/skytemple_files/graphics/dbg/_model.py:117
+#, python-brace-format
+msgid "Can not import map background: Width of image must match the expected width: {expected_width}px"
+msgstr "No se puede importar el fondo del mapa: la anchura de la imagen debe coincidir con el ancho esperado: {expected_width}px"
+
+#: skytemple-files/skytemple_files/graphics/dbg/_model.py:126
+#, python-brace-format
+msgid "Can not import map background: Height of image must match the expected height: {expected_height}px"
+msgstr "No se puede importar el fondo del mapa: la altura de la imagen debe coincidir con la altura esperada: {expected_height}px"
+
+#: skytemple-files/skytemple_files/graphics/dpc/_model.py:136
+#, python-brace-format
+msgid "The image to import can only use the first 12 palettes. Tried to use palette {tm.pal_idx}"
+msgstr "La imagen a importar solo puede usar las 12 primeras paletas. Se ha intentado usar la paleta {tm.pal_idx}"
+
+#: skytemple-files/skytemple_files/graphics/dpc/_model.py:177
+#: skytemple-rust/src/st_dpc.rs:222
+msgid "A dungeon background or tilemap can not have more than 400 chunks."
+msgstr "Un fondo de un territorio o tilemap no puede tener más de 400 chunks."
+
+#: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
+#: skytemple-rust/src/st_dpla.rs:121
+msgid "This palette has no animation."
+msgstr "Esta paleta no tiene animación."
+
+#: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:100
+#: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:102
+#: skytemple-files/skytemple_files/graphics/fonts/font_sir0/model.py:110
+msgid "This must be a color indexed image!"
+msgstr "¡Esta imagen debe tener un índice de color!"
+
+#: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:268
+#, python-brace-format
+msgid "Font parsing: Unexpected {child.tag}"
+msgstr "Análisis de la fuente: {child.tag} inesperado"
+
+#: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:49
+#, python-brace-format
+msgid "Character {e.char} in table {e.table} is defined multiple times in a font file!"
+msgstr "¡El carácter {e.char} de la tabla {e.table} se define varias veces en un archivo de fuentes!"
+
+#: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:60
+#, python-brace-format
+msgid "Character {e.char} in table {e.table} is be defined multiple times in a font file!"
+msgstr "¡El carácter {e.char} de la tabla {e.table} se define varias veces en un archivo de fuentes!"
+
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:302
+#, python-brace-format
+msgid "Could not load KAO at {old_index},{old_subindex}: {ex}"
+msgstr "No se ha podido cargar la entrada KAO en {old_index},{old_subindex}: {ex}"
+
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:371
+#, python-brace-format
+msgid "Can not convert PIL image to Kao: Image dimensions must be {img_dim}x{img_dim}px."
+msgstr "No se puede convertir la imagen PIL a Kao: Las dimensiones de la imagen deben ser de {img_dim}x{img_dim}px."
+
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:490
+msgid "This portrait does not compress well, the result size is greater than 800 bytes ({len(new_img_compressed)} bytes total).\n"
+"If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
+msgstr "Este retrato no se comprime bien, el tamaño resultante es superior a 800 bytes ({len(new_img_compressed)} bytes en total).\n"
+"Si aún no lo has hecho, prueba a aplicar el parche 'ProvideATUPXSupport' para instalar un algoritmo de compresión optimizado que podría ser capaz de comprimir mejor la imagen."
+
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:121
+#, python-brace-format
+msgid "Portrait has an invalid size of {img.size}, Not divisble by {PORTRAIT_SIZE}x{PORTRAIT_SIZE}"
+msgstr "El retrato tiene un tamaño inválido de {img.size} no divisible por {PORTRAIT_SIZE}x{PORTRAIT_SIZE}"
+
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:132
+#, python-brace-format
+msgid "Portrait has an invalid size of {img.size}, exceeding max of {max_size}"
+msgstr "El retrato tiene un tamaño inválido de {img.size}, superando el máximo de {max_size}"
+
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:174
+#, python-brace-format
+msgid "Semi-transparent pixels found at: {rogue_pixels}"
+msgstr "Píxeles semitransparentes encontrados en: {rogue_pixels}"
+
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:178
+#, python-brace-format
+msgid "The following emotions have transparent pixels: {rogue_tiles}"
+msgstr "Las siguientes emociones tienen píxeles transparentes: {rogue_tiles}"
+
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:202
+msgid "File should have original and flipped versions of emotions: {str(flipped_tiles)}"
+msgstr "El archivo debe tener versiones originales e invertidas de las emociones: {str(flipped_tiles)}"
+
+#: skytemple-files/skytemple_files/graphics/wte/model.py:41
+msgid "Palette Only"
+msgstr "Solo paleta"
+
+#: skytemple-files/skytemple_files/graphics/wte/model.py:42
+msgid "2 bits per pixel (4 colors)"
+msgstr "2 bits por píxel (4 colores)"
+
+#: skytemple-files/skytemple_files/graphics/wte/model.py:43
+msgid "4 bits per pixel (16 colors)"
+msgstr "4 bits por píxel (16 colores)"
+
+#: skytemple-files/skytemple_files/graphics/wte/model.py:44
+msgid "8 bits per pixel (256 colors)"
+msgstr "8 bits por píxel (256 colores)"
+
+#: skytemple-files/skytemple_files/graphics/wte/model.py:225
+msgid "Can not convert PIL image to WTE: Must be indexed image (=using a palette)"
+msgstr "No se puede convertir la imagen PIL a WTE: Debe ser una imagen indexada (usando una paleta)"
+
+#: skytemple-files/skytemple_files/graphics/wte/model.py:233
+msgid "This image is too big to fit into a WTE file."
+msgstr "Esta imagen es demasiado grande para caber en un archivo WTE."
+
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:44
+msgid "Semi-Opaque"
+msgstr "Semiopaco"
+
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:45
+msgid "Transparent"
+msgstr "Transparente"
+
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:46
+msgid "Opaque"
+msgstr "Opaco"
+
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:206
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:231
+msgid "Tile and masks list must have exactly 3 items"
+msgstr "La lista de tiles y máscaras debe tener exactamente 3 elementos"
+
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:213
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:238
+msgid "Can not convert PIL image to ZMAPPAT: Must be indexed images (=using a palette)"
+msgstr "No se puede convertir la imagen PIL a ZMAPPAT: Deben ser imágenes indexadas (usando una paleta)"
+
+#: skytemple-files/skytemple_files/hardcoded/cart_removed.py:63
+#, python-brace-format
+msgid "The image must have dimensions {IMG_WIDTH}x{IMG_HEIGHT}."
+msgstr "La imagen debe tener dimensiones de {IMG_WIDTH}x{IMG_HEIGHT}."
+
+#: skytemple-files/skytemple_files/hardcoded/cart_removed.py:81
+msgid "This image must be compressed better to fit in the arm9 ({len(data)} > {block.end-block.address})."
+msgstr "Esta imagen debe comprimirse más para caber en ARM9 ({len(data)} > {block.end-block.address})."
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:311
+msgid "White"
+msgstr "Blanco"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:312
+msgid "Black"
+msgstr "Negro"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:313
+msgid "Red"
+msgstr "Rojo"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:314
+msgid "Blue"
+msgstr "Azul"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:315
+msgid "Green"
+msgstr "Verde"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:316
+msgid "Yellow"
+msgstr "Amarillo"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:317
+msgid "Orange"
+msgstr "Naranja"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:318
+msgid "Purple"
+msgstr "Morado"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:319
+msgid "Pink"
+msgstr "Rosa"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:323
+msgid "Leaves"
+msgstr "Hojas"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:324
+msgid "Snowflakes"
+msgstr "Copos de nieve"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:325
+msgid "Flames"
+msgstr "Llamas"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:326
+msgid "Sand"
+msgstr "Arena"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:327
+msgid "Bubbles"
+msgstr "Burbujas"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:328
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:355
+msgid "Earthquake"
+msgstr "Terremoto"
+
+#. TRANSLATORS: Effect of a tileset's secret power move
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:332
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:340
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:344
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:351
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:352
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:353
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:354
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:356
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:357
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:359
+msgid "???"
+msgstr "???"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:333
+msgid "Sleep"
+msgstr "Dormir"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:335
+msgid "Speed -1"
+msgstr "Velocidad -1"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:338
+msgid "Attack -1"
+msgstr "Ataque -1"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:342
+msgid "Accuracy -1"
+msgstr "Precisión -1"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:345
+msgid "Cringe"
+msgstr "Amedrentar"
+
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:346
+msgid "Freeze"
+msgstr "Congelar"
+
+#. TRANSLATORS: Status
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:347
+msgid "Paralysis"
+msgstr "Parálisis"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:358
+msgid "Rock Slide"
+msgstr "Avalancha"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:360
+msgid "Tri Attack"
+msgstr "Triataque"
+
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:361
+msgid "Hydro Pump"
+msgstr "Hidrobomba"
+
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:362
+msgid "Blizzard"
+msgstr "Ventisca"
+
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:363
+msgid "Ice Beam"
+msgstr "Rayo Hielo"
+
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:364
+msgid "Seed Bomb"
+msgstr "Bomba Germen"
+
+#. TRANSLATORS: Move name
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:365
+msgid "Mud Bomb"
+msgstr "Bomba Fango"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:370
+msgid "Foggy 1"
+msgstr "Niebla 1"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:371
+msgid "Foggy 2"
+msgstr "Niebla 2"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:372
+msgid "Foggy 3"
+msgstr "Niebla 3"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:373
+msgid "Foggy 4"
+msgstr "Niebla 4"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:374
+msgid "Foggy 5"
+msgstr "Niebla 5"
+
+#: skytemple-files/skytemple_files/hardcoded/dungeons.py:375
+msgid "Foggy 6"
+msgstr "Niebla 6"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:136
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:159
+msgid "Normal Enemy"
+msgstr "Enemigo normal"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:138
+msgid "Outlaw"
+msgstr "Malhechor"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:140
+msgid "Outlaw Enemy"
+msgstr "Malhechor enemigo"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:142
+msgid "Outlaw Running Away"
+msgstr "Malhechor huyendo"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:146
+msgid "Rival Team Leader"
+msgstr "Líder del equipo rival"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:148
+msgid "Rival Team Member"
+msgstr "Miembro del equipo rival"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:150
+msgid "Strong Enemy"
+msgstr "Enemigo fuerte"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:153
+msgid "Waiting for Rescue Ally"
+msgstr "Esperando rescate de aliado"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:161
+msgid "Helping Ally"
+msgstr "Aliado de ayuda"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:164
+msgid "Other Game Team Leader"
+msgstr "Otro líder del equipo del juego"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:165
+msgid "Other Game Team Member 2"
+msgstr "Otro miembro del equipo del juego 2"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:166
+msgid "Other Game Team Member 3"
+msgstr "Otro miembro del equipo del juego 3"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:167
+msgid "Other Game Team Member 4"
+msgstr "Otro miembro del equipo del juego 4"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:170
+msgid "Unknown 5"
+msgstr "Desconocido 5"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:174
+msgid "Bazaar Host"
+msgstr "Anfitrión de Bazar"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:178
+msgid "Bazaar Healer"
+msgstr "Curador del Bazar"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:182
+msgid "Bazaar Surprise"
+msgstr "Sorpresa del Bazar"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:186
+msgid "Bazaar Clean Sticky Items"
+msgstr "Limpieza de objetos pegajosos del Bazar"
+
+#: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:190
+msgid "Bazaar Escape"
+msgstr "Huida del Bazar"
+
+#: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:55
+#, python-brace-format
+msgid "'{guest1_index}' is not a valid guest pokémon index"
+msgstr "'{guest1_index}' no es un índice de Pokémon invitado válido"
+
+#: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:59
+#, python-brace-format
+msgid "'{guest2_index}' is not a valid guest pokémon index"
+msgstr "'{guest2_index}' no es un índice de Pokémon invitado válido"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:68
+msgid "Game Main Menu"
+msgstr "Menú principal del juego"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:76
+msgid "Game Sub Menu"
+msgstr "Submenú del juego"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:84
+msgid "Continue Choice"
+msgstr "Elección de continuación"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:92
+#: skytemple-files/skytemple_files/hardcoded/menus.py:100
+msgid "Main Debug Menu"
+msgstr "Menú de depuración principal"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:108
+msgid "Quiz Debug Menu"
+msgstr "Menú de depuración de prueba de personalidad"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:116
+msgid "Footprint Debug Menu"
+msgstr "Menú de depuración de huella"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:124
+msgid "Bank Main Menu"
+msgstr "Menú principal del banco"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:132
+msgid "Evolution Menu Confirm"
+msgstr "Menú de confirmación de evolución"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:140
+msgid "Evolution Sub Menu"
+msgstr "Submenú de evolución"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:148
+msgid "Evolution Main Menu"
+msgstr "Menú de evolución principal"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:156
+msgid "Assembly Menu Confirm"
+msgstr "Menú de confirmación del ensamblador"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:164
+#: skytemple-files/skytemple_files/hardcoded/menus.py:172
+msgid "Assembly Main Menu"
+msgstr "Menú principal del ensamblador"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:180
+#: skytemple-files/skytemple_files/hardcoded/menus.py:188
+#: skytemple-files/skytemple_files/hardcoded/menus.py:196
+#: skytemple-files/skytemple_files/hardcoded/menus.py:204
+#: skytemple-files/skytemple_files/hardcoded/menus.py:212
+#: skytemple-files/skytemple_files/hardcoded/menus.py:220
+#: skytemple-files/skytemple_files/hardcoded/menus.py:228
+msgid "Assembly Sub Menu"
+msgstr "Submenú del ensamblador"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:236
+msgid "Moves Menu Confirm"
+msgstr "Menú de confirmación de movimientos"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:244
+#: skytemple-files/skytemple_files/hardcoded/menus.py:252
+#: skytemple-files/skytemple_files/hardcoded/menus.py:268
+#: skytemple-files/skytemple_files/hardcoded/menus.py:276
+#: skytemple-files/skytemple_files/hardcoded/menus.py:284
+#: skytemple-files/skytemple_files/hardcoded/menus.py:292
+#: skytemple-files/skytemple_files/hardcoded/menus.py:300
+msgid "Moves Sub Menu"
+msgstr "Submenú de movimientos"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:260
+msgid "Moves Main Menu"
+msgstr "Menú principal de movimientos"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:308
+#: skytemple-files/skytemple_files/hardcoded/menus.py:316
+msgid "Bar Menu Confirm"
+msgstr "Menú de confirmación del bar"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:324
+msgid "Bar Main Menu"
+msgstr "Menú principal del bar"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:332
+#: skytemple-files/skytemple_files/hardcoded/menus.py:340
+msgid "Bar Sub Menu"
+msgstr "Submenú del bar"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:348
+#: skytemple-files/skytemple_files/hardcoded/menus.py:356
+msgid "Recycle Menu Confirm"
+msgstr "Menú de confirmación de reciclaje"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:364
+#: skytemple-files/skytemple_files/hardcoded/menus.py:372
+msgid "Recycle Sub Menu"
+msgstr "Submenú de reciclaje"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:380
+#: skytemple-files/skytemple_files/hardcoded/menus.py:388
+#: skytemple-files/skytemple_files/hardcoded/menus.py:396
+msgid "Recycle Main Menu"
+msgstr "Menú principal de reciclaje"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:404
+msgid "Synthesis Menu Confirm"
+msgstr "Menú de confirmación de síntesis"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:412
+#: skytemple-files/skytemple_files/hardcoded/menus.py:420
+#: skytemple-files/skytemple_files/hardcoded/menus.py:444
+msgid "Synthesis Sub Menu"
+msgstr "Submenú de síntesis"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:428
+#: skytemple-files/skytemple_files/hardcoded/menus.py:436
+msgid "Synthesis Main Menu"
+msgstr "Menú principal de síntesis"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:452
+msgid "Shop Menu Confirm"
+msgstr "Menú de confirmación de tienda"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:460
+#: skytemple-files/skytemple_files/hardcoded/menus.py:468
+#: skytemple-files/skytemple_files/hardcoded/menus.py:476
+msgid "Shop Main Menu"
+msgstr "Menú principal de tienda"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:484
+msgid "Storage Menu Confirm"
+msgstr "Menú de confirmación de la consigna"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:492
+#: skytemple-files/skytemple_files/hardcoded/menus.py:500
+#: skytemple-files/skytemple_files/hardcoded/menus.py:508
+#: skytemple-files/skytemple_files/hardcoded/menus.py:516
+msgid "Storage Main Menu"
+msgstr "Menú principal de la consigna"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:524
+msgid "Hatcher Menu Confirm"
+msgstr "Menú de confirmación de la guardería"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:532
+msgid "Hatcher Main Menu"
+msgstr "Menú principal de la guarderia"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:540
+msgid "Appraiser Menu Confirm"
+msgstr "Menú de confirmación del anticuario"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:548
+msgid "Appraiser Main Menu"
+msgstr "Menú principal del anticuario"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:556
+msgid "Appraiser Sub Menu"
+msgstr "Submenú del anticuario"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:564
+msgid "Discard Items Menu Confirm"
+msgstr "Menú de confirmación de descarte de objetos"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:572
+#: skytemple-files/skytemple_files/hardcoded/menus.py:580
+msgid "Discard Items Sub Menu"
+msgstr "Submenú de descarte de objetos"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:588
+msgid "Discard Items Main Menu"
+msgstr "Menú de descarte de objetos principal"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:596
+msgid "Dungeon Main Menu"
+msgstr "Menú principal de territorio"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:604
+#: skytemple-files/skytemple_files/hardcoded/menus.py:612
+#: skytemple-files/skytemple_files/hardcoded/menus.py:620
+#: skytemple-files/skytemple_files/hardcoded/menus.py:628
+#: skytemple-files/skytemple_files/hardcoded/menus.py:636
+#: skytemple-files/skytemple_files/hardcoded/menus.py:644
+msgid "Dungeon Sub Menu"
+msgstr "Submenú de territorio"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:652
+msgid "Start Menu Confirm"
+msgstr "Menú de inicio de confirmación"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:660
+msgid "Dungeon Debug Menu"
+msgstr "Menú de depuración principal de territorio"
+
+#: skytemple-files/skytemple_files/hardcoded/menus.py:735
+#, python-brace-format
+msgid "This menu must have {num_entries} entries!"
+msgstr "¡Este menú debe tener {num_entries} entradas!"
+
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:99
+msgid "Standing Animation (loop)"
+msgstr "Animación de pie (bucle)"
+
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:100
+msgid "Standing Animation (1st frame)"
+msgstr "Animación de pie (primer fotograma)"
+
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:101
+msgid "Special"
+msgstr "Especial"
+
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:102
+msgid "Walking Animation (1st frame)"
+msgstr "Animación de caminar (primer fotograma)"
+
+#: skytemple-files/skytemple_files/patch/arm_patcher.py:236
+#, python-brace-format
+msgid "Error while applying the patch: {ex}"
+msgstr "Error al aplicar el parche: {ex}"
+
+#: skytemple-files/skytemple_files/patch/category.py:26
+msgid "Improvements and Tweaks"
+msgstr "Mejoras y ajustes"
+
+#: skytemple-files/skytemple_files/patch/category.py:29
+msgid "New Mechanics"
+msgstr "Nuevas mecánicas"
+
+#. TRANSLATORS: Name for the category of ASM patch
+#: skytemple-files/skytemple_files/patch/category.py:31
+msgid "Bugfixes"
+msgstr "Corrección de bugs"
+
+#. TRANSLATORS: Name for the category of ASM patch
+#: skytemple-files/skytemple_files/patch/category.py:32
+msgid "Utility"
+msgstr "Utilidades"
+
+#. TRANSLATORS: Name for the category of ASM patch
+#: skytemple-files/skytemple_files/patch/category.py:33
+msgid "Others"
+msgstr "Otros"
+
+#: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
+msgid "Tells the game to load the actor and level lists from separate files.\n"
+"Extracts both files on applying the patch."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:109
+msgid "This patch can not be re-applied."
+msgstr "Este parche no se puede volver a aplicar."
+
+#: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:119
+#: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:136
+msgid "The source data specification was not found in the configuration."
+msgstr "La especificación de los datos de origen no ha encontrado en la configuración."
+
+#: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:156
+msgid "\n\n"
+"The list was extracted anyway.\n"
+"You can already edit it through SkyTemple, but it won't be used in game, until you successfully apply the patch."
+msgstr "\n\n"
+"La lista se ha extraído de todos modos.\n"
+"Puedes editarla a través de SkyTemple, pero no se utilizará en el juego hasta que se aplique el parche."
+
+#: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
+msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
+msgstr "Añade tipos a la tabla de tipos. Esto reemplazará la antigua tabla por la tabla de tipos de la 6ª generación, añadiendo el tipo Hada al final."
+
+#: skytemple-files/skytemple_files/patch/handler/allow_unrecruitable_mons.py:49
+msgid "Allows recruiting the other Deoxys forms and the regis inside dungeons."
+msgstr "Permite reclutar las otras formas de Deoxys y los Regis dentro de territorios."
+
+#: skytemple-files/skytemple_files/patch/handler/anti_softlock.py:49
+msgid "Allows the player to press A+B+X+Y during cutscenes to force the game to continue past a softlock (this can happen during cutscenes when using custom sprites or the randomizer). Does not work with crashes caused due to internal errors (such as the game running out of memory)."
+msgstr "Permite al jugador pulsar A+B+X+Y durante las escenas de corte para forzar el juego a continuar más allá de un softlock (esto puede suceder durante las escenas en las que se usan objetos personalizados o Randomizer). No funciona con fallos causados por errores internos (como cuando el juego se queda sin memoria)."
+
+#: skytemple-files/skytemple_files/patch/handler/appraise_all.py:56
+msgid "Appraise all"
+msgstr "Valorar todo"
+
+#: skytemple-files/skytemple_files/patch/handler/appraise_all.py:58
+msgid " And to appraise all your items, \n"
+"you will pay [CS:G][gold_left:0][CR][M:S0]?"
+msgstr " Y para valorar todos tus objetos, \n"
+"¿pagarás [CS:G] [gold_left:0][CR][M:S0]?"
+
+#: skytemple-files/skytemple_files/patch/handler/appraise_all.py:62
+msgid " And so...[K]it is revealed...[C] Within the boxes...[K]\n"
+"were..."
+msgstr " Y así...[K]se revela...[C] Dentro de los cofres...[K]\n"
+"había..."
+
+#. TRANSLATORS: Appraise All Reveal Before
+#: skytemple-files/skytemple_files/patch/handler/appraise_all.py:65
+msgid " ...a [me_play:1][string0]!"
+msgstr " ... un [me_play:1][string0]!"
+
+#: skytemple-files/skytemple_files/patch/handler/appraise_all.py:76
+msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
+msgstr "Añade un menú adicional en la valoración de cofres para evaluarlas todas a la vez. "
+
+#: skytemple-files/skytemple_files/patch/handler/change_evo.py:119
+msgid "Change the evolution system.\n"
+"After applying this, every single Pokémon will have two lists for their evolution and children, and different stat bonuses when a Pokémon evolves into them.\n"
+"This supposedly removes most of the particular cases the game handles for evolutions. "
+msgstr "Modifica el sistema de evolución.\n"
+"Después de aplicarse, cada Pokémon tendrá dos listas para su evolución y sus crías, y diferentes bonificaciones de estadísticas cuando un Pokémon evolucione en ellos.\n"
+"Esto eliminará supuestamente la mayoría de los casos particulares que el juego maneja para las evoluciones. "
+
+#: skytemple-files/skytemple_files/patch/handler/change_evo.py:235
+#, python-brace-format
+msgid "Infinite recursion detected in pre evolutions for md entry {i}. "
+msgstr "Recursión infinita detectada en preevoluciones para la entrada de MD {i}. "
+
+#: skytemple-files/skytemple_files/patch/handler/change_evo.py:244
+#, python-brace-format
+msgid "One of the monsters in the pre-evolution chain of monster ${i:04} has an invalid pre evolution configured: ${pre_evo:04}. Can not apply patch."
+msgstr "Uno de los monstruos de la cadena anterior a la evolución del monstruo ${i:04} tiene una configuración previa no válida: ${pre_evo:04}. No se puede aplicar el parche."
+
+#: skytemple-files/skytemple_files/patch/handler/change_ff_prop.py:52
+msgid "Changes and adds some properties for fixed floors.\n"
+"Removes restrictions. "
+msgstr "Cambia y añade algunas propiedades para los pisos fijos.\n"
+"Elimina las restricciones. "
+
+#: skytemple-files/skytemple_files/patch/handler/change_tbbg.py:48
+msgid "Provides support for editing textbox background color."
+msgstr "Proporciona soporte para editar el color de fondo de los cuadros de texto."
+
+#: skytemple-files/skytemple_files/patch/handler/choose_starter.py:55
+msgid "Then, who would you like to be?"
+msgstr "Entonces, ¿qué Pokémon te gustaría ser?"
+
+#: skytemple-files/skytemple_files/patch/handler/choose_starter.py:66
+msgid "Adds an extra menu during the personality test to choose the starter."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:106
+msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:109
+msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:121
+msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by End45 before applying this patch."
+msgstr "Al pulsar el botón Start en un territorio, se alterna entre el modo automático y el manual. En el modo manual, puedes controlar a tus compañeros en sus turnos. Debes aplicar el parche de código adicional (ExtraSpace) creado por End45 antes de aplicar este parche."
+
+#: skytemple-files/skytemple_files/patch/handler/compress_iq_data.py:50
+msgid "Optimizes the way the list of IQ skills learnt by each IQ group is stored, removing the limit of max 25 skills per group."
+msgstr "Optimiza la forma en que se almacena la lista de habilidades de CI aprendidas por cada grupo de CI, eliminando el límite de 25 habilidades máximas por grupo."
+
+#: skytemple-files/skytemple_files/patch/handler/disable_tips.py:49
+msgid "Disables the tip textboxes shown in dungeons at the beginning of the game."
+msgstr "Desactiva las cajas de texto de ayuda mostradas en los territorios al principio del juego."
+
+#: skytemple-files/skytemple_files/patch/handler/disarm_one_room_mh.py:44
+msgid "Disarms one-room Monster House floors, which can appear in cases like a layout generation failure. These floors will still be one giant room, but will no longer be Monster Houses."
+msgstr "Desarma los pisos de nidos de monstruos de una sola sala, que pueden aparecer en casos como fallos de generación. Estos pisos seguirán siendo una sala gigante, pero ya no serán nidos."
+
+#: skytemple-files/skytemple_files/patch/handler/dungeon_interrupt.py:50
+msgid "Implements dungeon interruptions. "
+msgstr "Implementa interrupciones de territorio. "
+
+#: skytemple-files/skytemple_files/patch/handler/dynamic_bosses_everywhere.py:49
+msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
+msgstr "Permite colocar entidades especiales de sala fija #124-127 (enemigos del Laberinto del Explorador) en cualquier sala fija sin que el juego se bloquee."
+
+#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
+msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
+msgstr "Cambia la forma en la que el juego determina cuándo añadir Pokémon adicionales al equipo para que pueda editarse más fácilmente."
+
+#: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
+msgid "Implements shared experience points between all members (GtI style). \n"
+"This is disabled during Special Episodes and dungeons with level 1 or no exp. restrictions. \n"
+"Needs the ExtractDungeonData patch to be applied to free some space used by this."
+msgstr "Implementa puntos de experiencia compartidos entre todos los miembros (como en Portales al Infinito). \n"
+"Se desactiva durante los Capítulos especiales y los territorios con nivel 1 o sin restricciones de exp. \n"
+"Necesita que se aplique el parche 'ExtractDungeonData' para liberar algo de espacio utilizado por este."
+
+#: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
+msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
+"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile patches to work.\n"
+"It is strongly recommended to fix any dungeon error before applying this patch,\n"
+"and to save a backup of your ROM before applying this."
+msgstr "Amplía las entradas de Pokémon permitidas a 2048, y hace que sean independientes entre sí.\n"
+"Necesita los parches \"ChangeEvoSystem\", \"ExternalizeWazaFile\" y \"ExternalizeMappaFile\" para funcionar.\n"
+"Se recomienda encarecidamente corregir cualquier error en los territorios y guardar una copia de seguridad de tu ROM antes de aplicar el parche."
+
+#: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
+msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
+"This patch is useless on its own, unless you have a too big mappa file."
+msgstr "Utiliza filestreams para acceder a los datos de mappa_t/mappa_y/mappa_s en lugar de cargarlos por completo.\n"
+"Este parche no tiene utilidad por sí mismo salvo que tengas un archivo mappa demasiado grande."
+
+#: skytemple-files/skytemple_files/patch/handler/externalize_waza.py:49
+msgid "Use filestreams to access waza_p/waza_p2 data instead of loading them entirely.\n"
+"This patch is useless on its own.\n"
+"Depends on the ActorAndLevelLoader patch, as it needs some space provided by this one."
+msgstr "Utiliza filestreams para acceder a los datos de waza_p/waza_p2 en lugar de cargarlos por completo.\n"
+"Este parche no tiene utilidad por sí mismo.\n"
+"Depende del parche \"ActorAndLevelLoader\", ya que necesita algo del espacio que le proporciona."
+
+#: skytemple-files/skytemple_files/patch/handler/extra_space.py:50
+msgid "This patch adds a new overlay 36 to the game, which is loaded at address 0x023A7080 and provides extra space for patches to place code and data in."
+msgstr "Este parche añade un nuevo overlay (36) al juego, que se carga en la dirección 0x023A7080 y proporciona espacio adicional para que otros parches coloquen código y otros datos."
+
+#: skytemple-files/skytemple_files/patch/handler/extract_anims.py:56
+msgid "Extracts animation data and put it in files. \n"
+"Needs ActorAndLevelLoader patch to free some space. "
+msgstr "Extrae los datos de animación y los coloca en archivos. \n"
+"Necesita el parche \"ActorAndLevelLoader\" para liberar espacio. "
+
+#: skytemple-files/skytemple_files/patch/handler/extract_bar_list.py:66
+msgid "Extracts Spinda bar's item list."
+msgstr "Extrae la lista de objetos del bar de Spinda."
+
+#: skytemple-files/skytemple_files/patch/handler/extract_dungeon_data.py:177
+msgid "Extracts the floor ranks, forbidden mission floors, items available in dungeon tables and put them in files. Provides support for reading them from the rom file system."
+msgstr "Extrae los rangos de los pisos, los pisos de las misiones prohibidas y los objetos disponibles en las tablas de los territorios y los coloca en archivos. Proporciona soporte para leerlos desde el sistema de archivos de la ROM."
+
+#: skytemple-files/skytemple_files/patch/handler/extract_item_code.py:77
+msgid "Extracts item effects code and put it in files."
+msgstr "Extrae el código de los efectos del objeto y los pone en archivos."
+
+#: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:65
+msgid "Extracts the hardcoded item lists, used for mission rewards/treasure boxes content as well as Kecleon shop items, and put them in files. Provides support for reading them from the rom file system."
+msgstr "Extrae las listas de objetos codificadas utilizadas para el contenido de las recompensas de las misiones y los cofres del tesoro, así como los objetos de la tienda Kecleon, y los coloca en archivos. Proporciona soporte para leerlas desde el sistema de archivos de la ROM."
+
+#: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:153
+msgid "Don't have enough space to put filenames! "
+msgstr "¡No hay suficiente espacio para poner nombres de archivo! "
+
+#: skytemple-files/skytemple_files/patch/handler/extract_move_code.py:80
+msgid "Extracts move effects code and put it in files."
+msgstr "Extrae el código de los efectos del movimiento y los pone en archivos."
+
+#: skytemple-files/skytemple_files/patch/handler/extract_sp_code.py:72
+msgid "Extracts special processes code and put it in files."
+msgstr "Extrae el código de los procesos especiales y lo pone en archivos."
+
+#: skytemple-files/skytemple_files/patch/handler/fairy_gummies.py:113
+msgid "Implements Fairy-type specialized gummies. Uses unused item 138.\n"
+"Needs ExtractItemCode, ExtractBarItemList and AddTypes patches to be applied for this patch to work.\n"
+"Also, you'll need to reapply this if you apply AddTypes again. "
+msgstr "Implementa las gomis de tipo hada. Utiliza el elemento 138 no utilizado.\n"
+"Necesita que se apliquen los parches 'ExtractItemCode', 'ExtractBarItemList' y 'AddTypes' para que funcione.\n"
+"Además, tendrás que reaplicarlo si vuelves a aplicar AddTypes de nuevo. "
+
+#: skytemple-files/skytemple_files/patch/handler/far_off_pal_overdrive.py:50
+msgid "Makes the game always move the PoV to your partners when they use moves or are attacked, even if the partner is only one tile away, when far-off pals is enabled. Recommended for CTC since the PoV stays on your last pokemon at the end of a manual movement round without this, and CTC already reduces the amount of time the game pauses for between PoV changes."
+msgstr "Hace que el juego siempre mueva el punto de vista a tus compañeros cuando usan movimientos o son atacados, incluso si el compañero está a solo un tile de distancia cuando los compañeros lejanos están habilitados. Recomendado para el parche 'CompleteTeamControl' (CTC), ya que sin esta opción el punto de vista se quedará en tu último Pokémon al final de una ronda de control manual, y CTC ya reduce la cantidad de tiempo que el juego hace una pausa entre los cambios de puntos de vista."
+
+#: skytemple-files/skytemple_files/patch/handler/fix_evolution.py:45
+msgid "Fixes the evolution glitch that freezes the game when attempting to evolve a pokémon whose name has 10 characters."
+msgstr "Corrige el fallo de evolución que congela el juego cuando se intenta evolucionar un Pokémon cuyo nombre tiene 10 caracteres."
+
+#: skytemple-files/skytemple_files/patch/handler/fix_memory_softlock.py:47
+msgid "If the game runs out of memory trying to load a sprite, a default one will be used instead, preventing the crash."
+msgstr "Si el juego se queda sin memoria al intentar cargar un sprite, se utilizará uno por defecto en su lugar para evitar un bloqueo."
+
+#: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:49
+msgid "Fixes an issue that causes saving to fail on the No$GBA emulator. Warning: Causes saving to fail on the MelonDS emulator instead."
+msgstr "Soluciona un problema que hacía que no se pudiera guardar en el emulador No$GBA. Advertencia: Provoca que no se pueda guardar en el emulador MelonDS."
+
+#: skytemple-files/skytemple_files/patch/handler/move_growth.py:176
+msgid "Implements move growth (PoC/Unfinished). \n"
+"Needs ActorAndLevelLoader, ExtractAnimData and ChangeMoveStatsDisplay patches. \n"
+"MoveGrowth patch must be (re-)applied after MoveShortcuts to combine both effects. \n"
+"The last version of ChangeMoveStatsDisplay must be used with this.\n"
+"May be incompatible if markfont.dat has been modified (except for ChangeMoveStatsDisplay)\n"
+"Makes all prior save files incompatible. "
+msgstr "Implementa el aumento de nivel de los movimientos (PoC/Inacabado). \n"
+"Necesita los parches \"ActorAndLevelLoader\", \"ExtractAnimData\" y \"ChangeMoveStatsDisplay\". \n"
+"El parche \"MoveGrowth\" debe ser (re)aplicado después de \"MoveShortcuts\" para combinar sus efectos. \n"
+"Se debe utilizar la última versión de \"ChangeMoveStatsDisplay\" junto al parche.\n"
+"Puede ser incompatible si markfont.dat ha sido modificado (excepto para \"ChangeMoveStatsDisplay\").\n"
+"Hace todos los archivos de guardado previos incompatibles. "
+
+#: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
+msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."
+msgstr "Reemplaza el movimiento fijo (L+A) con una funcionalidad de acceso directo como en Portales al Infinito o Super Mystery Dungeon (L+A/B/X/Y). Se debe aplicar antes el parche \"ExtraSpace\"."
+
+#: skytemple-files/skytemple_files/patch/handler/no_weather_stop.py:51
+msgid "Changes weather damage messages so they don't make the player stop running."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
+msgid "Extracts the object table to a separate file in the ROM."
+msgstr "Extrae la tabla de objetos en un archivo separado en la ROM."
+
+#: skytemple-files/skytemple_files/patch/handler/partners_trigger_hidden_traps.py:50
+msgid "Recommended for CTC. Without this patch, partners cannot trigger hidden traps - this balances the game, as making your partners dodge traps with manual movement is easy, but this patch is not recommended for mods which use pitfall traps, as they instakill partners which step on them."
+msgstr "Recomendado para el parche 'CompleteTeamControl'. Sin él, los compañeros de equipo no pueden activar las trampas. Esto reequilibra el juego, ya que es fácil hacer que los compañeros de equipo eviten las trampas en el modo manual, pero no es recomendable para los mods que utilicen trampas que dejarían fuera de combate instantáneamente a los compañeros de equipo si las pisaran."
+
+#: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
+msgid "Changes implementation of idle animation to an editable table."
+msgstr "Cambia la implementación de la animación en reposo a una tabla editable."
+
+#: skytemple-files/skytemple_files/patch/handler/push_allies.py:44
+msgid "[string:0] pushed [string:1]!"
+msgstr "¡[string:0] empujó a [string:1]!"
+
+#: skytemple-files/skytemple_files/patch/handler/push_allies.py:55
+msgid "Implements pushing allies in dungeons.\n"
+"Uses the same command style as PSMD"
+msgstr "Implementa la capacidad de empujar aliados en territorios.\n"
+"Usa el mismo estilo de comando que PSMD"
+
+#: skytemple-files/skytemple_files/patch/handler/reduce_jumpcut_pause_time.py:50
+msgid "Reduces the amount of time the game pauses for before changing the PoV, like when far-off pals is enabled, from 60 frames to 12. This is already applied in the CTC hack."
+msgstr "Reduce el tiempo de pausa al mover la cámara para ver a los compañeros de equipo a distancia de 60 fotogramas a 12. Esto ya se aplica en el parche 'CompleteTeamControl'."
+
+#: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:49
+msgid "Allows the partner to be of the same type as the player in the personality test."
+msgstr "Permite que el compañero sea del mismo tipo que el jugador tras el test de personalidad."
+
+#: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:47
+msgid "Who would you like to be?"
+msgstr "¿Qué Pokémon te gustaría ser?"
+
+#: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
+msgid "Skips the quiz, only leaving the gender question.\n"
+"Needs ChooseStarter patch to be applied. "
+msgstr "Se salta la prueba, dejando solo la pregunta de género.\n"
+"Necesita que se aplique el parche 'ChooseStarter'. "
+
+#: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
+msgid "Replaces old move stats display with bars.\n"
+"This patch may not be compatible if the markfont.dat file has been modified."
+msgstr "Sustituye la visualización antigua de estadísticas de movimiento por barras.\n"
+"Este parche puede no ser compatible si se ha modificado el archivo \"markfont.dat\"."
+
+#: skytemple-files/skytemple_files/patch/handler/support_atupx.py:51
+msgid "Provide support for ATUPX containers, which use a different algorithm than PX compression.\n"
+"Requires the ActorAndLevelLoader, as it frees the space needed to implement this."
+msgstr "Ofrece soporte para los contenedores ATUPX, que utilizan un algoritmo diferente al de la compresión PX.\n"
+"Necesita el parche \"ActorAndLevelLoader\" para funcionar, ya que libera el espacio necesario para implementarlo."
+
+#: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
+msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/patches.py:213
+#: skytemple-files/skytemple_files/patch/patches.py:223
+#, python-brace-format
+msgid "The patch '{name}' was not found."
+msgstr "El parche '{name}' no se ha encontrado."
+
+#: skytemple-files/skytemple_files/patch/patches.py:232
+#, python-brace-format
+msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
+msgstr "El parche '{patch_name}' necesita ser aplicado antes de poder aplicar '{name}'."
+
+#: skytemple-files/skytemple_files/patch/patches.py:241
+#, python-brace-format
+msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
+msgstr "El parche '{patch_name}' necesita ser aplicado antes de poder aplicar '{name}'. No se ha encontrado el parche."
+
+#: skytemple-files/skytemple_files/patch/patches.py:252
+msgid "No configuration was given."
+msgstr "No se ha dado ninguna configuración."
+
+#: skytemple-files/skytemple_files/patch/patches.py:257
+msgid "Missing configuration value."
+msgstr "Falta el valor de configuración."
+
+#: skytemple-files/skytemple_files/patch/patches.py:263
+#: skytemple-files/skytemple_files/patch/patches.py:269
+#: skytemple-files/skytemple_files/patch/patches.py:275
+#: skytemple-files/skytemple_files/patch/patches.py:283
+#: skytemple-files/skytemple_files/patch/patches.py:300
+msgid "Invalid configuration value."
+msgstr "Valor de configuración inválido."
+
+#: skytemple-files/skytemple_files/patch/patches.py:271
+msgid "Must be >= {}."
+msgstr "Debe ser >= {}."
+
+#: skytemple-files/skytemple_files/patch/patches.py:277
+msgid "Must be <= {}."
+msgstr "Debe ser <= {}."
+
+#: skytemple-files/skytemple_files/patch/patches.py:391
+msgid "config.xml missing in patch package."
+msgstr "falta el archivo config.xml en el paquete de parches."
+
+#: skytemple-files/skytemple_files/patch/patches.py:394
+msgid "Syntax error in the config.xml while reading patch package."
+msgstr "Error de sintaxis en el archivo config.xml al leer el paquete de parches."
+
+#: skytemple-files/skytemple_files/patch/patches.py:407
+msgid "patch.py missing in patch package."
+msgstr "Falta el archivo patch.py en el paquete de parches."
+
+#: skytemple-files/skytemple_files/patch/patches.py:410
+msgid "The patch.py of the patch package contains a syntax error."
+msgstr "Patch.py del paquete de parches contiene un error de sintaxis."
+
+#: skytemple-files/skytemple_files/patch/patches.py:418
+msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
+msgstr "Patch.py del paquete de parches no contiene 'PatchHandler'."
+
+#: skytemple-files/skytemple_files/patch/patches.py:427
+msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
+msgstr "El paquete de parches no contiene una entrada para el nombre del parche del manipulador en config.xml."
+
+#: skytemple-files/skytemple_files/patch/patches.py:439
+#, python-brace-format
+msgid "No patch for handler '{handler.name}' found in the configuration."
+msgstr "No se ha encontrado ningún parche para el manipulador '{handler.name}' en la configuración."
+
+#: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:108
+msgid "Unknown or extra XML element '{}' in scene data."
+msgstr ""
+
+#: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
+msgid "'{}' missing in scene data."
+msgstr ""
+
+#: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:469
+msgid "The event ID {} is out of bounds for one of the triggers."
+msgstr ""
+
+#: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:557
+msgid "Unknown direction value."
+msgstr "Valor de dirección desconocido."
+
+#: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:57
+msgid "Can not save a scene event without a defined triggered script."
+msgstr "No se puede guardar un evento de escena sin un script definido y activo."
+
+#: skytemple-files/skytemple_files/script/ssb/constants.py:98
+#, python-brace-format
+msgid "Invalid DungeonMode: {string}"
+msgstr "DungeonMode inválido: {string}"
+
+#: skytemple-files/skytemple_files/script/ssb/constants.py:265
+#: skytemple-files/skytemple_files/script/ssb/constants.py:266
+#, python-brace-format
+msgid "Unknown constant {constant_as_string}."
+msgstr "Constante desconocida: {constant_as_string}."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:154
+msgid "The routine data lists for the decompiler must have the same lengths."
+msgstr "Las listas de datos de rutina para el descompilador deben tener las mismas longitudes."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:171
+#, python-brace-format
+msgid "Routine {i} not found."
+msgstr "Rutina {i} no encontrada."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:195
+msgid "The script must contain exactly {len(self.rom_data.script_data.common_routine_info)} coroutines."
+msgstr "El script debe contener exactamente {len(self.rom_data.script_data.common_routine_info)} corrutinas."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:201
+msgid "The script must not contain any duplicate coroutines."
+msgstr "El script no puede contener ninguna corrutina duplicada."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:211
+#, python-brace-format
+msgid "Unknown coroutine {err}"
+msgstr "Corrutina desconocida: {err}"
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:227
+msgid "Coroutines and regular routines can not be mixed in a script file."
+msgstr "Las corrutinas y las rutinas no pueden mezclarse en un script."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:246
+#, python-brace-format
+msgid "Unknown operation {in_op.op_code.name}."
+msgstr "Operación desconocida: {in_op.op_code.name}."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:273
+msgid "The number of parameters for {normal_op_code.name} must be at least {normal_op_code.params}, is {self._correct_param_list_len(in_op.params)}."
+msgstr "El número de parámetros para {normal_op_code.name} debe ser de al menos {normal_op_code.params}, pero tiene {self._correct_param_list_len(in_op.params)}."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:294
+msgid "The number of parameters for {op_code.name} must be {op_code.params}, is {self._correct_param_list_len(in_op.params)}."
+msgstr "El número de parámetros para {op_code.name} debe ser de {op_code.params}, pero tiene {self._correct_param_list_len(in_op.params)}."
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:399
+#, python-brace-format
+msgid "Unknown language for string: {lang}"
+msgstr "Idioma desconocido para la cadena: {lang}"
+
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:405
+#, python-brace-format
+msgid "Invalid parameter supplied for an operation: {param}"
+msgstr "Parámetro inválido para una operación: {param}"
+
+#: skytemple-files/skytemple_files/script/ssb/writer.py:186
+msgid "Could not compile script: All languages must have the same amount of strings."
+msgstr "No se ha podido compilar el script: Todos los idiomas deben tener la misma cantidad de cadenas."
+
+#: skytemple-rust/src/dse/st_smdl/eoc.rs:37
+#: skytemple-rust/src/dse/st_smdl/trk.rs:116
+msgid "SMDL file too short (EOC EOF)."
+msgstr "Archivo SMDL demasiado corto (EOC EOF)."
+
+#: skytemple-rust/src/dse/st_smdl/eoc.rs:40
+msgid "Invalid SMDL/EOC header."
+msgstr "SMDL inválido/Encabezado de EOC."
+
+#: skytemple-rust/src/dse/st_smdl/smdl.rs:202
+msgid "SMDL file too short (Header EOF)."
+msgstr "Archivo SMDL demasiado corto (Encabezado EOF)."
+
+#: skytemple-rust/src/dse/st_smdl/smdl.rs:207
+msgid "Invalid SMDL/Header header."
+msgstr "SMDL inválido/Encabezado del encabezado."
+
+#: skytemple-rust/src/dse/st_smdl/song.rs:94
+msgid "SMDL file too short (Song EOF)."
+msgstr "Archivo SMDL demasiado corto (Canción EOF)."
+
+#: skytemple-rust/src/dse/st_smdl/song.rs:97
+msgid "Invalid SMDL/Song header."
+msgstr "SMDL inválido/Encabezado de canción."
+
+#: skytemple-rust/src/dse/st_smdl/trk.rs:68
+msgid "SMDL file too short (Track EOF)."
+msgstr "Archivo SMDL demasiado corto (Pista EOF)."
+
+#: skytemple-rust/src/dse/st_smdl/trk.rs:71
+msgid "Invalid SMDL/Track header."
+msgstr "SMDL inválido/Encabezado de pista."
+
+#: skytemple-rust/src/dse/st_swdl/kgrp.rs:43
+msgid "SWDL file too short (Keygroup EOF)."
+msgstr "Archivo SWDL demasiado corto (Grupo de claves EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/kgrp.rs:80
+#: skytemple-rust/src/dse/st_swdl/kgrp.rs:89
+msgid "SWDL file too short (Kgrp EOF)."
+msgstr "Archivo SWDL demasiado corto (Grupo de claves EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/kgrp.rs:83
+msgid "Invalid SWDL/Kgrp header."
+msgstr "SWDL inválido/Encabezado del grupo de claves."
+
+#: skytemple-rust/src/dse/st_swdl/pcmd.rs:37
+#: skytemple-rust/src/dse/st_swdl/pcmd.rs:46
+msgid "SWDL file too short (Pcmd EOF)."
+msgstr "Archivo SWDL demasiado corto (Pcmd EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/pcmd.rs:40
+msgid "Invalid SWDL/Pcmd header."
+msgstr "SWDL inválido/Encabezado de Pcmd."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:47
+msgid "SWDL file too short (LFO EOF)."
+msgstr "Archivo SWDL demasiado corto (LFO EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:124
+msgid "SWDL file too short (Split EOF)."
+msgstr "Archivo SWDL demasiado corto (Split EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:135
+msgid "SWDL file: Invalid lowkey duplicate (Split EOF)."
+msgstr "Archivo SWDL: duplicado lowkey no válido (Split EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:139
+msgid "SWDL file: Invalid hikey duplicate (Split EOF)."
+msgstr "Archivo SWDL: duplicado hikey no válido (Split EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:145
+msgid "SWDL file: Invalid lolevel duplicate (Split EOF)."
+msgstr "Archivo SWDL: duplicado lolevel no válido (Split EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:149
+msgid "SWDL file: Invalid hilevel duplicate (Split EOF)."
+msgstr "Archivo SWDL: duplicado hilevel no válido (Split EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:287
+msgid "SWDL file too short (PRG EOF)."
+msgstr "Archivo SWDL demasiado corto (PRG EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:362
+msgid "SWDL file too short (Prgi EOF)."
+msgstr "Archivo SWDL demasiado corto (Prgi EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:365
+msgid "Invalid PRGI/Prgi header."
+msgstr "PRGI inválido/Encabezado de Prgi."
+
+#: skytemple-rust/src/dse/st_swdl/prgi.rs:375
+msgid "SWDL Prgi length invalid; tried to read past EOF."
+msgstr "La longitud de SWDL Prgi no es válida; se ha intentado leer el EOF previo."
+
+#: skytemple-rust/src/dse/st_swdl/swdl.rs:52
+msgid "SWDL file too short (SwdlPcmdLen EOF)."
+msgstr "Archivo SWDL demasiado corto (SwdlPcmdLen EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/swdl.rs:139
+msgid "SWDL file too short (Header EOF)."
+msgstr "Archivo SWDL demasiado corto (Encabezado EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/swdl.rs:144
+msgid "Invalid SWDL/Header header."
+msgstr "SWDL inválido/Encabezado del encabezado."
+
+#: skytemple-rust/src/dse/st_swdl/swdl.rs:250
+msgid "Swdl read error (inconsistent Wavi length)"
+msgstr "Error de lectura de SWDL (longitud de Wavi inconsistente)"
+
+#: skytemple-rust/src/dse/st_swdl/swdl.rs:284
+msgid "Swdl read: Invalid sample data"
+msgstr "Lectura de SWDL: datos de muestra inválidos"
+
+#: skytemple-rust/src/dse/st_swdl/wavi.rs:105
+msgid "SWDL file too short (Sample Table EOF)."
+msgstr "Archivo SWDL demasiado corto (Tabla de muestras EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/wavi.rs:262
+#: skytemple-rust/src/dse/st_swdl/wavi.rs:281
+msgid "SWDL file too short (Wavi EOF)."
+msgstr "Archivo SWDL demasiado corto (Wavi EOF)."
+
+#: skytemple-rust/src/dse/st_swdl/wavi.rs:265
+msgid "Invalid SWDL/Wavi header."
+msgstr "SWDL inválido/Encabezado de Wavi."
+
+#: skytemple-rust/src/dse/st_swdl/wavi.rs:275
+msgid "SWDL Wavi length invalid; tried to read past EOF."
+msgstr "La longitud de SWDL Wavi no es válida; se ha intentado leer el EOF previo."
+
+#: skytemple-rust/src/image/tiled.rs:231
+msgid "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
+"Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
+msgstr "La imagen seleccionada para importar es demasiado compleja. Tiene demasiados tiles únicos ({} tiles, pero el máximo permitido es 1024).\n"
+"Intenta reducir los tiles únicos. Estos tiles son secciones 8x8 de las imágenes que no se pueden encontrar en ninguna otra parte de la imagen (ni siquiera invertidas o con una subpaleta diferente)."
+
+#: skytemple-rust/src/romfs.rs:100
+msgid "ROM Header checksum does not match contents."
+msgstr "La suma de comprobación de encabezado de la ROM no coincide con el contenido."
+
+#: skytemple-rust/src/romfs.rs:109
+msgid "Error reading the filesystem from ROM: {}"
+msgstr "Error al leer el sistema de archivos de la ROM: {}"
+
+#: skytemple-rust/src/st_bma.rs:468
+msgid "Can not import map background: Width of both images must match the current map width: {}px"
+msgstr "No se puede importar el fondo del mapa: la anchura de ambas imágenes debe coincidir con la anchura actual del mapa: {}px"
+
+#: skytemple-rust/src/st_bma.rs:480
+msgid "Can not import map background: Height of both images must match the current map width: {}px"
+msgstr "No se puede importar el fondo del mapa: la altura de ambas imágenes debe coincidir con la anchura actual del mapa: {}px"
+
+#: skytemple-rust/src/st_bpc.rs:539
+msgid "new tilemapping for this chunk must contain {} tiles."
+msgstr "el nuevo mapeo de tiles para este chunk debe contener {} tiles."
+
+#: skytemple-rust/src/st_dbg.rs:129
+msgid "Can not import map background: Width of image must match the expected width: {}px"
+msgstr "No se puede importar el fondo del mapa: la anchura de la imagen debe coincidir con el ancho esperado: {}px"
+
+#: skytemple-rust/src/st_dbg.rs:135
+msgid "Can not import map background: Height of image must match the expected height: {}px"
+msgstr "No se puede importar el fondo del mapa: la altura de la imagen debe coincidir con la altura esperada: {}px"
+
+#: skytemple-rust/src/st_dpc.rs:150
+msgid "The image to import can only use the first 12 palettes. Tried to use palette {}"
+msgstr "La imagen a importar solo puede usar las 12 primeras paletas. Se ha intentado usar la paleta {}"
+
+#: skytemple-rust/src/st_dpla.rs:100
+msgid "Palette is invalid."
+msgstr "La paleta no es válida."
+
+#: skytemple-rust/src/st_dpla.rs:106 skytemple-rust/src/st_dpla.rs:166
+#: skytemple-rust/src/st_dpla.rs:203 skytemple-rust/src/st_dpla.rs:211
+msgid "Palette index out of range."
+msgstr "Índice de paleta fuera de rango."
+
+#: skytemple-rust/src/st_dpla.rs:258
+msgid "Frame durations out of range while trying to build color."
+msgstr "La duración de los fotogramas está fuera del rango al intentar crear color."
+
+#: skytemple-rust/src/st_kao.rs:96
+msgid "This portrait does not compress well, the result size is greater than 800 bytes ({} bytes total).\n"
+" If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
+msgstr "Este retrato no se comprime bien, el tamaño resultante es superior a 800 bytes ({} en total).\n"
+"Si aún no lo has hecho, prueba a aplicar el parche 'ProvideATUPXSupport' para instalar un algoritmo de compresión optimizado que podría ser capaz de comprimir mejor la imagen."
+

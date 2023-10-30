@@ -69,6 +69,7 @@ jobs:
                   -name "*.glade" -or \
                   -name "*.ui" \
               \) \
+              -not -path "./skytemple_randomizer/blueprint-compiler/*" \
           | xargs xgettext \
               -F --keyword='_' --no-wrap --foreign-user \
               --package-name=org.skytemple.Randomizer --msgid-bugs-address=https://translate.skytemple.org \

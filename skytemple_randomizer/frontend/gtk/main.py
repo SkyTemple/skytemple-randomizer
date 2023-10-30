@@ -16,6 +16,10 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 
+from skytemple_randomizer.frontend.gtk.init_locale import init_locale
+
+init_locale()
+
 import gi
 
 gi.require_version('Gtk', '4.0')
@@ -27,7 +31,7 @@ import os
 import sys
 
 from skytemple_icons import icons
-from skytemple_randomizer.config import data_dir
+from skytemple_randomizer.data_dir import data_dir
 
 from gi.repository import Adw, Gtk, GLib, Gdk, GtkSource  # noqa
 
@@ -55,7 +59,7 @@ class MainApp(Adw.Application):
         window.present()
 
 
-def main():
+def main(argv):
     if sys.platform.startswith('win'):
         # Solve issue #12
         try:
@@ -73,11 +77,11 @@ def main():
 
     # Load main window + controller
     app = MainApp()
-    sys.exit(app.run(sys.argv))
+    sys.exit(app.run(argv))
 
 
 if __name__ == '__main__':
-    # TODO: At the moment doesn't support any cli arguments.
+    GtkSource.init()
     logging.basicConfig()
     logging.getLogger().setLevel(logging.INFO)
-    main()
+    main(sys.argv)

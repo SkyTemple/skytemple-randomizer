@@ -23,7 +23,8 @@ from jsonschema import validate
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
-from skytemple_randomizer.config import RandomizerConfig, QuizQuestion, data_dir, QUIZ_QUESTIONS_JSON_SCHEMA
+from skytemple_randomizer.config import RandomizerConfig, QuizQuestion, QUIZ_QUESTIONS_JSON_SCHEMA
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy

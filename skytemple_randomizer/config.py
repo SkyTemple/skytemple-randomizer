@@ -25,7 +25,7 @@ import sys
 import time
 from enum import Enum
 from numbers import Number
-from typing import TypedDict, Optional, List, Dict, Any
+from typing import TypedDict, Optional, List, Dict
 
 from jsonschema import validate
 from range_typed_integers import u16, u8, u32
@@ -36,6 +36,7 @@ from skytemple_files.patch.handler.fix_memory_softlock import FixMemorySoftlockP
 from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 
 if sys.version_info >= (3, 10):
@@ -623,9 +624,3 @@ def version():
             with open(version_file) as f:
                 return f.read().strip()
         return 'unknown'
-
-
-def data_dir():
-    if getattr(sys, 'frozen', False):
-        return os.path.join(os.path.dirname(sys.executable), 'data')
-    return os.path.join(os.path.dirname(__file__), 'data')

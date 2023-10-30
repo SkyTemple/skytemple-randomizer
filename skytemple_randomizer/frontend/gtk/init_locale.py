@@ -93,6 +93,7 @@ def init_locale():
         libintl.libintl_setlocale(0, settings.get_locale())  # type: ignore
     except:
         pass
+    libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)
     gettext.textdomain("org.skytemple.Randomizer")
     try:

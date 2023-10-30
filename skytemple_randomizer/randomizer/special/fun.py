@@ -28,7 +28,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.graphics.kao.protocol import KaoProtocol
-from skytemple_randomizer.config import data_dir
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
 from skytemple_randomizer.randomizer.util.util import clone_missing_portraits, get_main_string_file, \

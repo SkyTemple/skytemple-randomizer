@@ -126,7 +126,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
         return width, height, actions
 
     def _get_random_room_txt(self):
-        from skytemple_randomizer.config import data_dir
+        from skytemple_randomizer.data_dir import data_dir
         i = randrange(0, 1000)
         with open_utf8(os.path.join(data_dir(), 'fixed_floor_layouts', f'{i}.txt')) as f:
             return f.read().splitlines()

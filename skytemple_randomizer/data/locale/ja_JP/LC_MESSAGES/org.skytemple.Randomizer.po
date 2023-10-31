@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-10-30 18:23+0000\n"
-"PO-Revision-Date: 2023-10-30 19:17\n"
+"PO-Revision-Date: 2023-10-31 04:46\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -23,67 +23,67 @@ msgstr "英語"
 
 #: /dev/fd/63:2 /dev/fd/63:125
 msgid "Explorer Ranks Names"
-msgstr ""
+msgstr "たんけんたいランクの名称"
 
 #: /dev/fd/63:3 /dev/fd/63:126
 msgid "Default Team Names"
-msgstr ""
+msgstr "デフォルトのチーム名"
 
 #: /dev/fd/63:4 /dev/fd/63:127
 msgid "Job Debriefing Related Strings"
-msgstr ""
+msgstr "依頼関連の文字列"
 
 #: /dev/fd/63:5 /dev/fd/63:128
 msgid "Member Joined Menu"
-msgstr ""
+msgstr "編成所メニュー"
 
 #: /dev/fd/63:6 /dev/fd/63:129
 msgid "Some Item Menu Strings"
-msgstr ""
+msgstr "一部アイテムメニューの文字列"
 
 #: /dev/fd/63:7 /dev/fd/63:130
 msgid "Gummi Eating Strings"
-msgstr ""
+msgstr "グミを食べた時の文字列"
 
 #: /dev/fd/63:8 /dev/fd/63:131
 msgid "Items and Pokemon Menu Strings"
-msgstr ""
+msgstr "どうぐとポケモンのメニュー文字列"
 
 #: /dev/fd/63:9 /dev/fd/63:132
 msgid "Kangaskhan Storage Strings"
-msgstr ""
+msgstr "「ガルーラのそうこ」の文字列"
 
 #: /dev/fd/63:10 /dev/fd/63:133
 msgid "Evolution Strings"
-msgstr ""
+msgstr "進化関連の文字列"
 
 #: /dev/fd/63:11 /dev/fd/63:134
 msgid "Music tracks names"
-msgstr ""
+msgstr "BGM名"
 
 #: /dev/fd/63:12 /dev/fd/63:135
 msgid "Personality Quiz Questions"
-msgstr ""
+msgstr "性格診断の質問"
 
 #: /dev/fd/63:13 /dev/fd/63:136
 msgid "Personality Quiz Answers"
-msgstr ""
+msgstr "性格診断の答え"
 
 #: /dev/fd/63:14 /dev/fd/63:137
 msgid "Personality Quiz result strings"
-msgstr ""
+msgstr "性格診断結果の文字列"
 
 #: /dev/fd/63:15 /dev/fd/63:138
 msgid "Personality string natures"
-msgstr ""
+msgstr "性格診断時のパラメータ文字列 (デバッグ用)"
 
 #: /dev/fd/63:16 /dev/fd/63:139
 msgid "Weather Change Feedback"
-msgstr ""
+msgstr "てんき変化時のメッセージ"
 
 #: /dev/fd/63:17 /dev/fd/63:140
 msgid "Weather Names"
-msgstr ""
+msgstr "てんき名"
 
 #: /dev/fd/63:18 /dev/fd/63:141
 msgid "Floor-Wide Status Names+Desc"
@@ -91,11 +91,11 @@ msgstr ""
 
 #: /dev/fd/63:19 /dev/fd/63:142
 msgid "IQ Skills Menu"
-msgstr ""
+msgstr "かしこさメニュー"
 
 #: /dev/fd/63:20 /dev/fd/63:143
 msgid "Test Dungeon"
-msgstr ""
+msgstr "テストダンジョン"
 
 #: /dev/fd/63:21 /dev/fd/63:144
 msgid "Mission Objectives"
@@ -191,151 +191,151 @@ msgstr ""
 
 #: /dev/fd/63:44 /dev/fd/63:167
 msgid "Pokemon LEVEL_UP Dialogue"
-msgstr ""
+msgstr "レベルアップした時の台詞"
 
 #: /dev/fd/63:45 /dev/fd/63:168
 msgid "Pokemon WAIT Dialogue"
-msgstr ""
+msgstr "待機時の台詞"
 
 #: /dev/fd/63:46 /dev/fd/63:169
 msgid "Pokemon HEALTHY Dialogue"
-msgstr ""
+msgstr "残りHP80%の時の台詞"
 
 #: /dev/fd/63:47 /dev/fd/63:170
 msgid "Pokemon HALF_LIFE Dialogue"
-msgstr ""
+msgstr "残りHP50%の時の台詞"
 
 #: /dev/fd/63:48 /dev/fd/63:171
 msgid "Pokemon PINCH Dialogue"
-msgstr ""
+msgstr "残りHP25%の時の台詞"
 
 #: /dev/fd/63:49 /dev/fd/63:172
 msgid "Pokemon GROUND_WAIT Dialogue"
-msgstr ""
+msgstr "待機時の台詞 (グラウンド)"
 
 #: /dev/fd/63:50 /dev/fd/63:173
 msgid "Item Names"
-msgstr ""
+msgstr "どうぐ名"
 
 #: /dev/fd/63:51 /dev/fd/63:174
 msgid "Move Names"
-msgstr ""
+msgstr "わざ名"
 
 #: /dev/fd/63:52 /dev/fd/63:175
 msgid "Pokemon Names"
-msgstr ""
+msgstr "ポケモン名"
 
 #: /dev/fd/63:53 /dev/fd/63:176
 msgid "Pokemon Categories"
-msgstr ""
+msgstr "ポケモンの分類"
 
 #: /dev/fd/63:54 /dev/fd/63:177
 msgid "Tactics Names"
-msgstr ""
+msgstr "さくせん名"
 
 #: /dev/fd/63:55 /dev/fd/63:178
 msgid "Tactics Descriptions"
-msgstr ""
+msgstr "さくせんの説明"
 
 #: /dev/fd/63:56 /dev/fd/63:179
 msgid "IQ Skills Names"
-msgstr ""
+msgstr "かしこさ名"
 
 #: /dev/fd/63:57 /dev/fd/63:180
 msgid "IQ Skills Descriptions"
-msgstr ""
+msgstr "かしこさの説明"
 
 #: /dev/fd/63:58 /dev/fd/63:181
 msgid "Move Targets Strings"
-msgstr ""
+msgstr "わざの対象の文字列"
 
 #: /dev/fd/63:59 /dev/fd/63:182
 msgid "Accuracy/Power Stars Ratings"
-msgstr ""
+msgstr "めいちゅう/いりょくの星のレート"
 
 #: /dev/fd/63:60 /dev/fd/63:183
 msgid "Move Descriptions"
-msgstr ""
+msgstr "わざの説明"
 
 #: /dev/fd/63:61 /dev/fd/63:184
 msgid "Item Long Descriptions"
-msgstr ""
+msgstr "どうぐの長い説明"
 
 #: /dev/fd/63:62 /dev/fd/63:185
 msgid "Item Short Descriptions"
-msgstr ""
+msgstr "どうぐの短い説明"
 
 #: /dev/fd/63:63 /dev/fd/63:186
 msgid "Trap Names"
-msgstr ""
+msgstr "わな名"
 
 #: /dev/fd/63:64 /dev/fd/63:187
 msgid "Trap Descriptions"
-msgstr ""
+msgstr "わなの説明"
 
 #: /dev/fd/63:65 /dev/fd/63:188
 msgid "Statuses Names and Descriptions"
-msgstr ""
+msgstr "状態名と説明"
 
 #: /dev/fd/63:66 /dev/fd/63:189
 msgid "Type Names"
-msgstr ""
+msgstr "タイプ名"
 
 #: /dev/fd/63:67 /dev/fd/63:190
 msgid "Ability Names"
-msgstr ""
+msgstr "とくせい名"
 
 #: /dev/fd/63:68 /dev/fd/63:191
 msgid "Ability Descriptions"
-msgstr ""
+msgstr "とくせいの説明"
 
 #: /dev/fd/63:69 /dev/fd/63:192
 msgid "Debug Menu Strings"
-msgstr ""
+msgstr "デバッグメニュー文字列"
 
 #: /dev/fd/63:70 /dev/fd/63:193
 msgid "Portrait Names"
-msgstr ""
+msgstr "ポートレート名"
 
 #: /dev/fd/63:71 /dev/fd/63:194
 msgid "Ground Map Names"
-msgstr ""
+msgstr "グラウンドマップ名"
 
 #: /dev/fd/63:72 /dev/fd/63:195
 msgid "Dungeon Names (Main)"
-msgstr ""
+msgstr "ダンジョン名 (メイン)"
 
 #: /dev/fd/63:73 /dev/fd/63:196
 msgid "Dungeon Names (Selection)"
-msgstr ""
+msgstr "ダンジョン名 (選択)"
 
 #: /dev/fd/63:74 /dev/fd/63:197
 msgid "Dungeon Names (SetDungeonBanner)"
-msgstr ""
+msgstr "ダンジョン名 (ダンジョン内)"
 
 #: /dev/fd/63:75 /dev/fd/63:198
 msgid "Dungeon Names (Banner)"
-msgstr ""
+msgstr "ダンジョン名 (バナー)"
 
 #: /dev/fd/63:76 /dev/fd/63:199
 msgid "Spinda's Juice Bar Strings"
-msgstr ""
+msgstr "「パッチールのドリンクスタンド」の文字列"
 
 #: /dev/fd/63:77 /dev/fd/63:200
 msgid "Recycle Shop Strings"
-msgstr ""
+msgstr "「たんけんリサイクル」の文字列"
 
 #: /dev/fd/63:78 /dev/fd/63:201
 msgid "Staff Roll"
-msgstr ""
+msgstr "スタッフロール"
 
 #: /dev/fd/63:79 /dev/fd/63:202
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "新規ポケモン名"
 
 #: /dev/fd/63:80 /dev/fd/63:203
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "新規ポケモン分類名"
 
 #: /dev/fd/63:81 /dev/fd/63:204
 msgid "Thrown - Pierce"
@@ -363,11 +363,11 @@ msgstr "わざマシン"
 
 #: /dev/fd/63:87 /dev/fd/63:210
 msgid "Poké (Money)"
-msgstr ""
+msgstr "ポケ (お金)"
 
 #: /dev/fd/63:88 /dev/fd/63:211
 msgid "Unknown 7"
-msgstr ""
+msgstr "不明 7"
 
 #: /dev/fd/63:89 /dev/fd/63:212
 msgid "Other"
@@ -379,23 +379,23 @@ msgstr "ふしぎだま"
 
 #: /dev/fd/63:91 /dev/fd/63:214
 msgid "Link Box"
-msgstr ""
+msgstr "れんけつばこ"
 
 #: /dev/fd/63:92 /dev/fd/63:215
 msgid "Used TM"
-msgstr ""
+msgstr "しようごマシン"
 
 #: /dev/fd/63:93 /dev/fd/63:216
 msgid "Treasure Box 1"
-msgstr ""
+msgstr "宝箱1"
 
 #: /dev/fd/63:94 /dev/fd/63:217
 msgid "Treasure Box 2"
-msgstr ""
+msgstr "宝箱2"
 
 #: /dev/fd/63:95 /dev/fd/63:218
 msgid "Treasure Box 3"
-msgstr ""
+msgstr "宝箱3"
 
 #: /dev/fd/63:96 /dev/fd/63:219
 msgid "Exclusive Items"
@@ -403,19 +403,19 @@ msgstr "せんようどうぐ"
 
 #: /dev/fd/63:97 /dev/fd/63:220
 msgid "Red component"
-msgstr ""
+msgstr "R値"
 
 #: /dev/fd/63:98 /dev/fd/63:221
 msgid "Green component"
-msgstr ""
+msgstr "G値"
 
 #: /dev/fd/63:99 /dev/fd/63:222
 msgid "Blue component"
-msgstr ""
+msgstr "B値"
 
 #: /dev/fd/63:100 /dev/fd/63:223
 msgid "Alpha component"
-msgstr ""
+msgstr "アルファ値"
 
 #: /dev/fd/63:101 /dev/fd/63:224
 msgid "Conversion 2 Type when hit by a Fairy move"

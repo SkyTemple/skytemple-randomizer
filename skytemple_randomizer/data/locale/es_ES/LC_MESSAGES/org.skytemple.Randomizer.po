@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-10-30 18:23+0000\n"
-"PO-Revision-Date: 2023-11-03 00:14\n"
+"PO-Revision-Date: 2023-11-07 14:30\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -2552,7 +2552,8 @@ msgstr "Otros"
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "Le dice al juego que cargue el actor y las listas de niveles de archivos separados.\n"
+"Extrae ambos archivos al aplicar el parche."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:109
 msgid "This patch can not be re-applied."

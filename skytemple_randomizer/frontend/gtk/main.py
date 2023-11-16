@@ -22,8 +22,8 @@ init_locale()
 
 import gi
 
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
 
 import logging
 import os
@@ -41,7 +41,7 @@ from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.widgets import MainWindow
 
 
-if getattr(sys, 'frozen', False):
+if getattr(sys, "frozen", False):
     # Running via PyInstaller. Fix SSL configuration
     os.environ["SSL_CERT_FILE"] = os.path.join(
         os.path.dirname(sys.executable), "certifi", "cacert.pem"
@@ -62,10 +62,11 @@ class MainApp(Adw.Application):
 
 
 def main(argv):
-    if sys.platform.startswith('win'):
+    if sys.platform.startswith("win"):
         # Solve issue #12
         try:
             from skytemple_files.common.platform_utils.win import win_set_error_mode
+
             win_set_error_mode()
         except BaseException:
             # This really shouldn't fail, but it's not important enough to crash over
@@ -82,7 +83,7 @@ def main(argv):
     sys.exit(app.run(argv))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.basicConfig()
     logging.getLogger().setLevel(logging.INFO)
     main(sys.argv)

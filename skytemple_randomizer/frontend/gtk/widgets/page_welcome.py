@@ -22,7 +22,11 @@ import webbrowser
 from typing import Optional, cast
 
 import packaging.version
-from skytemple_files.common.version_util import check_newest_release, ReleaseType, get_event_banner
+from skytemple_files.common.version_util import (
+    check_newest_release,
+    ReleaseType,
+    get_event_banner,
+)
 
 from skytemple_randomizer.config import version
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
@@ -51,7 +55,9 @@ class WelcomePage(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_wiki_clicked(self, *args):
-        webbrowser.open_new_tab("https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer")
+        webbrowser.open_new_tab(
+            "https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer"
+        )
 
     @Gtk.Template.Callback()
     def on_button_discord_clicked(self, *args):
@@ -101,7 +107,7 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
             artists=[
                 "Charburst (Logo and Illustrations) https://twitter.com/Charburst_",
                 "Aviivix (UI Icons) https://twitter.com/aviivix",
-                "Edael (Duskako Sprites) https://twitter.com/Exodus_Drake"
+                "Edael (Duskako Sprites) https://twitter.com/Exodus_Drake",
             ],
             comments="Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky (EU/US).",
             developers=CREDITS.splitlines(),
@@ -125,7 +131,9 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
                 return
             new_version = check_newest_release(ReleaseType.SKYTEMPLE_RANDOMIZER)
             if packaging.version.parse(ver) < packaging.version.parse(new_version):
-                self.update_info.set_title(self.update_info.get_title().replace("{version}", new_version))
+                self.update_info.set_title(
+                    self.update_info.get_title().replace("{version}", new_version)
+                )
                 return
         except Exception:
             pass
@@ -135,7 +143,7 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
     def _check_for_banner(self):
         try:
             # uncomment the following line to test banner.
-            #import skytemple_files.common.version_util; skytemple_files.common.version_util.RELEASE_WEB = "https://raw.githubusercontent.com/SkyTemple/release-info/17d9087293f9c11a2353dd60e878bd78874496fc/"
+            # import skytemple_files.common.version_util; skytemple_files.common.version_util.RELEASE_WEB = "https://raw.githubusercontent.com/SkyTemple/release-info/17d9087293f9c11a2353dd60e878bd78874496fc/"
             img_banner, url = get_event_banner()
             if img_banner is not None:
                 input_stream = Gio.MemoryInputStream.new_from_data(img_banner, None)
@@ -155,13 +163,14 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
 
                 def cursor_change_leave(*args):
                     self.banner_info.set_cursor_from_name("default")
+
                 click_gesture = Gtk.GestureClick()
                 click_gesture.set_button(Gdk.BUTTON_PRIMARY)
-                click_gesture.connect('pressed', open_web)
+                click_gesture.connect("pressed", open_web)
                 self.banner_info.add_controller(click_gesture)
                 motion_controller = Gtk.EventControllerMotion()
-                motion_controller.connect('enter', cursor_change_enter)
-                motion_controller.connect('leave', cursor_change_leave)
+                motion_controller.connect("enter", cursor_change_enter)
+                motion_controller.connect("leave", cursor_change_leave)
                 self.banner_info.add_controller(motion_controller)
                 self.banner_info.append(image)
                 self.info_stack.set_visible_child_name("info_stack_banner")

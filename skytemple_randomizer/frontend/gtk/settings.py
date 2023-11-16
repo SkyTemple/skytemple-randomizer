@@ -22,13 +22,13 @@ from typing import Optional, Tuple
 from skytemple_files.common.project_file_manager import ProjectFileManager
 from skytemple_files.common.util import open_utf8
 
-CONFIG_FILE_NAME = 'randomizer.ini'
+CONFIG_FILE_NAME = "randomizer.ini"
 
-SECT_WINDOW = 'Window'
+SECT_WINDOW = "Window"
 
-KEY_WINDOW_SIZE_X = 'width'
-KEY_WINDOW_SIZE_Y = 'height'
-KEY_WINDOW_IS_MAX = 'is_max'
+KEY_WINDOW_SIZE_X = "width"
+KEY_WINDOW_SIZE_Y = "height"
+KEY_WINDOW_IS_MAX = "is_max"
 
 logger = logging.getLogger(__name__)
 
@@ -41,16 +41,22 @@ class SkyTempleRandomizerSettingsStoreGtk:
         self.loaded_config = configparser.ConfigParser()
         if os.path.exists(self.config_file):
             try:
-                with open_utf8(self.config_file, 'r') as f:
+                with open_utf8(self.config_file, "r") as f:
                     self.loaded_config.read_file(f)
             except BaseException as err:
-                logger.error("Error reading config, falling back to default.", exc_info=err)
+                logger.error(
+                    "Error reading config, falling back to default.", exc_info=err
+                )
 
     def get_window_size(self) -> Optional[Tuple[int, int]]:
         if SECT_WINDOW in self.loaded_config:
-            if KEY_WINDOW_SIZE_X in self.loaded_config[SECT_WINDOW] and KEY_WINDOW_SIZE_Y in self.loaded_config[SECT_WINDOW]:
+            if (
+                KEY_WINDOW_SIZE_X in self.loaded_config[SECT_WINDOW]
+                and KEY_WINDOW_SIZE_Y in self.loaded_config[SECT_WINDOW]
+            ):
                 return int(self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_X]), int(
-                    self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_Y])
+                    self.loaded_config[SECT_WINDOW][KEY_WINDOW_SIZE_Y]
+                )
         return None
 
     def set_window_width(self, dim: int):
@@ -67,7 +73,10 @@ class SkyTempleRandomizerSettingsStoreGtk:
 
     def get_window_maximized(self) -> bool:
         if SECT_WINDOW in self.loaded_config:
-            if KEY_WINDOW_IS_MAX in self.loaded_config[SECT_WINDOW] and self.loaded_config[SECT_WINDOW][KEY_WINDOW_IS_MAX] == 'True':
+            if (
+                KEY_WINDOW_IS_MAX in self.loaded_config[SECT_WINDOW]
+                and self.loaded_config[SECT_WINDOW][KEY_WINDOW_IS_MAX] == "True"
+            ):
                 return True
         return False
 
@@ -78,5 +87,5 @@ class SkyTempleRandomizerSettingsStoreGtk:
         self._save()
 
     def _save(self):
-        with open_utf8(self.config_file, 'w') as f:
+        with open_utf8(self.config_file, "w") as f:
             self.loaded_config.write(f)

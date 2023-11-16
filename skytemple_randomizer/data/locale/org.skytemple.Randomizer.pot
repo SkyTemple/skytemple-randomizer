@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-16 01:51+0000\n"
+"POT-Creation-Date: 2023-11-16 01:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1144,7 +1144,6 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:454
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:16
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:16
 msgid "Items"
 msgstr ""
 
@@ -3278,15 +3277,26 @@ msgstr ""
 msgid "Failed to load settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:119
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:114
+msgid ""
+"The config file you tried to import is invalid:\n"
+"{}:\n"
+"{}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:123
 msgid "Settings loaded!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:153
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:157
 msgid "Failed to save settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:182
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:165
+msgid "The path of the settings file needs to end in '.json'."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:186
 msgid "Settings saved!"
 msgstr ""
 
@@ -3396,7 +3406,6 @@ msgid "Item Pool"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:94
 msgid "T_weaks"
 msgstr ""
@@ -3438,7 +3447,6 @@ msgid "Allowed Items &amp; Category Weights"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:96
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:61
 msgid "Utilities"
 msgstr ""
 
@@ -3451,22 +3459,18 @@ msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:108
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:73
 msgid "Patches"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:130
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:95
 msgid "Miscellaneous"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:133
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:98
 msgid "Music"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:153
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:118
 msgid "Explorer Rank"
 msgstr ""
 
@@ -3489,22 +3493,6 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:76
 msgid "About"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:19
-msgid "Item Randomization Settings"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:39
-msgid "Allowed Items & Category Weights"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:64
-msgid "Download missing portraits & sprites"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:65
-msgid "Downloaded from <a href=\"spritecollab\">SpriteCollab</a>."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.py:76

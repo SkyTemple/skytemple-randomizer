@@ -16,24 +16,32 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 
+import os.path
 from typing import Callable, Optional
 
 from gi.repository import GLib, Gtk
 
+from skytemple_randomizer.config import RandomizerConfig, ConfigFileLoader
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
-from skytemple_randomizer.frontend.gtk.settings import SkyTempleRandomizerSettingsStoreGtk
+from skytemple_randomizer.frontend.gtk.settings import (
+    SkyTempleRandomizerSettingsStoreGtk,
+)
 
 
 class GtkFrontend(AbstractFrontend):
     __INSTANCE: Optional[GtkFrontend] = None
 
     __settings: Optional[SkyTempleRandomizerSettingsStoreGtk]
-    application: Optional[Gtk.Application]
-    window: Optional[Gtk.ApplicationWindow]
+    __randomization_settings: Optional[RandomizerConfig]
+    __application: Optional[Gtk.Application]
+    __window: Optional[Gtk.ApplicationWindow]
 
     def __init__(self):
         self.__settings = None
-        self.application = None
+        self.__randomization_settings = None
+        self.__window = None
+        self.__application = None
 
     @classmethod
     def instance(cls) -> GtkFrontend:
@@ -46,6 +54,38 @@ class GtkFrontend(AbstractFrontend):
         if self.__settings is None:
             self.__settings = SkyTempleRandomizerSettingsStoreGtk()
         return self.__settings
+
+    @property
+    def randomization_settings(self) -> RandomizerConfig:
+        if self.__randomization_settings is None:
+            self.__randomization_settings = ConfigFileLoader.load(
+                os.path.join(data_dir(), "default.json")
+            )
+        return self.__randomization_settings
+
+    @randomization_settings.setter
+    def randomization_settings(self, value):
+        self.__randomization_settings = value
+
+    @property
+    def window(self):
+        v = self.__window
+        assert v is not None
+        return self.__window
+
+    @window.setter
+    def window(self, value):
+        self.__window = value
+
+    @property
+    def application(self):
+        v = self.__application
+        assert v is not None
+        return self.__application
+
+    @application.setter
+    def application(self, value):
+        self.__application = value
 
     def idle_add(self, fn: Callable):
         GLib.idle_add(fn)

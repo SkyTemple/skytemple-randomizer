@@ -11,44 +11,50 @@ template $StTextPage: Adw.PreferencesPage {
         title: _('Text Pools');
         description: _('Configure what texts can be used for the quiz, location names and chapter titles.');
 
-        Adw.ActionRow row_personality_quiz {
-            title: _('Personality Quiz');
-            icon-name: 'skytemple-e-menu-symbolic';
+        Adw.SwitchRow row_personality_quiz {
+            title: _('Randomize Personality Quiz');
+            icon-name: 'skytemple-e-actor-symbolic';
             activatable: true;
-            activated => $on_signal_for_dialog();
+            notify::active => $on_row_personality_quiz_notify_active();
             [suffix]
             Box {
-                Image {
-                  icon-name: 'go-next-symbolic';
-                  styles ['dim-label']
+                Button button_randomize_personality_quiz {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure the questions for the personality quiz');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
                 }
             }
         }
 
-        Adw.ActionRow row_location_names {
-            title: _('Location Names');
+        Adw.SwitchRow row_location_names {
+            title: _('Randomize Location Names');
             icon-name: 'skytemple-e-dungeon-floor-symbolic';
             activatable: true;
-            activated => $on_signal_for_dialog();
+            notify::active => $on_row_location_names_notify_active();
             [suffix]
             Box {
-                Image {
-                  icon-name: 'go-next-symbolic';
-                  styles ['dim-label']
+                Button button_randomize_location_names {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure the pool of location names used for randomization');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
                 }
             }
         }
 
-        Adw.ActionRow row_chapter_titles {
-            title: _('Chapter Titles');
+        Adw.SwitchRow row_chapter_titles {
+            title: _('Randomize Chapter Titles');
             icon-name: 'skytemple-e-bgp-symbolic';
             activatable: true;
-            activated => $on_signal_for_dialog();
+            notify::active => $on_row_chapter_titles_notify_active();
             [suffix]
             Box {
-                Image {
-                  icon-name: 'go-next-symbolic';
-                  styles ['dim-label']
+                Button button_randomize_chapter_titles {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure the pool of chapter titles used for randomization');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
                 }
             }
         }

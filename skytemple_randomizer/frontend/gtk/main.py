@@ -24,7 +24,6 @@ import gi
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-gi.require_version('GtkSource', '5')
 
 import logging
 import os
@@ -33,7 +32,10 @@ import sys
 from skytemple_icons import icons
 from skytemple_randomizer.data_dir import data_dir
 
-from gi.repository import Adw, Gtk, GLib, Gdk, GtkSource  # noqa
+from gi.repository import Adw, Gtk, GLib, Gdk
+
+Gtk.init()
+Adw.init()
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.widgets import MainWindow
@@ -81,7 +83,6 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    GtkSource.init()
     logging.basicConfig()
     logging.getLogger().setLevel(logging.INFO)
     main(sys.argv)

@@ -21,12 +21,19 @@ import sys
 import webbrowser
 from typing import cast
 
+from skytemple_files.common.i18n_util import _
+
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw, GObject
+from gi.repository import Gtk, Adw
 
-from skytemple_randomizer.frontend.gtk.widgets import RandomizeDialog, SettingsDialog
+from skytemple_randomizer.frontend.gtk.widgets import (
+    RandomizeDialog,
+    RandomizationSettingsWidget,
+    BaseSettingsDialog,
+    SettingsPage,
+)
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "window_main.ui"))
@@ -34,6 +41,10 @@ class MainWindow(Adw.ApplicationWindow):
     __gtype_name__ = "StMainWindow"
 
     header_bar = cast(Gtk.HeaderBar, Gtk.Template.Child())
+    page_monsters = cast(Adw.ViewStackPage, Gtk.Template.Child())
+    page_dungeons = cast(Adw.ViewStackPage, Gtk.Template.Child())
+    page_text = cast(Adw.ViewStackPage, Gtk.Template.Child())
+    page_tweaks = cast(Adw.ViewStackPage, Gtk.Template.Child())
 
     @Gtk.Template.Callback()
     def on_main_window_realize(self, *args):
@@ -50,6 +61,8 @@ class MainWindow(Adw.ApplicationWindow):
         else:
             self.unmaximize()
 
+        self.populate_settings()
+
     @Gtk.Template.Callback()
     def on_button_randomize_clicked(self, *args):
         dialog = RandomizeDialog(
@@ -59,9 +72,17 @@ class MainWindow(Adw.ApplicationWindow):
 
     @Gtk.Template.Callback()
     def on_button_settings_clicked(self, *args):
-        dialog = SettingsDialog(
-            transient_for=self, destroy_with_parent=True, modal=True
+        dialog = BaseSettingsDialog(
+            title=_("Settings"),
+            content=SettingsPage(
+                repopulate_randomization_settings=self.populate_settings
+            ),
         )
+        w, h = self.get_default_size()
+        dialog.set_default_size(round(w * 0.8), 420)
+        dialog.populate_settings(GtkFrontend.instance().randomization_settings)
+        dialog.set_transient_for(self)
+        dialog.set_application(self.get_application())
         dialog.present()
 
     @Gtk.Template.Callback()
@@ -81,3 +102,18 @@ class MainWindow(Adw.ApplicationWindow):
     @Gtk.Template.Callback()
     def on_main_window_notify_maximized(self, *args):
         GtkFrontend.instance().settings.set_window_maximized(self.is_maximized())
+
+    def populate_settings(self):
+        frontend = GtkFrontend.instance()
+        cast(
+            RandomizationSettingsWidget, self.page_dungeons.get_child()
+        ).populate_settings(frontend.randomization_settings)
+        cast(
+            RandomizationSettingsWidget, self.page_monsters.get_child()
+        ).populate_settings(frontend.randomization_settings)
+        cast(RandomizationSettingsWidget, self.page_text.get_child()).populate_settings(
+            frontend.randomization_settings
+        )
+        cast(
+            RandomizationSettingsWidget, self.page_tweaks.get_child()
+        ).populate_settings(frontend.randomization_settings)

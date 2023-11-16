@@ -1,0 +1,17 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StDungeonsIndividualSettingsDialog: Adw.Window {
+    destroy-with-parent: true;
+    modal: true;
+    deletable: true;
+
+    realize => $on_realize();
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {}
+
+        Adw.Bin content {}
+    }
+}

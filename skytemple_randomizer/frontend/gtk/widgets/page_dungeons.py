@@ -19,9 +19,19 @@ from __future__ import annotations
 import os
 from typing import cast
 
+from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
+
+from skytemple_randomizer.frontend.gtk.widgets import (
+    BaseSettingsDialog,
+    DungeonsIndividualSettingsDialog,
+    DungeonsChancesPage,
+    DungeonsSettingsPage,
+    RandomizationSettingsWindow,
+)
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_dungeons.ui"))
@@ -34,8 +44,35 @@ class DungeonsPage(Adw.PreferencesPage):
 
     @Gtk.Template.Callback()
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
-        pass
+        dialog: RandomizationSettingsWindow | None = None
+        if w == self.row_randomization_settings:
+            dialog = BaseSettingsDialog(
+                title=self.row_randomization_settings.get_title(),
+                content=DungeonsSettingsPage(),
+            )
+        if w == self.row_chance_thresholds:
+            dialog = BaseSettingsDialog(
+                title=self.row_chance_thresholds.get_title(),
+                content=DungeonsChancesPage(),
+            )
+        if w == self.row_per_dungeon_settings:
+            dialog = DungeonsIndividualSettingsDialog(
+                title=self.row_per_dungeon_settings.get_title(),
+            )
+
+        if dialog is not None:
+            frontend = GtkFrontend.instance()
+            width, height = frontend.window.get_default_size()
+            dialog.set_default_size(round(width * 0.8), round(height * 0.8))
+            dialog.populate_settings(frontend.randomization_settings)
+            dialog.set_transient_for(frontend.window)
+            dialog.set_application(frontend.application)
+            dialog.present()
+            return False
 
     @Gtk.Template.Callback()
     def on_row_dungeon_mode_starters_notify_selected(self, *args):
+        pass
+
+    def populate_settings(self, config: RandomizerConfig):
         pass

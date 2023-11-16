@@ -56,7 +56,7 @@ jobs:
           image: fedora:40
           options: "-v ${{ github.workspace }}/skytemple_randomizer:/app"
           run: |
-            dnf install -y python3-gobject gobject-introspection gtksourceview5 gtksourceview5-devel gtk4 gtk4-devel libadwaita libadwaita-devel
+            dnf install -y python3-gobject gobject-introspection gtk4 gtk4-devel libadwaita libadwaita-devel
             cd /app
             ./build-blp-to-ui.sh
       - name: Generate Strings

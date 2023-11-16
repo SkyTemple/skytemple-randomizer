@@ -9,19 +9,37 @@ template $StTweaksPage: Adw.PreferencesPage {
 
     Adw.PreferencesGroup {
         title: _('Items');
+        description: _('Tip: Dungeon item randomization settings can be found under "Dungeons".');
 
-        Adw.ActionRow row_item_randomization_settings {
-            title: _('Item Randomization Settings');
+        Adw.ComboRow row_item_randomization_algorithm {
+            title: _('Item Randomization Algorithm');
             icon-name: 'skytemple-e-item-symbolic';
             activatable: true;
-            activated => $on_signal_for_dialog();
+            notify::selected => $on_row_item_randomization_algorithm_notify_selected();
+            model: StringList {
+                strings [_("Balanced"), _("Classic")]
+            };
             [suffix]
             Box {
-                Image {
-                  icon-name: 'go-next-symbolic';
-                  styles ['dim-label']
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: Popover {
+                        child: Label {
+                            max-width-chars: 52;
+                            wrap: true;
+                            label: _("Controls how item lists are randomly filled.\n\nBalanced: Tries to make it equally likely to find any item in the game,\nthe only exception being Poké which is boosted.\n\nClassic: Algorithm that was used in the Randomizer prior to version 1.4.\nIt doesn't attempt to balance out the different item categories,\nmaking items from categories with fewer total items easier to find.");
+                        };
+                    };
+                    styles ['flat']
                 }
             }
+        }
+
+        Adw.SwitchRow row_randomize_global_items {
+            title: _('Randomize Treasure Town shop and dungeon rewards?');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_global_items_notify_active();
         }
 
         Adw.ActionRow row_item_pool {
@@ -43,8 +61,8 @@ template $StTweaksPage: Adw.PreferencesPage {
         title: _('Utilities');
 
         Adw.SwitchRow row_download_sprites {
-            title: _('Download missing portraits &amp; sprites');
-            subtitle: _('Downloaded from <a href="spritecollab">SpriteCollab</a>.');
+            title: _('Download Missing Portraits &amp; Sprites');
+            subtitle: _('Downloaded from SpriteCollab (sprites.pmdcollab.org)');
             icon-name: 'skytemple-e-sprite-symbolic';
             activatable: true;
             notify::active => $on_row_download_sprites_notify_active();

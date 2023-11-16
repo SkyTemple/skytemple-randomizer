@@ -19,12 +19,21 @@ from __future__ import annotations
 import os
 from typing import cast
 
+from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
-from skytemple_randomizer.frontend.gtk.widgets import BaseSettingsDialog
+from skytemple_randomizer.frontend.gtk.widgets import (
+    BaseSettingsDialog,
+    MonstersAbilitiesPage,
+    MovesetsPage,
+    TacticsIqPage,
+    MonstersPoolPage,
+    MonstersPoolType,
+    RandomizationSettingsWindow,
+)
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_monsters.ui"))
@@ -42,12 +51,37 @@ class MonstersPage(Adw.PreferencesPage):
 
     @Gtk.Template.Callback()
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
-        dialog = None
-        if w == self.test_row:
-            dialog = BaseSettingsDialog(title=self.test_row.get_title())
+        dialog: RandomizationSettingsWindow | None = None
+        if w == self.row_randomize_movesets:
+            dialog = BaseSettingsDialog(
+                title=self.row_randomize_movesets.get_title(), content=MovesetsPage()
+            )
+        if w == self.row_allowed_monsters:
+            dialog = BaseSettingsDialog(
+                title=self.row_allowed_monsters.get_title(),
+                content=MonstersPoolPage(type=MonstersPoolType.ALL),
+            )
+        if w == self.button_randomize_starters:
+            dialog = BaseSettingsDialog(
+                title=self.row_randomize_starters.get_title(),
+                content=MonstersPoolPage(type=MonstersPoolType.STARTERS),
+            )
+        if w == self.button_randomize_abilities:
+            dialog = BaseSettingsDialog(
+                title=self.row_randomize_abilities.get_title(),
+                content=MonstersAbilitiesPage(),
+            )
+        if w == self.row_tactics_iq:
+            dialog = BaseSettingsDialog(
+                title=self.row_tactics_iq.get_title(),
+                content=TacticsIqPage(),
+            )
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
+            width, height = frontend.window.get_default_size()
+            dialog.set_default_size(round(width * 0.8), round(height * 0.8))
+            dialog.populate_settings(frontend.randomization_settings)
             dialog.set_transient_for(frontend.window)
             dialog.set_application(frontend.application)
             dialog.present()
@@ -67,4 +101,7 @@ class MonstersPage(Adw.PreferencesPage):
 
     @Gtk.Template.Callback()
     def on_row_randomize_typings_notify_active(self, *args):
+        pass
+
+    def populate_settings(self, config: RandomizerConfig):
         pass

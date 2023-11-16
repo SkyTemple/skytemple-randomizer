@@ -35,7 +35,6 @@ a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
                  "gi": {
                      "module-versions": {
                          "Gtk": "4.0",
-                         "GtkSource": "5",
                      },
                  },
              },

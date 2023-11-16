@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-10-30 18:23+0000\n"
-"PO-Revision-Date: 2023-10-30 19:17\n"
+"POT-Creation-Date: 2023-11-16 01:56+0000\n"
+"PO-Revision-Date: 2023-11-16 02:10\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -1143,7 +1143,6 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:454
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:16
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:16
 msgid "Items"
 msgstr ""
 
@@ -3164,11 +3163,6 @@ msgstr ""
 msgid "Start Randomization"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_settings.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:110
-msgid "Settings"
-msgstr ""
-
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:72
 msgid "_Dungeons"
@@ -3225,12 +3219,12 @@ msgid "Randomize NPCs and Bosses"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:75
-msgid "If enabled all NPCs are randomized and all mentions of them in the script*.\n"
+msgid "If enabled all NPCs are randomized and all mentions of them\n"
+"in the script*.\n"
 "Additionally the following things are also randomized with these new NPCs:\n"
-"  - Boss fights\n"
-"  - Guest Pokémon\n"
-"  - Special Episode Player Characters\n\n"
-"*: Some additional text in the game may also be affected (eg. some item names)."
+"Boss fights, Guest Pokémon, Special Episode Player Characters\n\n"
+"*: Some additional text in the game may also be affected  \n"
+"(eg. some item names)."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:102
@@ -3253,6 +3247,62 @@ msgstr ""
 msgid "Tactics &amp; IQ"
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:100
+msgid "Failed to load settings: Error while opening file ({})."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:114
+msgid "The config file you tried to import is invalid:\n"
+"{}:\n"
+"{}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:123
+msgid "Settings loaded!"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:157
+msgid "Failed to save settings: Error while opening file ({})."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:165
+msgid "The path of the settings file needs to end in '.json'."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:186
+msgid "Settings saved!"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:16
+msgid "Backup &amp; Share Randomization Settings"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:23
+msgid "Load from File"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:32
+msgid "Save to File"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:45
+msgid "Basic Settings"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
+msgid "Randomization Seed"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
+msgid "Use Native File Handlers"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:68
+msgid "If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\n"
+"This can affect the random values rolled during the randomization.\n\n"
+"This should only be disabled if you run into issues."
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:83
 msgid "_Text"
@@ -3267,93 +3317,126 @@ msgid "Configure what texts can be used for the quiz, location names and chapter
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:20
-msgid "Personality Quiz"
+msgid "Randomize Personality Quiz"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:40
-msgid "Location Names"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:29
+msgid "Configure the questions for the personality quiz"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:60
-msgid "Chapter Titles"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:42
+msgid "Randomize Location Names"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:82
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:51
+msgid "Configure the pool of location names used for randomization"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:64
+msgid "Randomize Chapter Titles"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:73
+msgid "Configure the pool of chapter titles used for randomization"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:88
 msgid "Full Text Randomization"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:85
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:91
 msgid "Randomize Main Text"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:100
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:106
 msgid "Randomize the game's main text file. This contains everything except for most of the overworld dialogue. The randomization is done in a way that (in most cases) similar categories of texts are shuffled.\n"
 "Potentially unstable!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:117
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:123
 msgid "Randomize Story Dialogue"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:132
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:138
 msgid "Randomize the game's overworld scene text. ALL overworld text is shuffled.\n"
 "Potentially unstable!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:151
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:157
 msgid "Options"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:154
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:160
 msgid "Enable Instant Text"
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:56
+msgid "Item Pool"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:94
 msgid "T_weaks"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:19
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:19
-msgid "Item Randomization Settings"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:17
+msgid "Tip: Dungeon item randomization settings can be found under \"Dungeons\"."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:39
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:20
+msgid "Item Randomization Algorithm"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:27
+msgid "Balanced"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
+msgid "Classic"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:43
+msgid "Controls how item lists are randomly filled.\n\n"
+"Balanced: Tries to make it equally likely to find any item in the game,\n"
+"the only exception being Poké which is boosted.\n\n"
+"Classic: Algorithm that was used in the Randomizer prior to version 1.4.\n"
+"It doesn't attempt to balance out the different item categories,\n"
+"making items from categories with fewer total items easier to find."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:66
+msgid "Randomize Treasure Town shop and dungeon rewards?"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:74
 msgid "Allowed Items &amp; Category Weights"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:61
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:61
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:96
 msgid "Utilities"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:64
-msgid "Download missing portraits &amp; sprites"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:99
+msgid "Download Missing Portraits &amp; Sprites"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:65
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:65
-msgid "Downloaded from <a href=\"spritecollab\">SpriteCollab</a>."
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:100
+msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:73
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:73
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:108
 msgid "Patches"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:95
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:95
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:130
 msgid "Miscellaneous"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:98
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:98
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:133
 msgid "Music"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:118
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:118
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:153
 msgid "Explorer Rank"
 msgstr ""
 
@@ -3378,12 +3461,9 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:39
-msgid "Allowed Items & Category Weights"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/test.ui:64
-msgid "Download missing portraits & sprites"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.py:76
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:110
+msgid "Settings"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:50

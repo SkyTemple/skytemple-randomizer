@@ -110,7 +110,11 @@ class SettingsPage(Adw.Bin):
             frontend.randomization_settings = ConfigFileLoader.load(path)
         except Exception as e:
             frontend.display_error(
-                f"The config file you tried to import is invalid:\n{e.__class__.__name__}:\n{e}"
+                _(
+                    "The config file you tried to import is invalid:\n{}:\n{}".format(
+                        e.__class__.__name__, e
+                    )
+                )
             )
             return
         self.populate_settings(frontend.randomization_settings)
@@ -158,7 +162,7 @@ class SettingsPage(Adw.Bin):
             return
         if not file.get_path().lower().endswith(".json"):
             frontend.display_error(
-                f"The path of the settings file needs to end in '.json'."
+                _("The path of the settings file needs to end in '.json'.")
             )
             return
         contents = json.dumps(

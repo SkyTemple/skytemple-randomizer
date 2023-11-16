@@ -34,11 +34,11 @@ class RandomizeDialog(Adw.Window):
 
     @Gtk.Template.Callback()
     def on_realize(self, *args):
-        if sys.platform.startswith('darwin'):
+        if sys.platform.startswith("darwin"):
             self.header_bar.set_decoration_layout("close:")
 
         close_esc = Gtk.Shortcut(
             trigger=Gtk.ShortcutTrigger.parse_string("Escape|<Control>w"),
-            action=Gtk.NamedAction(action_name="window.close")
+            action=Gtk.NamedAction(action_name="window.close"),
         )
         self.add_shortcut(close_esc)

@@ -103,6 +103,7 @@ def init_locale():
             else:
                 loc = os.environ["LC_ALL"]
             from skytemple_files.common.i18n_util import reload_locale
+
             if loc is None:
                 return
 

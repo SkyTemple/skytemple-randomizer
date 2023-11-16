@@ -31,10 +31,6 @@ from jsonschema import validate
 from range_typed_integers import u16, u8, u32
 
 from skytemple_files.common.util import open_utf8
-from skytemple_files.patch.handler.disarm_one_room_mh import DisarmOneRoomMHPatchHandler
-from skytemple_files.patch.handler.fix_memory_softlock import FixMemorySoftlockPatchHandler
-from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
-from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
 from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
@@ -69,32 +65,6 @@ class StartersNpcsConfig(TypedDict):
     native_file_handlers: bool
 
 
-class StartersNpcsConfigDoc:
-    starters = \
-        """If enabled, starter and partner choices are randomized between all available Pokémon."""
-    npcs = \
-        """If enabled all NPCs are randomized and all mentions of them in the script*. 
-        Additionally the following things are also randomized with these new NPCs:
-          - Boss fights
-          - Guest Pokémon
-          - Special Episode Player Characters
-        
-        *: Some additional text in the game may also be affected (eg. some item names)."""
-    topmenu_music = \
-        """If enabled, the music that plays on the titlescreen is randomized."""
-    overworld_music = \
-        """If enabled, the music that plays outside of dungeons is randomized (for the most part)."""
-    explorer_rank_unlocks = \
-        """If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."""
-    explorer_rank_rewards = \
-        """If enabled, Explorer Ranks give random items as rewards upon unlocking a new level."""
-    native_file_handlers = \
-        """If enabled, the randomizer uses faster implementations to manipulate the files in the ROM. 
-        This can affect the random values rolled during the randomization. 
-        
-        This should only be disabled if you run into issues."""
-
-
 class DungeonModeConfig(Enum):
     FULLY_RANDOM = 0
     GROUPED_BY_DUNGEON = 1
@@ -127,53 +97,6 @@ class DungeonsConfig(TypedDict):
     items_enabled: list[int]
 
 
-class DungeonsConfigDoc:
-    mode = \
-        """Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\n
-        If you choose "Keep floors in a dungeon similar" aspects like the music and tileset will be the same for all floors of a dungeon."""
-    layouts = \
-        """Whether or not to randomize general aspects of the dungeon's layout. This also includes tileset and music and most general settings."""
-    weather = \
-        """Whether or not to randomize weather."""
-    items = \
-        """Whether or not to randomize items on the floor, in shops, in monster houses and buried."""
-    pokemon = \
-        """Whether or not to randomize Pokémon spawns. 
-        Levels of Pokémon on a floor are randomized to be -/+3 of the original game's weakest/strongest Pokémon on the floor."""
-    traps = \
-        """Whether or not to randomize traps and Wonder Tile spawn chances."""
-    min_floor_change_percent = \
-        """Maximum amount of change in floor count in the lower direction 
-        (eg. if this is 10%, a dungeon can have up to 10% less floors). 
-        A dungeon will never have less than 1 floor.
-        This setting has no effect if layouts are not randomized."""
-    max_floor_change_percent = \
-        """Maximum amount of change in floor count in the upper direction 
-        (eg. if this is 10%, a dungeon can have up to 10% more floors). 
-        A dungeon will never have more than 99 floors.
-        This setting has no effect if layouts are not randomized."""
-    fixed_rooms = \
-        """Whether or not to replace all boss fight rooms with randomly generated room layouts.
-        
-        THIS MAY BE UNBALANCED OR UNSTABLE."""
-    max_sticky_chance = \
-        """Sticky item chance will be randomized between 0% and this value (inclusive)."""
-    max_mh_chance = \
-        """Monster house chance will be randomized between 0% and this value (inclusive)."""
-    max_hs_chance = \
-        """Hidden stairs chance will be randomized between 0% and this value (inclusive)."""
-    max_ks_chance = \
-        """Kecleon shop chance will be randomized between 0% and this value (inclusive)."""
-    random_weather_chance = \
-        """Chance of applying a random weather that isn't "clear" to each floor. If the chance doesn't pass, "clear" weather will be used instead."""
-    settings = \
-        """Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.
-        You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked. 
-        Please note that entering story dungeons prematurely can mess with the game's story progression."""
-    items_enabled = \
-        """Only these items will spawn on dungeon floors."""
-
-
 class ImprovementsConfig(TypedDict):
     download_portraits: bool
     patch_moveshortcuts: bool
@@ -181,27 +104,6 @@ class ImprovementsConfig(TypedDict):
     patch_totalteamcontrol: bool
     patch_disarm_monster_houses: bool
     patch_fixmemorysoftlock: bool
-
-
-class ImprovementsConfigDoc:
-    download_portraits = \
-        """If enabled existing Pokémon portraits for starters and NPCs will be downloaded from https://sprites.pmdcollab.org.
-        Additionally missing sprites for starters are downloaded."""
-    patch_moveshortcuts = \
-        f"""Installs the patch '{MoveShortcutsPatch().name}' by {MoveShortcutsPatch().author}: 
-        {MoveShortcutsPatch().description}"""
-    patch_unuseddungeonchance = \
-        f"""Installs the patch '{UnusedDungeonChancePatch().name}' by {UnusedDungeonChancePatch().author}: 
-        {UnusedDungeonChancePatch().description}"""
-    patch_disarm_monster_houses = \
-        f"""Installs the patch '{DisarmOneRoomMHPatchHandler().name}' by {DisarmOneRoomMHPatchHandler().author}: 
-        {DisarmOneRoomMHPatchHandler().description}"""
-    patch_totalteamcontrol = \
-        f"""Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle.
-        Patch by Cipnit."""
-    patch_fixmemorysoftlock = \
-        f"""Installs the patch '{FixMemorySoftlockPatchHandler().name}' by {FixMemorySoftlockPatchHandler().author}: 
-        {FixMemorySoftlockPatchHandler().description}"""
 
 
 class QuizMode(Enum):
@@ -248,20 +150,6 @@ class QuizConfig(TypedDict):
     questions: list[QuizQuestion]
 
 
-class QuizConfigDoc:
-    mode = \
-        f"""Change the behaviour of the hero starter selection in the personality test, using patches by an anonymous contributor. 
-        You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely. 
-        Please note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again."""
-    randomize = \
-        f"""If enabled, the personality quiz questions will be randomized using the qustions below. 
-        Enter them as a list of YAML objects (see the examples). You need to define at least two answers, 2-4 answers will be randomly picked.
-        If you pick "Select Manually" above, this is irrelevant as no quiz will be used.
-        """
-    include_vanilla_questions = \
-        f"""If enabled, the questions from the base game will also be included in the pool of possible questions."""
-
-
 class MovesetConfig(Enum):
     NO = 0
     FULLY_RANDOM = 1
@@ -282,48 +170,15 @@ class MonsterConfig(TypedDict):
     moves_enabled: list[u16]
 
 
-class MonsterConfigDoc:
-    iq_groups = \
-        """Assigns all Pokémon in the game a random IQ group."""
-    abilities = \
-        """Assigns all Pokémon in the game a random ability from the "Random Abilities Pool"."""
-    typings = \
-        """Assigns all Pokémon one to two random types."""
-    movesets = \
-        """If enabled, assignes all Pokémon random level up movesets. You can control the properties of the starting move."""
-    tm_hm_movesets = \
-        """If enabled, assignes all Pokémon random TM/HM movesets."""
-    tms_hms = \
-        """If enabled, randomizes which moves TMs and HMs contain."""
-    abilities_enabled = \
-        """Only these abilities will be chosen, if abilities are randomized."""
-    monsters_enabled = \
-        """Only these Pokémon will be used for ANY randomization options in this randomizer."""
-    starters_enabled = \
-        """Only these Pokémon will be used for starter randomization options in this randomizer."""
-    moves_enabled = \
-        """Only these moves will be chosen, if moves are randomized."""
-
-
 class LocationsConfig(TypedDict):
     randomize: bool
     first: str
     second: str
 
 
-class LocationsConfigDoc:
-    randomize = \
-        """Replaces the names of the locations in the game with random combinations of words from "First Word" and "Second Word"."""
-
-
 class ChaptersConfig(TypedDict):
     randomize: bool
     text: str
-
-
-class ChaptersConfigDoc:
-    randomize = \
-        """Replaces the names of the chapters with random names from this list."""
 
 
 class TextConfig(TypedDict):
@@ -332,43 +187,12 @@ class TextConfig(TypedDict):
     instant: bool
 
 
-class TextConfigDoc:
-    main = \
-        """Randomize the game's main text file. This contains everything except for most of the overworld dialogue.
-        The randomization is done in a way that (in most cases) similar categories of texts are shuffled, meaning for example, that Pokémon types and names are shuffled.
-        
-        This is not supported for the Japanese ROM and will do nothing if enabled for it.
-        THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
-    story = \
-        """Randomize the game's overworld scene text. ALL overworld text is shuffled.
-        
-        This is not supported for the Japanese ROM and will do nothing if enabled for it.
-        THIS IS POTENTIALLY UNSTABLE AND COULD LEAD TO GAME CRASHES."""
-    instant = \
-        """If enabled, text will be displayed instantly."""
-
-
 class IqConfig(TypedDict):
     randomize_tactics: bool
     randomize_iq_gain: bool
     randomize_iq_skills: bool
     randomize_iq_groups: bool
     keep_universal_skills: bool
-
-
-class IqConfigDoc:
-    randomize_tactics = \
-        """If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."""
-    randomize_iq_gain = \
-        """If enabled, the amount of belly the gummies fill and the amount of IQ they give are fully random for each type."""
-    randomize_iq_skills = \
-        """If enabled, IQ skills are unlocked at random IQ amounts. Item Master is always unlocked."""
-    randomize_iq_groups = \
-        """If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."""
-    keep_universal_skills = \
-        """If enabled, all skills that are included in all groups in the base game will also be added to all groups when randomizing\n.
-        On top of that, even if "randomize IQ skill unlocks" is enabled, Course Checker, Item Catcher, Item Master, and Exclusive Move-User will always be unlocked from the start.
-        However, Status Checker, Nontraitor, and Lava Evader will still have randomized IQ values."""
 
 
 class ItemAlgorithm(Enum):
@@ -380,26 +204,6 @@ class ItemConfig(TypedDict):
     algorithm: ItemAlgorithm
     global_items: bool
     weights: dict[int, Number]
-
-
-class ItemConfigDoc:
-    algorithm = \
-        """Controls how item lists are randomly filled.
-        
-        Balanced: Tries to make it equally likely to find any item in the game, 
-        the only exception being Poké which is boosted.
-        
-        Classic: Algorithm that was used in the Randomizer prior to version 1.4.
-        It doesn't attempt to balance out the different item categories, making items
-        from categories with fewer total items easier to find.
-        """
-    global_items = \
-        """If enabled, the Treasure Town shop item list, the dungeon reward item lists and all other global item lists are randomized."""
-    weights = \
-        """Controls weight biases when randomizing items. 
-        A higher multiplier compared to other categories means that items from that category are more likely to spawn than others.
-        
-        This only applies to the 'Balanced' item algorithm!"""
 
 
 class RandomizerConfig(TypedDict):
@@ -415,13 +219,6 @@ class RandomizerConfig(TypedDict):
     quiz: QuizConfig
     item: ItemConfig
     seed: str  # see get_effective_seed
-
-
-class RandomizerConfigDoc:
-    seed = \
-        """This value is used to initialize the randomizer.
-        If you use the same settings, seed and version of the randomizer you will get the same result.
-        Leave empty for auto-generating seed."""
 
 
 def get_effective_seed(seed: Optional[str]):

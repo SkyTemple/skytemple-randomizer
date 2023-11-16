@@ -35,7 +35,6 @@ a = Analysis([os.path.join('..', 'skytemple_randomizer', 'frontend', 'gtk', 'mai
                  "gi": {
                      "module-versions": {
                          "Gtk": "4.0",
-                         "GtkSource": "5",
                      },
                  },
              },

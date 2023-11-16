@@ -18,28 +18,36 @@ from __future__ import annotations
 
 import os
 import sys
-from typing import cast
+from abc import ABC
+from typing import cast, Optional
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw
-
-from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWidget
+from gi.repository import Gtk, Adw, GObject
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "base_dialog_settings.ui"))
-class BaseSettingsDialog(Adw.Window):
-    __gtype_name__ = "StBaseSettingsDialog"
+class TextPoolProvider(ABC):
+    pass
+
+
+class LocationNamesTextPools(TextPoolProvider):
+    pass
+
+
+class ChapterTitlesTextPool(TextPoolProvider):
+    pass
+
+
+@Gtk.Template(filename=os.path.join(MAIN_PATH, "dialog_text_pool.ui"))
+class TextPoolDialog(Adw.Window):
+    __gtype_name__ = "StTextPoolDialog"
 
     header_bar = cast(Adw.HeaderBar, Gtk.Template.Child())
     content = cast(Adw.Bin, Gtk.Template.Child())
 
-    def __init__(
-        self, title: str, content: RandomizationSettingsWidget, *args, **kwargs
-    ):
-        super().__init__(*args, title=title, **kwargs)
-        self.content.set_child(content)
+    def __init__(self, *args, pools: TextPoolProvider, **kwargs):
+        super().__init__(*args, **kwargs)
 
     @Gtk.Template.Callback()
     def on_realize(self, *args):
@@ -53,5 +61,4 @@ class BaseSettingsDialog(Adw.Window):
         self.add_shortcut(close_esc)
 
     def populate_settings(self, config: RandomizerConfig):
-        w = cast(RandomizationSettingsWidget, self.content.get_child())
-        w.populate_settings(config)
+        pass

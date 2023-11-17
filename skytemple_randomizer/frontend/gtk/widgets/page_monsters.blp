@@ -79,16 +79,18 @@ template $StMonstersPage: Adw.PreferencesPage {
             }
         }
 
-        Adw.ActionRow row_randomize_movesets {
+        Adw.SwitchRow row_randomize_movesets {
             title: _('Randomize Movesets');
             icon-name: 'skytemple-e-move-symbolic';
             activatable: true;
-            activated => $on_signal_for_dialog();
+            notify::active => $on_row_randomize_movesets_notify_active();
             [suffix]
             Box {
-                Image {
-                  icon-name: 'go-next-symbolic';
-                  styles ['dim-label']
+                Button button_randomize_movesets {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure how movesets are randomized');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
                 }
             }
         }

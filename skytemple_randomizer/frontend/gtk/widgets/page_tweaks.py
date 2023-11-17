@@ -21,19 +21,22 @@ from typing import cast
 
 from skytemple_files.common.i18n_util import _
 
-from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.config import RandomizerConfig, ItemAlgorithm
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
+from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     BaseSettingsDialog,
-    ItemsCategoriesDialog,
+    ItemsCategoriesPage,
     ExplorerRankPage,
     MusicPage,
     PatchesPage,
     RandomizationSettingsWindow,
+    ItemsPage,
+    SubpageStackEntry,
 )
 
 
@@ -48,12 +51,31 @@ class TweaksPage(Adw.PreferencesPage):
     row_music = cast(Adw.ActionRow, Gtk.Template.Child())
     row_explorer_rank = cast(Adw.ActionRow, Gtk.Template.Child())
 
+    randomization_settings: RandomizerConfig | None
+    _suppress_signals: bool
+
     @Gtk.Template.Callback()
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
         dialog: RandomizationSettingsWindow | None = None
         if w == self.row_item_pool:
-            dialog = ItemsCategoriesDialog(
-                title=_("Item Pool"),
+            page_it = ItemsPage()
+            page_it_cat = ItemsCategoriesPage()
+            dialog = BaseSettingsDialog(
+                title=_("Allowed Items"),
+                content=(
+                    SubpageStackEntry(
+                        child=page_it,
+                        name="items",
+                        title=_("Allowed Items"),
+                        icon_name="skytemple-e-item-symbolic",
+                    ),
+                    SubpageStackEntry(
+                        child=page_it_cat,
+                        name="items_categories",
+                        title=_("Category Weights"),
+                        icon_name="skytemple-e-item-symbolic",
+                    ),
+                ),
             )
         if w == self.row_patches:
             dialog = BaseSettingsDialog(
@@ -73,8 +95,7 @@ class TweaksPage(Adw.PreferencesPage):
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
-            width, height = frontend.window.get_default_size()
-            dialog.set_default_size(round(width * 0.8), round(height * 0.8))
+            set_default_dialog_size(dialog, frontend.window)
             dialog.populate_settings(frontend.randomization_settings)
             dialog.set_transient_for(frontend.window)
             dialog.set_application(frontend.application)
@@ -82,16 +103,40 @@ class TweaksPage(Adw.PreferencesPage):
             return False
 
     @Gtk.Template.Callback()
-    def on_row_item_randomization_algorithm_notify_selected(*args):
-        pass
+    def on_row_item_randomization_algorithm_notify_selected(self, *args):
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["item"]["algorithm"] = ItemAlgorithm(
+            self.row_item_randomization_algorithm.get_selected()
+        )
 
     @Gtk.Template.Callback()
-    def on_row_randomize_global_items_notify_active(*args):
-        pass
+    def on_row_randomize_global_items_notify_active(self, *args):
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["item"][
+            "global_items"
+        ] = self.row_randomize_global_items.get_active()
 
     @Gtk.Template.Callback()
     def on_row_download_sprites_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["improvements"][
+            "download_portraits"
+        ] = self.row_download_sprites.get_active()
 
     def populate_settings(self, config: RandomizerConfig):
-        pass
+        self._suppress_signals = True
+        self.randomization_settings = config
+        self.row_item_randomization_algorithm.set_selected(
+            config["item"]["algorithm"].value
+        )
+        self.row_randomize_global_items.set_active(config["item"]["global_items"])
+        self.row_download_sprites.set_active(
+            config["improvements"]["download_portraits"]
+        )
+        self._suppress_signals = False

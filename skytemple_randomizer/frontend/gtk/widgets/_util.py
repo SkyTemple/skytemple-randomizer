@@ -17,21 +17,20 @@
 from __future__ import annotations
 
 import typing
-from asyncio import Protocol
 from typing import TYPE_CHECKING
-
-from skytemple_randomizer.config import RandomizerConfig
 
 
 if TYPE_CHECKING:
     # todo: Python does not have intersection types at the moment.
+    from typing import Protocol
     from gi.repository import Gtk
+    from skytemple_randomizer.config import RandomizerConfig
 
     class RandomizationSettingsWidget(Protocol):
         def populate_settings(self, config: RandomizerConfig):
             ...
 
-    class RandomizationSettingsWindow(RandomizationSettingsWidget):
+    class RandomizationSettingsWindow(RandomizationSettingsWidget, Protocol):
         def set_default_size(self, w: int, h: int):
             ...
 

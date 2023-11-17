@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-16 01:56+0000\n"
-"PO-Revision-Date: 2023-11-16 02:10\n"
+"POT-Creation-Date: 2023-11-17 20:34+0000\n"
+"PO-Revision-Date: 2023-11-17 20:46\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
@@ -3159,12 +3159,20 @@ msgid "This portrait does not compress well, the result size is greater than 800
 " If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:96
+msgid "Error"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:99
+msgid "_OK"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Start Randomization"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:72
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:70
 msgid "_Dungeons"
 msgstr ""
 
@@ -3197,8 +3205,12 @@ msgstr ""
 msgid "Per-Dungeon Settings"
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:94
+msgid "Tactics & IQ"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:61
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:59
 msgid "_Pokémon"
 msgstr ""
 
@@ -3239,11 +3251,15 @@ msgstr ""
 msgid "Randomize Movesets"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:144
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:133
+msgid "Configure how movesets are randomized"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:146
 msgid "Randomize Typings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:152
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:154
 msgid "Tactics &amp; IQ"
 msgstr ""
 
@@ -3251,25 +3267,25 @@ msgstr ""
 msgid "Failed to load settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:114
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:115
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:123
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:125
 msgid "Settings loaded!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:157
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:159
 msgid "Failed to save settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:165
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:168
 msgid "The path of the settings file needs to end in '.json'."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:186
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:190
 msgid "Settings saved!"
 msgstr ""
 
@@ -3303,8 +3319,16 @@ msgid "If enabled, the randomizer uses faster implementations to manipulate the 
 "This should only be disabled if you run into issues."
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:78
+msgid "1st Word"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:84
+msgid "2nd Word"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:83
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:81
 msgid "_Text"
 msgstr ""
 
@@ -3370,12 +3394,17 @@ msgstr ""
 msgid "Enable Instant Text"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:56
-msgid "Item Pool"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:64
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:69
+msgid "Allowed Items"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:75
+msgid "Category Weights"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:94
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:92
 msgid "T_weaks"
 msgstr ""
 
@@ -3461,16 +3490,16 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.py:76
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:110
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.py:77
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:108
 msgid "Settings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:50
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:48
 msgid "_Start"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:121
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:119
 msgid "Help (online)"
 msgstr ""
 

@@ -19,18 +19,22 @@ from __future__ import annotations
 import os
 from typing import cast
 
+from skytemple_files.common.i18n_util import _
+
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
+from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
-    PersonalityQuizDialog,
-    LocationNamesTextPools,
-    ChapterTitlesTextPool,
+    PersonalityQuizPage,
+    TextPool,
     RandomizationSettingsWindow,
-    TextPoolDialog,
+    TextPoolPage,
+    BaseSettingsDialog,
+    SubpageStackEntry,
 )
 
 
@@ -48,28 +52,54 @@ class TextPage(Adw.PreferencesPage):
     row_randomize_story_dialogue = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_enable_instant_text = cast(Adw.SwitchRow, Gtk.Template.Child())
 
+    randomization_settings: RandomizerConfig | None
+    _suppress_signals: bool
+
     @Gtk.Template.Callback()
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
         dialog: RandomizationSettingsWindow | None = None
         if w == self.button_randomize_personality_quiz:
-            dialog = PersonalityQuizDialog(
+            page1_pp = PersonalityQuizPage(parent_page=self)
+            dialog = BaseSettingsDialog(
                 title=self.row_personality_quiz.get_title(),
+                content=page1_pp,
+                getter=page1_pp.get_enabled,
+                setter=page1_pp.set_enabled,
             )
         if w == self.button_randomize_location_names:
-            dialog = TextPoolDialog(
+            page1_ln = TextPoolPage(pool=TextPool.LOCATIONS_A, parent_page=self)
+            page2_ln = TextPoolPage(pool=TextPool.LOCATIONS_B, parent_page=self)
+            dialog = BaseSettingsDialog(
                 title=self.row_location_names.get_title(),
-                pools=LocationNamesTextPools(),
+                content=(
+                    SubpageStackEntry(
+                        child=page1_ln,
+                        name="first_word",
+                        title=_("1st Word"),
+                        icon_name="skytemple-e-dungeon-floor-symbolic",
+                    ),
+                    SubpageStackEntry(
+                        child=page2_ln,
+                        name="second_word",
+                        title=_("2nd Word"),
+                        icon_name="skytemple-e-dungeon-floor-symbolic",
+                    ),
+                ),
+                getter=page1_ln.get_enabled,
+                setter=page1_ln.set_enabled,
             )
         if w == self.button_randomize_chapter_titles:
-            dialog = TextPoolDialog(
+            page_ct = TextPoolPage(pool=TextPool.CHAPTER_TITLES, parent_page=self)
+            dialog = BaseSettingsDialog(
                 title=self.row_chapter_titles.get_title(),
-                pools=ChapterTitlesTextPool(),
+                content=page_ct,
+                getter=page_ct.get_enabled,
+                setter=page_ct.set_enabled,
             )
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
-            width, height = frontend.window.get_default_size()
-            dialog.set_default_size(round(width * 0.8), round(height * 0.8))
+            set_default_dialog_size(dialog, frontend.window)
             dialog.populate_settings(frontend.randomization_settings)
             dialog.set_transient_for(frontend.window)
             dialog.set_application(frontend.application)
@@ -78,27 +108,65 @@ class TextPage(Adw.PreferencesPage):
 
     @Gtk.Template.Callback()
     def on_row_personality_quiz_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["quiz"][
+            "randomize"
+        ] = self.row_personality_quiz.get_active()
 
     @Gtk.Template.Callback()
     def on_row_location_names_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["locations"][
+            "randomize"
+        ] = self.row_location_names.get_active()
 
     @Gtk.Template.Callback()
     def on_row_chapter_titles_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["chapters"][
+            "randomize"
+        ] = self.row_chapter_titles.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_main_text_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["text"][
+            "main"
+        ] = self.row_randomize_main_text.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_story_dialogue_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["text"][
+            "story"
+        ] = self.row_randomize_story_dialogue.get_active()
 
     @Gtk.Template.Callback()
     def on_row_enable_instant_text_notify_active(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["text"][
+            "instant"
+        ] = self.row_enable_instant_text.get_active()
 
     def populate_settings(self, config: RandomizerConfig):
-        pass
+        self._suppress_signals = True
+        self.randomization_settings = config
+        self.row_personality_quiz.set_active(config["quiz"]["randomize"])
+        self.row_location_names.set_active(config["locations"]["randomize"])
+        self.row_chapter_titles.set_active(config["chapters"]["randomize"])
+        self.row_randomize_main_text.set_active(config["text"]["main"])
+        self.row_randomize_story_dialogue.set_active(config["text"]["story"])
+        self.row_enable_instant_text.set_active(config["text"]["instant"])
+        self._suppress_signals = False

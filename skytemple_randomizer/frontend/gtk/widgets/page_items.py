@@ -26,23 +26,9 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 from gi.repository import Gtk, Adw, GObject
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "dialog_personality_quiz.ui"))
-class PersonalityQuizDialog(Adw.Window):
-    __gtype_name__ = "StPersonalityQuizDialog"
-
-    header_bar = cast(Adw.HeaderBar, Gtk.Template.Child())
-    content = cast(Adw.Bin, Gtk.Template.Child())
-
-    @Gtk.Template.Callback()
-    def on_realize(self, *args):
-        if sys.platform.startswith("darwin"):
-            self.header_bar.set_decoration_layout("close:")
-
-        close_esc = Gtk.Shortcut(
-            trigger=Gtk.ShortcutTrigger.parse_string("Escape|<Control>w"),
-            action=Gtk.NamedAction(action_name="window.close"),
-        )
-        self.add_shortcut(close_esc)
+@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_items.ui"))
+class ItemsPage(Adw.PreferencesPage):
+    __gtype_name__ = "StItemsPage"
 
     def populate_settings(self, config: RandomizerConfig):
         pass

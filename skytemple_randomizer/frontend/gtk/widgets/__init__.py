@@ -23,20 +23,21 @@ from skytemple_randomizer.frontend.gtk.widgets._util import (
 )
 from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import (
     BaseSettingsDialog,
+    SubpageStackEntry,
 )
 from skytemple_randomizer.frontend.gtk.widgets.dialog_dungeons_individual_settings import (
     DungeonsIndividualSettingsDialog,
 )
-from skytemple_randomizer.frontend.gtk.widgets.dialog_items_categories import (
-    ItemsCategoriesDialog,
+from skytemple_randomizer.frontend.gtk.widgets.page_items import ItemsPage
+from skytemple_randomizer.frontend.gtk.widgets.page_items_categories import (
+    ItemsCategoriesPage,
 )
-from skytemple_randomizer.frontend.gtk.widgets.dialog_personality_quiz import (
-    PersonalityQuizDialog,
+from skytemple_randomizer.frontend.gtk.widgets.page_personality_quiz import (
+    PersonalityQuizPage,
 )
-from skytemple_randomizer.frontend.gtk.widgets.dialog_text_pool import (
-    LocationNamesTextPools,
-    ChapterTitlesTextPool,
-    TextPoolDialog,
+from skytemple_randomizer.frontend.gtk.widgets.page_text_pool import (
+    TextPool,
+    TextPoolPage,
 )
 from skytemple_randomizer.frontend.gtk.widgets.page_dungeons_chances import (
     DungeonsChancesPage,
@@ -80,6 +81,7 @@ __all__ = [
     "WelcomePage",
     "MainWindow",
     "BaseSettingsDialog",
+    "SubpageStackEntry",
     "DungeonsIndividualSettingsDialog",
     "DungeonsChancesPage",
     "DungeonsSettingsPage",
@@ -88,12 +90,12 @@ __all__ = [
     "MonstersAbilitiesPage",
     "MonstersPoolPage",
     "MonstersPoolType",
-    "PersonalityQuizDialog",
-    "LocationNamesTextPools",
-    "ChapterTitlesTextPool",
-    "ItemsCategoriesDialog",
+    "PersonalityQuizPage",
+    "TextPool",
+    "ItemsPage",
+    "ItemsCategoriesPage",
     "ExplorerRankPage",
     "MusicPage",
     "PatchesPage",
-    "TextPoolDialog",
+    "TextPoolPage",
 ]

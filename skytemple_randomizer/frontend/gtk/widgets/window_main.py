@@ -28,6 +28,7 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
+from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     RandomizeDialog,
     RandomizationSettingsWidget,
@@ -78,8 +79,7 @@ class MainWindow(Adw.ApplicationWindow):
                 repopulate_randomization_settings=self.populate_settings
             ),
         )
-        w, h = self.get_default_size()
-        dialog.set_default_size(round(w * 0.8), 420)
+        set_default_dialog_size(dialog, self, height=420)
         dialog.populate_settings(GtkFrontend.instance().randomization_settings)
         dialog.set_transient_for(self)
         dialog.set_application(self.get_application())

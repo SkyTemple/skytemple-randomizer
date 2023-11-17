@@ -100,7 +100,8 @@ class SettingsPage(Adw.Bin):
                         "Failed to load settings: Error while opening file ({}).".format(
                             e
                         )
-                    )
+                    ),
+                    cast(Gtk.Window, self.get_root()),
                 )
             return
         path = file.get_path()
@@ -114,7 +115,8 @@ class SettingsPage(Adw.Bin):
                     "The config file you tried to import is invalid:\n{}:\n{}".format(
                         e.__class__.__name__, e
                     )
-                )
+                ),
+                cast(Gtk.Window, self.get_root()),
             )
             return
         self.populate_settings(frontend.randomization_settings)
@@ -157,12 +159,14 @@ class SettingsPage(Adw.Bin):
                         "Failed to save settings: Error while opening file ({}).".format(
                             e
                         )
-                    )
+                    ),
+                    cast(Gtk.Window, self.get_root()),
                 )
             return
         if not file.get_path().lower().endswith(".json"):
-            frontend.display_error(
-                _("The path of the settings file needs to end in '.json'.")
+            GtkFrontend.instance().display_error(
+                _("The path of the settings file needs to end in '.json'."),
+                cast(Gtk.Window, self.get_root()),
             )
             return
         contents = json.dumps(

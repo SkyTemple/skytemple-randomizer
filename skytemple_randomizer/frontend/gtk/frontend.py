@@ -19,7 +19,8 @@ from __future__ import annotations
 import os.path
 from typing import Callable, Optional
 
-from gi.repository import GLib, Gtk
+from gi.repository import GLib, Gtk, Adw
+from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import RandomizerConfig, ConfigFileLoader
 from skytemple_randomizer.data_dir import data_dir
@@ -86,6 +87,17 @@ class GtkFrontend(AbstractFrontend):
     @application.setter
     def application(self, value):
         self.__application = value
+
+    def display_error(self, error: str, parent: Gtk.Window):
+        d = Adw.MessageDialog(
+            body=error,
+            application=self.application,
+            modal=True,
+            heading=_("Error"),
+            transient_for=parent,
+        )
+        d.add_response("OK", _("_OK"))
+        d.present()
 
     def idle_add(self, fn: Callable):
         GLib.idle_add(fn)

@@ -56,3 +56,11 @@ def iter_maybe(x: Iterable[X] | None) -> Iterable[X]:
 def iter_tree_model(model: Gtk.TreeModel) -> Any:
     # TODO: This works but isn't supported by the typestubs.
     return model  # type: ignore
+
+
+def set_default_dialog_size(dialog: Gtk.Window, parent: Gtk.Window, height=None):
+    p_width, p_height = parent.get_default_size()
+    a_height = round(p_height * 0.8)
+    if height is not None:
+        a_height = min(a_height, height)
+    dialog.set_default_size(min(p_width, max(round(p_width * 0.8), 420)), a_height)

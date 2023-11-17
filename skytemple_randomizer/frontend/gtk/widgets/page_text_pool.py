@@ -17,34 +17,40 @@
 from __future__ import annotations
 
 import os
-
-from typing import TYPE_CHECKING
+import sys
+from abc import ABC
+from enum import Enum, auto
+from typing import cast, Optional
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk, Adw, GObject
 
-if TYPE_CHECKING:
-    from skytemple_randomizer.frontend.gtk.widgets import MonstersPage
+from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWidget
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_movesets.ui"))
-class MovesetsPage(Adw.PreferencesPage):
-    __gtype_name__ = "StMovesetsPage"
+class TextPool(Enum):
+    CHAPTER_TITLES = auto()
+    LOCATIONS_A = auto()
+    LOCATIONS_B = auto()
+
+
+@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_text_pool.ui"))
+class TextPoolPage(Adw.PreferencesPage):
+    __gtype_name__ = "StTextPoolPage"
 
     randomization_settings: RandomizerConfig | None
-    parent_page: MonstersPage
+    parent_page: RandomizationSettingsWidget
+    pool: TextPool
     _suppress_signals: bool
 
     def __init__(
-        self,
-        *args,
-        parent_page: MonstersPage,
-        **kwargs,
+        self, *args, pool: TextPool, parent_page: RandomizationSettingsWidget, **kwargs
     ):
         super().__init__(*args, **kwargs)
         self.parent_page = parent_page
+        self.pool = pool
         self.randomization_settings = None
         self._suppress_signals = False
 
@@ -52,12 +58,20 @@ class MovesetsPage(Adw.PreferencesPage):
         self._suppress_signals = True
         self.randomization_settings = config
         # todo
-        # TODO: We need to sync the selected moveset randomization type with parent, so the current value
-        #       of the checkbox.
         self._suppress_signals = False
 
     def get_enabled(self) -> bool:
-        return self.parent_page.row_randomize_movesets.get_active()
+        assert self.randomization_settings is not None
+        if self.pool == TextPool.CHAPTER_TITLES:
+            return self.randomization_settings["chapters"]["randomize"]
+        else:
+            return self.randomization_settings["locations"]["randomize"]
 
     def set_enabled(self, state: bool):
-        self.parent_page.row_randomize_movesets.set_active(state)
+        assert self.randomization_settings is not None
+        if self.pool == TextPool.CHAPTER_TITLES:
+            self.randomization_settings["chapters"]["randomize"] = state
+        else:
+            self.randomization_settings["locations"]["randomize"] = state
+        if self.parent_page:
+            self.parent_page.populate_settings(self.randomization_settings)

@@ -19,12 +19,13 @@ from __future__ import annotations
 import os
 from typing import cast
 
-from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.config import RandomizerConfig, DungeonModeConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
+from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     BaseSettingsDialog,
     DungeonsIndividualSettingsDialog,
@@ -41,6 +42,9 @@ class DungeonsPage(Adw.PreferencesPage):
     row_randomization_settings = cast(Adw.ActionRow, Gtk.Template.Child())
     row_chance_thresholds = cast(Adw.ActionRow, Gtk.Template.Child())
     row_per_dungeon_settings = cast(Adw.ActionRow, Gtk.Template.Child())
+
+    randomization_settings: RandomizerConfig | None
+    _suppress_signals: bool
 
     @Gtk.Template.Callback()
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
@@ -62,8 +66,7 @@ class DungeonsPage(Adw.PreferencesPage):
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
-            width, height = frontend.window.get_default_size()
-            dialog.set_default_size(round(width * 0.8), round(height * 0.8))
+            set_default_dialog_size(dialog, frontend.window)
             dialog.populate_settings(frontend.randomization_settings)
             dialog.set_transient_for(frontend.window)
             dialog.set_application(frontend.application)
@@ -72,7 +75,15 @@ class DungeonsPage(Adw.PreferencesPage):
 
     @Gtk.Template.Callback()
     def on_row_dungeon_mode_starters_notify_selected(self, *args):
-        pass
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["dungeons"]["mode"] = DungeonModeConfig(
+            self.row_dungeon_mode.get_selected()
+        )
 
     def populate_settings(self, config: RandomizerConfig):
-        pass
+        self._suppress_signals = True
+        self.randomization_settings = config
+        self.row_dungeon_mode.set_selected(config["dungeons"]["mode"].value)
+        self._suppress_signals = False

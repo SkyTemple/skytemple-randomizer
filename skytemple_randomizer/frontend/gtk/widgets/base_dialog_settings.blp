@@ -10,7 +10,9 @@ template $StBaseSettingsDialog: Adw.Window {
 
     Adw.ToolbarView {
         [top]
-        Adw.HeaderBar header_bar {}
+        Adw.HeaderBar header_bar {
+            centering-policy: strict;
+        }
 
         Adw.Bin content {}
     }

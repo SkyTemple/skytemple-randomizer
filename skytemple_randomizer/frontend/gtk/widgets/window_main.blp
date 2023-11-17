@@ -4,7 +4,7 @@ using Adw 1;
 template $StMainWindow: Adw.ApplicationWindow {
     icon-name: 'skytemple_randomizer';
     title: 'SkyTemple Randomizer';
-    width-request: 420;
+    width-request: 320;
     height-request: 360;
     realize => $on_main_window_realize();
     notify::default-width => $on_main_window_notify_default_width ();
@@ -20,9 +20,6 @@ template $StMainWindow: Adw.ApplicationWindow {
     }
 
     content: Adw.ToolbarView {
-        top-bar-style: raised_border;
-        bottom-bar-style: raised_border;
-
         [top]
         Adw.HeaderBar header_bar {
             centering-policy: strict;

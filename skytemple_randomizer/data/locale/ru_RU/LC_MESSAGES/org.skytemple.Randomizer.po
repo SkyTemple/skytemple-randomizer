@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-17 20:34+0000\n"
-"PO-Revision-Date: 2023-11-17 20:46\n"
+"POT-Creation-Date: 2023-11-18 02:50+0000\n"
+"PO-Revision-Date: 2023-11-18 03:48\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3159,20 +3159,41 @@ msgid "This portrait does not compress well, the result size is greater than 800
 " If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:96
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:104
 msgid "Error"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:99
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:107
 msgid "_OK"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:114
+msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
+#, python-brace-format
+msgid "New version available: {version}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
+msgid "Update now"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Start Randomization"
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
+msgid "About"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
+msgid "Wiki"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:70
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
 msgid "_Dungeons"
 msgstr ""
 
@@ -3210,7 +3231,7 @@ msgid "Tactics & IQ"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:59
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
 msgid "_Pokémon"
 msgstr ""
 
@@ -3263,29 +3284,29 @@ msgstr ""
 msgid "Tactics &amp; IQ"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:100
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:99
 msgid "Failed to load settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:115
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:112
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:125
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:121
 msgid "Settings loaded!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:159
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:154
 msgid "Failed to save settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:168
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:162
 msgid "The path of the settings file needs to end in '.json'."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:190
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:184
 msgid "Settings saved!"
 msgstr ""
 
@@ -3328,7 +3349,7 @@ msgid "2nd Word"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:81
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:79
 msgid "_Text"
 msgstr ""
 
@@ -3404,7 +3425,7 @@ msgid "Category Weights"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:10
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:92
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:90
 msgid "T_weaks"
 msgstr ""
 
@@ -3469,37 +3490,79 @@ msgstr ""
 msgid "Explorer Rank"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:16
-#, python-brace-format
-msgid "New version available: {version}"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:17
-msgid "Update now"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:24
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:19
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:28
 msgid "SkyTemple Randomizer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:41
-msgid "Welcome to the Randomizer! Click the \"Randomize\" button to begin, or configure options by selecting a page."
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:33
+msgid "Currently loaded ROM:"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:76
-msgid "About"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:57
+msgid "Welcome to the Randomizer!\n"
+"Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.py:77
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:108
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:119
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:48
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:144
+msgid "Your settings will be discard and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
+msgid "Close current ROM?"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:151
+msgid "_No"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
+msgid "_Yes"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:23
+msgid "Close the currently opened ROM and load a new one."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:46
 msgid "_Start"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/window_main.ui:119
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:117
 msgid "Help (online)"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:135
+msgid "_Randomize"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:59
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:61
+msgid "Load ROM"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:65
+msgid "Load {}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:69
+msgid "Load another ROM"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:104
+msgid "Failed to load ROM: Error while opening file ({})."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:119
+msgid "Failed to load ROM: {}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
+msgid "Get started by loading a ROM."
 msgstr ""
 

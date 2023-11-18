@@ -1,0 +1,63 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StStartStack: Adw.Bin {
+    realize => $on_realize ();
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {
+            centering-policy: strict;
+            show-title: false;
+        }
+
+        content: Gtk.Box {
+            orientation: vertical;
+
+            $StUpdateInfoBanner {}
+
+            Adw.StatusPage {
+                icon-name: 'skytemple';
+                title: _('SkyTemple Randomizer');
+
+                child: Box {
+                    orientation: vertical;
+                    spacing: 32;
+
+                    Label {
+                        label: _("Get started by loading a ROM.");
+                        hexpand: false;
+                    }
+
+                    Box {
+                        orientation: vertical;
+                        spacing: 5;
+                        halign: center;
+
+                        Button button_load_last_rom {
+                            clicked => $on_button_load_last_rom_clicked ();
+                            styles ['pill', 'suggested-action', 'title-2']
+                            label: "Load {}.nds";
+                        }
+
+                        Button button_load_rom {
+                            clicked => $on_button_load_rom_clicked ();
+                            styles ['pill']
+                            label: _("Load ROM");
+                        }
+                    }
+
+                    Adw.Clamp banner_info_wrapper {
+                        maximum-size: 500;
+                        unit: px;
+
+                        child: Box banner_info {
+                        };
+                    }
+
+                    $StLinksGrid {}
+                };
+            }
+        };
+    }
+}

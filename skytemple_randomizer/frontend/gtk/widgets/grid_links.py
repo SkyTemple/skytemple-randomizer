@@ -17,22 +17,33 @@
 from __future__ import annotations
 
 import os
-from typing import cast
-
-from skytemple_files.common.ppmdu_config.data import Pmd2Data
+import webbrowser
 
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk
+
+from skytemple_randomizer.frontend.gtk.ui_util import show_about_dialog
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_welcome.ui"))
-class WelcomePage(Adw.Bin):
-    __gtype_name__ = "StWelcomePage"
+@Gtk.Template(filename=os.path.join(MAIN_PATH, "grid_links.ui"))
+class LinksGrid(Gtk.Grid):
+    __gtype_name__ = "StLinksGrid"
 
-    current_rom_name = cast(Gtk.Label, Gtk.Template.Child())
-
-    def set_input_rom(self, path: str, static_data: Pmd2Data):
-        self.current_rom_name.set_text(
-            f"{os.path.basename(path)} ({static_data.game_edition})"
+    @Gtk.Template.Callback()
+    def on_button_wiki_clicked(self, *args):
+        webbrowser.open_new_tab(
+            "https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer"
         )
+
+    @Gtk.Template.Callback()
+    def on_button_discord_clicked(self, *args):
+        webbrowser.open_new_tab("https://discord.gg/skytemple")
+
+    @Gtk.Template.Callback()
+    def on_button_skytemple_clicked(self, *args):
+        webbrowser.open_new_tab("https://skytemple.org")
+
+    @Gtk.Template.Callback()
+    def on_about_button_clicked(self, *args):
+        show_about_dialog()

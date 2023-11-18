@@ -16,6 +16,9 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 
+from ndspy.rom import NintendoDSRom
+from skytemple_files.common.ppmdu_config.data import Pmd2Data
+
 from skytemple_randomizer.frontend.gtk.init_locale import init_locale
 
 init_locale()
@@ -38,8 +41,7 @@ Gtk.init()
 Adw.init()
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
-from skytemple_randomizer.frontend.gtk.widgets import MainWindow
-
+from skytemple_randomizer.frontend.gtk.widgets import StartStack, MainStack, AppWindow
 
 if getattr(sys, "frozen", False):
     # Running via PyInstaller. Fix SSL configuration
@@ -57,8 +59,28 @@ class MainApp(Adw.Application):
         frontend.application = self
 
     def do_activate(self) -> None:
-        window = MainWindow(application=self)
+        window = AppWindow(application=self)
+        frontend = GtkFrontend.instance()
+        frontend.window = window
+        self.show_start_stack()
         window.present()
+
+    def show_start_stack(self, disable_recent: bool = False):
+        frontend = GtkFrontend.instance()
+        frontend.window.stack_item_start.init_recent(disable_recent)
+        frontend.window.content_stack.set_visible_child(
+            frontend.window.stack_item_start
+        )
+
+    def show_main_stack(
+        self,
+        rom_path: str,
+        rom: NintendoDSRom,
+        rom_static_data: Pmd2Data,
+    ):
+        frontend = GtkFrontend.instance()
+        frontend.window.stack_item_main.init_rom(rom_path, rom, rom_static_data)
+        frontend.window.content_stack.set_visible_child(frontend.window.stack_item_main)
 
 
 def main(argv):

@@ -96,10 +96,8 @@ class SettingsPage(Adw.Bin):
         except Exception as e:
             if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
                 GtkFrontend.instance().display_error(
-                    _(
-                        "Failed to load settings: Error while opening file ({}).".format(
-                            e
-                        )
+                    _("Failed to load settings: Error while opening file ({}).").format(
+                        e
                     ),
                     cast(Gtk.Window, self.get_root()),
                 )
@@ -111,10 +109,8 @@ class SettingsPage(Adw.Bin):
             frontend.randomization_settings = ConfigFileLoader.load(path)
         except Exception as e:
             frontend.display_error(
-                _(
-                    "The config file you tried to import is invalid:\n{}:\n{}".format(
-                        e.__class__.__name__, e
-                    )
+                _("The config file you tried to import is invalid:\n{}:\n{}").format(
+                    e.__class__.__name__, e
                 ),
                 cast(Gtk.Window, self.get_root()),
             )
@@ -155,10 +151,8 @@ class SettingsPage(Adw.Bin):
         except Exception as e:
             if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
                 GtkFrontend.instance().display_error(
-                    _(
-                        "Failed to save settings: Error while opening file ({}).".format(
-                            e
-                        )
+                    _("Failed to save settings: Error while opening file ({}).").format(
+                        e
                     ),
                     cast(Gtk.Window, self.get_root()),
                 )

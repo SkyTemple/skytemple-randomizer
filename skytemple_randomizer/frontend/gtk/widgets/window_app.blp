@@ -1,0 +1,30 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StAppWindow: Adw.ApplicationWindow {
+    icon-name: 'skytemple_randomizer';
+    title: 'SkyTemple Randomizer';
+    width-request: 360;
+    height-request: 360;
+    realize => $on_realize ();
+    notify::default-width => $on_main_window_notify_default_width ();
+    notify::default-height => $on_main_window_notify_default_height ();
+    notify::maximized => $on_main_window_notify_maximized ();
+
+    Adw.Breakpoint {
+	    condition('max-width: 640sp')
+	    setters {
+	        stack_item_main.mobile_view: true;
+  	    }
+    }
+
+    content: Gtk.Stack content_stack {
+        transition-type: slide_left_right;
+        transition-duration: 300;
+
+        $StStartStack stack_item_start {}
+        $StMainStack stack_item_main {
+            mobile_view: false;
+        }
+    };
+}

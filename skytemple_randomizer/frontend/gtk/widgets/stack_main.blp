@@ -1,28 +1,24 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $StMainWindow: Adw.ApplicationWindow {
-    icon-name: 'skytemple_randomizer';
-    title: 'SkyTemple Randomizer';
-    width-request: 320;
-    height-request: 360;
-    realize => $on_main_window_realize();
-    notify::default-width => $on_main_window_notify_default_width ();
-    notify::default-height => $on_main_window_notify_default_height ();
-    notify::maximized => $on_main_window_notify_maximized ();
+template $StMainStack: Adw.Bin {
+    realize => $on_realize ();
 
-    Adw.Breakpoint {
-	    condition('max-width: 640sp')
-	    setters {
-	        header_bar.title-widget: null;
-	        switcher_bar.reveal: true;
-  	    }
-    }
-
-    content: Adw.ToolbarView {
+    Adw.ToolbarView {
         [top]
         Adw.HeaderBar header_bar {
             centering-policy: strict;
+
+            [start]
+            Button button_load_rom {
+                child: Adw.ButtonContent {
+                    icon-name: 'go-previous-symbolic';
+                };
+                tooltip-text: _('Close the currently opened ROM and load a new one.');
+                halign: center;
+
+                clicked => $on_button_load_rom_clicked ();
+            }
 
             title-widget: Adw.ViewSwitcher view_switcher {
                 stack: stack;
@@ -89,8 +85,8 @@ template $StMainWindow: Adw.ApplicationWindow {
                 Box {
                     spacing: 10;
                     Button button_settings {
-                        tooltip-text: _('Settings');
                         child: Adw.ButtonContent {
+                            label: _('Settings');
                             icon-name: 'skytemple-document-edit-symbolic';
                         };
                         clicked => $on_button_settings_clicked ();
@@ -109,9 +105,10 @@ template $StMainWindow: Adw.ApplicationWindow {
                     Button button_randomize {
                         child: Adw.ButtonContent {
                             icon-name: 'skytemple-export-symbolic';
-                            label: '_Randomize';
+                            label: _('_Randomize');
                             use-underline: true;
                         };
+                        tooltip-text: _('');
 
                         styles ['suggested-action']
                         clicked => $on_button_randomize_clicked ();
@@ -123,5 +120,5 @@ template $StMainWindow: Adw.ApplicationWindow {
                 stack: stack;
             }
         }
-    };
+    }
 }

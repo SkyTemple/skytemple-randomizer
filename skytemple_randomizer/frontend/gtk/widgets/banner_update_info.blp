@@ -1,0 +1,11 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StUpdateInfoBanner: Adw.Bin {
+    Adw.Banner update_info {
+        revealed: true;
+        title: _('New version available: {version}');
+        button-label: _('Update now');
+        button-clicked => $on_update_info_button_clicked ();
+    }
+}

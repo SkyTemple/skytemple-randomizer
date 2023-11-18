@@ -1,0 +1,58 @@
+using Gtk 4.0;
+
+template $StLinksGrid: Grid {
+    halign: center;
+    valign: start;
+    column-homogeneous: true;
+    row-homogeneous: true;
+    row-spacing: 5;
+    column-spacing: 5;
+
+    Button about_button {
+        clicked => $on_about_button_clicked ();
+
+        styles ['pill']
+        label: _('About');
+
+        layout {
+            column: '0';
+            row: '0';
+        }
+    }
+
+    Button {
+        clicked => $on_button_wiki_clicked ();
+
+        styles ['pill']
+        label: _('Wiki');
+
+        layout {
+            column: '1';
+            row: '0';
+        }
+    }
+
+    Button {
+        clicked => $on_button_discord_clicked ();
+
+        styles ['pill']
+        label: 'Discord';
+
+        layout {
+            column: '0';
+            row: '1';
+        }
+    }
+
+    Button {
+        clicked => $on_button_skytemple_clicked ();
+
+        styles ['pill']
+        label: 'SkyTemple';
+
+        layout {
+            column: '1';
+            row: '1';
+        }
+    }
+}

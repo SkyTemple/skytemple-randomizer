@@ -29,6 +29,7 @@ SECT_WINDOW = "Window"
 KEY_WINDOW_SIZE_X = "width"
 KEY_WINDOW_SIZE_Y = "height"
 KEY_WINDOW_IS_MAX = "is_max"
+KEY_RECENT_ROM = "recent_rom"
 
 logger = logging.getLogger(__name__)
 
@@ -84,6 +85,18 @@ class SkyTempleRandomizerSettingsStoreGtk:
         if SECT_WINDOW not in self.loaded_config:
             self.loaded_config[SECT_WINDOW] = {}
         self.loaded_config[SECT_WINDOW][KEY_WINDOW_IS_MAX] = str(value)
+        self._save()
+
+    def get_recent_rom(self) -> Optional[str]:
+        if SECT_WINDOW in self.loaded_config:
+            if KEY_RECENT_ROM in self.loaded_config[SECT_WINDOW]:
+                return self.loaded_config[SECT_WINDOW][KEY_RECENT_ROM]
+        return None
+
+    def set_recent_rom(self, value: str):
+        if SECT_WINDOW not in self.loaded_config:
+            self.loaded_config[SECT_WINDOW] = {}
+        self.loaded_config[SECT_WINDOW][KEY_RECENT_ROM] = value
         self._save()
 
     def _save(self):

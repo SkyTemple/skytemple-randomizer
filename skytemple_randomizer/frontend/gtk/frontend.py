@@ -17,10 +17,11 @@
 from __future__ import annotations
 
 import os.path
-from typing import Callable, Optional
+from typing import Callable, Optional, TYPE_CHECKING
 
 from gi.repository import GLib, Gtk, Adw
 from skytemple_files.common.i18n_util import _
+from skytemple_files.common.ppmdu_config.data import Pmd2Data
 
 from skytemple_randomizer.config import RandomizerConfig, ConfigFileLoader
 from skytemple_randomizer.data_dir import data_dir
@@ -29,14 +30,18 @@ from skytemple_randomizer.frontend.gtk.settings import (
     SkyTempleRandomizerSettingsStoreGtk,
 )
 
+if TYPE_CHECKING:
+    from skytemple_randomizer.frontend.gtk.main import MainApp
+    from skytemple_randomizer.frontend.gtk.widgets import AppWindow
+
 
 class GtkFrontend(AbstractFrontend):
     __INSTANCE: Optional[GtkFrontend] = None
 
     __settings: Optional[SkyTempleRandomizerSettingsStoreGtk]
     __randomization_settings: Optional[RandomizerConfig]
-    __application: Optional[Gtk.Application]
-    __window: Optional[Gtk.ApplicationWindow]
+    __application: Optional[MainApp]
+    __window: Optional[AppWindow]
 
     def __init__(self):
         self.__settings = None
@@ -56,12 +61,17 @@ class GtkFrontend(AbstractFrontend):
             self.__settings = SkyTempleRandomizerSettingsStoreGtk()
         return self.__settings
 
+    def init_randomization_settings(self, rom_static_data: Optional[Pmd2Data] = None):
+        # TODO: Support different default configs based on region?
+        self.__randomization_settings = ConfigFileLoader.load(
+            os.path.join(data_dir(), "default.json")
+        )
+
     @property
     def randomization_settings(self) -> RandomizerConfig:
         if self.__randomization_settings is None:
-            self.__randomization_settings = ConfigFileLoader.load(
-                os.path.join(data_dir(), "default.json")
-            )
+            self.init_randomization_settings()
+            assert self.__randomization_settings is not None
         return self.__randomization_settings
 
     @randomization_settings.setter
@@ -69,9 +79,8 @@ class GtkFrontend(AbstractFrontend):
         self.__randomization_settings = value
 
     @property
-    def window(self):
-        v = self.__window
-        assert v is not None
+    def window(self) -> AppWindow:
+        assert self.__window is not None
         return self.__window
 
     @window.setter
@@ -79,9 +88,8 @@ class GtkFrontend(AbstractFrontend):
         self.__window = value
 
     @property
-    def application(self):
-        v = self.__application
-        assert v is not None
+    def application(self) -> MainApp:
+        assert self.__application is not None
         return self.__application
 
     @application.setter

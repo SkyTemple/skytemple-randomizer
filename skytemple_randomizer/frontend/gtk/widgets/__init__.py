@@ -21,6 +21,10 @@ from skytemple_randomizer.frontend.gtk.widgets._util import (
     RandomizationSettingsWidget,
     RandomizationSettingsWindow,
 )
+from skytemple_randomizer.frontend.gtk.widgets.banner_update_info import (
+    UpdateInfoBanner,
+)
+from skytemple_randomizer.frontend.gtk.widgets.grid_links import LinksGrid
 from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import (
     BaseSettingsDialog,
     SubpageStackEntry,
@@ -66,7 +70,9 @@ from skytemple_randomizer.frontend.gtk.widgets.page_settings import SettingsPage
 from skytemple_randomizer.frontend.gtk.widgets.dialog_randomize import RandomizeDialog
 from skytemple_randomizer.frontend.gtk.widgets.page_dungeons import DungeonsPage
 from skytemple_randomizer.frontend.gtk.widgets.page_monsters import MonstersPage
-from skytemple_randomizer.frontend.gtk.widgets.window_main import MainWindow
+from skytemple_randomizer.frontend.gtk.widgets.stack_main import MainStack
+from skytemple_randomizer.frontend.gtk.widgets.stack_start import StartStack
+from skytemple_randomizer.frontend.gtk.widgets.window_app import AppWindow
 
 
 __all__ = [
@@ -79,7 +85,9 @@ __all__ = [
     "TextPage",
     "TweaksPage",
     "WelcomePage",
-    "MainWindow",
+    "AppWindow",
+    "MainStack",
+    "StartStack",
     "BaseSettingsDialog",
     "SubpageStackEntry",
     "DungeonsIndividualSettingsDialog",
@@ -98,4 +106,6 @@ __all__ = [
     "MusicPage",
     "PatchesPage",
     "TextPoolPage",
+    "UpdateInfoBanner",
+    "LinksGrid",
 ]

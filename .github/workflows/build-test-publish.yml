@@ -233,6 +233,8 @@ jobs:
 
       - name: Create installer
         run: |
+          PATH=/usr/local/opt/python@3.10/bin:/usr/local/bin:$PATH
+          
           # See https://github.com/sindresorhus/create-dmg
           # create-dmg automatically generates an installer icon if imagemagick is installed
           brew install graphicsmagick imagemagick

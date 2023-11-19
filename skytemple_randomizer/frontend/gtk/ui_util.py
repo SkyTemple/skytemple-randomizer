@@ -17,7 +17,8 @@
 from __future__ import annotations
 
 import os
-from typing import TypeVar, Iterable, Any
+from typing import TypeVar, Any
+from collections.abc import Iterable
 
 from gi.repository import GObject, Gtk
 

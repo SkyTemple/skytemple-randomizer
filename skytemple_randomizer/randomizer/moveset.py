@@ -73,7 +73,7 @@ class MovesetRandomizer(AbstractRandomizer):
             item_names = self.static_data.string_index_data.string_blocks["Item Names"]
             long_descs = self.static_data.string_index_data.string_blocks["Item Long Descriptions"]
             short_descs = self.static_data.string_index_data.string_blocks["Item Short Descriptions"]
-            str_files: List[Tuple[Pmd2Language, Str]] = list(get_all_string_files(self.rom, self.static_data))
+            str_files: list[tuple[Pmd2Language, Str]] = list(get_all_string_files(self.rom, self.static_data))
             for item in item_p.item_list:
                 if item.category == 5:
                     move_id = choice(allowed_move_ids)
@@ -103,6 +103,6 @@ class MovesetRandomizer(AbstractRandomizer):
         status.done()
 
     @staticmethod
-    def _update_all_langs(texts: List[str], str_files: List[Tuple[Pmd2Language, Str]], index: int):
+    def _update_all_langs(texts: list[str], str_files: list[tuple[Pmd2Language, Str]], index: int):
         for text, (_, str_file) in zip(texts, str_files):
             str_file.strings[index] = text

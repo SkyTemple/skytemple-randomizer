@@ -175,7 +175,7 @@ class QuizRandomizer(AbstractRandomizer):
             'answers': [FALLBACK_ANSWER for _ in range(answer_len)]
         }
 
-    def _get_vanilla_questions(self) -> List[QuizQuestion]:
+    def _get_vanilla_questions(self) -> list[QuizQuestion]:
         if self.config['quiz']['include_vanilla_questions']:
             with open(os.path.join(data_dir(), 'vanilla_questions.yml')) as f:
                 yaml_obj = strictyaml.load(f.read()).data

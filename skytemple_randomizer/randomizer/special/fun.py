@@ -18,7 +18,8 @@ import os
 from datetime import datetime
 from enum import Enum
 from random import choice, randrange
-from typing import List, Union, Dict, Set, Sequence
+from typing import List, Union, Dict, Set
+from collections.abc import Sequence
 
 from PIL import Image
 from ndspy.rom import NintendoDSRom
@@ -122,7 +123,7 @@ class FunPortrait(Enum):
         return obj
 
     # ignore the first param since it's already set by __new__
-    def __init__(self, _: str, credit: Union[FunArtistCredit, Dict[str, FunArtistCredit]]):
+    def __init__(self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]):
         if isinstance(credit, dict):
             credit = credit[choice(list(credit.keys()))]
         self.file_name = str(self.value) + '.png'
@@ -153,14 +154,14 @@ def _get_fun_portraits() -> Sequence[FunPortraitLike]:
     return list(FunPortrait)
 
 
-def get_allowed_md_ids(base_set: Set[u16], roster: Roster) -> List[u16]:
+def get_allowed_md_ids(base_set: set[u16], roster: Roster) -> list[u16]:
     s = set()
     num_entities = FileType.MD.properties().num_entities
     for x in _get_fun_portraits():
         s.add(u16(x.value))
         if x.value + num_entities <= 1154:
             s.add(u16(x.value + num_entities))
-    extra_candidates: List[u16] = list(base_set - s)
+    extra_candidates: list[u16] = list(base_set - s)
     extras_max = 0
     if roster == Roster.NPCS:
         extras_max = 5

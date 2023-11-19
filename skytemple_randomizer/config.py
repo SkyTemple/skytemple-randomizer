@@ -38,7 +38,7 @@ from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonCha
 
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 
-if sys.version_info >= (3, 9):
+if sys.version_info >= (3, 10):
     import importlib.metadata as importlib_metadata
 else:
     import importlib_metadata
@@ -125,8 +125,8 @@ class DungeonsConfig(TypedDict):
     max_hs_chance: IntRange
     max_ks_chance: IntRange
     random_weather_chance: IntRange
-    settings: Dict[int, DungeonSettingsConfig]
-    items_enabled: List[int]
+    settings: dict[int, DungeonSettingsConfig]
+    items_enabled: list[int]
 
 
 class DungeonsConfigDoc:
@@ -240,14 +240,14 @@ QUIZ_QUESTIONS_JSON_SCHEMA = {
 
 class QuizQuestion(TypedDict):
     question: str
-    answers: List[str]
+    answers: list[str]
 
 
 class QuizConfig(TypedDict):
     mode: QuizMode
     randomize: bool
     include_vanilla_questions: bool
-    questions: List[QuizQuestion]
+    questions: list[QuizQuestion]
 
 
 class QuizConfigDoc:
@@ -278,10 +278,10 @@ class MonsterConfig(TypedDict):
     movesets: MovesetConfig
     tm_hm_movesets: bool
     tms_hms: bool
-    abilities_enabled: List[int]
-    monsters_enabled: List[u16]
-    starters_enabled: List[u16]
-    moves_enabled: List[u16]
+    abilities_enabled: list[int]
+    monsters_enabled: list[u16]
+    starters_enabled: list[u16]
+    moves_enabled: list[u16]
 
 
 class MonsterConfigDoc:
@@ -381,7 +381,7 @@ class ItemAlgorithm(Enum):
 class ItemConfig(TypedDict):
     algorithm: ItemAlgorithm
     global_items: bool
-    weights: Dict[int, Number]
+    weights: dict[int, Number]
 
 
 class ItemConfigDoc:
@@ -580,14 +580,14 @@ class ConfigFileLoader:
             if not isinstance(target, str):
                 raise ValueError(f"Expected a string for a field, but got {target.__class__.__name__}")
             return target
-        elif typ == Dict[int, DungeonSettingsConfig]:
+        elif typ == dict[int, DungeonSettingsConfig]:
             if not isinstance(target, dict):
                 raise ValueError(f"Value in JSON must be an object for {typ}.")
             d = {}
             for idx, conf in target.items():
                 d[int(idx)] = cls._handle(conf, DungeonSettingsConfig)
             return d
-        elif typ == Dict[int, Number]:
+        elif typ == dict[int, Number]:
             if not isinstance(target, dict):
                 raise ValueError(f"Value in JSON must be an object for {typ}.")
             d = {}
@@ -598,7 +598,7 @@ class ConfigFileLoader:
             if not isinstance(target, list) or not all(isinstance(x, int) for x in target):
                 raise ValueError(f"Value in JSON must be a list of integers for {typ}.")
             return target
-        elif typ == List[QuizQuestion]:
+        elif typ == list[QuizQuestion]:
             validate(target, QUIZ_QUESTIONS_JSON_SCHEMA)
             return target
         else:

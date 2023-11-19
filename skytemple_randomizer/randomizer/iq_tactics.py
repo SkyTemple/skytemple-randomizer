@@ -81,7 +81,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             new_iq_gains = []
             for l in iq_gains:
-                li: List[int] = []
+                li: list[int] = []
                 new_iq_gains.append(li)
                 for e in l:
                     li.append(randrange(1, 6))
@@ -107,9 +107,9 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
 
-            new_iq_groups: List[List[u8]] = []
+            new_iq_groups: list[list[u8]] = []
             for _ in iq_groups:
-                li2: List[u8] = []
+                li2: list[u8] = []
                 new_iq_groups.append(li2)
                 for idx in range(len(iq_skills)):
                     if self.config['iq']['keep_universal_skills']:

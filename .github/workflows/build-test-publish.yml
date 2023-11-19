@@ -22,11 +22,9 @@ jobs:
     strategy:
       max-parallel: 5
       matrix:
-        python-version: [ "3.8", "3.9", "3.10", "3.11" ]
+        python-version: [ "3.9", "3.10", "3.11", "3.12" ]
     steps:
     - uses: actions/checkout@v4
-    # todo: quickfix for android recipes being scanned...
-    - run: rm -rf android
     - uses: theCapypara/mypy-check@rust-support
       name: Run type checks
       with:
@@ -51,7 +49,7 @@ jobs:
       - name: Build Python wheels
         uses: RalfG/python-wheels-manylinux-build@v0.5.0-manylinux2014_x86_64
         with:
-          python-versions: 'cp38-cp38 cp39-cp39 cp310-cp310 cp311-cp311'
+          python-versions: 'cp39-cp39 cp310-cp310 cp311-cp311 cp312-cp312'
       - name: Upload wheels
         uses: actions/upload-artifact@v3
         with:
@@ -96,9 +94,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: "C:\\gtk-build"
-          key: win-gtk-build-v2-1
+          key: win-gtk-build-2023-10-1-1
           restore-keys: |
-            win-gtk-build-v2-
+            win-gtk-build-2023-10-1-
       - name: Checkout
         uses: actions/checkout@v4
       # Temporarily move the preinstalled git, it causes errors related to cygwin.
@@ -126,7 +124,7 @@ jobs:
       
           python -m pip install --user pipx
           python -m pipx ensurepath
-          pipx install "gvsbuild==2023.7.0"
+          pipx install "gvsbuild==2023.10.1"
       - name: Build GTK and other libs
         run: |
           $env:path = "C:\pipx_bin;" + $env:path
@@ -235,6 +233,8 @@ jobs:
 
       - name: Create installer
         run: |
+          PATH=/usr/local/opt/python@3.10/bin:/usr/local/bin:$PATH
+          
           # See https://github.com/sindresorhus/create-dmg
           # create-dmg automatically generates an installer icon if imagemagick is installed
           brew install graphicsmagick imagemagick

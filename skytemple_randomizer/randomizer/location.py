@@ -40,7 +40,7 @@ class LocationRandomizer(AbstractRandomizer):
 
         rename_dungeon_map_all = {}
         for lang, strings in get_all_string_files(self.rom, self.static_data):
-            rename_dungeon_map: Dict[str, str] = {}
+            rename_dungeon_map: dict[str, str] = {}
             rename_dungeon_map_all[lang] = rename_dungeon_map
             for main, sele, sdba, bann in zip(
                     range(dunge_names_main.begin, dunge_names_main.end),

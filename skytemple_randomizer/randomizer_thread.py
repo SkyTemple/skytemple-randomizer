@@ -90,7 +90,7 @@ class RandomizerThread(Thread):
         change_implementation_type(impl_type)
 
         self.static_data = get_ppmdu_config_for_rom(rom)
-        self.randomizers: List[AbstractRandomizer] = []
+        self.randomizers: list[AbstractRandomizer] = []
         for cls in RANDOMIZERS:
             self.randomizers.append(cls(config, rom, self.static_data, seed, frontend))  # type: ignore
 

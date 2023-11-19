@@ -41,8 +41,8 @@ class TextScriptRandomizer(AbstractRandomizer):
 
         all_strings_langs = {}
         for lang, _ in get_all_string_files(self.rom, self.static_data):
-            all_strings: List[str] = []
-            ssb_map: Dict[str, Ssb] = {}
+            all_strings: list[str] = []
+            ssb_map: dict[str, Ssb] = {}
             all_strings_langs[lang] = all_strings, ssb_map
             for file_path in get_files_from_rom_with_extension(self.rom, 'ssb'):
                 script = get_script(file_path, self.rom, self.static_data)

@@ -67,7 +67,7 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
         cat = static_data.dungeon_data.item_categories[cat_id]
         categories[cat.id] = weights[i]
 
-        cat_item_ids: List[int] = []
+        cat_item_ids: list[int] = []
         if cat.number_of_items is not None:
             allowed_cat_item_ids = [x for x in cat.item_ids() if x in get_allowed_item_ids(config)]
             upper_limit = min(MAX_ITEMS_PER_CAT, len(allowed_cat_item_ids))
@@ -77,9 +77,9 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
                 n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
             cat_item_ids = []
             if len(allowed_cat_item_ids) > 0:
-                cat_item_ids = sorted(set(
-                    (choice(allowed_cat_item_ids) for _ in range(0, n_items))
-                ))
+                cat_item_ids = sorted({
+                    choice(allowed_cat_item_ids) for _ in range(0, n_items)
+                })
                 cat_weights = sorted(random_weights(len(cat_item_ids)))
 
                 for item_id, weight in zip(cat_item_ids, cat_weights):
@@ -99,8 +99,8 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
 
     min_items = MIN_ITEMS_PER_CAT * len(ALLOWED_ITEM_CATS)
     max_items = MAX_ITEMS_PER_CAT * len(ALLOWED_ITEM_CATS)
-    items_in_cats: Dict[int, List[int]] = {}
-    chosen_items_per_cat: Dict[int, List[int]] = {}
+    items_in_cats: dict[int, list[int]] = {}
+    chosen_items_per_cat: dict[int, list[int]] = {}
 
     cats_as_list = list(ALLOWED_ITEM_CATS)
 

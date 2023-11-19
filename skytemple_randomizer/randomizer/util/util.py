@@ -18,7 +18,8 @@ from __future__ import annotations
 
 from enum import Enum, auto
 from random import sample, choice
-from typing import Optional, List, Dict, Tuple, Iterable, Set
+from typing import Optional, List, Dict, Tuple, Set
+from collections.abc import Iterable
 
 from ndspy.rom import NintendoDSRom
 from range_typed_integers import u16
@@ -86,7 +87,7 @@ SKIP_JP_INVALID_SSB = [
 ]
 
 
-def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> Tuple[Pmd2Language, Str]:
+def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> tuple[Pmd2Language, Str]:
     lang = None
     for l in static_data.string_index_data.languages:
         if l.locale == 'en-US':
@@ -101,7 +102,7 @@ def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> Tuple[Pmd
     )
 
 
-def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[Tuple[Pmd2Language, Str]]:
+def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[tuple[Pmd2Language, Str]]:
     for lang in static_data.string_index_data.languages:
         yield lang, FileType.STR.deserialize(
             rom.getFileByName(f'MESSAGE/{lang.filename}'),
@@ -133,7 +134,7 @@ class MoveRoster(Enum):
     STAB = auto()
 
 
-def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> List[u16]:
+def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> list[u16]:
     from skytemple_randomizer.randomizer.special import fun
     num_entities = FileType.MD.properties().num_entities
     ents = set(conf['pokemon']['monsters_enabled'])
@@ -147,7 +148,7 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Ro
         return fun.get_allowed_md_ids(ents, roster)
     return list(ents)
 
-def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS) -> List[u16]:
+def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS) -> list[u16]:
     from skytemple_randomizer.randomizer.special import fun
     num_entities = FileType.MD.properties().num_entities
     ents = set(conf['pokemon']['starters_enabled'])
@@ -162,7 +163,7 @@ def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, r
     return list(ents)
 
 
-def get_allowed_item_ids(conf: RandomizerConfig) -> List[int]:
+def get_allowed_item_ids(conf: RandomizerConfig) -> list[int]:
     return conf['dungeons']['items_enabled']
 
 
@@ -172,8 +173,8 @@ def assert_not_empty(l):
     return l
 
 
-def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: Optional[PokeType] = None) -> List[u16]:
-    base: Set[u16] = set(conf['pokemon']['moves_enabled'])
+def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab_type: PokeType | None = None) -> list[u16]:
+    base: set[u16] = set(conf['pokemon']['moves_enabled'])
     if roster == MoveRoster.DEFAULT:
         return list(base)
     elif roster == MoveRoster.DAMAGING:
@@ -187,7 +188,7 @@ def get_allowed_move_ids(conf: RandomizerConfig, roster=MoveRoster.DEFAULT, stab
     return l
 
 
-def replace_strings(original: str, replacement_map: Dict[str, str]):
+def replace_strings(original: str, replacement_map: dict[str, str]):
     """Replaces all strings from the replacement map in original and returns the new string"""
     string = original
     for old, new in replacement_map.items():
@@ -195,7 +196,7 @@ def replace_strings(original: str, replacement_map: Dict[str, str]):
     return string
 
 
-def replace_text_main(string_file: Str, replace_map: Dict[str, str], start_idx, end_idx):
+def replace_text_main(string_file: Str, replace_map: dict[str, str], start_idx, end_idx):
     new_strings = []
     for idx, string in enumerate(string_file.strings):
         if idx < start_idx or idx > end_idx:
@@ -206,7 +207,7 @@ def replace_text_main(string_file: Str, replace_map: Dict[str, str], start_idx, 
 
 
 def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data,
-                        replace_map_lang: Dict[Pmd2Language, Dict[str, str]]):
+                        replace_map_lang: dict[Pmd2Language, dict[str, str]]):
     new_dict = {}
     for lang, replace_map in replace_map_lang.items():
         for a, b in replace_map.items():
@@ -221,7 +222,7 @@ def replace_text_script(rom: NintendoDSRom, static_data: Pmd2Data,
                 script.strings[lang.name.lower()] = [replace_strings(string, replace_map) for string in script.strings[lang.name.lower()]]
 
 
-_ssb_file_cache: Dict[str, Ssb] = {}
+_ssb_file_cache: dict[str, Ssb] = {}
 def clear_script_cache():
     global _ssb_file_cache
     _ssb_file_cache = {}

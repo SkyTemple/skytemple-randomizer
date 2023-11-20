@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-18 02:50+0000\n"
-"PO-Revision-Date: 2023-11-18 03:48\n"
+"PO-Revision-Date: 2023-11-20 14:05\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -3146,7 +3146,7 @@ msgstr ""
 
 #: skytemple-rust/src/st_dpla.rs:100
 msgid "Palette is invalid."
-msgstr ""
+msgstr "無効なパレットです。"
 
 #: skytemple-rust/src/st_dpla.rs:106 skytemple-rust/src/st_dpla.rs:166
 #: skytemple-rust/src/st_dpla.rs:203 skytemple-rust/src/st_dpla.rs:211
@@ -3311,7 +3311,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:184
 msgid "Settings saved!"
-msgstr ""
+msgstr "設定を保存しました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:16
 msgid "Backup &amp; Share Randomization Settings"
@@ -3327,7 +3327,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:45
 msgid "Basic Settings"
-msgstr ""
+msgstr "基本設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
 msgid "Randomization Seed"
@@ -3345,20 +3345,20 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:78
 msgid "1st Word"
-msgstr ""
+msgstr "1つ目の単語"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:84
 msgid "2nd Word"
-msgstr ""
+msgstr "2つ目の単語"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:79
 msgid "_Text"
-msgstr ""
+msgstr "テキスト(_T)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:16
 msgid "Text Pools"
-msgstr ""
+msgstr "テキストプール"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:17
 msgid "Configure what texts can be used for the quiz, location names and chapter titles."
@@ -3366,11 +3366,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:20
 msgid "Randomize Personality Quiz"
-msgstr ""
+msgstr "性格診断のランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:29
 msgid "Configure the questions for the personality quiz"
-msgstr ""
+msgstr "性格診断の質問を設定します"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:42
 msgid "Randomize Location Names"
@@ -3382,41 +3382,43 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:64
 msgid "Randomize Chapter Titles"
-msgstr ""
+msgstr "チャプタータイトルのランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:73
 msgid "Configure the pool of chapter titles used for randomization"
-msgstr ""
+msgstr "ランダム化に使用するチャプタータイトルのプールを設定します"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:88
 msgid "Full Text Randomization"
-msgstr ""
+msgstr "全テキストランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:91
 msgid "Randomize Main Text"
-msgstr ""
+msgstr "メインテキストのランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:106
 msgid "Randomize the game's main text file. This contains everything except for most of the overworld dialogue. The randomization is done in a way that (in most cases) similar categories of texts are shuffled.\n"
 "Potentially unstable!"
-msgstr ""
+msgstr "ゲーム上のメインテキストファイルをランダム化します。これにはオーバーワールドのほとんどのセリフを除くすべての内容が含まれます。ランダム化は (ほとんどの場合) 似たカテゴリのテキストがシャッフルされる方法で行われます。\n"
+"不安定でありクラッシュする可能性があります！"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:123
 msgid "Randomize Story Dialogue"
-msgstr ""
+msgstr "ストーリーダイアログのランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:138
 msgid "Randomize the game's overworld scene text. ALL overworld text is shuffled.\n"
 "Potentially unstable!"
-msgstr ""
+msgstr "ゲーム上のオーバーワールドシーンのテキストをランダム化します。オーバーワールドのテキストはすべてシャッフルされます。\n"
+"不安定でありクラッシュする可能性があります！"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:157
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:160
 msgid "Enable Instant Text"
-msgstr ""
+msgstr "インスタントテキストを有効化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:64
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:69
@@ -3425,7 +3427,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:75
 msgid "Category Weights"
-msgstr ""
+msgstr "カテゴリ係数"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:90
@@ -3434,19 +3436,19 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:17
 msgid "Tip: Dungeon item randomization settings can be found under \"Dungeons\"."
-msgstr ""
+msgstr "ヒント: ダンジョン内のどうぐランダム化の設定は「ダンジョン」タブにあります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:20
 msgid "Item Randomization Algorithm"
-msgstr ""
+msgstr "どうぐランダム化のアルゴリズム"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:27
 msgid "Balanced"
-msgstr ""
+msgstr "バランス"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
 msgid "Classic"
-msgstr ""
+msgstr "クラシック"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:43
 msgid "Controls how item lists are randomly filled.\n\n"
@@ -3500,12 +3502,13 @@ msgstr "SkyTemple Randomizer"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:33
 msgid "Currently loaded ROM:"
-msgstr ""
+msgstr "読込中のROM:"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:57
 msgid "Welcome to the Randomizer!\n"
 "Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
-msgstr ""
+msgstr "ランダマイザーへようこそ！\n"
+"「Randomize」ボタンをクリックしてROMをランダマイズするか、ページを選択してオプションを設定します。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:119
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
@@ -3514,11 +3517,11 @@ msgstr "設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:144
 msgid "Your settings will be discard and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
-msgstr ""
+msgstr "設定した内容は破棄され、開いたROMと一致するデフォルトの設定に置き換えられます。必要な場合は、設定を保存してください。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
 msgid "Close current ROM?"
-msgstr ""
+msgstr "ROMを閉じます。よろしいですか？"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:151
 msgid "_No"
@@ -3530,7 +3533,7 @@ msgstr "はい(_Y)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:23
 msgid "Close the currently opened ROM and load a new one."
-msgstr ""
+msgstr "現在開いているROMを閉じて、新しいROMを読み込みます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:46
 msgid "_Start"
@@ -3538,16 +3541,16 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:117
 msgid "Help (online)"
-msgstr ""
+msgstr "ヘルプ (オンライン)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:135
 msgid "_Randomize"
-msgstr ""
+msgstr "Randomize(_R)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:59
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:61
 msgid "Load ROM"
-msgstr ""
+msgstr "ROMを読み込む"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:65
 msgid "Load {}"
@@ -3555,17 +3558,17 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:69
 msgid "Load another ROM"
-msgstr ""
+msgstr "別のROMを読み込む"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:104
 msgid "Failed to load ROM: Error while opening file ({})."
-msgstr ""
+msgstr "ROM読み込み失敗: ファイルを開く際にエラーが発生しました。 ({})"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:119
 msgid "Failed to load ROM: {}"
-msgstr ""
+msgstr "ROM読み込み失敗: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."
-msgstr ""
+msgstr "ROMをロードして始めましょう。"
 

@@ -196,7 +196,7 @@ jobs:
       - name: Install and package
         run: |
           # git is already installed
-          brew install pygobject3 gtk+3 python@3.11 gtksourceview4 adwaita-icon-theme sdl cmake
+          brew install pygobject3 gtk+3 python@3.11 gtksourceview4 adwaita-icon-theme sdl cmake libjpeg
           PATH=/usr/local/opt/python@3.11/bin:/usr/local/bin:$PATH
 
 

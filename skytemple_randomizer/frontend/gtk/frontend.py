@@ -36,12 +36,12 @@ if TYPE_CHECKING:
 
 
 class GtkFrontend(AbstractFrontend):
-    __INSTANCE: Optional[GtkFrontend] = None
+    __INSTANCE: GtkFrontend | None = None
 
-    __settings: Optional[SkyTempleRandomizerSettingsStoreGtk]
-    __randomization_settings: Optional[RandomizerConfig]
-    __application: Optional[MainApp]
-    __window: Optional[AppWindow]
+    __settings: SkyTempleRandomizerSettingsStoreGtk | None
+    __randomization_settings: RandomizerConfig | None
+    __application: MainApp | None
+    __window: AppWindow | None
 
     def __init__(self):
         self.__settings = None
@@ -61,7 +61,7 @@ class GtkFrontend(AbstractFrontend):
             self.__settings = SkyTempleRandomizerSettingsStoreGtk()
         return self.__settings
 
-    def init_randomization_settings(self, rom_static_data: Optional[Pmd2Data] = None):
+    def init_randomization_settings(self, rom_static_data: Pmd2Data | None = None):
         # TODO: Support different default configs based on region?
         self.__randomization_settings = ConfigFileLoader.load(
             os.path.join(data_dir(), "default.json")

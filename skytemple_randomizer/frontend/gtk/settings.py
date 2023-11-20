@@ -49,7 +49,7 @@ class SkyTempleRandomizerSettingsStoreGtk:
                     "Error reading config, falling back to default.", exc_info=err
                 )
 
-    def get_window_size(self) -> Optional[Tuple[int, int]]:
+    def get_window_size(self) -> Optional[tuple[int, int]]:
         if SECT_WINDOW in self.loaded_config:
             if (
                 KEY_WINDOW_SIZE_X in self.loaded_config[SECT_WINDOW]

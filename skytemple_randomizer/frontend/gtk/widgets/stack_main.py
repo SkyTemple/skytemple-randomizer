@@ -53,9 +53,9 @@ class MainStack(Adw.Bin):
     page_text = cast(Adw.ViewStackPage, Gtk.Template.Child())
     page_tweaks = cast(Adw.ViewStackPage, Gtk.Template.Child())
 
-    input_rom_path: Optional[str]
-    rom: Optional[NintendoDSRom]
-    rom_static_data: Optional[Pmd2Data]
+    input_rom_path: str | None
+    rom: NintendoDSRom | None
+    rom_static_data: Pmd2Data | None
 
     def __init__(
         self,

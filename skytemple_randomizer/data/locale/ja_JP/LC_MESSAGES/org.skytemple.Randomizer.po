@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-18 02:50+0000\n"
-"PO-Revision-Date: 2023-11-20 14:05\n"
+"PO-Revision-Date: 2023-11-20 15:47\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -3151,7 +3151,7 @@ msgstr "無効なパレットです。"
 #: skytemple-rust/src/st_dpla.rs:106 skytemple-rust/src/st_dpla.rs:166
 #: skytemple-rust/src/st_dpla.rs:203 skytemple-rust/src/st_dpla.rs:211
 msgid "Palette index out of range."
-msgstr ""
+msgstr "パレットインデックスが範囲外です。"
 
 #: skytemple-rust/src/st_dpla.rs:258
 msgid "Frame durations out of range while trying to build color."
@@ -3168,7 +3168,7 @@ msgstr "エラー"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:107
 msgid "_OK"
-msgstr "_OK"
+msgstr "OK(_O)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:114
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
@@ -3193,20 +3193,20 @@ msgstr "SkyTemple について"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
 msgid "_Dungeons"
-msgstr ""
+msgstr "ダンジョン(_D)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:18
 msgid "Randomization Mode"
-msgstr ""
+msgstr "ランダム化モード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:25
 msgid "Fully random"
-msgstr ""
+msgstr "完全ランダム"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:26
 msgid "Consistent per Dungeon"
@@ -3219,40 +3219,40 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:62
 msgid "Randomization Settings"
-msgstr ""
+msgstr "ランダマイズ設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:82
 msgid "Chance Thresholds"
-msgstr ""
+msgstr "確率しきい値"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:106
 msgid "Per-Dungeon Settings"
-msgstr ""
+msgstr "各ダンジョンの設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:94
 msgid "Tactics & IQ"
-msgstr ""
+msgstr "さくせん & かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
 msgid "_Pokémon"
-msgstr ""
+msgstr "ポケモン(_P)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:18
 msgid "Allowed Pokémon"
-msgstr ""
+msgstr "許可するポケモン"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:38
 msgid "Randomize Starters"
-msgstr ""
+msgstr "主人公・パートナーをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:47
 msgid "Configure which starters are available"
-msgstr ""
+msgstr "利用可能な主人公・パートナーの設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:60
 msgid "Randomize NPCs and Bosses"
-msgstr ""
+msgstr "NPCとボスをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:75
 msgid "If enabled all NPCs are randomized and all mentions of them\n"
@@ -3265,15 +3265,15 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:102
 msgid "Randomize Abilities"
-msgstr ""
+msgstr "特性をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:111
 msgid "Configure which abilities are available"
-msgstr ""
+msgstr "利用可能な特性の設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:124
 msgid "Randomize Movesets"
-msgstr ""
+msgstr "習得する技をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:133
 msgid "Configure how movesets are randomized"
@@ -3285,7 +3285,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:154
 msgid "Tactics &amp; IQ"
-msgstr ""
+msgstr "さくせん &amp; かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:99
 msgid "Failed to load settings: Error while opening file ({})."
@@ -3299,7 +3299,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:121
 msgid "Settings loaded!"
-msgstr ""
+msgstr "設定を読み込みました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:154
 msgid "Failed to save settings: Error while opening file ({})."

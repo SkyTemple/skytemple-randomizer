@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-18 02:50+0000\n"
-"PO-Revision-Date: 2023-11-20 15:47\n"
+"POT-Creation-Date: 2023-11-20 22:02+0000\n"
+"PO-Revision-Date: 2023-11-20 23:28\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -840,87 +840,87 @@ msgstr ""
 msgid "No match found for rule {orig_rule}. Input set correct?"
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:139
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:138
 msgid "One Layer (#00)"
 msgstr "レイヤー1 (#00)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:139
 msgid "One Layer (#01)"
 msgstr "レイヤー1 (#01)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
 msgid "One Layer (#02)"
 msgstr "レイヤー1 (#02)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
 msgid "One Layer (#03)"
 msgstr "レイヤー1 (#03)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
 msgid "One Layer (#04)"
 msgstr "レイヤー1 (#04)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
 msgid "Two Layers (#05)"
 msgstr "レイヤー2 (#05)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
 msgid "Two Layers (#06)"
 msgstr "レイヤー2 (#06)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
 msgid "Two Layers (#07)"
 msgstr "レイヤー2 (#07)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
 msgid "Two Layers (#08)"
 msgstr "レイヤー2 (#08)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
 msgid "Two Layers (#09)"
 msgstr "レイヤー2 (#09)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
 msgid "Dungeon Tileset (#10)"
 msgstr "ダンジョンタイルセット (#10)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Use Fixed Room (#11)"
 msgstr "固定部屋で使用 (#11)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:277
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:276
 msgid "This function has no description."
 msgstr "この関数には説明がありません。"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:319
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
 msgid "Down"
 msgstr "下"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:321
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
 msgid "Down Right"
 msgstr "右下"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:323
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
 msgid "Right"
 msgstr "右"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:325
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
 msgid "Up Right"
 msgstr "右上"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:327
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
 msgid "Up"
 msgstr "上"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:329
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
 msgid "Up Left"
 msgstr "左上"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:331
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
 msgid "Left"
 msgstr "左"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:333
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:332
 msgid "Down Left"
 msgstr "左下"
 
@@ -957,105 +957,105 @@ msgid "An image selected to import is too complex. It has too many unique tiles 
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:535
+#: skytemple-files/skytemple_files/common/util.py:526
 msgid "The file you tried to open does not seem to be a valid NDS ROM file."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:549
+#: skytemple-files/skytemple_files/common/util.py:540
 msgid "This ROM is not supported by SkyTemple."
 msgstr "このROMはSkyTempleではサポートされていません。"
 
-#: skytemple-files/skytemple_files/common/util.py:619
-#: skytemple-files/skytemple_files/common/util.py:638
+#: skytemple-files/skytemple_files/common/util.py:610
+#: skytemple-files/skytemple_files/common/util.py:629
 #, python-brace-format
 msgid "Binary {binary.name} not found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:659
-#: skytemple-files/skytemple_files/common/util.py:690
+#: skytemple-files/skytemple_files/common/util.py:650
+#: skytemple-files/skytemple_files/common/util.py:681
 #, python-brace-format
 msgid "Folder {dir_name} does not exist."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:662
+#: skytemple-files/skytemple_files/common/util.py:653
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:685
+#: skytemple-files/skytemple_files/common/util.py:676
 #, python-brace-format
 msgid "Folder {path} already exists."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/xml_util.py:35
+#: skytemple-files/skytemple_files/common/xml_util.py:34
 #, python-brace-format
 msgid "Invalid XML. Expected tag {tag}, got tag {ele.tag}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/xml_util.py:43
+#: skytemple-files/skytemple_files/common/xml_util.py:42
 #, python-brace-format
 msgid "Invalid XML. Expected attribute {attrib} for XML tag {ele.tag}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/anim/model.py:46
+#: skytemple-files/skytemple_files/data/anim/model.py:45
 msgid "Head"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/anim/model.py:47
+#: skytemple-files/skytemple_files/data/anim/model.py:46
 msgid "Left Hand"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/anim/model.py:48
+#: skytemple-files/skytemple_files/data/anim/model.py:47
 msgid "Right Hand"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/anim/model.py:49
+#: skytemple-files/skytemple_files/data/anim/model.py:48
 msgid "Center"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/anim/model.py:50
+#: skytemple-files/skytemple_files/data/anim/model.py:49
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:36
-#: skytemple-files/skytemple_files/data/md/protocol.py:479
+#: skytemple-files/skytemple_files/data/md/protocol.py:480
 msgid "None"
 msgstr "なし"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:63
-#: skytemple-files/skytemple_files/data/md/protocol.py:66
-#: skytemple-files/skytemple_files/data/md/protocol.py:428
+#: skytemple-files/skytemple_files/data/anim/model.py:62
+#: skytemple-files/skytemple_files/data/md/protocol.py:67
+#: skytemple-files/skytemple_files/data/md/protocol.py:429
 msgid "Invalid"
 msgstr "無効"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:64
+#: skytemple-files/skytemple_files/data/anim/model.py:63
 msgid "WAN File 0"
 msgstr "WANファイル 0"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:65
+#: skytemple-files/skytemple_files/data/anim/model.py:64
 msgid "WAN File 1"
 msgstr "WANファイル 1"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:66
+#: skytemple-files/skytemple_files/data/anim/model.py:65
 msgid "WAN"
 msgstr "WAN"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:67
+#: skytemple-files/skytemple_files/data/anim/model.py:66
 msgid "WAT"
 msgstr "WAT"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:68
+#: skytemple-files/skytemple_files/data/anim/model.py:67
 msgid "Screen"
 msgstr "スクリーン"
 
-#: skytemple-files/skytemple_files/data/anim/model.py:69
+#: skytemple-files/skytemple_files/data/anim/model.py:68
 msgid "WBA"
 msgstr "WBA"
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:77
-#: skytemple-files/skytemple_files/patch/arm_patcher.py:193
+#: skytemple-files/skytemple_files/patch/arm_patcher.py:192
 msgid "ARMIPS could not be found. Make sure, that 'armips' is inside your system's PATH."
 msgstr ""
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:85
-#: skytemple-files/skytemple_files/patch/arm_patcher.py:207
+#: skytemple-files/skytemple_files/patch/arm_patcher.py:206
 msgid "ARMIPS reported an error while applying the patch."
 msgstr ""
 
@@ -1064,31 +1064,31 @@ msgstr ""
 msgid "The armips source file did not create a {OUT_BIN}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/data_cd/model.py:77
+#: skytemple-files/skytemple_files/data/data_cd/model.py:76
 msgid "To delete this effect, no items must use it."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/inter_d/model.py:37
+#: skytemple-files/skytemple_files/data/inter_d/model.py:36
 msgid "Always"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/inter_d/model.py:38
+#: skytemple-files/skytemple_files/data/inter_d/model.py:37
 msgid "Flag Not Set"
 msgstr "フラグ未設定"
 
-#: skytemple-files/skytemple_files/data/inter_d/model.py:39
+#: skytemple-files/skytemple_files/data/inter_d/model.py:38
 msgid "Flag Set"
 msgstr "フラグ設定済み"
 
-#: skytemple-files/skytemple_files/data/inter_d/model.py:40
+#: skytemple-files/skytemple_files/data/inter_d/model.py:39
 msgid "Scenario Equals"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/inter_d/model.py:41
+#: skytemple-files/skytemple_files/data/inter_d/model.py:40
 msgid "Scenario Below or Equal"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/inter_d/model.py:42
+#: skytemple-files/skytemple_files/data/inter_d/model.py:41
 msgid "Scenario Greater or Equal"
 msgstr "シナリオ以上"
 
@@ -1108,280 +1108,279 @@ msgstr "このポケモンは専用道具を所持して孵化することがあ
 msgid "? (Only all the Eeveelutions, and the Tyrogue line have items with this type!)"
 msgstr "？ (このタイプを持つ道具は、イーブイの進化系とバルキーの進化系にしかありません！)"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:67
+#: skytemple-files/skytemple_files/data/md/protocol.py:68
 msgid "Male"
 msgstr "オス"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:68
+#: skytemple-files/skytemple_files/data/md/protocol.py:69
 msgid "Female"
 msgstr "メス"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:69
+#: skytemple-files/skytemple_files/data/md/protocol.py:70
 msgid "Genderless"
 msgstr "性別不明"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:421
 #: skytemple-files/skytemple_files/data/md/protocol.py:422
-#: skytemple-files/skytemple_files/data/md/protocol.py:425
+#: skytemple-files/skytemple_files/data/md/protocol.py:423
 #: skytemple-files/skytemple_files/data/md/protocol.py:426
 #: skytemple-files/skytemple_files/data/md/protocol.py:427
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
+#: skytemple-files/skytemple_files/data/md/protocol.py:428
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:155
 msgid "Unused"
 msgstr "未使用"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:451
+#: skytemple-files/skytemple_files/data/md/protocol.py:452
 msgid "Not an Evolved Form."
 msgstr "進化しない"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:452
+#: skytemple-files/skytemple_files/data/md/protocol.py:453
 msgid "Level"
 msgstr "レベル"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:453
+#: skytemple-files/skytemple_files/data/md/protocol.py:454
 msgid "IQ"
 msgstr "かしこさ"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:454
+#: skytemple-files/skytemple_files/data/md/protocol.py:455
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:16
 msgid "Items"
 msgstr "道具"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:455
+#: skytemple-files/skytemple_files/data/md/protocol.py:456
 msgid "Recruited"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:456
+#: skytemple-files/skytemple_files/data/md/protocol.py:457
 msgid "No Main Requirement"
 msgstr "条件なし"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:480
+#: skytemple-files/skytemple_files/data/md/protocol.py:481
 msgid "Link Cable"
 msgstr "つうしんケーブル"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:481
+#: skytemple-files/skytemple_files/data/md/protocol.py:482
 msgid "Attack > Defense"
 msgstr "こうげき > ぼうぎょ"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:482
+#: skytemple-files/skytemple_files/data/md/protocol.py:483
 msgid "Attack < Defense"
 msgstr "こうげき < ぼうぎょ"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:483
+#: skytemple-files/skytemple_files/data/md/protocol.py:484
 msgid "Attack = Defense"
 msgstr "こうげき = ぼうぎょ"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:484
+#: skytemple-files/skytemple_files/data/md/protocol.py:485
 msgid "Sun Ribbon"
 msgstr "たいようのリボン"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:485
+#: skytemple-files/skytemple_files/data/md/protocol.py:486
 msgid "Lunar Ribbon"
 msgstr "げっこうのリボン"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:486
+#: skytemple-files/skytemple_files/data/md/protocol.py:487
 msgid "Beauty Scarf"
 msgstr "うつくしスカーフ"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:487
+#: skytemple-files/skytemple_files/data/md/protocol.py:488
 msgid "Internal Value 0x1 = 1"
 msgstr "内部値 0x1 = 1"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:488
+#: skytemple-files/skytemple_files/data/md/protocol.py:489
 msgid "Internal Value 0x1 = 0"
 msgstr "内部値 0x1 = 0"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:489
+#: skytemple-files/skytemple_files/data/md/protocol.py:490
 msgid "Male (1st form)"
 msgstr "オス (1つ目の姿)"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:490
+#: skytemple-files/skytemple_files/data/md/protocol.py:491
 msgid "Female (2nd form)"
 msgstr "メス (2つ目の姿)"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:491
+#: skytemple-files/skytemple_files/data/md/protocol.py:492
 msgid "Knows AncientPower"
 msgstr "技「げんしのちから」を習得している"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:492
+#: skytemple-files/skytemple_files/data/md/protocol.py:493
 msgid "Knows Rollout"
 msgstr "技「ころがる」を習得している"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:493
+#: skytemple-files/skytemple_files/data/md/protocol.py:494
 msgid "Knows Double Hit"
 msgstr "技「ダブルアタック」を習得している"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:494
+#: skytemple-files/skytemple_files/data/md/protocol.py:495
 msgid "Knows Mimic"
 msgstr "技「ものまね」を習得している"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:517
+#: skytemple-files/skytemple_files/data/md/protocol.py:518
 msgid "Standard"
 msgstr "通常"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:518
+#: skytemple-files/skytemple_files/data/md/protocol.py:519
 msgid "Unknown"
 msgstr "不明"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:519
+#: skytemple-files/skytemple_files/data/md/protocol.py:520
 msgid "Hovering"
 msgstr "空中"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:520
+#: skytemple-files/skytemple_files/data/md/protocol.py:521
 msgid "Phase Through Walls"
 msgstr "壁を通過"
 
 #. TRANSLATORS: Movement Type
-#: skytemple-files/skytemple_files/data/md/protocol.py:521
+#: skytemple-files/skytemple_files/data/md/protocol.py:522
 msgid "Lava"
 msgstr "マグマ"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:522
+#: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
 msgstr "みず"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:545
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:59
+#: skytemple-files/skytemple_files/data/md/protocol.py:546
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
 msgid "Small"
 msgstr "小"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:546
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:75
+#: skytemple-files/skytemple_files/data/md/protocol.py:547
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:70
 msgid "Medium"
 msgstr "標準"
 
-#: skytemple-files/skytemple_files/data/md/protocol.py:547
+#: skytemple-files/skytemple_files/data/md/protocol.py:548
 msgid "Large"
 msgstr "大"
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:221
+#: skytemple-files/skytemple_files/data/monster_xml.py:218
 #, python-brace-format
 msgid "Invalid XML. '{XML_STRINGS__NAME}' missing for language {xml_lang.tag}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:229
+#: skytemple-files/skytemple_files/data/monster_xml.py:226
 #, python-brace-format
 msgid "Invalid XML. '{XML_STRINGS__CATEGORY}' missing for language {xml_lang.tag}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:462
+#: skytemple-files/skytemple_files/data/monster_xml.py:459
 #, python-brace-format
 msgid "Invalid XML. '{XML_GENENT_EXCLUSIVE_ITEMS}' needs four item IDs."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:560
+#: skytemple-files/skytemple_files/data/monster_xml.py:557
 #, python-brace-format
 msgid "Invalid XML. '{a}' missing for a {b}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:609
+#: skytemple-files/skytemple_files/data/monster_xml.py:606
 #, python-brace-format
 msgid "Invalid XML. '{XML_MOVESET_LEVEL_UP__LEVEL}' missing for a level up moveset entry."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:617
+#: skytemple-files/skytemple_files/data/monster_xml.py:614
 #, python-brace-format
 msgid "Invalid XML. '{XML_MOVESET__MOVE_ID}' missing for a level up moveset entry."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:680
+#: skytemple-files/skytemple_files/data/monster_xml.py:677
 msgid "Invalid XML. StatsGrowth must have exactly 100 levels."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:706
-#: skytemple-files/skytemple_files/data/monster_xml.py:711
-#: skytemple-files/skytemple_files/data/monster_xml.py:716
-#: skytemple-files/skytemple_files/data/monster_xml.py:721
-#: skytemple-files/skytemple_files/data/monster_xml.py:726
-#: skytemple-files/skytemple_files/data/monster_xml.py:731
+#: skytemple-files/skytemple_files/data/monster_xml.py:703
+#: skytemple-files/skytemple_files/data/monster_xml.py:708
+#: skytemple-files/skytemple_files/data/monster_xml.py:713
+#: skytemple-files/skytemple_files/data/monster_xml.py:718
+#: skytemple-files/skytemple_files/data/monster_xml.py:723
+#: skytemple-files/skytemple_files/data/monster_xml.py:728
 #, python-brace-format
 msgid "Invalid XML. '{x}' missing for a stats growth level entry."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:761
+#: skytemple-files/skytemple_files/data/monster_xml.py:756
 msgid "Incompatible XML. The number of portraits don't match with the expected value of {len(value_to_update)}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:779
+#: skytemple-files/skytemple_files/data/monster_xml.py:774
 #, python-brace-format
 msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__IMAGE}' missing for a portrait."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:787
+#: skytemple-files/skytemple_files/data/monster_xml.py:782
 #, python-brace-format
 msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__PALETTE}' missing for a portrait."
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/monster_xml.py:802
+#: skytemple-files/skytemple_files/data/monster_xml.py:797
 #, python-brace-format
 msgid "Invalid XML. The portrait data of one of the portraits is invalid: {err}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/data/tbl_talk/model.py:30
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:29
 msgid "Healthy"
 msgstr "HP80%"
 
-#: skytemple-files/skytemple_files/data/tbl_talk/model.py:31
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:30
 msgid "Half Life"
 msgstr "HP50%"
 
-#: skytemple-files/skytemple_files/data/tbl_talk/model.py:32
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:31
 msgid "Pinch"
 msgstr "HP25%"
 
-#: skytemple-files/skytemple_files/data/tbl_talk/model.py:33
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:32
 msgid "Level Up"
 msgstr "レベルアップ"
 
-#: skytemple-files/skytemple_files/data/tbl_talk/model.py:34
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:33
 msgid "Wait"
 msgstr "待機"
 
-#: skytemple-files/skytemple_files/data/tbl_talk/model.py:35
+#: skytemple-files/skytemple_files/data/tbl_talk/model.py:34
 msgid "Ground Wait"
 msgstr "待機 (グラウンド)"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:34
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
 msgid "Physical Move"
 msgstr "ぶつり"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
 msgid "Special Move"
 msgstr "とくしゅ"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:37
 msgid "Status Move"
 msgstr "へんか"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:59
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"
 msgstr "敵"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:61
 msgid "Allies"
 msgstr "味方"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:61
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
 msgid "Everyone"
 msgstr "全員"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:106
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:107
 msgid "User"
 msgstr "自分自身"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:64
 msgid "Two-turn move"
 msgstr "2ターン技"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:64
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:65
 msgid "Everyone except user"
 msgstr "自分以外全員"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:65
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:66
 msgid "All allies except user"
 msgstr "自分以外の味方"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:66
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:67
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:68
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:69
@@ -1389,12 +1388,12 @@ msgstr "自分以外の味方"
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:71
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:72
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:73
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:109
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:74
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:110
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:111
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:112
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:113
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:148
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:114
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:149
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:150
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:151
@@ -1403,176 +1402,177 @@ msgstr "自分以外の味方"
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:154
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:155
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:156
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:157
 msgid "Invalid "
 msgstr "無効 "
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:74
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:114
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:75
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:115
 msgid "Special / Invalid"
 msgstr "特殊/無効"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:97
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:98
 msgid "In front"
 msgstr "正面"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:98
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:99
 msgid "In front + adjacent (like Wide Slash)"
 msgstr "正面3マス (すいへいぎり等)"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:99
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:100
 msgid "8 tiles around user"
 msgstr "周囲8マス"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:100
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:101
 msgid "Room"
 msgstr "部屋全体"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:102
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:103
 msgid "Two tiles away"
 msgstr "2マス先"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:104
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:105
 msgid "Straight line"
 msgstr "直線上"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:105
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:106
 msgid "Floor"
 msgstr "フロア全体"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:107
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
 msgid "In front; cuts corners"
 msgstr "正面 (角抜け)"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:109
 msgid "Two tiles away; cuts corners"
 msgstr "2マス先 (角抜け)"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:139
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:140
 msgid "No condition"
 msgstr "条件なし"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:140
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:141
 msgid "Based on AI Condition 1 Chance"
 msgstr "AI条件1選択率"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:141
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
 msgid "Current HP <= 25%"
 msgstr "現在HPが25%以下"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
 msgid "Has at least one negative status condition"
 msgstr "悪い状態にかかっている"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
 msgid "Is asleep, in a nightmare or napping"
 msgstr "すいみん・あくむ・ねむる状態のいずれか"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:145
 msgid "Is a ghost-type Pokémon and does not have the exposed status"
 msgstr "ゴーストタイプのポケモンかつ、みやぶる状態でない"
 
-#: skytemple-files/skytemple_files/data/waza_p/protocol.py:146
+#: skytemple-files/skytemple_files/data/waza_p/protocol.py:147
 #, python-format
 msgid "Current HP <= 25% or has at least one negative status condition"
 msgstr "現在HPが25%以下、または悪い状態にかかっている"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:56
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:240
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:258
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:267
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:55
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:239
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:257
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:266
 msgid "Floor, Room"
 msgstr "床 (部屋)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:65
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:64
 msgid "Wall, Hallway; Absolute Mover"
 msgstr "壁 (通路) - あくういどう可能"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:74
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:195
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:73
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:194
 msgid "Wall, Hallway; Impassable"
 msgstr "壁 (通路) - 通行不可"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:83
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:204
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:82
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:203
 msgid "Wall, Hallway"
 msgstr "壁 (通路)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:92
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:91
 msgid "Leader Spawn Floor"
 msgstr "リーダースポーン地点"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:101
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:100
 msgid "Secondary, Room"
 msgstr "二次地形 (部屋)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:110
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:109
 msgid "Chasm, Hallway"
 msgstr "谷 (壁)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:116
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:157
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:115
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:156
 msgid "Tile type is forced to be \"Void / Chasm\" (Still rendered as tileset's secondary terrain!)."
 msgstr "タイルタイプは強制的に「谷」に設定されます (タイルセットの二次地形としてレンダリングされたままです)。"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:121
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:120
 msgid "Chasm, Hallway; All Chasm"
 msgstr "谷 (壁) - 壁を谷にする"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:127
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:126
 msgid "Tile type is forced to be \"Void / Chasm\" (Still rendered as tileset's secondary terrain!). All tiles outside of defined room are made the tileset's defined secondary terrain."
 msgstr "タイルタイプは強制的に「谷」に設定されます (タイルセットの二次地形としてレンダリングされたままです)。部屋の外にあるすべてのタイルは二次地形に置き換えられます。"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:133
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:249
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:132
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:248
 msgid "Warp Zone, Room"
 msgstr "ワープゾーン (部屋)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:138
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:254
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:137
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:253
 msgid "Creates a Warp Zone."
 msgstr "ワープゾーンを作成します。"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:142
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:141
 msgid "Floor, Hallway"
 msgstr "床 (通路)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:151
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:150
 msgid "Chasm, Hallway; Impassable"
 msgstr "壁 (通路) - 通行不可"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:162
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:161
 msgid "Floor, Hallway; Flag 0xA"
 msgstr "床 (通路) - フラグ 0xA"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:167
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:166
 msgid "Tile flag 0xA is set to 1 (Unknown what this does)."
 msgstr "タイルフラグ 0xA は 1 に設定されています (これがどのように影響するかは不明)。"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:171
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:170
 msgid "F/W, Room; Key Door (0xC)"
 msgstr "床/壁 (部屋) - 鍵ドア (0xC)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:177
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:176
 msgid "Tile flag 0xC is set to 1 and spawns a key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
 msgstr "タイルフラグ 0xC は 1 に設定され、鍵のドアが生成されます。固定ルームIDが&lt; 0xA5 の場合、これは壁になります。それ以外の場合は床になります。"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:183
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:182
 msgid "F/W, Room; Key Door (0xD)"
 msgstr "床/壁 (部屋) - 鍵ドア (0xD)"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:189
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:188
 msgid "Tile flag 0xD is set to 1 and spawns a key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
 msgstr "タイルフラグ 0xD は 1 に設定され、鍵のドアが生成されます。固定ルームIDが &lt; 0xA5 の場合、これは壁になります。それ以外の場合は床になります。"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:213
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:212
 msgid "Attendant1 Spawn Floor"
 msgstr "仲間1人目スポーン地点"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:222
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:221
 msgid "Attendant2 Spawn Floor"
 msgstr "仲間2人目スポーン地点"
 
-#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:231
+#: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:230
 msgid "Attendant3 Spawn Floor"
 msgstr "仲間3人目スポーン地点"
 
@@ -1642,245 +1642,245 @@ msgstr "不明なトラップ 「{name}」。"
 msgid "Trap lists need an entry for all of the 25 traps"
 msgstr "罠リストには 25 個すべての罠に対応するエントリが必要です"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:58
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:53
 msgid "Medium Large"
 msgstr "標準 (大型)"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:60
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:55
 msgid "Single Monster House"
 msgstr "大部屋モンスターハウス"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:61
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:56
 msgid "Ring"
 msgstr "円状"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:63
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:58
 msgid "Crossroads"
 msgstr "交差型"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:66
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:61
 msgid "Two Rooms, One Monster House"
 msgstr "2つの部屋 (片方モンスターハウス)"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:68
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:63
 msgid "Line"
 msgstr "直線状"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:69
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:64
 msgid "Cross"
 msgstr "十字型"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:70
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:65
 msgid "Small Medium"
 msgstr "小さいな標準"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:71
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:66
 msgid "Beetle"
 msgstr "虫型"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:68
 msgid "Outer Rooms"
 msgstr "外周"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:76
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:71
 msgid "Medium Large (12)"
 msgstr "標準 (大型) - 12"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:77
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:72
 msgid "Medium Large (13)"
 msgstr "標準 (大型) - 13"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:78
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
 msgid "Medium Large (14)"
 msgstr "標準 (大型) - 14"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:79
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:74
 msgid "Medium Large (15)"
 msgstr "標準 (大型) - 15"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:102
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:97
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:369
 msgid "Clear"
 msgstr "はれ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:103
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:98
 msgid "Sunny"
 msgstr "ひざしがつよい"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:104
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:99
 msgid "Sandstorm"
 msgstr "すなあらし"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:100
 msgid "Cloudy"
 msgstr "くもり"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:106
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:101
 msgid "Rainy"
 msgstr "あめ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:107
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:102
 msgid "Hail"
 msgstr "あられ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:108
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:103
 msgid "Fog"
 msgstr "きり"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:109
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:104
 msgid "Snow"
 msgstr "ゆき"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:110
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
 msgid "Random"
 msgstr "ランダム"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:133
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:128
 msgid "No darkness"
 msgstr "通常"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:134
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:129
 msgid "1-tile vision (Heavy darkness)"
 msgstr "周囲1マス (とても暗い)"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:135
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:130
 msgid "2-tile vision (Light darkness)"
 msgstr "周囲2マス (やや暗い)"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:136
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:131
 msgid "3-tile vision"
 msgstr "周囲3マス"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:137
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:132
 msgid "4-tile vision"
 msgstr "周囲4マス"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:156
 msgid "Mud Trap"
 msgstr "どろスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:162
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:157
 msgid "Sticky Trap"
 msgstr "くっつきスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:158
 msgid "Grimy Trap"
 msgstr "ベトベタスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:159
 msgid "Summon Trap"
 msgstr "よびよせスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:165
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
 msgid "Pitfall Trap"
 msgstr "おとしあな"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:166
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
 msgid "Warp Trap"
 msgstr "ワープスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:167
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:162
 msgid "Gust Trap"
 msgstr "とっぷうスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:168
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
 msgid "Spin Trap"
 msgstr "ぐるぐるスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:169
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
 msgid "Slumber Trap"
 msgstr "バクスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:170
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:165
 msgid "Slow Trap"
 msgstr "ヤドンスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:166
 msgid "Seal Trap"
 msgstr "ふういんスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:172
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:167
 msgid "Poison Trap"
 msgstr "どくばりスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:168
 msgid "Selfdestruct Trap"
 msgstr "じばくスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:174
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:169
 msgid "Explosion Trap"
 msgstr "ばくはスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:170
 msgid "Pp Zero Trap"
 msgstr "わざへりのわな"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
 msgid "Chestnut Trap"
 msgstr "イガグリスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:177
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:172
 msgid "Wonder Tile"
 msgstr "ふしぎなゆか"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:178
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
 msgid "Pokemon Trap"
 msgstr "ポケモンスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:179
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:174
 msgid "Spiked Tile"
 msgstr "まきびし"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:180
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
 msgid "Stealth Rock"
 msgstr "ステルスロック"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:181
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
 msgid "Toxic Spikes"
 msgstr "どくびし"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:182
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:177
 msgid "Trip Trap"
 msgstr "ころびスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:183
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:178
 msgid "Random Trap"
 msgstr "ゆびふりスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:184
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:179
 msgid "Grudge Trap"
 msgstr "おんねんスイッチ"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:41
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:40
 msgid "Invalid Floor List"
 msgstr "無効なフロアリスト"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:44
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:43
 msgid "References a dungeon floor list that doesn't exist."
 msgstr "存在しないダンジョンフロアリストを参照します。"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:50
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:49
 msgid "Invalid Floor"
 msgstr "無効なフロア"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:54
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:53
 msgid "References floor that is out of bounds in the floor list for this group."
 msgstr "このグループのフロアリストの範囲外を参照します。"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:71
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:70
 msgid "Re-uses Floor"
 msgstr "フロアを再利用"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:79
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:78
 #, python-brace-format
 msgid "Re-uses floors that are already used by {name}."
 msgstr "既に {name} で使用されているフロアを再利用します。"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:110
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:109
 msgid "Unused Floors"
 msgstr "未使用のフロア"
 
-#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:115
+#: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:114
 msgid "Has {len(self.floors_in_mappa_not_referenced)} extra floors in it's floor list, which are not assigned to any dungeon."
 msgstr ""
 
@@ -1899,11 +1899,11 @@ msgstr ""
 msgid "The dimensions of all images must be the same."
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/chr/model.py:82
+#: skytemple-files/skytemple_files/graphics/chr/model.py:81
 msgid "Cannot convert PIL image to CHR: Must be indexed image (=using a palette)"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/chr/model.py:89
+#: skytemple-files/skytemple_files/graphics/chr/model.py:88
 #, python-brace-format
 msgid "Cannot convert PIL image to CHR: width and height must be a multiple of {CHR_TILE_WIDTH}"
 msgstr ""
@@ -1944,99 +1944,99 @@ msgstr ""
 msgid "Font parsing: Unexpected {child.tag}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:49
+#: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:48
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is defined multiple times in a font file!"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:60
+#: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:59
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is be defined multiple times in a font file!"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/kao/_model.py:302
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:301
 #, python-brace-format
 msgid "Could not load KAO at {old_index},{old_subindex}: {ex}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/kao/_model.py:371
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:370
 #, python-brace-format
 msgid "Can not convert PIL image to Kao: Image dimensions must be {img_dim}x{img_dim}px."
 msgstr "PILイメージをKaoファイルに変換できません。画像のサイズは {img_dim}x{img_dim}pxである必要があります。"
 
-#: skytemple-files/skytemple_files/graphics/kao/_model.py:490
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:489
 msgid "This portrait does not compress well, the result size is greater than 800 bytes ({len(new_img_compressed)} bytes total).\n"
 "If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
 msgstr "この顔グラフィックは圧縮されておらず、結果のサイズが 800 バイト ({len(new_img_compressed)} バイト合計) を超えています。\n"
 "最適化された圧縮アルゴリズム「ProvideATUPXSupport」を適用することで、より適切に圧縮できる可能性があります。"
 
-#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:121
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:120
 #, python-brace-format
 msgid "Portrait has an invalid size of {img.size}, Not divisble by {PORTRAIT_SIZE}x{PORTRAIT_SIZE}"
 msgstr "顔グラフィックのサイズが無効です。 {img.size}で割り切ることができません。 {PORTRAIT_SIZE}x{PORTRAIT_SIZE}"
 
-#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:132
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:131
 #, python-brace-format
 msgid "Portrait has an invalid size of {img.size}, exceeding max of {max_size}"
 msgstr "顔グラフィックサイズ {img.size} は無効です。最大サイズ {max_size} を超過しています。"
 
-#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:174
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:173
 #, python-brace-format
 msgid "Semi-transparent pixels found at: {rogue_pixels}"
 msgstr "半透明のピクセルが見つかりました: {rogue_pixels}"
 
-#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:178
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:177
 #, python-brace-format
 msgid "The following emotions have transparent pixels: {rogue_tiles}"
 msgstr "以下の顔グラフィックには透明のピクセルがあります。: {rogue_tiles}"
 
-#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:202
+#: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:201
 msgid "File should have original and flipped versions of emotions: {str(flipped_tiles)}"
 msgstr "ファイルにはオリジナルと反転した顔グラフィックが必要です。: {str (flipped_tiles)}"
 
-#: skytemple-files/skytemple_files/graphics/wte/model.py:41
+#: skytemple-files/skytemple_files/graphics/wte/model.py:40
 msgid "Palette Only"
 msgstr "パレットのみ"
 
-#: skytemple-files/skytemple_files/graphics/wte/model.py:42
+#: skytemple-files/skytemple_files/graphics/wte/model.py:41
 msgid "2 bits per pixel (4 colors)"
 msgstr "1pxあたり2ビット (4色)"
 
-#: skytemple-files/skytemple_files/graphics/wte/model.py:43
+#: skytemple-files/skytemple_files/graphics/wte/model.py:42
 msgid "4 bits per pixel (16 colors)"
 msgstr "1pxあたり4ビット (16色)"
 
-#: skytemple-files/skytemple_files/graphics/wte/model.py:44
+#: skytemple-files/skytemple_files/graphics/wte/model.py:43
 msgid "8 bits per pixel (256 colors)"
 msgstr "1pxあたり8ビット (256色)"
 
-#: skytemple-files/skytemple_files/graphics/wte/model.py:225
+#: skytemple-files/skytemple_files/graphics/wte/model.py:224
 msgid "Can not convert PIL image to WTE: Must be indexed image (=using a palette)"
 msgstr "PILイメージをWTEファイルに変換できません。パレットを使用したインデックス付きの画像である必要があります。"
 
-#: skytemple-files/skytemple_files/graphics/wte/model.py:233
+#: skytemple-files/skytemple_files/graphics/wte/model.py:232
 msgid "This image is too big to fit into a WTE file."
 msgstr "この画像は大きすぎるため、WTEファイルに収まりません。"
 
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:44
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:43
 msgid "Semi-Opaque"
 msgstr "半透明"
 
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:45
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:44
 msgid "Transparent"
 msgstr "透明"
 
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:46
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:45
 msgid "Opaque"
 msgstr "不透明"
 
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:206
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:231
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:205
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:230
 msgid "Tile and masks list must have exactly 3 items"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:213
-#: skytemple-files/skytemple_files/graphics/zmappat/model.py:238
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:212
+#: skytemple-files/skytemple_files/graphics/zmappat/model.py:237
 msgid "Can not convert PIL image to ZMAPPAT: Must be indexed images (=using a palette)"
 msgstr "PILイメージをWTEファイルに変換できません。パレットを使用したインデックス付きの画像である必要があります。"
 
@@ -2289,12 +2289,12 @@ msgstr "ひみつのバザー (洗浄/ベロベルト)"
 msgid "Bazaar Escape"
 msgstr "ひみつのバザー (脱出/ヌケニン)"
 
-#: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:55
+#: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:54
 #, python-brace-format
 msgid "'{guest1_index}' is not a valid guest pokémon index"
 msgstr "'{guest1_index}' は有効なゲストポケモンのインデックスではありません。"
 
-#: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:59
+#: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:58
 #, python-brace-format
 msgid "'{guest2_index}' is not a valid guest pokémon index"
 msgstr "'{guest2_index}' は有効なゲストポケモンインデックスではありません。"
@@ -2502,23 +2502,23 @@ msgstr "ダンジョンデバッグメニュー"
 msgid "This menu must have {num_entries} entries!"
 msgstr ""
 
-#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:99
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:98
 msgid "Standing Animation (loop)"
 msgstr "立ちアニメーション(ループ)"
 
-#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:100
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:99
 msgid "Standing Animation (1st frame)"
 msgstr "立ちアニメーション(1フレーム目)"
 
-#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:101
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:100
 msgid "Special"
 msgstr ""
 
-#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:102
+#: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:101
 msgid "Walking Animation (1st frame)"
 msgstr "歩きアニメーション(1フレーム目)"
 
-#: skytemple-files/skytemple_files/patch/arm_patcher.py:236
+#: skytemple-files/skytemple_files/patch/arm_patcher.py:235
 #, python-brace-format
 msgid "Error while applying the patch: {ex}"
 msgstr ""
@@ -2822,71 +2822,71 @@ msgstr ""
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:213
-#: skytemple-files/skytemple_files/patch/patches.py:223
+#: skytemple-files/skytemple_files/patch/patches.py:214
+#: skytemple-files/skytemple_files/patch/patches.py:224
 #, python-brace-format
 msgid "The patch '{name}' was not found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:232
+#: skytemple-files/skytemple_files/patch/patches.py:233
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:241
+#: skytemple-files/skytemple_files/patch/patches.py:242
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:252
+#: skytemple-files/skytemple_files/patch/patches.py:253
 msgid "No configuration was given."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:257
+#: skytemple-files/skytemple_files/patch/patches.py:258
 msgid "Missing configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:263
-#: skytemple-files/skytemple_files/patch/patches.py:269
-#: skytemple-files/skytemple_files/patch/patches.py:275
-#: skytemple-files/skytemple_files/patch/patches.py:283
-#: skytemple-files/skytemple_files/patch/patches.py:300
+#: skytemple-files/skytemple_files/patch/patches.py:264
+#: skytemple-files/skytemple_files/patch/patches.py:270
+#: skytemple-files/skytemple_files/patch/patches.py:276
+#: skytemple-files/skytemple_files/patch/patches.py:284
+#: skytemple-files/skytemple_files/patch/patches.py:301
 msgid "Invalid configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:271
+#: skytemple-files/skytemple_files/patch/patches.py:272
 msgid "Must be >= {}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:277
+#: skytemple-files/skytemple_files/patch/patches.py:278
 msgid "Must be <= {}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:391
+#: skytemple-files/skytemple_files/patch/patches.py:393
 msgid "config.xml missing in patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:394
+#: skytemple-files/skytemple_files/patch/patches.py:396
 msgid "Syntax error in the config.xml while reading patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:407
+#: skytemple-files/skytemple_files/patch/patches.py:409
 msgid "patch.py missing in patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:410
+#: skytemple-files/skytemple_files/patch/patches.py:412
 msgid "The patch.py of the patch package contains a syntax error."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:418
+#: skytemple-files/skytemple_files/patch/patches.py:420
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:427
+#: skytemple-files/skytemple_files/patch/patches.py:429
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:439
+#: skytemple-files/skytemple_files/patch/patches.py:441
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr ""
@@ -2911,67 +2911,67 @@ msgstr ""
 msgid "Can not save a scene event without a defined triggered script."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:98
+#: skytemple-files/skytemple_files/script/ssb/constants.py:99
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:265
 #: skytemple-files/skytemple_files/script/ssb/constants.py:266
+#: skytemple-files/skytemple_files/script/ssb/constants.py:267
 #, python-brace-format
 msgid "Unknown constant {constant_as_string}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:154
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:153
 msgid "The routine data lists for the decompiler must have the same lengths."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:171
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:170
 #, python-brace-format
 msgid "Routine {i} not found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:195
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:194
 msgid "The script must contain exactly {len(self.rom_data.script_data.common_routine_info)} coroutines."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:201
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:200
 msgid "The script must not contain any duplicate coroutines."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:211
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:210
 #, python-brace-format
 msgid "Unknown coroutine {err}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:227
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:226
 msgid "Coroutines and regular routines can not be mixed in a script file."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:246
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:245
 #, python-brace-format
 msgid "Unknown operation {in_op.op_code.name}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:273
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:272
 msgid "The number of parameters for {normal_op_code.name} must be at least {normal_op_code.params}, is {self._correct_param_list_len(in_op.params)}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:294
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:293
 msgid "The number of parameters for {op_code.name} must be {op_code.params}, is {self._correct_param_list_len(in_op.params)}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:399
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:398
 #, python-brace-format
 msgid "Unknown language for string: {lang}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:405
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:404
 #, python-brace-format
 msgid "Invalid parameter supplied for an operation: {param}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/writer.py:186
+#: skytemple-files/skytemple_files/script/ssb/writer.py:185
 msgid "Could not compile script: All languages must have the same amount of strings."
 msgstr ""
 
@@ -3170,7 +3170,7 @@ msgstr "エラー"
 msgid "_OK"
 msgstr "OK(_O)"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:114
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:115
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
 msgstr ""
 

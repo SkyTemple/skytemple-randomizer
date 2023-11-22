@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-20 22:02+0000\n"
-"PO-Revision-Date: 2023-11-20 23:28\n"
+"PO-Revision-Date: 2023-11-22 15:30\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -2642,15 +2642,15 @@ msgstr "Entonces, ¿qué Pokémon te gustaría ser?"
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:66
 msgid "Adds an extra menu during the personality test to choose the starter."
-msgstr ""
+msgstr "Añade un menú extra durante la prueba de personalidad para elegir el Pokémon inicial."
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:106
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
-msgstr ""
+msgstr "[CS:S]Modo de control establecido en[CR] [CS:C]automático[CR][CS:S].[CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:109
 msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
-msgstr ""
+msgstr "[CS:S]Modo de control establecido en[CR] [CS:E]manual[CR][CS:S].[CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:121
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by End45 before applying this patch."
@@ -2793,7 +2793,7 @@ msgstr "Reemplaza el movimiento fijo (L+A) con una funcionalidad de acceso direc
 
 #: skytemple-files/skytemple_files/patch/handler/no_weather_stop.py:51
 msgid "Changes weather damage messages so they don't make the player stop running."
-msgstr ""
+msgstr "Cambia los mensajes del daño producido por el clima para evitar que el jugador deje de correr."
 
 #: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
 msgid "Extracts the object table to a separate file in the ROM."

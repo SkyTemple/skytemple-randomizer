@@ -20,12 +20,8 @@ template $StDungeonsPage: Adw.PreferencesPage {
             Box {
                 MenuButton {
                     icon-name: 'skytemple-help-about-symbolic';
-                    popover: Popover {
-                        child: Label {
-                            max-width-chars: 52;
-                            wrap: true;
-                            label: _('Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\nIf you choose "Consistent per Dungeon" aspects like the music and tileset will be the same for all floors of a dungeon.');
-                        };
+                    popover: $StHelpPopover {
+                        label: _('Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\nIf you choose "Consistent per Dungeon" aspects like the music and tileset will be the same for all floors of a dungeon.');
                     };
                     styles ['flat']
                 }

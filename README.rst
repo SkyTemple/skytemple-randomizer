@@ -46,6 +46,9 @@ GTK frontend
 When installing from source, you probably want to install the "gtk" extra,
 in order to have the actual GUI functional.
 
+The GTK frontend requires GTK 4, all related libraries and libadwaita to be
+installed.
+
 Downloads
 ---------
 - Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/

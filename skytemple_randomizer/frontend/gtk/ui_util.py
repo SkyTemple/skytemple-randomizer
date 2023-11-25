@@ -25,6 +25,7 @@ from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import version
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWindow
 
 T = TypeVar("T", bound=GObject.Object)
 X = TypeVar("X")
@@ -62,7 +63,9 @@ def iter_tree_model(model: Gtk.TreeModel) -> Any:
     return model  # type: ignore
 
 
-def set_default_dialog_size(dialog: Gtk.Window, parent: Gtk.Window, height=None):
+def set_default_dialog_size(
+    dialog: Gtk.Window | RandomizationSettingsWindow, parent: Gtk.Window, height=None
+):
     p_width, p_height = parent.get_default_size()
     a_height = round(p_height * 0.8)
     if height is not None:

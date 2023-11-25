@@ -23,12 +23,8 @@ template $StTweaksPage: Adw.PreferencesPage {
             Box {
                 MenuButton {
                     icon-name: 'skytemple-help-about-symbolic';
-                    popover: Popover {
-                        child: Label {
-                            max-width-chars: 52;
-                            wrap: true;
-                            label: _("Controls how item lists are randomly filled.\n\nBalanced: Tries to make it equally likely to find any item in the game,\nthe only exception being Poké which is boosted.\n\nClassic: Algorithm that was used in the Randomizer prior to version 1.4.\nIt doesn't attempt to balance out the different item categories,\nmaking items from categories with fewer total items easier to find.");
-                        };
+                    popover: $StHelpPopover {
+                        label: _("Controls how item lists are randomly filled.\n\nBalanced: Tries to make it equally likely to find any item in the game,\nthe only exception being Poké which is boosted.\n\nClassic: Algorithm that was used in the Randomizer prior to version 1.4.\nIt doesn't attempt to balance out the different item categories,\nmaking items from categories with fewer total items easier to find.");
                     };
                     styles ['flat']
                 }

@@ -69,9 +69,11 @@ class MonstersPage(Adw.PreferencesPage):
                 setter=page_mo.set_enabled,
             )
         if w == self.row_allowed_monsters:
+            page_am = MonstersPoolPage(type=MonstersPoolType.ALL, parent_page=self)
             dialog = BaseSettingsDialog(
                 title=self.row_allowed_monsters.get_title(),
-                content=MonstersPoolPage(type=MonstersPoolType.ALL, parent_page=self),
+                content=page_am,
+                help_callback=page_am.help_pool_all,
             )
         if w == self.button_randomize_starters:
             page_pl = MonstersPoolPage(type=MonstersPoolType.STARTERS, parent_page=self)
@@ -80,6 +82,7 @@ class MonstersPage(Adw.PreferencesPage):
                 content=page_pl,
                 getter=page_pl.get_enabled,
                 setter=page_pl.set_enabled,
+                help_callback=page_pl.help_pool_starters,
             )
         if w == self.button_randomize_abilities:
             page_ab = MonstersAbilitiesPage(parent_page=self)

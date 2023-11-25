@@ -26,7 +26,10 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
-from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWidget
+from skytemple_randomizer.frontend.gtk.widgets import (
+    RandomizationSettingsWidget,
+    HelpPopover,
+)
 
 
 @dataclass
@@ -42,6 +45,7 @@ class BaseSettingsDialog(Adw.Window):
     __gtype_name__ = "StBaseSettingsDialog"
 
     header_bar = cast(Adw.HeaderBar, Gtk.Template.Child())
+    toolbar_view = cast(Adw.ToolbarView, Gtk.Template.Child())
     content = cast(Adw.Bin, Gtk.Template.Child())
     _children: list[RandomizationSettingsWidget]
     _getter: Callable[[], bool] | None
@@ -53,6 +57,7 @@ class BaseSettingsDialog(Adw.Window):
         content: RandomizationSettingsWidget | tuple[SubpageStackEntry, ...],
         getter: Callable[[], bool] | None = None,
         setter: Callable[[bool], None] | None = None,
+        help_callback: Callable[[], str] | None = None,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
@@ -75,6 +80,15 @@ class BaseSettingsDialog(Adw.Window):
         else:
             self.content.set_child(cast(Gtk.Widget, content))
             self._children = [content]
+
+        if help_callback is not None:
+            action_bar = Gtk.ActionBar()
+            help_button = Gtk.MenuButton(
+                icon_name="skytemple-help-about-symbolic",
+                popover=HelpPopover(label=help_callback()),
+            )
+            action_bar.pack_start(help_button)
+            self.toolbar_view.add_bottom_bar(action_bar)
 
         self._getter = getter
         self._setter = setter

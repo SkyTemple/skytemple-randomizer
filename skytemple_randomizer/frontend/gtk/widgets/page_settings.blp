@@ -39,12 +39,8 @@ template $StSettingsPage: Adw.Bin {
                 Box {
                     MenuButton {
                         icon-name: 'skytemple-help-about-symbolic';
-                        popover: Popover {
-                            child: Label {
-                                max-width-chars: 52;
-                                wrap: true;
-                                label: _('If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\nThis can affect the random values rolled during the randomization.\n\nThis should only be disabled if you run into issues.');
-                            };
+                        popover: $StHelpPopover {
+                            label: _('If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\nThis can affect the random values rolled during the randomization.\n\nThis should only be disabled if you run into issues.');
                         };
                         styles ['flat']
                     }

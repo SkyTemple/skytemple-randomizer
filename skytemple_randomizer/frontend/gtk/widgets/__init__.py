@@ -21,6 +21,9 @@ from skytemple_randomizer.frontend.gtk.widgets._util import (
     RandomizationSettingsWidget,
     RandomizationSettingsWindow,
 )
+from skytemple_randomizer.frontend.gtk.widgets.popover_help import (
+    HelpPopover,
+)
 from skytemple_randomizer.frontend.gtk.widgets.banner_update_info import (
     UpdateInfoBanner,
 )
@@ -76,6 +79,7 @@ from skytemple_randomizer.frontend.gtk.widgets.window_app import AppWindow
 
 
 __all__ = [
+    "HelpPopover",
     "RandomizationSettingsWidget",
     "RandomizationSettingsWindow",
     "RandomizeDialog",

@@ -72,3 +72,11 @@ class MonstersPoolPage(Adw.PreferencesPage):
             self.randomization_settings["starters_npcs"]["starters"] = state
             if self.parent_page:
                 self.parent_page.populate_settings(self.randomization_settings)
+
+    def help_pool_all(self, *args) -> str:
+        return "TODO"
+        raise NotImplementedError()
+
+    def help_pool_starters(self, *args) -> str:
+        return "TODO"
+        raise NotImplementedError()

@@ -72,12 +72,8 @@ template $StTextPage: Adw.PreferencesPage {
             Box {
                 MenuButton {
                     icon-name: 'skytemple-help-about-symbolic';
-                    popover: Popover {
-                        child: Label {
-                            max-width-chars: 52;
-                            wrap: true;
-                            label: _("Randomize the game's main text file. This contains everything except for most of the overworld dialogue. The randomization is done in a way that (in most cases) similar categories of texts are shuffled.\nPotentially unstable!");
-                        };
+                    popover: $StHelpPopover {
+                        label: _("Randomize the game's main text file. This contains everything except for most of the overworld dialogue. The randomization is done in a way that (in most cases) similar categories of texts are shuffled.\nPotentially unstable!");
                     };
                     styles ['flat']
                 }
@@ -93,12 +89,8 @@ template $StTextPage: Adw.PreferencesPage {
             Box {
                 MenuButton {
                     icon-name: 'skytemple-help-about-symbolic';
-                    popover: Popover {
-                        child: Label {
-                            max-width-chars: 52;
-                            wrap: true;
-                            label: _("Randomize the game's overworld scene text. ALL overworld text is shuffled.\nPotentially unstable!");
-                        };
+                    popover: $StHelpPopover {
+                        label: _("Randomize the game's overworld scene text. ALL overworld text is shuffled.\nPotentially unstable!");
                     };
                     styles ['flat']
                 }

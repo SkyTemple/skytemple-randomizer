@@ -20,6 +20,7 @@ import os.path
 from typing import Callable, Optional, TYPE_CHECKING
 
 from gi.repository import GLib, Gtk, Adw
+from ndspy.rom import NintendoDSRom
 from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 
@@ -42,12 +43,16 @@ class GtkFrontend(AbstractFrontend):
     __randomization_settings: RandomizerConfig | None
     __application: MainApp | None
     __window: AppWindow | None
+    __input_rom: NintendoDSRom | None
+    __input_rom_static_data: Pmd2Data | None
 
     def __init__(self):
         self.__settings = None
         self.__randomization_settings = None
         self.__window = None
         self.__application = None
+        self.__input_rom = None
+        self.__input_rom_static_data = None
 
     @classmethod
     def instance(cls) -> GtkFrontend:
@@ -61,17 +66,17 @@ class GtkFrontend(AbstractFrontend):
             self.__settings = SkyTempleRandomizerSettingsStoreGtk()
         return self.__settings
 
-    def init_randomization_settings(self, rom_static_data: Pmd2Data | None = None):
+    def init_rom(self, rom: NintendoDSRom, rom_static_data: Pmd2Data | None = None):
         # TODO: Support different default configs based on region?
+        self.__input_rom = rom
+        self.__input_rom_static_data = rom_static_data
         self.__randomization_settings = ConfigFileLoader.load(
             os.path.join(data_dir(), "default.json")
         )
 
     @property
     def randomization_settings(self) -> RandomizerConfig:
-        if self.__randomization_settings is None:
-            self.init_randomization_settings()
-            assert self.__randomization_settings is not None
+        assert self.__randomization_settings is not None
         return self.__randomization_settings
 
     @randomization_settings.setter
@@ -95,6 +100,16 @@ class GtkFrontend(AbstractFrontend):
     @application.setter
     def application(self, value):
         self.__application = value
+
+    @property
+    def input_rom(self) -> NintendoDSRom:
+        assert self.__input_rom is not None
+        return self.__input_rom
+
+    @property
+    def input_rom_static_data(self) -> Pmd2Data:
+        assert self.__input_rom_static_data is not None
+        return self.__input_rom_static_data
 
     def display_error(self, error: str, parent: Gtk.Window):
         d = Adw.MessageDialog(

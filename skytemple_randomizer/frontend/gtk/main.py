@@ -59,14 +59,24 @@ if getattr(sys, "frozen", False):
         os.path.dirname(sys.executable), "certifi", "cacert.pem"
     )
 
+SKYTEMPLE_DEV = "SKYTEMPLE_DEV" in os.environ
+
 
 class MainApp(Adw.Application):
+    development_mode: bool
+
     def __init__(self):
         # Load Builder and Window
-        super().__init__(application_id="org.skytemple.Randomizer")
+        app_id = (
+            "org.skytemple.Randomizer.Devel"
+            if SKYTEMPLE_DEV
+            else "org.skytemple.Randomizer"
+        )
+        super().__init__(application_id=app_id)
         GLib.set_application_name("SkyTemple Randomizer")
         frontend = GtkFrontend.instance()
         frontend.application = self
+        self.development_mode = SKYTEMPLE_DEV
 
     def do_activate(self) -> None:
         window = AppWindow(application=self)

@@ -17,14 +17,27 @@
 from __future__ import annotations
 
 import os
+import re
 from enum import Enum, auto
+from functools import partial
+from typing import cast
+
+from range_typed_integers import u16
+from skytemple_files.common.i18n_util import _
+from skytemple_files.common.types.file_types import FileType
+from skytemple_files.common.util import MONSTER_MD
+from skytemple_files.data.md.protocol import MdEntryProtocol
+from skytemple_files.patch.patches import Patcher
 
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
 from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWidget
+from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
+from skytemple_randomizer.string_provider import StringProvider, StringType
 
 
 class MonstersPoolType(Enum):
@@ -36,9 +49,13 @@ class MonstersPoolType(Enum):
 class MonstersPoolPage(Adw.PreferencesPage):
     __gtype_name__ = "StMonstersPoolPage"
 
+    pool_list = cast(Gtk.ListBox, Gtk.Template.Child())
+
     randomization_settings: RandomizerConfig | None
     parent_page: RandomizationSettingsWidget
     pool_type: MonstersPoolType
+    search_text: str
+    rows: dict[u16, Adw.SwitchRow]
     _suppress_signals: bool
 
     def __init__(
@@ -52,12 +69,38 @@ class MonstersPoolPage(Adw.PreferencesPage):
         self.parent_page = parent_page
         self.pool_type = type
         self.randomization_settings = None
+        self.search_text = ""
+        self.rows = {}
         self._suppress_signals = False
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True
         self.randomization_settings = config
-        # todo
+
+        frontend = GtkFrontend.instance()
+        rom = frontend.input_rom
+        string_provider = StringProvider(rom, frontend.input_rom_static_data)
+        patcher = Patcher(rom, frontend.input_rom_static_data)
+
+        b_attr = "md_index_base"
+        if patcher.is_applied("ExpandPokeList"):
+            b_attr = "entid"
+
+        monster_md = FileType.MD.deserialize(rom.getFileByName(MONSTER_MD))
+
+        monster_base_ids: set[u16] = set()
+        for entry in monster_md.entries:
+            monster_base_ids.add(getattr(entry, b_attr))
+
+        for baseid in monster_base_ids:
+            name = string_provider.get_value(StringType.POKEMON_NAMES, baseid)
+            activated = baseid in self.pool()
+            row = Adw.SwitchRow(title=name, subtitle=f"#{baseid:03}", active=activated)
+            self.pool_list.append(row)
+            self.rows[baseid] = row
+            row.connect("notify::active", partial(self.on_row_notify_active, baseid))
+
+        self.pool_list.set_filter_func(self.pool_filter)
         self._suppress_signals = False
 
     def get_enabled(self) -> bool:
@@ -73,10 +116,108 @@ class MonstersPoolPage(Adw.PreferencesPage):
             if self.parent_page:
                 self.parent_page.populate_settings(self.randomization_settings)
 
+    def pool(self) -> list[u16]:
+        assert self.randomization_settings is not None
+        if self.pool_type == MonstersPoolType.STARTERS:
+            return self.randomization_settings["pokemon"]["starters_enabled"]
+        else:
+            return self.randomization_settings["pokemon"]["monsters_enabled"]
+
+    def set_pool(self, value: list[u16]):
+        assert self.randomization_settings is not None
+        if self.pool_type == MonstersPoolType.STARTERS:
+            self.randomization_settings["pokemon"]["starters_enabled"] = value
+        else:
+            self.randomization_settings["pokemon"]["monsters_enabled"] = value
+
+    def on_row_notify_active(self, idx: int, switch_row: Adw.SwitchRow, *args):
+        if self._suppress_signals:
+            return
+        v = u16(idx)
+        pool = self.pool()
+        if switch_row.get_active():
+            if v not in pool:
+                pool.append(v)
+        else:
+            pool.remove(v)
+
+    def on_search_changed(self, search_entry: Gtk.SearchEntry):
+        if self._suppress_signals:
+            return
+        self.search_text = search_entry.get_text().strip()
+        self.pool_list.invalidate_filter()
+
+    def on_button_reset_clicked(self, *args):
+        self._suppress_signals = True
+        assert self.randomization_settings is not None
+        self.set_pool(cast(list[u16], list(DEFAULTMONSTERPOOL)))
+        pool = self.pool()
+        for baseid, row in self.rows.items():
+            row.set_active(baseid in pool)
+        self._suppress_signals = False
+
+    def on_button_none_clicked(self, *args):
+        self._suppress_signals = True
+        for row in self.rows.values():
+            row.set_active(False)
+        self.pool().clear()
+        self._suppress_signals = False
+
+    def on_button_copy_clicked(self, *args):
+        self._suppress_signals = True
+        assert self.randomization_settings is not None
+        if self.pool_type == MonstersPoolType.STARTERS:
+            other_pool = self.randomization_settings["pokemon"]["monsters_enabled"]
+        else:
+            other_pool = self.randomization_settings["pokemon"]["starters_enabled"]
+        self.set_pool(list(other_pool))
+        pool = self.pool()
+        for baseid, row in self.rows.items():
+            row.set_active(baseid in pool)
+        self._suppress_signals = False
+
+    def create_window_end_buttons(self) -> Gtk.Widget:
+        box = Gtk.Box(spacing=5)
+        button_reset = Gtk.Button(
+            icon_name="skytemple-view-refresh-symbolic",
+            tooltip_text=_("Reset to Default"),
+        )
+        button_reset.connect("clicked", self.on_button_reset_clicked)
+        button_none = Gtk.Button(
+            icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None")
+        )
+        button_none.connect("clicked", self.on_button_none_clicked)
+        if self.pool_type == MonstersPoolType.STARTERS:
+            copy_text = _('Copy from "Allowed Pokémon"')
+        else:
+            copy_text = _("Copy from Starters")
+        button_copy = Gtk.Button(
+            icon_name="skytemple-import-symbolic", tooltip_text=copy_text
+        )
+        button_copy.connect("clicked", self.on_button_copy_clicked)
+        box.append(button_reset)
+        box.append(button_none)
+        box.append(button_copy)
+        return box
+
     def help_pool_all(self, *args) -> str:
-        return "TODO"
-        raise NotImplementedError()
+        return _("Only the Pokémon selected will be used for any randomization option.")
 
     def help_pool_starters(self, *args) -> str:
-        return "TODO"
-        raise NotImplementedError()
+        return _(
+            'Only the Pokémon selected can appear as random starter options.\nThey also need to be in the list of "Allowed Pokémon".'
+        )
+
+    def pool_filter(self, row: Adw.SwitchRow):
+        if self.search_text == "":
+            match = True
+        else:
+            match = (
+                re.search(
+                    self.search_text,
+                    f"{row.get_title()} {row.get_subtitle()}",
+                    re.IGNORECASE,
+                )
+                is not None
+            )
+        return match

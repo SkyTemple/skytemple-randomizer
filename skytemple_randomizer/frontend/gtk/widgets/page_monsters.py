@@ -74,6 +74,8 @@ class MonstersPage(Adw.PreferencesPage):
                 title=self.row_allowed_monsters.get_title(),
                 content=page_am,
                 help_callback=page_am.help_pool_all,
+                search_callback=page_am.on_search_changed,
+                end_button_factory=page_am.create_window_end_buttons,
             )
         if w == self.button_randomize_starters:
             page_pl = MonstersPoolPage(type=MonstersPoolType.STARTERS, parent_page=self)
@@ -83,6 +85,8 @@ class MonstersPage(Adw.PreferencesPage):
                 getter=page_pl.get_enabled,
                 setter=page_pl.set_enabled,
                 help_callback=page_pl.help_pool_starters,
+                search_callback=page_pl.on_search_changed,
+                end_button_factory=page_pl.create_window_end_buttons,
             )
         if w == self.button_randomize_abilities:
             page_ab = MonstersAbilitiesPage(parent_page=self)

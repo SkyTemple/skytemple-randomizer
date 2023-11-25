@@ -47,6 +47,11 @@ class BaseSettingsDialog(Adw.Window):
     header_bar = cast(Adw.HeaderBar, Gtk.Template.Child())
     toolbar_view = cast(Adw.ToolbarView, Gtk.Template.Child())
     content = cast(Adw.Bin, Gtk.Template.Child())
+    search_bar = cast(Gtk.SearchBar, Gtk.Template.Child())
+    search_entry = cast(Gtk.SearchEntry, Gtk.Template.Child())
+    placeholder_toggle = cast(Adw.Bin, Gtk.Template.Child())
+    button_search = cast(Gtk.ToggleButton, Gtk.Template.Child())
+    action_bar: Gtk.ActionBar | None
     _children: list[RandomizationSettingsWidget]
     _getter: Callable[[], bool] | None
     _setter: Callable[[bool], None] | None
@@ -58,9 +63,12 @@ class BaseSettingsDialog(Adw.Window):
         getter: Callable[[], bool] | None = None,
         setter: Callable[[bool], None] | None = None,
         help_callback: Callable[[], str] | None = None,
+        search_callback: Callable[[Gtk.SearchEntry], None] | None = None,
+        end_button_factory: Callable[[], Gtk.Widget] | None = None,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
+        self.action_bar = None
         if isinstance(content, tuple):
             self._children = []
             # Make a ViewStack with ViewStack pages and add a view switcher to the title bar
@@ -81,14 +89,27 @@ class BaseSettingsDialog(Adw.Window):
             self.content.set_child(cast(Gtk.Widget, content))
             self._children = [content]
 
+        if help_callback is not None or end_button_factory is not None:
+            self.action_bar = Gtk.ActionBar()
+            self.toolbar_view.add_bottom_bar(self.action_bar)
+
         if help_callback is not None:
-            action_bar = Gtk.ActionBar()
+            assert self.action_bar is not None
             help_button = Gtk.MenuButton(
                 icon_name="skytemple-help-about-symbolic",
                 popover=HelpPopover(label=help_callback()),
             )
-            action_bar.pack_start(help_button)
-            self.toolbar_view.add_bottom_bar(action_bar)
+            self.action_bar.pack_start(help_button)
+
+        if search_callback is not None:
+            self.search_entry.connect("search-changed", search_callback)
+        else:
+            self.search_bar.hide()
+            self.button_search.hide()
+
+        if end_button_factory is not None:
+            assert self.action_bar is not None
+            self.action_bar.pack_end(end_button_factory())
 
         self._getter = getter
         self._setter = setter
@@ -104,6 +125,14 @@ class BaseSettingsDialog(Adw.Window):
         )
         self.add_shortcut(close_esc)
 
+    @Gtk.Template.Callback()
+    def on_button_search_clicked(self, *args):
+        self.search_bar.set_search_mode(not self.search_bar.get_search_mode())
+
+    @Gtk.Template.Callback()
+    def on_search_bar_notify_search_mode_enabled(self, *args):
+        self.button_search.set_active(self.search_bar.get_search_mode())
+
     def populate_settings(self, config: RandomizerConfig):
         for child in self._children:
             child.populate_settings(config)
@@ -112,9 +141,15 @@ class BaseSettingsDialog(Adw.Window):
             # Add a switch to toggle the feature on and off
             def switch_notify_active(*args):
                 self._setter(switch.get_active())  # type: ignore
-                self.content.set_sensitive(switch.get_active())
+                active = switch.get_active()
+                self.content.set_sensitive(active)
+                if self.action_bar is not None:
+                    self.action_bar.set_sensitive(active)
 
             switch = Gtk.Switch(active=self._getter())
-            self.content.set_sensitive(switch.get_active())
+            active = switch.get_active()
+            self.content.set_sensitive(active)
+            if self.action_bar is not None:
+                self.action_bar.set_sensitive(active)
             switch.connect("notify::active", switch_notify_active)
-            self.header_bar.pack_start(switch)
+            self.placeholder_toggle.set_child(switch)

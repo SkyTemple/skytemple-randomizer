@@ -45,6 +45,8 @@ class AppWindow(Adw.ApplicationWindow):
             self.maximize()
         else:
             self.unmaximize()
+        if frontend.application.development_mode:
+            self.add_css_class("devel")
 
     @Gtk.Template.Callback()
     def on_main_window_notify_default_width(self, *args):

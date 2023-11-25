@@ -82,7 +82,7 @@ class MainStack(Adw.Bin):
         )
 
         frontend = GtkFrontend.instance()
-        frontend.init_randomization_settings(self.rom_static_data)
+        frontend.init_rom(self.rom, self.rom_static_data)
         self.populate_settings()
 
     @GObject.Property(type=bool, default=False)
@@ -141,7 +141,7 @@ class MainStack(Adw.Bin):
 
         d = Adw.MessageDialog(
             body=_(
-                "Your settings will be discard and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
+                "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
             ),
             application=GtkFrontend.instance().application,
             modal=True,

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-20 22:02+0000\n"
-"PO-Revision-Date: 2023-11-20 23:28\n"
+"POT-Creation-Date: 2023-11-25 13:17+0000\n"
+"PO-Revision-Date: 2023-11-25 13:25\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1962,7 +1962,7 @@ msgstr ""
 msgid "Can not convert PIL image to Kao: Image dimensions must be {img_dim}x{img_dim}px."
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/kao/_model.py:489
+#: skytemple-files/skytemple_files/graphics/kao/_model.py:491
 msgid "This portrait does not compress well, the result size is greater than 800 bytes ({len(new_img_compressed)} bytes total).\n"
 "If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
 msgstr ""
@@ -2819,71 +2819,71 @@ msgstr ""
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:214
-#: skytemple-files/skytemple_files/patch/patches.py:224
+#: skytemple-files/skytemple_files/patch/patches.py:226
+#: skytemple-files/skytemple_files/patch/patches.py:236
 #, python-brace-format
 msgid "The patch '{name}' was not found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:233
+#: skytemple-files/skytemple_files/patch/patches.py:245
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:242
+#: skytemple-files/skytemple_files/patch/patches.py:254
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:253
+#: skytemple-files/skytemple_files/patch/patches.py:265
 msgid "No configuration was given."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:258
+#: skytemple-files/skytemple_files/patch/patches.py:270
 msgid "Missing configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:264
-#: skytemple-files/skytemple_files/patch/patches.py:270
 #: skytemple-files/skytemple_files/patch/patches.py:276
-#: skytemple-files/skytemple_files/patch/patches.py:284
-#: skytemple-files/skytemple_files/patch/patches.py:301
+#: skytemple-files/skytemple_files/patch/patches.py:282
+#: skytemple-files/skytemple_files/patch/patches.py:288
+#: skytemple-files/skytemple_files/patch/patches.py:296
+#: skytemple-files/skytemple_files/patch/patches.py:313
 msgid "Invalid configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:272
+#: skytemple-files/skytemple_files/patch/patches.py:284
 msgid "Must be >= {}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:278
+#: skytemple-files/skytemple_files/patch/patches.py:290
 msgid "Must be <= {}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:393
+#: skytemple-files/skytemple_files/patch/patches.py:405
 msgid "config.xml missing in patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:396
+#: skytemple-files/skytemple_files/patch/patches.py:408
 msgid "Syntax error in the config.xml while reading patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:409
+#: skytemple-files/skytemple_files/patch/patches.py:421
 msgid "patch.py missing in patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:412
+#: skytemple-files/skytemple_files/patch/patches.py:424
 msgid "The patch.py of the patch package contains a syntax error."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:420
+#: skytemple-files/skytemple_files/patch/patches.py:432
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:429
+#: skytemple-files/skytemple_files/patch/patches.py:441
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:441
+#: skytemple-files/skytemple_files/patch/patches.py:453
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr ""
@@ -3154,7 +3154,7 @@ msgstr ""
 msgid "Frame durations out of range while trying to build color."
 msgstr ""
 
-#: skytemple-rust/src/st_kao.rs:96
+#: skytemple-rust/src/st_kao.rs:97
 msgid "This portrait does not compress well, the result size is greater than 800 bytes ({} bytes total).\n"
 " If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
 msgstr ""

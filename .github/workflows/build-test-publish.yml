@@ -235,7 +235,7 @@ jobs:
           pip3 install -r requirements-mac-windows.txt
           # Generate MO localization files
           installer/generate-mo.sh
-          pip3 install .
+          pip3 install '.[gtk]'
           if [ -n "$IS_DEV_BUILD" ]; then
             installer/install-skytemple-components-from-git.sh
           fi

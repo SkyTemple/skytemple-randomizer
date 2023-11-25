@@ -41,6 +41,11 @@ Randomizer for Pokémon Mystery Dungeon Explorers of Sky.
 
 It is available for Linux, macOS and Windows.
 
+GTK frontend
+------------
+When installing from source, you probably want to install the "gtk" extra,
+in order to have the actual GUI functional.
+
 Downloads
 ---------
 - Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/

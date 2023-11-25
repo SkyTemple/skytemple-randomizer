@@ -28,10 +28,14 @@ dependencies = [
     "skytemple-files[spritecollab] >= 1.6.1, < 1.7.0",
     "explorerscript >= 0.1.3",
     "skytemple-icons >= 1.3.2",
-    "pygobject >= 3.44.0",
     "jsonschema >= 4.1.2",
     "packaging",
     "importlib_metadata>=4.6; python_version < '3.10'"
+]
+
+[project.optional-dependencies]
+gtk = [
+    "pygobject >= 3.44.0",
 ]
 
 [project.urls]

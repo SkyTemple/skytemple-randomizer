@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-25 19:26+0000\n"
-"PO-Revision-Date: 2023-11-25 19:27\n"
+"POT-Creation-Date: 2023-11-26 16:01+0000\n"
+"PO-Revision-Date: 2023-11-26 16:15\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -3315,27 +3315,27 @@ msgstr ""
 msgid "Tactics &amp; IQ"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:183
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:200
 msgid "Reset to Default"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:187
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:204
 msgid "Select None"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:191
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:208
 msgid "Copy from \"Allowed Pokémon\""
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:193
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:210
 msgid "Copy from Starters"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:204
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:221
 msgid "Only the Pokémon selected will be used for any randomization option."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:208
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:225
 msgid "Only the Pokémon selected can appear as random starter options.\n"
 "They also need to be in the list of \"Allowed Pokémon\"."
 msgstr ""

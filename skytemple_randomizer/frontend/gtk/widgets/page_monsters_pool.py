@@ -20,20 +20,20 @@ import os
 import re
 from enum import Enum, auto
 from functools import partial
+from threading import Thread
 from typing import cast
 
 from range_typed_integers import u16
 from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import MONSTER_MD
-from skytemple_files.data.md.protocol import MdEntryProtocol
 from skytemple_files.patch.patches import Patcher
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk, Adw, GLib
 
 from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWidget
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
@@ -49,6 +49,8 @@ class MonstersPoolType(Enum):
 class MonstersPoolPage(Adw.PreferencesPage):
     __gtype_name__ = "StMonstersPoolPage"
 
+    stack = cast(Gtk.Stack, Gtk.Template.Child())
+    spinner = cast(Gtk.Spinner, Gtk.Template.Child())
     pool_list = cast(Gtk.ListBox, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
@@ -79,29 +81,44 @@ class MonstersPoolPage(Adw.PreferencesPage):
 
         frontend = GtkFrontend.instance()
         rom = frontend.input_rom
-        string_provider = StringProvider(rom, frontend.input_rom_static_data)
-        patcher = Patcher(rom, frontend.input_rom_static_data)
 
-        b_attr = "md_index_base"
-        if patcher.is_applied("ExpandPokeList"):
-            b_attr = "entid"
+        monster_bases: dict[u16, tuple[bool, str]] = {}
 
-        monster_md = FileType.MD.deserialize(rom.getFileByName(MONSTER_MD))
+        def load_thread():
+            string_provider = StringProvider(rom, frontend.input_rom_static_data)
+            patcher = Patcher(rom, frontend.input_rom_static_data)
 
-        monster_base_ids: set[u16] = set()
-        for entry in monster_md.entries:
-            monster_base_ids.add(getattr(entry, b_attr))
+            b_attr = "md_index_base"
+            if patcher.is_applied("ExpandPokeList"):
+                b_attr = "entid"
 
-        for baseid in monster_base_ids:
-            name = string_provider.get_value(StringType.POKEMON_NAMES, baseid)
-            activated = baseid in self.pool()
-            row = Adw.SwitchRow(title=name, subtitle=f"#{baseid:03}", active=activated)
-            self.pool_list.append(row)
-            self.rows[baseid] = row
-            row.connect("notify::active", partial(self.on_row_notify_active, baseid))
+            monster_md = FileType.MD.deserialize(rom.getFileByName(MONSTER_MD))
+
+            for entry in monster_md.entries:
+                baseid = getattr(entry, b_attr)
+                monster_bases[baseid] = (
+                    baseid in self.pool(),
+                    string_provider.get_value(StringType.POKEMON_NAMES, baseid),
+                )
+
+            GLib.idle_add(finish_load)
+
+        def finish_load():
+            for baseid, (activated, name) in monster_bases.items():
+                row = Adw.SwitchRow(
+                    title=name, subtitle=f"#{baseid:03}", active=activated
+                )
+                self.pool_list.append(row)
+                self.rows[baseid] = row
+                row.connect(
+                    "notify::active", partial(self.on_row_notify_active, baseid)
+                )
+            self.stack.set_visible_child(self.pool_list)
 
         self.pool_list.set_filter_func(self.pool_filter)
         self._suppress_signals = False
+
+        Thread(target=load_thread).start()
 
     def get_enabled(self) -> bool:
         assert self.randomization_settings is not None

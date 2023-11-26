@@ -3,14 +3,19 @@ using Adw 1;
 
 template $StMonstersPoolPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
-        ListBox pool_list {
-            valign: start;
-            hexpand: true;
-            selection-mode: none;
+        Stack stack {
+            Spinner spinner {
+              spinning: true;
+            }
+            ListBox pool_list {
+                valign: start;
+                hexpand: true;
+                selection-mode: none;
 
-            styles [
-                "boxed-list",
-            ]
+                styles [
+                    "boxed-list",
+                ]
+            }
         }
     }
 }

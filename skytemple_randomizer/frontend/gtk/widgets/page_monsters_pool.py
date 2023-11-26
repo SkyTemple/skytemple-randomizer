@@ -161,7 +161,7 @@ class MonstersPoolPage(Adw.PreferencesPage):
     def on_search_changed(self, search_entry: Gtk.SearchEntry):
         if self._suppress_signals:
             return
-        self.search_text = search_entry.get_text().strip()
+        self.search_text = search_entry.get_text().strip().lower()
         self.pool_list.invalidate_filter()
 
     def on_button_reset_clicked(self, *args):
@@ -230,11 +230,6 @@ class MonstersPoolPage(Adw.PreferencesPage):
             match = True
         else:
             match = (
-                re.search(
-                    self.search_text,
-                    f"{row.get_title()} {row.get_subtitle()}",
-                    re.IGNORECASE,
-                )
-                is not None
+                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
             )
         return match

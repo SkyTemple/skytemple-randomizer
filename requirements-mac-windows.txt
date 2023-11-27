@@ -5,4 +5,4 @@ strictyaml==1.7.3
 jsonschema==4.19.1
 packaging
 importlib_metadata>=4.6; python_version < "3.10"
-Pillow~=10.0.0  # issues with macOS and Pillow 10.1.0 (jpeg import)
+Pillow~=10.1.0  # issues with macOS and Pillow 10.1.0 (jpeg import)

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-11-26 16:15\n"
+"PO-Revision-Date: 2023-12-03 12:27\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -79,203 +79,203 @@ msgstr ""
 
 #: /dev/fd/63:16 /dev/fd/63:139
 msgid "Weather Change Feedback"
-msgstr ""
+msgstr "Comentarios de cambio de clima"
 
 #: /dev/fd/63:17 /dev/fd/63:140
 msgid "Weather Names"
-msgstr ""
+msgstr "Nombres de clima"
 
 #: /dev/fd/63:18 /dev/fd/63:141
 msgid "Floor-Wide Status Names+Desc"
-msgstr ""
+msgstr "Nombres de estado del suelo + Desc."
 
 #: /dev/fd/63:19 /dev/fd/63:142
 msgid "IQ Skills Menu"
-msgstr ""
+msgstr "Menú de habilidades de CI"
 
 #: /dev/fd/63:20 /dev/fd/63:143
 msgid "Test Dungeon"
-msgstr ""
+msgstr "Territorio de prueba"
 
 #: /dev/fd/63:21 /dev/fd/63:144
 msgid "Mission Objectives"
-msgstr ""
+msgstr "Objetivos de misión"
 
 #: /dev/fd/63:22 /dev/fd/63:145
 msgid "Mission Failure/Faint Strings"
-msgstr ""
+msgstr "Cadenas de misiones fallidas o derrotas"
 
 #: /dev/fd/63:23 /dev/fd/63:146
 msgid "Speed Change Feedback"
-msgstr ""
+msgstr "Comentarios sobre cambios de velocidad"
 
 #: /dev/fd/63:24 /dev/fd/63:147
 msgid "Potential Recruit Strings"
-msgstr ""
+msgstr "Cadenas de potencial de reclutamiento"
 
 #: /dev/fd/63:25 /dev/fd/63:148
 msgid "Gummi Feedback"
-msgstr ""
+msgstr "Reacción a gomis"
 
 #: /dev/fd/63:26 /dev/fd/63:149
 msgid "Traps Feedback"
-msgstr ""
+msgstr "Comentarios sobre trampas"
 
 #: /dev/fd/63:27 /dev/fd/63:150
 msgid "More Dungeon Feedback"
-msgstr ""
+msgstr "Más comentarios de territorio"
 
 #: /dev/fd/63:28 /dev/fd/63:151
 msgid "Something's Stirring String"
-msgstr ""
+msgstr "Cadena \"Algo se está moviendo\""
 
 #: /dev/fd/63:29 /dev/fd/63:152
 msgid "Some Fake items Dialogue"
-msgstr ""
+msgstr "Diálogos de algunos objetos falsos"
 
 #: /dev/fd/63:30 /dev/fd/63:153
 msgid "Shaymin Form Change Strings"
-msgstr ""
+msgstr "Cadenas de cambio de forma de Shaymin"
 
 #: /dev/fd/63:31 /dev/fd/63:154
 msgid "Recruited A Pokemon Strings"
-msgstr ""
+msgstr "Cadenas de Pokémon reclutados"
 
 #: /dev/fd/63:32 /dev/fd/63:155
 msgid "Battle Feedback Messages"
-msgstr ""
+msgstr "Mensajes de comentarios de batalla"
 
 #: /dev/fd/63:33 /dev/fd/63:156
 msgid "Misson Feedback"
-msgstr ""
+msgstr "Comentarios de misión"
 
 #: /dev/fd/63:34 /dev/fd/63:157
 msgid "Kecleon Dungeon Shop Strings"
-msgstr ""
+msgstr "Cadenas de Tienda Kecleon"
 
 #: /dev/fd/63:35 /dev/fd/63:158
 msgid "Misc Battle Events Strings"
-msgstr ""
+msgstr "Cadenas de eventos de batalla adicionales"
 
 #: /dev/fd/63:36 /dev/fd/63:159
 msgid "Secret Bazaar Stairs Found"
-msgstr ""
+msgstr "Escaleras al Bazar Secreto encontradas"
 
 #: /dev/fd/63:37 /dev/fd/63:160
 msgid "Kirlia Secret Bazaar Greeting"
-msgstr ""
+msgstr "Saludo del Bazar Secreto de Kirlia"
 
 #: /dev/fd/63:38 /dev/fd/63:161
 msgid "Grab Bags Shop Strings"
-msgstr ""
+msgstr "Cadenas de la tienda de bolsas"
 
 #: /dev/fd/63:39 /dev/fd/63:162
 msgid "Shedinja Shop Strings"
-msgstr ""
+msgstr "Cadenas de la tienda de Shedinja"
 
 #: /dev/fd/63:40 /dev/fd/63:163
 msgid "Mime Jr. Spa Strings"
-msgstr ""
+msgstr "Cadenas del spa Mime Jr."
 
 #: /dev/fd/63:41 /dev/fd/63:164
 msgid "Swalot's Shop Strings"
-msgstr ""
+msgstr "Cadenas de tienda de Swalot"
 
 #: /dev/fd/63:42 /dev/fd/63:165
 msgid "Team Tactics Menu strings"
-msgstr ""
+msgstr "Cadenas del menú de tácticas de equipo"
 
 #: /dev/fd/63:43 /dev/fd/63:166
 msgid "Item Became Sticky"
-msgstr ""
+msgstr "Objeto se volvió pegajoso"
 
 #: /dev/fd/63:44 /dev/fd/63:167
 msgid "Pokemon LEVEL_UP Dialogue"
-msgstr ""
+msgstr "Diálogo de Pokémon al subir de nivel"
 
 #: /dev/fd/63:45 /dev/fd/63:168
 msgid "Pokemon WAIT Dialogue"
-msgstr ""
+msgstr "Diálogo de Pokémon esperando"
 
 #: /dev/fd/63:46 /dev/fd/63:169
 msgid "Pokemon HEALTHY Dialogue"
-msgstr ""
+msgstr "Diálogo de Pokémon saludable"
 
 #: /dev/fd/63:47 /dev/fd/63:170
 msgid "Pokemon HALF_LIFE Dialogue"
-msgstr ""
+msgstr "Diálogo de Pokémon con mitad de PS"
 
 #: /dev/fd/63:48 /dev/fd/63:171
 msgid "Pokemon PINCH Dialogue"
-msgstr ""
+msgstr "Diálogo de Pokémon en apuros"
 
 #: /dev/fd/63:49 /dev/fd/63:172
 msgid "Pokemon GROUND_WAIT Dialogue"
-msgstr ""
+msgstr "Diálogo de Pokémon esperando (en territorio)"
 
 #: /dev/fd/63:50 /dev/fd/63:173
 msgid "Item Names"
-msgstr ""
+msgstr "Nombres de objeto"
 
 #: /dev/fd/63:51 /dev/fd/63:174
 msgid "Move Names"
-msgstr ""
+msgstr "Nombres de movimiento"
 
 #: /dev/fd/63:52 /dev/fd/63:175
 msgid "Pokemon Names"
-msgstr ""
+msgstr "Nombres de Pokémon"
 
 #: /dev/fd/63:53 /dev/fd/63:176
 msgid "Pokemon Categories"
-msgstr ""
+msgstr "Categorías de Pokémon"
 
 #: /dev/fd/63:54 /dev/fd/63:177
 msgid "Tactics Names"
-msgstr ""
+msgstr "Nombres de tácticas"
 
 #: /dev/fd/63:55 /dev/fd/63:178
 msgid "Tactics Descriptions"
-msgstr ""
+msgstr "Descripciones de tácticas"
 
 #: /dev/fd/63:56 /dev/fd/63:179
 msgid "IQ Skills Names"
-msgstr ""
+msgstr "Nombre de habilidades CI"
 
 #: /dev/fd/63:57 /dev/fd/63:180
 msgid "IQ Skills Descriptions"
-msgstr ""
+msgstr "Descripciones de habilidades CI"
 
 #: /dev/fd/63:58 /dev/fd/63:181
 msgid "Move Targets Strings"
-msgstr ""
+msgstr "Cadenas sobre objetivos de movimientos"
 
 #: /dev/fd/63:59 /dev/fd/63:182
 msgid "Accuracy/Power Stars Ratings"
-msgstr ""
+msgstr "Cadenas sobre Precisión o Potencia"
 
 #: /dev/fd/63:60 /dev/fd/63:183
 msgid "Move Descriptions"
-msgstr ""
+msgstr "Descripciones de movimientos"
 
 #: /dev/fd/63:61 /dev/fd/63:184
 msgid "Item Long Descriptions"
-msgstr ""
+msgstr "Descripción larga de objetos"
 
 #: /dev/fd/63:62 /dev/fd/63:185
 msgid "Item Short Descriptions"
-msgstr ""
+msgstr "Descripción corta de objetos"
 
 #: /dev/fd/63:63 /dev/fd/63:186
 msgid "Trap Names"
-msgstr ""
+msgstr "Nombres de trampas"
 
 #: /dev/fd/63:64 /dev/fd/63:187
 msgid "Trap Descriptions"
-msgstr ""
+msgstr "Descripciones de trampas"
 
 #: /dev/fd/63:65 /dev/fd/63:188
 msgid "Statuses Names and Descriptions"
-msgstr ""
+msgstr "Nombres de estados y descripciones"
 
 #: /dev/fd/63:66 /dev/fd/63:189
 msgid "Type Names"
@@ -3212,7 +3212,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
-msgstr ""
+msgstr "Actualizar ahora"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:24
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:38
@@ -3557,7 +3557,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:19
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:28
 msgid "SkyTemple Randomizer"
-msgstr ""
+msgstr "SkyTemple Randomizer"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:33
 msgid "Currently loaded ROM:"

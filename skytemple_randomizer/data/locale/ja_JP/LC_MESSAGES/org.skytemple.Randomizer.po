@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-11-26 16:15\n"
+"PO-Revision-Date: 2023-12-07 13:05\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -347,15 +347,15 @@ msgstr "投擲物 (石)"
 
 #: /dev/fd/63:83 /dev/fd/63:206
 msgid "Berries, Seeds, Vitamins"
-msgstr "タネ・きのみ・えいようドリンク"
+msgstr "きのみ・タネ・栄養ドリンク"
 
 #: /dev/fd/63:84 /dev/fd/63:207
 msgid "Foods, Gummies"
-msgstr "しょくりょう・グミ"
+msgstr "食料・グミ"
 
 #: /dev/fd/63:85 /dev/fd/63:208
 msgid "Hold"
-msgstr "そうびひん"
+msgstr "装備品"
 
 #: /dev/fd/63:86 /dev/fd/63:209
 msgid "TMs, HMs"
@@ -399,7 +399,7 @@ msgstr "宝箱3"
 
 #: /dev/fd/63:96 /dev/fd/63:219
 msgid "Exclusive Items"
-msgstr "せんようどうぐ"
+msgstr "専用道具"
 
 #: /dev/fd/63:97 /dev/fd/63:220
 msgid "Red component"
@@ -886,7 +886,7 @@ msgstr "ダンジョンタイルセット (#10)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Use Fixed Room (#11)"
-msgstr "固定部屋で使用 (#11)"
+msgstr "固定フロアで使用 (#11)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:276
 msgid "This function has no description."
@@ -1086,11 +1086,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:40
 msgid "Scenario Below or Equal"
-msgstr ""
+msgstr "シナリオ以前"
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:41
 msgid "Scenario Greater or Equal"
-msgstr "シナリオ以上"
+msgstr "シナリオ以降"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:37
 msgid "Pokémon"
@@ -1237,7 +1237,7 @@ msgstr "マグマ"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
-msgstr "みず"
+msgstr "水上"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:546
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
@@ -1342,15 +1342,15 @@ msgstr "待機 (グラウンド)"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
 msgid "Physical Move"
-msgstr "ぶつり"
+msgstr "物理"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
 msgid "Special Move"
-msgstr "とくしゅ"
+msgstr "特殊"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:37
 msgid "Status Move"
-msgstr "へんか"
+msgstr "変化"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"
@@ -1554,7 +1554,7 @@ msgstr "床/壁 (部屋) - 鍵ドア (0xC)"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:176
 msgid "Tile flag 0xC is set to 1 and spawns a key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr "タイルフラグ 0xC は 1 に設定され、鍵のドアが生成されます。固定ルームIDが&lt; 0xA5 の場合、これは壁になります。それ以外の場合は床になります。"
+msgstr "タイルフラグ 0xC は 1 に設定され、鍵のドアが生成されます。固定フロアIDが&lt; 0xA5 の場合、これは壁になります。それ以外の場合は床になります。"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:182
 msgid "F/W, Room; Key Door (0xD)"
@@ -1562,7 +1562,7 @@ msgstr "床/壁 (部屋) - 鍵ドア (0xD)"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:188
 msgid "Tile flag 0xD is set to 1 and spawns a key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr "タイルフラグ 0xD は 1 に設定され、鍵のドアが生成されます。固定ルームIDが &lt; 0xA5 の場合、これは壁になります。それ以外の場合は床になります。"
+msgstr "タイルフラグ 0xD は 1 に設定され、鍵のドアが生成されます。固定フロアIDが&lt; 0xA5 の場合、これは壁になります。それ以外の場合は床になります。"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:212
 msgid "Attendant1 Spawn Floor"
@@ -1931,7 +1931,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
 #: skytemple-rust/src/st_dpla.rs:121
 msgid "This palette has no animation."
-msgstr ""
+msgstr "このパレットにはアニメーションがありません。"
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:100
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:102
@@ -2108,7 +2108,7 @@ msgstr "泡"
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:328
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:355
 msgid "Earthquake"
-msgstr "地震"
+msgstr "じしん"
 
 #. TRANSLATORS: Effect of a tileset's secret power move
 #. TRANSLATORS: Move name
@@ -2131,15 +2131,15 @@ msgstr "すいみん"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:335
 msgid "Speed -1"
-msgstr "いどうそくど -1"
+msgstr "移動速度 -1"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:338
 msgid "Attack -1"
-msgstr "こうげき -1"
+msgstr "攻撃 -1"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:342
 msgid "Accuracy -1"
-msgstr "めいちゅう -1"
+msgstr "命中 -1"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:345
 msgid "Cringe"
@@ -2521,15 +2521,15 @@ msgstr "歩きアニメーション(1フレーム目)"
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:235
 #, python-brace-format
 msgid "Error while applying the patch: {ex}"
-msgstr ""
+msgstr "パッチ適用エラー: {ex}"
 
 #: skytemple-files/skytemple_files/patch/category.py:26
 msgid "Improvements and Tweaks"
-msgstr ""
+msgstr "改善と調整"
 
 #: skytemple-files/skytemple_files/patch/category.py:29
 msgid "New Mechanics"
-msgstr ""
+msgstr "新しい仕組み"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:31
@@ -3519,7 +3519,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:127
 msgid "Music"
-msgstr "音楽"
+msgstr "BGM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:147
 msgid "Explorer Rank"

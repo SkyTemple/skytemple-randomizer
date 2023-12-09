@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-12-03 13:27\n"
+"PO-Revision-Date: 2023-12-09 12:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: /dev/fd/63:1 /dev/fd/63:120
 msgid "English"
-msgstr ""
+msgstr "英语"
 
 #: /dev/fd/63:2 /dev/fd/63:125
 msgid "Explorer Ranks Names"
@@ -371,11 +371,11 @@ msgstr ""
 
 #: /dev/fd/63:89 /dev/fd/63:212
 msgid "Other"
-msgstr ""
+msgstr "其他"
 
 #: /dev/fd/63:90 /dev/fd/63:213
 msgid "Orbs"
-msgstr ""
+msgstr "玉"
 
 #: /dev/fd/63:91 /dev/fd/63:214
 msgid "Link Box"
@@ -399,7 +399,7 @@ msgstr ""
 
 #: /dev/fd/63:96 /dev/fd/63:219
 msgid "Exclusive Items"
-msgstr ""
+msgstr "专属道具"
 
 #: /dev/fd/63:97 /dev/fd/63:220
 msgid "Red component"
@@ -496,40 +496,40 @@ msgstr ""
 
 #: /dev/fd/63:121
 msgid "French"
-msgstr ""
+msgstr "法语"
 
 #: /dev/fd/63:122
 msgid "German"
-msgstr ""
+msgstr "德语"
 
 #: /dev/fd/63:123
 msgid "Italian"
-msgstr ""
+msgstr "意大利语"
 
 #: /dev/fd/63:124
 msgid "Spanish"
-msgstr ""
+msgstr "西班牙语"
 
 #: explorerscript/explorerscript/macro.py:85
 #, python-brace-format
 msgid "Value for macro variable {var_name} not provided."
-msgstr ""
+msgstr "未提供宏变量 {var_name} 的值。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_adventure_log.py:42
 msgid "No value for adventure_log set."
-msgstr ""
+msgstr "未设置 adventure_log 的值。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_clear.py:42
 msgid "No variable for clear."
-msgstr ""
+msgstr "没有变量可以清除。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_dungeon_mode.py:43
 msgid "No variable for dungeon_mode set."
-msgstr ""
+msgstr "未设置 dungeon_mode 的变量。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_dungeon_mode.py:45
 msgid "No value for dungeon_mode set."
-msgstr ""
+msgstr "未给 dungeon_mode 赋值。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_initial.py:42
 msgid "No variable for init."
@@ -538,7 +538,7 @@ msgstr ""
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:48
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:46
 msgid "No variable for assignment."
-msgstr ""
+msgstr "没有用于赋值的变量。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:50
 msgid "No operator set for assignment."
@@ -563,11 +563,11 @@ msgstr ""
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/atoms/scn_var.py:41
 msgid "scn() without a variable."
-msgstr ""
+msgstr "scn() 没有变量。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/atoms/value_of.py:41
 msgid "value() without a variable."
-msgstr ""
+msgstr "value() 没有变量。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:53
 msgid "No target ID set for with(){} block."

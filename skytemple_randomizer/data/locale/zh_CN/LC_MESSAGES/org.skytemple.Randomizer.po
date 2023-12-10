@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-12-10 04:03\n"
+"PO-Revision-Date: 2023-12-10 06:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1017,7 +1017,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:36
 #: skytemple-files/skytemple_files/data/md/protocol.py:480
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:62
 #: skytemple-files/skytemple_files/data/md/protocol.py:67
@@ -3537,7 +3537,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:119
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:144
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."

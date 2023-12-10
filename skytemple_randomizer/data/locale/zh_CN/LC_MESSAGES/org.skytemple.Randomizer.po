@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-12-10 02:29\n"
+"PO-Revision-Date: 2023-12-10 04:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3527,7 +3527,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:33
 msgid "Currently loaded ROM:"
-msgstr ""
+msgstr "当前加载的ROM："
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:57
 msgid "Welcome to the Randomizer!\n"

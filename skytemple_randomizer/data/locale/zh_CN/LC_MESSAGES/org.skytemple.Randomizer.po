@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-12-10 07:36\n"
+"PO-Revision-Date: 2023-12-10 09:06\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3502,7 +3502,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:94
 msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
-msgstr ""
+msgstr "从 SpriteCollab 下载(sprites.pmdcollab.org)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:102
 msgid "Patches"

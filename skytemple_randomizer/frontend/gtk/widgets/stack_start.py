@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import os
+import struct
 import sys
 import webbrowser
 from typing import cast
@@ -114,9 +115,18 @@ class StartStack(Adw.Bin):
         try:
             rom = NintendoDSRom.fromFile(path)
             static_data = get_ppmdu_config_for_rom(rom)
+        except struct.error:
+            GtkFrontend.instance().display_error(
+                _("Failed to load ROM:")
+                + " "
+                + _(
+                    'Are you sure you provided a ROM? A ROM usually has the file extension ".nds".'
+                ),
+                cast(Gtk.Window, self.get_root()),
+            )
         except Exception as e:
             GtkFrontend.instance().display_error(
-                _("Failed to load ROM: {}").format(e),
+                _("Failed to load ROM:") + str(e),
                 cast(Gtk.Window, self.get_root()),
             )
             return

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2023-11-26 16:01+0000\n"
-"PO-Revision-Date: 2023-11-26 16:15\n"
+"POT-Creation-Date: 2023-12-23 15:05+0000\n"
+"PO-Revision-Date: 2023-12-23 15:06\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi_VN\n"
@@ -3109,6 +3109,10 @@ msgid "An image selected to import is too complex. It has too many unique tiles 
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
 msgstr ""
 
+#: skytemple-rust/src/python_image.rs:53
+msgid "The image you provided is not an indexed image (it has no palette). Please convert it to an indexed image (with a maximum of {} colors) and try again."
+msgstr ""
+
 #: skytemple-rust/src/romfs.rs:100
 msgid "ROM Header checksum does not match contents."
 msgstr ""
@@ -3571,25 +3575,30 @@ msgstr ""
 msgid "_Randomize"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:59
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:60
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:61
 msgid "Load ROM"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:65
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:66
 msgid "Load {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:69
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:70
 msgid "Load another ROM"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:104
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:105
 msgid "Failed to load ROM: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:119
-msgid "Failed to load ROM: {}"
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:120
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:129
+msgid "Failed to load ROM:"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:123
+msgid "Are you sure you provided a ROM? A ROM usually has the file extension \".nds\"."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35

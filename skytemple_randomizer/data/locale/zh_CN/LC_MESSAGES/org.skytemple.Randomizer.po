@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-12-23 15:05+0000\n"
-"PO-Revision-Date: 2023-12-24 07:17\n"
+"PO-Revision-Date: 2023-12-24 08:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2150,7 +2150,7 @@ msgstr ""
 #. TRANSLATORS: Status
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:347
 msgid "Paralysis"
-msgstr ""
+msgstr "麻痹"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:358
 msgid "Rock Slide"
@@ -2522,21 +2522,21 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/category.py:26
 msgid "Improvements and Tweaks"
-msgstr ""
+msgstr "改进与调整"
 
 #: skytemple-files/skytemple_files/patch/category.py:29
 msgid "New Mechanics"
-msgstr ""
+msgstr "新机制"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:31
 msgid "Bugfixes"
-msgstr ""
+msgstr "bug 修复"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:32
 msgid "Utility"
-msgstr ""
+msgstr "实用"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:33

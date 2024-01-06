@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2023-12-23 15:05+0000\n"
-"PO-Revision-Date: 2023-12-23 15:06\n"
+"PO-Revision-Date: 2024-01-06 10:45\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -2551,7 +2551,7 @@ msgstr "Andere"
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "Nach dem Anwenden des Patches, werden Akteur- und Levelliste aus einer separaten Datei geladen. Beide Listen werden vor Anwenden des Patches extrahiert."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:109
 msgid "This patch can not be re-applied."
@@ -2925,7 +2925,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "'{}' missing in scene data."
-msgstr ""
+msgstr "'{}' fehlt in den Szenendaten."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:469
 msgid "The event ID {} is out of bounds for one of the triggers."
@@ -2933,7 +2933,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:557
 msgid "Unknown direction value."
-msgstr ""
+msgstr "Unbekannter Richtungswert."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:57
 msgid "Can not save a scene event without a defined triggered script."
@@ -3232,7 +3232,7 @@ msgstr "Über"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68

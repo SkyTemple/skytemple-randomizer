@@ -203,7 +203,7 @@ jobs:
           # Install other dependencies and SkyTemple Randomizer itself
           pip3 install skytemple-rust 'pyinstaller~=5.0'
           pip3 install -r requirements-mac-windows.txt
-          pip3 install .
+          pip3 install '.[gtk]'
           if [ -n "$IS_DEV_BUILD" ]; then
             installer/install-skytemple-components-from-git.sh
           fi

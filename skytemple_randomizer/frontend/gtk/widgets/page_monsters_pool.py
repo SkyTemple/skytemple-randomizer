@@ -17,7 +17,6 @@
 from __future__ import annotations
 
 import os
-import re
 from enum import Enum, auto
 from functools import partial
 from threading import Thread

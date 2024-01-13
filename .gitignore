@@ -50,7 +50,6 @@ coverage.xml
 
 # Translations
 *.mo
-*.pot
 
 # Django stuff:
 *.log
@@ -106,4 +105,7 @@ venv.bak/
 ### JetBrains
 .idea/
 ### skytemple
-*.glade~
+*.glade
+*.ui
+
+/subprojects/blueprint-compiler

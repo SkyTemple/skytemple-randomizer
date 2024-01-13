@@ -1,0 +1,3 @@
+files:
+  - source: /skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot
+    translation: /skytemple_randomizer/data/locale/%locale_with_underscore%/LC_MESSAGES/org.skytemple.Randomizer.po

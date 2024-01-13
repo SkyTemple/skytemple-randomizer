@@ -1,0 +1,14 @@
+using Gtk 4.0;
+
+template $StHelpPopover: Popover {
+    realize => $on_realize();
+
+    child: Label label_widget {
+        max-width-chars: 52;
+        wrap: true;
+        margin-start: 5;
+        margin-end: 5;
+        margin-top: 5;
+        margin-bottom: 5;
+    };
+}

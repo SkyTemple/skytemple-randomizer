@@ -1,0 +1,52 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StWelcomePage: Adw.Bin {
+    child: Box {
+        orientation: vertical;
+
+        $StUpdateInfoBanner {}
+
+        Adw.StatusPage {
+            icon-name: 'skytemple';
+            title: _('SkyTemple Randomizer');
+
+            child: Adw.Clamp {
+                maximum-size: 420;
+
+                child: Box {
+                    orientation: vertical;
+                    spacing: 15;
+
+                    Box {
+                        orientation: vertical;
+                        halign: center;
+
+                        Label {
+                            label: _("Currently loaded ROM:");
+                            wrap: true;
+                            wrap-mode: word;
+                            styles ["dim-label"]
+                        }
+
+                        Label current_rom_name {
+                            label: "";
+                            wrap: true;
+                            wrap-mode: word;
+                            styles ["dim-label"]
+                        }
+
+                    }
+
+                    Label {
+                        wrap: true;
+                        justify: center;
+                        label: _('Welcome to the Randomizer!\nClick the "Randomize" button to randomize your ROM, or configure options by selecting a page.');
+                    }
+
+                    $StLinksGrid {}
+                };
+            };
+        }
+    };
+}

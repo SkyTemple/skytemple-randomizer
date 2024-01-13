@@ -3,9 +3,13 @@
 SkyTemple Randomizer
 ====================
 
-|build| |pypi-version| |pypi-downloads| |pypi-license| |pypi-pyversions| |discord|
+|build| |crowdin| |pypi-version| |pypi-downloads| |pypi-license| |pypi-pyversions| |discord|
 
 .. |logo| image:: https://raw.githubusercontent.com/SkyTemple/skytemple/master/skytemple/data/icons/hicolor/256x256/apps/skytemple.png
+
+.. |crowdin| image:: https://badges.crowdin.net/skytemple/localized.svg
+    :target: https://crowdin.com/project/skytemple
+    :alt: Localization Progress
 
 .. |build| image:: https://img.shields.io/github/actions/workflow/status/SkyTemple/skytemple-randomizer/build-test-publish.yml
     :target: https://pypi.org/project/skytemple-randomizer/
@@ -36,6 +40,14 @@ SkyTemple Randomizer
 Randomizer for Pokémon Mystery Dungeon Explorers of Sky.
 
 It is available for Linux, macOS and Windows.
+
+GTK frontend
+------------
+When installing from source, you probably want to install the "gtk" extra,
+in order to have the actual GUI functional.
+
+The GTK frontend requires GTK 4, all related libraries and libadwaita to be
+installed.
 
 Downloads
 ---------

@@ -36,7 +36,7 @@ pip3 install -U certifi
 
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-mac-windows.txt
-pip3 install ..
+pip3 install '..[gtk]'
 
 if ($env:IS_DEV_BUILD) {
   bash .\install-skytemple-components-from-git.sh

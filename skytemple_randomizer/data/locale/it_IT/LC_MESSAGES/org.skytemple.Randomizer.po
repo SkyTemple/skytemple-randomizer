@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-01-24 12:57\n"
+"PO-Revision-Date: 2024-01-24 14:06\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -227,7 +227,7 @@ msgstr ""
 
 #: /dev/fd/63:53 /dev/fd/63:176
 msgid "Pokemon Categories"
-msgstr ""
+msgstr "Categorie Pokemon"
 
 #: /dev/fd/63:54 /dev/fd/63:177
 msgid "Tactics Names"
@@ -383,7 +383,7 @@ msgstr ""
 
 #: /dev/fd/63:92 /dev/fd/63:215
 msgid "Used TM"
-msgstr ""
+msgstr "MT Usata"
 
 #: /dev/fd/63:93 /dev/fd/63:216
 msgid "Treasure Box 1"
@@ -496,7 +496,7 @@ msgstr ""
 
 #: /dev/fd/63:121
 msgid "French"
-msgstr ""
+msgstr "Francese"
 
 #: /dev/fd/63:122
 msgid "German"
@@ -1094,7 +1094,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:37
 msgid "Pokémon"
-msgstr ""
+msgstr "Pokémon"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:38
 msgid "Type"
@@ -2105,7 +2105,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:328
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:355
 msgid "Earthquake"
-msgstr ""
+msgstr "Terremoto"
 
 #. TRANSLATORS: Effect of a tileset's secret power move
 #. TRANSLATORS: Move name
@@ -2154,36 +2154,36 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:358
 msgid "Rock Slide"
-msgstr ""
+msgstr "Frana"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:360
 msgid "Tri Attack"
-msgstr ""
+msgstr "Tripletta"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:361
 msgid "Hydro Pump"
-msgstr ""
+msgstr "Idropompa"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:362
 msgid "Blizzard"
-msgstr ""
+msgstr "Bora"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:363
 msgid "Ice Beam"
-msgstr ""
+msgstr "Geloraggio"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:364
 msgid "Seed Bomb"
-msgstr ""
+msgstr "Semebomba"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:365
 msgid "Mud Bomb"
-msgstr ""
+msgstr "Pantanobomba"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:370
 msgid "Foggy 1"
@@ -3417,7 +3417,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:64
 msgid "Randomize Chapter Titles"
-msgstr ""
+msgstr "Randomizza titoli dei capitoli"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:73
 msgid "Configure the pool of chapter titles used for randomization"
@@ -3438,7 +3438,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:117
 msgid "Randomize Story Dialogue"
-msgstr ""
+msgstr "Randomizza dialoghi della storia"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:128
 msgid "Randomize the game's overworld scene text. ALL overworld text is shuffled.\n"

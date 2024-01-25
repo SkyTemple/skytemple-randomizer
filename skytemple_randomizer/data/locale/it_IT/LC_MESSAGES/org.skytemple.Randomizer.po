@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-01-24 14:06\n"
+"PO-Revision-Date: 2024-01-25 15:13\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -1233,7 +1233,7 @@ msgstr ""
 #. TRANSLATORS: Movement Type
 #: skytemple-files/skytemple_files/data/md/protocol.py:522
 msgid "Lava"
-msgstr ""
+msgstr "Lava"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
@@ -1815,11 +1815,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
 msgid "Chestnut Trap"
-msgstr ""
+msgstr "Castagnotrappola"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:172
 msgid "Wonder Tile"
-msgstr ""
+msgstr "Mattomagica"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
 msgid "Pokemon Trap"
@@ -1839,7 +1839,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:177
 msgid "Trip Trap"
-msgstr ""
+msgstr "Inciampotrappola"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:178
 msgid "Random Trap"

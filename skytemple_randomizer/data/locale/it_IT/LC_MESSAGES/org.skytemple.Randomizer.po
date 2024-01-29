@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-01-25 15:13\n"
+"PO-Revision-Date: 2024-01-29 14:35\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -371,7 +371,7 @@ msgstr ""
 
 #: /dev/fd/63:89 /dev/fd/63:212
 msgid "Other"
-msgstr ""
+msgstr "Altro"
 
 #: /dev/fd/63:90 /dev/fd/63:213
 msgid "Orbs"
@@ -894,7 +894,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
 msgid "Down"
-msgstr ""
+msgstr "Giù"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
 msgid "Down Right"
@@ -902,7 +902,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
 msgid "Right"
-msgstr ""
+msgstr "Destra"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
 msgid "Up Right"
@@ -910,7 +910,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
 msgid "Up"
-msgstr ""
+msgstr "Su"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
 msgid "Up Left"
@@ -918,7 +918,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
 msgid "Left"
-msgstr ""
+msgstr "Sinistra"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:332
 msgid "Down Left"
@@ -963,7 +963,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/util.py:540
 msgid "This ROM is not supported by SkyTemple."
-msgstr ""
+msgstr "Questa ROM non è supportata da SkyTemple."
 
 #: skytemple-files/skytemple_files/common/util.py:610
 #: skytemple-files/skytemple_files/common/util.py:629
@@ -1098,7 +1098,7 @@ msgstr "Pokémon"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:38
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:71
 msgid "The Pokemon may hatch holding the item."
@@ -1342,15 +1342,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
 msgid "Physical Move"
-msgstr ""
+msgstr "Mossa fisica"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
 msgid "Special Move"
-msgstr ""
+msgstr "Mossa speciale"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:37
 msgid "Status Move"
-msgstr ""
+msgstr "Mossa di stato"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"

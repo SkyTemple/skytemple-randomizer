@@ -1,5 +1,5 @@
 """Forked from SkyTemple."""
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #

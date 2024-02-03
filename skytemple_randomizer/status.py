@@ -19,7 +19,8 @@ from threading import Lock
 
 class Status:
     """A threadsafe class for signaling status updates"""
-    DONE_SPECIAL_STR = '<<<<<<< DONE'
+
+    DONE_SPECIAL_STR = "<<<<<<< DONE"
 
     def __init__(self):
         self.counter = 0

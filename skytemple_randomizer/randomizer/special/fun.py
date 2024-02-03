@@ -32,8 +32,14 @@ from skytemple_files.graphics.kao.protocol import KaoProtocol
 from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
-from skytemple_randomizer.randomizer.util.util import clone_missing_portraits, get_main_string_file, \
-    get_all_string_files, get_script, Roster, SKIP_JP_INVALID_SSB
+from skytemple_randomizer.randomizer.util.util import (
+    clone_missing_portraits,
+    get_main_string_file,
+    get_all_string_files,
+    get_script,
+    Roster,
+    SKIP_JP_INVALID_SSB,
+)
 from skytemple_randomizer.status import Status
 
 
@@ -53,7 +59,10 @@ class FunArtistCredit(Enum):
     SPARKS = "sparklingdemon", "sparks#4828"
     C_PARIAH = "C. Pariah", "C. Pariah#7659"
     FABLE = "FabledTiefling", "https://twitter.com/Fable_PH"
-    BORZOI = "borzoifeet (authhor of PMD: Anamnesis)\\nwith edits by Edael and Noivern", "https://clv.carrd.co/\\nhttp://pmd-anamnesis.cfw.me/\\nhttps://twitter.com/Exodus_Drake\\nhttps://twitter.com/notarealnoivern"
+    BORZOI = (
+        "borzoifeet (authhor of PMD: Anamnesis)\\nwith edits by Edael and Noivern",
+        "https://clv.carrd.co/\\nhttp://pmd-anamnesis.cfw.me/\\nhttps://twitter.com/Exodus_Drake\\nhttps://twitter.com/notarealnoivern",
+    )
 
     NA = "n/a", "n/a"
 
@@ -76,7 +85,10 @@ class FunPortrait(Enum):
     DIGLETT = 50, FunArtistCredit.NERO_INTRUDER
     KOFFING = 109, FunArtistCredit.NERO_INTRUDER
     MEW = 151, FunArtistCredit.REPPAMON
-    TOTODILE = 158, {'158.png': FunArtistCredit.NOIVERN, '158b.png': FunArtistCredit.DECIMETER}
+    TOTODILE = 158, {
+        "158.png": FunArtistCredit.NOIVERN,
+        "158b.png": FunArtistCredit.DECIMETER,
+    }
     LEDYBA = 165, FunArtistCredit.NOIVERN
     QUAGSIRE = 195, FunArtistCredit.GROMCHURCH
     PORYGON2 = 260, FunArtistCredit.NERO_INTRUDER
@@ -123,14 +135,16 @@ class FunPortrait(Enum):
         return obj
 
     # ignore the first param since it's already set by __new__
-    def __init__(self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]):
+    def __init__(
+        self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]
+    ):
         if isinstance(credit, dict):
             credit = credit[choice(list(credit.keys()))]
-        self.file_name = str(self.value) + '.png'
+        self.file_name = str(self.value) + ".png"
         self.credit = credit
 
     def __repr__(self):
-        return f'FunArtistCredits({self.value})'
+        return f"FunArtistCredits({self.value})"
 
 
 class CustomFunPortrait:
@@ -144,8 +158,8 @@ FunPortraitLike = Union[CustomFunPortrait, FunPortrait]
 
 
 def is_fun_allowed():
-    if 'SKYTEMPLE_FUN' in os.environ:
-        return bool(int(os.environ['SKYTEMPLE_FUN']))
+    if "SKYTEMPLE_FUN" in os.environ:
+        return bool(int(os.environ["SKYTEMPLE_FUN"]))
     now = datetime.now()
     return now.month == 4 and now.day == 1
 
@@ -176,10 +190,10 @@ def get_allowed_md_ids(base_set: set[u16], roster: Roster) -> list[u16]:
 
 
 def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
-    kao: KaoProtocol = FileType.KAO.deserialize(rom.getFileByName('FONT/kaomado.kao'))
+    kao: KaoProtocol = FileType.KAO.deserialize(rom.getFileByName("FONT/kaomado.kao"))
     for portrait in _get_fun_portraits():
         portrait_id = portrait.value - 1
-        pil_img = Image.open(os.path.join(data_dir(), 'fun', portrait.file_name))
+        pil_img = Image.open(os.path.join(data_dir(), "fun", portrait.file_name))
         kaoimg = kao.get(portrait_id, 0)
         try:
             if kaoimg is None:
@@ -191,12 +205,14 @@ def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
             if "compress well" not in str(ex):
                 raise ex
 
-    rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
+    rom.setFileByName("FONT/kaomado.kao", FileType.KAO.serialize(kao))
 
 
 def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
     for lang, strings in get_all_string_files(rom, static_data):
-        for string_block in _collect_text_categories(static_data.string_index_data.string_blocks):
+        for string_block in _collect_text_categories(
+            static_data.string_index_data.string_blocks
+        ):
             for i in range(9, string_block.end - string_block.begin):
                 if randrange(0, 500) == 0:
                     try:
@@ -204,12 +220,12 @@ def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
                     except IndexError:
                         pass
 
-        rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
+        rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings))
 
 
 def process_story_strings(rom: NintendoDSRom, static_data: Pmd2Data):
     for lang, _ in get_all_string_files(rom, static_data):
-        for file_path in get_files_from_rom_with_extension(rom, 'ssb'):
+        for file_path in get_files_from_rom_with_extension(rom, "ssb"):
             if file_path in SKIP_JP_INVALID_SSB:
                 continue
             script = get_script(file_path, rom, static_data)
@@ -222,7 +238,10 @@ def get_artist_credits(rom: NintendoDSRom, static_data: Pmd2Data):
     credits = ""
     lang, msg = get_main_string_file(rom, static_data)
     for entry in _get_fun_portraits():
-        name = msg.strings[static_data.string_index_data.string_blocks['Pokemon Names'].begin + entry.value]
+        name = msg.strings[
+            static_data.string_index_data.string_blocks["Pokemon Names"].begin
+            + entry.value
+        ]
         credits += f"""
         case menu("{name}"):
             message_Talk("Author: [CS:A]{escape(entry.credit.value)}[CR]\\n{escape(entry.credit.url)}");
@@ -254,6 +273,8 @@ def _collect_text_categories(string_cats):
     for cat in sorted(string_cats.values(), key=lambda c: c.begin):
         if cat.begin > current_index:
             # yield a placeholder category
-            yield Pmd2StringBlock(f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin)
+            yield Pmd2StringBlock(
+                f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin
+            )
         yield cat
         current_index = cat.end

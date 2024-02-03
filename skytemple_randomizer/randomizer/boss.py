@@ -28,26 +28,162 @@ from skytemple_randomizer.status import Status
 
 # Maps actor list indices to fixed room monster spawn indices.
 ACTOR_TO_BOSS_MAPPING = {
-    7: [35, 109], 9: [67], 18: [35, 109], 19: [59], 20: [67], 79: [33, 107], 80: [21], 81: [41, 115], 82: [40, 114],
-    86: [68], 89: [22], 92: [43], 94: [28], 95: [28], 96: [27], 101: [35, 109], 105: [59], 109: [39, 113, 116],
-    111: [30, 81], 112: [65], 115: [36, 110], 119: [37, 111], 120: [45], 121: [44], 122: [46],
-    123: [23, 69, 100, 101, 102, 103, 104, 105, 106], 128: [67], 130: [17], 131: [34, 108], 132: [26], 133: [38, 112],
-    136: [29], 137: [63], 138: [58], 139: [64], 140: [31, 32, 84], 141: [48], 142: [47], 143: [72], 154: [49],
+    7: [35, 109],
+    9: [67],
+    18: [35, 109],
+    19: [59],
+    20: [67],
+    79: [33, 107],
+    80: [21],
+    81: [41, 115],
+    82: [40, 114],
+    86: [68],
+    89: [22],
+    92: [43],
+    94: [28],
+    95: [28],
+    96: [27],
+    101: [35, 109],
+    105: [59],
+    109: [39, 113, 116],
+    111: [30, 81],
+    112: [65],
+    115: [36, 110],
+    119: [37, 111],
+    120: [45],
+    121: [44],
+    122: [46],
+    123: [23, 69, 100, 101, 102, 103, 104, 105, 106],
+    128: [67],
+    130: [17],
+    131: [34, 108],
+    132: [26],
+    133: [38, 112],
+    136: [29],
+    137: [63],
+    138: [58],
+    139: [64],
+    140: [31, 32, 84],
+    141: [48],
+    142: [47],
+    143: [72],
+    154: [49],
     172: [99],
-    181: [51], 182: [87], 183: [50, 88], 184: [89], 191: [66], 195: [70], 196: [42], 198: [30, 81], 199: [30, 81],
-    200: [30, 81], 201: [30, 81], 202: [30, 81], 209: [71], 211: [74], 213: [37, 111], 214: [33, 107], 215: [63],
-    216: [64], 217: [58], 218: [35, 109], 219: [41, 115], 220: [40, 114], 221: [36, 110], 222: [39, 113, 116],
-    224: [34, 108], 225: [59], 226: [29], 227: [30, 81], 228: [30, 81], 229: [33, 107], 230: [47], 231: [57], 232: [57],
-    233: [57], 234: [57], 235: [57], 236: [57], 237: [57], 238: [57], 239: [57], 240: [57], 241: [57], 242: [57],
-    243: [56], 244: [56], 245: [56], 246: [56], 247: [56], 248: [56], 249: [56], 250: [56], 251: [56], 252: [56],
-    253: [56], 254: [56], 255: [31, 32, 84], 256: [49], 258: [53, 85], 259: [54], 260: [52], 261: [55], 270: [61],
-    271: [73], 272: [60], 273: [80], 277: [78], 278: [79], 279: [77], 280: [82], 281: [83], 282: [83], 283: [83],
-    284: [83], 294: [33, 107], 295: [33, 107], 317: [117], 318: [119], 319: [118], 326: [75], 327: [75], 328: [75],
-    329: [75], 330: [75], 331: [75], 332: [76], 333: [76], 334: [76], 335: [76], 336: [76], 337: [90], 338: [90],
-    339: [90], 349: [86], 350: [86], 351: [86], 352: [86], 353: [86], 354: [86], 361: [91, 92, 93], 362: [91, 92, 93],
-    363: [91, 92, 93], 367: [24], 368: [25], 369: [25], 370: [25], 371: [25], 372: [25], 373: [25], 374: [25],
+    181: [51],
+    182: [87],
+    183: [50, 88],
+    184: [89],
+    191: [66],
+    195: [70],
+    196: [42],
+    198: [30, 81],
+    199: [30, 81],
+    200: [30, 81],
+    201: [30, 81],
+    202: [30, 81],
+    209: [71],
+    211: [74],
+    213: [37, 111],
+    214: [33, 107],
+    215: [63],
+    216: [64],
+    217: [58],
+    218: [35, 109],
+    219: [41, 115],
+    220: [40, 114],
+    221: [36, 110],
+    222: [39, 113, 116],
+    224: [34, 108],
+    225: [59],
+    226: [29],
+    227: [30, 81],
+    228: [30, 81],
+    229: [33, 107],
+    230: [47],
+    231: [57],
+    232: [57],
+    233: [57],
+    234: [57],
+    235: [57],
+    236: [57],
+    237: [57],
+    238: [57],
+    239: [57],
+    240: [57],
+    241: [57],
+    242: [57],
+    243: [56],
+    244: [56],
+    245: [56],
+    246: [56],
+    247: [56],
+    248: [56],
+    249: [56],
+    250: [56],
+    251: [56],
+    252: [56],
+    253: [56],
+    254: [56],
+    255: [31, 32, 84],
+    256: [49],
+    258: [53, 85],
+    259: [54],
+    260: [52],
+    261: [55],
+    270: [61],
+    271: [73],
+    272: [60],
+    273: [80],
+    277: [78],
+    278: [79],
+    279: [77],
+    280: [82],
+    281: [83],
+    282: [83],
+    283: [83],
+    284: [83],
+    294: [33, 107],
+    295: [33, 107],
+    317: [117],
+    318: [119],
+    319: [118],
+    326: [75],
+    327: [75],
+    328: [75],
+    329: [75],
+    330: [75],
+    331: [75],
+    332: [76],
+    333: [76],
+    334: [76],
+    335: [76],
+    336: [76],
+    337: [90],
+    338: [90],
+    339: [90],
+    349: [86],
+    350: [86],
+    351: [86],
+    352: [86],
+    353: [86],
+    354: [86],
+    361: [91, 92, 93],
+    362: [91, 92, 93],
+    363: [91, 92, 93],
+    367: [24],
+    368: [25],
+    369: [25],
+    370: [25],
+    371: [25],
+    372: [25],
+    373: [25],
+    374: [25],
     375: [25],
-    380: [94], 381: [95], 382: [96], 383: [97], 384: [98]
+    380: [94],
+    381: [95],
+    382: [96],
+    383: [97],
+    384: [98],
 }
 # Secret Bazar Pokémon that aren't also NPCs
 EXTRA_FF_MONSTER_RANDOMIZE = [16, 18, 19, 20]
@@ -55,27 +191,30 @@ EXTRA_FF_MONSTER_RANDOMIZE = [16, 18, 19, 20]
 
 class BossRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
-        if self.config['starters_npcs']['npcs']:
+        if self.config["starters_npcs"]["npcs"]:
             return 2
         return 0
 
     def run(self, status: Status):
-        if not self.config['starters_npcs']['npcs']:
+        if not self.config["starters_npcs"]["npcs"]:
             return status.done()
 
         status.step("Apply 'ActorAndLevelLoader' patch...")
         patcher = Patcher(self.rom, self.static_data)
-        if not patcher.is_applied('ActorAndLevelLoader'):
-            patcher.apply('ActorAndLevelLoader')
+        if not patcher.is_applied("ActorAndLevelLoader"):
+            patcher.apply("ActorAndLevelLoader")
 
         status.step("Updating bosses...")
 
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-            FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
+            FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),
+            ActorListBin,
         )
 
         binary = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay29)
-        boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(binary, self.static_data)
+        boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(
+            binary, self.static_data
+        )
 
         for i, actor in enumerate(actor_list.list):
             if i in ACTOR_TO_BOSS_MAPPING:
@@ -83,9 +222,13 @@ class BossRandomizer(AbstractRandomizer):
                     boss_list[bi].md_idx = actor.entid
 
         for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
-            boss_list[extra_id].md_idx = u16(choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS)))
+            boss_list[extra_id].md_idx = u16(
+                choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS))
+            )
 
-        HardcodedFixedFloorTables.set_monster_spawn_list(binary, boss_list, self.static_data)
+        HardcodedFixedFloorTables.set_monster_spawn_list(
+            binary, boss_list, self.static_data
+        )
         set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay29, binary)
 
         status.done()
@@ -94,25 +237,33 @@ class BossRandomizer(AbstractRandomizer):
 # For reference, this is how I created that mapping in ACTOR_TO_BOSS_MAPPING
 def create_mapping():
     from ndspy.rom import NintendoDSRom
-    rom = NintendoDSRom.fromFile('/home/marco/dev/skytemple/skytemple/skyworkcopy_us_unpatched.nds')
+
+    rom = NintendoDSRom.fromFile(
+        "/home/marco/dev/skytemple/skytemple/skyworkcopy_us_unpatched.nds"
+    )
     from skytemple_files.common.util import get_ppmdu_config_for_rom
+
     static_data = get_ppmdu_config_for_rom(rom)
     from skytemple_files.patch.patches import Patcher
+
     patcher = Patcher(rom, static_data)
-    patcher.apply('ActorAndLevelLoader')
+    patcher.apply("ActorAndLevelLoader")
 
     from skytemple_files.common.types.file_types import FileType
     from skytemple_files.data.md.protocol import MdProtocol
-    md: MdProtocol = FileType.MD.deserialize(rom.getFileByName('BALANCE/monster.md'))
+
+    md: MdProtocol = FileType.MD.deserialize(rom.getFileByName("BALANCE/monster.md"))
     from skytemple_files.list.actor.model import ActorListBin
+
     actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-        FileType.SIR0.deserialize(rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
+        FileType.SIR0.deserialize(rom.getFileByName("BALANCE/actor_list.bin")),
+        ActorListBin,
     )
     from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
     from skytemple_files.common.util import get_binary_from_rom
+
     boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(
-        get_binary_from_rom(rom, static_data.bin_sections.overlay29),
-        static_data
+        get_binary_from_rom(rom, static_data.bin_sections.overlay29), static_data
     )
 
     actor_list_pokedex_number_mapping = []

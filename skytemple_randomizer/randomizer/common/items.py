@@ -29,26 +29,26 @@ from skytemple_randomizer.config import RandomizerConfig, ItemAlgorithm
 from skytemple_randomizer.randomizer.common.weights import random_weights
 from skytemple_randomizer.randomizer.util.util import get_allowed_item_ids
 
-CLASSIC_ALLOWED_ITEM_CATS = [
-    0, 1, 2, 3, 4, 5, 8, 9
-]
-ALLOWED_ITEM_CATS = [
-    0, 1, 2, 3, 4, 5, 6, 8, 9, 10
-]
+CLASSIC_ALLOWED_ITEM_CATS = [0, 1, 2, 3, 4, 5, 8, 9]
+ALLOWED_ITEM_CATS = [0, 1, 2, 3, 4, 5, 6, 8, 9, 10]
 MIN_ITEMS_PER_CAT = 4
 MAX_ITEMS_PER_CAT = 18
 
 
-def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
-    if config['item']['algorithm'] == ItemAlgorithm.BALANCED:
+def randomize_items(
+    config: RandomizerConfig, static_data: Pmd2Data
+) -> MappaItemListProtocol:
+    if config["item"]["algorithm"] == ItemAlgorithm.BALANCED:
         return balanced_item_randomizer(config, static_data)
-    if config['item']['algorithm'] == ItemAlgorithm.CLASSIC:
+    if config["item"]["algorithm"] == ItemAlgorithm.CLASSIC:
         return classic_item_randomizer(config, static_data)
 
     raise NotImplementedError("Unknown item algorithm.")
 
 
-def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+def classic_item_randomizer(
+    config: RandomizerConfig, static_data: Pmd2Data
+) -> MappaItemListProtocol:
     categories = {}
     items = OrderedDict()
     cats_as_list = list(CLASSIC_ALLOWED_ITEM_CATS)
@@ -69,7 +69,9 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
 
         cat_item_ids: list[int] = []
         if cat.number_of_items is not None:
-            allowed_cat_item_ids = [x for x in cat.item_ids() if x in get_allowed_item_ids(config)]
+            allowed_cat_item_ids = [
+                x for x in cat.item_ids() if x in get_allowed_item_ids(config)
+            ]
             upper_limit = min(MAX_ITEMS_PER_CAT, len(allowed_cat_item_ids))
             if upper_limit <= MIN_ITEMS_PER_CAT:
                 n_items = MIN_ITEMS_PER_CAT
@@ -77,9 +79,9 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
                 n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
             cat_item_ids = []
             if len(allowed_cat_item_ids) > 0:
-                cat_item_ids = sorted({
-                    choice(allowed_cat_item_ids) for _ in range(0, n_items)
-                })
+                cat_item_ids = sorted(
+                    {choice(allowed_cat_item_ids) for _ in range(0, n_items)}
+                )
                 cat_weights = sorted(random_weights(len(cat_item_ids)))
 
                 for item_id, weight in zip(cat_item_ids, cat_weights):
@@ -88,12 +90,13 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
             categories[cat.id] = 0
 
     return FileType.MAPPA_BIN.get_item_list_model()(
-        categories,
-        dict(sorted(items.items(), key=lambda i: i[0]))
+        categories, dict(sorted(items.items(), key=lambda i: i[0]))
     )
 
 
-def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+def balanced_item_randomizer(
+    config: RandomizerConfig, static_data: Pmd2Data
+) -> MappaItemListProtocol:
     categories = OrderedDict()
     items = OrderedDict()
 
@@ -108,7 +111,9 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
     all_allowed_item_ids = []
     for cat_id in cats_as_list:
         cat = static_data.dungeon_data.item_categories[cat_id]
-        items_in_cats[cat_id] = [x for x in cat.item_ids() if x in get_allowed_item_ids(config)]
+        items_in_cats[cat_id] = [
+            x for x in cat.item_ids() if x in get_allowed_item_ids(config)
+        ]
         all_allowed_item_ids.extend(items_in_cats[cat_id])
 
     # We roll random items and then check their category.
@@ -135,16 +140,21 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
     for cat_id, chosen_items in chosen_items_per_cat.items():
         #  'int' is not a 'Number' according to mypy??
         weight_multiplier: Number = 1  # type: ignore
-        if cat_id in config['item']['weights']:
-            weight_multiplier = config['item']['weights'][cat_id]
+        if cat_id in config["item"]["weights"]:
+            weight_multiplier = config["item"]["weights"][cat_id]
             if weight_multiplier <= 0:  # type: ignore
                 weight_multiplier = 0.01  # type: ignore
         weighted_chosen_items_per_cat_count[cat_id] = ceil(len(chosen_items) * weight_multiplier)  # type: ignore
     weights_before = 0
-    total_items_weighted = sum(item_count_weighted for item_count_weighted in weighted_chosen_items_per_cat_count.values())
+    total_items_weighted = sum(
+        item_count_weighted
+        for item_count_weighted in weighted_chosen_items_per_cat_count.values()
+    )
     for cat_id, chosen_items in chosen_items_per_cat.items():
         item_count_weighted = weighted_chosen_items_per_cat_count[cat_id]
-        categories[cat_id] = weights_before + ceil(MAX_WEIGHT * (item_count_weighted / total_items_weighted))
+        categories[cat_id] = weights_before + ceil(
+            MAX_WEIGHT * (item_count_weighted / total_items_weighted)
+        )
         weights_before = categories[cat_id]
 
         # Randomize the item weights in each category
@@ -156,6 +166,5 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
     categories[next(reversed(categories))] = MAX_WEIGHT
 
     return FileType.MAPPA_BIN.get_item_list_model()(
-        categories,
-        dict(sorted(items.items(), key=lambda i: i[0]))
+        categories, dict(sorted(items.items(), key=lambda i: i[0]))
     )

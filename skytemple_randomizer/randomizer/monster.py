@@ -22,14 +22,36 @@ from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
 
 VALID_IQ_GROUPS = [
-    IQGroup.A, IQGroup.B, IQGroup.C, IQGroup.D, IQGroup.E, IQGroup.F,
-    IQGroup.G, IQGroup.H, IQGroup.I, IQGroup.J
+    IQGroup.A,
+    IQGroup.B,
+    IQGroup.C,
+    IQGroup.D,
+    IQGroup.E,
+    IQGroup.F,
+    IQGroup.G,
+    IQGroup.H,
+    IQGroup.I,
+    IQGroup.J,
 ]
 VALID_FIRST_TYPE = [
-    PokeType.NORMAL, PokeType.FIRE, PokeType.WATER, PokeType.GRASS,
-    PokeType.ELECTRIC, PokeType.ICE, PokeType.FIGHTING, PokeType.FIGHTING, PokeType.POISON,
-    PokeType.GROUND, PokeType.FLYING, PokeType.PSYCHIC, PokeType.BUG, PokeType.ROCK,
-    PokeType.GHOST, PokeType.DRAGON, PokeType.DARK, PokeType.STEEL
+    PokeType.NORMAL,
+    PokeType.FIRE,
+    PokeType.WATER,
+    PokeType.GRASS,
+    PokeType.ELECTRIC,
+    PokeType.ICE,
+    PokeType.FIGHTING,
+    PokeType.FIGHTING,
+    PokeType.POISON,
+    PokeType.GROUND,
+    PokeType.FLYING,
+    PokeType.PSYCHIC,
+    PokeType.BUG,
+    PokeType.ROCK,
+    PokeType.GHOST,
+    PokeType.DRAGON,
+    PokeType.DARK,
+    PokeType.STEEL,
 ]
 VALID_SECOND_TYPE = VALID_FIRST_TYPE + [PokeType.NONE]
 
@@ -44,19 +66,21 @@ class MonsterRandomizer(AbstractRandomizer):
         if not self._has_something_to_randomize():
             return status.done()
         status.step("Randomizing Pokémon data...")
-        md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
+        md: MdProtocol = FileType.MD.deserialize(
+            self.rom.getFileByName("BALANCE/monster.md")
+        )
         num_entities = FileType.MD.properties().num_entities
         for midx in range(0, num_entities):
             if len(md.entries) <= midx + num_entities:
                 continue
             base_entry = md.entries[midx]
             secn_entry = md.entries[midx + num_entities]
-            if self.config['pokemon']['iq_groups']:
+            if self.config["pokemon"]["iq_groups"]:
                 group = choice(VALID_IQ_GROUPS)
                 base_entry.iq_group = group.value
                 secn_entry.iq_group = group.value
 
-            if self.config['pokemon']['typings']:
+            if self.config["pokemon"]["typings"]:
                 type1 = choice(VALID_FIRST_TYPE)
                 type2 = choice(VALID_SECOND_TYPE)
                 while type1 == type2:
@@ -66,8 +90,10 @@ class MonsterRandomizer(AbstractRandomizer):
                 base_entry.type_secondary = type2.value
                 secn_entry.type_secondary = type2.value
 
-            if self.config['pokemon']['abilities']:
-                ability_ids = self.config['pokemon']['abilities_enabled'] + [Ability.NONE.value]
+            if self.config["pokemon"]["abilities"]:
+                ability_ids = self.config["pokemon"]["abilities_enabled"] + [
+                    Ability.NONE.value
+                ]
                 if len(ability_ids) > 0:
                     ability1 = Ability(choice(ability_ids))
                     ability2 = Ability(choice(ability_ids))
@@ -78,11 +104,13 @@ class MonsterRandomizer(AbstractRandomizer):
                     secn_entry.ability_primary = ability1.value
                     secn_entry.ability_secondary = ability2.value
 
-        self.rom.setFileByName('BALANCE/monster.md', FileType.MD.serialize(md))
+        self.rom.setFileByName("BALANCE/monster.md", FileType.MD.serialize(md))
 
         status.done()
 
     def _has_something_to_randomize(self):
-        return self.config['pokemon']['iq_groups'] or \
-               self.config['pokemon']['typings'] or \
-               self.config['pokemon']['abilities']
+        return (
+            self.config["pokemon"]["iq_groups"]
+            or self.config["pokemon"]["typings"]
+            or self.config["pokemon"]["abilities"]
+        )

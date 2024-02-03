@@ -18,35 +18,49 @@ from typing import Dict
 
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import replace_text_script, random_txt_line, get_all_string_files
+from skytemple_randomizer.randomizer.util.util import (
+    replace_text_script,
+    random_txt_line,
+    get_all_string_files,
+)
 from skytemple_randomizer.status import Status
 
 
 class LocationRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
-        if self.config['locations']['randomize']:
+        if self.config["locations"]["randomize"]:
             return 2  # names, names mentioned in script
         return 0
 
     def run(self, status: Status):
-        if not self.config['locations']['randomize']:
+        if not self.config["locations"]["randomize"]:
             return
         status.step("Randomizing Location Names...")
-        ground_map_names = self.static_data.string_index_data.string_blocks["Ground Map Names"]
-        dunge_names_main = self.static_data.string_index_data.string_blocks["Dungeon Names (Main)"]
-        dunge_names_sele = self.static_data.string_index_data.string_blocks["Dungeon Names (Selection)"]
-        dunge_names_sdba = self.static_data.string_index_data.string_blocks["Dungeon Names (SetDungeonBanner)"]
-        dunge_names_bann = self.static_data.string_index_data.string_blocks["Dungeon Names (Banner)"]
+        ground_map_names = self.static_data.string_index_data.string_blocks[
+            "Ground Map Names"
+        ]
+        dunge_names_main = self.static_data.string_index_data.string_blocks[
+            "Dungeon Names (Main)"
+        ]
+        dunge_names_sele = self.static_data.string_index_data.string_blocks[
+            "Dungeon Names (Selection)"
+        ]
+        dunge_names_sdba = self.static_data.string_index_data.string_blocks[
+            "Dungeon Names (SetDungeonBanner)"
+        ]
+        dunge_names_bann = self.static_data.string_index_data.string_blocks[
+            "Dungeon Names (Banner)"
+        ]
 
         rename_dungeon_map_all = {}
         for lang, strings in get_all_string_files(self.rom, self.static_data):
             rename_dungeon_map: dict[str, str] = {}
             rename_dungeon_map_all[lang] = rename_dungeon_map
             for main, sele, sdba, bann in zip(
-                    range(dunge_names_main.begin, dunge_names_main.end),
-                    range(dunge_names_sele.begin, dunge_names_sele.end),
-                    range(dunge_names_sdba.begin, dunge_names_sdba.end),
-                    range(dunge_names_bann.begin, dunge_names_bann.end),
+                range(dunge_names_main.begin, dunge_names_main.end),
+                range(dunge_names_sele.begin, dunge_names_sele.end),
+                range(dunge_names_sdba.begin, dunge_names_sdba.end),
+                range(dunge_names_bann.begin, dunge_names_bann.end),
             ):
                 orig_name = strings.strings[main]
                 new_name = self._generate_name()
@@ -65,7 +79,9 @@ class LocationRandomizer(AbstractRandomizer):
                 rename_dungeon_map[orig_name] = new_name
                 strings.strings[i] = new_name
 
-            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
+            self.rom.setFileByName(
+                f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings)
+            )
 
         status.step("Replacing script text that mentions locations...")
         replace_text_script(self.rom, self.static_data, rename_dungeon_map_all)
@@ -73,4 +89,8 @@ class LocationRandomizer(AbstractRandomizer):
         status.done()
 
     def _generate_name(self) -> str:
-        return random_txt_line(self.config['locations']['first']) + " " + random_txt_line(self.config['locations']['second'])
+        return (
+            random_txt_line(self.config["locations"]["first"])
+            + " "
+            + random_txt_line(self.config["locations"]["second"])
+        )

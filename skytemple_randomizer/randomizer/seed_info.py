@@ -31,7 +31,12 @@ from skytemple_files.script.ssa_sse_sss.actor import SsaActor
 from skytemple_files.script.ssa_sse_sss.model import Ssa
 from skytemple_files.script.ssa_sse_sss.position import SsaPosition
 from skytemple_files.script.ssb.script_compiler import ScriptCompiler
-from skytemple_randomizer.config import version, MovesetConfig, DungeonModeConfig, ItemAlgorithm
+from skytemple_randomizer.config import (
+    version,
+    MovesetConfig,
+    DungeonModeConfig,
+    ItemAlgorithm,
+)
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
@@ -42,31 +47,31 @@ STR_EU = 16330
 STR_US = 16328
 STR_JP = 18891
 ACTOR_TO_USE = u16(78)
-MAP = 'P01P01A'
-SCENE = 'enter.sse'
+MAP = "P01P01A"
+SCENE = "enter.sse"
 TALK_SCRIPT = i16(80)
-TALK_SCRIPT_NAME = f'enter{TALK_SCRIPT}.ssb'
+TALK_SCRIPT_NAME = f"enter{TALK_SCRIPT}.ssb"
 NPC_SECTOR = 0
 NPC_X = u16(5)
 NPC_Y = u16(21)
 
 TWO_ACTOR_TO_USE = u16(77)
 TWO_TALK_SCRIPT = i16(81)
-TWO_TALK_SCRIPT_NAME = f'enter{TWO_TALK_SCRIPT}.ssb'
+TWO_TALK_SCRIPT_NAME = f"enter{TWO_TALK_SCRIPT}.ssb"
 TWO_NPC_SECTOR = 0
 TWO_NPC_X = u16(10)
 TWO_NPC_Y = u16(21)
 
 THREE_ACTOR_TO_USE = u16(76)
 THREE_TALK_SCRIPT = i16(83)
-THREE_TALK_SCRIPT_NAME = f'enter{THREE_TALK_SCRIPT}.ssb'
+THREE_TALK_SCRIPT_NAME = f"enter{THREE_TALK_SCRIPT}.ssb"
 THREE_NPC_SECTOR = 0
 THREE_NPC_X = u16(15)
 THREE_NPC_Y = u16(21)
 
 FOUR_ACTOR_TO_USE = u16(75)
 FOUR_TALK_SCRIPT = i16(84)
-FOUR_TALK_SCRIPT_NAME = f'enter{FOUR_TALK_SCRIPT}.ssb'
+FOUR_TALK_SCRIPT_NAME = f"enter{FOUR_TALK_SCRIPT}.ssb"
 FOUR_NPC_SECTOR = 0
 FOUR_NPC_X = u16(20)
 FOUR_NPC_Y = u16(21)
@@ -114,73 +119,105 @@ on Crossroads."""
             string_file.strings[str_offset] = info_text
 
         for lang, string_file in langs:
-            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
+            self.rom.setFileByName(
+                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
+            )
 
         status.step("Placing Info NPC...")
         # Place NPC in scene
-        scene: Ssa = FileType.SSA.deserialize(self.rom.getFileByName(f'SCRIPT/{MAP}/{SCENE}'))
+        scene: Ssa = FileType.SSA.deserialize(
+            self.rom.getFileByName(f"SCRIPT/{MAP}/{SCENE}")
+        )
         layer = scene.layer_list[0]
         already_exists = any(a.script_id == TALK_SCRIPT for a in layer.actors)
         if not already_exists:
-            layer.actors.append(SsaActor(
-                scriptdata=self.static_data.script_data,
-                actor_id=ACTOR_TO_USE,
-                pos=SsaPosition(
+            layer.actors.append(
+                SsaActor(
                     scriptdata=self.static_data.script_data,
-                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
-                    x_pos=NPC_X,
-                    y_pos=NPC_Y,
-                    x_offset=u16(0), y_offset=u16(0)
-                ),
-                script_id=TALK_SCRIPT,
-                unkE=i16(-1),
-            ))
+                    actor_id=ACTOR_TO_USE,
+                    pos=SsaPosition(
+                        scriptdata=self.static_data.script_data,
+                        direction=u16(
+                            self.static_data.script_data.directions__by_name[
+                                "Down"
+                            ].ssa_id
+                        ),
+                        x_pos=NPC_X,
+                        y_pos=NPC_Y,
+                        x_offset=u16(0),
+                        y_offset=u16(0),
+                    ),
+                    script_id=TALK_SCRIPT,
+                    unkE=i16(-1),
+                )
+            )
         already_exists = any(a.script_id == TWO_TALK_SCRIPT for a in layer.actors)
         if not already_exists:
-            layer.actors.append(SsaActor(
-                scriptdata=self.static_data.script_data,
-                actor_id=TWO_ACTOR_TO_USE,
-                pos=SsaPosition(
+            layer.actors.append(
+                SsaActor(
                     scriptdata=self.static_data.script_data,
-                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
-                    x_pos=TWO_NPC_X,
-                    y_pos=TWO_NPC_Y,
-                    x_offset=u16(0), y_offset=u16(0)
-                ),
-                script_id=TWO_TALK_SCRIPT,
-                unkE=i16(-1),
-            ))
+                    actor_id=TWO_ACTOR_TO_USE,
+                    pos=SsaPosition(
+                        scriptdata=self.static_data.script_data,
+                        direction=u16(
+                            self.static_data.script_data.directions__by_name[
+                                "Down"
+                            ].ssa_id
+                        ),
+                        x_pos=TWO_NPC_X,
+                        y_pos=TWO_NPC_Y,
+                        x_offset=u16(0),
+                        y_offset=u16(0),
+                    ),
+                    script_id=TWO_TALK_SCRIPT,
+                    unkE=i16(-1),
+                )
+            )
         already_exists = any(a.script_id == THREE_TALK_SCRIPT for a in layer.actors)
         if not already_exists:
-            layer.actors.append(SsaActor(
-                scriptdata=self.static_data.script_data,
-                actor_id=THREE_ACTOR_TO_USE,
-                pos=SsaPosition(
+            layer.actors.append(
+                SsaActor(
                     scriptdata=self.static_data.script_data,
-                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
-                    x_pos=THREE_NPC_X,
-                    y_pos=THREE_NPC_Y,
-                    x_offset=u16(0), y_offset=u16(0)
-                ),
-                script_id=THREE_TALK_SCRIPT,
-                unkE=i16(-1),
-            ))
+                    actor_id=THREE_ACTOR_TO_USE,
+                    pos=SsaPosition(
+                        scriptdata=self.static_data.script_data,
+                        direction=u16(
+                            self.static_data.script_data.directions__by_name[
+                                "Down"
+                            ].ssa_id
+                        ),
+                        x_pos=THREE_NPC_X,
+                        y_pos=THREE_NPC_Y,
+                        x_offset=u16(0),
+                        y_offset=u16(0),
+                    ),
+                    script_id=THREE_TALK_SCRIPT,
+                    unkE=i16(-1),
+                )
+            )
         already_exists = any(a.script_id == FOUR_TALK_SCRIPT for a in layer.actors)
         if not already_exists:
-            layer.actors.append(SsaActor(
-                scriptdata=self.static_data.script_data,
-                actor_id=FOUR_ACTOR_TO_USE,
-                pos=SsaPosition(
+            layer.actors.append(
+                SsaActor(
                     scriptdata=self.static_data.script_data,
-                    direction=u16(self.static_data.script_data.directions__by_name['Down'].ssa_id),
-                    x_pos=FOUR_NPC_X,
-                    y_pos=FOUR_NPC_Y,
-                    x_offset=u16(0), y_offset=u16(0)
-                ),
-                script_id=FOUR_TALK_SCRIPT,
-                unkE=i16(-1),
-            ))
-        self.rom.setFileByName(f'SCRIPT/{MAP}/{SCENE}', FileType.SSA.serialize(scene))
+                    actor_id=FOUR_ACTOR_TO_USE,
+                    pos=SsaPosition(
+                        scriptdata=self.static_data.script_data,
+                        direction=u16(
+                            self.static_data.script_data.directions__by_name[
+                                "Down"
+                            ].ssa_id
+                        ),
+                        x_pos=FOUR_NPC_X,
+                        y_pos=FOUR_NPC_Y,
+                        x_offset=u16(0),
+                        y_offset=u16(0),
+                    ),
+                    script_id=FOUR_TALK_SCRIPT,
+                    unkE=i16(-1),
+                )
+            )
+        self.rom.setFileByName(f"SCRIPT/{MAP}/{SCENE}", FileType.SSA.serialize(scene))
         # Fill talk script 1
         exps = f"""
 def 0 {{
@@ -258,10 +295,12 @@ macro settings() {{
 }}
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding),
+            "script.exps",
+            lookup_paths=[],
         )
 
-        script_fn = f'SCRIPT/{MAP}/{TALK_SCRIPT_NAME}'
+        script_fn = f"SCRIPT/{MAP}/{TALK_SCRIPT_NAME}"
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)
@@ -310,10 +349,12 @@ macro artists() {{
 }}
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding),
+            "script.exps",
+            lookup_paths=[],
         )
 
-        script_fn = f'SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}'
+        script_fn = f"SCRIPT/{MAP}/{TWO_TALK_SCRIPT_NAME}"
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)
@@ -384,10 +425,12 @@ def 0 {{
                 """
 
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding),
+            "script.exps",
+            lookup_paths=[],
         )
 
-        script_fn = f'SCRIPT/{MAP}/{THREE_TALK_SCRIPT_NAME}'
+        script_fn = f"SCRIPT/{MAP}/{THREE_TALK_SCRIPT_NAME}"
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)
@@ -435,10 +478,12 @@ macro patches() {{
 }}  
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
-            strlossy(exps, self.static_data.string_encoding), 'script.exps', lookup_paths=[]
+            strlossy(exps, self.static_data.string_encoding),
+            "script.exps",
+            lookup_paths=[],
         )
 
-        script_fn = f'SCRIPT/{MAP}/{FOUR_TALK_SCRIPT_NAME}'
+        script_fn = f"SCRIPT/{MAP}/{FOUR_TALK_SCRIPT_NAME}"
         script_sera = FileType.SSB.serialize(script, static_data=self.static_data)
         try:
             create_file_in_rom(self.rom, script_fn, script_sera)
@@ -471,7 +516,7 @@ macro patches() {{
 
     def _locs_chaps(self, param: str):
         full = ""
-        single = "message_Mail(\""
+        single = 'message_Mail("'
         line = ""
         i = 0
         for i, entry in enumerate(param.splitlines()):
@@ -479,11 +524,11 @@ macro patches() {{
                 single += line.strip(", ") + "\\n"
                 line = ""
             if i != 0 and i % 18 == 0:
-                full += single + "\");"
-                single = "message_Mail(\""
+                full += single + '");'
+                single = 'message_Mail("'
             line += escape(entry) + ", "
         if i % 18 != 0 and i != 0:
-            full += single + "\");"
+            full += single + '");'
         return full
 
     def _movesets(self, param: MovesetConfig):
@@ -497,7 +542,7 @@ macro patches() {{
 
     def _dungeon_cases(self):
         cases = ""
-        for dungeon_id, settings in self.config['dungeons']['settings'].items():
+        for dungeon_id, settings in self.config["dungeons"]["settings"].items():
             dungeon_name = self.static_data.dungeon_data.dungeons[dungeon_id].name
             cases += f"""
         case menu("D{dungeon_id:03}: {dungeon_name}"):
@@ -516,12 +561,14 @@ macro patches() {{
                 others = ""
                 if len(entry) > 1:
                     raw_others = entry[1:]
-                    main = ''
+                    main = ""
                     others_short = raw_others[:3]
                     if len(others_short) != len(others):
-                        main += ' + more'
+                        main += " + more"
                     others_short_f = [parse_credit(x, False) for x in others_short]
-                    others = f"More Authors: [CS:A]{', '.join(others_short_f) + main}[CR]"
+                    others = (
+                        f"More Authors: [CS:A]{', '.join(others_short_f) + main}[CR]"
+                    )
                 out_credits += f"""
         case menu("{name}"):
             message_Talk("Main Author: [CS:A]{escape(parse_credit(entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
@@ -541,7 +588,7 @@ macro patches() {{
         for patch in Patcher(self.rom, self.static_data).list():
             try:
                 if patch.is_applied(self.rom, self.static_data):
-                    desc = patch.description.replace('\n', '\\n')
+                    desc = patch.description.replace("\n", "\\n")
                     credits += f"""
         case menu("{patch.name}"):
             message_Mail("[CS:A]{escape(patch.name)}[CR]\\nby [CS:A]{escape(patch.author)}[CR]\\n\\n{escape(desc)}");
@@ -561,14 +608,14 @@ macro patches() {{
 
 
 def parse_credit(credit: Credit, long: bool) -> str:
-    artist_name = credit['id']
-    if credit['name'] is not None:
-        artist_name = credit['name']
-    elif credit['discordHandle'] is not None:
-        artist_name = credit['discordHandle']
+    artist_name = credit["id"]
+    if credit["name"] is not None:
+        artist_name = credit["name"]
+    elif credit["discordHandle"] is not None:
+        artist_name = credit["discordHandle"]
     if long:
-        link = ''
-        if credit['contact'] is not None:
+        link = ""
+        if credit["contact"] is not None:
             link = f" ({credit['contact']})"
-        return f'{artist_name}{link}'
+        return f"{artist_name}{link}"
     return artist_name

@@ -25,13 +25,27 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.sprite_util import check_and_correct_monster_sprite_size
 from skytemple_files.common.spritecollab.client import SpriteCollabSession
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_binary_from_rom, MONSTER_BIN, chunks, set_binary_in_rom
-from skytemple_files.data.md.protocol import Gender, MdEntryProtocol, ShadowSize, MdProtocol
+from skytemple_files.common.util import (
+    get_binary_from_rom,
+    MONSTER_BIN,
+    chunks,
+    set_binary_in_rom,
+)
+from skytemple_files.data.md.protocol import (
+    Gender,
+    MdEntryProtocol,
+    ShadowSize,
+    MdProtocol,
+)
 from skytemple_files.data.sprconf.handler import SprconfType, SPRCONF_FILENAME
 from skytemple_files.graphics.chara_wan.model import WanFile
 from skytemple_files.graphics.kao.protocol import KaoProtocol
-from skytemple_files.hardcoded.monster_sprite_data_table import HardcodedMonsterSpriteDataTable
-from skytemple_files.hardcoded.personality_test_starters import HardcodedPersonalityTestStarters
+from skytemple_files.hardcoded.monster_sprite_data_table import (
+    HardcodedMonsterSpriteDataTable,
+)
+from skytemple_files.hardcoded.personality_test_starters import (
+    HardcodedPersonalityTestStarters,
+)
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 
@@ -39,48 +53,76 @@ from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
-from skytemple_randomizer.spritecollab import sprite_collab, get_details_and_portraits, get_sprites
+from skytemple_randomizer.spritecollab import (
+    sprite_collab,
+    get_details_and_portraits,
+    get_sprites,
+)
 from skytemple_randomizer.status import Status
 
-GROUND_BIN = 'MONSTER/m_ground.bin'
-ATTACK_BIN = 'MONSTER/m_attack.bin'
+GROUND_BIN = "MONSTER/m_ground.bin"
+ATTACK_BIN = "MONSTER/m_attack.bin"
 
 
 class PortraitDownloader(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
+    def __init__(
+        self,
+        config: RandomizerConfig,
+        rom: NintendoDSRom,
+        static_data: Pmd2Data,
+        seed: str,
+        frontend: AbstractFrontend,
+    ):
         super().__init__(config, rom, static_data, seed, frontend)
         self._debugs: list[tuple[str, str, str, str, str]] = []
 
         self.monster_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(MONSTER_BIN))
-        self.monster_ground_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(GROUND_BIN))
-        self.monster_attack_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(ATTACK_BIN))
-        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
-        self.sprite_size_table = HardcodedMonsterSpriteDataTable.get(arm9, self.static_data)
+        self.monster_ground_bin = FileType.BIN_PACK.deserialize(
+            rom.getFileByName(GROUND_BIN)
+        )
+        self.monster_attack_bin = FileType.BIN_PACK.deserialize(
+            rom.getFileByName(ATTACK_BIN)
+        )
+        arm9 = bytearray(
+            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
+        )
+        self.sprite_size_table = HardcodedMonsterSpriteDataTable.get(
+            arm9, self.static_data
+        )
         self.is_expand_poke_list_applied = False
         self.current = 0
         self.total = "?"
 
     def step_count(self) -> int:
-        if self.config['improvements']['download_portraits']:
+        if self.config["improvements"]["download_portraits"]:
             if fun.is_fun_allowed():
                 return 1
             try:
                 actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-                    FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
+                    FileType.SIR0.deserialize(
+                        self.rom.getFileByName("BALANCE/actor_list.bin")
+                    ),
+                    ActorListBin,
                 )
                 actors = len(actor_list.list)
             except ValueError:
                 actors = len(self.static_data.script_data.level_entities)
-            overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
-            starters = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
-            partners = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
+            overlay13 = get_binary_from_rom(
+                self.rom, self.static_data.bin_sections.overlay13
+            )
+            starters = HardcodedPersonalityTestStarters.get_partner_md_ids(
+                overlay13, self.static_data
+            )
+            partners = HardcodedPersonalityTestStarters.get_player_md_ids(
+                overlay13, self.static_data
+            )
             total = actors + len(starters) + len(partners)
             self.total = str(total)
             return total
         return 0
 
     def run(self, status: Status):
-        if not self.config['improvements']['download_portraits']:
+        if not self.config["improvements"]["download_portraits"]:
             return status.done()
 
         patcher = Patcher(self.rom, self.static_data)
@@ -92,17 +134,24 @@ class PortraitDownloader(AbstractRandomizer):
 
         status.step("Apply 'ActorAndLevelLoader' patch...")
         patcher = Patcher(self.rom, self.static_data)
-        if not patcher.is_applied('ActorAndLevelLoader'):
-            patcher.apply('ActorAndLevelLoader')
+        if not patcher.is_applied("ActorAndLevelLoader"):
+            patcher.apply("ActorAndLevelLoader")
 
-        overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
-        actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-            FileType.SIR0.deserialize(self.rom.getFileByName('BALANCE/actor_list.bin')), ActorListBin
+        overlay13 = get_binary_from_rom(
+            self.rom, self.static_data.bin_sections.overlay13
         )
-        starters = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
-        partners = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
-        md = FileType.MD.deserialize(self.rom.getFileByName('BALANCE/monster.md'))
-        kao = FileType.KAO.deserialize(self.rom.getFileByName('FONT/kaomado.kao'))
+        actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
+            FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),
+            ActorListBin,
+        )
+        starters = HardcodedPersonalityTestStarters.get_partner_md_ids(
+            overlay13, self.static_data
+        )
+        partners = HardcodedPersonalityTestStarters.get_player_md_ids(
+            overlay13, self.static_data
+        )
+        md = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
+        kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
         sprconf = FileType.SPRCONF.load(self.rom)
 
         status.step(f"Downloading portraits and sprites... {self.current}/{self.total}")
@@ -114,37 +163,43 @@ class PortraitDownloader(AbstractRandomizer):
             task_params = []
             for actor in actor_list.list:
                 if actor.entid > 0:
-                    task_params.append({
-                        "kaos": kao,
-                        "md": md,
-                        "mdidx": actor.entid,
-                        "md_entry": md.entries[actor.entid],
-                        "sprconf": sprconf,
-                        "status": status,
-                        "sprites": False
-                    })
+                    task_params.append(
+                        {
+                            "kaos": kao,
+                            "md": md,
+                            "mdidx": actor.entid,
+                            "md_entry": md.entries[actor.entid],
+                            "sprconf": sprconf,
+                            "status": status,
+                            "sprites": False,
+                        }
+                    )
 
             for starter in starters:
-                task_params.append({
-                    "kaos": kao,
-                    "md": md,
-                    "mdidx": starter,
-                    "md_entry": md.entries[starter],
-                    "sprconf": sprconf,
-                    "status": status,
-                    "sprites": True
-                })
+                task_params.append(
+                    {
+                        "kaos": kao,
+                        "md": md,
+                        "mdidx": starter,
+                        "md_entry": md.entries[starter],
+                        "sprconf": sprconf,
+                        "status": status,
+                        "sprites": True,
+                    }
+                )
 
             for partner in partners:
-                task_params.append({
-                    "kaos": kao,
-                    "md": md,
-                    "mdidx": partner,
-                    "md_entry": md.entries[partner],
-                    "sprconf": sprconf,
-                    "status": status,
-                    "sprites": True
-                })
+                task_params.append(
+                    {
+                        "kaos": kao,
+                        "md": md,
+                        "mdidx": partner,
+                        "md_entry": md.entries[partner],
+                        "sprconf": sprconf,
+                        "status": status,
+                        "sprites": True,
+                    }
+                )
 
             i = 0
 
@@ -158,14 +213,24 @@ class PortraitDownloader(AbstractRandomizer):
 
         asyncio.run(loop_task())
 
-        self.rom.setFileByName('FONT/kaomado.kao', FileType.KAO.serialize(kao))
-        self.rom.setFileByName('BALANCE/monster.md', FileType.MD.serialize(md))
+        self.rom.setFileByName("FONT/kaomado.kao", FileType.KAO.serialize(kao))
+        self.rom.setFileByName("BALANCE/monster.md", FileType.MD.serialize(md))
         self.rom.setFileByName(SPRCONF_FILENAME, FileType.SPRCONF.serialize(sprconf))
-        self.rom.setFileByName(MONSTER_BIN, FileType.BIN_PACK.serialize(self.monster_bin))
-        self.rom.setFileByName(GROUND_BIN, FileType.BIN_PACK.serialize(self.monster_ground_bin))
-        self.rom.setFileByName(ATTACK_BIN, FileType.BIN_PACK.serialize(self.monster_attack_bin))
-        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
-        HardcodedMonsterSpriteDataTable.set(self.sprite_size_table, arm9, self.static_data)
+        self.rom.setFileByName(
+            MONSTER_BIN, FileType.BIN_PACK.serialize(self.monster_bin)
+        )
+        self.rom.setFileByName(
+            GROUND_BIN, FileType.BIN_PACK.serialize(self.monster_ground_bin)
+        )
+        self.rom.setFileByName(
+            ATTACK_BIN, FileType.BIN_PACK.serialize(self.monster_attack_bin)
+        )
+        arm9 = bytearray(
+            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
+        )
+        HardcodedMonsterSpriteDataTable.set(
+            self.sprite_size_table, arm9, self.static_data
+        )
         set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 
         def add_rows():
@@ -176,7 +241,9 @@ class PortraitDownloader(AbstractRandomizer):
 
         status.done()
 
-    def _match_form(self, mdidx: int, pokedex_number: int, gender_id: int) -> list[tuple[int, str]]:
+    def _match_form(
+        self, mdidx: int, pokedex_number: int, gender_id: int
+    ) -> list[tuple[int, str]]:
         """
         Returns the monster ID and form paths (in preferred order) for this entry from the ROM.
         Maps some special cases in the vanilla ROM to special mon, if the expected dex
@@ -312,20 +379,20 @@ class PortraitDownloader(AbstractRandomizer):
         return paths
 
     async def _import_portrait(
-            self,
-            sc: SpriteCollabSession,
-            md: MdProtocol,
-            kaos: KaoProtocol,
-            mdidx: int,
-            md_entry: MdEntryProtocol,
-            sprconf: SprconfType,
-            status: Status,
-            sprites: bool = False
+        self,
+        sc: SpriteCollabSession,
+        md: MdProtocol,
+        kaos: KaoProtocol,
+        mdidx: int,
+        md_entry: MdEntryProtocol,
+        sprconf: SprconfType,
+        status: Status,
+        sprites: bool = False,
     ):
         pokedex_number = md_entry.national_pokedex_number
-        form_id = '???'
-        poke_name = '???'
-        form_name = '???'
+        form_id = "???"
+        poke_name = "???"
+        form_name = "???"
 
         forms = self._match_form(mdidx, pokedex_number, md_entry.gender)
 
@@ -341,9 +408,11 @@ class PortraitDownloader(AbstractRandomizer):
                 for subindex, image in enumerate(portraits):
                     if image is not None:
                         kaos.set(mdidx - 1, subindex, image)
-                self._debugs.append((f'{pokedex_number:04}', poke_name, form_id, form_name, '✓'))
+                self._debugs.append(
+                    (f"{pokedex_number:04}", poke_name, form_id, form_name, "✓")
+                )
             else:
-                self._debugs.append((f'{pokedex_number:04}', poke_name, '-', '-', '-'))
+                self._debugs.append((f"{pokedex_number:04}", poke_name, "-", "-", "-"))
 
             if sprites:
                 spr_result = await get_sprites(sc, forms)
@@ -361,27 +430,33 @@ class PortraitDownloader(AbstractRandomizer):
                     FileType.SPRCONF.update(sprconf, pmd2_sprite)
 
                     # update sprite size, if needed
-                    effective_base_attr = 'md_index_base'
+                    effective_base_attr = "md_index_base"
                     if self.is_expand_poke_list_applied:
-                        effective_base_attr = 'entid'
-                    md_gender1, md_gender2 = self.get_both_md_entries(md, getattr(md_entry, effective_base_attr))
+                        effective_base_attr = "entid"
+                    md_gender1, md_gender2 = self.get_both_md_entries(
+                        md, getattr(md_entry, effective_base_attr)
+                    )
                     check_and_correct_monster_sprite_size(
                         md_entry,
                         md_gender1=md_gender1,
                         md_gender2=md_gender2,
                         monster_bin=self.monster_bin,
                         sprite_size_table=self.sprite_size_table,
-                        is_expand_poke_list_patch_applied=self.is_expand_poke_list_applied
+                        is_expand_poke_list_patch_applied=self.is_expand_poke_list_applied,
                     )
         except Exception:
-            traceback_str = ''.join(traceback.format_exception(*sys.exc_info()))
-            self._debugs.append((f'{pokedex_number:04}', poke_name, form_id, form_name, traceback_str))
+            traceback_str = "".join(traceback.format_exception(*sys.exc_info()))
+            self._debugs.append(
+                (f"{pokedex_number:04}", poke_name, form_id, form_name, traceback_str)
+            )
 
         self.current += 1
         status.step(f"Downloading portraits and sprites... {self.current}/{self.total}")
 
     @staticmethod
-    def get_both_md_entries(md: MdProtocol, item_id: int) -> tuple[MdEntryProtocol, Optional[MdEntryProtocol]]:
+    def get_both_md_entries(
+        md: MdProtocol, item_id: int
+    ) -> tuple[MdEntryProtocol, Optional[MdEntryProtocol]]:
         num_entites = FileType.MD.properties().num_entities
         if item_id + num_entites < len(md):
             return md[item_id], md[item_id + num_entites]

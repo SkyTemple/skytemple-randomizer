@@ -1,4 +1,5 @@
 """Managing the configuration for the randomizer."""
+
 #  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
@@ -17,7 +18,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 
 # NOT SUPPORTED: DO NOT!
-#from __future__ import annotations
+# from __future__ import annotations
 
 import json
 import os
@@ -41,11 +42,12 @@ else:
     import importlib_metadata
 
 
-CLASSREF = '__classref'
+CLASSREF = "__classref"
 
 
 class IntRange:
     """Represents a config integer with a minimum and maximum value (defined in the UI)"""
+
     value: int
 
     def __init__(self, value: int):
@@ -113,28 +115,17 @@ class QuizMode(Enum):
 
 
 QUIZ_QUESTIONS_JSON_SCHEMA = {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "array",
-  "items": {
-    "type": "object",
-    "required": [
-      "question",
-      "answers"
-    ],
-    "additionalProperties": False,
-    "properties": {
-      "question": {
-        "type": "string"
-      },
-      "answers": {
-        "minItems": 2,
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      }
-    }
-  }
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["question", "answers"],
+        "additionalProperties": False,
+        "properties": {
+            "question": {"type": "string"},
+            "answers": {"minItems": 2, "type": "array", "items": {"type": "string"}},
+        },
+    },
 }
 
 
@@ -208,6 +199,7 @@ class ItemConfig(TypedDict):
 
 class RandomizerConfig(TypedDict):
     """Configuration for the randomizer."""
+
     starters_npcs: StartersNpcsConfig
     dungeons: DungeonsConfig
     improvements: ImprovementsConfig
@@ -242,6 +234,7 @@ def is_int(typ):
 class ConfigFileLoader:
     """Loads configuration from JSON files. The JSON should have a structure equivalent of RandomizerConfig.
     Unknown fields are ignored, numbers converted into Enums."""
+
     @classmethod
     def load(cls, fn: str) -> RandomizerConfig:
         with open_utf8(fn) as f:
@@ -253,104 +246,112 @@ class ConfigFileLoader:
 
     @classmethod
     def _handle(cls, target, typ: type):
-        if hasattr(typ, '__bases__') and dict in typ.__bases__ and len(typ.__annotations__) > 0:
+        if (
+            hasattr(typ, "__bases__")
+            and dict in typ.__bases__
+            and len(typ.__annotations__) > 0
+        ):
             if not isinstance(target, dict):
                 raise ValueError(f"Value in JSON must be an object for {typ}.")
             kwargs = {}
             for field, field_type in typ.__annotations__.items():
                 # Compatibility:
                 if field in target:
-                    if field == 'weather' and type(target[field]) == int:
+                    if field == "weather" and type(target[field]) == int:
                         target[field] = bool(target[field])
                 else:
-                    if field == 'overworld_music' and field_type == bool:
+                    if field == "overworld_music" and field_type == bool:
                         target[field] = True
-                    elif field == 'patch_disarm_monster_houses' and field_type == bool:
+                    elif field == "patch_disarm_monster_houses" and field_type == bool:
                         target[field] = True
-                    elif field == 'patch_totalteamcontrol' and field_type == bool:
+                    elif field == "patch_totalteamcontrol" and field_type == bool:
                         target[field] = False
-                    elif field == 'explorer_rank_unlocks' and field_type == bool:
+                    elif field == "explorer_rank_unlocks" and field_type == bool:
                         target[field] = False
-                    elif field == 'explorer_rank_rewards' and field_type == bool:
+                    elif field == "explorer_rank_rewards" and field_type == bool:
                         target[field] = True
-                    elif field == 'randomize_tactics' and field_type == bool:
+                    elif field == "randomize_tactics" and field_type == bool:
                         target[field] = False
-                    elif field == 'randomize_iq_gain' and field_type == bool:
+                    elif field == "randomize_iq_gain" and field_type == bool:
                         target[field] = False
-                    elif field == 'randomize_iq_skills' and field_type == bool:
+                    elif field == "randomize_iq_skills" and field_type == bool:
                         target[field] = False
-                    elif field == 'randomize_iq_groups' and field_type == bool:
+                    elif field == "randomize_iq_groups" and field_type == bool:
                         target[field] = False
-                    elif field == 'patch_fixmemorysoftlock' and field_type == bool:
+                    elif field == "patch_fixmemorysoftlock" and field_type == bool:
                         target[field] = True
-                    elif field == 'tm_hm_movesets' and field_type == bool:
+                    elif field == "tm_hm_movesets" and field_type == bool:
                         target[field] = True
-                    elif field == 'tms_hms' and field_type == bool:
+                    elif field == "tms_hms" and field_type == bool:
                         target[field] = True
-                    elif field == 'max_sticky_chance':
+                    elif field == "max_sticky_chance":
                         target[field] = 10
-                    elif field == 'max_mh_chance':
+                    elif field == "max_mh_chance":
                         target[field] = 6
-                    elif field == 'max_hs_chance':
+                    elif field == "max_hs_chance":
                         target[field] = 10
-                    elif field == 'max_ks_chance':
+                    elif field == "max_ks_chance":
                         target[field] = 10
-                    elif field == 'random_weather_chance':
+                    elif field == "random_weather_chance":
                         target[field] = 33
-                    elif field == 'min_floor_change_percent':
+                    elif field == "min_floor_change_percent":
                         target[field] = 0
-                    elif field == 'max_floor_change_percent':
+                    elif field == "max_floor_change_percent":
                         target[field] = 0
-                    elif field == 'instant':
+                    elif field == "instant":
                         target[field] = False
-                    elif field == 'topmenu_music':
+                    elif field == "topmenu_music":
                         target[field] = True
+                    # fmt: off
                     elif field == 'items_enabled':
                         target[field] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 167, 168, 169, 170, 171, 172, 173, 174, 178, 179, 180, 182, 183, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 199, 200, 201, 202, 203, 204, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 340, 341, 342, 343, 344, 346, 347, 348, 350, 351, 352, 354, 355, 356, 357, 358, 359, 362, 363]
                     elif field == 'moves_enabled':
                         target[field] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 360, 394, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541]
-                    elif field == 'monsters_enabled':
+                    # fmt: on
+                    elif field == "monsters_enabled":
                         target[field] = DEFAULTMONSTERPOOL
-                    elif field == 'starters_enabled':
+                    elif field == "starters_enabled":
                         target[field] = DEFAULTMONSTERPOOL
-                    elif field == 'quiz' and field_type == QuizConfig:
-                        target[field] = {'mode': 1, 'randomize': False, 'questions': []}
-                    elif field == 'native_file_handlers':
+                    elif field == "quiz" and field_type == QuizConfig:
+                        target[field] = {"mode": 1, "randomize": False, "questions": []}
+                    elif field == "native_file_handlers":
                         target[field] = 1
-                    elif field == 'iq' and field_type == IqConfig:
+                    elif field == "iq" and field_type == IqConfig:
                         target[field] = {
-                            'randomize_tactics': False,
-                            'randomize_iq_gain': False,
-                            'randomize_iq_skills': False,
-                            'randomize_iq_groups': False,
-                            'keep_universal_skills': False
+                            "randomize_tactics": False,
+                            "randomize_iq_gain": False,
+                            "randomize_iq_skills": False,
+                            "randomize_iq_groups": False,
+                            "keep_universal_skills": False,
                         }
-                    elif field == 'item' and field_type == ItemConfig:
+                    elif field == "item" and field_type == ItemConfig:
                         target[field] = {
-                            'algorithm': 0,
-                            'global_items': True,
-                            'weights': {
-                                '0': 1,
-                                '1': 1,
-                                '2': 1,
-                                '3': 2,
-                                '4': 1,
-                                '5': 0.3,
-                                '6': 3,
-                                '8': 1,
-                                '9': 1,
-                                '10': 1
-                            }
+                            "algorithm": 0,
+                            "global_items": True,
+                            "weights": {
+                                "0": 1,
+                                "1": 1,
+                                "2": 1,
+                                "3": 2,
+                                "4": 1,
+                                "5": 0.3,
+                                "6": 3,
+                                "8": 1,
+                                "9": 1,
+                                "10": 1,
+                            },
                         }
-                    elif field == 'include_vanilla_questions':
+                    elif field == "include_vanilla_questions":
                         target[field] = False
                     else:
-                        raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
+                        raise KeyError(
+                            f"Configuration '{field_type}' missing for {typ} ({field}))."
+                        )
                 kwargs[field] = cls._handle(target[field], field_type)
             v = typ(**kwargs)
             v[CLASSREF] = typ
             return v
-        elif hasattr(typ, '__bases__') and Enum in typ.__bases__:
+        elif hasattr(typ, "__bases__") and Enum in typ.__bases__:
             if isinstance(target, str):
                 try:
                     target = int(target)
@@ -361,19 +362,27 @@ class ConfigFileLoader:
             return typ(target)
         elif typ == bool:
             if not isinstance(target, bool):
-                raise ValueError(f"Expected a boolean for a field, but got {target.__class__.__name__}")
+                raise ValueError(
+                    f"Expected a boolean for a field, but got {target.__class__.__name__}"
+                )
             return target
         elif is_int(typ):
             if not isinstance(target, int):
-                raise ValueError(f"Expected an integer for a field, but got {target.__class__.__name__}")
+                raise ValueError(
+                    f"Expected an integer for a field, but got {target.__class__.__name__}"
+                )
             return target
         elif typ == IntRange:
             if not isinstance(target, int):
-                raise ValueError(f"Expected an IntRange for a field, but got {target.__class__.__name__}")
+                raise ValueError(
+                    f"Expected an IntRange for a field, but got {target.__class__.__name__}"
+                )
             return typ(target)
         elif typ == str:
             if not isinstance(target, str):
-                raise ValueError(f"Expected a string for a field, but got {target.__class__.__name__}")
+                raise ValueError(
+                    f"Expected a string for a field, but got {target.__class__.__name__}"
+                )
             return target
         elif typ == dict[int, DungeonSettingsConfig]:
             if not isinstance(target, dict):
@@ -390,7 +399,9 @@ class ConfigFileLoader:
                 d[int(idx)] = conf
             return d
         elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
-            if not isinstance(target, list) or not all(isinstance(x, int) for x in target):
+            if not isinstance(target, list) or not all(
+                isinstance(x, int) for x in target
+            ):
                 raise ValueError(f"Value in JSON must be a list of integers for {typ}.")
             return target
         elif typ == list[QuizQuestion]:
@@ -410,14 +421,14 @@ class EnumJsonEncoder(json.JSONEncoder):
 
 
 def version():
-    if os.path.exists(os.path.abspath(os.path.join(data_dir(), '..', '..', '.git'))):
-        return 'dev'
+    if os.path.exists(os.path.abspath(os.path.join(data_dir(), "..", "..", ".git"))):
+        return "dev"
     try:
         return importlib_metadata.metadata("skytemple-randomizer")["version"]
     except importlib_metadata.PackageNotFoundError:
         # Try reading from a VERISON file instead
-        version_file = os.path.join(data_dir(), 'VERSION')
+        version_file = os.path.join(data_dir(), "VERSION")
         if os.path.exists(version_file):
             with open(version_file) as f:
                 return f.read().strip()
-        return 'unknown'
+        return "unknown"

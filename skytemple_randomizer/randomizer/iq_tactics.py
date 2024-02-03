@@ -30,28 +30,30 @@ from skytemple_randomizer.status import Status
 class IqTacticsRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
         i = 0
-        if self.config['iq']['randomize_tactics']:
+        if self.config["iq"]["randomize_tactics"]:
             i += 1
-        if self.config['iq']['randomize_iq_gain']:
+        if self.config["iq"]["randomize_iq_gain"]:
             i += 1
-        if self.config['iq']['randomize_iq_groups']:
+        if self.config["iq"]["randomize_iq_groups"]:
             i += 1
-        if self.config['iq']['randomize_iq_skills']:
+        if self.config["iq"]["randomize_iq_skills"]:
             i += 1
         return i
 
     def run(self, status: Status):
         patcher = Patcher(self.rom, self.static_data)
-        additional_types_patch_applied = patcher.is_applied('AddTypes')
-        if self.config['iq']['randomize_iq_groups']:
-            if not patcher.is_applied('CompressIQData'):
-                patcher.apply('CompressIQData')
+        additional_types_patch_applied = patcher.is_applied("AddTypes")
+        if self.config["iq"]["randomize_iq_groups"]:
+            if not patcher.is_applied("CompressIQData"):
+                patcher.apply("CompressIQData")
         ov10 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay10)
         ov29 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay29)
-        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
+        arm9 = bytearray(
+            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
+        )
 
-        if self.config['iq']['randomize_tactics']:
-            status.step('Randomizing tactics...')
+        if self.config["iq"]["randomize_tactics"]:
+            status.step("Randomizing tactics...")
             tactics = HardcodedTactics.get_unlock_levels(arm9, self.static_data)
 
             minus_one_added = False
@@ -74,10 +76,14 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             HardcodedTactics.set_unlock_levels(new_tactics, arm9, self.static_data)
 
-        if self.config['iq']['randomize_iq_gain']:
-            status.step('Randomizing IQ gain...')
-            iq_gains = HardcodedIq.get_gummi_iq_gains(arm9, self.static_data, additional_types_patch_applied)
-            belly_gains = HardcodedIq.get_gummi_belly_heal(arm9, self.static_data, additional_types_patch_applied)
+        if self.config["iq"]["randomize_iq_gain"]:
+            status.step("Randomizing IQ gain...")
+            iq_gains = HardcodedIq.get_gummi_iq_gains(
+                arm9, self.static_data, additional_types_patch_applied
+            )
+            belly_gains = HardcodedIq.get_gummi_belly_heal(
+                arm9, self.static_data, additional_types_patch_applied
+            )
 
             new_iq_gains = []
             for l in iq_gains:
@@ -93,16 +99,24 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 for e in l:
                     li.append(randrange(10, 40))
 
-            HardcodedIq.set_gummi_iq_gains(new_iq_gains, arm9, self.static_data, additional_types_patch_applied)
-            HardcodedIq.set_gummi_belly_heal(new_belly_gains, arm9, self.static_data, additional_types_patch_applied)
-            HardcodedIq.set_wonder_gummi_gain(u8(randrange(5, 20)), arm9, self.static_data)
+            HardcodedIq.set_gummi_iq_gains(
+                new_iq_gains, arm9, self.static_data, additional_types_patch_applied
+            )
+            HardcodedIq.set_gummi_belly_heal(
+                new_belly_gains, arm9, self.static_data, additional_types_patch_applied
+            )
+            HardcodedIq.set_wonder_gummi_gain(
+                u8(randrange(5, 20)), arm9, self.static_data
+            )
             HardcodedIq.set_nectar_gain(u8(randrange(5, 20)), ov29, self.static_data)
-            HardcodedIq.set_juice_bar_nectar_gain(u8(randrange(5, 20)), arm9, self.static_data)
+            HardcodedIq.set_juice_bar_nectar_gain(
+                u8(randrange(5, 20)), arm9, self.static_data
+            )
 
-        if self.config['iq']['randomize_iq_groups']:
-            status.step('Randomizing IQ groups...')
-            if not patcher.is_applied('CompressIQData'):
-                patcher.apply('CompressIQData')
+        if self.config["iq"]["randomize_iq_groups"]:
+            status.step("Randomizing IQ groups...")
+            if not patcher.is_applied("CompressIQData"):
+                patcher.apply("CompressIQData")
             iq_groups = IqGroupsSkills.read_compressed(arm9, self.static_data)
 
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
@@ -112,7 +126,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 li2: list[u8] = []
                 new_iq_groups.append(li2)
                 for idx in range(len(iq_skills)):
-                    if self.config['iq']['keep_universal_skills']:
+                    if self.config["iq"]["keep_universal_skills"]:
                         if idx in [2, 3, 7, 8, 20, 22, 23] or choice([True, False]):
                             li2.append(u8(idx))
                     else:
@@ -121,13 +135,13 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
             IqGroupsSkills.write_compressed(arm9, new_iq_groups, self.static_data)
 
-        if self.config['iq']['randomize_iq_skills']:
-            status.step('Randomizing IQ skills...')
+        if self.config["iq"]["randomize_iq_skills"]:
+            status.step("Randomizing IQ skills...")
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
 
             for skill_idx, skill in enumerate(iq_skills):
                 if skill.iq_required != 9999:
-                    if self.config['iq']['keep_universal_skills']:
+                    if self.config["iq"]["keep_universal_skills"]:
                         if skill_idx in [2, 3, 22, 23] or choice([True] + [False] * 12):
                             skill.iq_required = i32(-1)
                         else:

@@ -40,9 +40,13 @@ class FixQuicksandPit(AbstractRandomizer):
 
             for rtn in ssb.routine_ops:
                 for op in rtn:
-                    op_c = self.static_data.script_data.op_codes__by_name[op.op_code.name][0]
-                    if op_c.name == 'WaitAnimation':
-                        op.op_code = self.static_data.script_data.op_codes__by_name['Null'][0]
+                    op_c = self.static_data.script_data.op_codes__by_name[
+                        op.op_code.name
+                    ][0]
+                    if op_c.name == "WaitAnimation":
+                        op.op_code = self.static_data.script_data.op_codes__by_name[
+                            "Null"
+                        ][0]
         except Exception:
             # We ignore errors, it's possible ROM Hacks removed this script
             raise  # todo!

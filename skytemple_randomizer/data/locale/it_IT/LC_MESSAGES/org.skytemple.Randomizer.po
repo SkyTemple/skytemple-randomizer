@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-01-29 14:35\n"
+"PO-Revision-Date: 2024-02-03 11:41\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -3199,7 +3199,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"
-msgstr ""
+msgstr "Info"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
@@ -3370,7 +3370,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
 msgid "Use Native File Handlers"
-msgstr ""
+msgstr "Usa Gestori File Nativi"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:64
 msgid "If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\n"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-03-06 14:53\n"
+"PO-Revision-Date: 2024-03-06 16:17\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -3229,7 +3229,7 @@ msgstr "Buscar"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Start Randomization"
-msgstr ""
+msgstr "Iniciar la aleatorización"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"
@@ -3242,40 +3242,41 @@ msgstr "Wiki"
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
 msgid "_Dungeons"
-msgstr ""
+msgstr "_Territorios"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:18
 msgid "Randomization Mode"
-msgstr ""
+msgstr "Modo de aleatorización"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:25
 msgid "Fully random"
-msgstr ""
+msgstr "Totalmente aleatorio"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:26
 msgid "Consistent per Dungeon"
-msgstr ""
+msgstr "Idéntico por territorio"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:37
 msgid "Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\n"
 "If you choose \"Consistent per Dungeon\" aspects like the music and tileset will be the same for all floors of a dungeon."
-msgstr ""
+msgstr "Especifica si quieres distribuir los pisos de los territorios de forma totalmente aleatoria o si quieres que algunos aspectos de los pisos sean iguales.\n"
+"Si eliges «Idéntico por territorio», aspectos como la música y el conjunto de tiles serán los mismos en todos los pisos de un territorio."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:56
 msgid "Randomization Settings"
-msgstr ""
+msgstr "Ajustes de aleatorización"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:76
 msgid "Chance Thresholds"
-msgstr ""
+msgstr "Umbrales de probabilidad"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:100
 msgid "Per-Dungeon Settings"
-msgstr ""
+msgstr "Ajustes por territorio"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:101
 msgid "Tactics & IQ"
-msgstr ""
+msgstr "Tácticas y CI"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
@@ -3481,7 +3482,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:145
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:148
 msgid "Enable Instant Text"
@@ -3507,15 +3508,15 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:20
 msgid "Item Randomization Algorithm"
-msgstr ""
+msgstr "Algoritmo de aleatorización de objetos"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:27
 msgid "Balanced"
-msgstr ""
+msgstr "Equilibrado"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
 msgid "Classic"
-msgstr ""
+msgstr "Clásico"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:39
 msgid "Controls how item lists are randomly filled.\n\n"
@@ -3524,15 +3525,20 @@ msgid "Controls how item lists are randomly filled.\n\n"
 "Classic: Algorithm that was used in the Randomizer prior to version 1.4.\n"
 "It doesn't attempt to balance out the different item categories,\n"
 "making items from categories with fewer total items easier to find."
-msgstr ""
+msgstr "Controla cómo se rellenan aleatoriamente las listas de objetos.\n\n"
+"Equilibrado: intenta que haya la misma probabilidad de encontrar cualquier objeto en el juego\n"
+"con la única excepción de los Poké, que están potenciados.\n\n"
+"Clásico: algoritmo que se utilizaba en Randomizer antes de la versión 1.4.\n"
+"No intenta equilibrar las diferentes categorías de objetos,\n"
+"haciendo que sea más fácil encontrar los objetos de las categorías con menos objetos."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:60
 msgid "Randomize Treasure Town shop and dungeon rewards?"
-msgstr ""
+msgstr "¿Aleatorizar la tienda de la Aldea Tesoro y las recompensas de territorios?"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:68
 msgid "Allowed Items &amp; Category Weights"
-msgstr ""
+msgstr "Objetos permitidos &amp; Pesos por categoría"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:90
 msgid "Utilities"
@@ -3603,43 +3609,43 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:46
 msgid "_Start"
-msgstr ""
+msgstr "_Inicio"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:117
 msgid "Help (online)"
-msgstr ""
+msgstr "Ayuda (en línea)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:135
 msgid "_Randomize"
-msgstr ""
+msgstr "_Aleatorizar"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:60
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:61
 msgid "Load ROM"
-msgstr ""
+msgstr "Cargar ROM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:66
 msgid "Load {}"
-msgstr ""
+msgstr "Cargar {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:70
 msgid "Load another ROM"
-msgstr ""
+msgstr "Cargar otra ROM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:105
 msgid "Failed to load ROM: Error while opening file ({})."
-msgstr ""
+msgstr "No se pudo cargar la ROM: error al abrir el archivo ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:120
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:129
 msgid "Failed to load ROM:"
-msgstr ""
+msgstr "Error al cargar ROM:"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:123
 msgid "Are you sure you provided a ROM? A ROM usually has the file extension \".nds\"."
-msgstr ""
+msgstr "¿Estás seguro de que has proporcionado una ROM? Una ROM normalmente tiene la extensión de archivo \".nds\"."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."
-msgstr ""
+msgstr "Comienza cargando una ROM."
 

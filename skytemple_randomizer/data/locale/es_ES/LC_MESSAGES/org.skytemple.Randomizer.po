@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-01-13 21:26\n"
+"PO-Revision-Date: 2024-03-06 14:53\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -43,23 +43,23 @@ msgstr ""
 
 #: /dev/fd/63:7 /dev/fd/63:130
 msgid "Gummi Eating Strings"
-msgstr ""
+msgstr "Cadenas sobre comer gomis"
 
 #: /dev/fd/63:8 /dev/fd/63:131
 msgid "Items and Pokemon Menu Strings"
-msgstr ""
+msgstr "Cadenas de menús de Pokémon y objetos"
 
 #: /dev/fd/63:9 /dev/fd/63:132
 msgid "Kangaskhan Storage Strings"
-msgstr ""
+msgstr "Cadenas de la Consigna Kangaskhan"
 
 #: /dev/fd/63:10 /dev/fd/63:133
 msgid "Evolution Strings"
-msgstr ""
+msgstr "Cadenas de evolución"
 
 #: /dev/fd/63:11 /dev/fd/63:134
 msgid "Music tracks names"
-msgstr ""
+msgstr "Nombres de pistas de música"
 
 #: /dev/fd/63:12 /dev/fd/63:135
 msgid "Personality Quiz Questions"
@@ -75,7 +75,7 @@ msgstr "Resultados de la prueba de personalidad"
 
 #: /dev/fd/63:15 /dev/fd/63:138
 msgid "Personality string natures"
-msgstr ""
+msgstr "Cadenas de naturalezas de personalidad"
 
 #: /dev/fd/63:16 /dev/fd/63:139
 msgid "Weather Change Feedback"
@@ -279,7 +279,7 @@ msgstr "Nombres de estados y descripciones"
 
 #: /dev/fd/63:66 /dev/fd/63:189
 msgid "Type Names"
-msgstr ""
+msgstr "Nombres de tipos"
 
 #: /dev/fd/63:67 /dev/fd/63:190
 msgid "Ability Names"
@@ -331,11 +331,11 @@ msgstr ""
 
 #: /dev/fd/63:79 /dev/fd/63:202
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "Nuevos nombres de Pokémon"
 
 #: /dev/fd/63:80 /dev/fd/63:203
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "Nuevas categorías de Pokémon"
 
 #: /dev/fd/63:81 /dev/fd/63:204
 msgid "Thrown - Pierce"
@@ -363,11 +363,11 @@ msgstr "MTs, MOs"
 
 #: /dev/fd/63:87 /dev/fd/63:210
 msgid "Poké (Money)"
-msgstr ""
+msgstr "Poké (Dinero)"
 
 #: /dev/fd/63:88 /dev/fd/63:211
 msgid "Unknown 7"
-msgstr ""
+msgstr "Desconocido 7"
 
 #: /dev/fd/63:89 /dev/fd/63:212
 msgid "Other"
@@ -379,23 +379,23 @@ msgstr "Esferas"
 
 #: /dev/fd/63:91 /dev/fd/63:214
 msgid "Link Box"
-msgstr ""
+msgstr "Caja Enlace"
 
 #: /dev/fd/63:92 /dev/fd/63:215
 msgid "Used TM"
-msgstr ""
+msgstr "MT usada"
 
 #: /dev/fd/63:93 /dev/fd/63:216
 msgid "Treasure Box 1"
-msgstr ""
+msgstr "Cofre Misterioso 1"
 
 #: /dev/fd/63:94 /dev/fd/63:217
 msgid "Treasure Box 2"
-msgstr ""
+msgstr "Cofre Misterioso 2"
 
 #: /dev/fd/63:95 /dev/fd/63:218
 msgid "Treasure Box 3"
-msgstr ""
+msgstr "Cofre Misterioso 3"
 
 #: /dev/fd/63:96 /dev/fd/63:219
 msgid "Exclusive Items"
@@ -403,96 +403,96 @@ msgstr "Objetos exclusivos"
 
 #: /dev/fd/63:97 /dev/fd/63:220
 msgid "Red component"
-msgstr ""
+msgstr "Componente rojo"
 
 #: /dev/fd/63:98 /dev/fd/63:221
 msgid "Green component"
-msgstr ""
+msgstr "Componente verde"
 
 #: /dev/fd/63:99 /dev/fd/63:222
 msgid "Blue component"
-msgstr ""
+msgstr "Componente azul"
 
 #: /dev/fd/63:100 /dev/fd/63:223
 msgid "Alpha component"
-msgstr ""
+msgstr "Componente alfa"
 
 #: /dev/fd/63:101 /dev/fd/63:224
 msgid "Conversion 2 Type when hit by a Fairy move"
-msgstr ""
+msgstr "Conversión tipo 2 cuando sea golpeado por un movimiento tipo Hada"
 
 #: /dev/fd/63:102 /dev/fd/63:225
 msgid "ID of the first icon in markfont.dat (23 entries used)"
-msgstr ""
+msgstr "ID del primer icono de markfont.dat (23 entradas utilizadas)"
 
 #: /dev/fd/63:103 /dev/fd/63:226
 msgid "Display accuracy and power values"
-msgstr ""
+msgstr "Mostrar precisión y valores de potencia"
 
 #: /dev/fd/63:104 /dev/fd/63:227
 msgid "ID of the first icon in markfont.dat (24 entries used)"
-msgstr ""
+msgstr "ID del primer icono de markfont.dat (24 entradas utilizadas)"
 
 #: /dev/fd/63:105 /dev/fd/63:228
 msgid "String ID for push dialogue"
-msgstr ""
+msgstr "ID de cadena para diálogos de empujar"
 
 #: /dev/fd/63:106 /dev/fd/63:229
 msgid "String mentioned above is replaced by a default text when applying"
-msgstr ""
+msgstr "La cadena mencionada anteriormente es reemplazada por un texto predeterminado al aplicarse"
 
 #: /dev/fd/63:107 /dev/fd/63:230
 msgid "Only interruptions don't heal HP"
-msgstr ""
+msgstr "Solo las interrupciones no curan PS"
 
 #: /dev/fd/63:108 /dev/fd/63:231
 #, c-format
 msgid "% of exp. shared"
-msgstr ""
+msgstr "% de exp. compartida"
 
 #: /dev/fd/63:109 /dev/fd/63:232
 msgid "String ID for the Menu Option"
-msgstr ""
+msgstr "ID de cadena para la opción de menú"
 
 #: /dev/fd/63:110 /dev/fd/63:233
 msgid "String ID to confirm the appraise all"
-msgstr ""
+msgstr "ID de cadena para confirmar la valoración de todos"
 
 #: /dev/fd/63:111 /dev/fd/63:234
 msgid "String ID before revealing the items"
-msgstr ""
+msgstr "ID de cadena antes de revelar los objetos"
 
 #: /dev/fd/63:112 /dev/fd/63:235
 msgid "String ID when revealing an item"
-msgstr ""
+msgstr "ID de cadena al revelar un objeto"
 
 #: /dev/fd/63:113 /dev/fd/63:236
 msgid "All strings mentioned above are replaced by a default text when applying"
-msgstr ""
+msgstr "Todas las cadenas mencionadas anteriormente son reemplazadas por un texto predeterminado al aplicarse"
 
 #: /dev/fd/63:114 /dev/fd/63:237
 msgid "Cost of each Treasure Box (Only for Appraise All option)"
-msgstr ""
+msgstr "Coste de cada cofre misterioso (solo para la opción Valorar todos)"
 
 #: /dev/fd/63:115 /dev/fd/63:238
 msgid "Update the level and stats of evolved enemies"
-msgstr ""
+msgstr "Actualizar el nivel y las estadísticas de los enemigos evolucionados"
 
 #: /dev/fd/63:116 /dev/fd/63:239
 msgid "Fully heal enemies after evolving"
-msgstr ""
+msgstr "Curar completamente a los enemigos después de evolucionar"
 
 #: /dev/fd/63:117 /dev/fd/63:240
 msgid "Update the moves of evolved enemies"
-msgstr ""
+msgstr "Actualizar los movimientos de enemigos evolucionados"
 
 #: /dev/fd/63:118 /dev/fd/63:241
 msgid "Increase Atk/SpAtk/Def/SpDef of evolved enemies by"
-msgstr ""
+msgstr "Aumenta el Atq./Atq. Esp./Def./Def. Esp. de los enemigos evolucionados en"
 
 #: /dev/fd/63:119 /dev/fd/63:242
 msgid "Let enemies evolve even if the defeated pokémon is revived"
-msgstr ""
+msgstr "Deja que los enemigos evolucionen incluso si el Pokémon derrotado es revivido"
 
 #: /dev/fd/63:121
 msgid "French"
@@ -1556,7 +1556,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:176
 msgid "Spawns a locked Key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr ""
+msgstr "Genera una Puerta cerrada con llave. Si el ID fijo de la sala es &lt; 0xA5, será una pared. De lo contrario, será suelo."
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:182
 msgid "F/W, Room; Key Door (Escort)"
@@ -2926,7 +2926,7 @@ msgstr "No se ha encontrado ningún parche para el manipulador '{handler.name}' 
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:108
 msgid "Unknown or extra XML element '{}' in scene data."
-msgstr ""
+msgstr "Elemento XML '{}' desconocido o adicional en los datos de la escena."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "'{}' missing in scene data."
@@ -2934,7 +2934,7 @@ msgstr "Falta '{}' en los datos de la escena."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:469
 msgid "The event ID {} is out of bounds for one of the triggers."
-msgstr ""
+msgstr "El ID de evento {} está fuera de los límites de uno de los desencadenantes."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:557
 msgid "Unknown direction value."

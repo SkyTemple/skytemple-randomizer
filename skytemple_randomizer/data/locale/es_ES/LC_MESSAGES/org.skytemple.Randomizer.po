@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-01-13 20:11+0000\n"
-"PO-Revision-Date: 2024-03-06 16:17\n"
+"PO-Revision-Date: 2024-03-11 17:54\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -23,23 +23,23 @@ msgstr "Inglés"
 
 #: /dev/fd/63:2 /dev/fd/63:125
 msgid "Explorer Ranks Names"
-msgstr ""
+msgstr "Nombres de rangos de explorador"
 
 #: /dev/fd/63:3 /dev/fd/63:126
 msgid "Default Team Names"
-msgstr ""
+msgstr "Nombres del equipo por defecto"
 
 #: /dev/fd/63:4 /dev/fd/63:127
 msgid "Job Debriefing Related Strings"
-msgstr ""
+msgstr "Cadenas relacionadas con misiones"
 
 #: /dev/fd/63:5 /dev/fd/63:128
 msgid "Member Joined Menu"
-msgstr ""
+msgstr "Menú de miembros nuevos"
 
 #: /dev/fd/63:6 /dev/fd/63:129
 msgid "Some Item Menu Strings"
-msgstr ""
+msgstr "Cadenas de menú de algunos objetos"
 
 #: /dev/fd/63:7 /dev/fd/63:130
 msgid "Gummi Eating Strings"
@@ -283,51 +283,51 @@ msgstr "Nombres de tipos"
 
 #: /dev/fd/63:67 /dev/fd/63:190
 msgid "Ability Names"
-msgstr ""
+msgstr "Nombres de habilidades"
 
 #: /dev/fd/63:68 /dev/fd/63:191
 msgid "Ability Descriptions"
-msgstr ""
+msgstr "Descripciones de habilidades"
 
 #: /dev/fd/63:69 /dev/fd/63:192
 msgid "Debug Menu Strings"
-msgstr ""
+msgstr "Cadenas del menú de depuración"
 
 #: /dev/fd/63:70 /dev/fd/63:193
 msgid "Portrait Names"
-msgstr ""
+msgstr "Nombres de retratos"
 
 #: /dev/fd/63:71 /dev/fd/63:194
 msgid "Ground Map Names"
-msgstr ""
+msgstr "Nombres de territorios"
 
 #: /dev/fd/63:72 /dev/fd/63:195
 msgid "Dungeon Names (Main)"
-msgstr ""
+msgstr "Nombres de territorios (Principales)"
 
 #: /dev/fd/63:73 /dev/fd/63:196
 msgid "Dungeon Names (Selection)"
-msgstr ""
+msgstr "Nombres de territorios (Seleccionados)"
 
 #: /dev/fd/63:74 /dev/fd/63:197
 msgid "Dungeon Names (SetDungeonBanner)"
-msgstr ""
+msgstr "Nombres de territorios (SetDungeonBanner)"
 
 #: /dev/fd/63:75 /dev/fd/63:198
 msgid "Dungeon Names (Banner)"
-msgstr ""
+msgstr "Nombres de territorios (Cartel)"
 
 #: /dev/fd/63:76 /dev/fd/63:199
 msgid "Spinda's Juice Bar Strings"
-msgstr ""
+msgstr "Cadenas de la Cafetería Spinda"
 
 #: /dev/fd/63:77 /dev/fd/63:200
 msgid "Recycle Shop Strings"
-msgstr ""
+msgstr "Cadenas de tienda de reciclaje"
 
 #: /dev/fd/63:78 /dev/fd/63:201
 msgid "Staff Roll"
-msgstr ""
+msgstr "Créditos"
 
 #: /dev/fd/63:79 /dev/fd/63:202
 msgid "New Pokemon Names"
@@ -2853,7 +2853,7 @@ msgstr "Ofrece soporte para los contenedores ATUPX, que utilizan un algoritmo di
 
 #: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
-msgstr ""
+msgstr "Corrige la probabilidad de que los territorios no se usen. Ahora determina la probabilidad de que aparezca una sala laberinto en el piso."
 
 #: skytemple-files/skytemple_files/patch/patches.py:230
 #: skytemple-files/skytemple_files/patch/patches.py:240
@@ -3216,7 +3216,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 #, python-brace-format
 msgid "New version available: {version}"
-msgstr ""
+msgstr "Nueva versión disponible: {version}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
@@ -3377,11 +3377,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:162
 msgid "The path of the settings file needs to end in '.json'."
-msgstr ""
+msgstr "La ruta del archivo de configuración debe terminar en '.json'."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:184
 msgid "Settings saved!"
-msgstr ""
+msgstr "Ajustes guardados"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:16
 msgid "Backup &amp; Share Randomization Settings"
@@ -3415,16 +3415,16 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:78
 msgid "1st Word"
-msgstr ""
+msgstr "1ra palabra"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:84
 msgid "2nd Word"
-msgstr ""
+msgstr "2da palabra"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:79
 msgid "_Text"
-msgstr ""
+msgstr "_Texto"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:16
 msgid "Text Pools"
@@ -3558,7 +3558,7 @@ msgstr "Parches"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:124
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Misceláneo"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:127
 msgid "Music"
@@ -3566,7 +3566,7 @@ msgstr "Música"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:147
 msgid "Explorer Rank"
-msgstr ""
+msgstr "Rango de Explorador"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:19
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:28
@@ -3575,7 +3575,7 @@ msgstr "SkyTemple Randomizer"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:33
 msgid "Currently loaded ROM:"
-msgstr ""
+msgstr "ROM cargada actualmente:"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:57
 msgid "Welcome to the Randomizer!\n"
@@ -3593,7 +3593,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
 msgid "Close current ROM?"
-msgstr ""
+msgstr "¿Cerrar la ROM actual?"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:151
 msgid "_No"
@@ -3605,7 +3605,7 @@ msgstr "_Sí"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:23
 msgid "Close the currently opened ROM and load a new one."
-msgstr ""
+msgstr "Cierra la ROM abierta actualmente y carga una nueva."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:46
 msgid "_Start"

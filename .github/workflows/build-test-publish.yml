@@ -94,7 +94,7 @@ jobs:
         with:
           python-versions: 'cp39-cp39 cp310-cp310 cp311-cp311 cp312-cp312'
       - name: Upload wheels
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wheels
           path: dist/*.whl
@@ -108,7 +108,7 @@ jobs:
     name: Deploy wheels to PyPI
     steps:
       - name: Download wheels
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: wheels
       - name: Set up Python 3.11
@@ -228,7 +228,7 @@ jobs:
           arguments: "/DPRODUCT_VERSION=${{ env.PACKAGE_VERSION }}"
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: skytemple-randomizer-windows-app-x64
           path: |
@@ -287,7 +287,7 @@ jobs:
           zip -r skytemple-randomizer-mac.zip dist/SkyTempleRandomizer.app > /dev/null
 
       - name: Upload .app
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: skytemple-randomizer-mac-app
           path: |
@@ -303,7 +303,7 @@ jobs:
           npx create-dmg --dmg-title=SkyTempleRandomizer installer/dist/SkyTempleRandomizer.app installer || true
 
       - name: Upload .dmg
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: skytemple-randomizer-mac-dmg
           path: |

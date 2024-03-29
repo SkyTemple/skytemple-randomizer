@@ -17,7 +17,7 @@
 import configparser
 import logging
 import os
-from typing import Optional, Tuple
+from typing import Optional
 
 from skytemple_files.common.project_file_manager import ProjectFileManager
 from skytemple_files.common.util import open_utf8

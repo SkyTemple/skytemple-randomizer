@@ -18,7 +18,7 @@ import os
 from datetime import datetime
 from enum import Enum
 from random import choice, randrange
-from typing import List, Union, Dict, Set
+from typing import Union
 from collections.abc import Sequence
 
 from PIL import Image
@@ -85,10 +85,13 @@ class FunPortrait(Enum):
     DIGLETT = 50, FunArtistCredit.NERO_INTRUDER
     KOFFING = 109, FunArtistCredit.NERO_INTRUDER
     MEW = 151, FunArtistCredit.REPPAMON
-    TOTODILE = 158, {
-        "158.png": FunArtistCredit.NOIVERN,
-        "158b.png": FunArtistCredit.DECIMETER,
-    }
+    TOTODILE = (
+        158,
+        {
+            "158.png": FunArtistCredit.NOIVERN,
+            "158b.png": FunArtistCredit.DECIMETER,
+        },
+    )
     LEDYBA = 165, FunArtistCredit.NOIVERN
     QUAGSIRE = 195, FunArtistCredit.GROMCHURCH
     PORYGON2 = 260, FunArtistCredit.NERO_INTRUDER

@@ -16,7 +16,6 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
 from random import randint
-from typing import List
 
 import strictyaml
 from jsonschema import validate
@@ -101,8 +100,9 @@ QUESTION_MAPPING = {
     63: [168, 169, 170],
     66: [173, 174],
 }
-FALLBACK_QUESTION = """[CS:B]Um... there weren't enough questions available 
-during randomization.[CR]"""
+FALLBACK_QUESTION = (
+    """[CS:B]Um... there weren't enough questions available during randomization.[CR]"""
+)
 FALLBACK_ANSWER = "How embarrassing..."
 
 

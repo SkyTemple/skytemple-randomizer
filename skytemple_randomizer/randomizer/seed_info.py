@@ -16,7 +16,6 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import traceback
 from numbers import Number
-from typing import Tuple, Dict
 from collections.abc import Mapping, Sequence
 
 from range_typed_integers import u16, i16
@@ -109,7 +108,7 @@ version and configuration of the
 randomizer that was used.
 You can see the configuration of the
 randomization by talking to the NPC
-on Crossroads."""
+on Crossroads."""  # noqa: W291
         if self.static_data.game_region == GAME_REGION_US:
             str_offset = STR_US
         elif self.static_data.game_region == GAME_REGION_JP:
@@ -405,23 +404,23 @@ macro artists() {{
     """
 
         else:
-            exps = f"""
-def 0 {{
-    with (actor ACTOR_TALK_MAIN) {{
+            exps = """
+def 0 {
+    with (actor ACTOR_TALK_MAIN) {
         ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
-    }}
-    with (actor ACTOR_TALK_SUB) {{
+    }
+    with (actor ACTOR_TALK_SUB) {
         ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
-    }}
-    with (actor ACTOR_ATTENDANT1) {{
+    }
+    with (actor ACTOR_ATTENDANT1) {
         SetAnimation(2);
-    }}
+    }
 
     message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" :)");
 
     JumpCommon(CORO_END_TALK);
-}}
+}
                 """
 
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
@@ -475,7 +474,7 @@ macro patches() {{
         default:
             break;
     }}
-}}  
+}}
 """
         script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
             strlossy(exps, self.static_data.string_encoding),
@@ -574,7 +573,7 @@ macro patches() {{
             message_Talk("Main Author: [CS:A]{escape(parse_credit(entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
             jump @l_artists;
 """
-        except:
+        except Exception:
             traceback.print_exc()
             return """
         case menu("Error!"):
@@ -592,7 +591,7 @@ macro patches() {{
                     credits += f"""
         case menu("{patch.name}"):
             message_Mail("[CS:A]{escape(patch.name)}[CR]\\nby [CS:A]{escape(patch.author)}[CR]\\n\\n{escape(desc)}");
-            jump @l_patches; 
+            jump @l_patches;
 """
             except NotImplementedError:
                 pass

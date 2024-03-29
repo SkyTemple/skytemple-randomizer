@@ -39,12 +39,12 @@ def init_locale():
             ctypes.cdll.msvcrt._putenv(f"LANG={lang}.{enc}")
             try:
                 locale.setlocale(locale.LC_ALL, f"{lang}.{enc}")
-            except:
+            except Exception:
                 failed_to_set_locale = True
 
         try:
             locale.getlocale()
-        except:
+        except Exception:
             failed_to_set_locale = True
 
         if failed_to_set_locale:
@@ -61,12 +61,12 @@ def init_locale():
                     ctypes.cdll.msvcrt._putenv(f"LANG={lang}")
                     try:
                         locale.setlocale(locale.LC_ALL, lang)
-                    except:
+                    except Exception:
                         failed_to_set_locale = True
 
                     try:
                         locale.getlocale()
-                    except:
+                    except Exception:
                         failed_to_set_locale = True
                 else:
                     failed_to_set_locale = True
@@ -76,7 +76,7 @@ def init_locale():
                     os.environ["LANG"] = "C"
                     ctypes.cdll.msvcrt._putenv("LANG=C")
                     locale.setlocale(locale.LC_ALL, "C")
-            except:
+            except Exception:
                 failed_to_set_locale = True
 
         libintl_loc = os.path.join(os.path.dirname(__file__), "libintl-8.dll")
@@ -88,7 +88,7 @@ def init_locale():
         else:
             try:
                 libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
-            except:
+            except Exception:
                 libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
     elif sys.platform == "darwin":
         import ctypes
@@ -96,9 +96,8 @@ def init_locale():
         libintl = ctypes.cdll.LoadLibrary("libintl.dylib")
     libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
     try:
-        libintl.bind_textdomain_codeset(APP, "UTF-8")  # type: ignore
-        libintl.libintl_setlocale(0, settings.get_locale())  # type: ignore
-    except:
+        libintl.bind_textdomain_codeset("org.skytemple.Randomizer", "UTF-8")  # type: ignore
+    except Exception:
         pass
     libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)

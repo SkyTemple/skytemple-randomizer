@@ -18,7 +18,6 @@ from __future__ import annotations
 
 from enum import Enum, auto
 from random import sample, choice
-from typing import Optional, List, Dict, Tuple, Set
 from collections.abc import Iterable
 
 from ndspy.rom import NintendoDSRom
@@ -493,9 +492,9 @@ def get_main_string_file(
     rom: NintendoDSRom, static_data: Pmd2Data
 ) -> tuple[Pmd2Language, Str]:
     lang = None
-    for l in static_data.string_index_data.languages:
-        if l.locale == "en-US":
-            lang = l
+    for mlang in static_data.string_index_data.languages:
+        if mlang.locale == "en-US":
+            lang = mlang
             break
     # If we didn't find english, just take the first
     if lang is None:
@@ -510,9 +509,12 @@ def get_all_string_files(
     rom: NintendoDSRom, static_data: Pmd2Data
 ) -> Iterable[tuple[Pmd2Language, Str]]:
     for lang in static_data.string_index_data.languages:
-        yield lang, FileType.STR.deserialize(
-            rom.getFileByName(f"MESSAGE/{lang.filename}"),
-            string_encoding=static_data.string_encoding,
+        yield (
+            lang,
+            FileType.STR.deserialize(
+                rom.getFileByName(f"MESSAGE/{lang.filename}"),
+                string_encoding=static_data.string_encoding,
+            ),
         )
 
 
@@ -580,10 +582,10 @@ def get_allowed_item_ids(conf: RandomizerConfig) -> list[int]:
     return conf["dungeons"]["items_enabled"]
 
 
-def assert_not_empty(l):
-    if len(l) < 1:
+def assert_not_empty(lst):
+    if len(lst) < 1:
         raise ValueError("Could not generate a valid move with the given settings.")
-    return l
+    return lst
 
 
 def get_allowed_move_ids(
@@ -597,10 +599,10 @@ def get_allowed_move_ids(
     # elif roster == MoveRoster.STAB:
     if stab_type not in STAB_DICT:
         return list(base.intersection(DAMAGING_MOVES))
-    l = list(base.intersection(STAB_DICT[stab_type]))
-    if len(l) < 1:
+    lst = list(base.intersection(STAB_DICT[stab_type]))
+    if len(lst) < 1:
         return list(base.intersection(DAMAGING_MOVES))
-    return l
+    return lst
 
 
 def replace_strings(original: str, replacement_map: dict[str, str]):

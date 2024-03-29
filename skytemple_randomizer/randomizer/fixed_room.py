@@ -16,7 +16,6 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
 from random import randrange
-from typing import List, Tuple
 from collections.abc import Iterable, Sequence
 
 from ndspy.rom import NintendoDSRom
@@ -124,7 +123,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
             ].layout.tileset_id
 
     def _get_special_in_floor(self, floor: FixedFloor):
-        l = []
+        lst = []
         for action in floor.actions:
             if isinstance(action, EntityRule) or (
                 isinstance(action, TileRule)
@@ -135,8 +134,8 @@ class FixedRoomRandomizer(AbstractRandomizer):
                     or action.tr_type == TileRuleType.ATTENDANT3_SPAWN
                 )
             ):
-                l.append(action)
-        return l
+                lst.append(action)
+        return lst
 
     def _get_random_room(
         self, entities_and_special_tiles_to_preserve: list[FixedFloorActionRule]

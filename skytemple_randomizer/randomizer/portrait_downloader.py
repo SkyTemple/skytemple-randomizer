@@ -17,7 +17,7 @@
 import asyncio
 import sys
 import traceback
-from typing import List, Tuple, Optional
+from typing import Optional
 from collections.abc import Coroutine
 
 from ndspy.rom import NintendoDSRom

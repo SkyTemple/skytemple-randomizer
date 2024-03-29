@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice, randrange
-from typing import Dict
 
 from range_typed_integers import u16
 from skytemple_files.common.types.file_types import FileType

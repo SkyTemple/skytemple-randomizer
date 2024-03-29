@@ -55,4 +55,9 @@ skytemple_randomizer = "skytemple_randomizer.frontend.gtk.main:main"
 exclude = ["installer"]
 
 [tool.ruff.lint]
-select = [ "W", "E", "F", "ARG"]
+select = [ "W", "E", "F"]
+ignore = [
+  "E402",  # Module level import not at top of file -> gi imports may come after gi.require_version.
+  "E501",  # Line too long. Maybe enable later.
+  "F841",  # Unused variable: f-string magic
+]

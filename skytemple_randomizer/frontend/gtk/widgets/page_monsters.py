@@ -116,36 +116,36 @@ class MonstersPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"][
-            "starters"
-        ] = self.row_randomize_starters.get_active()
+        self.randomization_settings["starters_npcs"]["starters"] = (
+            self.row_randomize_starters.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_randomize_npcs_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"][
-            "npcs"
-        ] = self.row_randomize_npcs.get_active()
+        self.randomization_settings["starters_npcs"]["npcs"] = (
+            self.row_randomize_npcs.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_randomize_abilities_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"][
-            "abilities"
-        ] = self.row_randomize_abilities.get_active()
+        self.randomization_settings["pokemon"]["abilities"] = (
+            self.row_randomize_abilities.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_randomize_typings_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"][
-            "typings"
-        ] = self.row_randomize_typings.get_active()
+        self.randomization_settings["pokemon"]["typings"] = (
+            self.row_randomize_typings.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_randomize_movesets_notify_active(self, *args):
@@ -154,13 +154,13 @@ class MonstersPage(Adw.PreferencesPage):
         assert self.randomization_settings is not None
         if self.row_randomize_movesets.get_active():
             if self._backup_moveset_randomization_type is not None:
-                self.randomization_settings["pokemon"][
-                    "movesets"
-                ] = self._backup_moveset_randomization_type
+                self.randomization_settings["pokemon"]["movesets"] = (
+                    self._backup_moveset_randomization_type
+                )
             else:
-                self.randomization_settings["pokemon"][
-                    "movesets"
-                ] = MovesetConfig.FIRST_DAMAGE
+                self.randomization_settings["pokemon"]["movesets"] = (
+                    MovesetConfig.FIRST_DAMAGE
+                )
         else:
             self.randomization_settings["pokemon"]["movesets"] = MovesetConfig.NO
 

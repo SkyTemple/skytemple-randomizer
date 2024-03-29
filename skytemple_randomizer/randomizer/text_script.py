@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import shuffle
-from typing import Dict, List
 
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_JP
 from skytemple_files.common.util import get_files_from_rom_with_extension
@@ -24,7 +23,6 @@ from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
     get_all_string_files,
     get_script,
-    SKIP_JP_INVALID_SSB,
 )
 from skytemple_randomizer.status import Status
 

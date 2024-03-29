@@ -68,9 +68,9 @@ class SettingsPage(Adw.Bin):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"][
-            "native_file_handlers"
-        ] = self.row_native_file_handlers.get_active()
+        self.randomization_settings["starters_npcs"]["native_file_handlers"] = (
+            self.row_native_file_handlers.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_button_load_clicked(self, *args):

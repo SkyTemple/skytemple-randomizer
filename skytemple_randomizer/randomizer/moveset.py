@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice
-from typing import List, Tuple
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Language
 from skytemple_files.common.types.file_types import FileType

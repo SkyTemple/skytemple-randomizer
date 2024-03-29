@@ -17,7 +17,6 @@
 import logging
 import sys
 from threading import Thread, Lock
-from typing import List
 
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.impl_cfg import (

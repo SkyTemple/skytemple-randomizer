@@ -18,7 +18,6 @@ from collections import OrderedDict
 from math import ceil
 from numbers import Number
 from random import choice, randrange
-from typing import List, Dict
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
@@ -144,7 +143,9 @@ def balanced_item_randomizer(
             weight_multiplier = config["item"]["weights"][cat_id]
             if weight_multiplier <= 0:  # type: ignore
                 weight_multiplier = 0.01  # type: ignore
-        weighted_chosen_items_per_cat_count[cat_id] = ceil(len(chosen_items) * weight_multiplier)  # type: ignore
+        weighted_chosen_items_per_cat_count[cat_id] = ceil(
+            len(chosen_items) * weight_multiplier
+        )  # type: ignore
     weights_before = 0
     total_items_weighted = sum(
         item_count_weighted

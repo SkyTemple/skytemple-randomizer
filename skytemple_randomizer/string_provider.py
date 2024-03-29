@@ -151,5 +151,5 @@ class StringProvider:
                 if lang_locale == current_locale:
                     return lang
             return self.get_languages()[0]
-        except:
+        except Exception:
             return self.get_languages()[0]

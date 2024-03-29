@@ -19,7 +19,7 @@ from __future__ import annotations
 import os
 import sys
 import webbrowser
-from typing import cast, Optional
+from typing import cast
 
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.i18n_util import _

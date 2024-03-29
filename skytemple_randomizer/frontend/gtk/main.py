@@ -51,7 +51,7 @@ Gtk.init()
 Adw.init()
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
-from skytemple_randomizer.frontend.gtk.widgets import StartStack, MainStack, AppWindow
+from skytemple_randomizer.frontend.gtk.widgets import AppWindow
 
 if getattr(sys, "frozen", False):
     # Running via PyInstaller. Fix SSL configuration

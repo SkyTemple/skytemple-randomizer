@@ -111,54 +111,54 @@ class TextPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["quiz"][
-            "randomize"
-        ] = self.row_personality_quiz.get_active()
+        self.randomization_settings["quiz"]["randomize"] = (
+            self.row_personality_quiz.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_location_names_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["locations"][
-            "randomize"
-        ] = self.row_location_names.get_active()
+        self.randomization_settings["locations"]["randomize"] = (
+            self.row_location_names.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_chapter_titles_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["chapters"][
-            "randomize"
-        ] = self.row_chapter_titles.get_active()
+        self.randomization_settings["chapters"]["randomize"] = (
+            self.row_chapter_titles.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_randomize_main_text_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["text"][
-            "main"
-        ] = self.row_randomize_main_text.get_active()
+        self.randomization_settings["text"]["main"] = (
+            self.row_randomize_main_text.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_randomize_story_dialogue_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["text"][
-            "story"
-        ] = self.row_randomize_story_dialogue.get_active()
+        self.randomization_settings["text"]["story"] = (
+            self.row_randomize_story_dialogue.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_enable_instant_text_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["text"][
-            "instant"
-        ] = self.row_enable_instant_text.get_active()
+        self.randomization_settings["text"]["instant"] = (
+            self.row_enable_instant_text.get_active()
+        )
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True

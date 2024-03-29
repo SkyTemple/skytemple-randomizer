@@ -16,7 +16,6 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import choice, randrange
 
-from typing import List
 
 from range_typed_integers import u8, i32, i16
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
@@ -86,17 +85,17 @@ class IqTacticsRandomizer(AbstractRandomizer):
             )
 
             new_iq_gains = []
-            for l in iq_gains:
+            for lst in iq_gains:
                 li: list[int] = []
                 new_iq_gains.append(li)
-                for e in l:
+                for e in lst:
                     li.append(randrange(1, 6))
 
             new_belly_gains = []
-            for l in belly_gains:
+            for lst in belly_gains:
                 li = []
                 new_belly_gains.append(li)
-                for e in l:
+                for e in lst:
                     li.append(randrange(10, 40))
 
             HardcodedIq.set_gummi_iq_gains(

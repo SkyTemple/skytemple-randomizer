@@ -1,7 +1,7 @@
 """Global instance of the SpriteCollab client."""
 
 import platform
-from typing import Optional, List, Dict, Tuple
+from typing import Optional
 from collections.abc import Sequence, Mapping
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Sprite

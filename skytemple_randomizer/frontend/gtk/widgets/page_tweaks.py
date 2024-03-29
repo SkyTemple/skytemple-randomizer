@@ -116,18 +116,18 @@ class TweaksPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["item"][
-            "global_items"
-        ] = self.row_randomize_global_items.get_active()
+        self.randomization_settings["item"]["global_items"] = (
+            self.row_randomize_global_items.get_active()
+        )
 
     @Gtk.Template.Callback()
     def on_row_download_sprites_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["improvements"][
-            "download_portraits"
-        ] = self.row_download_sprites.get_active()
+        self.randomization_settings["improvements"]["download_portraits"] = (
+            self.row_download_sprites.get_active()
+        )
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True

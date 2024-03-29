@@ -18,12 +18,12 @@ from __future__ import annotations
 
 import os
 import sys
-from typing import cast, Optional
+from typing import cast
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw, GObject
+from gi.repository import Gtk, Adw
 
 
 @Gtk.Template(

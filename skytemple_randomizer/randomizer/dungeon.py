@@ -19,7 +19,6 @@ import math
 from enum import Enum, auto
 from itertools import chain
 from random import choice, randrange, randint
-from typing import Optional, List, Dict, Tuple
 from collections.abc import Sequence
 
 from ndspy.rom import NintendoDSRom
@@ -726,15 +725,15 @@ class DungeonRandomizer(AbstractRandomizer):
     def _fix_error(self, e: DungeonValidatorError):
         assert self.mappa
         if isinstance(e, DungeonTotalFloorCountInvalidError):
-            self.dungeons[e.dungeon_id].number_floors_in_group = (
-                e.expected_floor_count_in_group
-            )
+            self.dungeons[
+                e.dungeon_id
+            ].number_floors_in_group = e.expected_floor_count_in_group
         elif isinstance(e, InvalidFloorListReferencedError) or isinstance(
             e, FloorReusedError
         ):
-            self.dungeons[e.dungeon_id].mappa_index = (
-                self._mappa_generate_and_insert_new_floor_list()
-            )
+            self.dungeons[
+                e.dungeon_id
+            ].mappa_index = self._mappa_generate_and_insert_new_floor_list()
             self.dungeons[e.dungeon_id].start_after = u8(0)
             self.dungeons[e.dungeon_id].number_floors = u8(1)
             self.dungeons[e.dungeon_id].number_floors_in_group = u8(1)
@@ -807,8 +806,8 @@ class DungeonRandomizer(AbstractRandomizer):
         )
 
 
-def check_consecutive(l):
-    return sorted(l) == list(range(min(l), max(l) + 1))
+def check_consecutive(lst):
+    return sorted(lst) == list(range(min(lst), max(lst) + 1))
 
 
 def brandint(a, b):

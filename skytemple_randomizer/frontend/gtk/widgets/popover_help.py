@@ -38,7 +38,7 @@ class HelpPopover(Gtk.Popover):
 
     @Gtk.Template.Callback()
     def on_realize(self, *args):
-        self.label_widget.set_label(self.label)
+        self.label_widget.set_label(self.label)  # type: ignore
 
     @GObject.Property(type=str)
     def label(self):
@@ -48,4 +48,4 @@ class HelpPopover(Gtk.Popover):
     def label(self, value):
         self._label = value
         if self.get_realized():
-            self.label_widget.set_label(self.label)
+            self.label_widget.set_label(self.label)  # type: ignore

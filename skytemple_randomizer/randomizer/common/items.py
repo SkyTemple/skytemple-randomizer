@@ -144,8 +144,8 @@ def balanced_item_randomizer(
             if weight_multiplier <= 0:  # type: ignore
                 weight_multiplier = 0.01  # type: ignore
         weighted_chosen_items_per_cat_count[cat_id] = ceil(
-            len(chosen_items) * weight_multiplier
-        )  # type: ignore
+            len(chosen_items) * weight_multiplier  # type: ignore
+        )
     weights_before = 0
     total_items_weighted = sum(
         item_count_weighted

@@ -32,25 +32,39 @@ jobs:
         requirements: '-r requirements.txt'
         python_version: '${{ matrix.python-version }}'
 
+  linting:
+    runs-on: ubuntu-latest
+    name: Linting
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install gobject-introspection
+      run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Lint with ruff
+      run: ruff check --output-format=github .
+
   code-formatting:
     runs-on: ubuntu-latest
-    name: Code Format Check
+    name: Code Format
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: 'recursive'
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install dependencies
+      - name: Install ruff
         run: |
           python -m pip install --upgrade pip
-          pip install black
-      - uses: psf/black@stable
-        with:
-          options: "--check -t py39"
-          src: "skytemple"
+          pip install ruff
+      - name: Check with ruff
+        run: ruff format --check .
         
   build:
     runs-on: ubuntu-latest

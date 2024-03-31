@@ -52,7 +52,7 @@ Discord = "https://discord.gg/skytemple"
 skytemple_randomizer = "skytemple_randomizer.frontend.gtk.main:main"
 
 [tool.setuptools.packages.find]
-exclude = ["installer"]
+exclude = ["installer", "blueprint-compiler"]
 
 [tool.ruff.lint]
 select = [ "W", "E", "F"]

@@ -107,7 +107,7 @@ class MonstersPage(Adw.PreferencesPage):
         if w == self.row_tactics_iq:
             dialog = BaseSettingsDialog(
                 title=_("Tactics & IQ"),
-                content=TacticsIqPage(),
+                content=TacticsIqPage(parent_page=self),
             )
 
         if dialog is not None:

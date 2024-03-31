@@ -26,7 +26,7 @@ from gi.repository import Gtk, Adw
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "dialog_randomize.ui"))
-class RandomizeDialog(Adw.Window):
+class RandomizeDialog(Adw.Dialog):
     __gtype_name__ = "StRandomizeDialog"
 
     header_bar = cast(Adw.HeaderBar, Gtk.Template.Child())

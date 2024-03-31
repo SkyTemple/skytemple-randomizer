@@ -1,11 +1,10 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $StRandomizeDialog: Adw.Window {
+template $StRandomizeDialog: Adw.Dialog {
     title: _('Start Randomization');
-    destroy-with-parent: true;
-    modal: true;
-    deletable: true;
+    can-close: true;
+    follows-content-size: true;
 
     realize => $on_realize();
 

@@ -30,7 +30,6 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GObject
 
-from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     RandomizeDialog,
     RandomizationSettingsWidget,
@@ -105,12 +104,7 @@ class MainStack(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_randomize_clicked(self, *args):
-        dialog = RandomizeDialog(
-            transient_for=GtkFrontend.instance().window,
-            destroy_with_parent=True,
-            modal=True,
-        )
-        dialog.present()
+        RandomizeDialog().present(GtkFrontend.instance().window)
 
     @Gtk.Template.Callback()
     def on_button_settings_clicked(self, *args):
@@ -121,11 +115,8 @@ class MainStack(Adw.Bin):
                 repopulate_randomization_settings=self.populate_settings
             ),
         )
-        set_default_dialog_size(dialog, frontend.window, height=420)
         dialog.populate_settings(GtkFrontend.instance().randomization_settings)
-        dialog.set_transient_for(frontend.window)
-        dialog.set_application(frontend.application)
-        dialog.present()
+        dialog.present(frontend.window)
 
     @Gtk.Template.Callback()
     def on_button_help_clicked(self, *args):
@@ -139,20 +130,17 @@ class MainStack(Adw.Bin):
             if response == "Yes":
                 GtkFrontend.instance().application.show_start_stack(disable_recent=True)
 
-        d = Adw.MessageDialog(
+        d = Adw.AlertDialog(
             body=_(
                 "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
             ),
-            application=GtkFrontend.instance().application,
-            modal=True,
             heading=_("Close current ROM?"),
-            transient_for=GtkFrontend.instance().window,
         )
         d.add_response("No", _("_No"))
         d.add_response("Yes", _("_Yes"))
         d.set_response_appearance("Yes", Adw.ResponseAppearance.DESTRUCTIVE)
         d.connect("response", on_response)
-        d.present()
+        d.present(GtkFrontend.instance().window)
 
     def populate_settings(self):
         frontend = GtkFrontend.instance()

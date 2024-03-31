@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-03-29 22:15+0000\n"
+"POT-Creation-Date: 2024-03-31 12:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3128,7 +3128,7 @@ msgstr ""
 msgid "SWDL Wavi length invalid; tried to read past EOF."
 msgstr ""
 
-#: skytemple-rust/src/image/tiled.rs:231
+#: skytemple-rust/src/image/tiled.rs:230
 msgid ""
 "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."

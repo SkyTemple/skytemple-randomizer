@@ -17,7 +17,7 @@
 from __future__ import annotations
 
 import os
-from typing import cast
+from typing import cast, Union
 
 from skytemple_files.common.i18n_util import _
 
@@ -58,25 +58,7 @@ class TweaksPage(Adw.PreferencesPage):
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
         dialog: RandomizationSettingsWindow | None = None
         if w == self.row_item_pool:
-            page_it = ItemsPage()
-            page_it_cat = ItemsCategoriesPage()
-            dialog = BaseSettingsDialog(
-                title=_("Allowed Items"),
-                content=(
-                    SubpageStackEntry(
-                        child=page_it,
-                        name="items",
-                        title=_("Allowed Items"),
-                        icon_name="skytemple-e-item-symbolic",
-                    ),
-                    SubpageStackEntry(
-                        child=page_it_cat,
-                        name="items_categories",
-                        title=_("Category Weights"),
-                        icon_name="skytemple-e-item-symbolic",
-                    ),
-                ),
-            )
+            dialog = self._make_item_pool_dialogs()
         if w == self.row_patches:
             dialog = BaseSettingsDialog(
                 title=self.row_patches.get_title(),
@@ -140,3 +122,67 @@ class TweaksPage(Adw.PreferencesPage):
             config["improvements"]["download_portraits"]
         )
         self._suppress_signals = False
+
+    def _make_item_pool_dialogs(self) -> BaseSettingsDialog:
+        dialog = None
+
+        def on_button_reset_clicked(*args):
+            assert dialog is not None
+            active = dialog.get_active_page()
+            if active is None:
+                return
+            active_c = cast(Union[ItemsPage, ItemsCategoriesPage], active)
+            active_c.on_button_reset_clicked()
+
+        def on_button_none_clicked(*args):
+            assert dialog is not None
+            active = dialog.get_active_page()
+            if active is None:
+                return
+            active_c = cast(Union[ItemsPage, ItemsCategoriesPage], active)
+            active_c.on_button_none_clicked()
+
+        def on_stack_switch_page(new_page: Gtk.Widget):
+            assert dialog is not None
+            new_page_c = cast(Union[ItemsPage, ItemsCategoriesPage], new_page)
+            dialog.set_help_popover_text(new_page_c.help_pool())
+
+        def end_button_factory() -> Gtk.Widget:
+            box = Gtk.Box(spacing=5)
+            button_reset = Gtk.Button(
+                icon_name="skytemple-view-refresh-symbolic",
+                tooltip_text=_("Reset to Default"),
+            )
+            button_reset.connect("clicked", on_button_reset_clicked)
+            button_none = Gtk.Button(
+                icon_name="skytemple-edit-delete-symbolic",
+                tooltip_text=_("Select None"),
+            )
+            button_none.connect("clicked", on_button_none_clicked)
+            box.append(button_reset)
+            box.append(button_none)
+            return box
+
+        page_it = ItemsPage(parent_page=self)
+        page_it_cat = ItemsCategoriesPage(parent_page=self)
+        dialog = BaseSettingsDialog(
+            title=_("Allowed Items"),
+            content=(
+                SubpageStackEntry(
+                    child=page_it,
+                    name="items",
+                    title=_("Allowed Items"),
+                    icon_name="skytemple-e-item-symbolic",
+                ),
+                SubpageStackEntry(
+                    child=page_it_cat,
+                    name="items_categories",
+                    title=_("Category Weights"),
+                    icon_name="skytemple-e-item-symbolic",
+                ),
+            ),
+            help_callback=page_it.help_pool,
+            end_button_factory=end_button_factory,
+        )
+        dialog.connect_on_stack_switch_signal(on_stack_switch_page)
+        return dialog

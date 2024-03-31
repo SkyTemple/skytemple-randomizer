@@ -52,6 +52,8 @@ class BaseSettingsDialog(Adw.Window):
     placeholder_toggle = cast(Adw.Bin, Gtk.Template.Child())
     button_search = cast(Gtk.ToggleButton, Gtk.Template.Child())
     action_bar: Gtk.ActionBar | None
+    stack: Adw.ViewStack | None
+    help_popover: HelpPopover | None
     _children: list[RandomizationSettingsWidget]
     _getter: Callable[[], bool] | None
     _setter: Callable[[bool], None] | None
@@ -69,6 +71,8 @@ class BaseSettingsDialog(Adw.Window):
     ):
         super().__init__(*args, **kwargs)
         self.action_bar = None
+        self.stack = None
+        self.help_popover = None
         if isinstance(content, tuple):
             self._children = []
             # Make a ViewStack with ViewStack pages and add a view switcher to the title bar
@@ -86,6 +90,7 @@ class BaseSettingsDialog(Adw.Window):
             )
             self.header_bar.set_title_widget(view_switcher)
             self.content.set_child(cast(Gtk.Stack, stack))
+            self.stack = stack
         else:
             self.content.set_child(cast(Gtk.Widget, content))
             self._children = [content]
@@ -96,9 +101,10 @@ class BaseSettingsDialog(Adw.Window):
 
         if help_callback is not None:
             assert self.action_bar is not None
+            self.help_popover = HelpPopover(label=help_callback())
             help_button = Gtk.MenuButton(
                 icon_name="skytemple-help-about-symbolic",
-                popover=HelpPopover(label=help_callback()),
+                popover=self.help_popover,
             )
             self.action_bar.pack_start(help_button)
 
@@ -134,6 +140,11 @@ class BaseSettingsDialog(Adw.Window):
     def on_search_bar_notify_search_mode_enabled(self, *args):
         self.button_search.set_active(self.search_bar.get_search_mode())
 
+    def get_active_page(self) -> Gtk.Widget | None:
+        if self.stack is None:
+            return None
+        return self.stack.get_visible_child()
+
     def populate_settings(self, config: RandomizerConfig):
         for child in self._children:
             child.populate_settings(config)
@@ -154,3 +165,16 @@ class BaseSettingsDialog(Adw.Window):
                 self.action_bar.set_sensitive(active)
             switch.connect("notify::active", switch_notify_active)
             self.placeholder_toggle.set_child(switch)
+
+    def set_help_popover_text(self, text: str):
+        if self.help_popover is not None:
+            self.help_popover.label = text  # type: ignore
+
+    def connect_on_stack_switch_signal(
+        self, on_stack_switch_page: Callable[[Gtk.Widget], None]
+    ):
+        if self.stack is not None:
+            self.stack.connect(
+                "notify::visible-child",
+                lambda *args: on_stack_switch_page(self.stack.get_visible_child()),  # type: ignore
+            )

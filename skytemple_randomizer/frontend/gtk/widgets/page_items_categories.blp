@@ -3,6 +3,19 @@ using Adw 1;
 
 template $StItemsCategoriesPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
+        Stack stack {
+            Spinner spinner {
+              spinning: true;
+            }
+            ListBox pool_list {
+                valign: start;
+                hexpand: true;
+                selection-mode: none;
 
+                styles [
+                    "boxed-list",
+                ]
+            }
+        }
     }
 }

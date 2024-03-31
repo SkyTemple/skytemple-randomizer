@@ -140,7 +140,7 @@ jobs:
           architecture: "x64"
       - name: Cache GTK-Build
         id: cache-gtk-build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: "C:\\gtk-build"
           key: win-gtk-build-vgtk4-2024.3.1
@@ -225,7 +225,7 @@ jobs:
               exit 1
           }
       - name: Create installer
-        uses: joncloud/makensis-action@v3.7
+        uses: joncloud/makensis-action@v4.1
         with:
           script-file: "installer/skytemple-randomizer.nsi"
           arguments: "/DPRODUCT_VERSION=${{ env.PACKAGE_VERSION }}"

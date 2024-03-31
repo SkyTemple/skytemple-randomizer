@@ -100,6 +100,7 @@ class MonstersPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=self.row_randomize_abilities.get_title(),
                 content=page_ab,
+                search_callback=page_ab.on_search_changed,
                 getter=page_ab.get_enabled,
                 setter=page_ab.set_enabled,
             )

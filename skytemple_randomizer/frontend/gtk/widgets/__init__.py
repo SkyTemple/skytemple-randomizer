@@ -32,9 +32,6 @@ from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import (
     BaseSettingsDialog,
     SubpageStackEntry,
 )
-from skytemple_randomizer.frontend.gtk.widgets.dialog_dungeons_individual_settings import (
-    DungeonsIndividualSettingsDialog,
-)
 from skytemple_randomizer.frontend.gtk.widgets.page_items import ItemsPage
 from skytemple_randomizer.frontend.gtk.widgets.page_items_categories import (
     ItemsCategoriesPage,
@@ -61,6 +58,9 @@ from skytemple_randomizer.frontend.gtk.widgets.page_monsters_abilities import (
 from skytemple_randomizer.frontend.gtk.widgets.page_monsters_pool import (
     MonstersPoolPage,
     MonstersPoolType,
+)
+from skytemple_randomizer.frontend.gtk.widgets.page_dungeons_individual_settings import (
+    DungeonsIndividualSettingsPage,
 )
 from skytemple_randomizer.frontend.gtk.widgets.page_movesets import MovesetsPage
 from skytemple_randomizer.frontend.gtk.widgets.page_music import MusicPage
@@ -94,7 +94,7 @@ __all__ = [
     "StartStack",
     "BaseSettingsDialog",
     "SubpageStackEntry",
-    "DungeonsIndividualSettingsDialog",
+    "DungeonsIndividualSettingsPage",
     "DungeonsChancesPage",
     "DungeonsSettingsPage",
     "MovesetsPage",

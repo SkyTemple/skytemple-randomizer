@@ -28,10 +28,10 @@ from gi.repository import Gtk, Adw
 from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     BaseSettingsDialog,
-    DungeonsIndividualSettingsDialog,
     DungeonsChancesPage,
     DungeonsSettingsPage,
     RandomizationSettingsWindow,
+    DungeonsIndividualSettingsPage,
 )
 
 
@@ -60,8 +60,12 @@ class DungeonsPage(Adw.PreferencesPage):
                 content=DungeonsChancesPage(),
             )
         if w == self.row_per_dungeon_settings:
-            dialog = DungeonsIndividualSettingsDialog(
+            p = DungeonsIndividualSettingsPage(parent_page=self)
+            dialog = BaseSettingsDialog(
                 title=self.row_per_dungeon_settings.get_title(),
+                content=p,
+                help_callback=p.help_pool,
+                search_callback=p.on_search_changed,
             )
 
         if dialog is not None:

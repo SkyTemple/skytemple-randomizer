@@ -3,6 +3,130 @@ using Adw 1;
 
 template $StDungeonsChancesPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
+        Adw.SpinRow row_random_weather_chance {
+            title: _("Random Weather Chance");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-mapbg-symbolic';
+            climb-rate: 1;
 
+            notify::value => $on_row_random_weather_chance_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Chance of applying a random weather that isn't \"clear\" to each floor. If the chance doesn't pass, \"clear\" weather will be used instead.\nThis is only relevant if weather randomization is enabled.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SpinRow row_max_mh_chance {
+            title: _("Max. Monster House Chance");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-monster-base-symbolic';
+            climb-rate: 1;
+
+            notify::value => $on_row_max_mh_chance_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Monster house chance will be randomized between 0% and this value (inclusive).");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SpinRow row_max_hs_chance {
+            title: _("Max. Hidden Stairs Chance");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-dungeon-floor-symbolic';
+            climb-rate: 1;
+
+            notify::value => $on_row_max_hs_chance_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Hidden stairs chance will be randomized between 0% and this value (inclusive).");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SpinRow row_max_ks_chance {
+            title: _("Max. Kecleon Shop Chance");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-item-symbolic';
+            climb-rate: 1;
+
+            notify::value => $on_row_max_ks_chance_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Kecleon shop chance will be randomized between 0% and this value (inclusive).");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SpinRow row_max_sticky_chance {
+            title: _("Max. Sticky Item Chance");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-item-symbolic';
+            climb-rate: 1;
+
+            notify::value => $on_row_max_sticky_chance_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Sticky item chance will be randomized between 0% and this value (inclusive).");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
     }
 }

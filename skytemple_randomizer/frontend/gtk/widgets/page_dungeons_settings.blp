@@ -3,6 +3,159 @@ using Adw 1;
 
 template $StDungeonsSettingsPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
+        Adw.SwitchRow row_layouts {
+            title: _("Randomize Layouts, Tilesets and Music");
+            icon-name: 'skytemple-e-dungeon-tileset-symbolic';
+            activatable: true;
+            notify::active => $on_row_layouts_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Whether or not to randomize general aspects of the dungeon's layout. This also includes tileset and music and most general settings.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_weather {
+            title: _("Randomize Weather");
+            icon-name: 'skytemple-e-mapbg-symbolic';
+            activatable: true;
+            notify::active => $on_row_weather_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Whether or not to randomize weather. The chances of this occurring can be changed under 'Chance Thresholds'.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_items {
+            title: _("Randomize Dungeon Items");
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_items_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Whether or not to randomize items on the floor, in dungeon shops, in monster houses and buried.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_monsters {
+            title: _("Randomize Pokémon Spawns");
+            icon-name: 'skytemple-e-monster-symbolic';
+            activatable: true;
+            notify::active => $on_row_monsters_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Whether or not to randomize Pokémon spawns. Levels of Pokémon on a floor are randomized to be -/+3 of the original game's weakest/strongest Pokémon on the floor.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_traps {
+            title: _("Randomize Traps");
+            icon-name: 'skytemple-e-event-symbolic';
+            activatable: true;
+            notify::active => $on_row_traps_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Whether or not to randomize traps and Wonder Tile spawn chances.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_fixed_rooms {
+            title: _("Randomize Boss Room Layouts");
+            icon-name: 'skytemple-e-dungeon-fixed-floor-symbolic';
+            activatable: true;
+            notify::active => $on_row_fixed_rooms_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Whether or not to replace all boss fight rooms with randomly generated room layouts.\n\nTHIS MAY BE UNBALANCED OR UNSTABLE.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
 
+    Adw.PreferencesGroup {
+        title: _("Floor Count");
+
+        Adw.SpinRow row_min_floor_change_percent {
+            title: _("Max. Removal of Floors");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-dungeon-floor-symbolic';
+            climb-rate: 1;
+
+            sensitive: bind row_layouts.active;
+            notify::value => $on_row_min_floor_change_percent_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Maximum amount of change in floor count in the lower direction (eg. if this is 10%, a dungeon can have up to 10% less floors).\nA dungeon will never have less than 1 floor.\nThis setting has no effect if layouts are not randomized.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.SpinRow row_max_floor_change_percent {
+            title: _("Max. Addition of Floors");
+            subtitle: _("in percent (%)");
+            icon-name: 'skytemple-e-dungeon-floor-symbolic';
+            climb-rate: 1;
+
+            sensitive: bind row_layouts.active;
+            notify::value => $on_row_max_floor_change_percent_notify_value();
+
+            adjustment: Adjustment {
+                lower: 0;
+                upper: 100;
+                step-increment: 1;
+            };
+
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Maximum amount of change in floor count in the upper direction (eg. if this is 10%, a dungeon can have up to 10% more floors).\nA dungeon will never have more than 99 floors.\nThis setting has no effect if layouts are not randomized.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
     }
 }

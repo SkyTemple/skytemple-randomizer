@@ -1,4 +1,4 @@
-#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -14,10 +14,13 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import re
 from random import choice, randrange
 
 from range_typed_integers import u16
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
+from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.protocol import Gender
 from skytemple_files.data.str.model import Str
 from skytemple_files.list.actor.model import ActorListBin
@@ -26,14 +29,13 @@ from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
     get_main_string_file,
     get_allowed_md_ids,
-    replace_text_main,
-    replace_text_script,
+    get_script,
     clone_missing_portraits,
     get_all_string_files,
+    SKIP_JP_INVALID_SSB,
     Roster,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class NpcRandomizer(AbstractRandomizer):
@@ -45,7 +47,7 @@ class NpcRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["starters_npcs"]["npcs"]:
             return status.done()
-        lang, string_file = get_main_string_file(self.rom, self.static_data)
+        main_lang, main_string_file = get_main_string_file(self.rom, self.static_data)
         pokemon_string_data = self.static_data.string_index_data.string_blocks[
             "Pokemon Names"
         ]
@@ -56,31 +58,184 @@ class NpcRandomizer(AbstractRandomizer):
             patcher.apply("ActorAndLevelLoader")
 
         status.step(_("Randomizing NPC actor list..."))
-        mapped_actors = self._randomize_actors(string_file, pokemon_string_data)
+        mapped_actors = self._randomize_actors(main_string_file, pokemon_string_data)
+        mapped_actor_names_by_lang = {}
 
-        status.step(_("Replacing main text that mentions NPCs..."))
-        names_mapped_all = {}
-        for lang, string_file in get_all_string_files(self.rom, self.static_data):
+        for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
             names_mapped: dict[str, str] = {}
-            names_mapped_all[lang] = names_mapped
+            mapped_actor_names_by_lang[lang] = names_mapped
             for old, new in mapped_actors.items():
                 old_base = old % 600
                 new_base = new % 600
-                old_name = self._get_name(string_file, old_base, pokemon_string_data)
-                new_name = self._get_name(string_file, new_base, pokemon_string_data)
+                old_name = self._get_name(
+                    lang_string_file, old_base, pokemon_string_data
+                )
+                new_name = self._get_name(
+                    lang_string_file, new_base, pokemon_string_data
+                )
                 names_mapped[old_name] = new_name
-            replace_text_main(
-                string_file,
-                names_mapped,
-                pokemon_string_data.begin,
-                pokemon_string_data.end,
+
+        status.step(_("Replacing main text that mentions NPCs..."))
+        for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
+            mapped_actor_names = mapped_actor_names_by_lang[lang]
+
+            # Most NPC texts in the base game are wrapped via [CN:N]...[CR], or [CN:Y]...[CR].
+            # Croagunk is the only NPC pokemon that has texts with [CS:E].
+            standard_npc_text = re.compile(
+                r"\[CS:(N|Y|E)]("
+                + "|".join(list(mapped_actor_names.keys()))
+                + r")\[CR]"
             )
+            # Some place names derived from NPCs are mentioned via [CS:P]...[CR], so we'll replace those as well.
+            place_mention_npc_text = re.compile(
+                r"\[CS:P](.*)("
+                + "|".join(list(mapped_actor_names.keys()))
+                + r")(.*)\[CR]"
+            )
+            # Some [CS:K]...[CR] needs replacing for Kecleon, Chansey, Marowak, Spinda, Chimecho, Mime Jr., Electivire, and all the Pokemon under the Adventure Log.
+            # We need to specifically select string block regions to apply this to.
+            csk_npc_text = re.compile(
+                r"\[CS:K](" + "|".join(list(mapped_actor_names.keys())) + r")\[CR]"
+            )
+            csk_replace_regions = [
+                self.static_data.string_index_data.string_blocks.get(
+                    "Job Debriefing Related Strings"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "(MAROWAK-DOJO-STRS-UNMAPPED)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Spinda's Juice Bar Strings"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "(CHIMECHO-ASM-STR-UNMAPPED)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Game and Dungeon Hints"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Mime Jr. Spa Strings"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Adventure Log Strings"
+                ),
+            ]
+            # Kecleon needs extra care, because some item long descriptions contain references to the shop (should be replaced) and the Pokemon itself (should not be replaced) at the same time.
+            # Instead we replace some of the mentions of the specific text "Kecleon's Shop" (note: things like music track names should not be replaced).
+            kecleon_shop_text = {
+                # IMPORTANT: match.group(1) should always be Kecleon's name
+                "English": re.compile(r"(Kecleon)(?:\[CR])?'s Shop"),
+                "French": re.compile(r"Magasins\n?(Kecleon)"),
+                "German": re.compile(r"(Kecleon)-Laden"),
+                "Italian": re.compile(r"Magazzini\n?(?:\[CS:.])?(Kecleon)"),
+                "Spanish": re.compile(r"Tienda\n?(Kecleon)"),
+                "Japanese": re.compile(r"(カクレオン)(?:\[CR])?の\n?お?みせ"),
+            }
+            kecleon_replace_regions = [
+                self.static_data.string_index_data.string_blocks.get(
+                    "Floor-Wide Status Names+Desc"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Item Long Descriptions"
+                ),
+            ]
+            # Finally, there are plain texts that need replacing for a bunch of Pokemons (typically chapter texts and place names)
+            plain_npc_text = re.compile(
+                "(" + "|".join(list(mapped_actor_names.keys())) + ")"
+            )
+            plain_replace_regions = [
+                self.static_data.string_index_data.string_blocks.get(
+                    "(SPECIAL-EPISODES-STRS-UNMAPPED)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "(JOURNAL-STRS-UNMAPPED)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Pokemon WAIT Dialogue"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Ground Map Names"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Dungeon Names (Main)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Dungeon Names (Section)"
+                ),
+            ]
+
+            for idx, text in enumerate(lang_string_file.strings):
+                new_text = standard_npc_text.sub(
+                    lambda match: match.expand(
+                        f"[CS:{match.group(1)}]{mapped_actor_names[match.group(2)]}[CR]"
+                    ),
+                    text,
+                )
+                new_text = place_mention_npc_text.sub(
+                    lambda match: match.expand(
+                        f"[CS:P]{match.group(1)}{mapped_actor_names[match.group(2)]}{match.group(3)}[CR]"
+                    ),
+                    new_text,
+                )
+                if any(
+                    block.begin < idx < block.end
+                    for block in csk_replace_regions
+                    if block is not None
+                ):
+                    new_text = csk_npc_text.sub(
+                        lambda match: match.expand(
+                            f"[CS:K]{mapped_actor_names[match.group(1)]}[CR]"
+                        ),
+                        new_text,
+                    )
+                if any(
+                    block.begin < idx < block.end
+                    for block in kecleon_replace_regions
+                    if block is not None
+                ):
+                    new_text = kecleon_shop_text[lang.name_localized].sub(
+                        lambda match: match.string[match.start(0) : match.start(1)]
+                        + mapped_actor_names[match.group(1)]
+                        + match.string[match.end(1) : match.end(0)],
+                        new_text,
+                    )
+                if any(
+                    block.begin < idx < block.end
+                    for block in plain_replace_regions
+                    if block is not None
+                ):
+                    new_text = plain_npc_text.sub(
+                        lambda match: mapped_actor_names[match.group(1)], new_text
+                    )
+                lang_string_file.strings[idx] = new_text
+
             self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
+                f"MESSAGE/{lang.filename}", FileType.STR.serialize(lang_string_file)
             )
 
         status.step(_("Replacing script text that mentions NPCs..."))
-        replace_text_script(self.rom, self.static_data, names_mapped_all)
+        # We don't need to be selective with script text - we should be able to replace all mentions of the NPC names directly.
+        # To avoid improper substring matching, we need to construct the regex so that the longer strings are matched first.
+        script_npc_text = re.compile(
+            "|".join(sorted(list(mapped_actor_names.keys()), key=len, reverse=True))
+        )
+        for file_path in get_files_from_rom_with_extension(self.rom, "ssb"):
+            if file_path in SKIP_JP_INVALID_SSB:
+                continue
+            script = get_script(file_path, self.rom, self.static_data)
+            script.constants = [
+                script_npc_text.sub(
+                    lambda match: mapped_actor_names[match.group(0)], text
+                )
+                for text in script.constants
+            ]
+            if len(script.strings) > 0:  # for Japanese this is empty.
+                script.strings[lang.name.lower()] = [
+                    script_npc_text.sub(
+                        lambda match: mapped_actor_names[match.group(0)], text
+                    )
+                    for text in script.strings[lang.name.lower()]
+                ]
 
         status.step(_("Cloning missing NPC portraits..."))
         kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))

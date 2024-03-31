@@ -613,18 +613,6 @@ def replace_strings(original: str, replacement_map: dict[str, str]):
     return string
 
 
-def replace_text_main(
-    string_file: Str, replace_map: dict[str, str], start_idx, end_idx
-):
-    new_strings = []
-    for idx, string in enumerate(string_file.strings):
-        if idx < start_idx or idx > end_idx:
-            new_strings.append(replace_strings(string, replace_map))
-        else:
-            new_strings.append(string)
-    string_file.strings = new_strings
-
-
 def replace_text_script(
     rom: NintendoDSRom,
     static_data: Pmd2Data,

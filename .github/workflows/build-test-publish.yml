@@ -69,6 +69,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build the Python wheel
+    container:
+      image: ghcr.io/skytemple/gtk4-build-image:1
     steps:
       # For tags we assume the version in pyproject.toml is correct!
       - name: Checkout
@@ -85,14 +87,15 @@ jobs:
       - name: Build localization MO files
         run: |
           installer/generate-mo.sh
-      - name: Install GObject Introspection
-        run: sudo apt-get install -y python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adw-1
+      # already in Docker image
+      #- name: Install GObject Introspection
+      #  run: sudo apt-get install -y python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adw-1
       - name: Convert Blueprint files
         run: ./build-blp-to-ui.sh
       - name: Build Python wheels
-        uses: RalfG/python-wheels-manylinux-build@v0.5.0-manylinux2014_x86_64
-        with:
-          python-versions: 'cp39-cp39 cp310-cp310 cp311-cp311 cp312-cp312'
+        run: |
+          python3 -m pip install --upgrade build
+          python3 -m build
       - name: Upload wheels
         uses: actions/upload-artifact@v4
         with:
@@ -140,9 +143,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: "C:\\gtk-build"
-          key: win-gtk-build-vgtk4-2
+          key: win-gtk-build-vgtk4-2024.3.1
           restore-keys: |
-            win-gtk-build-vgtk4-
+            win-gtk-build-vgtk4-2024.3.1
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -172,7 +175,7 @@ jobs:
       
           python -m pip install --user pipx
           python -m pipx ensurepath
-          pipx install "gvsbuild==2023.10.1"
+          pipx install "gvsbuild==2024.3.1"
       - name: Build GTK and other libs
         run: |
           $env:path = "C:\pipx_bin;" + $env:path
@@ -235,7 +238,7 @@ jobs:
             installer/skytemple-randomizer-*.exe
 
   package-mac:
-    runs-on: macos-11
+    runs-on: macos-14
     name: Build and package for Mac OS
     steps:
       - name: Checkout
@@ -257,13 +260,22 @@ jobs:
         run: |
           brew install pygobject3 gtk4 python@3.11 libadwaita adwaita-icon-theme sdl cmake
           echo "PATH=/usr/local/opt/python@3.11/bin:/usr/local/bin:$PATH" >> $GITHUB_ENV
+          
+          python3.11 -m venv .venv
+          . .venv/bin/activate
+          pip3 debug --verbose  # print compatible tags etc. for debugging purposes
+
       - name: Make sure PyGObject is available.
         run: |
+          . .venv/bin/activate
           pip3 install "pygobject>=3.44.0"
       - name: Convert Blueprint files
-        run: ./build-blp-to-ui.sh
+        run: |
+          . .venv/bin/activate
+          ./build-blp-to-ui.sh
       - name: Install and package
         run: |
+          . .venv/bin/activate
           # Install other dependencies and SkyTemple Randomizer itself
           pip3 install skytemple-rust 'pyinstaller~=5.0'
           pip3 install -r requirements-mac-windows.txt

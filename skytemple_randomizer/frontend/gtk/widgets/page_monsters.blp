@@ -57,7 +57,56 @@ template $StMonstersPage: Adw.PreferencesPage {
     }
 
     Adw.PreferencesGroup {
-        title: 'Pokémon Properties';
+        title: _('Moves');
+
+        Adw.ActionRow row_randomize_movesets {
+            title: _('Randomize Movesets');
+            icon-name: 'skytemple-e-move-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_randomize_tms_hms {
+            title: _('Randomize TMs/HMs');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_tms_hms_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _('If enabled TMs and HMs will contain random moves from the move pool.');
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.ActionRow row_move_pool {
+            title: _('Move Pool');
+            icon-name: 'skytemple-e-move-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('Additional Pokémon Properties');
 
         Adw.SwitchRow row_randomize_abilities {
             title: _('Randomize Abilities');
@@ -69,22 +118,6 @@ template $StMonstersPage: Adw.PreferencesPage {
                 Button button_randomize_abilities {
                   icon-name: 'skytemple-document-edit-symbolic';
                   tooltip-text: _('Configure which abilities are available');
-                  clicked => $on_signal_for_dialog();
-                  styles ['flat']
-                }
-            }
-        }
-
-        Adw.SwitchRow row_randomize_movesets {
-            title: _('Randomize Movesets');
-            icon-name: 'skytemple-e-move-symbolic';
-            activatable: true;
-            notify::active => $on_row_randomize_movesets_notify_active();
-            [suffix]
-            Box {
-                Button button_randomize_movesets {
-                  icon-name: 'skytemple-document-edit-symbolic';
-                  tooltip-text: _('Configure how movesets are randomized');
                   clicked => $on_signal_for_dialog();
                   styles ['flat']
                 }

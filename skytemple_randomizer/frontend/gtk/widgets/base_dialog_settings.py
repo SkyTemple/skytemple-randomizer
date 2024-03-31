@@ -85,6 +85,7 @@ class BaseSettingsDialog(Adw.Window):
                 stack=stack, policy=Adw.ViewSwitcherPolicy.WIDE
             )
             self.header_bar.set_title_widget(view_switcher)
+            self.content.set_child(cast(Gtk.Stack, stack))
         else:
             self.content.set_child(cast(Gtk.Widget, content))
             self._children = [content]

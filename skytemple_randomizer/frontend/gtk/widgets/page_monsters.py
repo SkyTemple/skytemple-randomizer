@@ -21,7 +21,7 @@ from typing import cast
 
 from skytemple_files.common.i18n_util import _
 
-from skytemple_randomizer.config import RandomizerConfig, MovesetConfig
+from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
@@ -37,6 +37,7 @@ from skytemple_randomizer.frontend.gtk.widgets import (
     MonstersPoolType,
     RandomizationSettingsWindow,
 )
+from skytemple_randomizer.frontend.gtk.widgets.page_moves_pool import MovesPoolPage
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_monsters.ui"))
@@ -49,24 +50,30 @@ class MonstersPage(Adw.PreferencesPage):
     row_randomize_abilities = cast(Adw.SwitchRow, Gtk.Template.Child())
     button_randomize_abilities = cast(Gtk.Button, Gtk.Template.Child())
     row_randomize_movesets = cast(Adw.SwitchRow, Gtk.Template.Child())
-    button_randomize_movesets = cast(Gtk.Button, Gtk.Template.Child())
+    row_randomize_tms_hms = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_randomize_typings = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_tactics_iq = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_move_pool = cast(Adw.ActionRow, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
     _suppress_signals: bool
-    _backup_moveset_randomization_type: MovesetConfig | None = None
 
     @Gtk.Template.Callback()
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
         dialog: RandomizationSettingsWindow | None = None
-        if w == self.button_randomize_movesets:
+        if w == self.row_randomize_movesets:
             page_mo = MovesetsPage(parent_page=self)
             dialog = BaseSettingsDialog(
                 title=self.row_randomize_movesets.get_title(),
                 content=page_mo,
-                getter=page_mo.get_enabled,
-                setter=page_mo.set_enabled,
+            )
+        if w == self.row_move_pool:
+            page_mop = MovesPoolPage(parent_page=self)
+            dialog = BaseSettingsDialog(
+                title=self.row_move_pool.get_title(),
+                content=page_mop,
+                search_callback=page_mop.on_search_changed,
+                help_callback=page_mop.help_pool,
             )
         if w == self.row_allowed_monsters:
             page_am = MonstersPoolPage(type=MonstersPoolType.ALL, parent_page=self)
@@ -148,21 +155,13 @@ class MonstersPage(Adw.PreferencesPage):
         )
 
     @Gtk.Template.Callback()
-    def on_row_randomize_movesets_notify_active(self, *args):
+    def on_row_randomize_tms_hms_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        if self.row_randomize_movesets.get_active():
-            if self._backup_moveset_randomization_type is not None:
-                self.randomization_settings["pokemon"]["movesets"] = (
-                    self._backup_moveset_randomization_type
-                )
-            else:
-                self.randomization_settings["pokemon"]["movesets"] = (
-                    MovesetConfig.FIRST_DAMAGE
-                )
-        else:
-            self.randomization_settings["pokemon"]["movesets"] = MovesetConfig.NO
+        self.randomization_settings["pokemon"]["tms_hms"] = (
+            self.row_randomize_tms_hms.get_active()
+        )
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True
@@ -171,8 +170,4 @@ class MonstersPage(Adw.PreferencesPage):
         self.row_randomize_npcs.set_active(config["starters_npcs"]["npcs"])
         self.row_randomize_abilities.set_active(config["pokemon"]["abilities"])
         self.row_randomize_typings.set_active(config["pokemon"]["typings"])
-        movesets_enabled = config["pokemon"]["movesets"] != MovesetConfig.NO
-        self.row_randomize_movesets.set_active(movesets_enabled)
-        if movesets_enabled:
-            self._backup_moveset_randomization_type = config["pokemon"]["movesets"]
         self._suppress_signals = False

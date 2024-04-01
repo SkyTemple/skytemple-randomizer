@@ -3,6 +3,37 @@ using Adw 1;
 
 template $StMusicPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
-
+        Adw.SwitchRow row_topmenu_music {
+            title: _("Randomize Titlescreen Music");
+            icon-name: 'skytemple-e-music-symbolic';
+            activatable: true;
+            notify::active => $on_row_topmenu_music_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, the music that plays on the titlescreen is randomized.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_overworld_music {
+            title: _("Randomize Overworld Music");
+            icon-name: 'skytemple-e-music-symbolic';
+            activatable: true;
+            notify::active => $on_row_overworld_music_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, the music that plays outside of dungeons is randomized (for the most part).");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
     }
 }

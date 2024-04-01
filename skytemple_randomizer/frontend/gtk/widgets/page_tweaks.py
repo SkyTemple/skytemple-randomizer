@@ -65,9 +65,11 @@ class TweaksPage(Adw.PreferencesPage):
                 content=PatchesPage(),
             )
         if w == self.row_music:
+            page_mu = MusicPage()
             dialog = BaseSettingsDialog(
                 title=self.row_music.get_title(),
-                content=MusicPage(),
+                content=page_mu,
+                help_callback=page_mu.help_text,
             )
         if w == self.row_explorer_rank:
             dialog = BaseSettingsDialog(

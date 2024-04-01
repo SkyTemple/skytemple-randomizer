@@ -36,17 +36,14 @@ class TacticsIqPage(Adw.PreferencesPage):
     row_randomize_tactics = cast(Adw.SwitchRow, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
-    parent_page: TacticsIqPage
     _suppress_signals: bool
 
     def __init__(
         self,
         *args,
-        parent_page: TacticsIqPage,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
-        self.parent_page = parent_page
         self.randomization_settings = None
         self._suppress_signals = False
 

@@ -33,7 +33,6 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 from gi.repository import Gtk, Adw, GLib, Gio
 
 from skytemple_randomizer.string_provider import StringProvider, StringType
-from skytemple_randomizer.frontend.gtk.widgets import DungeonsSettingsPage
 
 # This may seem silly, but we need to do it like this for gettext.
 NOT_LOCALIZED_DUNGEON_ID = "ID"
@@ -59,7 +58,6 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
     pool_list = cast(Gtk.ListBox, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
-    parent_page: DungeonsSettingsPage
     search_text: str
     rows: dict[int, Adw.ExpanderRow]
     rows__randomize: dict[int, Adw.SwitchRow]
@@ -72,11 +70,9 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
     def __init__(
         self,
         *args,
-        parent_page: DungeonsSettingsPage,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
-        self.parent_page = parent_page
         self.randomization_settings = None
         self.search_text = ""
         self.rows = {}

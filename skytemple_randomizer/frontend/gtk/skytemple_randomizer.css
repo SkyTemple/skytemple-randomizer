@@ -1,0 +1,13 @@
+.skytemple-randomizer__text-view-as-row-label {
+
+}
+
+.skytemple-randomizer__text-view-as-row {
+    background: none;
+}
+
+.skytemple-randomizer--row-focused {
+    outline-color: alpha(@accent_color, 0.5);
+    outline-width: 2px;
+    outline-offset: -1px;
+}

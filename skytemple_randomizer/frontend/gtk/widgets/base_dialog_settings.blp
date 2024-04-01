@@ -8,35 +8,39 @@ template $StBaseSettingsDialog: Adw.Window {
 
     realize => $on_realize();
 
-    Adw.ToolbarView toolbar_view {
-        [top]
-        Adw.HeaderBar header_bar {
-            centering-policy: strict;
+    Adw.NavigationView navigation_view {
+        Adw.NavigationPage main_navigation_page {
+            Adw.ToolbarView toolbar_view {
+                [top]
+                Adw.HeaderBar header_bar {
+                    centering-policy: strict;
 
-            Adw.Bin placeholder_toggle {}
+                    Adw.Bin placeholder_toggle {}
 
-            ToggleButton button_search {
-                tooltip-text: _("Search");
+                    ToggleButton button_search {
+                        tooltip-text: _("Search");
 
-                clicked => $on_button_search_clicked();
+                        clicked => $on_button_search_clicked();
 
-                icon-name: "skytemple-edit-find-symbolic";
+                        icon-name: "skytemple-edit-find-symbolic";
+                    }
+                }
+
+                [top]
+                SearchBar search_bar {
+                    key-capture-widget: toolbar_view;
+
+                    notify::search-mode-enabled => $on_search_bar_notify_search_mode_enabled();
+
+                    SearchEntry search_entry {
+                        search-delay: 100;
+                        placeholder-text: _("Search");
+                        width-request: 400;
+                    }
+                }
+
+                Adw.Bin content {}
             }
         }
-
-        [top]
-        SearchBar search_bar {
-            key-capture-widget: toolbar_view;
-
-            notify::search-mode-enabled => $on_search_bar_notify_search_mode_enabled();
-
-            SearchEntry search_entry {
-                search-delay: 100;
-                placeholder-text: _("Search");
-                width-request: 400;
-            }
-        }
-
-        Adw.Bin content {}
     }
 }

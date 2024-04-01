@@ -21,6 +21,9 @@ from skytemple_randomizer.frontend.gtk.widgets._util import (
     RandomizationSettingsWidget,
     RandomizationSettingsWindow,
 )
+from skytemple_randomizer.frontend.gtk.widgets.page_personality_quiz_questions import (
+    PersonalityQuizQuestionsPage,
+)
 from skytemple_randomizer.frontend.gtk.widgets.popover_help import (
     HelpPopover,
 )
@@ -103,6 +106,7 @@ __all__ = [
     "MonstersPoolPage",
     "MonstersPoolType",
     "PersonalityQuizPage",
+    "PersonalityQuizQuestionsPage",
     "TextPool",
     "ItemsPage",
     "ItemsCategoriesPage",

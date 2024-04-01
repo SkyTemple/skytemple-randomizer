@@ -3,6 +3,57 @@ using Adw 1;
 
 template $StPersonalityQuizPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
-
+        Adw.ComboRow row_mode {
+            title: _('Personality Quiz Mode');
+            icon-name: 'skytemple-e-special-symbolic';
+            activatable: true;
+            notify::selected => $on_row_mode_notify_selected();
+            model: StringList {
+                strings [_("Default: Ask for Personality"), _("Ask + Allow Selection"), _("Select Manually")]
+            };
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _('Change the behaviour of the hero starter selection in the personality test, using patches by an anonymous contributor.\nYou can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely.\nPlease note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again.');
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_randomize {
+            title: _("Randomize Personality Quiz");
+            icon-name: 'skytemple-e-actor-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, the personality quiz questions will be randomized using the qustions below.\nEnter them as a list of YAML objects (see the examples). You need to define at least two answers, 2-4 answers will be randomly picked.\nIf you pick \"Select Manually\" above, this is irrelevant as no quiz will be used.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_include_vanilla_questions {
+            title: _("Include Vanilla Question");
+            icon-name: 'skytemple-e-string-symbolic';
+            activatable: true;
+            notify::active => $on_row_include_vanilla_questions_notify_active();
+            sensitive: bind row_randomize.active;
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, the questions from the base game will also be included in the pool of possible questions.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
     }
 }

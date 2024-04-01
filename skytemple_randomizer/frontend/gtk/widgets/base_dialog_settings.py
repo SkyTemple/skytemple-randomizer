@@ -51,6 +51,9 @@ class BaseSettingsDialog(Adw.Window):
     search_entry = cast(Gtk.SearchEntry, Gtk.Template.Child())
     placeholder_toggle = cast(Adw.Bin, Gtk.Template.Child())
     button_search = cast(Gtk.ToggleButton, Gtk.Template.Child())
+    navigation_view = cast(Adw.NavigationView, Gtk.Template.Child())
+    main_navigation_page = cast(Adw.NavigationPage, Gtk.Template.Child())
+
     action_bar: Gtk.ActionBar | None
     stack: Adw.ViewStack | None
     help_popover: HelpPopover | None
@@ -117,6 +120,10 @@ class BaseSettingsDialog(Adw.Window):
         if end_button_factory is not None:
             assert self.action_bar is not None
             self.action_bar.pack_end(end_button_factory())
+
+        self.main_navigation_page.set_title(
+            kwargs["title"] if "title" in kwargs else ""
+        )
 
         self._getter = getter
         self._setter = setter

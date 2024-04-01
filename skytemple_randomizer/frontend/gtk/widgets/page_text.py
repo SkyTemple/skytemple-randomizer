@@ -35,6 +35,7 @@ from skytemple_randomizer.frontend.gtk.widgets import (
     TextPoolPage,
     BaseSettingsDialog,
     SubpageStackEntry,
+    PersonalityQuizQuestionsPage,
 )
 
 
@@ -59,13 +60,40 @@ class TextPage(Adw.PreferencesPage):
     def on_signal_for_dialog(self, w: Gtk.Widget, *args):
         dialog: RandomizationSettingsWindow | None = None
         if w == self.button_randomize_personality_quiz:
-            page1_pp = PersonalityQuizPage(parent_page=self)
+
+            def on_change_quiz_active(active):
+                self._suppress_signals = True
+                self.row_personality_quiz.set_active(active)
+                page1_pp_qs.set_sensitive(active)
+                self._suppress_signals = False
+
+            page1_pp = PersonalityQuizPage(
+                parent_page=self,
+                on_change_quiz_active=on_change_quiz_active,
+            )
+            page1_pp_qs = PersonalityQuizQuestionsPage(
+                navigation_view=None, sensitive=self.row_personality_quiz.get_active()
+            )
             dialog = BaseSettingsDialog(
                 title=self.row_personality_quiz.get_title(),
-                content=page1_pp,
-                getter=page1_pp.get_enabled,
-                setter=page1_pp.set_enabled,
+                content=(
+                    SubpageStackEntry(
+                        child=page1_pp,
+                        name="settings",
+                        title=_("Settings"),
+                        icon_name="skytemple-e-actor-symbolic",
+                    ),
+                    SubpageStackEntry(
+                        child=page1_pp_qs,
+                        name="questions",
+                        title=_("Questions"),
+                        icon_name="skytemple-e-actor-symbolic",
+                    ),
+                ),
             )
+            page1_pp_qs.navigation_view = cast(
+                BaseSettingsDialog, dialog
+            ).navigation_view
         if w == self.button_randomize_location_names:
             page1_ln = TextPoolPage(pool=TextPool.LOCATIONS_A, parent_page=self)
             page2_ln = TextPoolPage(pool=TextPool.LOCATIONS_B, parent_page=self)

@@ -60,7 +60,7 @@ class DungeonsPage(Adw.PreferencesPage):
                 content=DungeonsChancesPage(),
             )
         if w == self.row_per_dungeon_settings:
-            p = DungeonsIndividualSettingsPage(parent_page=self)
+            p = DungeonsIndividualSettingsPage()
             dialog = BaseSettingsDialog(
                 title=self.row_per_dungeon_settings.get_title(),
                 content=p,

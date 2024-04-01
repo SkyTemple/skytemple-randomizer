@@ -66,6 +66,7 @@ class DungeonsPage(Adw.PreferencesPage):
                 content=p,
                 help_callback=p.help_pool,
                 search_callback=p.on_search_changed,
+                end_button_factory=p.create_window_end_buttons,
             )
 
         if dialog is not None:

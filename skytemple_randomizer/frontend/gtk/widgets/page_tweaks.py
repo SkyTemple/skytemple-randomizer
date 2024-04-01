@@ -183,6 +183,7 @@ class TweaksPage(Adw.PreferencesPage):
                     icon_name="skytemple-e-item-symbolic",
                 ),
             ),
+            search_callback=page_it.on_search_changed,
             help_callback=page_it.help_pool,
             end_button_factory=end_button_factory,
         )

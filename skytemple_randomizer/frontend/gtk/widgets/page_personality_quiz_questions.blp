@@ -3,20 +3,19 @@ using Adw 1;
 
 template $StPersonalityQuizQuestionsPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
-        Gtk.Box {
-            halign: end;
-            margin-bottom: 5;
+        title: _("Questions");
 
-            Gtk.Button button_add_question {
-                icon-name: "skytemple-list-add-symbolic";
-                tooltip-text: _("Add question");
-                clicked => $on_button_add_question_clicked();
+        [header-suffix]
+        Gtk.Button button_add_question {
+            icon-name: "skytemple-list-add-symbolic";
+            tooltip-text: _("Add question");
+            clicked => $on_button_add_question_clicked();
 
-                styles [
-                    "flat",
-                ]
-            }
+            styles [
+                "flat",
+            ]
         }
+
         ListBox pool_list {
             valign: start;
             hexpand: true;

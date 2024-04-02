@@ -41,6 +41,7 @@ from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
 from skytemple_randomizer.spritecollab import portrait_credits, sprite_credits
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 STR_EU = 16330
 STR_US = 16328
@@ -92,7 +93,7 @@ class SeedInfo(AbstractRandomizer):
         return 2
 
     def run(self, status: Status):
-        status.step("Loading Seed Info...")
+        status.step(_("Loading Seed Info..."))
         string_codec.init()
 
         langs = list(get_all_string_files(self.rom, self.static_data))
@@ -122,7 +123,7 @@ on Crossroads."""  # noqa: W291
                 f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
             )
 
-        status.step("Placing Info NPC...")
+        status.step(_("Placing Info NPC..."))
         # Place NPC in scene
         scene: Ssa = FileType.SSA.deserialize(
             self.rom.getFileByName(f"SCRIPT/{MAP}/{SCENE}")
@@ -293,7 +294,7 @@ macro settings() {{
     }}
 }}
 """
-        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+        script, __ = ScriptCompiler(self.static_data).compile_explorerscript(
             strlossy(exps, self.static_data.string_encoding),
             "script.exps",
             lookup_paths=[],
@@ -347,7 +348,7 @@ macro artists() {{
     message_ResetActor();
 }}
 """
-        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+        script, __ = ScriptCompiler(self.static_data).compile_explorerscript(
             strlossy(exps, self.static_data.string_encoding),
             "script.exps",
             lookup_paths=[],
@@ -423,7 +424,7 @@ def 0 {
 }
                 """
 
-        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+        script, __ = ScriptCompiler(self.static_data).compile_explorerscript(
             strlossy(exps, self.static_data.string_encoding),
             "script.exps",
             lookup_paths=[],
@@ -476,7 +477,7 @@ macro patches() {{
     }}
 }}
 """
-        script, _ = ScriptCompiler(self.static_data).compile_explorerscript(
+        script, __ = ScriptCompiler(self.static_data).compile_explorerscript(
             strlossy(exps, self.static_data.string_encoding),
             "script.exps",
             lookup_paths=[],

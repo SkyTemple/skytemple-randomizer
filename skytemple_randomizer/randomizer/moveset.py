@@ -31,6 +31,7 @@ from skytemple_randomizer.randomizer.util.util import (
     assert_not_empty,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class MovesetRandomizer(AbstractRandomizer):
@@ -53,14 +54,14 @@ class MovesetRandomizer(AbstractRandomizer):
         )
 
         if self.config["pokemon"]["movesets"] != MovesetConfig.NO:
-            status.step("Randomizing Level-Up movesets...")
+            status.step(_("Randomizing Level-Up movesets..."))
 
             valid_move_ids = get_allowed_move_ids(self.config)
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
 
             for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
                 waza_p_entry.egg_moves = [
-                    choice(valid_move_ids) for _ in waza_p_entry.egg_moves
+                    choice(valid_move_ids) for __ in waza_p_entry.egg_moves
                 ]
 
                 for idx, e in enumerate(waza_p_entry.level_up_moves):
@@ -88,7 +89,7 @@ class MovesetRandomizer(AbstractRandomizer):
 
         allowed_move_ids = get_allowed_move_ids(self.config, MoveRoster.DEFAULT)
         if self.config["pokemon"]["tms_hms"]:
-            status.step("Randomizing TMs/HMs...")
+            status.step(_("Randomizing TMs/HMs..."))
             item_p: ItemPProtocol = FileType.ITEM_P.deserialize(
                 self.rom.getFileByName("BALANCE/item_p.bin")
             )
@@ -108,7 +109,7 @@ class MovesetRandomizer(AbstractRandomizer):
                     move_id = choice(allowed_move_ids)
                     item.move_id = move_id
                     this_move_names = [
-                        t.strings[move_names.begin + move_id] for _, t in str_files
+                        t.strings[move_names.begin + move_id] for __, t in str_files
                     ]
                     self._update_all_langs(
                         [f"[M:I0]{name}" for name in this_move_names],
@@ -139,7 +140,7 @@ class MovesetRandomizer(AbstractRandomizer):
                 )
 
         if self.config["pokemon"]["tm_hm_movesets"]:
-            status.step("Randomizing TM/HM movesets...")
+            status.step(_("Randomizing TM/HM movesets..."))
             item_p = FileType.ITEM_P.deserialize(
                 self.rom.getFileByName("BALANCE/item_p.bin")
             )
@@ -150,7 +151,7 @@ class MovesetRandomizer(AbstractRandomizer):
 
             for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
                 waza_p_entry.tm_hm_moves = [
-                    choice(move_ids) for _ in waza_p_entry.tm_hm_moves
+                    choice(move_ids) for __ in waza_p_entry.tm_hm_moves
                 ]
 
         self.rom.setFileByName("BALANCE/waza_p.bin", FileType.WAZA_P.serialize(waza_p))
@@ -160,5 +161,5 @@ class MovesetRandomizer(AbstractRandomizer):
     def _update_all_langs(
         texts: list[str], str_files: list[tuple[Pmd2Language, Str]], index: int
     ):
-        for text, (_, str_file) in zip(texts, str_files):
+        for text, (__, str_file) in zip(texts, str_files):
             str_file.strings[index] = text

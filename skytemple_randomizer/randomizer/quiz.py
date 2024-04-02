@@ -32,6 +32,7 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 QUESTION_MAPPING = {
     0: [0, 1, 2],
@@ -125,7 +126,7 @@ class QuizRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["quiz"]["randomize"]:
             return status.done()
-        status.step("Randomizing Quiz...")
+        status.step(_("Randomizing Quiz..."))
 
         question_block = self.static_data.string_index_data.string_blocks[
             "Personality Quiz Questions"

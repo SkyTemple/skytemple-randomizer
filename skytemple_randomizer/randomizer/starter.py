@@ -38,6 +38,7 @@ from skytemple_randomizer.randomizer.util.util import (
     Roster,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class StarterRandomizer(AbstractRandomizer):
@@ -49,7 +50,7 @@ class StarterRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["starters_npcs"]["starters"]:
             return status.done()
-        status.step("Randomizing Partner Starters...")
+        status.step(_("Randomizing Partner Starters..."))
         md: MdProtocol = FileType.MD.deserialize(
             self.rom.getFileByName("BALANCE/monster.md")
         )
@@ -83,7 +84,7 @@ class StarterRandomizer(AbstractRandomizer):
             new_partner_ids, overlay13, self.static_data
         )
 
-        status.step("Randomizing Player Starters...")
+        status.step(_("Randomizing Player Starters..."))
         # The player options are put into two-pairs for each nature, first male then female.
         orig_player_ids = HardcodedPersonalityTestStarters.get_player_md_ids(
             overlay13, self.static_data
@@ -119,7 +120,7 @@ class StarterRandomizer(AbstractRandomizer):
             new_player_ids, overlay13, self.static_data
         )
 
-        status.step("Cloning missing starter portraits...")
+        status.step(_("Cloning missing starter portraits..."))
         kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
         for new in new_player_ids + new_partner_ids:
             new_base = new % 600

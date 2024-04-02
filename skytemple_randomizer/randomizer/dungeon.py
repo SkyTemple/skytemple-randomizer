@@ -64,6 +64,7 @@ from skytemple_randomizer.randomizer.common.items import randomize_items
 from skytemple_randomizer.randomizer.common.weights import random_weights
 from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 ALLOWED_TILESET_IDS = [
     0,
@@ -250,9 +251,9 @@ class DungeonRandomizer(AbstractRandomizer):
             self.rom.getFileByName("BALANCE/mappa_s.bin")
         )
 
-        status.step("Fixing dungeon errors...")
+        status.step(_("Fixing dungeon errors..."))
         # We may need to do this twice
-        for _ in range(2):
+        for __ in range(2):
             validator = DungeonValidator(self.mappa)
             validator.validate(self.dungeons)
             for error in validator.errors:
@@ -263,18 +264,18 @@ class DungeonRandomizer(AbstractRandomizer):
         trap_lists = None
 
         if self.config["dungeons"]["items"]:
-            status.step("Randomizing dungeon items...")
+            status.step(_("Randomizing dungeon items..."))
             item_lists = []
-            for _ in range(0, MAX_ITEM_LISTS):
+            for __ in range(0, MAX_ITEM_LISTS):
                 item_lists.append(randomize_items(self.config, self.static_data))
 
         if self.config["dungeons"]["traps"]:
-            status.step("Randomizing dungeon traps...")
+            status.step(_("Randomizing dungeon traps..."))
             trap_lists = []
-            for _ in range(0, MAX_TRAP_LISTS):
+            for __ in range(0, MAX_TRAP_LISTS):
                 trap_lists.append(self._randomize_traps())
 
-        status.step("Randomizing dungeons...")
+        status.step(_("Randomizing dungeons..."))
         self._randomize(self.mappa, trap_lists, item_lists)
 
         mappa_after = FileType.MAPPA_BIN.serialize(self.mappa)

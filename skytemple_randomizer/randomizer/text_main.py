@@ -22,6 +22,7 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class TextMainRandomizer(AbstractRandomizer):
@@ -33,7 +34,7 @@ class TextMainRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["text"]["main"]:
             return status.done()
-        status.step("Randomizing all main text...")
+        status.step(_("Randomizing all main text..."))
 
         if self.static_data.game_region == GAME_REGION_JP:
             return self.run_for_jp(status)

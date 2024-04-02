@@ -29,6 +29,7 @@ from skytemple_randomizer.randomizer.util.util import (
     assert_not_empty,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 # Maps actor list indices to special PC indices
 ACTOR_TO_SPC_MAPPING = {
@@ -59,7 +60,7 @@ class SpecialPcRandomizer(AbstractRandomizer):
         pcs = HardcodedDefaultStarters.get_special_episode_pcs(arm9, self.static_data)
 
         if self.config["starters_npcs"]["npcs"]:
-            status.step("Updating special episode Pokémon...")
+            status.step(_("Updating special episode Pokémon..."))
 
             actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
                 FileType.SIR0.deserialize(
@@ -74,7 +75,7 @@ class SpecialPcRandomizer(AbstractRandomizer):
                         pcs[bi].poke_id = actor.entid
 
         if self.config["pokemon"]["movesets"] != MovesetConfig.NO:
-            status.step("Updating special episode Pokémon movesets...")
+            status.step(_("Updating special episode Pokémon movesets..."))
 
             valid_move_ids = get_allowed_move_ids(self.config)
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)

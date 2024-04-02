@@ -20,6 +20,7 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_files.data.md.protocol import MdProtocol, IQGroup, PokeType, Ability
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 VALID_IQ_GROUPS = [
     IQGroup.A,
@@ -65,7 +66,7 @@ class MonsterRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self._has_something_to_randomize():
             return status.done()
-        status.step("Randomizing Pokémon data...")
+        status.step(_("Randomizing Pokémon data..."))
         md: MdProtocol = FileType.MD.deserialize(
             self.rom.getFileByName("BALANCE/monster.md")
         )

@@ -43,6 +43,7 @@ from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 BOSS_ROOMS = range(1, 81)
 FLOOR = TileRule(TileRuleType.FLOOR_ROOM)
@@ -83,7 +84,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
             self.rom.getFileByName("BALANCE/fixed.bin")
         )
 
-        status.step("Randomizing Boss Floor Layouts...")
+        status.step(_("Randomizing Boss Floor Layouts..."))
         for i in BOSS_ROOMS:
             fixed_room = fixed.fixed_floors[i]
             for floor_list, floor_id in self._get_dungeon_floors_for_fixed_room(

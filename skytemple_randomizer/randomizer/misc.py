@@ -19,6 +19,7 @@ from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.text_speed import HardcodedTextSpeed
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 DEBUG_SPEED = u8(255)
 
@@ -32,7 +33,7 @@ class MiscRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["text"]["instant"]:
             return status.done()
-        status.step("Enabling instant text...")
+        status.step(_("Enabling instant text..."))
 
         arm9 = bytearray(
             get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)

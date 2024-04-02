@@ -30,6 +30,7 @@ from skytemple_randomizer.randomizer.util.util import (
     assert_not_empty,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 # Maps actor list indices to guest Pokémon indices
 ACTOR_TO_GUEST_MAPPING = {
@@ -55,7 +56,7 @@ class GuestRandomizer(AbstractRandomizer):
         return 1 + guest_poke_moves
 
     def run(self, status: Status):
-        status.step("Apply 'EditExtraPokemon' patch...")
+        status.step(_("Apply 'EditExtraPokemon' patch..."))
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("EditExtraPokemon"):
             patcher.apply("EditExtraPokemon")
@@ -65,7 +66,7 @@ class GuestRandomizer(AbstractRandomizer):
         guests = GuestPokemonList.read(arm9, self.static_data)
 
         if self.config["starters_npcs"]["npcs"]:
-            status.step("Updating guest Pokémon...")
+            status.step(_("Updating guest Pokémon..."))
 
             actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
                 FileType.SIR0.deserialize(
@@ -80,7 +81,7 @@ class GuestRandomizer(AbstractRandomizer):
                         guests[bi].poke_id = actor.entid
 
         if self.config["pokemon"]["movesets"] != MovesetConfig.NO:
-            status.step("Updating guest Pokémon movesets...")
+            status.step(_("Updating guest Pokémon movesets..."))
 
             valid_move_ids = get_allowed_move_ids(self.config)
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)

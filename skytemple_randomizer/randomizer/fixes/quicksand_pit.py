@@ -21,6 +21,8 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
+
 
 SCRIPT_NAME = "SCRIPT/D14P12A/m14a0103.ssb"
 
@@ -34,7 +36,7 @@ class FixQuicksandPit(AbstractRandomizer):
         return 1
 
     def run(self, status: Status):
-        status.step("Fixing Quicksand Pit...")
+        status.step(_("Fixing Quicksand Pit..."))
         try:
             ssb: Ssb = get_script(SCRIPT_NAME, self.rom, self.static_data)
 

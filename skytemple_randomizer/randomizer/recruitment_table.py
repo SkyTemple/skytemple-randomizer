@@ -21,6 +21,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 ACTOR_TO_RECRUIT_MAPPING = {
     21: [16],
@@ -78,12 +79,12 @@ class RecruitmentTableRandomizer(AbstractRandomizer):
         if not self.config["starters_npcs"]["npcs"]:
             return status.done()
 
-        status.step("Apply 'ActorAndLevelLoader' patch...")
+        status.step(_("Apply 'ActorAndLevelLoader' patch..."))
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("ActorAndLevelLoader"):
             patcher.apply("ActorAndLevelLoader")
 
-        status.step("Updating special recruitment table...")
+        status.step(_("Updating special recruitment table..."))
 
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
             FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),

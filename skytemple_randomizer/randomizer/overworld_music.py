@@ -28,6 +28,7 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script, SKIP_JP_INVALID_SSB
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class OverworldMusicRandomizer(AbstractRandomizer):
@@ -45,7 +46,7 @@ class OverworldMusicRandomizer(AbstractRandomizer):
 
     def run(self, status: Status):
         if self.config["starters_npcs"]["topmenu_music"]:
-            status.step("Randomizing Titlescreen Music...")
+            status.step(_("Randomizing Titlescreen Music..."))
             ov0 = bytearray(
                 get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay0)
             )
@@ -62,7 +63,7 @@ class OverworldMusicRandomizer(AbstractRandomizer):
             status.done()
             return
 
-        status.step("Randomizing Overworld Music...")
+        status.step(_("Randomizing Overworld Music..."))
 
         for script_name in get_files_from_rom_with_extension(self.rom, "ssb"):
             if script_name in SKIP_JP_INVALID_SSB:

@@ -23,6 +23,7 @@ from skytemple_randomizer.randomizer.util.util import (
     get_all_string_files,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class LocationRandomizer(AbstractRandomizer):
@@ -34,7 +35,7 @@ class LocationRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["locations"]["randomize"]:
             return
-        status.step("Randomizing Location Names...")
+        status.step(_("Randomizing Location Names..."))
         ground_map_names = self.static_data.string_index_data.string_blocks[
             "Ground Map Names"
         ]
@@ -82,7 +83,7 @@ class LocationRandomizer(AbstractRandomizer):
                 f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings)
             )
 
-        status.step("Replacing script text that mentions locations...")
+        status.step(_("Replacing script text that mentions locations..."))
         replace_text_script(self.rom, self.static_data, rename_dungeon_map_all)
 
         status.done()

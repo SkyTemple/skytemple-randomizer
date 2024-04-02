@@ -24,6 +24,7 @@ from skytemple_files.hardcoded.tactics import HardcodedTactics
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class IqTacticsRandomizer(AbstractRandomizer):
@@ -52,7 +53,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
         )
 
         if self.config["iq"]["randomize_tactics"]:
-            status.step("Randomizing tactics...")
+            status.step(_("Randomizing tactics..."))
             tactics = HardcodedTactics.get_unlock_levels(arm9, self.static_data)
 
             minus_one_added = False
@@ -76,7 +77,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
             HardcodedTactics.set_unlock_levels(new_tactics, arm9, self.static_data)
 
         if self.config["iq"]["randomize_iq_gain"]:
-            status.step("Randomizing IQ gain...")
+            status.step(_("Randomizing IQ gain..."))
             iq_gains = HardcodedIq.get_gummi_iq_gains(
                 arm9, self.static_data, additional_types_patch_applied
             )
@@ -113,7 +114,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
             )
 
         if self.config["iq"]["randomize_iq_groups"]:
-            status.step("Randomizing IQ groups...")
+            status.step(_("Randomizing IQ groups..."))
             if not patcher.is_applied("CompressIQData"):
                 patcher.apply("CompressIQData")
             iq_groups = IqGroupsSkills.read_compressed(arm9, self.static_data)
@@ -121,7 +122,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
 
             new_iq_groups: list[list[u8]] = []
-            for _ in iq_groups:
+            for __ in iq_groups:
                 li2: list[u8] = []
                 new_iq_groups.append(li2)
                 for idx in range(len(iq_skills)):
@@ -135,7 +136,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
             IqGroupsSkills.write_compressed(arm9, new_iq_groups, self.static_data)
 
         if self.config["iq"]["randomize_iq_skills"]:
-            status.step("Randomizing IQ skills...")
+            status.step(_("Randomizing IQ skills..."))
             iq_skills = HardcodedIq.get_iq_skills(arm9, self.static_data)
 
             for skill_idx, skill in enumerate(iq_skills):

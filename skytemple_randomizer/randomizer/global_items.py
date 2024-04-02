@@ -25,6 +25,7 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.common.items import randomize_items
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 ITEM_LIST_COUNT = 25
 
@@ -47,14 +48,14 @@ class GlobalItemsRandomizer(AbstractRandomizer):
         if not self.config["item"]["global_items"]:
             return
 
-        status.step("Apply patches...")
+        status.step(_("Apply patches..."))
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("ActorAndLevelLoader"):
             patcher.apply("ActorAndLevelLoader")
         if not patcher.is_applied("ExtractHardcodedItemLists"):
             patcher.apply("ExtractHardcodedItemLists")
 
-        status.step("Randomizing global item lists...")
+        status.step(_("Randomizing global item lists..."))
         for i in range(0, ITEM_LIST_COUNT):
             self.rom.setFileByName(
                 f"TABLEDAT/list_{i:02}.bin",

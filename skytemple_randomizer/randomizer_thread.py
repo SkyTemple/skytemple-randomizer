@@ -19,6 +19,7 @@ import sys
 from threading import Thread, Lock
 
 from ndspy.rom import NintendoDSRom
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.impl_cfg import (
     change_implementation_type,
     ImplementationType,
@@ -131,7 +132,7 @@ class RandomizerThread(Thread):
                 local_status_steps_left = randomizer.step_count()
                 local_status = Status()
 
-                def local_status_fn(_, descr):
+                def local_status_fn(__, descr):
                     nonlocal local_status_steps_left
                     if descr != Status.DONE_SPECIAL_STR:
                         if local_status_steps_left > 0:
@@ -139,11 +140,11 @@ class RandomizerThread(Thread):
                         self.status.step(descr)
                     else:
                         for i in range(local_status_steps_left):
-                            self.status.step("Randomizing...")
+                            self.status.step(_("Randomizing..."))
 
                 local_status.subscribe(local_status_fn)
                 randomizer.run(local_status)
-            self.status.step("Saving scripts...")
+            self.status.step(_("Saving scripts..."))
             save_scripts(self.rom, self.static_data)
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)

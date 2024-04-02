@@ -22,6 +22,7 @@ from skytemple_files.hardcoded.rank_up_table import HardcodedRankUpTable
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_allowed_item_ids
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 MIN_PNTS = u32(1)
 MAX_UNLOCK_PNTS = u32(200000)
@@ -42,7 +43,7 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
         if not rand_rewards and not rand_unlocks:
             return status.done()
 
-        status.step("Randomizing rank data...")
+        status.step(_("Randomizing rank data..."))
         arm9 = bytearray(
             get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
         )

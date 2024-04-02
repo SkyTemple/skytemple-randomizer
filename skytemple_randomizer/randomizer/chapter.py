@@ -24,6 +24,7 @@ from skytemple_randomizer.randomizer.util.util import (
     strlossy,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 SCRIPTS_WITH_CHAPTER_NAMES = [
     "SCRIPT/D01P11A/m20a0101.ssb",
@@ -56,7 +57,7 @@ class ChapterRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["chapters"]["randomize"]:
             return
-        status.step("Randomizing Chapter Names...")
+        status.step(_("Randomizing Chapter Names..."))
 
         for script_name in SCRIPTS_WITH_CHAPTER_NAMES:
             ssb: Ssb = get_script(script_name, self.rom, self.static_data)
@@ -67,7 +68,7 @@ class ChapterRandomizer(AbstractRandomizer):
                         chapter_name = random_txt_line(self.config["chapters"]["text"])
                         string_index = op.params[5] - len(ssb.constants)
                         if len(ssb.strings) > 0:  # for jp this is empty.
-                            for lang, _ in get_all_string_files(
+                            for lang, __ in get_all_string_files(
                                 self.rom, self.static_data
                             ):
                                 ssb.strings[lang.name.lower()][string_index] = strlossy(

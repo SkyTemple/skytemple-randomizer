@@ -37,6 +37,7 @@ from skytemple_files.script.ssb.script_compiler import ScriptCompiler
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script, clear_script_cache_for
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class DungeonUnlocker(AbstractRandomizer):
@@ -44,7 +45,7 @@ class DungeonUnlocker(AbstractRandomizer):
         return 1
 
     def run(self, status: Status):
-        status.step("Unlocking dungeons...")
+        status.step(_("Unlocking dungeons..."))
 
         new_ops: list[SsbOperation] = []
         coro_id = self.static_data.script_data.common_routine_info__by_name[
@@ -123,7 +124,7 @@ class DungeonUnlocker(AbstractRandomizer):
         routine_ops = OpsLabelJumpToRemover(
             routine_ops, label_finalizer.label_offsets
         ).routines
-        new_ssb, _ = ScriptCompiler(self.static_data).compile_structured(
+        new_ssb, __ = ScriptCompiler(self.static_data).compile_structured(
             [b for a, b in ssb.routine_info],
             routine_ops,
             [

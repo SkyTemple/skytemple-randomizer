@@ -17,6 +17,7 @@
 from random import choice
 
 from range_typed_integers import u16
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
@@ -199,12 +200,12 @@ class BossRandomizer(AbstractRandomizer):
         if not self.config["starters_npcs"]["npcs"]:
             return status.done()
 
-        status.step("Apply 'ActorAndLevelLoader' patch...")
+        status.step(_("Apply 'ActorAndLevelLoader' patch..."))
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("ActorAndLevelLoader"):
             patcher.apply("ActorAndLevelLoader")
 
-        status.step("Updating bosses...")
+        status.step(_("Updating bosses..."))
 
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
             FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),

@@ -41,6 +41,7 @@ from skytemple_randomizer.randomizer.util.util import (
     SKIP_JP_INVALID_SSB,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class FunArtistCredit(Enum):
@@ -184,7 +185,7 @@ def get_allowed_md_ids(base_set: set[u16], roster: Roster) -> list[u16]:
         extras_max = 5
     elif roster == Roster.DUNGEON:
         extras_max = 50
-    for _ in range(0, extras_max):
+    for __ in range(0, extras_max):
         y = choice(extra_candidates)
         s.add(y)
         if y + num_entities <= 1154:
@@ -227,7 +228,7 @@ def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
 
 
 def process_story_strings(rom: NintendoDSRom, static_data: Pmd2Data):
-    for lang, _ in get_all_string_files(rom, static_data):
+    for lang, __ in get_all_string_files(rom, static_data):
         for file_path in get_files_from_rom_with_extension(rom, "ssb"):
             if file_path in SKIP_JP_INVALID_SSB:
                 continue
@@ -263,7 +264,7 @@ class SpecialFunRandomizer(AbstractRandomizer):
         if not is_fun_allowed():
             return status.done()
 
-        status.step("Finishing up...")
+        status.step(_("Finishing up..."))
 
         process_text_strings(self.rom, self.static_data)
         process_story_strings(self.rom, self.static_data)

@@ -59,6 +59,7 @@ from skytemple_randomizer.spritecollab import (
     get_sprites,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 GROUND_BIN = "MONSTER/m_ground.bin"
 ATTACK_BIN = "MONSTER/m_attack.bin"
@@ -132,7 +133,7 @@ class PortraitDownloader(AbstractRandomizer):
         except NotImplementedError:
             pass
 
-        status.step("Apply 'ActorAndLevelLoader' patch...")
+        status.step(_("Apply 'ActorAndLevelLoader' patch..."))
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("ActorAndLevelLoader"):
             patcher.apply("ActorAndLevelLoader")
@@ -154,7 +155,11 @@ class PortraitDownloader(AbstractRandomizer):
         kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
         sprconf = FileType.SPRCONF.load(self.rom)
 
-        status.step(f"Downloading portraits and sprites... {self.current}/{self.total}")
+        status.step(
+            "Downloading portraits and sprites... {}/{}".format(
+                self.current, self.total
+            )
+        )
         if fun.is_fun_allowed():
             fun.replace_portraits(self.rom, self.static_data)
             return status.done()
@@ -451,7 +456,11 @@ class PortraitDownloader(AbstractRandomizer):
             )
 
         self.current += 1
-        status.step(f"Downloading portraits and sprites... {self.current}/{self.total}")
+        status.step(
+            "Downloading portraits and sprites... {}/{}".format(
+                self.current, self.total
+            )
+        )
 
     @staticmethod
     def get_both_md_entries(

@@ -33,6 +33,7 @@ from skytemple_randomizer.randomizer.util.util import (
     Roster,
 )
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class NpcRandomizer(AbstractRandomizer):
@@ -49,15 +50,15 @@ class NpcRandomizer(AbstractRandomizer):
             "Pokemon Names"
         ]
 
-        status.step("Apply 'ActorAndLevelLoader' patch...")
+        status.step(_("Apply 'ActorAndLevelLoader' patch..."))
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("ActorAndLevelLoader"):
             patcher.apply("ActorAndLevelLoader")
 
-        status.step("Randomizing NPC actor list...")
+        status.step(_("Randomizing NPC actor list..."))
         mapped_actors = self._randomize_actors(string_file, pokemon_string_data)
 
-        status.step("Replacing main text that mentions NPCs...")
+        status.step(_("Replacing main text that mentions NPCs..."))
         names_mapped_all = {}
         for lang, string_file in get_all_string_files(self.rom, self.static_data):
             names_mapped: dict[str, str] = {}
@@ -78,10 +79,10 @@ class NpcRandomizer(AbstractRandomizer):
                 f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
             )
 
-        status.step("Replacing script text that mentions NPCs...")
+        status.step(_("Replacing script text that mentions NPCs..."))
         replace_text_script(self.rom, self.static_data, names_mapped_all)
 
-        status.step("Cloning missing NPC portraits...")
+        status.step(_("Cloning missing NPC portraits..."))
         kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
         for new in mapped_actors.values():
             new_base = new % 600

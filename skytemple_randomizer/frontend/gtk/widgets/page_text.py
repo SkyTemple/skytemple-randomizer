@@ -90,6 +90,7 @@ class TextPage(Adw.PreferencesPage):
                     ),
                 ),
                 end_button_factory=page1_pp_qs.create_window_end_buttons,
+                content_width=512,
             )
             page1_pp_qs.navigation_view = cast(
                 BaseSettingsDialog, dialog
@@ -104,6 +105,7 @@ class TextPage(Adw.PreferencesPage):
                 getter=page_ct.get_enabled,
                 setter=page_ct.set_enabled,
                 end_button_factory=page_ct.create_window_end_buttons,
+                content_width=512,
             )
 
         if dialog is not None:

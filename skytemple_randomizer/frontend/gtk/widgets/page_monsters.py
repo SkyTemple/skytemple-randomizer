@@ -65,6 +65,7 @@ class MonstersPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=self.row_randomize_movesets.get_title(),
                 content=page_mo,
+                content_width=512,
             )
         if w == self.row_move_pool:
             page_mop = MovesPoolPage(parent_page=self)
@@ -107,6 +108,7 @@ class MonstersPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=_("Tactics & IQ"),
                 content=TacticsIqPage(),
+                content_width=512,
             )
 
         if dialog is not None:

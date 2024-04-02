@@ -75,6 +75,9 @@ class BaseSettingsDialog(Adw.Dialog):
         end_button_factory: Callable[[], Gtk.Widget] | None = None,
         **kwargs,
     ):
+        if "content_width" not in kwargs:
+            kwargs["follows_content_size"] = True
+
         super().__init__(*args, **kwargs)
         self.action_bar = None
         self.stack = None

@@ -52,11 +52,13 @@ class DungeonsPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=self.row_randomization_settings.get_title(),
                 content=DungeonsSettingsPage(),
+                content_width=512,
             )
         if w == self.row_chance_thresholds:
             dialog = BaseSettingsDialog(
                 title=self.row_chance_thresholds.get_title(),
                 content=DungeonsChancesPage(),
+                content_width=512,
             )
         if w == self.row_per_dungeon_settings:
             p = DungeonsIndividualSettingsPage()

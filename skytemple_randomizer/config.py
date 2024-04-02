@@ -60,6 +60,7 @@ class IntRange:
 class StartersNpcsConfig(TypedDict):
     starters: bool
     npcs: bool  # and bosses
+    npcs_use_smart_replace: bool
     topmenu_music: bool
     overworld_music: bool
     explorer_rank_unlocks: bool
@@ -1139,6 +1140,8 @@ class ConfigFileLoader:
                             },
                         }
                     elif field == "include_vanilla_questions":
+                        target[field] = False
+                    elif field == "npcs_use_smart_replace":
                         target[field] = False
                     else:
                         raise KeyError(

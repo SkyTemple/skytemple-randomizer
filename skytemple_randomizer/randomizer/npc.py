@@ -30,6 +30,8 @@ from skytemple_randomizer.randomizer.util.util import (
     get_main_string_file,
     get_allowed_md_ids,
     get_script,
+    replace_text_script,
+    replace_text_main,
     clone_missing_portraits,
     get_all_string_files,
     SKIP_JP_INVALID_SSB,
@@ -76,9 +78,51 @@ class NpcRandomizer(AbstractRandomizer):
                 names_mapped[old_name] = new_name
 
         status.step(_("Replacing main text that mentions NPCs..."))
+        if self.config["starters_npcs"]["npcs_use_smart_replace"]:
+            self._smart_replace_text(mapped_actor_names_by_lang)
+        else:
+            names_mapped_all = {}
+            for lang, string_file in get_all_string_files(self.rom, self.static_data):
+                names_mapped: dict[str, str] = {}
+                names_mapped_all[lang] = names_mapped
+                for old, new in mapped_actors.items():
+                    old_base = old % 600
+                    new_base = new % 600
+                    old_name = self._get_name(
+                        string_file, old_base, pokemon_string_data
+                    )
+                    new_name = self._get_name(
+                        string_file, new_base, pokemon_string_data
+                    )
+                    names_mapped[old_name] = new_name
+                replace_text_main(
+                    string_file,
+                    names_mapped,
+                    pokemon_string_data.begin,
+                    pokemon_string_data.end,
+                )
+                self.rom.setFileByName(
+                    f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
+                )
+
+        status.step(_("Replacing script text that mentions NPCs..."))
+        if self.config["starters_npcs"]["npcs_use_smart_replace"]:
+            self._smart_replace_script_mentions(mapped_actor_names_by_lang)
+        else:
+            replace_text_script(self.rom, self.static_data, names_mapped_all)
+
+        status.step(_("Cloning missing NPC portraits..."))
+        kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
+        for new in mapped_actors.values():
+            new_base = new % 600
+            clone_missing_portraits(kao, new_base - 1)
+        self.rom.setFileByName("FONT/kaomado.kao", FileType.KAO.serialize(kao))
+
+        status.done()
+
+    def _smart_replace_text(self, mapped_actor_names_by_lang):
         for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
             mapped_actor_names = mapped_actor_names_by_lang[lang]
-
             # Most NPC texts in the base game are wrapped via [CN:N]...[CR], or [CN:Y]...[CR].
             # Croagunk is the only NPC pokemon that has texts with [CS:E].
             standard_npc_text = re.compile(
@@ -208,43 +252,35 @@ class NpcRandomizer(AbstractRandomizer):
                         lambda match: mapped_actor_names[match.group(1)], new_text
                     )
                 lang_string_file.strings[idx] = new_text
-
             self.rom.setFileByName(
                 f"MESSAGE/{lang.filename}", FileType.STR.serialize(lang_string_file)
             )
 
-        status.step(_("Replacing script text that mentions NPCs..."))
-        # We don't need to be selective with script text - we should be able to replace all mentions of the NPC names directly.
-        # To avoid improper substring matching, we need to construct the regex so that the longer strings are matched first.
-        script_npc_text = re.compile(
-            "|".join(sorted(list(mapped_actor_names.keys()), key=len, reverse=True))
-        )
-        for file_path in get_files_from_rom_with_extension(self.rom, "ssb"):
-            if file_path in SKIP_JP_INVALID_SSB:
-                continue
-            script = get_script(file_path, self.rom, self.static_data)
-            script.constants = [
-                script_npc_text.sub(
-                    lambda match: mapped_actor_names[match.group(0)], text
-                )
-                for text in script.constants
-            ]
-            if len(script.strings) > 0:  # for Japanese this is empty.
-                script.strings[lang.name.lower()] = [
+    def _smart_replace_script_mentions(self, mapped_actor_names_by_lang):
+        # We don't need to be selective with script text - we should be able to replace all mentions of the NPC names
+        # directly. To avoid improper substring matching, we need to construct the regex so that the longer strings
+        # are matched first.
+        for lang, mapped_actor_names in mapped_actor_names_by_lang.items():
+            script_npc_text = re.compile(
+                "|".join(sorted(list(mapped_actor_names.keys()), key=len, reverse=True))
+            )
+            for file_path in get_files_from_rom_with_extension(self.rom, "ssb"):
+                if file_path in SKIP_JP_INVALID_SSB:
+                    continue
+                script = get_script(file_path, self.rom, self.static_data)
+                script.constants = [
                     script_npc_text.sub(
                         lambda match: mapped_actor_names[match.group(0)], text
                     )
-                    for text in script.strings[lang.name.lower()]
+                    for text in script.constants
                 ]
-
-        status.step(_("Cloning missing NPC portraits..."))
-        kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
-        for new in mapped_actors.values():
-            new_base = new % 600
-            clone_missing_portraits(kao, new_base - 1)
-        self.rom.setFileByName("FONT/kaomado.kao", FileType.KAO.serialize(kao))
-
-        status.done()
+                if len(script.strings) > 0:  # for Japanese this is empty.
+                    script.strings[lang.name.lower()] = [
+                        script_npc_text.sub(
+                            lambda match: mapped_actor_names[match.group(0)], text
+                        )
+                        for text in script.strings[lang.name.lower()]
+                    ]
 
     def _randomize_actors(self, string_file, pokemon_string_data) -> dict[int, int]:
         """Returns a dict that maps old entids -> new entids"""

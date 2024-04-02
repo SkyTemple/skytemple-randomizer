@@ -29,6 +29,7 @@ from skytemple_randomizer.export_quiz_xml import (
     import_personality_quiz_xml,
 )
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.hacks import force_adw_entry_row_no_title
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib, Gio
@@ -168,6 +169,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
 
         for answer in question["answers"]:
             row_answer = Adw.EntryRow(title=_("Answer"))
+            force_adw_entry_row_no_title(row_answer)
             row_answer.set_text(answer)
             row_answer.connect("changed", partial(self._on_answer_changed, i))
             remove_button = self._make_remove_answer_button(
@@ -232,6 +234,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
     ) -> Gtk.Button:
         def on_clicked(*args):
             row_answer = Adw.EntryRow(title=_("Answer"))
+            force_adw_entry_row_no_title(row_answer)
             remove_button = self._make_remove_answer_button(
                 question_i, group_answers, row_answer
             )

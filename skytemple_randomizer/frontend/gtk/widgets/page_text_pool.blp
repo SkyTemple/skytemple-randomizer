@@ -3,6 +3,39 @@ using Adw 1;
 
 template $StTextPoolPage: Adw.PreferencesPage {
     Adw.PreferencesGroup {
+        [header-suffix]
+        Gtk.Button button_add_text {
+            icon-name: "skytemple-list-add-symbolic";
+            tooltip-text: _("Add text");
+            clicked => $on_button_add_text_clicked();
 
+            styles [
+                "flat",
+            ]
+        }
+
+        ListBox pool_list {
+            valign: start;
+            hexpand: true;
+            selection-mode: none;
+
+            styles [
+                "boxed-list",
+            ]
+        }
+        Gtk.Box {
+            halign: end;
+            margin-top: 5;
+
+            Gtk.Button button_add_text2 {
+                icon-name: "skytemple-list-add-symbolic";
+                tooltip-text: _("Add text");
+                clicked => $on_button_add_text_clicked();
+
+                styles [
+                    "flat",
+                ]
+            }
+        }
     }
 }

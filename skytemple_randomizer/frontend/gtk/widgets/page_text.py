@@ -96,27 +96,7 @@ class TextPage(Adw.PreferencesPage):
                 BaseSettingsDialog, dialog
             ).navigation_view
         if w == self.button_randomize_location_names:
-            page1_ln = TextPoolPage(pool=TextPool.LOCATIONS_A, parent_page=self)
-            page2_ln = TextPoolPage(pool=TextPool.LOCATIONS_B, parent_page=self)
-            dialog = BaseSettingsDialog(
-                title=self.row_location_names.get_title(),
-                content=(
-                    SubpageStackEntry(
-                        child=page1_ln,
-                        name="first_word",
-                        title=_("1st Word"),
-                        icon_name="skytemple-e-dungeon-floor-symbolic",
-                    ),
-                    SubpageStackEntry(
-                        child=page2_ln,
-                        name="second_word",
-                        title=_("2nd Word"),
-                        icon_name="skytemple-e-dungeon-floor-symbolic",
-                    ),
-                ),
-                getter=page1_ln.get_enabled,
-                setter=page1_ln.set_enabled,
-            )
+            dialog = self._make_location_names_dialog()
         if w == self.button_randomize_chapter_titles:
             page_ct = TextPoolPage(pool=TextPool.CHAPTER_TITLES, parent_page=self)
             dialog = BaseSettingsDialog(
@@ -124,6 +104,7 @@ class TextPage(Adw.PreferencesPage):
                 content=page_ct,
                 getter=page_ct.get_enabled,
                 setter=page_ct.set_enabled,
+                end_button_factory=page_ct.create_window_end_buttons,
             )
 
         if dialog is not None:
@@ -199,3 +180,55 @@ class TextPage(Adw.PreferencesPage):
         self.row_randomize_story_dialogue.set_active(config["text"]["story"])
         self.row_enable_instant_text.set_active(config["text"]["instant"])
         self._suppress_signals = False
+
+    def _make_location_names_dialog(self):
+        dialog = None
+
+        page1_ln = TextPoolPage(pool=TextPool.LOCATIONS_A, parent_page=self)
+        page2_ln = TextPoolPage(pool=TextPool.LOCATIONS_B, parent_page=self)
+
+        def on_button_import_clicked(*args):
+            assert dialog is not None
+            active = dialog.get_active_page()
+            if active is None:
+                return
+            active_c = cast(TextPoolPage, active)
+            active_c.on_button_import_clicked()
+
+        def on_button_export_clicked(*args):
+            assert dialog is not None
+            active = dialog.get_active_page()
+            if active is None:
+                return
+            active_c = cast(TextPoolPage, active)
+            active_c.on_button_export_clicked()
+
+        def end_button_factory():
+            button_import, button_export, w = (
+                TextPoolPage.raw_create_window_end_buttons()
+            )
+            button_import.connect("clicked", on_button_import_clicked)
+            button_export.connect("clicked", on_button_export_clicked)
+            return w
+
+        dialog = BaseSettingsDialog(
+            title=self.row_location_names.get_title(),
+            content=(
+                SubpageStackEntry(
+                    child=page1_ln,
+                    name="first_word",
+                    title=_("1st Word"),
+                    icon_name="skytemple-e-dungeon-floor-symbolic",
+                ),
+                SubpageStackEntry(
+                    child=page2_ln,
+                    name="second_word",
+                    title=_("2nd Word"),
+                    icon_name="skytemple-e-dungeon-floor-symbolic",
+                ),
+            ),
+            getter=page1_ln.get_enabled,
+            setter=page1_ln.set_enabled,
+            end_button_factory=end_button_factory,
+        )
+        return dialog

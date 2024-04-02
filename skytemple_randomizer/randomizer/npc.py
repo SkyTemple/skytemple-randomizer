@@ -81,23 +81,10 @@ class NpcRandomizer(AbstractRandomizer):
         if self.config["starters_npcs"]["npcs_use_smart_replace"]:
             self._smart_replace_text(mapped_actor_names_by_lang)
         else:
-            names_mapped_all = {}
             for lang, string_file in get_all_string_files(self.rom, self.static_data):
-                names_mapped: dict[str, str] = {}
-                names_mapped_all[lang] = names_mapped
-                for old, new in mapped_actors.items():
-                    old_base = old % 600
-                    new_base = new % 600
-                    old_name = self._get_name(
-                        string_file, old_base, pokemon_string_data
-                    )
-                    new_name = self._get_name(
-                        string_file, new_base, pokemon_string_data
-                    )
-                    names_mapped[old_name] = new_name
                 replace_text_main(
                     string_file,
-                    names_mapped,
+                    mapped_actor_names_by_lang[lang],
                     pokemon_string_data.begin,
                     pokemon_string_data.end,
                 )
@@ -109,7 +96,7 @@ class NpcRandomizer(AbstractRandomizer):
         if self.config["starters_npcs"]["npcs_use_smart_replace"]:
             self._smart_replace_script_mentions(mapped_actor_names_by_lang)
         else:
-            replace_text_script(self.rom, self.static_data, names_mapped_all)
+            replace_text_script(self.rom, self.static_data, mapped_actor_names_by_lang)
 
         status.step(_("Cloning missing NPC portraits..."))
         kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
@@ -257,9 +244,8 @@ class NpcRandomizer(AbstractRandomizer):
             )
 
     def _smart_replace_script_mentions(self, mapped_actor_names_by_lang):
-        # We don't need to be selective with script text - we should be able to replace all mentions of the NPC names
-        # directly. To avoid improper substring matching, we need to construct the regex so that the longer strings
-        # are matched first.
+        # We don't need to be selective with script text - we should be able to replace all mentions of the NPC names directly.
+        # To avoid improper substring matching, we need to construct the regex so that the longer strings are matched first.
         for lang, mapped_actor_names in mapped_actor_names_by_lang.items():
             script_npc_text = re.compile(
                 "|".join(sorted(list(mapped_actor_names.keys()), key=len, reverse=True))

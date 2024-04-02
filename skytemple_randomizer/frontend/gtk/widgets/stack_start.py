@@ -132,8 +132,6 @@ class StartStack(Adw.Bin):
             return
         GtkFrontend.instance().application.show_main_stack(path, rom, static_data)
 
-        self._check_for_banner()
-
     def _check_for_banner(self):
         try:
             # uncomment the following line to test banner.

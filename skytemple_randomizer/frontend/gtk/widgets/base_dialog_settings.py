@@ -32,6 +32,9 @@ from skytemple_randomizer.frontend.gtk.widgets import (
 )
 
 
+MAIN_PAGE_TAG = "MAIN_PAGE"
+
+
 @dataclass
 class SubpageStackEntry:
     child: RandomizationSettingsWidget
@@ -124,6 +127,7 @@ class BaseSettingsDialog(Adw.Window):
         self.main_navigation_page.set_title(
             kwargs["title"] if "title" in kwargs else ""
         )
+        self.main_navigation_page.set_tag(MAIN_PAGE_TAG)
 
         self._getter = getter
         self._setter = setter

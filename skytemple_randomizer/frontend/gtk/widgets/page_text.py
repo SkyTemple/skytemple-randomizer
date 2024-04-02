@@ -90,6 +90,7 @@ class TextPage(Adw.PreferencesPage):
                         icon_name="skytemple-e-actor-symbolic",
                     ),
                 ),
+                end_button_factory=page1_pp_qs.create_window_end_buttons,
             )
             page1_pp_qs.navigation_view = cast(
                 BaseSettingsDialog, dialog

@@ -372,7 +372,7 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
         )
         button_import.connect("clicked", self.on_button_import_clicked)
         button_export = Gtk.Button(
-            icon_name="skytemple-export-symbolic", tooltip_text=_("Export from CSV")
+            icon_name="skytemple-export-symbolic", tooltip_text=_("Export to CSV")
         )
         button_export.connect("clicked", self.on_button_export_clicked)
         box.append(button_import)

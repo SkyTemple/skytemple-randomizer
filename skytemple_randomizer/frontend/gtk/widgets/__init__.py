@@ -21,9 +21,6 @@ from skytemple_randomizer.frontend.gtk.widgets._util import (
     RandomizationSettingsWidget,
     RandomizationSettingsWindow,
 )
-from skytemple_randomizer.frontend.gtk.widgets.page_personality_quiz_questions import (
-    PersonalityQuizQuestionsPage,
-)
 from skytemple_randomizer.frontend.gtk.widgets.popover_help import (
     HelpPopover,
 )
@@ -64,6 +61,9 @@ from skytemple_randomizer.frontend.gtk.widgets.page_monsters_pool import (
 )
 from skytemple_randomizer.frontend.gtk.widgets.page_dungeons_individual_settings import (
     DungeonsIndividualSettingsPage,
+)
+from skytemple_randomizer.frontend.gtk.widgets.page_personality_quiz_questions import (
+    PersonalityQuizQuestionsPage,
 )
 from skytemple_randomizer.frontend.gtk.widgets.page_movesets import MovesetsPage
 from skytemple_randomizer.frontend.gtk.widgets.page_music import MusicPage

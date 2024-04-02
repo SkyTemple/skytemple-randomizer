@@ -21,11 +21,19 @@ from functools import partial
 from typing import cast
 
 from skytemple_files.common.i18n_util import _
+from skytemple_files.common.util import open_utf8
 
 from skytemple_randomizer.config import RandomizerConfig, QuizQuestion
+from skytemple_randomizer.export_quiz_xml import (
+    export_personality_quiz_xml,
+    import_personality_quiz_xml,
+)
+from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
-from gi.repository import Gtk, Adw, GLib
+from gi.repository import Gtk, Adw, GLib, Gio
+
+from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import MAIN_PAGE_TAG
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "page_personality_quiz_questions.ui"))
@@ -52,11 +60,19 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
         self._suppress_signals = True
         self.randomization_settings = config
 
-        for i, question in enumerate(config["quiz"]["questions"]):
-            row = self._make_row(question)
-            self.pool_list.append(row)
+        self.reload()
 
         self._suppress_signals = False
+
+    def reload(self):
+        if self.randomization_settings is not None:
+            # TODO: type missing in typestubs?
+            self.pool_list.remove_all()  # type: ignore
+            for i, question in enumerate(
+                self.randomization_settings["quiz"]["questions"]
+            ):
+                row = self._make_row(question)
+                self.pool_list.append(row)
 
     def _make_row(self, question: QuizQuestion):
         def on_activated(*args):
@@ -262,3 +278,116 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
             self.randomization_settings["quiz"]["questions"][question_i]["answers"][
                 answer_index
             ] = row.get_text()
+
+    def on_button_import_clicked(self, *args):
+        frontend = GtkFrontend.instance()
+        csv_filter = Gtk.FileFilter()
+        csv_filter.add_suffix("xml")
+        csv_filter.add_mime_type("text/xml")
+        documents_dir = GLib.get_user_special_dir(
+            GLib.UserDirectory.DIRECTORY_DOCUMENTS
+        )
+        if documents_dir is not None:
+            default_dir = Gio.File.new_for_path(documents_dir)
+            dialog_for_file = Gtk.FileDialog(
+                initial_folder=default_dir, default_filter=csv_filter
+            )
+
+        else:
+            dialog_for_file = Gtk.FileDialog(default_filter=csv_filter)
+        dialog_for_file.open(frontend.window, None, self.on_import_file_loaded)
+
+    def on_import_file_loaded(self, dialog, result):
+        try:
+            file: Gio.File = dialog.open_finish(result)
+        except Exception as e:
+            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+                GtkFrontend.instance().display_error(
+                    _("Failed to import: Error while opening file ({}).").format(e),
+                    cast(Gtk.Window, self.get_root()),
+                )
+            return
+
+        path = file.get_path()
+        assert path is not None
+        assert self.randomization_settings is not None
+
+        try:
+            with open_utf8(path) as xml_file:
+                if self.navigation_view:
+                    self.navigation_view.pop_to_tag(MAIN_PAGE_TAG)
+                self.randomization_settings["quiz"]["questions"] = (
+                    import_personality_quiz_xml(xml_file)
+                )
+                self.reload()
+        except Exception as e:
+            GtkFrontend.instance().display_error(
+                _(
+                    "Failed to import. Make sure your XML matches the same format as with the export button. Details: {}"
+                ).format(e),
+                cast(Gtk.Window, self.get_root()),
+            )
+
+    def on_button_export_clicked(self, *args):
+        frontend = GtkFrontend.instance()
+        csv_filter = Gtk.FileFilter()
+        csv_filter.add_suffix("xml")
+        csv_filter.add_mime_type("text/xml")
+        documents_dir = GLib.get_user_special_dir(
+            GLib.UserDirectory.DIRECTORY_DOCUMENTS
+        )
+        if documents_dir is not None:
+            default_dir = Gio.File.new_for_path(documents_dir)
+            dialog_for_file = Gtk.FileDialog(
+                initial_folder=default_dir,
+                default_filter=csv_filter,
+                initial_name="personality_quiz_questions.xml",
+            )
+        else:
+            dialog_for_file = Gtk.FileDialog(
+                default_filter=csv_filter, initial_name="personality_quiz_questions.xml"
+            )
+        dialog_for_file.save(frontend.window, None, self.on_export_file_saved)
+
+    def on_export_file_saved(self, dialog, result):
+        frontend = GtkFrontend.instance()
+        try:
+            file = dialog.save_finish(result)
+        except Exception as e:
+            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+                frontend.display_error(
+                    _("Failed to export: Error while opening file ({}).").format(e),
+                    cast(Gtk.Window, self.get_root()),
+                )
+            return
+
+        path = file.get_path()
+        assert path is not None
+        assert self.randomization_settings is not None
+
+        try:
+            with open_utf8(path, "w", newline="") as xml_file:
+                export_personality_quiz_xml(
+                    self.randomization_settings["quiz"]["questions"], xml_file
+                )
+        except Exception as e:
+            GtkFrontend.instance().display_error(
+                _("Failed to export. Details: {}").format(e),
+                cast(Gtk.Window, self.get_root()),
+            )
+
+    def create_window_end_buttons(self) -> Gtk.Widget:
+        box = Gtk.Box(spacing=5)
+        button_import = Gtk.Button(
+            icon_name="skytemple-import-symbolic",
+            tooltip_text=_("Import questions from XML"),
+        )
+        button_import.connect("clicked", self.on_button_import_clicked)
+        button_export = Gtk.Button(
+            icon_name="skytemple-export-symbolic",
+            tooltip_text=_("Export questions to XML"),
+        )
+        button_export.connect("clicked", self.on_button_export_clicked)
+        box.append(button_import)
+        box.append(button_export)
+        return box

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-04 10:45+0000\n"
-"PO-Revision-Date: 2024-04-04 10:47\n"
+"POT-Creation-Date: 2024-04-04 11:42+0000\n"
+"PO-Revision-Date: 2024-04-04 12:19\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -3173,15 +3173,15 @@ msgstr ""
 msgid "A question must contain two XML sub-nodes: {}, {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:119
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:117
 msgid "Error"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:122
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:119
 msgid "_OK"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:118
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:106
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
 msgstr ""
 
@@ -3193,8 +3193,8 @@ msgstr ""
 msgid "Update now"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:28
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:42
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:26
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:40
 msgid "Search"
 msgstr ""
 
@@ -3323,8 +3323,8 @@ msgid "Here you can decide which dungeons you want to have affected by the rando
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:227
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:309
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:156
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:308
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:155
 msgid "Failed to import: Error while opening file ({})."
 msgstr ""
 
@@ -3333,29 +3333,29 @@ msgid "Missing dungeon ID in CSV"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:276
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:174
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:309
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:362
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:207
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:361
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:206
 msgid "Failed to export: Error while opening file ({})."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:364
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:378
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:223
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:377
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:222
 msgid "Failed to export. Details: {}"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:371
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:232
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:231
 msgid "Import from CSV"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:375
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:236
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:235
 msgid "Export to CSV"
 msgstr ""
 
@@ -3531,14 +3531,14 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:147
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:199
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:148
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:156
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:155
 msgid "Reset to Default"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:151
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:203
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:152
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:161
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:160
 msgid "Select None"
 msgstr ""
 
@@ -3675,63 +3675,62 @@ msgid "Randomize Personality Quiz"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:61
-msgid "If enabled, the personality quiz questions will be randomized using the qustions below.\n"
-"Enter them as a list of YAML objects (see the examples). You need to define at least two answers, 2-4 answers will be randomly picked.\n"
-"If you pick \"Select Manually\" above, this is irrelevant as no quiz will be used."
+msgid "If enabled, the personality quiz questions will be randomized.\n"
+"You need to define at least two answers, 2-4 answers will be randomly picked."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:77
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:76
 msgid "Include Vanilla Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:89
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:88
 msgid "If enabled, the questions from the base game will also be included in the pool of possible questions."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:99
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:98
 msgid "Edit Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:150
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:100
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:149
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:99
 msgid "Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:166
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:165
 msgid "Answers"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:171
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:236
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:170
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:235
 msgid "Answer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:227
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:226
 msgid "Remove Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:251
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:250
 msgid "Add Answer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:272
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:271
 msgid "Remove Answer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:329
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:328
 msgid "Failed to import. Make sure your XML matches the same format as with the export button. Details: {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:386
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:385
 msgid "Import questions from XML"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:391
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:390
 msgid "Export questions to XML"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:89
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:88
 msgid "Questions"
 msgstr ""
 
@@ -3854,17 +3853,17 @@ msgstr ""
 msgid "If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:83
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:119
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:113
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:220
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:218
 msgid "1st Word"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:226
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:224
 msgid "2nd Word"
 msgstr ""
 
@@ -3931,7 +3930,7 @@ msgstr ""
 msgid "Enable Instant Text"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:106
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:105
 msgid "Remove Text"
 msgstr ""
 
@@ -3940,12 +3939,12 @@ msgstr ""
 msgid "Add text"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:171
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:176
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:170
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:175
 msgid "Allowed Items"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:182
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:181
 msgid "Category Weights"
 msgstr ""
 
@@ -4029,19 +4028,19 @@ msgid "Welcome to the Randomizer!\n"
 "Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:144
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:135
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:137
 msgid "Close current ROM?"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:151
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:139
 msgid "_No"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:140
 msgid "_Yes"
 msgstr ""
 

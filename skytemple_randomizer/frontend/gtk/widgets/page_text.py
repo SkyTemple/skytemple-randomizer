@@ -27,7 +27,6 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
-from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     PersonalityQuizPage,
     TextPool,
@@ -91,6 +90,7 @@ class TextPage(Adw.PreferencesPage):
                     ),
                 ),
                 end_button_factory=page1_pp_qs.create_window_end_buttons,
+                content_width=512,
             )
             page1_pp_qs.navigation_view = cast(
                 BaseSettingsDialog, dialog
@@ -105,15 +105,13 @@ class TextPage(Adw.PreferencesPage):
                 getter=page_ct.get_enabled,
                 setter=page_ct.set_enabled,
                 end_button_factory=page_ct.create_window_end_buttons,
+                content_width=512,
             )
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
-            set_default_dialog_size(dialog, frontend.window)
             dialog.populate_settings(frontend.randomization_settings)
-            dialog.set_transient_for(frontend.window)
-            dialog.set_application(frontend.application)
-            dialog.present()
+            dialog.present(frontend.window)
             return False
 
     @Gtk.Template.Callback()

@@ -143,9 +143,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: "C:\\gtk-build"
-          key: win-gtk-build-vgtk4-2024.3.1
+          key: win-gtk-build-vgtk4-2024.4.0-1
           restore-keys: |
-            win-gtk-build-vgtk4-2024.3.1
+            win-gtk-build-vgtk4-2024.4.0-1
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -175,7 +175,7 @@ jobs:
       
           python -m pip install --user pipx
           python -m pipx ensurepath
-          pipx install "gvsbuild==2024.3.1"
+          pipx install "gvsbuild==2024.4.0"
       - name: Build GTK and other libs
         run: |
           $env:path = "C:\pipx_bin;" + $env:path

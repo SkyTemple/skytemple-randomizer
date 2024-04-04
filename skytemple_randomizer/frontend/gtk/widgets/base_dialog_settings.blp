@@ -1,10 +1,8 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $StBaseSettingsDialog: Adw.Window {
-    destroy-with-parent: true;
-    modal: true;
-    deletable: true;
+template $StBaseSettingsDialog: Adw.Dialog {
+    can-close: true;
 
     realize => $on_realize();
 

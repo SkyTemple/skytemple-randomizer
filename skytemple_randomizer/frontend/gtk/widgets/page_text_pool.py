@@ -78,8 +78,7 @@ class TextPoolPage(Adw.PreferencesPage):
         self._suppress_signals = False
 
     def reload(self):
-        # TODO: type missing in typestubs?
-        self.pool_list.remove_all()  # type: ignore
+        self.pool_list.remove_all()
         for text in self.get_pool():
             self.pool_list.append(self._make_entry(text))
 

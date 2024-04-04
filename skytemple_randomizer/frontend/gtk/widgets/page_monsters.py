@@ -27,7 +27,6 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
-from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     BaseSettingsDialog,
     MonstersAbilitiesPage,
@@ -66,6 +65,7 @@ class MonstersPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=self.row_randomize_movesets.get_title(),
                 content=page_mo,
+                content_width=512,
             )
         if w == self.row_move_pool:
             page_mop = MovesPoolPage(parent_page=self)
@@ -108,15 +108,13 @@ class MonstersPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=_("Tactics & IQ"),
                 content=TacticsIqPage(),
+                content_width=512,
             )
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
-            set_default_dialog_size(dialog, frontend.window)
             dialog.populate_settings(frontend.randomization_settings)
-            dialog.set_transient_for(frontend.window)
-            dialog.set_application(frontend.application)
-            dialog.present()
+            dialog.present(frontend.window)
             return False
 
     @Gtk.Template.Callback()

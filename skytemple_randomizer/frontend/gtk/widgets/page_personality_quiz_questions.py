@@ -67,8 +67,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
 
     def reload(self):
         if self.randomization_settings is not None:
-            # TODO: type missing in typestubs?
-            self.pool_list.remove_all()  # type: ignore
+            self.pool_list.remove_all()
             for i, question in enumerate(
                 self.randomization_settings["quiz"]["questions"]
             ):

@@ -112,15 +112,12 @@ class GtkFrontend(AbstractFrontend):
         return self.__input_rom_static_data
 
     def display_error(self, error: str, parent: Gtk.Window):
-        d = Adw.MessageDialog(
+        d = Adw.AlertDialog(
             body=error,
-            application=self.application,
-            modal=True,
             heading=_("Error"),
-            transient_for=parent,
         )
         d.add_response("OK", _("_OK"))
-        d.present()
+        d.present(GtkFrontend.instance().window)
 
     def idle_add(self, fn: Callable):
         GLib.idle_add(fn)

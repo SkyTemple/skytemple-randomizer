@@ -27,7 +27,6 @@ from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
-from skytemple_randomizer.frontend.gtk.ui_util import set_default_dialog_size
 from skytemple_randomizer.frontend.gtk.widgets import (
     BaseSettingsDialog,
     ItemsCategoriesPage,
@@ -63,6 +62,7 @@ class TweaksPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=self.row_patches.get_title(),
                 content=PatchesPage(),
+                content_width=512,
             )
         if w == self.row_music:
             page_mu = MusicPage()
@@ -70,20 +70,19 @@ class TweaksPage(Adw.PreferencesPage):
                 title=self.row_music.get_title(),
                 content=page_mu,
                 help_callback=page_mu.help_text,
+                content_width=512,
             )
         if w == self.row_explorer_rank:
             dialog = BaseSettingsDialog(
                 title=self.row_explorer_rank.get_title(),
                 content=ExplorerRankPage(),
+                content_width=512,
             )
 
         if dialog is not None:
             frontend = GtkFrontend.instance()
-            set_default_dialog_size(dialog, frontend.window)
             dialog.populate_settings(frontend.randomization_settings)
-            dialog.set_transient_for(frontend.window)
-            dialog.set_application(frontend.application)
-            dialog.present()
+            dialog.present(frontend.window)
             return False
 
     @Gtk.Template.Callback()

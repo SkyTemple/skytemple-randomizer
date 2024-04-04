@@ -19,6 +19,7 @@ from __future__ import annotations
 import os
 import webbrowser
 
+from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk
@@ -46,4 +47,4 @@ class LinksGrid(Gtk.Grid):
 
     @Gtk.Template.Callback()
     def on_about_button_clicked(self, *args):
-        show_about_dialog()
+        show_about_dialog(GtkFrontend.instance().window)

@@ -24,8 +24,6 @@ from gi.repository import GObject, Gtk, Adw
 from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import version
-from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
-from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWindow
 
 T = TypeVar("T", bound=GObject.Object)
 X = TypeVar("X")
@@ -63,17 +61,7 @@ def iter_tree_model(model: Gtk.TreeModel) -> Any:
     return model  # type: ignore
 
 
-def set_default_dialog_size(
-    dialog: Gtk.Window | RandomizationSettingsWindow, parent: Gtk.Window, height=None
-):
-    p_width, p_height = parent.get_default_size()
-    a_height = round(p_height * 0.8)
-    if height is not None:
-        a_height = min(a_height, height)
-    dialog.set_default_size(min(p_width, max(round(p_width * 0.8), 420)), a_height)
-
-
-def show_about_dialog():
+def show_about_dialog(parent: Gtk.Widget):
     CREDITS = """Project Lead:
 Marco "Capypara" Köpcke https://github.com/theCapypara
 
@@ -106,7 +94,7 @@ Everyone testing and documenting SkyTemple, the SkyTemple Discord mods (former a
 
 Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
 
-    about_dialog = Adw.AboutWindow(
+    about_dialog = Adw.AboutDialog(
         application_icon="skytemple_randomizer",
         application_name="SkyTemple Randomizer",
         artists=[
@@ -123,10 +111,5 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
         support_url="https://wiki.skytemple.org",
         version=version(),
         website="https://skytemple.org",
-        application=GtkFrontend.instance().application,
-        destroy_with_parent=True,
-        modal=True,
-        resizable=True,
-        transient_for=GtkFrontend.instance().window,
     )
-    about_dialog.present()
+    about_dialog.present(parent)

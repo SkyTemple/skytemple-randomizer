@@ -44,7 +44,7 @@ class SubpageStackEntry:
 
 
 @Gtk.Template(filename=os.path.join(MAIN_PATH, "base_dialog_settings.ui"))
-class BaseSettingsDialog(Adw.Window):
+class BaseSettingsDialog(Adw.Dialog):
     __gtype_name__ = "StBaseSettingsDialog"
 
     header_bar = cast(Adw.HeaderBar, Gtk.Template.Child())
@@ -75,6 +75,9 @@ class BaseSettingsDialog(Adw.Window):
         end_button_factory: Callable[[], Gtk.Widget] | None = None,
         **kwargs,
     ):
+        if "content_width" not in kwargs:
+            kwargs["follows_content_size"] = True
+
         super().__init__(*args, **kwargs)
         self.action_bar = None
         self.stack = None

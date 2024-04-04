@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-04 12:33+0000\n"
-"PO-Revision-Date: 2024-04-04 12:33\n"
+"PO-Revision-Date: 2024-04-04 12:40\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3233,40 +3233,40 @@ msgstr "Suchen"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Randomization Progress"
-msgstr ""
+msgstr "Fortschritt der Randomisierung"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:54
 msgid "Select Output File & Start Randomization"
-msgstr ""
+msgstr "Ausgabedatei auswählen & Randomisierung starten"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:101
 msgid "Input ROM"
-msgstr ""
+msgstr "Eingabe-ROM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:107
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:129
 msgid "Open Folder in File Browser"
-msgstr ""
+msgstr "Ordner im Dateibrowser öffnen"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:123
 msgid "Output ROM"
-msgstr ""
+msgstr "Ausgabe-ROM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:124
 msgid "(Not yet chosen.)"
-msgstr ""
+msgstr "(Noch nicht ausgewählt.)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:148
 msgid "Game Region"
-msgstr ""
+msgstr "Spielregion"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:163
 msgid "Randomizer Version"
-msgstr ""
+msgstr "Randomizer-Version"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:178
 msgid "Seed"
-msgstr ""
+msgstr "Startwert (Seed)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-04 12:33+0000\n"
-"PO-Revision-Date: 2024-04-04 12:34\n"
+"POT-Creation-Date: 2024-04-04 12:43+0000\n"
+"PO-Revision-Date: 2024-04-04 14:23\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -4012,7 +4012,7 @@ msgid "Controls how item lists are randomly filled.\n\n"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:60
-msgid "Randomize Treasure Town shop and dungeon rewards?"
+msgid "Randomize Treasure Town shop and dungeon rewards"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:68

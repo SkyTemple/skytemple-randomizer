@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-04 12:43+0000\n"
-"PO-Revision-Date: 2024-04-05 04:32\n"
+"PO-Revision-Date: 2024-04-05 05:32\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -3909,15 +3909,16 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:149
 msgid "Tactics"
-msgstr ""
+msgstr "作戦"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:152
 msgid "Randomize Tactics Unlock Levels"
-msgstr ""
+msgstr "作戦解禁レベルをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:163
 msgid "If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."
-msgstr ""
+msgstr "有効にすると、作戦の解禁レベルがランダム化されます。\n"
+"ランダムな作戦を1つだけ最初から解禁します。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:113
@@ -4042,19 +4043,24 @@ msgid "Controls how item lists are randomly filled.\n\n"
 "Classic: Algorithm that was used in the Randomizer prior to version 1.4.\n"
 "It doesn't attempt to balance out the different item categories,\n"
 "making items from categories with fewer total items easier to find."
-msgstr ""
+msgstr "道具リストをランダム化する方法を制御します。\n\n"
+"バランス: ゲーム内のどの道具も同じ確率で見つかるようにします。\n"
+"ブーストされたポケは例外です。\n\n"
+"クラシック: バージョン 1.4 以前のランダマイザーで使用されていたアルゴリズム。\n"
+"さまざまなカテゴリのバランスを取ろうとはしていません。\n"
+"合計アイテム数が少ないカテゴリの道具を見つけやすくします。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:60
 msgid "Randomize Treasure Town shop and dungeon rewards"
-msgstr ""
+msgstr "トレジャータウンの店とダンジョン報酬をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:68
 msgid "Allowed Items &amp; Category Weights"
-msgstr ""
+msgstr "許可された道具 &amp; カテゴリウェイト"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:90
 msgid "Utilities"
-msgstr ""
+msgstr "ユーティリティ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:93
 msgid "Download Missing Portraits &amp; Sprites"

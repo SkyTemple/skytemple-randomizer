@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-04 12:43+0000\n"
-"PO-Revision-Date: 2024-04-05 03:36\n"
+"PO-Revision-Date: 2024-04-05 04:32\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -4058,11 +4058,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:93
 msgid "Download Missing Portraits &amp; Sprites"
-msgstr ""
+msgstr "不足している顔グラフィック &amp; スプライトをダウンロード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:94
 msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
-msgstr ""
+msgstr "SpriteCollab (sprites.pmdcollab.org) からダウンロード済み"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:102
 msgid "Patches"
@@ -4070,7 +4070,7 @@ msgstr "パッチ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:124
 msgid "Miscellaneous"
-msgstr ""
+msgstr "その他"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:127
 msgid "Music"
@@ -4152,66 +4152,66 @@ msgstr "ROM の読み込みに失敗しました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:123
 msgid "Are you sure you provided a ROM? A ROM usually has the file extension \".nds\"."
-msgstr ""
+msgstr "正しい ROM を選択しましたか？ROM には通常、ファイル拡張子「.nds」が付いています。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."
-msgstr ""
+msgstr "ROM を読み込んで下さい。"
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:53
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:82
 msgid "Apply 'ActorAndLevelLoader' patch..."
-msgstr ""
+msgstr "パッチ 'ActerAndLevelLoader' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:208
 msgid "Updating bosses..."
-msgstr ""
+msgstr "ボスを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/chapter.py:60
 msgid "Randomizing Chapter Names..."
-msgstr ""
+msgstr "チャプター名をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:254
 msgid "Fixing dungeon errors..."
-msgstr ""
+msgstr "ダンジョンのエラーを修正中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:267
 msgid "Randomizing dungeon items..."
-msgstr ""
+msgstr "ダンジョンに落ちている道具をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:273
 msgid "Randomizing dungeon traps..."
-msgstr ""
+msgstr "ダンジョンに出現する罠をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:278
 msgid "Randomizing dungeons..."
-msgstr ""
+msgstr "ダンジョンをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon_unlocker.py:48
 msgid "Unlocking dungeons..."
-msgstr ""
+msgstr "ダンジョンのロックを解除中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/explorer_ranks.py:46
 msgid "Randomizing rank data..."
-msgstr ""
+msgstr "探検隊ランクデータをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/fixed_room.py:87
 msgid "Randomizing Boss Floor Layouts..."
-msgstr ""
+msgstr "ボス部屋のレイアウトをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/fixes/quicksand_pit.py:39
 msgid "Fixing Quicksand Pit..."
-msgstr ""
+msgstr "「りゅうさのどうくつ さいしんぶ」の修正中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/global_items.py:51
 msgid "Apply patches..."
-msgstr ""
+msgstr "パッチを適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/global_items.py:58
 msgid "Randomizing global item lists..."
-msgstr ""
+msgstr "グローバル道具リストをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
 msgid "Apply 'EditExtraPokemon' patch..."

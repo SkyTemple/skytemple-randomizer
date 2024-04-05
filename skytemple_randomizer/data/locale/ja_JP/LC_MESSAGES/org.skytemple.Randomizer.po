@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-04 12:43+0000\n"
-"PO-Revision-Date: 2024-04-05 08:50\n"
+"PO-Revision-Date: 2024-04-05 10:11\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -735,39 +735,41 @@ msgstr "ラベル {label_id} は存在しませんが、そのラベルへのジ
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:101
 #, python-brace-format
 msgid "Unexpected continue; in line {ctx.start.line}"
-msgstr ""
+msgstr "予期しない 'continue' {ctx.start.line} 行目"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:107
 #, python-brace-format
 msgid "Unexpected break_loop; in line {ctx.start.line}"
-msgstr ""
+msgstr "予期しない 'break_loop' {ctx.start.line} 行目"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:113
 #, python-brace-format
 msgid "Unexpected break; in line {ctx.start.line}"
-msgstr ""
+msgstr "予期しない 'break' {ctx.start.line} 行目"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:136
 #, python-brace-format
 msgid "Infinite recursion detected while trying to load an ExplorerScript file from {subfile_path}.\n"
 "Tried loading from: {file_name}."
-msgstr ""
+msgstr "{subfile_path} から ExplorerScript ファイルをロード中、無限再帰が検出されました。\n"
+"{file_name} からロードしようとしました。"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:162
 #, python-brace-format
 msgid "{fn}: Macro scripts must not contain any routines."
-msgstr ""
+msgstr "{fn}: マクロスクリプトにルーチンを含めることはできません。"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:208
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:222
 #, python-brace-format
 msgid "The file to import ('{import_file}') was not found."
-msgstr ""
+msgstr "インポートするファイル ('{import_file}') が見つかりません。"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:214
 #, python-brace-format
 msgid "Invalid import: '{import_file}'. Non absolute/relative imports must not contain relative paths."
-msgstr ""
+msgstr "インポートが無効です ('{import_file}') 。\n"
+"非絶対/相対インポートには相対パスを含めないでください。"
 
 #: explorerscript/explorerscript/syntax_error_listener.py:38
 #, python-brace-format
@@ -791,12 +793,14 @@ msgstr "必要なDTEFファイルがありません: {fn} DTEFパッケージを
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:135
 #, python-brace-format
 msgid "Can not import image \"{basename}\" as dungeon tileset: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "画像 \"{basename}\" をダンジョンタイルセットとしてインポートできません。\n"
+"インデックス付きの画像である必要があります (=パレットを使用)"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:138
 #, python-brace-format
 msgid "Can not import image \"{basename}\" as dungeon tileset: Palette must contain  256 RGB colors."
-msgstr ""
+msgstr "画像 \"{basename}\" をダンジョンタイルセットとしてインポートできません。\n"
+"パレットには 256 色の RGB カラーが含まれている必要があります。"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:143
 #, python-brace-format
@@ -815,7 +819,7 @@ msgstr ""
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:157
 msgid "A rule is missing in the import set"
-msgstr ""
+msgstr "インポートセットにルールがありません"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:233
 #, python-brace-format

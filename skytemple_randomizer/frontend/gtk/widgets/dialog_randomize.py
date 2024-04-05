@@ -164,7 +164,7 @@ class RandomizeDialog(Adw.Dialog):
         # Adjust UI
         self._is_currently_randomizing = True
         self.status_stack.set_visible_child(self.status_status_page.get_child())
-        self.metadata_output.set_subtitle(self.output_file.get_path())
+        self.metadata_output.set_subtitle(self.output_file.get_path())  # type: ignore
         self.metadata_output.set_sensitive(True)
         self.metadata_output.add_css_class("property")
         self.status_row.set_title(_("Randomizing... ({}%)").format(0))

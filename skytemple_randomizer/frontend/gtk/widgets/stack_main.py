@@ -110,6 +110,7 @@ class MainStack(Adw.Bin):
         frontend = GtkFrontend.instance()
         assert self.rom is not None
         assert self.rom_static_data is not None
+        assert self.input_rom_path is not None
         RandomizeDialog(
             self.input_rom_path,
             self.rom,

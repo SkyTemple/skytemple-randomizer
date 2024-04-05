@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-04 12:33+0000\n"
-"PO-Revision-Date: 2024-04-04 12:34\n"
+"POT-Creation-Date: 2024-04-05 15:08+0000\n"
+"PO-Revision-Date: 2024-04-05 15:22\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -721,7 +721,7 @@ msgstr "マクロにはエイリアスを付けることはできません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:285
 msgid "Fatal compilation error: Unexpected compilation handler on stack."
-msgstr ""
+msgstr "致命的なコンパイルエラー: スタック上の予期しないコンパイルハンドラ"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:286
 msgid "Fatal compilation error: Stack error."
@@ -730,44 +730,46 @@ msgstr "致命的なコンパイルエラー: スタックエラー"
 #: explorerscript/explorerscript/ssb_converting/compiler/label_jump_to_remover.py:55
 #, python-brace-format
 msgid "Label {label_id} does not exist, but a jump to it does (remove it)."
-msgstr ""
+msgstr "ラベル {label_id} は存在しませんが、そのラベルへのジャンプが存在しています (削除してください)。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:101
 #, python-brace-format
 msgid "Unexpected continue; in line {ctx.start.line}"
-msgstr ""
+msgstr "予期しない 'continue' {ctx.start.line} 行目"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:107
 #, python-brace-format
 msgid "Unexpected break_loop; in line {ctx.start.line}"
-msgstr ""
+msgstr "予期しない 'break_loop' {ctx.start.line} 行目"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:113
 #, python-brace-format
 msgid "Unexpected break; in line {ctx.start.line}"
-msgstr ""
+msgstr "予期しない 'break' {ctx.start.line} 行目"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:136
 #, python-brace-format
 msgid "Infinite recursion detected while trying to load an ExplorerScript file from {subfile_path}.\n"
 "Tried loading from: {file_name}."
-msgstr ""
+msgstr "{subfile_path} から ExplorerScript ファイルをロード中、無限再帰が検出されました。\n"
+"{file_name} からロードしようとしました。"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:162
 #, python-brace-format
 msgid "{fn}: Macro scripts must not contain any routines."
-msgstr ""
+msgstr "{fn}: マクロスクリプトにルーチンを含めることはできません。"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:208
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:222
 #, python-brace-format
 msgid "The file to import ('{import_file}') was not found."
-msgstr ""
+msgstr "インポートするファイル ('{import_file}') が見つかりません。"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:214
 #, python-brace-format
 msgid "Invalid import: '{import_file}'. Non absolute/relative imports must not contain relative paths."
-msgstr ""
+msgstr "インポートが無効です ('{import_file}') 。\n"
+"非絶対/相対インポートには相対パスを含めないでください。"
 
 #: explorerscript/explorerscript/syntax_error_listener.py:38
 #, python-brace-format
@@ -791,12 +793,14 @@ msgstr "必要なDTEFファイルがありません: {fn} DTEFパッケージを
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:135
 #, python-brace-format
 msgid "Can not import image \"{basename}\" as dungeon tileset: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "画像 \"{basename}\" をダンジョンタイルセットとしてインポートできません。\n"
+"インデックス付きの画像である必要があります (=パレットを使用)"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:138
 #, python-brace-format
 msgid "Can not import image \"{basename}\" as dungeon tileset: Palette must contain  256 RGB colors."
-msgstr ""
+msgstr "画像 \"{basename}\" をダンジョンタイルセットとしてインポートできません。\n"
+"パレットには 256 色の RGB カラーが含まれている必要があります。"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:143
 #, python-brace-format
@@ -815,7 +819,7 @@ msgstr ""
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:157
 msgid "A rule is missing in the import set"
-msgstr ""
+msgstr "インポートセットにルールがありません"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:233
 #, python-brace-format
@@ -969,23 +973,23 @@ msgstr "このROMはSkyTempleではサポートされていません。"
 #: skytemple-files/skytemple_files/common/util.py:623
 #, python-brace-format
 msgid "Binary {binary.name} not found."
-msgstr ""
+msgstr "バイナリ {binary.name} が見つかりません。"
 
 #: skytemple-files/skytemple_files/common/util.py:644
 #: skytemple-files/skytemple_files/common/util.py:675
 #, python-brace-format
 msgid "Folder {dir_name} does not exist."
-msgstr ""
+msgstr "フォルダ {dir_name} は存在しません。"
 
 #: skytemple-files/skytemple_files/common/util.py:647
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
-msgstr ""
+msgstr "ファイル {file_name} は既にこのフォルダに存在します。"
 
 #: skytemple-files/skytemple_files/common/util.py:670
 #, python-brace-format
 msgid "Folder {path} already exists."
-msgstr ""
+msgstr "フォルダ {path} は既に存在します。"
 
 #: skytemple-files/skytemple_files/common/xml_util.py:35
 #, python-brace-format
@@ -999,19 +1003,19 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/anim/model.py:45
 msgid "Head"
-msgstr ""
+msgstr "頭部"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:46
 msgid "Left Hand"
-msgstr ""
+msgstr "左手"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:47
 msgid "Right Hand"
-msgstr ""
+msgstr "右手"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:48
 msgid "Center"
-msgstr ""
+msgstr "中央"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:49
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:36
@@ -1083,7 +1087,7 @@ msgstr "フラグ設定済み"
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:39
 msgid "Scenario Equals"
-msgstr ""
+msgstr "シナリオと等しい"
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:40
 msgid "Scenario Below or Equal"
@@ -1150,7 +1154,7 @@ msgstr "道具"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:456
 msgid "Recruited"
-msgstr ""
+msgstr "勧誘済み"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:457
 msgid "No Main Requirement"
@@ -1311,12 +1315,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/monster_xml.py:783
 #, python-brace-format
 msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__PALETTE}' missing for a portrait."
-msgstr ""
+msgstr "XML が無効です。ポートレート用の '{XML_PORTRAITS_PORTRAIT__PALETTE}' が見つかりません。"
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:798
 #, python-brace-format
 msgid "Invalid XML. The portrait data of one of the portraits is invalid: {err}"
-msgstr ""
+msgstr "XML が無効です。いずれかのポートレートのポートレートデータが無効です: {err}"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:29
 msgid "Healthy"
@@ -1884,31 +1888,31 @@ msgstr "未使用のフロア"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:114
 msgid "Has {len(self.floors_in_mappa_not_referenced)} extra floors in it's floor list, which are not assigned to any dungeon."
-msgstr ""
+msgstr "フロアリストに {len (self.floors_in_mappa_not_referenced)} 個の追加フロアがありますが、どのダンジョンにも割り当てられていません。"
 
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:519
 #, python-brace-format
 msgid "Can not import map background: Width of both images must match the current map width: {expected_width}px"
-msgstr ""
+msgstr "背景をインポートできません。両方の画像の幅は現在のマップの幅({expected_width}px)と一致する必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:530
 #, python-brace-format
 msgid "Can not import map background: Height of both images must match the current map height: {expected_height}px"
-msgstr ""
+msgstr "背景をインポートできません。両方の画像の高さは現在のマップの高さ({expected_height}px)と一致する必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/bpa/_model.py:214
 #: skytemple-rust/src/st_bpa.rs:234
 msgid "The dimensions of all images must be the same."
-msgstr ""
+msgstr "すべての画像のサイズは同じである必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/chr/model.py:81
 msgid "Cannot convert PIL image to CHR: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "PIL イメージを CHR ファイルに変換できません。パレットを使用したインデックス付きの画像である必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/chr/model.py:88
 #, python-brace-format
 msgid "Cannot convert PIL image to CHR: width and height must be a multiple of {CHR_TILE_WIDTH}"
-msgstr ""
+msgstr "PIL イメージを CHR ファイルに変換できません。幅と高さは {CHR_TILE_WIDTH} の倍数である必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:117
 #, python-brace-format
@@ -1928,7 +1932,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:179
 #: skytemple-rust/src/st_dpc.rs:222
 msgid "A dungeon background or tilemap can not have more than 400 chunks."
-msgstr ""
+msgstr "ダンジョンの背景やタイルマップには、400を超えるチャンクを含めることはできません。"
 
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:111
 #: skytemple-rust/src/st_dpla.rs:130
@@ -1939,27 +1943,27 @@ msgstr "このパレットにはアニメーションがありません。"
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:102
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/model.py:110
 msgid "This must be a color indexed image!"
-msgstr ""
+msgstr "カラーインデックス付きの画像である必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:268
 #, python-brace-format
 msgid "Font parsing: Unexpected {child.tag}"
-msgstr ""
+msgstr "フォント解析: 予期しない {child.tag}"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:49
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is defined multiple times in a font file!"
-msgstr ""
+msgstr "テーブル {e.table} の文字 {e.char} がフォントファイル内で複数回定義されています。"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:60
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is be defined multiple times in a font file!"
-msgstr ""
+msgstr "テーブル {e.table} の文字 {e.char} がフォントファイル内で複数回定義されています。"
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:305
 #, python-brace-format
 msgid "Could not load KAO at {old_index},{old_subindex}: {ex}"
-msgstr ""
+msgstr "{old_index},{old_subindex}: {ex} で KAO をロードできませんでした"
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:374
 #, python-brace-format
@@ -2125,7 +2129,7 @@ msgstr "じしん"
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:361
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:363
 msgid "???"
-msgstr ""
+msgstr "???"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:334
 msgid "Sleep"
@@ -2502,7 +2506,7 @@ msgstr "ダンジョンデバッグメニュー"
 #: skytemple-files/skytemple_files/hardcoded/menus.py:736
 #, python-brace-format
 msgid "This menu must have {num_entries} entries!"
-msgstr ""
+msgstr "このメニューには {num_entries} エントリが必要です。"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:99
 msgid "Standing Animation (loop)"
@@ -2551,16 +2555,17 @@ msgstr "その他"
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "アクターとレベルのリストを別々のファイルからロードするように変更します。\n"
+"パッチ適用時に両方のファイルを抽出します。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:109
 msgid "This patch can not be re-applied."
-msgstr ""
+msgstr "このパッチは再適用できません。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:119
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:136
 msgid "The source data specification was not found in the configuration."
-msgstr ""
+msgstr "ソースデータの仕様が構成に見つかりません。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:156
 msgid "\n\n"
@@ -2570,38 +2575,42 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
-msgstr ""
+msgstr "タイプ相性テーブルにタイプを追加します。これにより、古いタイプ相性テーブルが第6世代以降のテーブルに置き換わり、フェアリータイプが追加されます。"
 
 #: skytemple-files/skytemple_files/patch/handler/allow_unrecruitable_mons.py:49
 msgid "Allows recruiting the other Deoxys forms and the regis inside dungeons."
-msgstr ""
+msgstr "ダンジョン内に出現するノーマルフォルム以外のデオキシスと、レジロック、レジアイス、レジスチルを勧誘可能にします。"
 
 #: skytemple-files/skytemple_files/patch/handler/anti_softlock.py:49
 msgid "Allows the player to press A+B+X+Y during cutscenes to force the game to continue past a softlock (this can happen during cutscenes when using custom sprites or the randomizer). Does not work with crashes caused due to internal errors (such as the game running out of memory)."
-msgstr ""
+msgstr "カットシーン中にA+B+X+Yを同時押しすることで、ソフトロックをスキップしてゲームを強制的に続行できるようにします。(これは、カスタムスプライトまたはランダマイザーを使用するカットシーン中に発生することがあります)\n"
+"内部エラー(メモリ不足など)によってクラッシュした場合は動作しません。"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:56
 msgid "Appraise all"
-msgstr ""
+msgstr "すべてかんてい"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:58
 msgid " And to appraise all your items, \n"
 "you will pay [CS:G][gold_left:0][CR][M:S0]?"
-msgstr ""
+msgstr "すべての たからばこの かんていには\n"
+"[CS:G][gold_left:0][CR][M:S0]かかるが いいか？"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:62
 msgid " And so...[K]it is revealed...[C] Within the boxes...[K]\n"
 "were..."
-msgstr ""
+msgstr "…………。[K]でた。[C]\n"
+"たからばこの なかに あった\n"
+"どうぐは……[K]"
 
 #. TRANSLATORS: Appraise All Reveal Before
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:65
 msgid " ...a [me_play:1][string0]!"
-msgstr ""
+msgstr "[me_play:1][string0]だ。"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:76
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
-msgstr ""
+msgstr "「ネイティオかんていじょ」にて、一度にすべての宝箱を鑑定できる機能を追加します。"
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:118
 msgid "Change the evolution system.\n"
@@ -2612,61 +2621,62 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:234
 #, python-brace-format
 msgid "Infinite recursion detected in pre evolutions for md entry {i}. "
-msgstr ""
+msgstr "md エントリ {i} の進化前において無限再帰が検出されました。 "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:243
 #, python-brace-format
 msgid "One of the monsters in the pre-evolution chain of monster ${i:04} has an invalid pre evolution configured: ${pre_evo:04}. Can not apply patch."
-msgstr ""
+msgstr "ポケモン ${i:04} の進化前チェーン内のポケモンの 1 つに、${pre_evo:04}という無効な進化前ポケモンが設定されています。パッチは適用できません。"
 
 #: skytemple-files/skytemple_files/patch/handler/change_ff_prop.py:52
 msgid "Changes and adds some properties for fixed floors.\n"
 "Removes restrictions. "
-msgstr ""
+msgstr "固定フロアのいくつかのプロパティを変更および追加し、制限を解除します。 "
 
 #: skytemple-files/skytemple_files/patch/handler/change_tbbg.py:48
 msgid "Provides support for editing textbox background color."
-msgstr ""
+msgstr "テキストボックスの背景色の編集に対応させます。"
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:55
 msgid "Then, who would you like to be?"
-msgstr ""
+msgstr "この なかから キミがなりたいとおもう\n"
+"ポケモンを えらんでくれ"
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:66
 msgid "Adds an extra menu during the personality test to choose the starter."
-msgstr ""
+msgstr "性格診断で主人公を選択するメニューを追加します。"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:106
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
-msgstr ""
+msgstr "[CS:S]コントロールモード：[CR] [CS:C]じどう[CR][CS:S][CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:109
 msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
-msgstr ""
+msgstr "[CS:S]コントロールモード：[CR] [CS:E]マニュアル[CR][CS:S][CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:121
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by End45 before applying this patch."
-msgstr ""
+msgstr "ダンジョン内でSTARTボタンを押すと、自動モードと手動モードを切り替えることができます。手動モードでは、仲間の行動をコントロールできます。 このパッチを適用するには、End45が作成した追加オーバーレイを適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/compress_iq_data.py:50
 msgid "Optimizes the way the list of IQ skills learnt by each IQ group is stored, removing the limit of max 25 skills per group."
-msgstr ""
+msgstr "各かしこさグループが習得できるかしこさリストの保存方法を最適化し、グループあたり最大25種類の制限を解除します。"
 
 #: skytemple-files/skytemple_files/patch/handler/disable_tips.py:49
 msgid "Disables the tip textboxes shown in dungeons at the beginning of the game."
-msgstr ""
+msgstr "ゲーム開始時にダンジョンに表示されるヒントメッセージを無効化します。"
 
 #: skytemple-files/skytemple_files/patch/handler/disarm_one_room_mh.py:44
 msgid "Disarms one-room Monster House floors, which can appear in cases like a layout generation failure. These floors will still be one giant room, but will no longer be Monster Houses."
-msgstr ""
+msgstr "レイアウト生成の失敗などの場合に現れる大部屋モンスターハウスを無効化します。これらのフロアは大部屋のままですが、モンスターハウスではなくなります。"
 
 #: skytemple-files/skytemple_files/patch/handler/dungeon_interrupt.py:50
 msgid "Implements dungeon interruptions. "
-msgstr ""
+msgstr "ダンジョンの中断を実装します。 "
 
 #: skytemple-files/skytemple_files/patch/handler/dynamic_bosses_everywhere.py:49
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
-msgstr ""
+msgstr "ゲームをクラッシュさせることなく、任意の固定フロアに特別な固定フロアエンティティ #124 -127 (たんけんたいのまの敵) を配置できます。"
 
 #: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
 msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
@@ -2683,7 +2693,9 @@ msgid "Expand the pokemon entries allowed to 2048, and makes all the entries ind
 "Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr ""
+msgstr "許可されるポケモンのエントリを2048に拡張し、すべてのエントリを独立させます。\n"
+"動作させるには、ChangeEvoSystem、ExternalizeWazaFile、ExternalizeMappaFile パッチが必要です。\n"
+"このパッチを適用する前にダンジョンエラーを修正し、ROMのバックアップを保存することを強く推奨します。"
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
@@ -2698,28 +2710,29 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/extra_space.py:50
 msgid "This patch adds a new overlay 36 to the game, which is loaded at address 0x023A7080 and provides extra space for patches to place code and data in."
-msgstr ""
+msgstr "このパッチは、ゲームに新たなoverlay36を追加します。 アドレス0x023A7080でロードされ、パッチ用のコードとデータを配置するスペースとして拡張します。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_anims.py:56
 msgid "Extracts animation data and put it in files. \n"
 "Needs ActorAndLevelLoader patch to free some space. "
-msgstr ""
+msgstr "アニメーションデータを抽出してファイルに入れます。 \n"
+"スペースを解放するには ActorAndLevelLoader のパッチが必要です。 "
 
 #: skytemple-files/skytemple_files/patch/handler/extract_bar_list.py:66
 msgid "Extracts Spinda bar's item list."
-msgstr ""
+msgstr "パッチールのカフェの道具リストを抽出します。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_dungeon_data.py:177
 msgid "Extracts the floor ranks, forbidden mission floors, items available in dungeon tables and put them in files. Provides support for reading them from the rom file system."
-msgstr ""
+msgstr "フロアランク、依頼に使用できないフロア、ダンジョンに落ちている道具を抽出し、ファイルに入れます。ROM ファイルシステムからの読み取りをサポートします。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_code.py:77
 msgid "Extracts item effects code and put it in files."
-msgstr ""
+msgstr "道具効果コードを抽出し、ファイルに入れます。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:65
 msgid "Extracts the hardcoded item lists, used for mission rewards/treasure boxes content as well as Kecleon shop items, and put them in files. Provides support for reading them from the rom file system."
-msgstr ""
+msgstr "依頼の報酬/宝箱のコンテンツやカクレオン商店の道具に使用されるハードコードされた道具リストを抽出し、ファイルに入れます。ROM ファイルシステムからの読み取りをサポートします。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:153
 msgid "Don't have enough space to put filenames! "
@@ -2727,7 +2740,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/extract_move_code.py:80
 msgid "Extracts move effects code and put it in files."
-msgstr ""
+msgstr "道具効果コードを抽出し、ファイルに入れます。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_sp_code.py:72
 msgid "Extracts special processes code and put it in files."
@@ -2737,7 +2750,9 @@ msgstr ""
 msgid "Implements Fairy-type specialized gummies. Uses unused item 138.\n"
 "Needs ExtractItemCode, ExtractBarItemList and AddTypes patches to be applied for this patch to work.\n"
 "Also, you'll need to reapply this if you apply AddTypes again. "
-msgstr ""
+msgstr "フェアリータイプの専用グミを追加します。未使用道具138を使用します。\n"
+"このパッチを機能させるには、ExtractItemCode、ExtractBarItemList、AddTypes パッチを適用する必要があります。\n"
+"また、AddTypes を再度適用する場合は、これを再度適用し直す必要があります。 "
 
 #: skytemple-files/skytemple_files/patch/handler/far_off_pal_overdrive.py:50
 msgid "Makes the game always move the PoV to your partners when they use moves or are attacked, even if the partner is only one tile away, when far-off pals is enabled. Recommended for CTC since the PoV stays on your last pokemon at the end of a manual movement round without this, and CTC already reduces the amount of time the game pauses for between PoV changes."
@@ -2745,15 +2760,16 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/fix_evolution.py:45
 msgid "Fixes the evolution glitch that freezes the game when attempting to evolve a pokémon whose name has 10 characters."
-msgstr ""
+msgstr "名前が10文字のポケモンを進化させようとするとゲームがフリーズするバグを修正します。"
 
 #: skytemple-files/skytemple_files/patch/handler/fix_memory_softlock.py:47
 msgid "If the game runs out of memory trying to load a sprite, a default one will be used instead, preventing the crash."
-msgstr ""
+msgstr "ゲームがスプライトを読み込もうとしてメモリ不足になった時、代わりにデフォルトのスプライトを使用しクラッシュを防ぎます。"
 
 #: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:49
 msgid "Fixes an issue that causes saving to fail on the No$GBA emulator. Warning: Causes saving to fail on the MelonDS emulator instead."
-msgstr ""
+msgstr "No$GBA エミュレータでセーブに失敗する問題を修正します。\n"
+"注意: 代わりに MelonDs エミュレータで保存が失敗します。"
 
 #: skytemple-files/skytemple_files/patch/handler/move_growth.py:176
 msgid "Implements move growth (PoC/Unfinished). \n"
@@ -2766,19 +2782,20 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
 msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."
-msgstr ""
+msgstr "技のショートカット (L+A) を GtI や Super (L+A/B/X/Y) のようなショートカット機能に置き換えます。このパッチを適用する前に ExtraSpace パッチを適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/negative_enemy_density.py:49
 msgid "Makes negative enemy density values work as intended (the absolute value of the density is used, without adding a random variation)."
-msgstr ""
+msgstr "敵の密度の負の値が意図したとおりに機能するようにします。\n"
+"(密度の絶対値が使用されます。ランダムな変化は加えず、固定の数値として扱われます。)"
 
 #: skytemple-files/skytemple_files/patch/handler/no_weather_stop.py:51
 msgid "Changes weather damage messages so they don't make the player stop running."
-msgstr ""
+msgstr "天候によるダメージメッセージを変更し、プレイヤーの動作を停止しないようにします。"
 
 #: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
 msgid "Extracts the object table to a separate file in the ROM."
-msgstr ""
+msgstr "オブジェクトテーブルを ROM 内の別のファイルに抽出します。"
 
 #: skytemple-files/skytemple_files/patch/handler/partners_trigger_hidden_traps.py:50
 msgid "Recommended for CTC. Without this patch, partners cannot trigger hidden traps - this balances the game, as making your partners dodge traps with manual movement is easy, but this patch is not recommended for mods which use pitfall traps, as they instakill partners which step on them."
@@ -2786,16 +2803,17 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
 msgid "Changes implementation of idle animation to an editable table."
-msgstr ""
+msgstr "アイドルアニメーションの実装を編集可能なテーブルに変更します。"
 
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:44
 msgid "[string:0] pushed [string:1]!"
-msgstr ""
+msgstr "[string:0]は [string:1]を おした！"
 
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:55
 msgid "Implements pushing allies in dungeons.\n"
 "Uses the same command style as PSMD"
-msgstr ""
+msgstr "ダンジョンで仲間を押す機能を実装します。\n"
+"ポケモン超不思議のダンジョンと同じコマンドを使用します。"
 
 #: skytemple-files/skytemple_files/patch/handler/reduce_jumpcut_pause_time.py:50
 msgid "Reduces the amount of time the game pauses for before changing the PoV, like when far-off pals is enabled, from 60 frames to 12. This is already applied in the CTC hack."
@@ -2803,54 +2821,59 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:49
 msgid "Allows the partner to be of the same type as the player in the personality test."
-msgstr ""
+msgstr "性格診断のパートナーの選択肢に主人公と同じタイプのポケモンを追加します。"
 
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:47
 msgid "Who would you like to be?"
-msgstr ""
+msgstr "この なかから キミがなりたいとおもう\n"
+"ポケモンを えらんでくれ"
 
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
 msgid "Skips the quiz, only leaving the gender question.\n"
 "Needs ChooseStarter patch to be applied. "
-msgstr ""
+msgstr "性格診断をスキップし、性別を訪ねる質問のみ残します。\n"
+"パッチ ChooseStarter を適用する必要があります。 "
 
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
-msgstr ""
+msgstr "技の能力表示を☆表示からバーに置き換えます。\n"
+"markfont.dat ファイルが変更されている場合、このパッチは互換性がない場合があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/support_atupx.py:51
 msgid "Provide support for ATUPX containers, which use a different algorithm than PX compression.\n"
 "Requires the ActorAndLevelLoader, as it frees the space needed to implement this."
-msgstr ""
+msgstr "PX 圧縮とは異なるアルゴリズムを使用する ATUPX コンテナのサポートを提供します。\n"
+"これを実装するのに必要なスペースを解放するため、パッチ ActorAndLevelLoader を適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
-msgstr ""
+msgstr "ダンジョンの未使用の確率を修正します。これにより、フロアに壁の迷路部屋が出現する確率が決まるようになります。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:230
 #: skytemple-files/skytemple_files/patch/patches.py:240
 #, python-brace-format
 msgid "The patch '{name}' was not found."
-msgstr ""
+msgstr "パッチ '{name}' が見つかりません。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:249
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
-msgstr ""
+msgstr "'{name}' を適用する前に、パッチ '{patch_name}' を適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:258
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
-msgstr ""
+msgstr "'{name}' を適用する前に、パッチ '{patch_name}' を適用する必要があります。\n"
+"このパッチは見つかりませんでした。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:269
 msgid "No configuration was given."
-msgstr ""
+msgstr "設定は行われませんでした。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:274
 msgid "Missing configuration value."
-msgstr ""
+msgstr "設定値がありません。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:280
 #: skytemple-files/skytemple_files/patch/patches.py:286
@@ -2858,84 +2881,84 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/patches.py:300
 #: skytemple-files/skytemple_files/patch/patches.py:317
 msgid "Invalid configuration value."
-msgstr ""
+msgstr "無効な設定値です。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:288
 msgid "Must be >= {}."
-msgstr ""
+msgstr "値は {} 以上である必要があります。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:294
 msgid "Must be <= {}."
-msgstr ""
+msgstr "値は {} 以下である必要があります。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:409
 msgid "config.xml missing in patch package."
-msgstr ""
+msgstr "パッチパッケージに config.xml が見つかりません。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:412
 msgid "Syntax error in the config.xml while reading patch package."
-msgstr ""
+msgstr "パッチパッケージの読み込み中に config.xml の構文エラーが発生しました。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:425
 msgid "patch.py missing in patch package."
-msgstr ""
+msgstr "パッチパッケージに patch.py が見つかりません。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:428
 msgid "The patch.py of the patch package contains a syntax error."
-msgstr ""
+msgstr "パッチパッケージの patch.py に構文エラーがあります。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:436
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
-msgstr ""
+msgstr "パッチパッケージの patch.py に 'PatchHandler' が含まれていません。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:445
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
-msgstr ""
+msgstr "パッチパッケージの config.xml にハンドラーのパッチ名のエントリが含まれていません。"
 
 #: skytemple-files/skytemple_files/patch/patches.py:457
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
-msgstr ""
+msgstr "設定にハンドラ '{handler.name}' のパッチが見つかりません。"
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "Unknown or extra XML element '{}' in scene data."
-msgstr ""
+msgstr "シーンデータに不明または余分な XML 要素 '{}' があります。"
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:110
 msgid "'{}' missing in scene data."
-msgstr ""
+msgstr "シーンデータに '{}' がありません。"
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:470
 msgid "The event ID {} is out of bounds for one of the triggers."
-msgstr ""
+msgstr "イベント ID {} は、いずれかのトリガーの範囲外です。"
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:558
 msgid "Unknown direction value."
-msgstr ""
+msgstr "方向値が不明です。"
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:58
 msgid "Can not save a scene event without a defined triggered script."
-msgstr ""
+msgstr "シーンイベントを保存するには、定義済みのトリガースクリプトが必要です。"
 
 #: skytemple-files/skytemple_files/script/ssb/constants.py:99
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
-msgstr ""
+msgstr "ダンジョンモードが無効です: {string}"
 
 #: skytemple-files/skytemple_files/script/ssb/constants.py:266
 #: skytemple-files/skytemple_files/script/ssb/constants.py:267
 #, python-brace-format
 msgid "Unknown constant {constant_as_string}."
-msgstr ""
+msgstr "不明な定数 {constant_as_string}。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:155
 msgid "The routine data lists for the decompiler must have the same lengths."
-msgstr ""
+msgstr "逆コンパイラのルーチンデータリストは同じ長さである必要があります。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:172
 #, python-brace-format
 msgid "Routine {i} not found."
-msgstr ""
+msgstr "ルーチン {i} が見つかりません。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:196
 msgid "The script must contain exactly {len(self.rom_data.script_data.common_routine_info)} coroutines."
@@ -2948,7 +2971,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:212
 #, python-brace-format
 msgid "Unknown coroutine {err}"
-msgstr ""
+msgstr "不明なコルーチン {err}"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:228
 msgid "Coroutines and regular routines can not be mixed in a script file."
@@ -3078,27 +3101,27 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:52
 msgid "SWDL file too short (SwdlPcmdLen EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (SwdlPcmdLen EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:139
 msgid "SWDL file too short (Header EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (Header EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:144
 msgid "Invalid SWDL/Header header."
-msgstr ""
+msgstr "SWDL/Header ヘッダーが無効です。"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:250
 msgid "Swdl read error (inconsistent Wavi length)"
-msgstr ""
+msgstr "Swdl 読み込みエラー (Wavi 長さ不一致)"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:284
 msgid "Swdl read: Invalid sample data"
-msgstr ""
+msgstr "Swdl 読み込み: 無効なサンプルデータ"
 
 #: skytemple-rust/src/dse/st_swdl/wavi.rs:105
 msgid "SWDL file too short (Sample Table EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (Sample Table EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/wavi.rs:262
 #: skytemple-rust/src/dse/st_swdl/wavi.rs:281
@@ -3116,27 +3139,31 @@ msgstr "SWDL Wavi の長さが無効です。読み込み時にEOFを超えて�
 #: skytemple-rust/src/image/tiled.rs:230
 msgid "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
-msgstr ""
+msgstr "インポートした画像が複雑すぎます。ユニークタイルが多すぎます ({}、最大 1024) 。\n"
+"ユニークタイルを少なくしてください。ユニークタイルとは、画像の 8 x 8 のセクションで、画像内の他の場所に存在しないタイルのことです (反転したタイルや、別のサブパレットを使ったタイルを含む) 。"
 
 #: skytemple-rust/src/python_image.rs:53
 msgid "The image you provided is not an indexed image (it has no palette). Please convert it to an indexed image (with a maximum of {} colors) and try again."
-msgstr ""
+msgstr "入力された画像はインデックス付き画像ではありません (パレットはありません)。インデックス付きの画像 (最大 {} 色) に変換して、もう一度試してください。"
 
 #: skytemple-rust/src/romfs.rs:100
 msgid "ROM Header checksum does not match contents."
-msgstr ""
+msgstr "ROMヘッダチェックサムが内容と一致しません。"
 
 #: skytemple-rust/src/romfs.rs:109
 msgid "Error reading the filesystem from ROM: {}"
-msgstr ""
+msgstr "ROM からのファイルシステムの読み取り中にエラーが発生しました。\n"
+"{}"
 
 #: skytemple-rust/src/st_bma.rs:468
 msgid "Can not import map background: Width of both images must match the current map width: {}px"
-msgstr ""
+msgstr "マップの背景をインポートできません。\n"
+"両方の画像の幅は現在のマップの幅 ({} px) と一致する必要があります。"
 
 #: skytemple-rust/src/st_bma.rs:480
 msgid "Can not import map background: Height of both images must match the current map width: {}px"
-msgstr ""
+msgstr "マップの背景をインポートできません。\n"
+"両方の画像の高さは現在のマップの幅 ({} px) と一致する必要があります。"
 
 #: skytemple-rust/src/st_bpc.rs:539
 msgid "new tilemapping for this chunk must contain {} tiles."
@@ -3170,11 +3197,12 @@ msgstr ""
 #: skytemple-rust/src/st_kao.rs:97
 msgid "This portrait does not compress well, the result size is greater than 800 bytes ({} bytes total).\n"
 " If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
-msgstr ""
+msgstr "この顔グラフィックは圧縮できません。結果のサイズが 800 バイト (合計 {} バイト) を超えています。\n"
+"最適化された圧縮アルゴリズム 'ProvideATUPXSupport' を適用することで、より適切に圧縮できる可能性があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/export_quiz_xml.py:99
 msgid "A question must contain two XML sub-nodes: {}, {}"
-msgstr ""
+msgstr "質問には {}、{} という 2 つの XML サブノードが含まれている必要があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:117
 msgid "Error"
@@ -3184,59 +3212,102 @@ msgstr "エラー"
 msgid "_OK"
 msgstr "OK(_O)"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:106
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:109
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
-msgstr ""
+msgstr "「ポケモン不思議のダンジョン 空の探検隊」のROMの様々な要素をランダム化するアプリケーション。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 msgid "New version available: {version}"
-msgstr ""
+msgstr "新しいバージョンが利用可能です: {version}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
-msgstr ""
+msgstr "今すぐ更新"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:26
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:40
 msgid "Search"
 msgstr "検索"
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:109
+msgid "This will stop the randomization process and allow you to change settings again."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:111
+msgid "Cancel randomization?"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:113
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
+msgid "_No"
+msgstr "いいえ(_N)"
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:114
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:153
+msgid "_Yes"
+msgstr "はい(_Y)"
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:152
+msgid "Error while opening file ({})."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:158
+msgid "The path of the ROM file needs to end in '.nds'."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:170
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:203
+msgid "Randomizing... ({}%)"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:227
+msgid "Randomizing failed!"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:228
+msgid "Error: {}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
+msgid "Randomizing complete!"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Randomization Progress"
-msgstr ""
+msgstr "進行状況"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:54
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:67
 msgid "Select Output File & Start Randomization"
-msgstr ""
+msgstr "出力先を選択してランダマイズ"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:101
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:122
 msgid "Input ROM"
-msgstr ""
+msgstr "ROM を読み込む"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:107
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:129
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:152
 msgid "Open Folder in File Browser"
-msgstr ""
+msgstr "ファイルブラウザーでフォルダーを開く"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:123
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:145
 msgid "Output ROM"
-msgstr ""
+msgstr "ROM を出力"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:146
 msgid "(Not yet chosen.)"
-msgstr ""
+msgstr "(選択されていません)"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:148
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:171
 msgid "Game Region"
-msgstr ""
+msgstr "リージョン"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:163
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:186
 msgid "Randomizer Version"
-msgstr ""
+msgstr "ランダマイザーバージョン"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:178
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:201
 msgid "Seed"
-msgstr ""
+msgstr "Seed"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"
@@ -3244,45 +3315,46 @@ msgstr "SkyTemple について"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
 msgid "_Dungeons"
-msgstr ""
+msgstr "ダンジョン(_D)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:18
 msgid "Randomization Mode"
-msgstr ""
+msgstr "ランダマイズモード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:25
 msgid "Fully random"
-msgstr ""
+msgstr "完全ランダム"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:26
 msgid "Consistent per Dungeon"
-msgstr ""
+msgstr "ダンジョン毎"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:37
 msgid "Specify if you want to randomize dungeon floors fully random or if you want to have some aspects of floors in a dungeon the same.\n"
 "If you choose \"Consistent per Dungeon\" aspects like the music and tileset will be the same for all floors of a dungeon."
-msgstr ""
+msgstr "ダンジョンのフロアを完全にランダム化するか、一部の要素のみ同じにするかを指定します。\n"
+"「ダンジョン毎」を選択すると、BGMやタイルセットなどはダンジョン毎にすべてのフロアで同じになります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:56
 msgid "Randomization Settings"
-msgstr ""
+msgstr "ランダマイズ設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:76
 msgid "Chance Thresholds"
-msgstr ""
+msgstr "確率しきい値"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:100
 msgid "Per-Dungeon Settings"
-msgstr ""
+msgstr "各ダンジョンの設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:14
 msgid "Random Weather Chance"
-msgstr ""
+msgstr "ランダム天気の確率"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:15
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:49
@@ -3292,228 +3364,244 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:172
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:208
 msgid "in percent (%)"
-msgstr ""
+msgstr "パーセント (%)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:33
 msgid "Chance of applying a random weather that isn't \"clear\" to each floor. If the chance doesn't pass, \"clear\" weather will be used instead.\n"
 "This is only relevant if weather randomization is enabled."
-msgstr ""
+msgstr "各フロアにランダムな天気を適用する確率。確率から外れた場合、天気は「はれ」が適用されます。\n"
+"これは天候のランダム化が有効な場合にのみ反映されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:48
 msgid "Max. Monster House Chance"
-msgstr ""
+msgstr "モンスターハウス最大スポーン率"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:67
 msgid "Monster house chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "モンスターハウスのスポーン率は 0% からこの値までの範囲でランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:81
 msgid "Max. Hidden Stairs Chance"
-msgstr ""
+msgstr "ひみつのかいだん最大スポーン率"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:100
 msgid "Hidden stairs chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "ひみつのかいだんのスポーン率は 0% からこの値までの範囲でランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:114
 msgid "Max. Kecleon Shop Chance"
-msgstr ""
+msgstr "カクレオンのみせ最大スポーン率"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:133
 msgid "Kecleon shop chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "カクレオンのみせのスポーン率は 0% からこの値までの範囲でランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:147
 msgid "Max. Sticky Item Chance"
-msgstr ""
+msgstr "ネバついた道具最大スポーン率"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:166
 msgid "Sticky item chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "ネバついた道具のスポーン率は 0% からこの値までの範囲でランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:41
 msgid "Unlock at Start"
-msgstr ""
+msgstr "最初から解禁"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:43
 msgid "Randomize IQ"
-msgstr ""
+msgstr "かしこさをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:45
 msgid "Spawn Monster Houses"
-msgstr ""
+msgstr "モンスターハウス"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:47
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:39
 msgid "Randomize Weather"
-msgstr ""
+msgstr "天気をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:49
 msgid "Randomize"
-msgstr ""
+msgstr "ランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:133
 msgid "Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.\n"
 "You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked.\n"
 "Please note that entering story dungeons prematurely can mess with the game's story progression."
-msgstr ""
+msgstr "ランダム化の影響を受けるダンジョンと、天気をランダム化するかどうかを決めることができます。\n"
+"ダンジョンのモンスターハウスを無効にすることもでき、ゲームの序盤に行くことになるダンジョンは無効化することを推奨します。また、ダンジョンを強制的にアンロックすることもできます。\n"
+"本来と異なる順番でストーリーダンジョンに突入した場合、ストーリーの進行に影響を及ぼす可能性があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:227
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:308
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:155
 msgid "Failed to import: Error while opening file ({})."
-msgstr ""
+msgstr "インポートに失敗しました。ファイルを開く際にエラーが発生しました ({})。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:240
 msgid "Missing dungeon ID in CSV"
-msgstr ""
+msgstr "CSV にダンジョン ID が見つかりません。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:276
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
-msgstr ""
+msgstr "インポートに失敗しました。CSVがエクスポートボタンに書かれた形式と同じであることを確認してください。\n"
+"詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:309
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:361
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:206
 msgid "Failed to export: Error while opening file ({})."
-msgstr ""
+msgstr "エクスポートに失敗しました。ファイルを開く際にエラーが発生しました ({})。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:364
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:377
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:222
 msgid "Failed to export. Details: {}"
-msgstr ""
+msgstr "エクスポートに失敗しました。\n"
+"詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:371
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:231
 msgid "Import from CSV"
-msgstr ""
+msgstr "CSV からインポート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:375
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:235
 msgid "Export to CSV"
-msgstr ""
+msgstr "CSV にエクスポート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:14
 msgid "Randomize Layouts, Tilesets and Music"
-msgstr ""
+msgstr "レイアウト、タイルセット、BGMをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:25
 msgid "Whether or not to randomize general aspects of the dungeon's layout. This also includes tileset and music and most general settings."
-msgstr ""
+msgstr "ダンジョンレイアウトの一般的なプロパティをランダム化するかどうか。\n"
+"これには、タイルセットとBGM、およびほとんどの一般的な設定も含まれます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:50
 msgid "Whether or not to randomize weather. The chances of this occurring can be changed under 'Chance Thresholds'."
-msgstr ""
+msgstr "天気をランダム化するかどうか。\n"
+"このオプションが適用される確率は「確率しきい値」で変更できます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:64
 msgid "Randomize Dungeon Items"
-msgstr ""
+msgstr "ダンジョンに落ちている道具をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:75
 msgid "Whether or not to randomize items on the floor, in dungeon shops, in monster houses and buried."
-msgstr ""
+msgstr "フロアに落ちている道具、ダンジョン内の店の商品、モンスターハウス、壁に埋もれている道具をランダム化するかどうか。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:89
 msgid "Randomize Pokémon Spawns"
-msgstr ""
+msgstr "ポケモンのスポーンをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:100
 msgid "Whether or not to randomize Pokémon spawns. Levels of Pokémon on a floor are randomized to be -/+3 of the original game's weakest/strongest Pokémon on the floor."
-msgstr ""
+msgstr "ポケモンのスポーンをランダム化するかどうか。\n"
+"フロアにいるポケモンのレベルは、元のゲームでフロアにいる最も低レベル/最も高レベルのポケモンの-3/+3になるようにランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:114
 msgid "Randomize Traps"
-msgstr ""
+msgstr "罠のランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:125
 msgid "Whether or not to randomize traps and Wonder Tile spawn chances."
-msgstr ""
+msgstr "罠とふしぎなゆかのスポーン率をランダム化するかどうか。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:139
 msgid "Randomize Boss Room Layouts"
-msgstr ""
+msgstr "ボス部屋のレイアウトをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:150
 msgid "Whether or not to replace all boss fight rooms with randomly generated room layouts.\n\n"
 "THIS MAY BE UNBALANCED OR UNSTABLE."
-msgstr ""
+msgstr "すべてのボス部屋をランダムに生成されたレイアウトに置き換えるかどうか。\n\n"
+"※バランスが取れていない、もしくは不安定である可能性があります"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:168
 msgid "Floor Count"
-msgstr ""
+msgstr "フロア数"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:171
 msgid "Max. Removal of Floors"
-msgstr ""
+msgstr "フロア数の最大削除量"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:191
 msgid "Maximum amount of change in floor count in the lower direction (eg. if this is 10%, a dungeon can have up to 10% less floors).\n"
 "A dungeon will never have less than 1 floor.\n"
 "This setting has no effect if layouts are not randomized."
-msgstr ""
+msgstr "フロア数を減らす最大変化量。例えば、これが 10% の場合、ダンジョンのフロア数は最大 10% 少なくなります。\n"
+"ダンジョンのフロア数が 1F 未満になることはありません。\n"
+"レイアウトのランダム化が有効化されていない場合、この設定は適用されません。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:207
 msgid "Max. Addition of Floors"
-msgstr ""
+msgstr "フロア数の最大追加量"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:227
 msgid "Maximum amount of change in floor count in the upper direction (eg. if this is 10%, a dungeon can have up to 10% more floors).\n"
 "A dungeon will never have more than 99 floors.\n"
 "This setting has no effect if layouts are not randomized."
-msgstr ""
+msgstr "フロア数を増やす最大変化量。例えば、これが 10% の場合、ダンジョンのフロア数は最大 10% 増えます。\n"
+"ダンジョンのフロア数が 99F を超えることはありません。\n"
+"レイアウトのランダム化が有効化されていない場合、この設定は適用されません。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:14
 msgid "Randomize Explorer Rank Unlocks"
-msgstr ""
+msgstr "探検隊ランクの必要ポイント量をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:25
 msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."
-msgstr ""
+msgstr "有効にすると、探検隊ランクの必要ポイント量がランダム化されます。\n"
+"マスターランクの上限は最大200000ポイントになります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:39
 msgid "Randomize Explorer Rank Rewards"
-msgstr ""
+msgstr "探検隊ランク報酬をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:50
 msgid "If enabled, Explorer Ranks give random items as rewards upon unlocking a new level."
-msgstr ""
+msgstr "有効にすると、探検隊ランクが上がった時にランダムな道具が報酬として貰えます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items.py:143
 msgid "Only these items will spawn on dungeon floors."
-msgstr ""
+msgstr "ダンジョンのフロアにはこれらの道具のみがスポーンします。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items_categories.py:149
 msgid "Controls weight biases when randomizing items.\n"
 "A higher multiplier compared to other categories means that items from that category are more likely to spawn than others.\n\n"
 "This only applies to the 'Balanced' item algorithm!"
-msgstr ""
+msgstr "道具をランダム化する際のウェイトバイアスを制御します。\n"
+"他のカテゴリーと比べて乗数が高いほど、そのカテゴリーの道具は他のカテゴリーよりもスポーンする可能性が高くなります。\n\n"
+"※アルゴリズムを「バランス」に設定した時のみ適用されます"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:109
 msgid "Tactics & IQ"
-msgstr "さくせん & かしこさ"
+msgstr "作戦 & かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
 msgid "_Pokémon"
-msgstr ""
+msgstr "ポケモン(_P)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:18
 msgid "Allowed Pokémon"
-msgstr ""
+msgstr "許可されたポケモン"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:38
 msgid "Randomize Starters"
-msgstr ""
+msgstr "主人公・パートナーをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:47
 msgid "Configure which starters are available"
-msgstr ""
+msgstr "利用可能な主人公・パートナーの設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:60
 msgid "Randomize NPCs and Bosses"
-msgstr ""
+msgstr "NPC・ボスをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:71
 msgid "If enabled all NPCs are randomized and all mentions of them\n"
@@ -3522,7 +3610,13 @@ msgid "If enabled all NPCs are randomized and all mentions of them\n"
 "Boss fights, Guest Pokémon, Special Episode Player Characters\n\n"
 "*: Some additional text in the game may also be affected  \n"
 "(eg. some item names)."
-msgstr ""
+msgstr "有効にすると、すべての NPC がランダム化され、スクリプト中のセリフにも変更された内容が適用されます。\n"
+"以下のものもランダム化されます。\n"
+"・各種ボス\n"
+"・途中加入ポケモン\n"
+"・スペシャルエピソードの主人公\n\n"
+"※ゲーム内の追加テキストの一部にも影響を受ける可能性があります  \n"
+"(一部のアイテム名など)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:93
 msgid "Moves"
@@ -3530,126 +3624,127 @@ msgstr "わざ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:96
 msgid "Randomize Movesets"
-msgstr ""
+msgstr "レベル習得技をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:116
 msgid "Randomize TMs/HMs"
-msgstr ""
+msgstr "技マシンの内容をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:127
 msgid "If enabled TMs and HMs will contain random moves from the move pool."
-msgstr ""
+msgstr "有効にすると、技マシンが技プールから選ばれた内容でランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:141
 msgid "Move Pool"
-msgstr ""
+msgstr "技プール"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:163
 msgid "Additional Pokémon Properties"
-msgstr ""
+msgstr "ポケモンの追加プロパティ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:166
 msgid "Randomize Abilities"
-msgstr ""
+msgstr "特性をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:175
 msgid "Configure which abilities are available"
-msgstr ""
+msgstr "特性の設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:188
 msgid "Randomize Typings"
-msgstr ""
+msgstr "タイプをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:196
 msgid "Tactics &amp; IQ"
-msgstr ""
+msgstr "作戦 &amp; かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:147
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:199
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:148
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:155
 msgid "Reset to Default"
-msgstr ""
+msgstr "デフォルトに戻す"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:151
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:203
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:152
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:160
 msgid "Select None"
-msgstr ""
+msgstr "選択を解除"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:207
 msgid "Copy from \"Allowed Pokémon\""
-msgstr ""
+msgstr "「許可されたポケモン」からコピー"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:209
 msgid "Copy from Starters"
-msgstr ""
+msgstr "主人公ポケモンからコピー"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:220
 msgid "Only the Pokémon selected will be used for any randomization option."
-msgstr ""
+msgstr "ランダム化オプションでは、選択したポケモンのみが使用されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:224
 msgid "Only the Pokémon selected can appear as random starter options.\n"
 "They also need to be in the list of \"Allowed Pokémon\"."
-msgstr ""
+msgstr "選択したポケモンのみがランダムな主人公ポケモンとして表示されます。\n"
+"また、「許可されたポケモン」のリストに含まれている必要があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:161
 msgid "Only the moves selected will be used for any movesets or TM/HM randomization."
-msgstr ""
+msgstr "習得技や技マシンのランダム化には、選択した技のみが使用されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:14
 msgid "Randomize Level-Up Movesets"
-msgstr ""
+msgstr "レベル習得技をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:25
 msgid "If enabled then what moves Pokémon can learn by level-up is randomized."
-msgstr ""
+msgstr "有効にすると、ポケモンがレベルアップによって習得できる技がランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:39
 msgid "First Move Restrictions"
-msgstr ""
+msgstr "最初から覚えている技の制限"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:48
 msgid "Must deal damage"
-msgstr ""
+msgstr "攻撃技必須"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:49
 msgid "Must be STAB"
-msgstr ""
+msgstr "タイプ一致必須"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:60
 msgid "Configure additional restrictions for a Pokémon's first move."
-msgstr ""
+msgstr "ポケモンが最初に覚える技に追加の制限を設定します。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:78
 msgid "Randomize TM/HM Movesets"
-msgstr ""
+msgstr "技マシン習得技をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:89
 msgid "If enabled then what Pokémon can learn which TMs/HMs is randomized."
-msgstr ""
+msgstr "有効にすると、ポケモンが使用できる技マシンと習得できる技がランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.py:77
 msgid "Dungeon music randomization can be enabled or disabled with the dungeon layout randomization setting."
-msgstr ""
+msgstr "ダンジョンBGMのランダム化は、ダンジョンレイアウトのランダム化設定で有効または無効にできます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:14
 msgid "Randomize Titlescreen Music"
-msgstr ""
+msgstr "タイトル画面のBGMをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:25
 msgid "If enabled, the music that plays on the titlescreen is randomized."
-msgstr ""
+msgstr "有効にすると、タイトル画面で再生されるBGMがランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:39
 msgid "Randomize Overworld Music"
-msgstr ""
+msgstr "オーバーワールドBGMをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:50
 msgid "If enabled, the music that plays outside of dungeons is randomized (for the most part)."
-msgstr ""
+msgstr "有効にすると、ダンジョンの外で再生されるBGMのほとんどがランダム化されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:91
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:99
@@ -3657,133 +3752,142 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:121
 msgid "Installs the patch '{}' by {}:\n"
 "{}"
-msgstr ""
+msgstr "パッチ '{}' を適用します。 (by {})\n"
+"{}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:108
 msgid "Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle. Patch by Cipnit."
-msgstr ""
+msgstr "ダンジョンでチームメンバーを手動でコントロールできるパッチを適用します。STARTボタンを押すと切り替わります。\n"
+"作成者: Cipinit"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:14
 msgid "Apply \"MoveShortcuts\" Patch"
-msgstr ""
+msgstr "\"MoveShortcuts\" パッチを適用"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:37
 msgid "Apply \"UnusedDungeonPatch\" Patch"
-msgstr ""
+msgstr "\"UnusedDungeonPatch\" パッチを適用"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:60
 msgid "Apply \"Complete Team Control\" Patch"
-msgstr ""
+msgstr "\"Complete Team Control\" パッチを適用"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:83
 msgid "Apply \"Disarm Monster Houses\" Patch"
-msgstr ""
+msgstr "\"Disarm Monster Houses\" パッチを適用"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:106
 msgid "Apply \"Fix Memory Softlock\" Patch"
-msgstr ""
+msgstr "\"Fix Memory Softlock\" パッチを適用"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:14
 msgid "Personality Quiz Mode"
-msgstr ""
+msgstr "性格診断モード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:21
 msgid "Default: Ask for Personality"
-msgstr ""
+msgstr "デフォルトの性格診断"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:22
 msgid "Ask + Allow Selection"
-msgstr ""
+msgstr "質問 + 選択を許可"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:23
 msgid "Select Manually"
-msgstr ""
+msgstr "手動で選択"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:34
 msgid "Change the behaviour of the hero starter selection in the personality test, using patches by an anonymous contributor.\n"
 "You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely.\n"
 "Please note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again."
-msgstr ""
+msgstr "\"匿名の投稿者\"によるパッチを使用し、性格診断における主人公ポケモン選択処理を変更する必要があります。\n"
+"主人公ポケモンを選ぶための性格診断を受けるか (ゲームのデフォルト)、その後に別の主人公ポケモンを選ぶか、性格診断を完全に削除するかを選択できます。\n"
+"デフォルト以外のオプションを選択した場合、ROM を再度ランダム化しても削除できなくなる場合があることに注意してください。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:50
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:20
 msgid "Randomize Personality Quiz"
-msgstr ""
+msgstr "性格診断のランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:61
 msgid "If enabled, the personality quiz questions will be randomized.\n"
 "You need to define at least two answers, 2-4 answers will be randomly picked."
-msgstr ""
+msgstr "有効にすると、性格診断の質問がランダム化されます。\n"
+"少なくとも2つの回答を定義する必要があります。2〜4個の回答がランダムに選ばれます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:76
 msgid "Include Vanilla Question"
-msgstr ""
+msgstr "元のゲームの質問を含める"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:88
 msgid "If enabled, the questions from the base game will also be included in the pool of possible questions."
-msgstr ""
+msgstr "有効にすると、元のゲームの質問がプールに含まれます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:98
 msgid "Edit Question"
-msgstr ""
+msgstr "質問を編集"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:149
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:99
 msgid "Question"
-msgstr ""
+msgstr "質問"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:165
 msgid "Answers"
-msgstr ""
+msgstr "回答"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:170
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:235
 msgid "Answer"
-msgstr ""
+msgstr "回答"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:226
 msgid "Remove Question"
-msgstr ""
+msgstr "質問を削除"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:250
 msgid "Add Answer"
-msgstr ""
+msgstr "回答を追加"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:271
 msgid "Remove Answer"
-msgstr ""
+msgstr "回答を削除"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:328
 msgid "Failed to import. Make sure your XML matches the same format as with the export button. Details: {}"
-msgstr ""
+msgstr "インポートに失敗しました。XML がエクスポートボタンに書かれた形式と同じであることを確認してください。\n"
+"詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:385
 msgid "Import questions from XML"
-msgstr ""
+msgstr "XML から質問をインポート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:390
 msgid "Export questions to XML"
-msgstr ""
+msgstr "質問を XML にエクスポート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:88
 msgid "Questions"
-msgstr ""
+msgstr "質問"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:16
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:40
 msgid "Add question"
-msgstr ""
+msgstr "質問を追加"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:99
 msgid "Failed to load settings: Error while opening file ({})."
-msgstr ""
+msgstr "設定の読み込みに失敗しました。\n"
+"ファイル ({}) を開く際にエラーが発生しました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:112
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
-msgstr ""
+msgstr "インポートしようとした設定ファイルは無効です。\n"
+"{}:\n"
+"{}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:121
 msgid "Settings loaded!"
@@ -3791,11 +3895,12 @@ msgstr "設定を読み込みました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:154
 msgid "Failed to save settings: Error while opening file ({})."
-msgstr ""
+msgstr "設定の保存に失敗しました。\n"
+"ファイルを開く際にエラーが発生しました ({})。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:162
 msgid "The path of the settings file needs to end in '.json'."
-msgstr ""
+msgstr "設定ファイルのパスは「.json」で終了する必要があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:184
 msgid "Settings saved!"
@@ -3803,23 +3908,23 @@ msgstr "設定を保存しました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:16
 msgid "Backup &amp; Share Randomization Settings"
-msgstr ""
+msgstr "バックアップ &amp; 共有ランダム化設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:23
 msgid "Load from File"
-msgstr ""
+msgstr "ファイルを読み込む"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:32
 msgid "Save to File"
-msgstr ""
+msgstr "ファイルへ保存"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:45
 msgid "Basic Settings"
-msgstr ""
+msgstr "基本設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
 msgid "Randomization Seed"
-msgstr ""
+msgstr "ランダム化 Seed"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
 msgid "Use Native File Handlers"
@@ -3829,68 +3934,76 @@ msgstr "ネイティブファイルハンドラーを使用"
 msgid "If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\n"
 "This can affect the random values rolled during the randomization.\n\n"
 "This should only be disabled if you run into issues."
-msgstr ""
+msgstr "有効にすると、ランダマイザーはより高速な実装を使用してROM内のファイルを操作します。\n"
+"これはランダム化時に使用されるランダムな値に影響を与える可能性があります。\n\n"
+"この設定は問題が発生した場合にのみ、無効化してください。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:14
 msgid "Randomize Pokémon's IQ Groups"
-msgstr ""
+msgstr "ポケモンのかしこさグループをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:25
 msgid "Assigns all Pokémon in the game a random IQ group."
-msgstr ""
+msgstr "すべてのポケモンにランダムなかしこさグループを割り当てます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:39
 msgid "Randomize IQ Gain"
-msgstr ""
+msgstr "グミの好物をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:50
 msgid "If enabled, the amount of belly the gummies fill and the amount of IQ they give are fully random for each type."
-msgstr ""
+msgstr "有効にすると、グミを食べた時に回復するおなかの量とかしこさの量が各タイプの好物ごとにランダムになります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:66
 msgid "IQ Skills"
-msgstr ""
+msgstr "かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:69
 msgid "Randomize IQ Skill Unlocks"
-msgstr ""
+msgstr "習得に必要なかしこさ値をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:80
 msgid "If enabled, IQ skills are unlocked at random IQ amounts. Item Master is always unlocked."
-msgstr ""
+msgstr "有効にすると、ランダムなかしこさ値でかしこさを習得します。\n"
+"どうぐマスターのみ、最初から習得します。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:94
 msgid "Keep Universal Skills"
-msgstr ""
+msgstr "汎用かしこさを維持"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:106
 msgid "If enabled, all skills that are included in all groups in the base game will also be added to all groups when randomizing.\n"
 "On top of that, even if \"randomize IQ skill unlocks\" is enabled, Course Checker, Item Catcher, Item Master, and Exclusive Move-User will always be unlocked from the start.\n"
 "However, Status Checker, Nontraitor, and Lava Evader will still have randomized IQ values."
-msgstr ""
+msgstr "有効にすると、元のゲームの全グループに含まれるかしこさがランダム化時にすべてのグループに追加されます。\n"
+"「習得に必要なかしこさ値をランダム化」が有効化されていても、コースかくにん、どうぐキャッチ、どうぐマスター、いどうゆうせんは常に最初から習得します。\n"
+"ただし、じょうたいかくにん、うらぎらない、マグマがきらいのかしこさ値はランダム化されたままになります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:122
 msgid "Randomize IQ Groups"
-msgstr ""
+msgstr "かしこさグループをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:133
 msgid "If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups."
-msgstr ""
+msgstr "有効にすると、各かしこさはランダムなグループに割り当てられます (少なくとも1つ以上のグループ)。\n"
+"どうぐマスターは必ずすべてのグループに追加されます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:149
 msgid "Tactics"
-msgstr ""
+msgstr "作戦"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:152
 msgid "Randomize Tactics Unlock Levels"
-msgstr ""
+msgstr "作戦解禁レベルをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:163
 msgid "If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."
-msgstr ""
+msgstr "有効にすると、作戦の解禁レベルがランダム化されます。\n"
+"ランダムな作戦を1つだけ最初から解禁します。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:113
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:125
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr "設定"
@@ -3906,74 +4019,77 @@ msgstr "2つ目の単語"
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:79
 msgid "_Text"
-msgstr ""
+msgstr "テキスト(_T)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:16
 msgid "Text Pools"
-msgstr ""
+msgstr "テキストプール"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:17
 msgid "Configure what texts can be used for the quiz, location names and chapter titles."
-msgstr ""
+msgstr "性格診断の質問に使用されるテキスト、地名、チャプタータイトルを設定します。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:29
 msgid "Configure the questions for the personality quiz"
-msgstr ""
+msgstr "性格診断の質問を設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:42
 msgid "Randomize Location Names"
-msgstr ""
+msgstr "地名をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:51
 msgid "Configure the pool of location names used for randomization"
-msgstr ""
+msgstr "地名のプール設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:64
 msgid "Randomize Chapter Titles"
-msgstr ""
+msgstr "チャプタータイトルをランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:73
 msgid "Configure the pool of chapter titles used for randomization"
-msgstr ""
+msgstr "チャプタータイトルのプール設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:88
 msgid "Full Text Randomization"
-msgstr ""
+msgstr "全テキストランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:91
 msgid "Randomize Main Text"
-msgstr ""
+msgstr "メインテキストのランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:102
 msgid "Randomize the game's main text file. This contains everything except for most of the overworld dialogue. The randomization is done in a way that (in most cases) similar categories of texts are shuffled.\n"
 "Potentially unstable!"
-msgstr ""
+msgstr "ゲーム上のメインテキストファイルをランダム化します。\n"
+"これにはオーバーワールドのほとんどのセリフを除くすべての内容が含まれます。ランダム化は (ほとんどの場合) 類似したカテゴリのテキストがシャッフルされる方法で行われます。\n\n"
+"※不安定であり、クラッシュする可能性があります！"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:117
 msgid "Randomize Story Dialogue"
-msgstr ""
+msgstr "ストーリーダイアログのランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:128
 msgid "Randomize the game's overworld scene text. ALL overworld text is shuffled.\n"
 "Potentially unstable!"
-msgstr ""
+msgstr "ゲーム上のオーバーワールドシーンのテキストをランダム化します。オーバーワールドのテキストはすべてシャッフルされます。\n\n"
+"※不安定であり、クラッシュする可能性があります！"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:145
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:148
 msgid "Enable Instant Text"
-msgstr ""
+msgstr "インスタントテキストを有効化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:105
 msgid "Remove Text"
-msgstr ""
+msgstr "テキストを削除"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.ui:15
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.ui:39
 msgid "Add text"
-msgstr ""
+msgstr "テキストを追加"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:170
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:175
@@ -3987,23 +4103,23 @@ msgstr "カテゴリ係数"
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:90
 msgid "T_weaks"
-msgstr ""
+msgstr "調整(_T)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:17
 msgid "Tip: Dungeon item randomization settings can be found under \"Dungeons\"."
-msgstr ""
+msgstr "ヒント: ダンジョン内の道具ランダム化の設定は「ダンジョン」タブにあります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:20
 msgid "Item Randomization Algorithm"
-msgstr ""
+msgstr "道具ランダム化のアルゴリズム"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:27
 msgid "Balanced"
-msgstr ""
+msgstr "バランス"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
 msgid "Classic"
-msgstr ""
+msgstr "クラシック"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:39
 msgid "Controls how item lists are randomly filled.\n\n"
@@ -4012,27 +4128,32 @@ msgid "Controls how item lists are randomly filled.\n\n"
 "Classic: Algorithm that was used in the Randomizer prior to version 1.4.\n"
 "It doesn't attempt to balance out the different item categories,\n"
 "making items from categories with fewer total items easier to find."
-msgstr ""
+msgstr "道具リストをランダム化する方法を制御します。\n\n"
+"バランス: ゲーム内のどの道具も同じ確率で見つかるようにします。\n"
+"ブーストされたポケは例外です。\n\n"
+"クラシック: バージョン 1.4 以前のランダマイザーで使用されていたアルゴリズム。\n"
+"さまざまなカテゴリのバランスを取ろうとはしていません。\n"
+"合計アイテム数が少ないカテゴリの道具を見つけやすくします。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:60
-msgid "Randomize Treasure Town shop and dungeon rewards?"
-msgstr ""
+msgid "Randomize Treasure Town shop and dungeon rewards"
+msgstr "トレジャータウンの店とダンジョン報酬をランダム化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:68
 msgid "Allowed Items &amp; Category Weights"
-msgstr ""
+msgstr "許可された道具 &amp; カテゴリウェイト"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:90
 msgid "Utilities"
-msgstr ""
+msgstr "ユーティリティ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:93
 msgid "Download Missing Portraits &amp; Sprites"
-msgstr ""
+msgstr "不足している顔グラフィック &amp; スプライトをダウンロード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:94
 msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
-msgstr ""
+msgstr "SpriteCollab (sprites.pmdcollab.org) からダウンロード済み"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:102
 msgid "Patches"
@@ -4040,7 +4161,7 @@ msgstr "パッチ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:124
 msgid "Miscellaneous"
-msgstr ""
+msgstr "その他"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:127
 msgid "Music"
@@ -4048,53 +4169,47 @@ msgstr "BGM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:147
 msgid "Explorer Rank"
-msgstr ""
+msgstr "探検隊ランク"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:19
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:28
 msgid "SkyTemple Randomizer"
-msgstr ""
+msgstr "SkyTemple Randomizer"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:33
 msgid "Currently loaded ROM:"
-msgstr ""
+msgstr "読込中のROM:"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_welcome.ui:57
 msgid "Welcome to the Randomizer!\n"
 "Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
-msgstr ""
+msgstr "ランダマイザーへようこそ！\n"
+"「Randomize」ボタンをクリックしてROMをランダマイズするか、ページを選択してオプションを設定します。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:135
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
-msgstr ""
+msgstr "設定した内容は破棄され、開いたROMと一致するデフォルトの設定に置き換えられます。\n"
+"必要な場合は、設定を保存してください。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:137
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:150
 msgid "Close current ROM?"
 msgstr "ROMを閉じます。よろしいですか？"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:139
-msgid "_No"
-msgstr "いいえ(_N)"
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:140
-msgid "_Yes"
-msgstr "はい(_Y)"
-
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:23
 msgid "Close the currently opened ROM and load a new one."
-msgstr ""
+msgstr "現在開いている ROM を閉じて、新しい ROM をロードします。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:46
 msgid "_Start"
-msgstr ""
+msgstr "開始(_S)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:117
 msgid "Help (online)"
-msgstr ""
+msgstr "ヘルプ (オンライン)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:135
 msgid "_Randomize"
-msgstr ""
+msgstr "Randomize(_R)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:60
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:61
@@ -4103,7 +4218,7 @@ msgstr "ROMを読み込む"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:66
 msgid "Load {}"
-msgstr ""
+msgstr "{} を読み込む"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:70
 msgid "Load another ROM"
@@ -4116,236 +4231,241 @@ msgstr "ROM読み込み失敗: ファイルを開く際にエラーが発生し�
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:120
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:129
 msgid "Failed to load ROM:"
-msgstr ""
+msgstr "ROM の読み込みに失敗しました。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:123
 msgid "Are you sure you provided a ROM? A ROM usually has the file extension \".nds\"."
-msgstr ""
+msgstr "正しい ROM を選択しましたか？ROM には通常、ファイル拡張子「.nds」が付いています。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."
-msgstr ""
+msgstr "ROM を読み込んで下さい。"
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:53
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:82
 msgid "Apply 'ActorAndLevelLoader' patch..."
-msgstr ""
+msgstr "パッチ 'ActerAndLevelLoader' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:208
 msgid "Updating bosses..."
-msgstr ""
+msgstr "ボスを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/chapter.py:60
 msgid "Randomizing Chapter Names..."
-msgstr ""
+msgstr "チャプター名をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:254
 msgid "Fixing dungeon errors..."
-msgstr ""
+msgstr "ダンジョンのエラーを修正中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:267
 msgid "Randomizing dungeon items..."
-msgstr ""
+msgstr "ダンジョンに落ちている道具をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:273
 msgid "Randomizing dungeon traps..."
-msgstr ""
+msgstr "ダンジョンに出現する罠をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon.py:278
 msgid "Randomizing dungeons..."
-msgstr ""
+msgstr "ダンジョンをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/dungeon_unlocker.py:48
 msgid "Unlocking dungeons..."
-msgstr ""
+msgstr "ダンジョンのロックを解除中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/explorer_ranks.py:46
 msgid "Randomizing rank data..."
-msgstr ""
+msgstr "探検隊ランクデータをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/fixed_room.py:87
 msgid "Randomizing Boss Floor Layouts..."
-msgstr ""
+msgstr "ボス部屋のレイアウトをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/fixes/quicksand_pit.py:39
 msgid "Fixing Quicksand Pit..."
-msgstr ""
+msgstr "「りゅうさのどうくつ さいしんぶ」の修正中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/global_items.py:51
 msgid "Apply patches..."
-msgstr ""
+msgstr "パッチを適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/global_items.py:58
 msgid "Randomizing global item lists..."
-msgstr ""
+msgstr "グローバル道具リストをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
 msgid "Apply 'EditExtraPokemon' patch..."
-msgstr ""
+msgstr "パッチ 'EditExtraPokemon' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:69
 msgid "Updating guest Pokémon..."
-msgstr ""
+msgstr "途中加入ポケモンを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:84
 msgid "Updating guest Pokémon movesets..."
-msgstr ""
+msgstr "途中加入ポケモンの習得技を更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/iq_tactics.py:56
 msgid "Randomizing tactics..."
-msgstr ""
+msgstr "作戦をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/iq_tactics.py:80
 msgid "Randomizing IQ gain..."
-msgstr ""
+msgstr "グミの好物をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/iq_tactics.py:117
 msgid "Randomizing IQ groups..."
-msgstr ""
+msgstr "かしこさグループをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/iq_tactics.py:139
 msgid "Randomizing IQ skills..."
-msgstr ""
+msgstr "かしこさをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/location.py:38
 msgid "Randomizing Location Names..."
-msgstr ""
+msgstr "地名をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/location.py:86
 msgid "Replacing script text that mentions locations..."
-msgstr ""
+msgstr "地名を示すスクリプトテキストを置換中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/misc.py:36
 msgid "Enabling instant text..."
-msgstr ""
+msgstr "インスタントテキストを有効化中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/monster.py:69
 msgid "Randomizing Pokémon data..."
-msgstr ""
+msgstr "ポケモンデータをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/moveset.py:57
 msgid "Randomizing Level-Up movesets..."
-msgstr ""
+msgstr "レベル習得技をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/moveset.py:92
 msgid "Randomizing TMs/HMs..."
-msgstr ""
+msgstr "技マシンをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/moveset.py:143
 msgid "Randomizing TM/HM movesets..."
-msgstr ""
+msgstr "技マシン習得技をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:58
 msgid "Randomizing NPC actor list..."
-msgstr ""
+msgstr "NPC アクターリストをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:61
 msgid "Replacing main text that mentions NPCs..."
-msgstr ""
+msgstr "NPCに関するメインテキストを置換中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:82
 msgid "Replacing script text that mentions NPCs..."
-msgstr ""
+msgstr "NPCに関するスクリプトテキストを置換中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:85
 msgid "Cloning missing NPC portraits..."
-msgstr ""
+msgstr "不足しているNPCの顔グラフィックをクローン中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/overworld_music.py:49
 msgid "Randomizing Titlescreen Music..."
-msgstr ""
+msgstr "タイトル画面のBGMをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/overworld_music.py:66
 msgid "Randomizing Overworld Music..."
-msgstr ""
+msgstr "オーバーワールドBGMをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:47
 msgid "Apply base patches by psy_commando and End45..."
-msgstr ""
+msgstr "psy_commando と End45 による基本パッチの適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:59
 msgid "Apply 'MoveShortcuts' patch..."
-msgstr ""
+msgstr "パッチ 'MoveShortcuts' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:64
 msgid "Apply 'UnusedDungeonChance' patch..."
-msgstr ""
+msgstr "パッチ 'UnusedDungeonChance' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:69
 msgid "Apply 'Complete Team Control' patches..."
-msgstr ""
+msgstr "パッチ 'Complete Team Control' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:83
 msgid "Apply personality test patches..."
-msgstr ""
+msgstr "性格診断パッチを適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:91
 msgid "Apply 'FixMemorySoftlock' patch..."
-msgstr ""
+msgstr "パッチ 'FixMemorySoftlock' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:96
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
+msgstr "パッチ 'DisarmOneRoomMonsterHouses' を適用中..."
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:159
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:460
+msgid "Downloading portraits and sprites... {}/{}"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/quiz.py:129
 msgid "Randomizing Quiz..."
-msgstr ""
+msgstr "性格診断の質問をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:87
 msgid "Updating special recruitment table..."
-msgstr ""
+msgstr "イベント勧誘テーブルを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/seed_info.py:96
 msgid "Loading Seed Info..."
-msgstr ""
+msgstr "Seed 情報を読み込み中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/seed_info.py:126
 msgid "Placing Info NPC..."
-msgstr ""
+msgstr "NPC を配置中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/special/fun.py:267
 msgid "Finishing up..."
-msgstr ""
+msgstr "終了処理中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/special_pc.py:63
 msgid "Updating special episode Pokémon..."
-msgstr ""
+msgstr "スペシャルエピソードのポケモンを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/special_pc.py:78
 msgid "Updating special episode Pokémon movesets..."
-msgstr ""
+msgstr "スペシャルエピソードのポケモンの習得技を更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/starter.py:53
 msgid "Randomizing Partner Starters..."
-msgstr ""
+msgstr "パートナーをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/starter.py:87
 msgid "Randomizing Player Starters..."
-msgstr ""
+msgstr "主人公をランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/starter.py:123
 msgid "Cloning missing starter portraits..."
-msgstr ""
+msgstr "不足している主人公・パートナーの顔グラフィックをクローン中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/text_main.py:37
 msgid "Randomizing all main text..."
-msgstr ""
+msgstr "すべてのテキストをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/text_script.py:40
 msgid "Randomizing all script text: Reading strings..."
-msgstr ""
+msgstr "スクリプトテキストのランダマイズ: 文字列の読み込み中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/text_script.py:55
 msgid "Randomizing all script text: Writing strings..."
-msgstr ""
+msgstr "スクリプトテキストのランダマイズ: 文字列の書き込み中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:143
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:149
 msgid "Randomizing..."
-msgstr ""
+msgstr "ランダマイズ中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:147
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:153
 msgid "Saving scripts..."
-msgstr ""
+msgstr "スクリプトを保存中..."
 

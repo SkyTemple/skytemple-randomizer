@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-05 15:08+0000\n"
-"PO-Revision-Date: 2024-04-05 15:22\n"
+"PO-Revision-Date: 2024-04-05 15:26\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3233,11 +3233,11 @@ msgstr "Suchen"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:109
 msgid "This will stop the randomization process and allow you to change settings again."
-msgstr ""
+msgstr "Dadurch wird der Zufallsgenerator angehalten und du kannst die Einstellungen erneut ändern."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:111
 msgid "Cancel randomization?"
-msgstr ""
+msgstr "Randomisierung abbrechen?"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:113
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
@@ -3251,28 +3251,28 @@ msgstr "_Ja"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:152
 msgid "Error while opening file ({})."
-msgstr ""
+msgstr "Fehler beim Öffnen der Datei ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:158
 msgid "The path of the ROM file needs to end in '.nds'."
-msgstr ""
+msgstr "Der Pfad der ROM muss auf '.nds' enden."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:170
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:203
 msgid "Randomizing... ({}%)"
-msgstr ""
+msgstr "Randomisiere... ({}%)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:227
 msgid "Randomizing failed!"
-msgstr ""
+msgstr "Randomisierung fehlgeschlagen!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:228
 msgid "Error: {}"
-msgstr ""
+msgstr "Fehler: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
 msgid "Randomizing complete!"
-msgstr ""
+msgstr "Randomisierung abgeschlossen!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Randomization Progress"
@@ -4388,7 +4388,7 @@ msgstr "'AbarmOneRoomMonsterHouses' Patch wird angwendet..."
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:159
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:460
 msgid "Downloading portraits and sprites... {}/{}"
-msgstr ""
+msgstr "Portraits und Sprites werden heruntergeladen... {}/{}"
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/quiz.py:129
 msgid "Randomizing Quiz..."

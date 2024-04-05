@@ -87,10 +87,10 @@ status of the randomization for progress display. See the GTK implementation for
 Without the ``gtk`` extra, importing anything from ``skytemple_randomizer.frontend.gtk`` may fail. Running the script
 ``skytemple_randomizer`` may also fail. You will need to use the API instead.
 
-.. _Flathub: https://flathub.org/apps/details/org.skytemple.SkyTemple
+.. _Flathub: https://flathub.org/apps/details/org.skytemple.Randomizer
 
 .. |flathub_badge| image:: https://flathub.org/assets/badges/flathub-badge-en.png
-    :target: https://flathub.org/apps/details/org.skytemple.SkyTemple
+    :target: https://flathub.org/apps/details/org.skytemple.Randomizer
     :alt: Install on Flathub
     :width: 240px
 

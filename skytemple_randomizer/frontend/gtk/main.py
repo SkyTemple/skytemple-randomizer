@@ -103,7 +103,7 @@ class MainApp(Adw.Application):
         frontend.window.content_stack.set_visible_child(frontend.window.stack_item_main)
 
 
-def main(argv):
+def main():
     if sys.platform.startswith("win"):
         # Solve issue #12
         try:
@@ -137,10 +137,10 @@ def main(argv):
 
     # Load main window + controller
     app = MainApp()
-    sys.exit(app.run(argv))
+    sys.exit(app.run(sys.argv))
 
 
 if __name__ == "__main__":
     logging.basicConfig()
     logging.getLogger().setLevel(logging.INFO)
-    main(sys.argv)
+    main()

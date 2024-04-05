@@ -20,6 +20,7 @@ import os
 from typing import cast
 
 from skytemple_files.common.i18n_util import _
+from skytemple_files.common.ppmdu_config.data import GAME_REGION_JP
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
@@ -51,6 +52,7 @@ class TextPage(Adw.PreferencesPage):
     row_randomize_main_text = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_randomize_story_dialogue = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_enable_instant_text = cast(Adw.SwitchRow, Gtk.Template.Child())
+    group_full_text_randomization = cast(Adw.PreferencesGroup, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
     _suppress_signals: bool
@@ -178,6 +180,12 @@ class TextPage(Adw.PreferencesPage):
         self.row_randomize_story_dialogue.set_active(config["text"]["story"])
         self.row_enable_instant_text.set_active(config["text"]["instant"])
         self._suppress_signals = False
+
+        # The JP ROM does not support these yet:
+        if GtkFrontend.instance().input_rom_static_data.game_region == GAME_REGION_JP:
+            self.group_full_text_randomization.hide()
+        else:
+            self.group_full_text_randomization.show()
 
     def _make_location_names_dialog(self):
         dialog = None

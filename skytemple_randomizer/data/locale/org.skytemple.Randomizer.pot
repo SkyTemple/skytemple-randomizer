@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-05 15:08+0000\n"
+"POT-Creation-Date: 2024-04-05 15:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4391,7 +4391,7 @@ msgstr ""
 msgid "Placing Info NPC..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/special/fun.py:267
+#: skytemple_randomizer/skytemple_randomizer/randomizer/special/fun.py:269
 msgid "Finishing up..."
 msgstr ""
 

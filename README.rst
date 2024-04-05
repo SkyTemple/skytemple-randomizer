@@ -41,8 +41,19 @@ Randomizer for Pokémon Mystery Dungeon Explorers of Sky.
 
 It is available for Linux, macOS and Windows.
 
+Downloads
+---------
+- Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
+- MacOS: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
+- Linux: https://flathub.org/apps/details/org.skytemple.Randomizer
+
+|flathub_badge|
+
+Frontends
+---------
+
 GTK frontend
-------------
+~~~~~~~~~~~~
 When installing from source, you probably want to install the "gtk" extra,
 in order to have the actual GUI functional.
 
@@ -50,7 +61,7 @@ The GTK frontend requires GTK 4.14+, all related libraries and libadwaita 1.5+ t
 installed.
 
 Build
-~~~~~
+.....
 In addition to normally installing the Python package in dev mode, you also need to make sure you
 have all submodules checked out. After this you need to compile all MO files (localizations) and Blueprint
 Files to XML UI files. To do that:
@@ -63,24 +74,16 @@ If you are working with the UI files you may want to use the Blueprint Compiler 
 to compile BLP files to UI files. More info about Blueprint Compiler can be found on its website:
 https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/
 
-Downloads
----------
-- Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
-- MacOS: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
-- Linux: https://flathub.org/apps/details/org.skytemple.Randomizer
+No frontend
+~~~~~~~~~~~
 
-For build instructions in general see the SkyTemple_ repository.
+Without ``gtk`` (as of now) "only" the API is available and you can use Randomizer as a library.
+See the ``skytemple_randomizer.randomizer_thread`` for the entrypoint (specifically the class ``RandomizerThread``).
+You will need to implement your own ``AbstractFrontend``. The passed in ``Status`` object can be used to monitor the
+status of the randomization for progress display. See the GTK implementation for reference on how to use all of this.
 
-You probably want to install the optional `gtk` extra if you want a frontend. Without it (as of now)
-"only" the API is available and you can use Randomizer as a library. See the `skytemple_randomizer.randomizer_thread`
-for the entrypoint (specifically the class `RandomizerThread`). You will need to implement your own `AbstractFrontend`.
-The passed in `Status` object can be used to monitor the status of the randomization for progress display. See the
-GTK implementation for reference on how to use all of this.
-
-Without the `gtk` extra, importing anything from `skytemple_randomizer.frontend.gtk` may fail. Running the script
-`skytemple_randomizer` may also fail. You will need to use the API instead.
-
-|flathub_badge|
+Without the ``gtk`` extra, importing anything from ``skytemple_randomizer.frontend.gtk`` may fail. Running the script
+``skytemple_randomizer`` may also fail. You will need to use the API instead.
 
 .. _Flathub: https://flathub.org/apps/details/org.skytemple.SkyTemple
 
@@ -90,6 +93,9 @@ Without the `gtk` extra, importing anything from `skytemple_randomizer.frontend.
     :width: 240px
 
 .. _SkyTemple: https://github.com/SkyTemple/SkyTemple
+
+See also
+--------
 
 Source repository for the Flatpak: https://github.com/flathub/org.skytemple.Randomizer
 

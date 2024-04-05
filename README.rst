@@ -54,7 +54,7 @@ Frontends
 
 GTK frontend
 ~~~~~~~~~~~~
-When installing from source, you probably want to install the "gtk" extra,
+When installing from source, you probably want to install the "gtk" extra (``pip install -e '.[gtk]'``),
 in order to have the actual GUI functional.
 
 The GTK frontend requires GTK 4.14+, all related libraries and libadwaita 1.5+ to be
@@ -62,6 +62,8 @@ installed.
 
 Build
 .....
+Install the required GTK and Adwaita versions. Under Windows, use gvsbuild_ in at least version 2024.4.0.
+
 In addition to normally installing the Python package in dev mode, you also need to make sure you
 have all submodules checked out. After this you need to compile all MO files (localizations) and Blueprint
 Files to XML UI files. To do that:
@@ -93,6 +95,8 @@ Without the ``gtk`` extra, importing anything from ``skytemple_randomizer.fronte
     :width: 240px
 
 .. _SkyTemple: https://github.com/SkyTemple/SkyTemple
+
+.. _gvsbuild:: https://github.com/wingtk/gvsbuild
 
 See also
 --------

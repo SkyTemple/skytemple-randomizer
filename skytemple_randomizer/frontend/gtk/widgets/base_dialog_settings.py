@@ -140,12 +140,6 @@ class BaseSettingsDialog(Adw.Dialog):
         if sys.platform.startswith("darwin"):
             self.header_bar.set_decoration_layout("close:")
 
-        close_esc = Gtk.Shortcut(
-            trigger=Gtk.ShortcutTrigger.parse_string("Escape|<Control>w"),
-            action=Gtk.NamedAction(action_name="window.close"),
-        )
-        self.add_shortcut(close_esc)
-
     @Gtk.Template.Callback()
     def on_button_search_clicked(self, *args):
         self.search_bar.set_search_mode(not self.search_bar.get_search_mode())

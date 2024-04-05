@@ -14,8 +14,11 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
 import logging
 import sys
+import threading
 from threading import Thread, Lock
 
 from ndspy.rom import NintendoDSRom
@@ -125,8 +128,11 @@ class RandomizerThread(Thread):
 
         self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None
+        self.thread_id: int | None = None
 
     def run(self):
+        logger.info("Randomizer thread started.")
+        self.thread_id = threading.get_ident()
         try:
             for randomizer in self.randomizers:
                 local_status_steps_left = randomizer.step_count()
@@ -146,6 +152,9 @@ class RandomizerThread(Thread):
                 randomizer.run(local_status)
             self.status.step(_("Saving scripts..."))
             save_scripts(self.rom, self.static_data)
+        except (SystemExit, KeyboardInterrupt):
+            logger.info("Randomizer was asked to exit.")
+            self.error = sys.exc_info()  #  type: ignore
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)
             self.error = sys.exc_info()  #  type: ignore
@@ -157,3 +166,6 @@ class RandomizerThread(Thread):
     def is_done(self) -> bool:
         with self.lock:
             return self.done
+
+    def get_thread_id(self) -> int | None:
+        return self.thread_id

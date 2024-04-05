@@ -107,7 +107,15 @@ class MainStack(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_randomize_clicked(self, *args):
-        RandomizeDialog().present(GtkFrontend.instance().window)
+        frontend = GtkFrontend.instance()
+        assert self.rom is not None
+        assert self.rom_static_data is not None
+        RandomizeDialog(
+            self.input_rom_path,
+            self.rom,
+            self.rom_static_data,
+            frontend.randomization_settings,
+        ).present(GtkFrontend.instance().window)
 
     @Gtk.Template.Callback()
     def on_button_settings_clicked(self, *args):

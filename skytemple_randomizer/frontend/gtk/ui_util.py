@@ -17,10 +17,13 @@
 from __future__ import annotations
 
 import os
+import pathlib
+import sys
 from typing import TypeVar, Any
 from collections.abc import Iterable
 
 from gi.repository import GObject, Gtk, Adw
+from gi.repository.Gio import AppInfo
 from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import version
@@ -113,3 +116,11 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
         website="https://skytemple.org",
     )
     about_dialog.present(parent)
+
+
+def open_dir(directory):
+    """Cross-platform open directory"""
+    if sys.platform == "win32":
+        os.startfile(directory)
+    else:
+        AppInfo.launch_default_for_uri(pathlib.Path(directory).as_uri())

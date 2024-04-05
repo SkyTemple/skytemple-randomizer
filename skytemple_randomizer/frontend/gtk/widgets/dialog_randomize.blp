@@ -3,9 +3,10 @@ using Adw 1;
 
 template $StRandomizeDialog: Adw.Dialog {
     title: _('Randomization Progress');
-    can-close: true;
+    can-close: false;
     content-width: 420;
     content-height: 490;
+    close-attempt => $on_close_attempt();
 
     realize => $on_realize();
 
@@ -35,17 +36,31 @@ template $StRandomizeDialog: Adw.Dialog {
 
                                 Stack status_stack {
                                     StackPage status_start_page {
-                                        child: Button {
-                                            Adw.ButtonContent {
-                                                icon-name: "skytemple-export-symbolic";
-                                                label: _("Select Output File & Start Randomization");
+                                        child: Button start_button {
+                                            clicked => $on_start_button_clicked();
+
+                                            Box {
+                                                orientation: horizontal;
+                                                halign: center;
+                                                spacing: 8;
+
+                                                Image {
+                                                    valign: center;
+                                                    hexpand: true;
+                                                    icon-name: "skytemple-export-symbolic";
+                                                }
+                                                Label {
+                                                    wrap: true;
+                                                    hexpand: true;
+                                                    label: _("Select Output File & Start Randomization");
+                                                }
                                             }
 
                                             styles ["suggested-action"]
                                         };
                                     }
                                     StackPage status_status_page {
-                                        child: ListBox status_list_box {
+                                        child: ListBox {
                                             selection-mode: none;
 
                                             Adw.ActionRow status_row {
@@ -64,10 +79,12 @@ template $StRandomizeDialog: Adw.Dialog {
                                                   }
                                                 }
                                             }
+
+                                            styles ["boxed-list"]
                                         };
                                     }
                                 }
-                                ProgressBar {
+                                ProgressBar progress_bar {
 
                                 }
                                 ListBox {
@@ -82,6 +99,8 @@ template $StRandomizeDialog: Adw.Dialog {
 
                                         [suffix]
                                         Button {
+                                            clicked => $on_metadata_source_button_clicked();
+
                                             icon-name: 'system-file-manager-symbolic';
                                             tooltip-text: _("Open Folder in File Browser");
 
@@ -100,6 +119,8 @@ template $StRandomizeDialog: Adw.Dialog {
 
                                         [suffix]
                                         Button {
+                                            clicked => $on_metadata_output_button_clicked();
+
                                             icon-name: 'system-file-manager-symbolic';
                                             tooltip-text: _("Open Folder in File Browser");
 

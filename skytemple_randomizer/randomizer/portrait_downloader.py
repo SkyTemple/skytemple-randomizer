@@ -156,7 +156,7 @@ class PortraitDownloader(AbstractRandomizer):
         sprconf = FileType.SPRCONF.load(self.rom)
 
         status.step(
-            "Downloading portraits and sprites... {}/{}".format(
+            _("Downloading portraits and sprites... {}/{}").format(
                 self.current, self.total
             )
         )
@@ -457,7 +457,7 @@ class PortraitDownloader(AbstractRandomizer):
 
         self.current += 1
         status.step(
-            "Downloading portraits and sprites... {}/{}".format(
+            _("Downloading portraits and sprites... {}/{}").format(
                 self.current, self.total
             )
         )

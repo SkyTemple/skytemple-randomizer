@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-05 11:59+0000\n"
-"PO-Revision-Date: 2024-04-05 12:15\n"
+"POT-Creation-Date: 2024-04-05 15:08+0000\n"
+"PO-Revision-Date: 2024-04-05 15:22\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3214,7 +3214,7 @@ msgstr "Fehler"
 msgid "_OK"
 msgstr "_OK"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:106
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:109
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
 msgstr "Anwendung zum Randomisieren der ROM von Pokémon Mystery Dungeon Erkundungsteam Himmel."
 
@@ -3231,40 +3231,83 @@ msgstr "Jetzt aktualisieren"
 msgid "Search"
 msgstr "Suchen"
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:109
+msgid "This will stop the randomization process and allow you to change settings again."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:111
+msgid "Cancel randomization?"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:113
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
+msgid "_No"
+msgstr "_Nein"
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:114
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:153
+msgid "_Yes"
+msgstr "_Ja"
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:152
+msgid "Error while opening file ({})."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:158
+msgid "The path of the ROM file needs to end in '.nds'."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:170
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:203
+msgid "Randomizing... ({}%)"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:227
+msgid "Randomizing failed!"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:228
+msgid "Error: {}"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
+msgid "Randomizing complete!"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Randomization Progress"
 msgstr "Fortschritt der Randomisierung"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:52
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:67
 msgid "Select Output File & Start Randomization"
 msgstr "Ausgabedatei auswählen & Randomisierung starten"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:102
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:122
 msgid "Input ROM"
 msgstr "Eingabe-ROM"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:108
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:130
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:129
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:152
 msgid "Open Folder in File Browser"
 msgstr "Ordner im Dateibrowser öffnen"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:145
 msgid "Output ROM"
 msgstr "Ausgabe-ROM"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:125
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:146
 msgid "(Not yet chosen.)"
 msgstr "(Noch nicht ausgewählt.)"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:149
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:171
 msgid "Game Region"
 msgstr "Spielregion"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:164
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:186
 msgid "Randomizer Version"
 msgstr "Randomizer-Version"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:179
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:201
 msgid "Seed"
 msgstr "Startwert (Seed)"
 
@@ -3945,7 +3988,7 @@ msgstr "Wenn aktiviert, dann werden Taktiken auf zufälligen Leveln freigeschalt
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:116
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:125
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr "Einstellungen"
@@ -4125,21 +4168,13 @@ msgid "Welcome to the Randomizer!\n"
 msgstr "Willkommen beim Randomizer!\n"
 "Klicke den „Randomisieren“-Knopf um deine ROM zu randomisieren oder lege weitere Optionen fest, indem du eine der Einstellungsseiten auswählst."
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:139
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
 msgstr "Deine Einstellungen werden verworfen und werden durch die Standardeinstellungen der ROM ersetzt, die du als nächstes öffnest. Falls du deine Einstellungen weiter verwenden möchtest, stelle sicher sie jetzt zu speichern."
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:141
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:150
 msgid "Close current ROM?"
 msgstr "Aktuelle ROM schließen?"
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:143
-msgid "_No"
-msgstr "_Nein"
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:144
-msgid "_Yes"
-msgstr "_Ja"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:23
 msgid "Close the currently opened ROM and load a new one."
@@ -4350,6 +4385,11 @@ msgstr "'FixMemorySoftlock' Patch wird angewendet..."
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr "'AbarmOneRoomMonsterHouses' Patch wird angwendet..."
 
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:159
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:460
+msgid "Downloading portraits and sprites... {}/{}"
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/randomizer/quiz.py:129
 msgid "Randomizing Quiz..."
 msgstr "Quiz wird randomisiert..."
@@ -4402,11 +4442,11 @@ msgstr "Der gesamte Skripttext wird randomisiert: Zeichenketten werden gelesen..
 msgid "Randomizing all script text: Writing strings..."
 msgstr "Der gesamte Skripttext wird randomisiert: Zeichenketten werden geschrieben..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:143
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:149
 msgid "Randomizing..."
 msgstr "Randomisiere..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:147
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:153
 msgid "Saving scripts..."
-msgstr "Speiche Skripte..."
+msgstr "Speichere Skripte..."
 

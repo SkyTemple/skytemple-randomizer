@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
-from datetime import datetime
 from enum import Enum
 from random import choice, randrange
 from typing import Union
@@ -164,8 +163,11 @@ FunPortraitLike = Union[CustomFunPortrait, FunPortrait]
 def is_fun_allowed():
     if "SKYTEMPLE_FUN" in os.environ:
         return bool(int(os.environ["SKYTEMPLE_FUN"]))
-    now = datetime.now()
-    return now.month == 4 and now.day == 1
+    # It was fun (ha!) but the joke is over. Re-enable when we have a new joke. But also maybe like allow
+    # the user to still bypass fun from the UI.
+    return False
+    # now = datetime.now()
+    # return now.month == 4 and now.day == 1
 
 
 def _get_fun_portraits() -> Sequence[FunPortraitLike]:

@@ -4,8 +4,7 @@ using Adw 1;
 template $StAppWindow: Adw.ApplicationWindow {
     icon-name: 'skytemple_randomizer';
     title: 'SkyTemple Randomizer';
-    // TODO: Try to get this down to at least 360 later. Currently at least the dungeon individual settings dialog causes issues.
-    width-request: 420;
+    width-request: 320;
     height-request: 360;
     realize => $on_realize ();
     notify::default-width => $on_main_window_notify_default_width ();
@@ -13,7 +12,7 @@ template $StAppWindow: Adw.ApplicationWindow {
     notify::maximized => $on_main_window_notify_maximized ();
 
     Adw.Breakpoint {
-	    condition('max-width: 712sp')
+	    condition('max-width: 700sp')
 	    setters {
 	        stack_item_main.mobile_view: true;
   	    }

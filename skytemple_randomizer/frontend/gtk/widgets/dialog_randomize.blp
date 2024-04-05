@@ -20,6 +20,7 @@ template $StRandomizeDialog: Adw.Dialog {
 
                 ScrolledWindow {
                     vexpand: true;
+                    hscrollbar-policy: never;
 
                     Viewport {
                         Adw.Clamp {
@@ -32,22 +33,22 @@ template $StRandomizeDialog: Adw.Dialog {
                                 orientation: vertical;
                                 spacing: 16;
 
-                                ListBox status_list_box {
-                                    selection-mode: none;
+                                Stack status_stack {
+                                    StackPage status_start_page {
+                                        child: Button {
+                                            Adw.ButtonContent {
+                                                icon-name: "skytemple-export-symbolic";
+                                                label: _("Select Output File & Start Randomization");
+                                            }
 
-                                    Stack status_stack {
-                                        StackPage status_start_page {
-                                            child: Button {
-                                                Adw.ButtonContent {
-                                                    icon-name: "skytemple-export-symbolic";
-                                                    label: _("Select Output File & Start Randomization");
-                                                }
+                                            styles ["suggested-action"]
+                                        };
+                                    }
+                                    StackPage status_status_page {
+                                        child: ListBox status_list_box {
+                                            selection-mode: none;
 
-                                                styles ["suggested-action"]
-                                            };
-                                        }
-                                        StackPage status_status_page {
-                                            child: Adw.ActionRow status_row {
+                                            Adw.ActionRow status_row {
                                                 activatable: false;
                                                 selectable: false;
                                                 title: "";
@@ -62,8 +63,8 @@ template $StRandomizeDialog: Adw.Dialog {
                                                     spinning: true;
                                                   }
                                                 }
-                                            };
-                                        }
+                                            }
+                                        };
                                     }
                                 }
                                 ProgressBar {

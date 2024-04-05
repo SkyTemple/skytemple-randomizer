@@ -51,6 +51,7 @@ class MainStack(Adw.Bin):
     page_dungeons = cast(Adw.ViewStackPage, Gtk.Template.Child())
     page_text = cast(Adw.ViewStackPage, Gtk.Template.Child())
     page_tweaks = cast(Adw.ViewStackPage, Gtk.Template.Child())
+    button_settings_content = cast(Adw.ButtonContent, Gtk.Template.Child())
 
     input_rom_path: str | None
     rom: NintendoDSRom | None
@@ -93,9 +94,11 @@ class MainStack(Adw.Bin):
         if value:
             self.header_bar.set_title_widget(None)
             self.switcher_bar.set_reveal(True)
+            self.button_settings_content.set_label("")
         else:
             self.header_bar.set_title_widget(self.view_switcher)
             self.switcher_bar.set_reveal(False)
+            self.button_settings_content.set_label(_("Settings"))
 
     @Gtk.Template.Callback()
     def on_realize(self, *args):
@@ -114,6 +117,7 @@ class MainStack(Adw.Bin):
             content=SettingsPage(
                 repopulate_randomization_settings=self.populate_settings
             ),
+            content_width=320,
         )
         dialog.populate_settings(GtkFrontend.instance().randomization_settings)
         dialog.present(frontend.window)

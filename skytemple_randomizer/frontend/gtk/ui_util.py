@@ -19,8 +19,7 @@ from __future__ import annotations
 import os
 import pathlib
 import sys
-from typing import TypeVar, Any
-from collections.abc import Iterable
+from typing import TypeVar
 
 from gi.repository import GObject, Gtk, Adw
 from gi.repository.Gio import AppInfo
@@ -30,38 +29,6 @@ from skytemple_randomizer.config import version
 
 T = TypeVar("T", bound=GObject.Object)
 X = TypeVar("X")
-UI_ASSERT = "SKYTEMPLE_UI_ASSERT" in os.environ
-
-
-def builder_get_assert(builder: Gtk.Builder, typ: type[T], name: str) -> T:
-    obj = builder.get_object(name)
-    if UI_ASSERT:
-        assert isinstance(obj, typ)
-        return obj
-    else:
-        return obj  # type: ignore
-
-
-def builder_get_assert_exist(builder: Gtk.Builder, typ: type[T], name: str) -> T:
-    obj = builder.get_object(name)
-    if obj is None:
-        raise ValueError(f"UI element '{obj}' not found.")
-    if UI_ASSERT:
-        assert isinstance(obj, typ)
-        return obj
-    else:
-        return obj  # type: ignore
-
-
-def iter_maybe(x: Iterable[X] | None) -> Iterable[X]:
-    if x is None:
-        return ()
-    return x
-
-
-def iter_tree_model(model: Gtk.TreeModel) -> Any:
-    # TODO: This works but isn't supported by the typestubs.
-    return model  # type: ignore
 
 
 def show_about_dialog(parent: Gtk.Widget):

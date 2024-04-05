@@ -88,7 +88,7 @@ class MonstersPoolPage(Adw.PreferencesPage):
             patcher = Patcher(rom, frontend.input_rom_static_data)
 
             b_attr = "md_index_base"
-            if patcher.is_applied("ExpandPokeList"):
+            if is_applied(patcher, "ExpandPokeList"):
                 b_attr = "entid"
 
             monster_md = FileType.MD.deserialize(rom.getFileByName(MONSTER_MD))
@@ -232,3 +232,10 @@ class MonstersPoolPage(Adw.PreferencesPage):
                 self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
             )
         return match
+
+
+def is_applied(patcher: Patcher, patch: str) -> bool:
+    try:
+        return patcher.is_applied(patch)
+    except NotImplementedError:
+        return False

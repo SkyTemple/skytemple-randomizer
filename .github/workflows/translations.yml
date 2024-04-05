@@ -1,0 +1,100 @@
+name: Build POT string index
+on:
+  push:
+    branches:
+      - master
+      - gtk4 # temporary
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and commit POT file
+    container:
+      image: ghcr.io/skytemple/gtk4-build-image:1
+    steps:
+      - name: Checkout skytemple
+        uses: actions/checkout@v4
+        with:
+          path: skytemple_randomizer
+          submodules: true
+      - name: Checkout skytemple-files
+        uses: actions/checkout@v4
+        with:
+          repository: skytemple/skytemple-files
+          path: skytemple-files
+      - name: Checkout skytemple-dtef
+        uses: actions/checkout@v4
+        with:
+          repository: skytemple/skytemple-dtef
+          path: skytemple-dtef
+      - name: Checkout explorerscript
+        uses: actions/checkout@v4
+        with:
+          repository: skytemple/explorerscript
+          path: explorerscript
+      - name: Checkout tilequant
+        uses: actions/checkout@v4
+        with:
+          repository: skytemple/tilequant
+          path: tilequant
+      - name: Checkout skytemple-rust
+        uses: actions/checkout@v4
+        with:
+          repository: skytemple/skytemple-rust
+          path: skytemple-rust
+      # xgettext can not parse "gettext!" but it can parse "gettext"
+      - name: Recursively replace gettext macros in Rust
+        run: |
+          find skytemple-rust \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/gettext!/gettext/g'
+      - name: Backup current string file
+        run: |
+          cp skytemple_randomizer/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot /tmp/org.skytemple.Randomizer.pot
+      - name: Convert Blueprint files
+        run: |
+          cd skytemple_randomizer
+          ./build-blp-to-ui.sh
+      - name: Generate Strings
+        run: |
+          find . \
+              -type f \
+              \( \
+                  -name "*.py" -or \
+                  -name "*.rs" -or \
+                  -name "*.glade" -or \
+                  -name "*.ui" \
+              \) \
+              -not -path "./skytemple_randomizer/blueprint-compiler/*" \
+          | xargs xgettext \
+              -F --keyword='_' --no-wrap --foreign-user \
+              --package-name=org.skytemple.Randomizer --msgid-bugs-address=https://translate.skytemple.org \
+              --add-comments='TRANSLATORS:' --from-code=UTF-8 \
+              -o skytemple_randomizer/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+      - name: Install skytemple-files
+        run: |
+          python -m pip install ./skytemple-files
+      - name: Add ppmdu config strings
+        run: |
+          xgettext \
+          -F --keyword='_' --no-wrap --foreign-user \
+          --package-name=org.skytemple.Randomizer --msgid-bugs-address=https://translate.skytemple.org \
+          -j --from-code=UTF-8 \
+          -o skytemple_randomizer/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot \
+          <(python -m skytemple_files.common.ppmdu_config.l10n_str_generator)
+      - name: Check if we need to commit
+        run: |
+          echo "NUM_CHANGED_LINES=$(diff -y --suppress-common-lines /tmp/org.skytemple.Randomizer.pot skytemple_randomizer/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot | wc -l)" >> $GITHUB_ENV
+      - name: Commit and Push
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot
+          cwd: './skytemple_randomizer'
+          message: 'Github Actions: Update .pot string index'
+          push: true
+        if: ${{ env.NUM_CHANGED_LINES > 1 }}

@@ -1,0 +1,52 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StSettingsPage: Adw.Bin {
+    Adw.ToastOverlay toast_overlay {
+        Adw.PreferencesPage {
+            Adw.PreferencesGroup {
+                title: _("Backup &amp; Share Randomization Settings");
+
+                Gtk.Box {
+                    orientation: vertical;
+                    spacing: 10;
+
+                    Gtk.Button button_load {
+                        label: _("Load from File");
+                        clicked => $on_button_load_clicked();
+                        styles ['pill']
+                    }
+                    Gtk.Button button_save {
+                        label: _("Save to File");
+                        clicked => $on_button_save_clicked();
+                        styles ['pill']
+                    }
+                }
+            }
+            Adw.PreferencesGroup {
+            title: _("Basic Settings");
+
+            Adw.EntryRow row_seed {
+                title: _("Randomization Seed");
+                changed => $on_row_seed_changed();
+            }
+
+            Adw.SwitchRow row_native_file_handlers {
+                title: _('Use Native File Handlers');
+                activatable: true;
+                notify::active => $on_row_native_file_handlers_active();
+                [suffix]
+                Box {
+                    MenuButton {
+                        icon-name: 'skytemple-help-about-symbolic';
+                        popover: $StHelpPopover {
+                            label: _('If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\nThis can affect the random values rolled during the randomization.\n\nThis should only be disabled if you run into issues.');
+                        };
+                        styles ['flat']
+                    }
+                }
+            }
+        }
+        }
+    }
+}

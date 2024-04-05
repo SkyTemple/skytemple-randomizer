@@ -1,0 +1,177 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StRandomizeDialog: Adw.Dialog {
+    title: _('Randomization Progress');
+    can-close: false;
+    content-width: 420;
+    content-height: 490;
+    close-attempt => $on_close_attempt();
+
+    realize => $on_realize();
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {}
+
+        Adw.Bin content {
+            Box {
+                orientation: vertical;
+                hexpand: true;
+
+                ScrolledWindow {
+                    vexpand: true;
+                    hscrollbar-policy: never;
+
+                    Viewport {
+                        Adw.Clamp {
+                            margin-start: 5;
+                            margin-end: 5;
+                            margin-top: 16;
+                            margin-bottom: 16;
+                            tightening-threshold: 5;
+                            Box {
+                                orientation: vertical;
+                                spacing: 16;
+
+                                Stack status_stack {
+                                    StackPage status_start_page {
+                                        child: Button start_button {
+                                            clicked => $on_start_button_clicked();
+
+                                            Box {
+                                                orientation: horizontal;
+                                                halign: center;
+                                                spacing: 8;
+
+                                                Image {
+                                                    valign: center;
+                                                    hexpand: true;
+                                                    icon-name: "skytemple-export-symbolic";
+                                                }
+                                                Label {
+                                                    wrap: true;
+                                                    hexpand: true;
+                                                    label: _("Select Output File & Start Randomization");
+                                                }
+                                            }
+
+                                            styles ["suggested-action"]
+                                        };
+                                    }
+                                    StackPage status_status_page {
+                                        child: ListBox {
+                                            selection-mode: none;
+
+                                            Adw.ActionRow status_row {
+                                                activatable: false;
+                                                selectable: false;
+                                                title: "";
+                                                subtitle: "";
+
+                                                [prefix]
+                                                Adw.Bin status_icon {
+                                                  width-request: 40;
+                                                  height-request: 40;
+
+                                                  Spinner {
+                                                    spinning: true;
+                                                  }
+                                                }
+                                            }
+
+                                            styles ["boxed-list"]
+                                        };
+                                    }
+                                }
+                                ProgressBar progress_bar {
+
+                                }
+                                ListBox {
+                                    selection-mode: none;
+
+                                    Adw.ActionRow metadata_source {
+                                        activatable: false;
+                                        selectable: false;
+                                        title: _("Input ROM");
+                                        subtitle: "";
+                                        subtitle-selectable: true;
+
+                                        [suffix]
+                                        Button {
+                                            clicked => $on_metadata_source_button_clicked();
+
+                                            icon-name: 'system-file-manager-symbolic';
+                                            tooltip-text: _("Open Folder in File Browser");
+
+                                            styles ["flat"]
+                                        }
+
+                                        styles ["property"]
+                                    }
+                                    Adw.ActionRow metadata_output {
+                                        activatable: false;
+                                        selectable: false;
+                                        sensitive: false;
+                                        title: _("Output ROM");
+                                        subtitle: _("(Not yet chosen.)");
+                                        subtitle-selectable: true;
+
+                                        [suffix]
+                                        Button {
+                                            clicked => $on_metadata_output_button_clicked();
+
+                                            icon-name: 'system-file-manager-symbolic';
+                                            tooltip-text: _("Open Folder in File Browser");
+
+                                            styles ["flat"]
+                                        }
+                                    }
+
+                                    styles ["boxed-list"]
+                                }
+                                Gtk.ListBox {
+                                    Adw.ActionRow {
+                                        activatable: false;
+                                        selectable: false;
+                                        title: _("Game Region");
+
+                                        Label metadata_region_value {
+                                            label: "";
+
+                                            styles ["dim-label"]
+                                        }
+                                    }
+                                    Adw.ActionRow {
+                                        activatable: false;
+                                        selectable: false;
+                                        title: _("Randomizer Version");
+
+                                        Label metadata_version_value {
+                                            label: "";
+
+                                            styles ["dim-label"]
+                                        }
+                                    }
+                                    Adw.ActionRow {
+                                        activatable: false;
+                                        selectable: false;
+                                        title: _("Seed");
+
+                                        Label metadata_seed_value {
+                                            label: "";
+
+                                            styles ["dim-label"]
+                                        }
+                                    }
+
+                                    styles ["boxed-list"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

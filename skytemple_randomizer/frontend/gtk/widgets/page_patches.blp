@@ -1,0 +1,77 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StPatchesPage: Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+        Adw.SwitchRow row_patch_moveshortcuts {
+            title: _('Apply "MoveShortcuts" Patch');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            notify::active => $on_row_patch_moveshortcuts_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover help_popover_patch_moveshortcuts {};
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_patch_unuseddungeonchance {
+            title: _('Apply "UnusedDungeonPatch" Patch');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            notify::active => $on_row_patch_unuseddungeonchance_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover help_popover_patch_unuseddungeonchance {};
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_patch_totalteamcontrol {
+            title: _('Apply "Complete Team Control" Patch');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            notify::active => $on_row_patch_totalteamcontrol_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover help_popover_patch_totalteamcontrol {};
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_patch_disarm_monster_houses {
+            title: _('Apply "Disarm Monster Houses" Patch');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            notify::active => $on_row_patch_disarm_monster_houses_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover help_popover_patch_disarm_monster_houses {};
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_patch_fixmemorysoftlock {
+            title: _('Apply "Fix Memory Softlock" Patch');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            notify::active => $on_row_patch_fixmemorysoftlock_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover help_popover_patch_fixmemorysoftlock {};
+                    styles ['flat']
+                }
+            }
+        }
+    }
+}

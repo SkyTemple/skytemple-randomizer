@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -22,29 +22,34 @@ from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 
 class TextMainRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
-        if self.config['text']['main']:
+        if self.config["text"]["main"]:
             return 1
         return 0
 
     def run(self, status: Status):
-        if not self.config['text']['main']:
+        if not self.config["text"]["main"]:
             return status.done()
-        status.step('Randomizing all main text...')
+        status.step(_("Randomizing all main text..."))
 
         if self.static_data.game_region == GAME_REGION_JP:
             return self.run_for_jp(status)
 
         for lang, strings in get_all_string_files(self.rom, self.static_data):
-            for string_block in self._collect_categories(self.static_data.string_index_data.string_blocks):
-                part = strings.strings[string_block.begin:string_block.end]
+            for string_block in self._collect_categories(
+                self.static_data.string_index_data.string_blocks
+            ):
+                part = strings.strings[string_block.begin : string_block.end]
                 shuffle(part)
-                strings.strings[string_block.begin:string_block.end] = part
+                strings.strings[string_block.begin : string_block.end] = part
 
-            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(strings))
+            self.rom.setFileByName(
+                f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings)
+            )
 
         status.done()
 
@@ -58,6 +63,8 @@ class TextMainRandomizer(AbstractRandomizer):
         for cat in sorted(string_cats.values(), key=lambda c: c.begin):
             if cat.begin > current_index:
                 # yield a placeholder category
-                yield Pmd2StringBlock(f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin)
+                yield Pmd2StringBlock(
+                    f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin
+                )
             yield cat
             current_index = cat.end

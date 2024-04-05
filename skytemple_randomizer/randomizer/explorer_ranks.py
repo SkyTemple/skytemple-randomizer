@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -22,24 +22,31 @@ from skytemple_files.hardcoded.rank_up_table import HardcodedRankUpTable
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_allowed_item_ids
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
+
 MIN_PNTS = u32(1)
 MAX_UNLOCK_PNTS = u32(200000)
 
 
 class ExplorerRanksRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
-        if self.config['starters_npcs']['explorer_rank_rewards'] or self.config['starters_npcs']['explorer_rank_unlocks']:
+        if (
+            self.config["starters_npcs"]["explorer_rank_rewards"]
+            or self.config["starters_npcs"]["explorer_rank_unlocks"]
+        ):
             return 1
         return 0
 
     def run(self, status: Status):
-        rand_rewards = self.config['starters_npcs']['explorer_rank_rewards']
-        rand_unlocks = self.config['starters_npcs']['explorer_rank_unlocks']
+        rand_rewards = self.config["starters_npcs"]["explorer_rank_rewards"]
+        rand_unlocks = self.config["starters_npcs"]["explorer_rank_unlocks"]
         if not rand_rewards and not rand_unlocks:
             return status.done()
 
-        status.step("Randomizing rank data...")
-        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
+        status.step(_("Randomizing rank data..."))
+        arm9 = bytearray(
+            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
+        )
         ranks = HardcodedRankUpTable.get_rank_up_table(arm9, self.static_data)
 
         if rand_unlocks:

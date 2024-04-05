@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -25,7 +25,14 @@ from skytemple_randomizer.status import Status
 
 
 class AbstractRandomizer(ABC):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
+    def __init__(
+        self,
+        config: RandomizerConfig,
+        rom: NintendoDSRom,
+        static_data: Pmd2Data,
+        seed: str,
+        frontend: AbstractFrontend,
+    ):
         self.config = config
         self.rom = rom
         self.static_data = static_data

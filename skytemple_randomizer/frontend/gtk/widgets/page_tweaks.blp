@@ -1,0 +1,113 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StTweaksPage: Adw.PreferencesPage {
+    title: _('T_weaks');
+    name: 'page_tweaks';
+    icon-name: 'skytemple-e-special-symbolic';
+    use-underline: true;
+
+    Adw.PreferencesGroup {
+        title: _('Items');
+        description: _('Tip: Dungeon item randomization settings can be found under "Dungeons".');
+
+        Adw.ComboRow row_item_randomization_algorithm {
+            title: _('Item Randomization Algorithm');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::selected => $on_row_item_randomization_algorithm_notify_selected();
+            model: StringList {
+                strings [_("Balanced"), _("Classic")]
+            };
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Controls how item lists are randomly filled.\n\nBalanced: Tries to make it equally likely to find any item in the game,\nthe only exception being Poké which is boosted.\n\nClassic: Algorithm that was used in the Randomizer prior to version 1.4.\nIt doesn't attempt to balance out the different item categories,\nmaking items from categories with fewer total items easier to find.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_randomize_global_items {
+            title: _('Randomize Treasure Town shop and dungeon rewards');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_global_items_notify_active();
+        }
+
+        Adw.ActionRow row_item_pool {
+            title: _('Allowed Items &amp; Category Weights');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('Utilities');
+
+        Adw.SwitchRow row_download_sprites {
+            title: _('Download Missing Portraits &amp; Sprites');
+            subtitle: _('Downloaded from SpriteCollab (sprites.pmdcollab.org)');
+            icon-name: 'skytemple-e-sprite-symbolic';
+            activatable: true;
+            notify::active => $on_row_download_sprites_notify_active();
+        }
+
+        Adw.ActionRow row_patches {
+            title: _('Patches');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('Miscellaneous');
+
+        Adw.ActionRow row_music {
+            title: _('Music');
+            icon-name: 'skytemple-e-music-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+
+        Adw.ActionRow row_explorer_rank {
+            title: _('Explorer Rank');
+            icon-name: 'skytemple-e-graphics-symbolic';
+            activatable: true;
+            activated => $on_signal_for_dialog();
+            [suffix]
+            Box {
+                Image {
+                  icon-name: 'go-next-symbolic';
+                  styles ['dim-label']
+                }
+            }
+        }
+    }
+}

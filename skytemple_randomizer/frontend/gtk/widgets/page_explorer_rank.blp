@@ -1,0 +1,39 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StExplorerRankPage: Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+        Adw.SwitchRow row_explorer_rank_unlocks {
+            title: _("Randomize Explorer Rank Unlocks");
+            icon-name: 'skytemple-e-graphics-symbolic';
+            activatable: true;
+            notify::active => $on_row_explorer_rank_unlocks_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_explorer_rank_rewards {
+            title: _("Randomize Explorer Rank Rewards");
+            icon-name: 'skytemple-e-graphics-symbolic';
+            activatable: true;
+            notify::active => $on_row_explorer_rank_rewards_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, Explorer Ranks give random items as rewards upon unlocking a new level.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+}

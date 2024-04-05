@@ -1,0 +1,63 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StMovesetsPage: Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+        Adw.SwitchRow row_movesets {
+            title: _('Randomize Level-Up Movesets');
+            icon-name: 'skytemple-e-actor-symbolic';
+            activatable: true;
+            notify::active => $on_row_movesets_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled then what moves Pokémon can learn by level-up is randomized.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.ComboRow row_restrictions {
+            title: _('First Move Restrictions');
+            icon-name: 'skytemple-e-actor-symbolic';
+            sensitive: bind row_movesets.active;
+            activatable: true;
+            notify::selected => $on_row_restrictions_notify_selected();
+            model: StringList {
+                strings [_("None"), _("Must deal damage"), _("Must be STAB")]
+            };
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Configure additional restrictions for a Pokémon's first move.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        Adw.SwitchRow row_tm_hm_movesets {
+            title: _('Randomize TM/HM Movesets');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_tm_hm_movesets_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled then what Pokémon can learn which TMs/HMs is randomized.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+}

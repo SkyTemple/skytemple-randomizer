@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -19,7 +19,8 @@ from threading import Lock
 
 class Status:
     """A threadsafe class for signaling status updates"""
-    DONE_SPECIAL_STR = '<<<<<<< DONE'
+
+    DONE_SPECIAL_STR = "<<<<<<< DONE"
 
     def __init__(self):
         self.counter = 0

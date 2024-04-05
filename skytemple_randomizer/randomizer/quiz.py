@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -16,18 +16,23 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
 from random import randint
-from typing import List
 
 import strictyaml
 from jsonschema import validate
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
-from skytemple_randomizer.config import RandomizerConfig, QuizQuestion, data_dir, QUIZ_QUESTIONS_JSON_SCHEMA
+from skytemple_randomizer.config import (
+    RandomizerConfig,
+    QuizQuestion,
+    QUIZ_QUESTIONS_JSON_SCHEMA,
+)
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
 
 QUESTION_MAPPING = {
     0: [0, 1, 2],
@@ -94,49 +99,65 @@ QUESTION_MAPPING = {
     61: [162, 163, 164],
     62: [165, 166, 167],
     63: [168, 169, 170],
-    66: [173, 174]
+    66: [173, 174],
 }
-FALLBACK_QUESTION = """[CS:B]Um... there weren't enough questions available 
-during randomization.[CR]"""
+FALLBACK_QUESTION = (
+    """[CS:B]Um... there weren't enough questions available during randomization.[CR]"""
+)
 FALLBACK_ANSWER = "How embarrassing..."
 
 
 class QuizRandomizer(AbstractRandomizer):
-    def __init__(self, config: RandomizerConfig, rom: NintendoDSRom, static_data: Pmd2Data, seed: str, frontend: AbstractFrontend):
+    def __init__(
+        self,
+        config: RandomizerConfig,
+        rom: NintendoDSRom,
+        static_data: Pmd2Data,
+        seed: str,
+        frontend: AbstractFrontend,
+    ):
         super().__init__(config, rom, static_data, seed, frontend)
 
     def step_count(self) -> int:
-        if self.config['quiz']['randomize']:
+        if self.config["quiz"]["randomize"]:
             return 1
         return 0
 
     def run(self, status: Status):
-        if not self.config['quiz']['randomize']:
+        if not self.config["quiz"]["randomize"]:
             return status.done()
-        status.step("Randomizing Quiz...")
+        status.step(_("Randomizing Quiz..."))
 
-        question_block = self.static_data.string_index_data.string_blocks['Personality Quiz Questions']
-        answer_block = self.static_data.string_index_data.string_blocks['Personality Quiz Answers']
+        question_block = self.static_data.string_index_data.string_blocks[
+            "Personality Quiz Questions"
+        ]
+        answer_block = self.static_data.string_index_data.string_blocks[
+            "Personality Quiz Answers"
+        ]
 
         for lang, string_file in get_all_string_files(self.rom, self.static_data):
             two_answers_pool = []
             three_answers_pool = []
             four_or_more_answers_pool = []
 
-            for q in self.config['quiz']['questions'] + self._get_vanilla_questions():
-                if len(q['answers']) == 2:
+            for q in self.config["quiz"]["questions"] + self._get_vanilla_questions():
+                if len(q["answers"]) == 2:
                     two_answers_pool.append(q)
-                elif len(q['answers']) == 3:
+                elif len(q["answers"]) == 3:
                     three_answers_pool.append(q)
                 else:
-                    assert len(q['answers']) > 3
+                    assert len(q["answers"]) > 3
                     four_or_more_answers_pool.append(q)
 
             for game_question_id, game_answer_ids in QUESTION_MAPPING.items():
                 assert len(game_answer_ids) > 1
                 pools = [four_or_more_answers_pool]
                 if len(game_answer_ids) == 2:
-                    pools = [two_answers_pool, three_answers_pool, four_or_more_answers_pool]
+                    pools = [
+                        two_answers_pool,
+                        three_answers_pool,
+                        four_or_more_answers_pool,
+                    ]
                 elif len(game_answer_ids) == 3:
                     pools = [three_answers_pool, four_or_more_answers_pool]
                 while len(pools) > 0 and len(pools[0]) < 1:
@@ -147,14 +168,16 @@ class QuizRandomizer(AbstractRandomizer):
                     question = self._generate_fallback_question(len(game_answer_ids))
 
                 string_file.strings[question_block.begin + game_question_id] = strlossy(
-                    question['question'], self.static_data.string_encoding
+                    question["question"], self.static_data.string_encoding
                 )
-                for answer_id, answer in zip(game_answer_ids, question['answers']):
+                for answer_id, answer in zip(game_answer_ids, question["answers"]):
                     string_file.strings[answer_block.begin + answer_id] = strlossy(
                         answer, self.static_data.string_encoding
                     )
 
-            self.rom.setFileByName(f'MESSAGE/{lang.filename}', FileType.STR.serialize(string_file))
+            self.rom.setFileByName(
+                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
+            )
 
         status.done()
 
@@ -164,20 +187,20 @@ class QuizRandomizer(AbstractRandomizer):
         if len(pool) > 1:
             question_idx = randint(0, len(pool) - 1)
         question = pool.pop(question_idx)
-        question['answers'] = question['answers'][:answer_len]
-        assert len(question['answers']) == answer_len
+        question["answers"] = question["answers"][:answer_len]
+        assert len(question["answers"]) == answer_len
         return question
 
     @staticmethod
     def _generate_fallback_question(answer_len) -> QuizQuestion:
         return {
-            'question': FALLBACK_QUESTION,
-            'answers': [FALLBACK_ANSWER for _ in range(answer_len)]
+            "question": FALLBACK_QUESTION,
+            "answers": [FALLBACK_ANSWER for _ in range(answer_len)],
         }
 
     def _get_vanilla_questions(self) -> list[QuizQuestion]:
-        if self.config['quiz']['include_vanilla_questions']:
-            with open(os.path.join(data_dir(), 'vanilla_questions.yml')) as f:
+        if self.config["quiz"]["include_vanilla_questions"]:
+            with open(os.path.join(data_dir(), "vanilla_questions.yml")) as f:
                 yaml_obj = strictyaml.load(f.read()).data
                 validate(yaml_obj, QUIZ_QUESTIONS_JSON_SCHEMA)
                 return yaml_obj
@@ -185,11 +208,14 @@ class QuizRandomizer(AbstractRandomizer):
             return []
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import json
-    with open('/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json') as f_test:
+
+    with open(
+        "/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json"
+    ) as f_test:
         data = json.load(f_test)
-    for question in data['quiz']['questions']:
-        for answer in question['answers']:
+    for question in data["quiz"]["questions"]:
+        for answer in question["answers"]:
             if len(answer) > 22:
                 print(answer)

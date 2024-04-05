@@ -3,9 +3,13 @@
 SkyTemple Randomizer
 ====================
 
-|build| |pypi-version| |pypi-downloads| |pypi-license| |pypi-pyversions| |discord|
+|build| |crowdin| |pypi-version| |pypi-downloads| |pypi-license| |pypi-pyversions| |discord|
 
 .. |logo| image:: https://raw.githubusercontent.com/SkyTemple/skytemple/master/skytemple/data/icons/hicolor/256x256/apps/skytemple.png
+
+.. |crowdin| image:: https://badges.crowdin.net/skytemple/localized.svg
+    :target: https://crowdin.com/project/skytemple
+    :alt: Localization Progress
 
 .. |build| image:: https://img.shields.io/github/actions/workflow/status/SkyTemple/skytemple-randomizer/build-test-publish.yml
     :target: https://pypi.org/project/skytemple-randomizer/
@@ -37,13 +41,30 @@ Randomizer for Pokémon Mystery Dungeon Explorers of Sky.
 
 It is available for Linux, macOS and Windows.
 
+GTK frontend
+------------
+When installing from source, you probably want to install the "gtk" extra,
+in order to have the actual GUI functional.
+
+The GTK frontend requires GTK 4.14+, all related libraries and libadwaita 1.5+ to be
+installed.
+
 Downloads
 ---------
 - Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
 - MacOS: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/
 - Linux: https://flathub.org/apps/details/org.skytemple.Randomizer
 
-For build instructions, see the SkyTemple_ repository.
+For build instructions in general see the SkyTemple_ repository.
+
+You probably want to install the optional `gtk` extra if you want a frontend. Without it (as of now)
+"only" the API is available and you can use Randomizer as a library. See the `skytemple_randomizer.randomizer_thread`
+for the entrypoint (specifically the class `RandomizerThread`). You will need to implement your own `AbstractFrontend`.
+The passed in `Status` object can be used to monitor the status of the randomization for progress display. See the
+GTK implementation for reference on how to use all of this.
+
+Without the `gtk` extra, importing anything from `skytemple_randomizer.frontend.gtk` may fail. Running the script
+`skytemple_randomizer` may also fail. You will need to use the API instead.
 
 |flathub_badge|
 

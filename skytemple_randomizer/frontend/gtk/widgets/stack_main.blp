@@ -1,0 +1,124 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StMainStack: Adw.Bin {
+    realize => $on_realize ();
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar header_bar {
+            centering-policy: strict;
+
+            [start]
+            Button button_load_rom {
+                child: Adw.ButtonContent {
+                    icon-name: 'go-previous-symbolic';
+                };
+                tooltip-text: _('Close the currently opened ROM and load a new one.');
+                halign: center;
+
+                clicked => $on_button_load_rom_clicked ();
+            }
+
+            title-widget: Adw.ViewSwitcher view_switcher {
+                stack: stack;
+                policy: wide;
+            };
+        }
+
+        content: Adw.ViewStack stack {
+            vexpand: true;
+
+            Adw.ViewStackPage page_start {
+                child: $StWelcomePage {
+                };
+                icon-name: 'skytemple-e-worldmap-symbolic';
+                name: 'page_start';
+                title: _('_Start');
+                use-underline: true;
+            }
+
+            Adw.ViewStackPage page_monsters {
+                child: $StMonstersPage {
+                };
+                icon-name: 'skytemple-e-monster-symbolic';
+                name: 'page_monsters';
+                title: _('_Pokémon');
+                use-underline: true;
+            }
+
+            Adw.ViewStackPage page_dungeons {
+                child: $StDungeonsPage {
+                };
+                icon-name: 'skytemple-e-dungeon-symbolic';
+                name: 'page_dungeons';
+                title: _('_Dungeons');
+                use-underline: true;
+            }
+
+            Adw.ViewStackPage page_text {
+                child: $StTextPage {
+                };
+                icon-name: 'skytemple-e-string-symbolic';
+                name: 'page_text';
+                title: _('_Text');
+                use-underline: true;
+            }
+
+            Adw.ViewStackPage page_tweaks {
+                child: $StTweaksPage {
+                };
+                icon-name: 'skytemple-e-special-symbolic';
+                name: 'page_tweaks';
+                title: _('T_weaks');
+                use-underline: true;
+            }
+        }
+        ;
+
+        [bottom]
+        Box {
+            orientation: vertical;
+
+            ActionBar {
+                [start]
+                Box {
+                    spacing: 10;
+                    Button button_settings {
+                        child: Adw.ButtonContent button_settings_content {
+                            label: _('Settings');
+                            icon-name: 'skytemple-document-edit-symbolic';
+                        };
+                        clicked => $on_button_settings_clicked ();
+                    }
+                    Button button_help {
+                        tooltip-text: _('Help (online)');
+                        child: Adw.ButtonContent {
+                            icon-name: 'skytemple-help-about-symbolic';
+                        };
+                        clicked => $on_button_help_clicked ();
+                    }
+                }
+
+                [end]
+                Box {
+                    Button button_randomize {
+                        child: Adw.ButtonContent {
+                            icon-name: 'skytemple-export-symbolic';
+                            label: _('_Randomize');
+                            use-underline: true;
+                        };
+                        tooltip-text: _('');
+
+                        styles ['suggested-action']
+                        clicked => $on_button_randomize_clicked ();
+                    }
+                }
+            }
+
+            Adw.ViewSwitcherBar switcher_bar {
+                stack: stack;
+            }
+        }
+    }
+}

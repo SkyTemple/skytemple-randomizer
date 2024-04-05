@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -21,6 +21,8 @@ from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script
 from skytemple_randomizer.status import Status
+from skytemple_files.common.i18n_util import _
+
 
 SCRIPT_NAME = "SCRIPT/D14P12A/m14a0103.ssb"
 
@@ -34,15 +36,19 @@ class FixQuicksandPit(AbstractRandomizer):
         return 1
 
     def run(self, status: Status):
-        status.step("Fixing Quicksand Pit...")
+        status.step(_("Fixing Quicksand Pit..."))
         try:
             ssb: Ssb = get_script(SCRIPT_NAME, self.rom, self.static_data)
 
             for rtn in ssb.routine_ops:
                 for op in rtn:
-                    op_c = self.static_data.script_data.op_codes__by_name[op.op_code.name][0]
-                    if op_c.name == 'WaitAnimation':
-                        op.op_code = self.static_data.script_data.op_codes__by_name['Null'][0]
+                    op_c = self.static_data.script_data.op_codes__by_name[
+                        op.op_code.name
+                    ][0]
+                    if op_c.name == "WaitAnimation":
+                        op.op_code = self.static_data.script_data.op_codes__by_name[
+                            "Null"
+                        ][0]
         except Exception:
             # We ignore errors, it's possible ROM Hacks removed this script
             raise  # todo!

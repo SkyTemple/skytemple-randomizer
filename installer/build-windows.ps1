@@ -11,12 +11,6 @@ if (test-path dist) {
 # Download armips and other binary depedencies
 curl https://skytemple.org/build_deps/armips.exe -O
 
-# Install themes
-curl https://skytemple.org/build_deps/Arc.zip -O
-unzip Arc.zip
-curl https://skytemple.org/build_deps/ZorinBlue.zip -O
-unzip ZorinBlue.zip
-
 # Install NSIS
 curl https://skytemple.org/build_deps/nsis.zip -O
 unzip -o nsis.zip -d "C:\Program Files (x86)\NSIS"
@@ -27,25 +21,25 @@ C:\skytemple-venv\Scripts\activate.ps1
 # Install PyInstaller
 pip install setuptools wheel 'pyinstaller~=5.0'
 
-# Install PyGObject and pycairo
-pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
-pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
-
 # Install certifi for cert handling
 pip3 install -U certifi
 
+# Generate MO localization files
+bash .\generate-mo.sh
+
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-mac-windows.txt
-pip3 install ..
+pip3 install '..[gtk]'
 
 if ($env:IS_DEV_BUILD) {
   bash .\install-skytemple-components-from-git.sh
 }
 
 pyinstaller skytemple-randomizer.spec
+if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
-    return 1
+    exit 1
 }
 
 # Check if we need to copy the cacert file

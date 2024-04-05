@@ -1,4 +1,4 @@
-#  Copyright 2020-2023 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -14,13 +14,19 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
 import logging
 import sys
+import threading
 from threading import Thread, Lock
-from typing import List
 
 from ndspy.rom import NintendoDSRom
-from skytemple_files.common.impl_cfg import change_implementation_type, ImplementationType
+from skytemple_files.common.i18n_util import _
+from skytemple_files.common.impl_cfg import (
+    change_implementation_type,
+    ImplementationType,
+)
 
 from skytemple_files.common.util import get_ppmdu_config_for_rom
 from skytemple_randomizer.config import RandomizerConfig
@@ -57,19 +63,45 @@ from skytemple_randomizer.status import Status
 
 
 RANDOMIZERS = [
-    PatchApplier, NpcRandomizer, StarterRandomizer, BossRandomizer, GuestRandomizer, SpecialPcRandomizer,
-    RecruitmentTableRandomizer, DungeonRandomizer, FixedRoomRandomizer, DungeonUnlocker, PortraitDownloader,
-    MonsterRandomizer, MovesetRandomizer, LocationRandomizer, ChapterRandomizer, QuizRandomizer, TextMainRandomizer,
-    TextScriptRandomizer, GlobalItemsRandomizer, OverworldMusicRandomizer, ExplorerRanksRandomizer, IqTacticsRandomizer,
+    PatchApplier,
+    NpcRandomizer,
+    StarterRandomizer,
+    BossRandomizer,
+    GuestRandomizer,
+    SpecialPcRandomizer,
+    RecruitmentTableRandomizer,
+    DungeonRandomizer,
+    FixedRoomRandomizer,
+    DungeonUnlocker,
+    PortraitDownloader,
+    MonsterRandomizer,
+    MovesetRandomizer,
+    LocationRandomizer,
+    ChapterRandomizer,
+    QuizRandomizer,
+    TextMainRandomizer,
+    TextScriptRandomizer,
+    GlobalItemsRandomizer,
+    OverworldMusicRandomizer,
+    ExplorerRanksRandomizer,
+    IqTacticsRandomizer,
     MiscRandomizer,
     FixQuicksandPit,
-    SpecialFunRandomizer, SeedInfo
+    SpecialFunRandomizer,
+    SeedInfo,
 ]
 logger = logging.getLogger(__name__)
 
 
 class RandomizerThread(Thread):
-    def __init__(self, status: Status, rom: NintendoDSRom, config: RandomizerConfig, seed: str, frontend: AbstractFrontend):
+    def __init__(
+        self,
+        status: Status,
+        rom: NintendoDSRom,
+        config: RandomizerConfig,
+        seed: str,
+        frontend: AbstractFrontend,
+    ):
         """
         Inits the thread. If it's started() access to rom and config MUST NOT be done until is_done().
         is_done is also signaled by the status object's done() event.
@@ -85,7 +117,7 @@ class RandomizerThread(Thread):
 
         # Configure file handler implementation
         impl_type = ImplementationType.PYTHON
-        if config['starters_npcs']['native_file_handlers']:
+        if config["starters_npcs"]["native_file_handlers"]:
             impl_type = ImplementationType.NATIVE
         change_implementation_type(impl_type)
 
@@ -96,14 +128,17 @@ class RandomizerThread(Thread):
 
         self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None
+        self.thread_id: int | None = None
 
     def run(self):
+        logger.info("Randomizer thread started.")
+        self.thread_id = threading.get_ident()
         try:
             for randomizer in self.randomizers:
                 local_status_steps_left = randomizer.step_count()
                 local_status = Status()
 
-                def local_status_fn(_, descr):
+                def local_status_fn(__, descr):
                     nonlocal local_status_steps_left
                     if descr != Status.DONE_SPECIAL_STR:
                         if local_status_steps_left > 0:
@@ -111,12 +146,15 @@ class RandomizerThread(Thread):
                         self.status.step(descr)
                     else:
                         for i in range(local_status_steps_left):
-                            self.status.step('Randomizing...')
+                            self.status.step(_("Randomizing..."))
 
                 local_status.subscribe(local_status_fn)
                 randomizer.run(local_status)
-            self.status.step('Saving scripts...')
+            self.status.step(_("Saving scripts..."))
             save_scripts(self.rom, self.static_data)
+        except (SystemExit, KeyboardInterrupt):
+            logger.info("Randomizer was asked to exit.")
+            self.error = sys.exc_info()  #  type: ignore
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)
             self.error = sys.exc_info()  #  type: ignore
@@ -128,3 +166,6 @@ class RandomizerThread(Thread):
     def is_done(self) -> bool:
         with self.lock:
             return self.done
+
+    def get_thread_id(self) -> int | None:
+        return self.thread_id

@@ -9,16 +9,11 @@ site_packages = next(p for p in sys.path if 'site-packages' in p)
 
 additional_datas = [
     (os.path.join(pkg_path, 'data'), 'data'),
-    (os.path.join(pkg_path, 'frontend', 'gtk', '*.glade'), '.'),
-    (os.path.join(pkg_path, 'frontend', 'gtk', '*.css'), '.'),
+    (os.path.join(pkg_path, 'frontend', 'gtk', 'widgets', '*.ui'), '.'),
     (os.path.join(site_packages, 'skytemple_icons', 'hicolor'), 'skytemple_icons/hicolor'),
     (os.path.join(site_packages, 'skytemple_files', '_resources'), 'skytemple_files/_resources'),
     (os.path.join(site_packages, 'certifi', 'cacert.pem'), 'certifi'),
     (os.path.join('.', 'armips'), 'skytemple_files/_resources'),
-
-    # Themes
-    ('Arc', 'share/themes/Arc'),
-    ('Arc-Dark', 'share/themes/Arc-Dark'),
 ]
 
 additional_binaries = [
@@ -39,8 +34,7 @@ a = Analysis(['../skytemple_randomizer/frontend/gtk/main.py'],
              hooksconfig={
                  "gi": {
                      "module-versions": {
-                         "Gtk": "3.0",
-                         "GtkSource": "4",
+                         "Gtk": "4.0",
                      },
                  },
              },

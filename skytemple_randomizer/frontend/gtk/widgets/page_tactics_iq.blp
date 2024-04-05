@@ -1,0 +1,116 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StTacticsIqPage: Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+        Adw.SwitchRow row_randomize_iq_groups {
+            title: _("Randomize Pokémon's IQ Groups");
+            icon-name: 'skytemple-e-actor-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_iq_groups_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Assigns all Pokémon in the game a random IQ group.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+        Adw.SwitchRow row_randomize_iq_gain {
+            title: _("Randomize IQ Gain");
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_iq_gain_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, the amount of belly the gummies fill and the amount of IQ they give are fully random for each type.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('IQ Skills');
+
+        Adw.SwitchRow row_randomize_iq_skills {
+            title: _("Randomize IQ Skill Unlocks");
+            icon-name: 'skytemple-view-list-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_iq_skills_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, IQ skills are unlocked at random IQ amounts. Item Master is always unlocked.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_keep_universal_skills {
+            title: _("Keep Universal Skills");
+            icon-name: 'skytemple-e-menu-symbolic';
+            activatable: true;
+            sensitive: bind row_randomize_iq_skills.active;
+            notify::active => $on_row_keep_universal_skills_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _('If enabled, all skills that are included in all groups in the base game will also be added to all groups when randomizing.\nOn top of that, even if "randomize IQ skill unlocks" is enabled, Course Checker, Item Catcher, Item Master, and Exclusive Move-User will always be unlocked from the start.\nHowever, Status Checker, Nontraitor, and Lava Evader will still have randomized IQ values.');
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_randomize_iq_skill_groups {
+            title: _("Randomize IQ Groups");
+            icon-name: 'skytemple-view-list-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_iq_skill_groups_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, IQ skills are assigned to random IQ groups (but at least one). Item Master is always in all groups.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('Tactics');
+
+        Adw.SwitchRow row_randomize_tactics {
+            title: _("Randomize Tactics Unlock Levels");
+            icon-name: 'skytemple-document-edit-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_tactics_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+}

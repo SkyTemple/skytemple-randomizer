@@ -1,0 +1,111 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $StTextPage: Adw.PreferencesPage {
+    title: _('_Text');
+    name: 'page_text';
+    icon-name: 'skytemple-e-string-symbolic';
+    use-underline: true;
+
+    Adw.PreferencesGroup {
+        title: _('Text Pools');
+        description: _('Configure what texts can be used for the quiz, location names and chapter titles.');
+
+        Adw.SwitchRow row_personality_quiz {
+            title: _('Randomize Personality Quiz');
+            icon-name: 'skytemple-e-actor-symbolic';
+            activatable: true;
+            notify::active => $on_row_personality_quiz_notify_active();
+            [suffix]
+            Box {
+                Button button_randomize_personality_quiz {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure the questions for the personality quiz');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_location_names {
+            title: _('Randomize Location Names');
+            icon-name: 'skytemple-e-dungeon-floor-symbolic';
+            activatable: true;
+            notify::active => $on_row_location_names_notify_active();
+            [suffix]
+            Box {
+                Button button_randomize_location_names {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure the pool of location names used for randomization');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_chapter_titles {
+            title: _('Randomize Chapter Titles');
+            icon-name: 'skytemple-e-bgp-symbolic';
+            activatable: true;
+            notify::active => $on_row_chapter_titles_notify_active();
+            [suffix]
+            Box {
+                Button button_randomize_chapter_titles {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure the pool of chapter titles used for randomization');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('Full Text Randomization');
+
+        Adw.SwitchRow row_randomize_main_text {
+            title: _('Randomize Main Text');
+            icon-name: 'skytemple-e-string-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_main_text_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Randomize the game's main text file. This contains everything except for most of the overworld dialogue. The randomization is done in a way that (in most cases) similar categories of texts are shuffled.\nPotentially unstable!");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+
+        Adw.SwitchRow row_randomize_story_dialogue {
+            title: _('Randomize Story Dialogue');
+            icon-name: 'skytemple-e-string-symbolic';
+            activatable: true;
+            notify::active => $on_row_randomize_story_dialogue_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Randomize the game's overworld scene text. ALL overworld text is shuffled.\nPotentially unstable!");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
+    }
+
+    Adw.PreferencesGroup {
+        title: _('Options');
+
+        Adw.SwitchRow row_enable_instant_text {
+            title: _('Enable Instant Text');
+            icon-name: 'skytemple-e-variable-symbolic';
+            activatable: true;
+            notify::active => $on_row_enable_instant_text_notify_active();
+        }
+    }
+}

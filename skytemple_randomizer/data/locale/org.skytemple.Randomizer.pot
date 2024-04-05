@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-05 18:49+0000\n"
+"POT-Creation-Date: 2024-04-05 18:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3204,7 +3204,7 @@ msgstr ""
 msgid "_OK"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:109
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:76
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
 msgstr ""
 
@@ -3844,7 +3844,7 @@ msgid "Export questions to XML"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:88
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:90
 msgid "Questions"
 msgstr ""
 
@@ -3971,18 +3971,18 @@ msgstr ""
 msgid "If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:84
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:125
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:218
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:226
 msgid "1st Word"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:224
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:232
 msgid "2nd Word"
 msgstr ""
 

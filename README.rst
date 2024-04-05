@@ -49,6 +49,20 @@ in order to have the actual GUI functional.
 The GTK frontend requires GTK 4.14+, all related libraries and libadwaita 1.5+ to be
 installed.
 
+Build
+~~~~~
+In addition to normally installing the Python package in dev mode, you also need to make sure you
+have all submodules checked out. After this you need to compile all MO files (localizations) and Blueprint
+Files to XML UI files. To do that:
+
+- Linux, possibly MacOS: ``make``
+- Linux/MacOS without make: ``./build-blp-to-ui.sh && installer/generate-mo.sh``
+- Windows: ``.\build-blp-to-ui.ps1`` with PowerShell and ``installer\generate-mo.sh`` with an MSys2 environment bash shell. Gettext must be available.
+
+If you are working with the UI files you may want to use the Blueprint Compiler Language Server or setup file watchers
+to compile BLP files to UI files. More info about Blueprint Compiler can be found on its website:
+https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/
+
 Downloads
 ---------
 - Windows: https://projectpokemon.org/home/files/file/4235-skytemple-randomizer/

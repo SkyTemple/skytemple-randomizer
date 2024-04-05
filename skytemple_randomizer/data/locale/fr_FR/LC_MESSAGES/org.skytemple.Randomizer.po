@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-04 12:43+0000\n"
-"PO-Revision-Date: 2024-04-04 14:23\n"
+"POT-Creation-Date: 2024-04-05 11:59+0000\n"
+"PO-Revision-Date: 2024-04-05 12:15\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -3228,36 +3228,36 @@ msgstr "Rechercher"
 msgid "Randomization Progress"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:54
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:52
 msgid "Select Output File & Start Randomization"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:101
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:102
 msgid "Input ROM"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:107
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:129
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:108
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:130
 msgid "Open Folder in File Browser"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:123
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:124
 msgid "Output ROM"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:125
 msgid "(Not yet chosen.)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:148
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:149
 msgid "Game Region"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:163
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:164
 msgid "Randomizer Version"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:178
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:179
 msgid "Seed"
 msgstr ""
 
@@ -3913,7 +3913,8 @@ msgid "If enabled, tactics are fully unlocked at random levels. One random tacti
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:113
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:116
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr "Paramètres"
@@ -4087,19 +4088,19 @@ msgid "Welcome to the Randomizer!\n"
 "Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:135
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:139
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:137
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:141
 msgid "Close current ROM?"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:139
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:143
 msgid "_No"
 msgstr "_Non"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:140
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:144
 msgid "_Yes"
 msgstr "_Oui"
 

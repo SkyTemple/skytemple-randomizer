@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-05 15:08+0000\n"
-"PO-Revision-Date: 2024-04-05 15:41\n"
+"POT-Creation-Date: 2024-04-05 15:42+0000\n"
+"PO-Revision-Date: 2024-04-05 16:38\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -4406,7 +4406,7 @@ msgstr "Lade Seed-Info..."
 msgid "Placing Info NPC..."
 msgstr "Info-NPC wird platziert..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/special/fun.py:267
+#: skytemple_randomizer/skytemple_randomizer/randomizer/special/fun.py:269
 msgid "Finishing up..."
 msgstr "Wird fertiggestellt..."
 

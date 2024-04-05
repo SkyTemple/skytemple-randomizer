@@ -52,6 +52,7 @@ class TextPage(Adw.PreferencesPage):
     row_randomize_main_text = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_randomize_story_dialogue = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_enable_instant_text = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_text_replacement_algorithm = cast(Adw.ComboRow, Gtk.Template.Child())
     group_full_text_randomization = cast(Adw.PreferencesGroup, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
@@ -170,6 +171,15 @@ class TextPage(Adw.PreferencesPage):
             self.row_enable_instant_text.get_active()
         )
 
+    @Gtk.Template.Callback()
+    def on_row_text_replacement_algorithm_notify_selected(self, *args):
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["starters_npcs"]["npcs_use_smart_replace"] = (
+            self.row_text_replacement_algorithm.get_selected() == 0
+        )
+
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True
         self.randomization_settings = config
@@ -179,6 +189,12 @@ class TextPage(Adw.PreferencesPage):
         self.row_randomize_main_text.set_active(config["text"]["main"])
         self.row_randomize_story_dialogue.set_active(config["text"]["story"])
         self.row_enable_instant_text.set_active(config["text"]["instant"])
+        replacement_algo = (
+            0
+            if self.randomization_settings["starters_npcs"]["npcs_use_smart_replace"]
+            else 1
+        )
+        self.row_text_replacement_algorithm.set_selected(replacement_algo)
         self._suppress_signals = False
 
         # The JP ROM does not support these yet:

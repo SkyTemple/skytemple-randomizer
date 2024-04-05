@@ -107,5 +107,25 @@ template $StTextPage: Adw.PreferencesPage {
             activatable: true;
             notify::active => $on_row_enable_instant_text_notify_active();
         }
+
+        Adw.ComboRow row_text_replacement_algorithm {
+            title: _('Text Replacement Algorithm');
+            icon-name: 'skytemple-e-string-symbolic';
+            activatable: true;
+            notify::selected => $on_row_text_replacement_algorithm_notify_selected();
+            model: StringList {
+                strings [_("Smart"), _("Classic")]
+            };
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _("Controls how Pokémon and NPC names in texts are replaced.\n\nSmart: Use a more expanded algorithm for replacing in-game mentions of NPCs.\nThis is typically slower than doing a simple replacement.\n\nClassic: Algorithm that was used in the Randomizer prior to version 2.0.\nIt may lead to some unrelated parts of text (such as parts of item names) being incorrectly replaced.");
+                    };
+                    styles ['flat']
+                }
+            }
+        }
     }
 }

@@ -224,7 +224,7 @@ class NpcRandomizer(AbstractRandomizer):
                     for block in kecleon_replace_regions
                     if block is not None
                 ):
-                    new_text = kecleon_shop_text[lang.name_localized].sub(
+                    new_text = kecleon_shop_text[lang.name].sub(
                         lambda match: match.string[match.start(0) : match.start(1)]
                         + mapped_actor_names[match.group(1)]
                         + match.string[match.end(1) : match.end(0)],

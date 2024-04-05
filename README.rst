@@ -46,7 +46,7 @@ GTK frontend
 When installing from source, you probably want to install the "gtk" extra,
 in order to have the actual GUI functional.
 
-The GTK frontend requires GTK 4, all related libraries and libadwaita to be
+The GTK frontend requires GTK 4.14+, all related libraries and libadwaita 1.5+ to be
 installed.
 
 Downloads
@@ -63,8 +63,8 @@ for the entrypoint (specifically the class `RandomizerThread`). You will need to
 The passed in `Status` object can be used to monitor the status of the randomization for progress display. See the
 GTK implementation for reference on how to use all of this.
 
-Without the `gtk` extra, importing anything from `skytemple_randomizer.frontend.gtk` will fail. Running the script
-`skytemple_randomizer` will also fail. You will need to use the API instead.
+Without the `gtk` extra, importing anything from `skytemple_randomizer.frontend.gtk` may fail. Running the script
+`skytemple_randomizer` may also fail. You will need to use the API instead.
 
 |flathub_badge|
 

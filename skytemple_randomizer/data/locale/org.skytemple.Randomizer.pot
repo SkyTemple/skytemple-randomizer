@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-05 15:06+0000\n"
+"POT-Creation-Date: 2024-04-05 15:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3230,12 +3230,12 @@ msgid "Cancel randomization?"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:113
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:151
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
 msgid "_No"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:114
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:153
 msgid "_Yes"
 msgstr ""
 
@@ -3973,7 +3973,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:82
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:125
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr ""
@@ -4153,11 +4153,11 @@ msgid ""
 "Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:147
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:149
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:150
 msgid "Close current ROM?"
 msgstr ""
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-04 12:43+0000\n"
-"PO-Revision-Date: 2024-04-05 06:38\n"
+"PO-Revision-Date: 2024-04-05 08:50\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -721,7 +721,7 @@ msgstr "マクロにはエイリアスを付けることはできません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:285
 msgid "Fatal compilation error: Unexpected compilation handler on stack."
-msgstr ""
+msgstr "致命的なコンパイルエラー: スタック上の予期しないコンパイルハンドラ"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:286
 msgid "Fatal compilation error: Stack error."
@@ -1083,7 +1083,7 @@ msgstr "フラグ設定済み"
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:39
 msgid "Scenario Equals"
-msgstr ""
+msgstr "シナリオと等しい"
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:40
 msgid "Scenario Below or Equal"
@@ -1150,7 +1150,7 @@ msgstr "道具"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:456
 msgid "Recruited"
-msgstr ""
+msgstr "勧誘済み"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:457
 msgid "No Main Requirement"
@@ -1884,7 +1884,7 @@ msgstr "未使用のフロア"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:114
 msgid "Has {len(self.floors_in_mappa_not_referenced)} extra floors in it's floor list, which are not assigned to any dungeon."
-msgstr ""
+msgstr "フロアリストに {len (self.floors_in_mappa_not_referenced)} 個の追加フロアがありますが、どのダンジョンにも割り当てられていません。"
 
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:519
 #, python-brace-format
@@ -1928,7 +1928,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:179
 #: skytemple-rust/src/st_dpc.rs:222
 msgid "A dungeon background or tilemap can not have more than 400 chunks."
-msgstr ""
+msgstr "ダンジョンの背景やタイルマップには、400を超えるチャンクを含めることはできません。"
 
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:111
 #: skytemple-rust/src/st_dpla.rs:130
@@ -1939,27 +1939,27 @@ msgstr "このパレットにはアニメーションがありません。"
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:102
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/model.py:110
 msgid "This must be a color indexed image!"
-msgstr ""
+msgstr "カラーインデックス付きの画像である必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:268
 #, python-brace-format
 msgid "Font parsing: Unexpected {child.tag}"
-msgstr ""
+msgstr "フォント解析: 予期しない {child.tag}"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:49
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is defined multiple times in a font file!"
-msgstr ""
+msgstr "テーブル {e.table} の文字 {e.char} がフォントファイル内で複数回定義されています。"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:60
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is be defined multiple times in a font file!"
-msgstr ""
+msgstr "テーブル {e.table} の文字 {e.char} がフォントファイル内で複数回定義されています。"
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:305
 #, python-brace-format
 msgid "Could not load KAO at {old_index},{old_subindex}: {ex}"
-msgstr ""
+msgstr "{old_index},{old_subindex}: {ex} で KAO をロードできませんでした"
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:374
 #, python-brace-format
@@ -2125,7 +2125,7 @@ msgstr "じしん"
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:361
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:363
 msgid "???"
-msgstr ""
+msgstr "???"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:334
 msgid "Sleep"
@@ -2502,7 +2502,7 @@ msgstr "ダンジョンデバッグメニュー"
 #: skytemple-files/skytemple_files/hardcoded/menus.py:736
 #, python-brace-format
 msgid "This menu must have {num_entries} entries!"
-msgstr ""
+msgstr "このメニューには {num_entries} エントリが必要です。"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:99
 msgid "Standing Animation (loop)"
@@ -2551,16 +2551,17 @@ msgstr "その他"
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "アクターとレベルのリストを別々のファイルからロードするように変更します。\n"
+"パッチ適用時に両方のファイルを抽出します。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:109
 msgid "This patch can not be re-applied."
-msgstr ""
+msgstr "このパッチは再適用できません。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:119
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:136
 msgid "The source data specification was not found in the configuration."
-msgstr ""
+msgstr "ソースデータの仕様が構成に見つかりません。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:156
 msgid "\n\n"
@@ -2570,11 +2571,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
-msgstr ""
+msgstr "タイプ相性テーブルにタイプを追加します。これにより、古いタイプ相性テーブルが第6世代以降のテーブルに置き換わり、フェアリータイプが追加されます。"
 
 #: skytemple-files/skytemple_files/patch/handler/allow_unrecruitable_mons.py:49
 msgid "Allows recruiting the other Deoxys forms and the regis inside dungeons."
-msgstr ""
+msgstr "ダンジョン内に出現するノーマルフォルム以外のデオキシスと、レジロック、レジアイス、レジスチルを勧誘可能にします。"
 
 #: skytemple-files/skytemple_files/patch/handler/anti_softlock.py:49
 msgid "Allows the player to press A+B+X+Y during cutscenes to force the game to continue past a softlock (this can happen during cutscenes when using custom sprites or the randomizer). Does not work with crashes caused due to internal errors (such as the game running out of memory)."
@@ -2605,7 +2606,7 @@ msgstr "[me_play:1][string0]だ。"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:76
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
-msgstr ""
+msgstr "「ネイティオかんていじょ」にて、一度にすべての宝箱を鑑定できる機能を追加します。"
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:118
 msgid "Change the evolution system.\n"
@@ -2616,12 +2617,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:234
 #, python-brace-format
 msgid "Infinite recursion detected in pre evolutions for md entry {i}. "
-msgstr ""
+msgstr "md エントリ {i} の進化前において無限再帰が検出されました。 "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:243
 #, python-brace-format
 msgid "One of the monsters in the pre-evolution chain of monster ${i:04} has an invalid pre evolution configured: ${pre_evo:04}. Can not apply patch."
-msgstr ""
+msgstr "ポケモン ${i:04} の進化前チェーン内のポケモンの 1 つに、${pre_evo:04}という無効な進化前ポケモンが設定されています。パッチは適用できません。"
 
 #: skytemple-files/skytemple_files/patch/handler/change_ff_prop.py:52
 msgid "Changes and adds some properties for fixed floors.\n"
@@ -2688,7 +2689,9 @@ msgid "Expand the pokemon entries allowed to 2048, and makes all the entries ind
 "Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr ""
+msgstr "許可されるポケモンのエントリを2048に拡張し、すべてのエントリを独立させます。\n"
+"動作させるには、ChangeEvoSystem、ExternalizeWazaFile、ExternalizeMappaFile パッチが必要です。\n"
+"このパッチを適用する前にダンジョンエラーを修正し、ROMのバックアップを保存することを強く推奨します。"
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
@@ -3094,27 +3097,27 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:52
 msgid "SWDL file too short (SwdlPcmdLen EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (SwdlPcmdLen EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:139
 msgid "SWDL file too short (Header EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (Header EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:144
 msgid "Invalid SWDL/Header header."
-msgstr ""
+msgstr "SWDL/Header ヘッダーが無効です。"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:250
 msgid "Swdl read error (inconsistent Wavi length)"
-msgstr ""
+msgstr "Swdl 読み込みエラー (Wavi 長さ不一致)"
 
 #: skytemple-rust/src/dse/st_swdl/swdl.rs:284
 msgid "Swdl read: Invalid sample data"
-msgstr ""
+msgstr "Swdl 読み込み: 無効なサンプルデータ"
 
 #: skytemple-rust/src/dse/st_swdl/wavi.rs:105
 msgid "SWDL file too short (Sample Table EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (Sample Table EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/wavi.rs:262
 #: skytemple-rust/src/dse/st_swdl/wavi.rs:281
@@ -3132,11 +3135,12 @@ msgstr "SWDL Wavi の長さが無効です。読み込み時にEOFを超えて�
 #: skytemple-rust/src/image/tiled.rs:230
 msgid "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
-msgstr ""
+msgstr "インポートした画像が複雑すぎます。ユニークタイルが多すぎます ({}、最大 1024) 。\n"
+"ユニークタイルを少なくしてください。ユニークタイルとは、画像の 8 x 8 のセクションで、画像内の他の場所に存在しないタイルのことです (反転したタイルや、別のサブパレットを使ったタイルを含む) 。"
 
 #: skytemple-rust/src/python_image.rs:53
 msgid "The image you provided is not an indexed image (it has no palette). Please convert it to an indexed image (with a maximum of {} colors) and try again."
-msgstr ""
+msgstr "入力された画像はインデックス付き画像ではありません (パレットはありません)。インデックス付きの画像 (最大 {} 色) に変換して、もう一度試してください。"
 
 #: skytemple-rust/src/romfs.rs:100
 msgid "ROM Header checksum does not match contents."
@@ -3149,11 +3153,13 @@ msgstr "ROM からのファイルシステムの読み取り中にエラーが�
 
 #: skytemple-rust/src/st_bma.rs:468
 msgid "Can not import map background: Width of both images must match the current map width: {}px"
-msgstr ""
+msgstr "マップの背景をインポートできません。\n"
+"両方の画像の幅は現在のマップの幅 ({} px) と一致する必要があります。"
 
 #: skytemple-rust/src/st_bma.rs:480
 msgid "Can not import map background: Height of both images must match the current map width: {}px"
-msgstr ""
+msgstr "マップの背景をインポートできません。\n"
+"両方の画像の高さは現在のマップの幅 ({} px) と一致する必要があります。"
 
 #: skytemple-rust/src/st_bpc.rs:539
 msgid "new tilemapping for this chunk must contain {} tiles."
@@ -3192,7 +3198,7 @@ msgstr "この顔グラフィックは圧縮できません。結果のサイズ
 
 #: skytemple_randomizer/skytemple_randomizer/export_quiz_xml.py:99
 msgid "A question must contain two XML sub-nodes: {}, {}"
-msgstr ""
+msgstr "質問には {}、{} という 2 つの XML サブノードが含まれている必要があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:117
 msgid "Error"

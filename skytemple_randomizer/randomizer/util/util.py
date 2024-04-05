@@ -664,7 +664,6 @@ def clear_script_cache_for(file_path):
 
 def get_script(file_path, rom, static_data):
     global _ssb_file_cache
-    assert "S00P01A/enter00.ssb" not in file_path
     if file_path not in _ssb_file_cache:
         _ssb_file_cache[file_path] = FileType.SSB.deserialize(
             rom.getFileByName(file_path), static_data

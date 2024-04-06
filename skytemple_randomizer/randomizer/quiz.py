@@ -17,17 +17,15 @@
 import os
 from random import randint
 
-import strictyaml
-from jsonschema import validate
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
 from skytemple_randomizer.config import (
     RandomizerConfig,
     QuizQuestion,
-    QUIZ_QUESTIONS_JSON_SCHEMA,
 )
 from skytemple_randomizer.data_dir import data_dir
+from skytemple_randomizer.export_quiz_xml import import_personality_quiz_xml
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
@@ -200,10 +198,8 @@ class QuizRandomizer(AbstractRandomizer):
 
     def _get_vanilla_questions(self) -> list[QuizQuestion]:
         if self.config["quiz"]["include_vanilla_questions"]:
-            with open(os.path.join(data_dir(), "vanilla_questions.yml")) as f:
-                yaml_obj = strictyaml.load(f.read()).data
-                validate(yaml_obj, QUIZ_QUESTIONS_JSON_SCHEMA)
-                return yaml_obj
+            with open(os.path.join(data_dir(), "vanilla_questions.xml"), "rb") as f:
+                return import_personality_quiz_xml(f)
         else:
             return []
 

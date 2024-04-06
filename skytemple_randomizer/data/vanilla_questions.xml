@@ -1,0 +1,554 @@
+<?xml version="1.0" ?>
+<Questions>
+  <Question>
+    <Text>You're at a movie theater. What are you there
+to see?</Text>
+    <Answers>
+      <Answer>An action movie.</Answer>
+      <Answer>A drama.</Answer>
+      <Answer>A romantic movie.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>What's your studying style?</Text>
+    <Answers>
+      <Answer>Working hard, every day.</Answer>
+      <Answer>If I remember to...</Answer>
+      <Answer>I just cover what I need to.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You've been asked to do a difficult task.
+What will you do?</Text>
+    <Answers>
+      <Answer>I can't really do it alone...</Answer>
+      <Answer>Do it myself.</Answer>
+      <Answer>Ask someone to help.</Answer>
+      <Answer>Make someone else do it!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Are you truly sincere when you apologize?</Text>
+    <Answers>
+      <Answer>Of course.</Answer>
+      <Answer>That's not easy to admit!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you think you have good study habits?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+      <Answer>Well, I never lose at sports!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>There's a rumor around about a ghost haunting
+the school bathrooms! What do you do?</Text>
+    <Answers>
+      <Answer>Scary...bathrooms!</Answer>
+      <Answer>Go in there anyway.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Everyone's sharing a dessert, and there's an
+extra piece. What do you do?</Text>
+    <Answers>
+      <Answer>Don't tell anyone.</Answer>
+      <Answer>Let everyone know.</Answer>
+      <Answer>First come, first served!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>How are your mornings?</Text>
+    <Answers>
+      <Answer>Always in a rush!</Answer>
+      <Answer>Always perfect.</Answer>
+      <Answer>They are OK.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Everyone around you is laughing hard at
+something you think is pretty boring.
+What do you do?</Text>
+    <Answers>
+      <Answer>Nothing, really.</Answer>
+      <Answer>Laugh along.</Answer>
+      <Answer>It depends on the situation.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You want to reveal that you like someone a
+whole bunch! What do you do?</Text>
+    <Answers>
+      <Answer>Show it a little by playing together.</Answer>
+      <Answer>Make it obvious by...playing a prank!</Answer>
+      <Answer>State it clearly for all to hear!</Answer>
+      <Answer>Keep it to myself! It's too risky!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're on a stroll when a TV crew pounces
+on you for an interview. What do you do?</Text>
+    <Answers>
+      <Answer>Run away! How embarrassing!</Answer>
+      <Answer>Answer questions properly.</Answer>
+      <Answer>Yuck it up! Woo-hoo! I'm on TV!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you like lively parties?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>The people at the next table are singing for
+someone's birthday. What do you do?</Text>
+    <Answers>
+      <Answer>Stay on the sidelines.</Answer>
+      <Answer>Sing along!</Answer>
+      <Answer>Walk away.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're in a completely silent assembly when
+you suddenly hear someone pass gas!
+How do you react?</Text>
+    <Answers>
+      <Answer>Roll on the floor laughing!</Answer>
+      <Answer>Just let it go by...</Answer>
+      <Answer>Who was that?!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you like karaoke?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you prefer to play outside rather than
+inside?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You see a big and comfortable bed.
+Your first reaction is to...</Text>
+    <Answers>
+      <Answer>Jump on it!</Answer>
+      <Answer>Belly flop!</Answer>
+      <Answer>Curl up.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're hiking up a mountain when you reach
+diverging paths. Which kind do you take?</Text>
+    <Answers>
+      <Answer>Narrow.</Answer>
+      <Answer>Wide.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You discover a beat-up-looking treasure chest
+in some ruins. What do you do?</Text>
+    <Answers>
+      <Answer>Open it!</Answer>
+      <Answer>Get help opening it.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Your friend takes a spectacular fall![K]
+What do you do?</Text>
+    <Answers>
+      <Answer>Help my friend up!</Answer>
+      <Answer>Laugh! It's too funny!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're daydreaming...when your friend sprays
+you with water! What do you do?</Text>
+    <Answers>
+      <Answer>Get mad!</Answer>
+      <Answer>Get sad.</Answer>
+      <Answer>Woo-hoo! Water fight!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever thought that if you dug in your
+backyard you could find buried treasure?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever told a joke that just completely
+fell flat?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Hey, what's that?[K] There's someone behind you![K]
+So...did you look just now?</Text>
+    <Answers>
+      <Answer>Don't do that! It scared me!</Answer>
+      <Answer>OK, I admit it. You tricked me.</Answer>
+      <Answer>No way. I didn't fall for it.</Answer>
+      <Answer>Huh? What?</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Your friend has made a meal that
+tastes terrible.[K]
+They ask, &quot;How is it?&quot; You say...?</Text>
+    <Answers>
+      <Answer>&quot;Terrible!&quot;</Answer>
+      <Answer>Just smile.</Answer>
+      <Answer>&quot;Um, it's...good.&quot;</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You run into a new person that you haven't
+talked to very much before. What do you do?</Text>
+    <Answers>
+      <Answer>Make small talk.</Answer>
+      <Answer>Say nothing!</Answer>
+      <Answer>Make an excuse to get away!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Good news and bad news... Which one do you
+want to hear first?</Text>
+    <Answers>
+      <Answer>The good news.</Answer>
+      <Answer>The bad news.</Answer>
+      <Answer>I don't want either.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever realized you were hogging the
+conversation?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>When you see a switch, do you feel an
+overwhelming urge to flip it?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You find something at a great bargain price!
+What do you do?</Text>
+    <Answers>
+      <Answer>Buy it right away!</Answer>
+      <Answer>Think about whether you need it.</Answer>
+      <Answer>Demand an even bigger discount!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're packing your classroom's snacks for a
+picnic when you get hungry. What do you do?</Text>
+    <Answers>
+      <Answer>Eat just a tiny bit.</Answer>
+      <Answer>Hold myself back and pack it all up.</Answer>
+      <Answer>What snacks? They're in my belly!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you want to be taller someday?</Text>
+    <Answers>
+      <Answer>Totally!</Answer>
+      <Answer>Of course not.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you think it's important to always aim to
+be the best?</Text>
+    <Answers>
+      <Answer>Of course!</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever looked at your reflection in a
+mirror and thought, &quot;What a cool person&quot;?</Text>
+    <Answers>
+      <Answer>Certainly!</Answer>
+      <Answer>Well, not really...</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>If you saw someone doing something bad, could
+you scold them?</Text>
+    <Answers>
+      <Answer>Of course!</Answer>
+      <Answer>Not really.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you prefer to be busy or to have
+a lot of free time?</Text>
+    <Answers>
+      <Answer>Being busy.</Answer>
+      <Answer>Free time!</Answer>
+      <Answer>In between.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're about to buy a popular game when
+someone else gets the last copy!
+How do you feel?</Text>
+    <Answers>
+      <Answer>Whatever.</Answer>
+      <Answer>Annoyed. I was here first!</Answer>
+      <Answer>I shed a few tears.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You notice that a toy you bought for full price
+yesterday is marked down to half price today!
+How do you feel?</Text>
+    <Answers>
+      <Answer>Heartbroken...</Answer>
+      <Answer>Aaaargh!</Answer>
+      <Answer>Bad timing, I guess...</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Your friend is running a little late to meet you.
+Is that OK?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>Not at all!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You've just stuffed yourself with a good meal
+when a great dessert arrives. What do you do?</Text>
+    <Answers>
+      <Answer>Eat it. Who cares if I'm stuffed?</Answer>
+      <Answer>Turn it down. It's too fattening!</Answer>
+      <Answer>Yum! I love dessert the most! ♪</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You have a really important test tomorrow!
+What do you do?</Text>
+    <Answers>
+      <Answer>Study all night long.</Answer>
+      <Answer>Wing it! I'm sure it will be fine!</Answer>
+      <Answer>Test?! I think I have a fever...</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You've been invited to a wonderful party. It's
+time for the party to start, but there's nobody
+there! You think...?</Text>
+    <Answers>
+      <Answer>Did something happen?</Answer>
+      <Answer>Maybe I have the day wrong?</Answer>
+      <Answer>Let's get this party started!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you think that, no matter what, life
+goes on?</Text>
+    <Answers>
+      <Answer>All the time!</Answer>
+      <Answer>Never.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>The phone's ringing![K] What do you do?</Text>
+    <Answers>
+      <Answer>Answer right away!</Answer>
+      <Answer>Wait a bit before answering.</Answer>
+      <Answer>Ignore it and let it ring.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Your friends seem to be making plans to hang
+out, just out of earshot. You think...</Text>
+    <Answers>
+      <Answer>I want to go too!</Answer>
+      <Answer>No big deal.</Answer>
+      <Answer>Will they invite me?</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you want to be famous?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You've been handed a large bag as a souvenir.
+What do you do?</Text>
+    <Answers>
+      <Answer>Wait until I get home to open it.</Answer>
+      <Answer>Shake it!</Answer>
+      <Answer>Open it!</Answer>
+      <Answer>It's smaller than everyone else's...</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever forgotten you bought something
+and bought another one?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Once you've decided something, do you see it
+through to the end?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever said &quot;nice to meet you&quot; to
+someone you've met previously?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Did you make any New Year's resolutions?</Text>
+    <Answers>
+      <Answer>Of course!</Answer>
+      <Answer>Nope.</Answer>
+      <Answer>What are those?</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you think it's important to be fashionably
+late?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+      <Answer>I don't know.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You've won big on a raffle ticket! You say...</Text>
+    <Answers>
+      <Answer>Woo-hoo!</Answer>
+      <Answer>I can't believe it...</Answer>
+      <Answer>This is my little secret.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Do you think blaming something you did on
+someone else is sometimes necessary?</Text>
+    <Answers>
+      <Answer>Of course!</Answer>
+      <Answer>No way!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Your friend suddenly won't listen to you, when
+everything was fine yesterday.
+What happened?</Text>
+    <Answers>
+      <Answer>Maybe they're sick.</Answer>
+      <Answer>They're lost in thought.</Answer>
+      <Answer>What?! Why?!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You take off your shoes to realize your socks
+are two different colors!
+What do you do?</Text>
+    <Answers>
+      <Answer>Get embarrassed!</Answer>
+      <Answer>Again?!</Answer>
+      <Answer>I meant to do that!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You fail miserably! Everyone found out, and
+they're disappointed in you... What do you do?</Text>
+    <Answers>
+      <Answer>Try and hide.</Answer>
+      <Answer>Think of an excuse.</Answer>
+      <Answer>Drop down and play dead!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever accidentally called a teacher
+&quot;Mom&quot; or &quot;Dad&quot;?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Have you ever blurted something out without
+thinking about the consequences first?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're in class when you realize that you really
+have to go to the restroom! What do you do?</Text>
+    <Answers>
+      <Answer>Ask for permission to leave.</Answer>
+      <Answer>Sneak out.</Answer>
+      <Answer>Hold on until class ends!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Your friend offers to treat you to dinner.
+What do you do?</Text>
+    <Answers>
+      <Answer>I'm there!</Answer>
+      <Answer>Allow me.</Answer>
+      <Answer>Thanks...</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You see a cake that is past its expiration date,
+but only by one day. What do you do?</Text>
+    <Answers>
+      <Answer>Not a problem! Chow time!</Answer>
+      <Answer>Think about it briefly, then decide.</Answer>
+      <Answer>Get someone to try it first.</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>You're eating at a very fancy restaurant known
+for its food. Which course do you select?</Text>
+    <Answers>
+      <Answer>Seared steak.</Answer>
+      <Answer>Healthy fish.</Answer>
+      <Answer>Anything! It's all good!</Answer>
+    </Answers>
+  </Question>
+  <Question>
+    <Text>Did you play &quot;Explorers of Time&quot; or &quot;Explorers
+of Darkness&quot;?</Text>
+    <Answers>
+      <Answer>Yes.</Answer>
+      <Answer>No.</Answer>
+    </Answers>
+  </Question>
+</Questions>

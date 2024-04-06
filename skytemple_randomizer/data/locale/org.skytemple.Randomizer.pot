@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-06 17:27+0000\n"
+"POT-Creation-Date: 2024-04-06 17:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4376,7 +4376,7 @@ msgstr ""
 msgid "Downloading portraits and sprites... {}/{}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/quiz.py:129
+#: skytemple_randomizer/skytemple_randomizer/randomizer/quiz.py:127
 msgid "Randomizing Quiz..."
 msgstr ""
 

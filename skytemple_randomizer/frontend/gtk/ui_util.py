@@ -46,7 +46,7 @@ Cipnit (via CTC patch) https://www.pokecommunity.com/member.php?u=751556
 Adex (via patches + JP support) https://github.com/Adex-8x
 Darkaim (JP support)
 Laioxy (JP support via pmdsky-debug) https://github.com/Laioxy
-in2erval (via patches + JP support) https://github.com/in2erval
+in2erval (code contributions) https://github.com/in2erval
 Please see GitHub for more minor contributors.
 
 Lead Hackers:

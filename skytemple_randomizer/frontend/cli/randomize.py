@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 
+import json
 import random
 from functools import partial
 from time import sleep
@@ -73,10 +74,12 @@ def status_update(randomizer: RandomizerThread, progress: int, description: str)
     if description == "<<<<<<< DONE":
         return
     click.echo(
-        Progress(
-            current_step=progress,
-            total_steps=randomizer.total_steps,
-            current_step_description=description,
+        json.dumps(
+            Progress(
+                current_step=progress,
+                total_steps=randomizer.total_steps,
+                current_step_description=description,
+            )
         )
     )
 
@@ -92,5 +95,5 @@ def check_done(randomizer: RandomizerThread) -> bool:
             *randomizer.error, prepend_msg="Randomizing failed"
         ).print_and_exit(2)
     else:
-        click.echo(Done(done=True))
+        click.echo(json.dumps(Done(done=True)))
     return True

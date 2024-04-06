@@ -14,6 +14,9 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
+import base64
 import json
 import os
 
@@ -35,12 +38,34 @@ from skytemple_randomizer.frontend.cli import info
 
 def init(cli: click.Group):
     @cli.command(help="Runs the Randomization.")
+    @click.option("--print-result/--no-print-result", default=False)
     @click.argument("input_rom", cls=RomArgument)
     @click.argument("config", cls=ConfigArgument)
-    @click.argument("output_rom")
-    def randomize(input_rom: LoadedRom, config: RandomizerConfig, output_rom: str):
+    @click.argument("output_rom", required=False)
+    def randomize(
+        input_rom: LoadedRom,
+        config: RandomizerConfig,
+        print_result: bool,
+        output_rom: str | None,
+    ):
+        if print_result is False and output_rom is None:
+            Error(
+                "Either OUTPUT_ROM or --print-result must be specified."
+            ).print_and_exit()
+        elif print_result is True and output_rom is not None:
+            Error(
+                "If --print-result is set, no OUTPUT_ROM must be specified."
+            ).print_and_exit()
+
         try:
-            run_randomization(input_rom, config, output_rom)
+            rom = run_randomization(input_rom, config)
+
+            if output_rom:
+                rom.saveToFile(output_rom, updateDeviceCapacity=True)
+            else:
+                data = rom.save(updateDeviceCapacity=True)
+                click.echo(json.dumps({"data": base64.b64encode(data).decode("ascii")}))
+
         except Exception:
             Error.from_current_exception().print_and_exit()
 

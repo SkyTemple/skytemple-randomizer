@@ -23,6 +23,7 @@ from time import sleep
 from typing import TYPE_CHECKING, Callable, TypedDict
 
 import click
+from ndspy.rom import NintendoDSRom
 
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer_thread import RandomizerThread
@@ -48,7 +49,7 @@ class Done(TypedDict):
     done: bool
 
 
-def run_randomization(rom: LoadedRom, config: RandomizerConfig, output_path: str):
+def run_randomization(rom: LoadedRom, config: RandomizerConfig) -> NintendoDSRom:
     status = Status()
     seed = get_effective_seed(config["seed"])
     random.seed(seed)
@@ -67,7 +68,7 @@ def run_randomization(rom: LoadedRom, config: RandomizerConfig, output_path: str
             break
         sleep(0.2)
 
-    rom.rom.saveToFile(output_path)
+    return rom.rom
 
 
 def status_update(randomizer: RandomizerThread, progress: int, description: str):

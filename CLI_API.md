@@ -541,27 +541,41 @@ Marker to signal the end of randomization.
 #### `.done`
 Always true.
 
+### ROM JSON
+Base64-encoded ROM data
+
+#### `.data`
+Type: String; base64
+
+ROM data
+
 ## Commands
 
 ### `randomize`
-- Usage: `randomize INPUT_ROM CONFIG OUTPUT_ROM`
-- Return format: A stream of JSON lines, where each line is "Progress JSON", "Error JSON" or "Done JSON".
+- Usage: `randomize [--print-result] INPUT_ROM CONFIG [OUTPUT_ROM]`
+- Return format: A stream of JSON lines, where each line is "Progress JSON", "Error JSON" "Done JSON" or "ROM JSON".
 
 Runs the randomization. Each progress update is printed as JSON in a new line. The last line are either "Error JSON" or
 "Done JSON". If the last line is "Error JSON", randomization failed. If the last line is "Done JSON" it succeeded
-(generally, see notes below).
+(generally, see notes below). Additionally, "ROM JSON" will be printed very last on success and only if 
+``--print-result``, see notes.
 
 Note the following:
  - The last line before the process exists may or may not be newline terminated. 
- - In rare cases additional "Progress JSON" lines may be printed after "Error JSON" or "Done JSON", these must be 
-   ignored. 
+ - In rare cases additional "Progress JSON" lines may be printed after "Error JSON", "Done JSON" or "ROM JSON", these 
+   must be ignored. 
  - Do not kill the process after "Done JSON" is printed. After "Done JSON" is printed the Randomizer will save the ROM 
-   file. Only after the process has finished with a non-zero exit code is the output ROM readable.
- - After a "Done JSON" an "Error JSON" may still follow. This happens when the ROM failed to save to disk.
+   file or still be pending to print "ROM JSON". Only after the process has finished with a non-zero exit code is 
+   the output ROM readable if `-print-result` is not set.
+ - After a "Done JSON" an "Error JSON" may still follow. This happens when the ROM failed to save to disk. No "Error JSON"
+   will follow after a "ROM JSON".
+ - If the `--print-result` flag is set, the very least message (on success) is instead "ROM JSON" and contains the 
+   base64 encoded ROM on success.
 
 - `INPUT_ROM` is the path to the input ROM file.
 - `CONFIG` is the path to a "Config JSON". 
-- `OUTPUT_ROM` is the path where the randomized ROM will be saved to on success.
+- `OUTPUT_ROM` is the path where the randomized ROM will be saved to on success. Alternatively you can omit this argument
+  and set `--print-result` to instead output the result ROM.
 
 Tip: You can run the randomization with default settings with Bash by using process substitution:
 

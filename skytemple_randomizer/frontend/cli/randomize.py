@@ -29,7 +29,7 @@ from skytemple_randomizer.status import Status
 from skytemple_randomizer.config import RandomizerConfig, get_effective_seed
 
 if TYPE_CHECKING:
-    from skytemple_randomizer.frontend.cli import LoadedRom, Error
+    from skytemple_randomizer.frontend.cli import LoadedRom
 
 
 class CliFrontend(AbstractFrontend):
@@ -86,6 +86,8 @@ def check_done(randomizer: RandomizerThread) -> bool:
         return False
 
     if randomizer.error:
+        from skytemple_randomizer.frontend.cli import Error
+
         Error.from_exception(
             *randomizer.error, prepend_msg="Randomizing failed"
         ).print_and_exit(2)

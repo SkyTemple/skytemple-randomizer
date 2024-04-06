@@ -121,7 +121,7 @@ template $StTextPage: Adw.PreferencesPage {
                 MenuButton {
                     icon-name: 'skytemple-help-about-symbolic';
                     popover: $StHelpPopover {
-                        label: _("Controls how Pokémon and NPC names in texts are replaced.\n\nSmart: Use a more expanded algorithm for replacing in-game mentions of NPCs.\nThis is typically slower than doing a simple replacement.\n\nClassic: Algorithm that was used in the Randomizer prior to version 2.0.\nIt may lead to some unrelated parts of text (such as parts of item names) being incorrectly replaced.");
+                        label: _("Controls how Pokémon and NPC names in texts are replaced.\n\nClassic: Algorithm that was used in the Randomizer prior to version 2.0.\nIt may lead to some unrelated parts of text (such as parts of item names) being incorrectly replaced.\n\nSmart: Use a more exhaustive algorithm for replacing in-game mentions of NPCs.\nThis is typically slower than doing a simple replacement.");
                     };
                     styles ['flat']
                 }

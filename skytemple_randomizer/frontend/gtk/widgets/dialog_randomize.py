@@ -59,6 +59,7 @@ class RandomizeDialog(Adw.Dialog):
     metadata_region_value = cast(Gtk.Label, Gtk.Template.Child())
     metadata_version_value = cast(Gtk.Label, Gtk.Template.Child())
     metadata_seed_value = cast(Gtk.Label, Gtk.Template.Child())
+    box_source_output = cast(Gtk.ListBox, Gtk.Template.Child())
 
     input_rom_path: str
     rom: NintendoDSRom
@@ -92,6 +93,12 @@ class RandomizeDialog(Adw.Dialog):
         self.metadata_region_value.set_label(self.rom_static_data.game_edition)
         self.metadata_version_value.set_label(version())
         self.metadata_seed_value.set_label(str(self.seed))
+
+        if "RUNNING_IN_FLATPAK" in os.environ:
+            # Currently the file info in the dialog is useless, see:
+            # https://github.com/flatpak/xdg-desktop-portal/issues/475
+            self.box_source_output.hide()
+            self.set_content_height(380)
 
     @Gtk.Template.Callback()
     def on_close_attempt(self, *args):

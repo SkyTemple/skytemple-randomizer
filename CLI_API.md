@@ -544,9 +544,9 @@ Always true.
 ## Commands
 
 ### `randomize`
-Usage: `randomize INPUT_ROM CONFIG OUTPUT_ROM`
-Return format: A stream of JSON lines, where each line is "Progress JSON", "Error JSON" or "Done JSON". The
-     latter two are only returned as the last lines.
+- Usage: `randomize INPUT_ROM CONFIG OUTPUT_ROM`
+- Return format: A stream of JSON lines, where each line is "Progress JSON", "Error JSON" or "Done JSON". The
+                 latter two are only returned as the last lines.
 
 Runs the randomization. Each progress update is printed as JSON in a new line. The last line are either "Error JSON" or
 "Done JSON". If the last line is "Error JSON", randomization failed. If the last line is "Done JSON" is succeeded.
@@ -567,66 +567,66 @@ skytemple_randomizer cli randomize rom.nds <(skytemple_randomizer cli default-co
 ```
 
 ### `default-config`
-Usage: `default-config ROM`
-Return format on success: Config JSON
-Return format on error: Error JSON
+- Usage: `default-config ROM`
+- Return format on success: Config JSON
+- Return format on error: Error JSON
 
 Prints the default config for the given ROM as JSON.
 
 ### `info-rom`
-Usage: `info-rom ROM`
-Return format on success: ROM-Info JSON
-Return format on error: Error JSON
+- Usage: `info-rom ROM`
+- Return format on success: ROM-Info JSON
+- Return format on error: Error JSON
 
 Prints general metadata information about the ROM.
 
 ### `ppmdu-config`
-Usage: `ppmdu-config`
-Return format on success: Merged [PPMDU Config XML](https://github.com/SkyTemple/skytemple-files/tree/1.6.6/skytemple_files/_resources/ppmdu_config)
-Return format on error: Error JSON
+- Usage: `ppmdu-config`
+- Return format on success: Merged [PPMDU Config XML](https://github.com/SkyTemple/skytemple-files/tree/1.6.6/skytemple_files/_resources/ppmdu_config)
+- Return format on error: Error JSON
 
 Prints the PPMDU config. Exact XML format is not documented. This can be considered reasonably stable but should be 
 relied upon with caution.
 
 ### `info-monsters`
-Usage: `info-monsters ROM`
-Return format on success: JSON object where keys are monster group IDs and values are their name. 
-Return format on error: Error JSON
+- Usage: `info-monsters ROM`
+- Return format on success: JSON object where keys are monster group IDs and values are their name. 
+- Return format on error: Error JSON
 
 Prints a mapping of monster IDs and their names.
 
 ### `info-items`
-Usage: `info-items ROM`
-Return format on success: JSON object where keys are item IDs and values are their name. 
-Return format on error: Error JSON
+- Usage: `info-items ROM`
+- Return format on success: JSON object where keys are item IDs and values are their name. 
+- Return format on error: Error JSON
 
 Prints a mapping of item IDs and their names.
 
 ### `info-item-categories`
-Usage: `info-item-categories ROM`
-Return format on success: JSON object where keys are item category IDs and values are their name. 
-Return format on error: Error JSON
+- Usage: `info-item-categories ROM`
+- Return format on success: JSON object where keys are item category IDs and values are their name. 
+- Return format on error: Error JSON
 
 Prints a mapping of item category IDs and their names. Only relevant category IDs are returned.
 
 ### `info-moves`
-Usage: `info-moves ROM`
-Return format on success: JSON object where keys are move IDs and values are their name. 
-Return format on error: Error JSON
+- Usage: `info-moves ROM`
+- Return format on success: JSON object where keys are move IDs and values are their name. 
+- Return format on error: Error JSON
 
 Prints a mapping of move IDs and their names.
 
 ### `info-abilities`
-Usage: `info-abilities ROM`
-Return format on success: JSON object where keys are ability IDs and values are their name. 
-Return format on error: Error JSON
+- Usage: `info-abilities ROM`
+- Return format on success: JSON object where keys are ability IDs and values are their name. 
+- Return format on error: Error JSON
 
 Prints a mapping of ability IDs and their names.
 
 ### `info-dungeons`
-Usage: `info-dungeons ROM`
-Return format on success: JSON object where keys are dungeons IDs and values a list of names (see below). 
-Return format on error: Error JSON
+- Usage: `info-dungeons ROM`
+- Return format on success: JSON object where keys are dungeons IDs and values a list of names (see below). 
+- Return format on error: Error JSON
 
 Prints a mapping of dungeon IDs and their names. The names are an array with two strings. The first string
 is the main dungeon name, the second is the selection dungeon name.

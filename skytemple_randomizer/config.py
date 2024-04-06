@@ -1229,3 +1229,20 @@ def version():
             with open(version_file) as f:
                 return f.read().strip()
         return "unknown"
+
+
+def deep_typeddict_to_dict(o):
+    if isinstance(o, dict):
+        nn = dict()
+        for k, v in o.items():
+            if k == CLASSREF:
+                continue
+            nn[k] = deep_typeddict_to_dict(v)
+        o = nn
+    elif isinstance(o, list):
+        n = []
+        for c in o:
+            n.append(deep_typeddict_to_dict(c))
+        o = n
+
+    return o

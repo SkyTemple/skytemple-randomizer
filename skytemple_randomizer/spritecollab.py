@@ -1,8 +1,8 @@
 """Global instance of the SpriteCollab client."""
 
 import platform
-from typing import Optional
-from collections.abc import Sequence, Mapping
+from typing import Optional, TypeAlias
+from collections.abc import Sequence
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Sprite
 from skytemple_files.common.spritecollab.client import (
@@ -10,18 +10,22 @@ from skytemple_files.common.spritecollab.client import (
     SpriteCollabSession,
     MonsterFormDetails,
 )
-from skytemple_files.common.spritecollab.schema import Credit
+from skytemple_files.common.spritecollab.schema import Credit, MonsterHistory
 from skytemple_files.graphics.chara_wan.model import WanFile
 from skytemple_files.graphics.kao import SUBENTRIES
 from skytemple_files.graphics.kao.protocol import KaoImageProtocol
 
+SpriteCreditsDict: TypeAlias = dict[
+    tuple[str, str], tuple[list[Credit], list[MonsterHistory]]
+]
+
 _INSTANCE: Optional[SpriteCollabClient] = None
 # A dict of credits for all portraits requested (and found) during the randomization
 # Key is full form name
-_COLLECTED_PORTRAITS: dict[tuple[str, str], list[Credit]] = {}
+_COLLECTED_PORTRAITS: SpriteCreditsDict = {}
 # A list of all sprites requested (and found) during the randomization
 # Key is full form name
-_COLLECTED_SPRITES: dict[tuple[str, str], list[Credit]] = {}
+_COLLECTED_SPRITES: SpriteCreditsDict = {}
 
 
 def sprite_collab() -> SpriteCollabClient:
@@ -67,8 +71,9 @@ async def get_details_and_portraits(
     )
     #   - update credits
     for detail in details:
-        _COLLECTED_PORTRAITS[(detail.full_form_name, f"{detail.monster_id:04}")] = list(
-            detail.portrait_credits
+        _COLLECTED_PORTRAITS[(detail.full_form_name, f"{detail.monster_id:04}")] = (
+            list(detail.portrait_credits),
+            list(detail.portrait_history),
         )
     return details[0], final_portraits
 
@@ -102,17 +107,17 @@ async def get_sprites(
             for detail in details:
                 _COLLECTED_SPRITES[
                     (detail.full_form_name, f"{detail.monster_id:04}")
-                ] = list(detail.sprite_credits)
+                ] = (list(detail.sprite_credits), list(detail.sprite_history))
             return form
     return None
 
 
-def portrait_credits() -> Mapping[tuple[str, str], Sequence[Credit]]:
+def portrait_credits() -> SpriteCreditsDict:
     """Returns all portrait credits, sorted by key. Key is full form name, with monster name."""
     return dict(_COLLECTED_PORTRAITS)
 
 
-def sprite_credits() -> Mapping[tuple[str, str], Sequence[Credit]]:
+def sprite_credits() -> SpriteCreditsDict:
     """Returns all sprite credits, sorted by key. Key is full form name, with monster name."""
     return dict(_COLLECTED_SPRITES)
 

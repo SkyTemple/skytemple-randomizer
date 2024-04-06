@@ -72,7 +72,7 @@ def run_randomization(rom: LoadedRom, config: RandomizerConfig) -> NintendoDSRom
 
 
 def status_update(randomizer: RandomizerThread, progress: int, description: str):
-    if description == "<<<<<<< DONE":
+    if description == Status.DONE_SPECIAL_STR:
         return
     click.echo(
         json.dumps(

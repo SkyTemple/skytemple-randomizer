@@ -70,6 +70,8 @@ def run_randomization(rom: LoadedRom, config: RandomizerConfig, output_path: str
 
 
 def status_update(randomizer: RandomizerThread, progress: int, description: str):
+    if description == "<<<<<<< DONE":
+        return
     click.echo(
         Progress(
             current_step=progress,

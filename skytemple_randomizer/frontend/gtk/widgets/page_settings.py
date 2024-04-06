@@ -26,7 +26,7 @@ from skytemple_randomizer.config import (
     RandomizerConfig,
     ConfigFileLoader,
     EnumJsonEncoder,
-    CLASSREF,
+    deep_typeddict_to_dict,
 )
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
@@ -194,20 +194,3 @@ class SettingsPage(Adw.Bin):
         )
         self.randomization_settings = config
         self._suppress_signals = False
-
-
-def deep_typeddict_to_dict(o):
-    if isinstance(o, dict):
-        nn = dict()
-        for k, v in o.items():
-            if k == CLASSREF:
-                continue
-            nn[k] = deep_typeddict_to_dict(v)
-        o = nn
-    elif isinstance(o, list):
-        n = []
-        for c in o:
-            n.append(deep_typeddict_to_dict(c))
-        o = n
-
-    return o

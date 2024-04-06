@@ -60,6 +60,10 @@ in order to have the actual GUI functional.
 The GTK frontend requires GTK 4.14+, all related libraries and libadwaita 1.5+ to be
 installed.
 
+When installing this way, the GUI can be started with
+``skytemple_randomizer gui`` or ``python -m skytemple.randomizer.main gui``.
+The command takes an optional argument, the path to a ROM to open.
+
 Build
 .....
 Install the required GTK and Adwaita versions. Under Windows, use gvsbuild_ in at least version 2024.4.0.
@@ -70,22 +74,26 @@ Files to XML UI files. To do that:
 
 - Linux, possibly MacOS: ``make``
 - Linux/MacOS without make: ``./build-blp-to-ui.sh && installer/generate-mo.sh``
-- Windows: ``.\build-blp-to-ui.ps1`` with PowerShell and ``installer\generate-mo.sh`` with an MSys2 environment bash shell. Gettext must be available.
+- Windows: ``.\build-blp-to-ui.ps1`` with PowerShell and ``installer\generate-mo.sh`` with an MSys2 environment bash
+  shell. Gettext must be available.
 
 If you are working with the UI files you may want to use the Blueprint Compiler Language Server or setup file watchers
 to compile BLP files to UI files. More info about Blueprint Compiler can be found on its website:
 https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/
 
-No frontend
-~~~~~~~~~~~
+CLI
+~~~
+SkyTemple Randomizer can be used via CLI. It's available via ``skytemple_randomizer cli`` or
+``python -m skytemple.randomizer.main cli``.
 
-Without ``gtk`` (as of now) "only" the API is available and you can use Randomizer as a library.
+Its documentation can be found in CLI_API.md.
+
+API
+~~~
+You can also use SkyTemple Randomizer as a Python API.
 See the ``skytemple_randomizer.randomizer_thread`` for the entrypoint (specifically the class ``RandomizerThread``).
 You will need to implement your own ``AbstractFrontend``. The passed in ``Status`` object can be used to monitor the
 status of the randomization for progress display. See the GTK implementation for reference on how to use all of this.
-
-Without the ``gtk`` extra, importing anything from ``skytemple_randomizer.frontend.gtk`` may fail. Running the script
-``skytemple_randomizer`` may also fail. You will need to use the API instead.
 
 .. _Flathub: https://flathub.org/apps/details/org.skytemple.Randomizer
 

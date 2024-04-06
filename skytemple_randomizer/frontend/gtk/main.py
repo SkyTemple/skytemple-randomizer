@@ -45,7 +45,7 @@ import sys
 from skytemple_icons import icons
 from skytemple_randomizer.data_dir import data_dir
 
-from gi.repository import Adw, Gtk, GLib, Gdk
+from gi.repository import Adw, Gtk, GLib, Gdk, Gio
 
 Gtk.init()
 Adw.init()
@@ -72,18 +72,24 @@ class MainApp(Adw.Application):
             if SKYTEMPLE_DEV
             else "org.skytemple.Randomizer"
         )
-        super().__init__(application_id=app_id)
+        super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.HANDLES_OPEN)
+        self.connect("open", self.on_open)
         GLib.set_application_name("SkyTemple Randomizer")
         frontend = GtkFrontend.instance()
         frontend.application = self
         self.development_mode = SKYTEMPLE_DEV
 
-    def do_activate(self) -> None:
+    def do_activate(self, file: str | None = None) -> None:
         window = AppWindow(application=self)
         frontend = GtkFrontend.instance()
         frontend.window = window
         self.show_start_stack()
+        if file is not None:
+            window.stack_item_start.load_rom(file)
         window.present()
+
+    def on_open(self, _, files: list[Gio.File], *args):
+        self.do_activate(files[0].get_path())
 
     def show_start_stack(self, disable_recent: bool = False):
         frontend = GtkFrontend.instance()
@@ -103,7 +109,9 @@ class MainApp(Adw.Application):
         frontend.window.content_stack.set_visible_child(frontend.window.stack_item_main)
 
 
-def main():
+def main(argv: list[str] | None = None):
+    if argv is None:
+        argv = sys.argv
     if sys.platform.startswith("win"):
         # Solve issue #12
         try:
@@ -137,7 +145,7 @@ def main():
 
     # Load main window + controller
     app = MainApp()
-    sys.exit(app.run(sys.argv))
+    sys.exit(app.run(argv))
 
 
 if __name__ == "__main__":

@@ -474,7 +474,7 @@ Note the following:
    the output ROM readable if `-print-result` is not set.
  - After a "Done JSON" an "Error JSON" may still follow. This happens when the ROM failed to save to disk. No "Error JSON"
    will follow after a "ROM JSON".
- - If the `--print-result` flag is set, the very least message (on success) is instead "ROM JSON" and contains the 
+ - If the `--print-result` flag is set, the very last message (on success) after "Done JSON" is "ROM JSON" and contains the 
    base64 encoded ROM on success.
 
 - `INPUT_ROM` is the path to the input ROM file.

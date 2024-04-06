@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import platform
-from typing import Optional, TYPE_CHECKING
+from typing import Optional
 from collections.abc import Sequence
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Sprite
@@ -17,20 +17,17 @@ from skytemple_files.graphics.chara_wan.model import WanFile
 from skytemple_files.graphics.kao import SUBENTRIES
 from skytemple_files.graphics.kao.protocol import KaoImageProtocol
 
-if TYPE_CHECKING:
-    from typing import TypeAlias
-
-SpriteCreditsDict: TypeAlias = dict[
-    tuple[str, str], tuple[list[Credit], list[MonsterHistory]]
-]
-
 _INSTANCE: Optional[SpriteCollabClient] = None
 # A dict of credits for all portraits requested (and found) during the randomization
 # Key is full form name
-_COLLECTED_PORTRAITS: SpriteCreditsDict = {}
+_COLLECTED_PORTRAITS: dict[
+    tuple[str, str], tuple[list[Credit], list[MonsterHistory]]
+] = {}
 # A list of all sprites requested (and found) during the randomization
 # Key is full form name
-_COLLECTED_SPRITES: SpriteCreditsDict = {}
+_COLLECTED_SPRITES: dict[
+    tuple[str, str], tuple[list[Credit], list[MonsterHistory]]
+] = {}
 
 
 def sprite_collab() -> SpriteCollabClient:
@@ -117,12 +114,16 @@ async def get_sprites(
     return None
 
 
-def portrait_credits() -> SpriteCreditsDict:
+def portrait_credits() -> (
+    dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]]
+):
     """Returns all portrait credits, sorted by key. Key is full form name, with monster name."""
     return dict(_COLLECTED_PORTRAITS)
 
 
-def sprite_credits() -> SpriteCreditsDict:
+def sprite_credits() -> (
+    dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]]
+):
     """Returns all sprite credits, sorted by key. Key is full form name, with monster name."""
     return dict(_COLLECTED_SPRITES)
 

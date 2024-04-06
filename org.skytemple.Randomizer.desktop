@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=SkyTemple Randomizer
 Comment=Randomizer for Pokémon Mystery Dungeon Explorers of Sky
-Exec=skytemple_randomizer
+Exec="skytemple_randomizer gui"
 Terminal=false
 Type=Application
 Categories=Development;Game;

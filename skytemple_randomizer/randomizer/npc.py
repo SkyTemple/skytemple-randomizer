@@ -110,23 +110,19 @@ class NpcRandomizer(AbstractRandomizer):
     def _smart_replace_text(self, mapped_actor_names_by_lang):
         for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
             mapped_actor_names = mapped_actor_names_by_lang[lang]
+            sorted_actor_names = sorted(list(mapped_actor_names.keys()), key=len, reverse=True)
             # Most NPC texts in the base game are wrapped via [CN:N]...[CR], or [CN:Y]...[CR].
-            # Croagunk is the only NPC pokemon that has texts with [CS:E].
-            standard_npc_text = re.compile(
-                r"\[CS:(N|Y|E)]("
-                + "|".join(list(mapped_actor_names.keys()))
-                + r")\[CR]"
-            )
             # Some place names derived from NPCs are mentioned via [CS:P]...[CR], so we'll replace those as well.
-            place_mention_npc_text = re.compile(
-                r"\[CS:P](.*)("
-                + "|".join(list(mapped_actor_names.keys()))
-                + r")(.*)\[CR]"
+            # Croagunk's Swap Shop is mentioned via [CS:E].
+            standard_npc_text = re.compile(
+                r"\[CS:(N|Y|P|E)]((?:\s|.)*?)("
+                + "|".join(sorted_actor_names)
+                + r")((?:\s|.)*?)\[CR]"
             )
             # Some [CS:K]...[CR] needs replacing for Kecleon, Chansey, Marowak, Spinda, Chimecho, Mime Jr., Electivire, and all the Pokemon under the Adventure Log.
             # We need to specifically select string block regions to apply this to.
             csk_npc_text = re.compile(
-                r"\[CS:K](.*)(" + "|".join(list(mapped_actor_names.keys())) + r")(.*)\[CR]"
+                r"\[CS:K]((?:\s|.)*?)(" + "|".join(sorted_actor_names) + r")((?:\s|.)*?)\[CR]"
             )
             csk_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(
@@ -155,12 +151,12 @@ class NpcRandomizer(AbstractRandomizer):
             # Instead we replace some of the mentions of the specific text "Kecleon's Shop" (note: things like music track names should not be replaced).
             kecleon_shop_text = {
                 # IMPORTANT: match.group(1) should always be Kecleon's name
-                "English": re.compile(r"(Kecleon)(?:\[CR])?'s Shop"),
-                "French": re.compile(r"Magasins\n?(Kecleon)"),
+                "English": re.compile(r"(Kecleon)(?:\[CR])?'s\sShop"),
+                "French": re.compile(r"Magasins\s(Kecleon)"),
                 "German": re.compile(r"(Kecleon)-Laden"),
-                "Italian": re.compile(r"Magazzini\n?(?:\[CS:.])?(Kecleon)"),
-                "Spanish": re.compile(r"Tienda\n?(Kecleon)"),
-                "Japanese": re.compile(r"(カクレオン)(?:\[CR])?の\n?お?みせ"),
+                "Italian": re.compile(r"Magazzini\s(?:\[CS:.])?(Kecleon)"),
+                "Spanish": re.compile(r"Tienda\s(Kecleon)"),
+                "Japanese": re.compile(r"(カクレオン)(?:\[CR])?の\s?お?みせ"),
             }
             kecleon_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(
@@ -191,22 +187,19 @@ class NpcRandomizer(AbstractRandomizer):
                     "Dungeon Names (Main)"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
-                    "Dungeon Names (Section)"
+                    "Dungeon Names (Selection)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Dungeon Names (Banner)"
                 ),
             ]
 
             for idx, text in enumerate(lang_string_file.strings):
                 new_text = standard_npc_text.sub(
                     lambda match: match.expand(
-                        f"[CS:{match.group(1)}]{mapped_actor_names[match.group(2)]}[CR]"
+                        f"[CS:{match.group(1)}]{match.group(2)}{mapped_actor_names[match.group(3)]}{match.group(4)}[CR]"
                     ),
                     text,
-                )
-                new_text = place_mention_npc_text.sub(
-                    lambda match: match.expand(
-                        f"[CS:P]{match.group(1)}{mapped_actor_names[match.group(2)]}{match.group(3)}[CR]"
-                    ),
-                    new_text,
                 )
                 if any(
                     block.begin < idx < block.end

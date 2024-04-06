@@ -1,7 +1,9 @@
 """Global instance of the SpriteCollab client."""
 
+from __future__ import annotations
+
 import platform
-from typing import Optional, TypeAlias
+from typing import Optional, TYPE_CHECKING
 from collections.abc import Sequence
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Sprite
@@ -14,6 +16,9 @@ from skytemple_files.common.spritecollab.schema import Credit, MonsterHistory
 from skytemple_files.graphics.chara_wan.model import WanFile
 from skytemple_files.graphics.kao import SUBENTRIES
 from skytemple_files.graphics.kao.protocol import KaoImageProtocol
+
+if TYPE_CHECKING:
+    from typing import TypeAlias
 
 SpriteCreditsDict: TypeAlias = dict[
     tuple[str, str], tuple[list[Credit], list[MonsterHistory]]

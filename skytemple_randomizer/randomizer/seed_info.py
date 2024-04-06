@@ -17,11 +17,18 @@
 import traceback
 from numbers import Number
 from collections.abc import Mapping, Sequence
+from typing import cast
 
 from range_typed_integers import u16, i16
 from skytemple_files.common import string_codec
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_US, GAME_REGION_JP
-from skytemple_files.common.spritecollab.schema import Credit
+from skytemple_files.common.spritecollab.schema import (
+    Credit,
+    KnownLicense,
+    OtherLicense,
+    LICENSE_UNSPECIFIED,
+    MonsterHistory,
+)
 from skytemple_files.common.string_codec import can_be_encoded
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import create_file_in_rom
@@ -234,7 +241,7 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST010, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
@@ -322,12 +329,15 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST009, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Portrait Credits"):
             ~artists();
+            jump @l_menu;
+        case menu("Licenses"):
+            ~licenses();
             jump @l_menu;
         case menu("Goodbye!"):
         default:
@@ -341,6 +351,17 @@ macro artists() {{
     §l_artists;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._artist_credits(portrait_credits())}
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+    message_ResetActor();
+}}
+
+macro licenses() {{
+    §l_licenses;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        {self._license_explanations()}
         case menu("Goodbye!"):
         default:
             break;
@@ -377,12 +398,15 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Sprite Credits"):
             ~artists();
+            jump @l_menu;
+        case menu("Licenses"):
+            ~licenses();
             jump @l_menu;
         case menu("Goodbye!"):
         default:
@@ -396,6 +420,17 @@ macro artists() {{
     §l_artists;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._artist_credits(sprite_credits())}
+        case menu("Goodbye!"):
+        default:
+            break;
+    }}
+    message_ResetActor();
+}}
+
+macro licenses() {{
+    §l_licenses;
+    switch ( message_SwitchMenu(0, 1) ) {{
+        {self._license_explanations()}
         case menu("Goodbye!"):
         default:
             break;
@@ -452,7 +487,7 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST007, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion:[CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     §l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
@@ -551,16 +586,21 @@ macro patches() {{
 """
         return cases
 
-    def _artist_credits(self, credits: Mapping[tuple[str, str], Sequence[Credit]]):
+    def _artist_credits(
+        self,
+        credits: Mapping[
+            tuple[str, str], tuple[Sequence[Credit], Sequence[MonsterHistory]]
+        ],
+    ):
         if fun.is_fun_allowed():
             return fun.get_artist_credits(self.rom, self.static_data)
 
         out_credits = ""
         try:
-            for (name, monster_id), entry in credits.items():
+            for (name, monster_id), (credits_entry, history) in credits.items():
                 others = ""
-                if len(entry) > 1:
-                    raw_others = entry[1:]
+                if len(credits_entry) > 1:
+                    raw_others = credits_entry[1:]
                     main = ""
                     others_short = raw_others[:3]
                     if len(others_short) != len(others):
@@ -571,7 +611,8 @@ macro patches() {{
                     )
                 out_credits += f"""
         case menu("{name}"):
-            message_Talk("Main Author: [CS:A]{escape(parse_credit(entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
+            message_Talk("Main Author: [CS:A]{escape(parse_credit(credits_entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
+            {self._license_info_for(history)}
             jump @l_artists;
 """
         except Exception:
@@ -582,6 +623,52 @@ macro patches() {{
             jump @l_artists;
 """
         return out_credits
+
+    def _license_explanations(self):
+        return """
+    case menu("PMDCOLLAB1"):
+        message_Talk("Original license for sprites and portraits \\nsubmitted before May 2023: When using, \\nyou must credit the contributors.");
+        jump @l_licenses;
+    case menu("PMDCOLLAB2"):
+        message_Talk("License for works between May 2023 -\\nMarch 2024: You are free to use, copy \\nredistribute or modify sprites and portraits \\nfrom this repository for your own projects \\nand contributions. When using portraits or \\nsprites from this repository, you must credit \\nthe contributors for each portrait and sprite \\nyou use.");
+        jump @l_licenses;
+    case menu("CC_BY_NC4"):
+        message_Talk("All user-submitted sprites and portraits\\nsince March 2024 are licensed under\\nCC-BY-NC 4.0.\\ncreativecommons.org/licenses/by-nc/4.0/deed");
+        jump @l_licenses;
+    case menu("UNKNOWN / Other"):
+        message_Talk("For unknown or other licenses see\\nhttps://sprites.pmdcollab.org.");
+        jump @l_licenses;
+"""
+
+    def _license_info_for(self, history: Sequence[MonsterHistory]):
+        has_unspecified = False
+        has_chunsoft = False
+        collected_licenses: set[str] = set()
+        for entry in history:
+            if not entry["obsolete"]:
+                if entry["credit"]["id"] == "CHUNSOFT":
+                    has_chunsoft = True
+                if "license" in entry["license"]:
+                    license_k = cast(KnownLicense, entry["license"])
+                    if license_k["license"] == LICENSE_UNSPECIFIED:
+                        has_unspecified = True
+                        if entry["credit"]["id"] != "CHUNSOFT":
+                            collected_licenses.add(license_k["license"])
+                    else:
+                        collected_licenses.add(license_k["license"])
+                else:
+                    license_o = cast(OtherLicense, entry["license"])
+                    collected_licenses.add(license_o["name"])
+
+        if has_unspecified and has_chunsoft:
+            out_text = 'message_Talk("Some of these are made by Chunsoft,\\nthe original developers of this game.");'
+            if len(collected_licenses) > 0:
+                out_text += f'message_Talk("Licenses for others: {", ".join(collected_licenses)}");'
+        else:
+            out_text = (
+                f'message_Talk("Licenses that apply: {", ".join(collected_licenses)}");'
+            )
+        return out_text
 
     def _patch_credits(self):
         credits = ""

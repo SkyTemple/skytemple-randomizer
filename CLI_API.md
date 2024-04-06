@@ -545,16 +545,19 @@ Always true.
 
 ### `randomize`
 - Usage: `randomize INPUT_ROM CONFIG OUTPUT_ROM`
-- Return format: A stream of JSON lines, where each line is "Progress JSON", "Error JSON" or "Done JSON". The
-                 latter two are only returned as the last lines.
+- Return format: A stream of JSON lines, where each line is "Progress JSON", "Error JSON" or "Done JSON".
 
 Runs the randomization. Each progress update is printed as JSON in a new line. The last line are either "Error JSON" or
-"Done JSON". If the last line is "Error JSON", randomization failed. If the last line is "Done JSON" is succeeded.
+"Done JSON". If the last line is "Error JSON", randomization failed. If the last line is "Done JSON" it succeeded
+(generally, see notes below).
 
-The last line before the process exists may or may not be newline terminated. In rare cases additional "Progress JSON"
-lines may be printed after "Error JSON" or "Done JSON", these must be ignored. Do not kill the process after "Done JSON"
-is printed. After "Done JSON" is printed the Randomizer will save the ROM file. Only after the process has finished
-with a non-zero exit code is the output ROM readable.
+Note the following:
+ - The last line before the process exists may or may not be newline terminated. 
+ - In rare cases additional "Progress JSON" lines may be printed after "Error JSON" or "Done JSON", these must be 
+   ignored. 
+ - Do not kill the process after "Done JSON" is printed. After "Done JSON" is printed the Randomizer will save the ROM 
+   file. Only after the process has finished with a non-zero exit code is the output ROM readable.
+ - After a "Done JSON" an "Error JSON" may still follow. This happens when the ROM failed to save to disk.
 
 - `INPUT_ROM` is the path to the input ROM file.
 - `CONFIG` is the path to a "Config JSON". 

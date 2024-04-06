@@ -34,7 +34,7 @@ from skytemple_randomizer.frontend.cli import info
 
 
 def init(cli: click.Group):
-    @cli.command()
+    @cli.command(help="Runs the Randomization.")
     @click.argument("input_rom", cls=RomArgument)
     @click.argument("config", cls=ConfigArgument)
     @click.argument("output_rom")

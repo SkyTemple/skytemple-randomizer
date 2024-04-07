@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-07 17:30+0000\n"
-"PO-Revision-Date: 2024-04-07 17:37\n"
+"POT-Creation-Date: 2024-04-07 21:18+0000\n"
+"PO-Revision-Date: 2024-04-07 21:19\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -4212,16 +4212,16 @@ msgstr ""
 msgid "Get started by loading a ROM."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:277
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:269
 msgid "Apply 'DisableTips' patch..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:288
-msgid "Enabling \"Blind Items\" Mode"
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:278
+msgid "Enabling \"Blind Items\" Mode..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:314
-msgid "Enabling \"Blind Moves\" Mode"
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:306
+msgid "Enabling \"Blind Moves\" Mode..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203

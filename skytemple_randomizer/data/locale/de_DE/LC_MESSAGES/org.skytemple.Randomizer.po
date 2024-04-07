@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-07 17:30+0000\n"
-"PO-Revision-Date: 2024-04-07 18:36\n"
+"POT-Creation-Date: 2024-04-07 21:18+0000\n"
+"PO-Revision-Date: 2024-04-07 21:19\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -4279,17 +4279,17 @@ msgstr "Bist du sicher, dass du eine ROM ausgewählt hast? Eine ROM hat normaler
 msgid "Get started by loading a ROM."
 msgstr "Beginne, indem du eine ROM lädst."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:277
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:269
 msgid "Apply 'DisableTips' patch..."
 msgstr "Patch „DisableTips“ wird angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:288
-msgid "Enabling \"Blind Items\" Mode"
-msgstr "Aktiviere \"Gehemeine Items\"-Modus"
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:278
+msgid "Enabling \"Blind Items\" Mode..."
+msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:314
-msgid "Enabling \"Blind Moves\" Mode"
-msgstr "Aktiere „Geheime Attacken“-Modus"
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:306
+msgid "Enabling \"Blind Moves\" Mode..."
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57

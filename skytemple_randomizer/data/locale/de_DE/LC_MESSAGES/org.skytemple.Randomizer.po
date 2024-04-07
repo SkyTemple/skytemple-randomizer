@@ -4285,11 +4285,11 @@ msgstr "Patch „DisableTips“ wird angewendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:278
 msgid "Enabling \"Blind Items\" Mode..."
-msgstr ""
+msgstr "Aktiviere \"Gehemeine Items\"-Modus..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:306
 msgid "Enabling \"Blind Moves\" Mode..."
-msgstr ""
+msgstr "Aktiere „Geheime Attacken“-Modus..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57

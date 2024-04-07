@@ -20,7 +20,36 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://skytemple.org/randomizer.png</image>
+      <caption>The main window of SkyTemple Randomizer.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Section for editing general NPC, player and enemy characteristics.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/monsters.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Section for editing dungeon settings.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/dungeons.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Section for editing settings on how text is randomized.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/text.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Section for settings to tweak the Randomization further.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/tweaks.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>One of the dialogs to edit additional information. Here: Selector for allowed moves.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/move_pool.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dialog that shows the Randomization being in progress.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/progress.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dialog that shows a successful Randomization has finished.</caption>
+      <image>https://skytemple.org/screenshots/randomizer2.0/done.png</image>
     </screenshot>
   </screenshots>
 
@@ -34,6 +63,10 @@
   </content_rating>
 
   <releases>
+    <release version="2.0.0b1" date="2024-04-??">
+      <description>Pre Release - Changelog can be found on GitHub (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/2.0.0b1).</description>
+      <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/2.0.0b1</url>
+    </release>
     <release version="1.6.0" date="2023-11-24">
       <description>Changelog can be found on GitHub (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.6.0).</description>
       <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.6.0</url>

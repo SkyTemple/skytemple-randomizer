@@ -256,32 +256,22 @@ SPRITE_PALETTES_COMBINATIONS = [
 class BlindItemsMovesRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
         steps = 0
-        if (
-            self.config["item"]["blind_items"]["enable"]
-            or self.config["pokemon"]["blind_moves"]["enable"]
-        ):
+        if self.config["item"]["blind_items"]["enable"]:
+            steps += 2
+        if self.config["pokemon"]["blind_moves"]["enable"]:
             steps += 1
-            if self.config["item"]["blind_items"]["enable"]:
-                steps += 1
-            if self.config["pokemon"]["blind_moves"]["enable"]:
-                steps += 1
         return steps
 
     def run(self, status: Status):
         patcher = Patcher(self.rom, self.static_data)
 
-        if (
-            self.config["item"]["blind_items"]["enable"]
-            or self.config["pokemon"]["blind_moves"]["enable"]
-        ):
+        if self.config["item"]["blind_items"]["enable"]:
             status.step(_("Apply 'DisableTips' patch..."))
             if not patcher.is_applied("DisableTips"):
                 patcher.apply("DisableTips")
-
-            if self.config["item"]["blind_items"]["enable"]:
-                self.blind_items(status)
-            if self.config["pokemon"]["blind_moves"]["enable"]:
-                self.blind_moves(status)
+            self.blind_items(status)
+        if self.config["pokemon"]["blind_moves"]["enable"]:
+            self.blind_moves(status)
         status.done()
 
     def blind_items(self, status: Status):

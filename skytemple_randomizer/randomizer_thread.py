@@ -32,6 +32,7 @@ from skytemple_files.common.util import get_ppmdu_config_for_rom
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
+from skytemple_randomizer.randomizer.blind_items_moves import BlindItemsMovesRandomizer
 from skytemple_randomizer.randomizer.boss import BossRandomizer
 from skytemple_randomizer.randomizer.chapter import ChapterRandomizer
 from skytemple_randomizer.randomizer.dungeon import DungeonRandomizer
@@ -82,6 +83,7 @@ RANDOMIZERS = [
     TextMainRandomizer,
     TextScriptRandomizer,
     GlobalItemsRandomizer,
+    BlindItemsMovesRandomizer,
     OverworldMusicRandomizer,
     ExplorerRanksRandomizer,
     IqTacticsRandomizer,

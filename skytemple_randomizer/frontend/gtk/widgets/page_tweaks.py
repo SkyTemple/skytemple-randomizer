@@ -85,7 +85,7 @@ class TweaksPage(Adw.PreferencesPage):
         if w == self.button_blind_items:
             page_bt = TextPoolPage(pool=TextPool.BLIND_ITEM_NAMES, parent_page=self)
             dialog = BaseSettingsDialog(
-                title=_('Move Names for "Blind Items" Mode'),
+                title=_('Item Names for "Blind Items" Mode'),
                 content=page_bt,
                 getter=page_bt.get_enabled,
                 setter=page_bt.set_enabled,

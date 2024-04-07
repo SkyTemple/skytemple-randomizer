@@ -28,7 +28,6 @@ from enum import Enum
 from numbers import Number
 from typing import TypedDict, Optional
 
-from jsonschema import validate
 from range_typed_integers import u16, u8, u32
 
 from skytemple_files.common.util import open_utf8
@@ -112,21 +111,6 @@ class QuizMode(Enum):
     TEST = 0
     TEST_AND_ASK = 1
     ASK = 2
-
-
-QUIZ_QUESTIONS_JSON_SCHEMA = {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "array",
-    "items": {
-        "type": "object",
-        "required": ["question", "answers"],
-        "additionalProperties": False,
-        "properties": {
-            "question": {"type": "string"},
-            "answers": {"minItems": 2, "type": "array", "items": {"type": "string"}},
-        },
-    },
-}
 
 
 class QuizQuestion(TypedDict):
@@ -1202,7 +1186,6 @@ class ConfigFileLoader:
                 raise ValueError(f"Value in JSON must be a list of integers for {typ}.")
             return target
         elif typ == list[QuizQuestion]:
-            validate(target, QUIZ_QUESTIONS_JSON_SCHEMA)
             return target
         else:
             raise TypeError(f"Unknown type for {cls.__name__}: {typ}")

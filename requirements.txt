@@ -3,7 +3,6 @@ click==8.1.7
 git+https://github.com/skytemple/skytemple-files@master#egg=skytemple_files[spritecollab]
 git+https://github.com/skytemple/skytemple-icons@main#egg=skytemple_icons
 pygobject>=3.48.0
-jsonschema==4.19.1
 packaging
 types-setuptools
 importlib_metadata>=4.6; python_version < "3.10"

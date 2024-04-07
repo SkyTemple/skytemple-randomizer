@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-07 16:51+0000\n"
-"PO-Revision-Date: 2024-04-07 16:56\n"
+"POT-Creation-Date: 2024-04-07 17:27+0000\n"
+"PO-Revision-Date: 2024-04-07 17:27\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -3436,7 +3436,7 @@ msgstr "ランダム化の影響を受けるダンジョンと、天気をラン
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:227
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:308
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:155
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
 msgid "Failed to import: Error while opening file ({})."
 msgstr "インポートに失敗しました。ファイルを開く際にエラーが発生しました ({})。"
 
@@ -3445,31 +3445,31 @@ msgid "Missing dungeon ID in CSV"
 msgstr "CSV にダンジョン ID が見つかりません。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:276
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:191
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
 msgstr "インポートに失敗しました。CSVがエクスポートボタンに書かれた形式と同じであることを確認してください。\n"
 "詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:309
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:361
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:206
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:224
 msgid "Failed to export: Error while opening file ({})."
 msgstr "エクスポートに失敗しました。ファイルを開く際にエラーが発生しました ({})。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:364
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:377
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:222
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:240
 msgid "Failed to export. Details: {}"
 msgstr "エクスポートに失敗しました。\n"
 "詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:371
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:231
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:249
 msgid "Import from CSV"
 msgstr "CSV からインポート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:375
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:235
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:253
 msgid "Export to CSV"
 msgstr "CSV にエクスポート"
 
@@ -3579,9 +3579,18 @@ msgstr "道具をランダム化する際のウェイトバイアスを制御し
 "他のカテゴリーと比べて乗数が高いほど、そのカテゴリーの道具は他のカテゴリーよりもスポーンする可能性が高くなります。\n\n"
 "※アルゴリズムを「バランス」に設定した時のみ適用されます"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:109
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:113
 msgid "Tactics & IQ"
 msgstr "作戦 & かしこさ"
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:120
+msgid "Move Names for \"Blind Moves\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
+msgid "A lot of names from the default list are from fantasynamegenerators.com."
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
@@ -3631,37 +3640,49 @@ msgstr "有効にすると、技マシンが技プールから選ばれた内容
 msgid "Move Pool"
 msgstr "技プール"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:160
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:158
+msgid "\"Blind Moves\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:169
+msgid "Enable \"Blind Moves\" mode: Move names are replaced with random names and move types are randomized."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:184
+msgid "Configure move names in \"Blind Moves\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:199
 msgid "Additional Pokémon Properties"
 msgstr "ポケモンの追加プロパティ"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:163
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:202
 msgid "Randomize Abilities"
 msgstr "特性をランダム化"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:172
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:211
 msgid "Configure which abilities are available"
 msgstr "特性の設定"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:185
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:224
 msgid "Randomize Typings"
 msgstr "タイプをランダム化"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:193
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:232
 msgid "Tactics &amp; IQ"
 msgstr "作戦 &amp; かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:147
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:199
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:148
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:155
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:182
 msgid "Reset to Default"
 msgstr "デフォルトに戻す"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:151
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:203
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:152
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:160
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:187
 msgid "Select None"
 msgstr "選択を解除"
 
@@ -3821,7 +3842,6 @@ msgid "Edit Question"
 msgstr "質問を編集"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:149
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:99
 msgid "Question"
 msgstr "質問"
 
@@ -4096,7 +4116,7 @@ msgid "Controls how Pokémon and NPC names in texts are replaced.\n\n"
 "This is typically slower than doing a simple replacement."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:105
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:111
 msgid "Remove Text"
 msgstr "テキストを削除"
 
@@ -4105,12 +4125,16 @@ msgstr "テキストを削除"
 msgid "Add text"
 msgstr "テキストを追加"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:170
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:175
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:88
+msgid "Move Names for \"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:197
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:202
 msgid "Allowed Items"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:181
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:208
 msgid "Category Weights"
 msgstr "カテゴリ係数"
 
@@ -4153,31 +4177,44 @@ msgstr "トレジャータウンの店とダンジョン報酬をランダム化
 msgid "Allowed Items &amp; Category Weights"
 msgstr "許可された道具 &amp; カテゴリウェイト"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:90
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:88
+msgid "\"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:99
+msgid "Enable \"Blind Items\" mode: Item names are replaced with random names. Icons and costs are randomized.\n"
+"Descriptions are replaced with placeholder text."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:115
+msgid "Configure item names in \"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:130
 msgid "Utilities"
 msgstr "ユーティリティ"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:93
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:133
 msgid "Download Missing Portraits &amp; Sprites"
 msgstr "不足している顔グラフィック &amp; スプライトをダウンロード"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:94
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:134
 msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
 msgstr "SpriteCollab (sprites.pmdcollab.org) からダウンロード済み"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:102
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:142
 msgid "Patches"
 msgstr "パッチ"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:164
 msgid "Miscellaneous"
 msgstr "その他"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:127
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:167
 msgid "Music"
 msgstr "BGM"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:147
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:187
 msgid "Explorer Rank"
 msgstr "探検隊ランク"
 
@@ -4250,6 +4287,18 @@ msgstr "正しい ROM を選択しましたか？ROM には通常、ファイル
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."
 msgstr "ROM を読み込んで下さい。"
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:277
+msgid "Apply 'DisableTips' patch..."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:288
+msgid "Enabling \"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:314
+msgid "Enabling \"Blind Moves\" Mode"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57
@@ -4471,11 +4520,11 @@ msgstr "スクリプトテキストのランダマイズ: 文字列の読み込�
 msgid "Randomizing all script text: Writing strings..."
 msgstr "スクリプトテキストのランダマイズ: 文字列の書き込み中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:150
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:152
 msgid "Randomizing..."
 msgstr "ランダマイズ中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:154
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:156
 msgid "Saving scripts..."
 msgstr "スクリプトを保存中..."
 

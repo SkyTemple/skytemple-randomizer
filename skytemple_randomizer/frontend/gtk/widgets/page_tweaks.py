@@ -36,6 +36,8 @@ from skytemple_randomizer.frontend.gtk.widgets import (
     RandomizationSettingsWindow,
     ItemsPage,
     SubpageStackEntry,
+    TextPoolPage,
+    TextPool,
 )
 
 
@@ -49,6 +51,8 @@ class TweaksPage(Adw.PreferencesPage):
     row_patches = cast(Adw.ActionRow, Gtk.Template.Child())
     row_music = cast(Adw.ActionRow, Gtk.Template.Child())
     row_explorer_rank = cast(Adw.ActionRow, Gtk.Template.Child())
+    row_blind_items = cast(Adw.SwitchRow, Gtk.Template.Child())
+    button_blind_items = cast(Adw.SwitchRow, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
     _suppress_signals: bool
@@ -76,6 +80,19 @@ class TweaksPage(Adw.PreferencesPage):
             dialog = BaseSettingsDialog(
                 title=self.row_explorer_rank.get_title(),
                 content=ExplorerRankPage(),
+                content_width=512,
+            )
+        if w == self.button_blind_items:
+            page_bt = TextPoolPage(pool=TextPool.BLIND_ITEM_NAMES, parent_page=self)
+            dialog = BaseSettingsDialog(
+                title=_('Move Names for "Blind Items" Mode'),
+                content=page_bt,
+                getter=page_bt.get_enabled,
+                setter=page_bt.set_enabled,
+                end_button_factory=page_bt.create_window_end_buttons,
+                help_callback=_(
+                    "A lot of names from the default list are from fantasynamegenerators.com."
+                ),
                 content_width=512,
             )
 
@@ -112,6 +129,15 @@ class TweaksPage(Adw.PreferencesPage):
             self.row_download_sprites.get_active()
         )
 
+    @Gtk.Template.Callback()
+    def on_row_blind_items_notify_active(self, *args):
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["item"]["blind_items"]["enable"] = (
+            self.row_blind_items.get_active()
+        )
+
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True
         self.randomization_settings = config
@@ -122,6 +148,7 @@ class TweaksPage(Adw.PreferencesPage):
         self.row_download_sprites.set_active(
             config["improvements"]["download_portraits"]
         )
+        self.row_blind_items.set_active(config["item"]["blind_items"]["enable"])
         self._suppress_signals = False
 
     def _make_item_pool_dialogs(self) -> BaseSettingsDialog:

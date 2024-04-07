@@ -205,6 +205,17 @@ Type: Integer; Enum
      It doesn't attempt to balance out the different item categories, making items from categories with fewer total 
      items easier to find.
 
+#### `.pokemon.blind_items.enable`
+Type: Boolean
+
+If true, enables "Blind Items" mode: Item names are replaced with random names. Icons and costs are randomized.
+Descriptions are replaced with placeholder text.
+
+#### `.pokemon.blind_items.names`
+Type: String; List of newline seperated strings
+
+List of newline seperated names used by "Blind Items" mode.
+
 #### `.item.global_items`
 Type: Boolean
 
@@ -244,6 +255,17 @@ If true, monsters in the game are assigned random abilities from the list `.poke
 Type: Array of Integers
 
 A list of Ability IDs that can be used for random abilities.
+
+#### `.pokemon.blind_moves.enable`
+Type: Boolean
+
+If true, enables "Blind Moves" mode: Move names are replaced with random names and move types are randomized.
+Descriptions are replaced with placeholder text.
+
+#### `.pokemon.blind_moves.names`
+Type: String; List of newline seperated strings
+
+List of newline seperated names used by "Blind Moves" mode.
 
 #### `.pokemon.iq_groups`
 Type: Boolean

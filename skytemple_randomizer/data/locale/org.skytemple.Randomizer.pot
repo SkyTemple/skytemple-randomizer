@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-06 18:35+0000\n"
+"POT-Creation-Date: 2024-04-07 16:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3205,7 +3205,7 @@ msgstr ""
 msgid "_OK"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:76
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:77
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
 msgstr ""
 
@@ -3591,51 +3591,48 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:71
 msgid ""
 "If enabled all NPCs are randomized and all mentions of them\n"
-"in the script*.\n"
+"in the script.\n"
 "Additionally the following things are also randomized with these new NPCs:\n"
-"Boss fights, Guest Pokémon, Special Episode Player Characters\n"
-"\n"
-"*: Some additional text in the game may also be affected  \n"
-"(eg. some item names)."
+"Boss fights, Guest Pokémon, Special Episode Player Characters"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:93
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:90
 msgid "Moves"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:96
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:93
 msgid "Randomize Movesets"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:116
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:113
 msgid "Randomize TMs/HMs"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:127
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:124
 msgid "If enabled TMs and HMs will contain random moves from the move pool."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:141
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:138
 msgid "Move Pool"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:163
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:160
 msgid "Additional Pokémon Properties"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:166
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:163
 msgid "Randomize Abilities"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:175
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:172
 msgid "Configure which abilities are available"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:188
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:185
 msgid "Randomize Typings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:196
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:193
 msgid "Tactics &amp; IQ"
 msgstr ""
 
@@ -3845,7 +3842,7 @@ msgid "Export questions to XML"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:90
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:91
 msgid "Questions"
 msgstr ""
 
@@ -3972,18 +3969,18 @@ msgstr ""
 msgid "If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:84
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:85
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:125
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:226
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:242
 msgid "1st Word"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:232
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:248
 msgid "2nd Word"
 msgstr ""
 
@@ -4052,6 +4049,30 @@ msgstr ""
 msgid "Enable Instant Text"
 msgstr ""
 
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:156
+msgid "Text Replacement Algorithm"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:163
+msgid "Smart"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:164
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
+msgid "Classic"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:175
+msgid ""
+"Controls how Pokémon and NPC names in texts are replaced.\n"
+"\n"
+"Classic: Algorithm that was used in the Randomizer prior to version 2.0.\n"
+"It may lead to some unrelated parts of text (such as parts of item names) being incorrectly replaced.\n"
+"\n"
+"Smart: Use a more exhaustive algorithm for replacing in-game mentions of NPCs.\n"
+"This is typically slower than doing a simple replacement."
+msgstr ""
+
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:105
 msgid "Remove Text"
 msgstr ""
@@ -4085,10 +4106,6 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:27
 msgid "Balanced"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
-msgid "Classic"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:39
@@ -4209,7 +4226,7 @@ msgid "Get started by loading a ROM."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:53
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:82
 msgid "Apply 'ActorAndLevelLoader' patch..."
@@ -4319,19 +4336,19 @@ msgstr ""
 msgid "Randomizing TM/HM movesets..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:58
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:62
 msgid "Randomizing NPC actor list..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:61
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:80
 msgid "Replacing main text that mentions NPCs..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:82
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:95
 msgid "Replacing script text that mentions NPCs..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:85
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:101
 msgid "Cloning missing NPC portraits..."
 msgstr ""
 

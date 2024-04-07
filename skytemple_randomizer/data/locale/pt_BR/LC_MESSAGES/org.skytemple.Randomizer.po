@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-07 17:27+0000\n"
-"PO-Revision-Date: 2024-04-07 17:27\n"
+"POT-Creation-Date: 2024-04-07 17:30+0000\n"
+"PO-Revision-Date: 2024-04-07 17:37\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -4062,7 +4062,7 @@ msgid "Add text"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:88
-msgid "Move Names for \"Blind Items\" Mode"
+msgid "Item Names for \"Blind Items\" Mode"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:197

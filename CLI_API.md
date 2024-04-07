@@ -354,6 +354,12 @@ Type: Boolean
 If true, NPCs are randomized. Other places were NPCs appear are also changed if technically possible 
 (boss fights, special episode player characters, etc.).
 
+#### `.starters.npcs_use_smart_replace`
+Type: Boolean
+
+If true, use a more exhaustive algorithm for replacing in-game mentions of NPCs.
+This is typically slower than doing a simple replacement.
+
 #### `.starters_npcs.overworld_music`
 Type: Boolean
 

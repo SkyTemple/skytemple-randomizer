@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-07 17:30+0000\n"
-"PO-Revision-Date: 2024-04-07 17:37\n"
+"PO-Revision-Date: 2024-04-07 18:36\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3582,7 +3582,7 @@ msgstr "Taktik und IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:120
 msgid "Move Names for \"Blind Moves\" Mode"
-msgstr "Attacken-Namen für den „Geheime-Attacken“ Modus"
+msgstr "Attacken-Namen für den „Geheime Attacken“ Modus"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
@@ -4120,7 +4120,7 @@ msgstr "Text hinzufügen"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:88
 msgid "Item Names for \"Blind Items\" Mode"
-msgstr ""
+msgstr "Item-Namen für den „Geheime Items“ Modus"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:197
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:202

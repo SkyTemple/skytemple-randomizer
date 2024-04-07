@@ -51,6 +51,32 @@ template $StTweaksPage: Adw.PreferencesPage {
                 }
             }
         }
+
+        Adw.SwitchRow row_blind_items {
+            title: _('"Blind Items" Mode');
+            icon-name: 'skytemple-e-item-symbolic';
+            activatable: true;
+            notify::active => $on_row_blind_items_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _('Enable "Blind Items" mode: Item names are replaced with random names. Icons and costs are randomized.\nDescriptions are replaced with placeholder text.');
+                    };
+                    styles ['flat']
+                }
+            }
+            [suffix]
+            Box {
+                Button button_blind_items {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure item names in "Blind Items" Mode');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
+                }
+            }
+        }
     }
 
     Adw.PreferencesGroup {

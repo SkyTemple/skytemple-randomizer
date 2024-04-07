@@ -103,6 +103,32 @@ template $StMonstersPage: Adw.PreferencesPage {
                 }
             }
         }
+
+        Adw.SwitchRow row_blind_moves {
+            title: _('"Blind Moves" Mode');
+            icon-name: 'skytemple-e-move-symbolic';
+            activatable: true;
+            notify::active => $on_row_blind_moves_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover {
+                        label: _('Enable "Blind Moves" mode: Move names are replaced with random names and move types are randomized.');
+                    };
+                    styles ['flat']
+                }
+            }
+            [suffix]
+            Box {
+                Button button_blind_moves {
+                  icon-name: 'skytemple-document-edit-symbolic';
+                  tooltip-text: _('Configure move names in "Blind Moves" Mode');
+                  clicked => $on_signal_for_dialog();
+                  styles ['flat']
+                }
+            }
+        }
     }
 
     Adw.PreferencesGroup {

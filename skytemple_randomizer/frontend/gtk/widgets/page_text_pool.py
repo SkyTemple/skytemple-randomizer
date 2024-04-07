@@ -39,6 +39,8 @@ class TextPool(Enum):
     CHAPTER_TITLES = auto()
     LOCATIONS_A = auto()
     LOCATIONS_B = auto()
+    BLIND_ITEM_NAMES = auto()
+    BLIND_MOVE_NAMES = auto()
 
     def csv_name(self):
         if self == TextPool.CHAPTER_TITLES:
@@ -47,6 +49,10 @@ class TextPool(Enum):
             return "location_part1.csv"
         if self == TextPool.LOCATIONS_B:
             return "location_part2.csv"
+        if self == TextPool.BLIND_ITEM_NAMES:
+            return "blind_items.csv"
+        if self == TextPool.BLIND_MOVE_NAMES:
+            return "blind_moves.csv"
         raise KeyError(self)
 
 
@@ -96,7 +102,7 @@ class TextPoolPage(Adw.PreferencesPage):
         self.update_in_pool(text.get_index(), text.get_text())
 
     def _make_entry(self, value: str) -> Adw.EntryRow:
-        row_text = Adw.EntryRow(title=_("Question"))
+        row_text = Adw.EntryRow()
         force_adw_entry_row_no_title(row_text)
         row_text.set_text(value)
         row_text.connect("changed", self.on_text_changed)
@@ -116,15 +122,27 @@ class TextPoolPage(Adw.PreferencesPage):
         assert self.randomization_settings is not None
         if self.pool == TextPool.CHAPTER_TITLES:
             return self.randomization_settings["chapters"]["randomize"]
-        else:
+        elif self.pool == TextPool.LOCATIONS_A or self.pool == TextPool.LOCATIONS_B:
             return self.randomization_settings["locations"]["randomize"]
+        elif self.pool == TextPool.BLIND_MOVE_NAMES:
+            return self.randomization_settings["pokemon"]["blind_moves"]["enable"]
+        elif self.pool == TextPool.BLIND_ITEM_NAMES:
+            return self.randomization_settings["item"]["blind_items"]["enable"]
+        else:
+            raise KeyError(self.pool)
 
     def set_enabled(self, state: bool):
         assert self.randomization_settings is not None
         if self.pool == TextPool.CHAPTER_TITLES:
             self.randomization_settings["chapters"]["randomize"] = state
-        else:
+        elif self.pool == TextPool.LOCATIONS_A or self.pool == TextPool.LOCATIONS_B:
             self.randomization_settings["locations"]["randomize"] = state
+        elif self.pool == TextPool.BLIND_MOVE_NAMES:
+            self.randomization_settings["pokemon"]["blind_moves"]["enable"] = state
+        elif self.pool == TextPool.BLIND_ITEM_NAMES:
+            self.randomization_settings["item"]["blind_items"]["enable"] = state
+        else:
+            raise KeyError(self.pool)
         if self.parent_page:
             self.parent_page.populate_settings(self.randomization_settings)
 
@@ -250,8 +268,18 @@ class TextPoolPage(Adw.PreferencesPage):
             return self.randomization_settings["chapters"]["text"].split("\n")
         elif self.pool == TextPool.LOCATIONS_A:
             return self.randomization_settings["locations"]["first"].split("\n")
-        else:
+        elif self.pool == TextPool.LOCATIONS_B:
             return self.randomization_settings["locations"]["second"].split("\n")
+        elif self.pool == TextPool.BLIND_MOVE_NAMES:
+            return self.randomization_settings["pokemon"]["blind_moves"]["names"].split(
+                "\n"
+            )
+        elif self.pool == TextPool.BLIND_ITEM_NAMES:
+            return self.randomization_settings["item"]["blind_items"]["names"].split(
+                "\n"
+            )
+        else:
+            raise KeyError(self.pool)
 
     def set_pool(self, pool: list[str]):
         assert self.randomization_settings is not None
@@ -259,8 +287,18 @@ class TextPoolPage(Adw.PreferencesPage):
             self.randomization_settings["chapters"]["text"] = "\n".join(pool)
         elif self.pool == TextPool.LOCATIONS_A:
             self.randomization_settings["locations"]["first"] = "\n".join(pool)
-        else:
+        elif self.pool == TextPool.LOCATIONS_B:
             self.randomization_settings["locations"]["second"] = "\n".join(pool)
+        elif self.pool == TextPool.BLIND_MOVE_NAMES:
+            self.randomization_settings["pokemon"]["blind_moves"]["names"] = "\n".join(
+                pool
+            )
+        elif self.pool == TextPool.BLIND_ITEM_NAMES:
+            self.randomization_settings["item"]["blind_items"]["names"] = "\n".join(
+                pool
+            )
+        else:
+            raise KeyError(self.pool)
 
     def add_to_pool(self, line: str):
         pool = list(self.get_pool())

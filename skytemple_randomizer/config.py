@@ -132,6 +132,16 @@ class MovesetConfig(Enum):
     FIRST_STAB = 3
 
 
+class BlindItemsConfig(TypedDict):
+    enable: bool
+    names: str
+
+
+class BlindMovesConfig(TypedDict):
+    enable: bool
+    names: str
+
+
 class MonsterConfig(TypedDict):
     iq_groups: bool
     abilities: bool
@@ -143,6 +153,7 @@ class MonsterConfig(TypedDict):
     monsters_enabled: list[u16]
     starters_enabled: list[u16]
     moves_enabled: list[u16]
+    blind_moves: BlindMovesConfig
 
 
 class LocationsConfig(TypedDict):
@@ -179,6 +190,7 @@ class ItemConfig(TypedDict):
     algorithm: ItemAlgorithm
     global_items: bool
     weights: dict[int, Number]
+    blind_items: BlindItemsConfig
 
 
 class RandomizerConfig(TypedDict):
@@ -1121,7 +1133,12 @@ class ConfigFileLoader:
                                 "9": 1,
                                 "10": 1,
                             },
+                            "blind_items": {"enable": False, "names": ""},
                         }
+                    elif field == "blind_items" and field_type == BlindItemsConfig:
+                        target[field] = {"enable": False, "names": ""}
+                    elif field == "blind_moves" and field_type == BlindMovesConfig:
+                        target[field] = {"enable": False, "names": ""}
                     elif field == "include_vanilla_questions":
                         target[field] = False
                     else:

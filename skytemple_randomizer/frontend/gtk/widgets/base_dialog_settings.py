@@ -70,7 +70,7 @@ class BaseSettingsDialog(Adw.Dialog):
         content: RandomizationSettingsWidget | tuple[SubpageStackEntry, ...],
         getter: Callable[[], bool] | None = None,
         setter: Callable[[bool], None] | None = None,
-        help_callback: Callable[[], str] | None = None,
+        help_callback: Callable[[], str] | str | None = None,
         search_callback: Callable[[Gtk.SearchEntry], None] | None = None,
         end_button_factory: Callable[[], Gtk.Widget] | None = None,
         **kwargs,
@@ -110,7 +110,10 @@ class BaseSettingsDialog(Adw.Dialog):
 
         if help_callback is not None:
             assert self.action_bar is not None
-            self.help_popover = HelpPopover(label=help_callback())
+            if isinstance(help_callback, str):
+                self.help_popover = HelpPopover(label=help_callback)
+            else:
+                self.help_popover = HelpPopover(label=help_callback())
             help_button = Gtk.MenuButton(
                 icon_name="skytemple-help-about-symbolic",
                 popover=self.help_popover,

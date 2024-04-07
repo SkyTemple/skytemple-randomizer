@@ -285,7 +285,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
         status.done()
 
     def blind_items(self, status: Status):
-        status.step(_('Enabling "Blind Items" Mode'))
+        status.step(_('Enabling "Blind Items" Mode...'))
         pool = self.config["item"]["blind_items"]["names"].splitlines()
         shuffle(pool)
         allowed = self.config["dungeons"]["items_enabled"]
@@ -300,6 +300,8 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
             sprite, palette = choice(SPRITE_PALETTES_COMBINATIONS)
             item.sprite = u8(sprite)
             item.palette = u8(palette)
+            item.buy_price = randrange(1, 3001)
+            item.sell_price = item.buy_price // randrange(1, 20)
             self.modify_string(strings, StringType.ITEM_NAMES, item.item_id, pool.pop())
             self.modify_string(
                 strings, StringType.ITEM_SHORT_DESCRIPTIONS, item.item_id, "???"
@@ -311,7 +313,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
         self.save_strings(strings)
 
     def blind_moves(self, status: Status):
-        status.step(_('Enabling "Blind Moves" Mode'))
+        status.step(_('Enabling "Blind Moves" Mode...'))
         pool = self.config["pokemon"]["blind_moves"]["names"].splitlines()
         shuffle(pool)
         allowed = self.config["pokemon"]["moves_enabled"]

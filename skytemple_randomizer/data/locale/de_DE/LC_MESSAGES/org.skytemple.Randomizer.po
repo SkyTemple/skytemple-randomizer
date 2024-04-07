@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-07 16:51+0000\n"
-"PO-Revision-Date: 2024-04-07 16:56\n"
+"POT-Creation-Date: 2024-04-07 17:27+0000\n"
+"PO-Revision-Date: 2024-04-07 17:27\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3439,7 +3439,7 @@ msgstr "Hier kannst du einstellen, welche Dungeons von der Randomisierung betrof
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:227
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:308
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:155
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
 msgid "Failed to import: Error while opening file ({})."
 msgstr "Import fehlgeschlagen: Fehler beim Öffnen der Datei ({})."
 
@@ -3448,29 +3448,29 @@ msgid "Missing dungeon ID in CSV"
 msgstr "Fehlende Dungeon-ID in CSV"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:276
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:191
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
 msgstr "Der Import ist fehlgeschlagen. Stelle sicher, dass deine CSV-Datei dem Format des Exports entspricht. Weitere Infos: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:309
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:361
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:206
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:224
 msgid "Failed to export: Error while opening file ({})."
 msgstr "Export fehlgeschlagen: Fehler beim Öffnen der Datei ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:364
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:377
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:222
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:240
 msgid "Failed to export. Details: {}"
 msgstr "Fehler beim Exportieren. Weitere Infos: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:371
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:231
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:249
 msgid "Import from CSV"
 msgstr "Importiere aus CSV"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:375
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:235
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:253
 msgid "Export to CSV"
 msgstr "Als CSV exportieren"
 
@@ -3576,9 +3576,18 @@ msgstr "Stelle ein, welche Item-Kategorien häufiger erscheinen sollen als ander
 "Ein höhrerer Multiplikator bedeutet, dass Items aus der jeweiligen Kategorie häufiger erscheinen.\n\n"
 "Diese Einstellungen sind nur relevant, falls der \"Ausgeglichen\" Item-Algorithmus verwendet wird!"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:109
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:113
 msgid "Tactics & IQ"
 msgstr "Taktik und IQ"
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:120
+msgid "Move Names for \"Blind Moves\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
+msgid "A lot of names from the default list are from fantasynamegenerators.com."
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
@@ -3628,37 +3637,49 @@ msgstr "Falls aktiviert werden TMs und VMs zufällige Attacken vom Attacken-Pool
 msgid "Move Pool"
 msgstr "Attacken-Pool"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:160
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:158
+msgid "\"Blind Moves\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:169
+msgid "Enable \"Blind Moves\" mode: Move names are replaced with random names and move types are randomized."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:184
+msgid "Configure move names in \"Blind Moves\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:199
 msgid "Additional Pokémon Properties"
 msgstr "Zusätzliche Eigenschaften von Pokémon"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:163
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:202
 msgid "Randomize Abilities"
 msgstr "Fähigkeiten randomisieren"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:172
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:211
 msgid "Configure which abilities are available"
 msgstr "Konfiguriere, welche Fähigkeiten zur Verfügung stehen"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:185
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:224
 msgid "Randomize Typings"
 msgstr "Typen randomisieren"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:193
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:232
 msgid "Tactics &amp; IQ"
 msgstr "Taktik &amp; IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:147
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:199
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:148
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:155
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:182
 msgid "Reset to Default"
 msgstr "Auf Standard zurücksetzen"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:151
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:203
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:152
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:160
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:187
 msgid "Select None"
 msgstr "Nichts auswählen"
 
@@ -3818,7 +3839,6 @@ msgid "Edit Question"
 msgstr "Frage bearbeiten"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:149
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:99
 msgid "Question"
 msgstr "Frage"
 
@@ -4084,7 +4104,7 @@ msgid "Controls how Pokémon and NPC names in texts are replaced.\n\n"
 "This is typically slower than doing a simple replacement."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:105
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:111
 msgid "Remove Text"
 msgstr "Text entfernen"
 
@@ -4093,12 +4113,16 @@ msgstr "Text entfernen"
 msgid "Add text"
 msgstr "Text hinzufügen"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:170
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:175
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:88
+msgid "Move Names for \"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:197
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:202
 msgid "Allowed Items"
 msgstr "Erlaubte Items"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:181
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:208
 msgid "Category Weights"
 msgstr "Kategorie-Gewichtungen"
 
@@ -4139,31 +4163,44 @@ msgstr "Items in Schatzstadt und Belohnungen aus Dungeons randomisieren"
 msgid "Allowed Items &amp; Category Weights"
 msgstr "Erlaubte Items &amp; Gewichtungen"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:90
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:88
+msgid "\"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:99
+msgid "Enable \"Blind Items\" mode: Item names are replaced with random names. Icons and costs are randomized.\n"
+"Descriptions are replaced with placeholder text."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:115
+msgid "Configure item names in \"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:130
 msgid "Utilities"
 msgstr "Hilfsmittel"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:93
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:133
 msgid "Download Missing Portraits &amp; Sprites"
 msgstr "Downloade fehlende Portraits &amp; Sprites"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:94
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:134
 msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
 msgstr "Von SpriteCollab heruntergeladen (sprites.pmdcollab.org)"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:102
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:142
 msgid "Patches"
 msgstr "Patches"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:164
 msgid "Miscellaneous"
 msgstr "Weiteres"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:127
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:167
 msgid "Music"
 msgstr "Musik"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:147
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:187
 msgid "Explorer Rank"
 msgstr "Erkunderrank"
 
@@ -4235,6 +4272,18 @@ msgstr "Bist du sicher, dass du eine ROM ausgewählt hast? Eine ROM hat normaler
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."
 msgstr "Beginne, indem du eine ROM lädst."
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:277
+msgid "Apply 'DisableTips' patch..."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:288
+msgid "Enabling \"Blind Items\" Mode"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:314
+msgid "Enabling \"Blind Moves\" Mode"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57
@@ -4456,11 +4505,11 @@ msgstr "Der gesamte Skripttext wird randomisiert: Zeichenketten werden gelesen..
 msgid "Randomizing all script text: Writing strings..."
 msgstr "Der gesamte Skripttext wird randomisiert: Zeichenketten werden geschrieben..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:150
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:152
 msgid "Randomizing..."
 msgstr "Randomisiere..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:154
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:156
 msgid "Saving scripts..."
 msgstr "Speichere Skripte..."
 

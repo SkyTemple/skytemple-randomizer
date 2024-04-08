@@ -22,8 +22,11 @@ import sys
 
 if getattr(sys, "frozen", False):
     # All UI files are copied into the root.
-    if platform.system() == "Windows":
+    system = platform.system()
+    if system == "Windows":
         MAIN_PATH = os.path.join(os.path.dirname(sys.executable), "_internal")
+    elif system == "Darwin":
+        MAIN_PATH = os.path.join(os.path.dirname(sys.executable), "..", "Resources")
     else:
         MAIN_PATH = os.path.dirname(sys.executable)
 else:

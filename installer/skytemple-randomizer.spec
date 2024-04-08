@@ -9,6 +9,7 @@ additional_files = []
 additional_datas = [
     (os.path.join(pkg_path, "data"), "data"),
     (os.path.join(pkg_path, "frontend", "gtk", "widgets", "*.ui"), "."),
+    (os.path.join(pkg_path, "frontend", "gtk", "*.css"), "."),
     (
         os.path.join(site_packages, "skytemple_icons", "hicolor"),
         "skytemple_icons/hicolor",
@@ -72,7 +73,7 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,
+    console=True,
     icon=os.path.abspath(os.path.join(".", "skytemple_randomizer.ico")),
 )
 

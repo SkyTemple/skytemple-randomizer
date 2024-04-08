@@ -50,5 +50,3 @@ if (Test-Path ".\dist\skytemple\certifi\cacert.pem") {
   echo "Moved cacert to correct place"
   cp dist/skytemple/certifi/cacert.pem dist/skytemple/certifi.pem
 }
-
-echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/VERSION -Encoding utf8

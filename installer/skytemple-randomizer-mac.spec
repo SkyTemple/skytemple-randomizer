@@ -8,6 +8,7 @@ site_packages = next(p for p in sys.path if "site-packages" in p)
 additional_datas = [
     (os.path.join(pkg_path, "data"), "data"),
     (os.path.join(pkg_path, "frontend", "gtk", "widgets", "*.ui"), "."),
+    (os.path.join(pkg_path, "frontend", "gtk", "*.css"), "."),
     (
         os.path.join(site_packages, "skytemple_icons", "hicolor"),
         "skytemple_icons/hicolor",
@@ -82,8 +83,8 @@ coll = COLLECT(
 
 app = BUNDLE(
     coll,
-    name="SkyTempleRandomizer.app",
+    name="SkyTemple Randomizer.app",
     icon="skytemple_randomizer.icns",
     version=os.getenv("PACKAGE_VERSION", "0.0.0"),
-    bundle_identifier="de.parakoopa.skytemple_randomizer",
+    bundle_identifier="org.skytemple.Randomizer",
 )

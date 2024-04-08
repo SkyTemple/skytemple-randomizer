@@ -19,7 +19,7 @@ python -m venv C:\skytemple-venv
 C:\skytemple-venv\Scripts\activate.ps1
 
 # Install PyInstaller
-pip install setuptools wheel 'pyinstaller~=5.0'
+pip install setuptools wheel 'pyinstaller~=6.0'
 
 # Install certifi for cert handling
 pip3 install -U certifi

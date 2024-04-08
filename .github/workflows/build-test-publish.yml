@@ -271,7 +271,7 @@ jobs:
         run: |
           . .venv/bin/activate
           # Install other dependencies and SkyTemple Randomizer itself
-          pip3 install skytemple-rust 'pyinstaller~=5.0'
+          pip3 install skytemple-rust 'pyinstaller~=6.0'
           pip3 install -r requirements-mac-windows.txt
           # Generate MO localization files
           installer/generate-mo.sh

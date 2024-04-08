@@ -306,7 +306,7 @@ jobs:
           brew install graphicsmagick imagemagick
 
           # This tool returns exit code 2 if the DMG was created but code signing failed for some reason
-          npx create-dmg --dmg-title=SkyTempleRandomizer installer/dist/SkyTempleRandomizer.app installer || true
+          npx create-dmg --dmg-title="SkyTemple Randomizer" installer/dist/SkyTempleRandomizer.app installer || true
 
       - name: Upload .dmg
         uses: actions/upload-artifact@v4

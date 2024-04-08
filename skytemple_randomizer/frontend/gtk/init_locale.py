@@ -26,9 +26,7 @@ from skytemple_randomizer.data_dir import data_dir
 # TODO: Maybe want to get rid of duplication between SkyTemple and the Randomizer. And clean this up in general...
 def init_locale():
     LOCALE_DIR = os.path.abspath(os.path.join(data_dir(), "locale"))
-    if hasattr(locale, "bindtextdomain"):
-        libintl = locale
-    elif sys.platform.startswith("win"):
+    if sys.platform.startswith("win"):
         import ctypes
         import ctypes.util
 
@@ -90,6 +88,8 @@ def init_locale():
                 libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
             except Exception:
                 libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
+    elif hasattr(locale, "bindtextdomain"):
+        libintl = locale
     elif sys.platform == "darwin":
         import ctypes
 

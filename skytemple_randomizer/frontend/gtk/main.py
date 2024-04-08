@@ -17,9 +17,6 @@
 from __future__ import annotations
 import sys
 
-from ndspy.rom import NintendoDSRom
-from skytemple_files.common.ppmdu_config.data import Pmd2Data
-
 from skytemple_randomizer.frontend.gtk.init_locale import init_locale
 
 init_locale()
@@ -43,6 +40,8 @@ import os
 import sys
 
 from skytemple_icons import icons
+from ndspy.rom import NintendoDSRom
+from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_randomizer.data_dir import data_dir
 
 from gi.repository import Adw, Gtk, GLib, Gdk, Gio

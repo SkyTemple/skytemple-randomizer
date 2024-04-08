@@ -49,4 +49,3 @@ if (Test-Path ".\dist\skytemple\certifi\cacert.pem") {
 }
 
 echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/VERSION -Encoding utf8
-echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/data/VERSION -Encoding utf8

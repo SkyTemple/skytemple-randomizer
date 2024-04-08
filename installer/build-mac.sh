@@ -24,7 +24,7 @@ iconutil -c icns skytemple_randomizer.iconset
 rm -rf skytemple_randomizer.iconset
 
 # Build the app
-pyinstaller skytemple-randomizer-mac.spec --noconfirm
+pyinstaller --log-level=DEBUG skytemple-randomizer-mac.spec --noconfirm
 
 # Check if we need to copy the cacert file
 if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then

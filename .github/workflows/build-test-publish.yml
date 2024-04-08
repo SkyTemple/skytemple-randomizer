@@ -222,6 +222,14 @@ jobs:
           if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
               exit 1
           }
+
+      - name: Upload build graph
+        uses: actions/upload-artifact@v4
+        with:
+          name: skytemple-randomizer-windows-dep-graph-x64
+          path: |
+            installer/build/skytemple_randomizer/xref-skytemple_randomizer.html
+
       - name: Create installer
         uses: joncloud/makensis-action@v4.1
         with:
@@ -298,6 +306,13 @@ jobs:
 
           # Creating a zip makes the artifact upload much faster since there are so many files
           zip -r skytemple-randomizer-mac.zip dist/SkyTempleRandomizer.app > /dev/null
+
+      - name: Upload build graph
+        uses: actions/upload-artifact@v4
+        with:
+          name: skytemple-randomizer-mac-dep-graph-x86_64
+          path: |
+            installer/build/skytemple_randomizer/xref-skytemple_randomizer.html
 
       - name: Upload .app
         uses: actions/upload-artifact@v4

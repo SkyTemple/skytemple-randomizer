@@ -35,7 +35,7 @@ if ($env:IS_DEV_BUILD) {
   bash .\install-skytemple-components-from-git.sh
 }
 
-pyinstaller skytemple-randomizer.spec
+pyinstaller --log-level=DEBUG skytemple-randomizer.spec
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){

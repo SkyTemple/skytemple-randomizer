@@ -99,6 +99,7 @@ def init_locale():
         libintl.bind_textdomain_codeset("org.skytemple.Randomizer", "UTF-8")  # type: ignore
     except Exception:
         pass
+    locale.textdomain("org.skytemple.Randomizer")
     libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)
     gettext.textdomain("org.skytemple.Randomizer")

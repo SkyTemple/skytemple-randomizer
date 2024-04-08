@@ -26,6 +26,8 @@ from skytemple_randomizer.data_dir import data_dir
 # TODO: Maybe want to get rid of duplication between SkyTemple and the Randomizer. And clean this up in general...
 def init_locale():
     LOCALE_DIR = os.path.abspath(os.path.join(data_dir(), "locale"))
+    libintl1 = None
+    libintl2 = None
     if sys.platform.startswith("win"):
         import ctypes
         import ctypes.util
@@ -79,28 +81,36 @@ def init_locale():
 
         libintl_loc = os.path.join(os.path.dirname(__file__), "libintl-8.dll")
         if os.path.exists(libintl_loc):
-            libintl = ctypes.cdll.LoadLibrary(libintl_loc)
+            libintl1 = ctypes.cdll.LoadLibrary(libintl_loc)
         libintl_loc = os.path.join(os.path.dirname(__file__), "intl.dll")
         if os.path.exists(libintl_loc):
-            libintl = ctypes.cdll.LoadLibrary(libintl_loc)
+            libintl2 = ctypes.cdll.LoadLibrary(libintl_loc)
         else:
             try:
-                libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
+                libintl1 = ctypes.cdll.LoadLibrary(
+                    ctypes.util.find_library("libintl-8")
+                )
             except Exception:
-                libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
+                pass
+            try:
+                libintl2 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
+            except Exception:
+                pass
+            assert libintl1 is not None or libintl2 is not None
     elif hasattr(locale, "bindtextdomain"):
-        libintl = locale
+        libintl1 = locale
     elif sys.platform == "darwin":
         import ctypes
 
-        libintl = ctypes.cdll.LoadLibrary("libintl.dylib")
-    libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
-    try:
-        libintl.bind_textdomain_codeset("org.skytemple.Randomizer", "UTF-8")  # type: ignore
-    except Exception:
-        pass
-    locale.textdomain("org.skytemple.Randomizer")
-    libintl.textdomain("org.skytemple.Randomizer")
+        libintl1 = ctypes.cdll.LoadLibrary("libintl.dylib")
+    for libintl in (libintl1, libintl2):
+        if libintl is not None:
+            libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
+            try:
+                libintl.bind_textdomain_codeset("org.skytemple.Randomizer", "UTF-8")  # type: ignore
+            except Exception:
+                pass
+            libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)
     gettext.textdomain("org.skytemple.Randomizer")
     try:

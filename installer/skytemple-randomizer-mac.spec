@@ -47,7 +47,9 @@ a = Analysis(
         },
     },
     runtime_hooks=[],
-    excludes=[],
+    excludes=[
+        "docutils"  # https://github.com/pyinstaller/pyinstaller/issues/8048
+    ],
     cipher=block_cipher,
     noarchive=False,
 )

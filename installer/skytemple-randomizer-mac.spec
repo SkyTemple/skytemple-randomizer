@@ -23,7 +23,7 @@ additional_datas = [
 additional_binaries = [
     (os.path.join(site_packages, "skytemple_rust*.so"), "."),
     # conflict between PIL and GLib
-    ("/usr/local/lib/libharfbuzz.0.dylib", "."),
+    ("/usr/local/Cellar/harfbuzz/*/lib/libharfbuzz.0.dylib", "."),
 ]
 
 block_cipher = None

@@ -23,6 +23,9 @@ cp $icons_path/512x512/apps/skytemple_randomizer.png skytemple_randomizer.iconse
 iconutil -c icns skytemple_randomizer.iconset
 rm -rf skytemple_randomizer.iconset
 
+# :(((((((((( PIL ships an old harfbuzz version and PyInstaller is being dumb dumb
+cp -f /usr/local/Cellar/harfbuzz/*/lib/libharfbuzz.0.dylib ~/.venv/lib/python3*/site-packages/PIL/.dylibs/libharfbuzz.0.dylib
+
 # Build the app
 pyinstaller --log-level=DEBUG skytemple-randomizer-mac.spec --noconfirm
 

@@ -117,16 +117,14 @@ class NpcRandomizer(AbstractRandomizer):
             # Some place names derived from NPCs are mentioned via [CS:P]...[CR], so we'll replace those as well.
             # Croagunk's Swap Shop is mentioned via [CS:E].
             standard_npc_text = re.compile(
-                r"\[CS:(N|Y|P|E)]((?:\s|.)*?)("
+                r"\[CS:(N|Y|P|E)]([^\[]*)("
                 + "|".join(sorted_actor_names)
-                + r")((?:\s|.)*?)\[CR]"
+                + r")([^\[]*)\[CR]"
             )
             # Some [CS:K]...[CR] needs replacing for Kecleon, Chansey, Marowak, Spinda, Chimecho, Mime Jr., Electivire, and all the Pokemon under the Adventure Log.
             # We need to specifically select string block regions to apply this to.
             csk_npc_text = re.compile(
-                r"\[CS:K]((?:\s|.)*?)("
-                + "|".join(sorted_actor_names)
-                + r")((?:\s|.)*?)\[CR]"
+                r"\[CS:K]([^\[]*)(" + "|".join(sorted_actor_names) + r")([^\[]*)\[CR]"
             )
             csk_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(

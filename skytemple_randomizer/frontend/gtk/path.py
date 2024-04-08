@@ -17,10 +17,14 @@
 from __future__ import annotations
 
 import os
+import platform
 import sys
 
 if getattr(sys, "frozen", False):
     # All UI files are copied into the root.
-    MAIN_PATH = os.path.dirname(sys.executable)
+    if platform.system() == "Windows":
+        MAIN_PATH = os.path.join(os.path.dirname(sys.executable), "_internal")
+    else:
+        MAIN_PATH = os.path.dirname(sys.executable)
 else:
     MAIN_PATH = os.path.join(os.path.dirname(__file__), "widgets")

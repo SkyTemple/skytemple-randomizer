@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-07 21:18+0000\n"
-"PO-Revision-Date: 2024-04-07 21:19\n"
+"PO-Revision-Date: 2024-04-08 00:36\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -3008,7 +3008,7 @@ msgstr ""
 #: skytemple-rust/src/dse/st_smdl/eoc.rs:37
 #: skytemple-rust/src/dse/st_smdl/trk.rs:116
 msgid "SMDL file too short (EOC EOF)."
-msgstr ""
+msgstr "SMDLファイルの長さが短すぎます (EOC EOF)。"
 
 #: skytemple-rust/src/dse/st_smdl/eoc.rs:40
 msgid "Invalid SMDL/EOC header."
@@ -3016,7 +3016,7 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_smdl/smdl.rs:202
 msgid "SMDL file too short (Header EOF)."
-msgstr ""
+msgstr "SMDL ファイルの長さが短すぎます (Header EOF)。"
 
 #: skytemple-rust/src/dse/st_smdl/smdl.rs:207
 msgid "Invalid SMDL/Header header."
@@ -3024,7 +3024,7 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_smdl/song.rs:94
 msgid "SMDL file too short (Song EOF)."
-msgstr ""
+msgstr "SMDLファイルの長さが短すぎます (Song EOF)。"
 
 #: skytemple-rust/src/dse/st_smdl/song.rs:97
 msgid "Invalid SMDL/Song header."
@@ -3032,7 +3032,7 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_smdl/trk.rs:68
 msgid "SMDL file too short (Track EOF)."
-msgstr ""
+msgstr "SMDLファイルの長さが短すぎます (Track EOF)。"
 
 #: skytemple-rust/src/dse/st_smdl/trk.rs:71
 msgid "Invalid SMDL/Track header."
@@ -3040,12 +3040,12 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_swdl/kgrp.rs:43
 msgid "SWDL file too short (Keygroup EOF)."
-msgstr ""
+msgstr "SWDL ファイルの長さが短すぎます (Keygroup EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/kgrp.rs:80
 #: skytemple-rust/src/dse/st_swdl/kgrp.rs:89
 msgid "SWDL file too short (Kgrp EOF)."
-msgstr ""
+msgstr "SWDLファイルの長さが短すぎます (Kgrp EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/kgrp.rs:83
 msgid "Invalid SWDL/Kgrp header."
@@ -3054,7 +3054,7 @@ msgstr ""
 #: skytemple-rust/src/dse/st_swdl/pcmd.rs:37
 #: skytemple-rust/src/dse/st_swdl/pcmd.rs:46
 msgid "SWDL file too short (Pcmd EOF)."
-msgstr ""
+msgstr "SWDLファイルの長さが短すぎます (Pcmd EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/pcmd.rs:40
 msgid "Invalid SWDL/Pcmd header."
@@ -3062,11 +3062,11 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_swdl/prgi.rs:47
 msgid "SWDL file too short (LFO EOF)."
-msgstr ""
+msgstr "SWDLファイルの長さが短すぎます (LFO EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/prgi.rs:124
 msgid "SWDL file too short (Split EOF)."
-msgstr ""
+msgstr "SWDLファイルの長さが短すぎます (Split EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/prgi.rs:135
 msgid "SWDL file: Invalid lowkey duplicate (Split EOF)."
@@ -3086,11 +3086,11 @@ msgstr ""
 
 #: skytemple-rust/src/dse/st_swdl/prgi.rs:287
 msgid "SWDL file too short (PRG EOF)."
-msgstr ""
+msgstr "SWDLファイルの長さが短すぎます (PRG EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/prgi.rs:362
 msgid "SWDL file too short (Prgi EOF)."
-msgstr ""
+msgstr "SWDLファイルの長さが短すぎます (Prgi EOF)。"
 
 #: skytemple-rust/src/dse/st_swdl/prgi.rs:365
 msgid "Invalid PRGI/Prgi header."
@@ -3259,7 +3259,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:177
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:210
 msgid "Randomizing... ({}%)"
-msgstr ""
+msgstr "ランダマイズ中... ({}%)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:234
 msgid "Randomizing failed!"
@@ -3267,7 +3267,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
 msgid "Error: {}"
-msgstr ""
+msgstr "エラー: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:242
 msgid "Randomizing complete!"
@@ -3585,12 +3585,12 @@ msgstr "作戦 & かしこさ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:120
 msgid "Move Names for \"Blind Moves\" Mode"
-msgstr ""
+msgstr "Blind Moves モードの技名"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
 msgid "A lot of names from the default list are from fantasynamegenerators.com."
-msgstr ""
+msgstr "デフォルトのリストにある多くの名前は、fantasynamegenerators.com から参照しています。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
@@ -3642,15 +3642,15 @@ msgstr "技プール"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:158
 msgid "\"Blind Moves\" Mode"
-msgstr ""
+msgstr "Blind Moves モード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:169
 msgid "Enable \"Blind Moves\" mode: Move names are replaced with random names and move types are randomized."
-msgstr ""
+msgstr "Blind Moves モードの有効化: 技の名前はランダムに置き換えられ、タイプはランダムになります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:184
 msgid "Configure move names in \"Blind Moves\" Mode"
-msgstr ""
+msgstr "Blind Moves モードの技名設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:199
 msgid "Additional Pokémon Properties"
@@ -4097,11 +4097,11 @@ msgstr "インスタントテキストを有効化"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:156
 msgid "Text Replacement Algorithm"
-msgstr ""
+msgstr "テキスト置換アルゴリズム"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:163
 msgid "Smart"
-msgstr ""
+msgstr "スマート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:164
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
@@ -4114,7 +4114,11 @@ msgid "Controls how Pokémon and NPC names in texts are replaced.\n\n"
 "It may lead to some unrelated parts of text (such as parts of item names) being incorrectly replaced.\n\n"
 "Smart: Use a more exhaustive algorithm for replacing in-game mentions of NPCs.\n"
 "This is typically slower than doing a simple replacement."
-msgstr ""
+msgstr "文章中のポケモンやNPCの名前をどのように置き換えるかを制御します。\n\n"
+"クラシック: バージョン2.0以前のランダマイザーで使われていたアルゴリズム。\n"
+"項目名の一部など、無関係な部分が誤って置換される可能性があります。\n\n"
+"スマート: NPCに関するゲーム内のセリフを置き換えるために、より網羅的なアルゴリズムを使用します。\n"
+"これは通常、単純な置換よりも遅くなります。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:111
 msgid "Remove Text"
@@ -4127,12 +4131,12 @@ msgstr "テキストを追加"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:88
 msgid "Item Names for \"Blind Items\" Mode"
-msgstr ""
+msgstr "Blind Items モードの道具名"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:197
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:202
 msgid "Allowed Items"
-msgstr ""
+msgstr "許可された道具"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:208
 msgid "Category Weights"
@@ -4179,16 +4183,17 @@ msgstr "許可された道具 &amp; カテゴリウェイト"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:88
 msgid "\"Blind Items\" Mode"
-msgstr ""
+msgstr "Blind Items モード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:99
 msgid "Enable \"Blind Items\" mode: Item names are replaced with random names. Icons and costs are randomized.\n"
 "Descriptions are replaced with placeholder text."
-msgstr ""
+msgstr "Blind Moves モードの有効化: 道具名がランダムな名前に置き換えられます。アイコンや買値はランダムになります。\n"
+"道具の説明はプレースホルダーテキストに置き換えられます。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:115
 msgid "Configure item names in \"Blind Items\" Mode"
-msgstr ""
+msgstr "Blind Items モードの道具名設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:130
 msgid "Utilities"
@@ -4290,15 +4295,15 @@ msgstr "ROM を読み込んで下さい。"
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:269
 msgid "Apply 'DisableTips' patch..."
-msgstr ""
+msgstr "パッチ 'DisableTips' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:278
 msgid "Enabling \"Blind Items\" Mode..."
-msgstr ""
+msgstr "Blind Items モードを有効にしています..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/blind_items_moves.py:306
 msgid "Enabling \"Blind Moves\" Mode..."
-msgstr ""
+msgstr "Blind Moves モードを有効にしています..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57
@@ -4466,7 +4471,7 @@ msgstr "パッチ 'DisarmOneRoomMonsterHouses' を適用中..."
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:159
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:460
 msgid "Downloading portraits and sprites... {}/{}"
-msgstr ""
+msgstr "不足している顔グラフィックとスプライトをダウンロード中... {}/{}"
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/quiz.py:127
 msgid "Randomizing Quiz..."

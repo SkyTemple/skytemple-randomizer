@@ -26,9 +26,6 @@ rm -rf skytemple_randomizer.iconset
 # Build the app
 pyinstaller --log-level=DEBUG skytemple-randomizer-mac.spec --noconfirm
 
-# Harfbuzz conflict between PIL and GLib. Manually resolve with GLibs file:
-cp /usr/local/lib/libharfbuzz.0.dylib dist/SkyTempleRandomizer.app/Contents/Resources/libharfbuzz.0.dylib
-
 rm skytemple_randomizer.icns
 
 # Since the library search path for the app is wrong, execute a shell script that sets is correctly

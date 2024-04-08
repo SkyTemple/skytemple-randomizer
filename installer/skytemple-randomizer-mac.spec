@@ -20,11 +20,7 @@ additional_datas = [
     (os.path.join(".", "armips"), "skytemple_files/_resources"),
 ]
 
-additional_binaries = [
-    (os.path.join(site_packages, "skytemple_rust*.so"), "."),
-    # conflict between PIL and GLib
-    ("/usr/local/opt/harfbuzz/lib/libharfbuzz.0.dylib", "."),
-]
+additional_binaries = [(os.path.join(site_packages, "skytemple_rust*.so"), ".")]
 
 block_cipher = None
 

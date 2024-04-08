@@ -26,11 +26,8 @@ rm -rf skytemple_randomizer.iconset
 # Build the app
 pyinstaller --log-level=DEBUG skytemple-randomizer-mac.spec --noconfirm
 
-# Check if we need to copy the cacert file
-if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then
-  echo "Moved cacert to correct place"
-  cp -rf dist/skytemple_randomizer/certifi/cacert.pem dist/skytemple_randomizer/cacert.pem
-fi
+# Harfbuzz conflict between PIL and GLib. Manually resolve with GLibs file:
+cp /usr/local/lib/libharfbuzz.0.dylib dist/SkyTempleRandomizer.app/Contents/Resources/libharfbuzz.0.dylib
 
 rm skytemple_randomizer.icns
 

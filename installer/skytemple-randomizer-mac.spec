@@ -20,11 +20,12 @@ additional_datas = [
     (os.path.join(".", "armips"), "skytemple_files/_resources"),
 ]
 
-additional_binaries = [
-    (os.path.join(site_packages, "skytemple_rust*.so"), "."),
-    # conflict between PIL and GLib
+forced_binaries = [
     ("/usr/local/Cellar/harfbuzz/*/lib/libharfbuzz.0.dylib", "."),
 ]
+additional_binaries = [
+    (os.path.join(site_packages, "skytemple_rust*.so"), "."),
+] + forced_binaries
 
 block_cipher = None
 
@@ -71,9 +72,13 @@ exe = EXE(
     console=False,
 )
 
+print("datas", a.datas)
+print("binaries", a.binaries)
+exit(1)
+
 coll = COLLECT(
     exe,
-    a.binaries,
+    a.binaries + forced_binaries,
     a.zipfiles,
     a.datas,
     strip=False,

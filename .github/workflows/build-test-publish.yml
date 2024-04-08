@@ -205,6 +205,10 @@ jobs:
           pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
           pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
           
+          # Check GObject availability
+          python -c 'import gi; gi.require_version("Gtk", "4.0"); gi.require_version("Adw", "1"); from gi.repository import GObject, Gio, GLib, Gtk, Gdk, Adw'
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          
           # Convert Blueprint files
           .\build-blp-to-ui.ps1
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
@@ -218,6 +222,7 @@ jobs:
           if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
               exit 1
           }
+
       - name: Create installer
         uses: joncloud/makensis-action@v4.1
         with:
@@ -252,10 +257,10 @@ jobs:
           echo "PACKAGE_VERSION=$(tomlq '.project.version' pyproject.toml -r)" >> $GITHUB_ENV
       - name: Install base packages
         run: |
-          brew install pygobject3 gtk4 python@3.11 libadwaita adwaita-icon-theme sdl cmake
-          echo "PATH=/usr/local/opt/python@3.11/bin:/usr/local/bin:$PATH" >> $GITHUB_ENV
+          brew install pygobject3 gtk4 python@3.12 libadwaita adwaita-icon-theme sdl cmake
+          echo "PATH=/usr/local/opt/python@3.12/bin:/usr/local/bin:$PATH" >> $GITHUB_ENV
           
-          python3.11 -m venv .venv
+          python3.12 -m venv .venv
           . .venv/bin/activate
           pip3 debug --verbose  # print compatible tags etc. for debugging purposes
 
@@ -279,6 +284,9 @@ jobs:
           if [ -n "$IS_DEV_BUILD" ]; then
             installer/install-skytemple-components-from-git.sh
           fi
+          
+          # Check GObject availability
+          python -c 'import gi; gi.require_version("Gtk", "4.0"); gi.require_version("Adw", "1"); from gi.repository import GObject, Gio, GLib, Gtk, Gdk, Adw'
 
           cd installer
 

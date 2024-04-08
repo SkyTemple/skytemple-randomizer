@@ -30,12 +30,15 @@ bash .\generate-mo.sh
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-mac-windows.txt
 pip3 install '..[gtk]'
+# pip likes to troll us. Force reinstall the proper PyGObject versions
+pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
+pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
 
 if ($env:IS_DEV_BUILD) {
   bash .\install-skytemple-components-from-git.sh
 }
 
-pyinstaller skytemple-randomizer.spec
+pyinstaller --log-level=DEBUG skytemple-randomizer.spec
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
@@ -49,4 +52,3 @@ if (Test-Path ".\dist\skytemple\certifi\cacert.pem") {
 }
 
 echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/VERSION -Encoding utf8
-echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/data/VERSION -Encoding utf8

@@ -78,28 +78,18 @@ def init_locale():
                     locale.setlocale(locale.LC_ALL, "C")
             except:
                 failed_to_set_locale = True
+                print("failed to set locale under windows :(")
 
         libintl_loc = os.path.join(os.path.dirname(__file__), "libintl-8.dll")
         if os.path.exists(libintl_loc):
             libintl = ctypes.cdll.LoadLibrary(libintl_loc)
-        libintl_loc = os.path.join(os.path.dirname(__file__), "intl.dll")
-        if os.path.exists(libintl_loc):
-            libintl = ctypes.cdll.LoadLibrary(libintl_loc)
         else:
-            try:
-                libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
-            except:
-                libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
+            libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
     elif sys.platform == "darwin":
         import ctypes
 
         libintl = ctypes.cdll.LoadLibrary("libintl.dylib")
     libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
-    try:
-        libintl.bind_textdomain_codeset(APP, "UTF-8")  # type: ignore
-        libintl.libintl_setlocale(0, settings.get_locale())  # type: ignore
-    except:
-        pass
     libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)
     gettext.textdomain("org.skytemple.Randomizer")

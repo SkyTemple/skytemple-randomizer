@@ -87,7 +87,7 @@ def init_locale():
         if os.path.exists(libintl_loc):
             libintl2 = ctypes.cdll.LoadLibrary(libintl_loc)
         if libintl1 is None:
-            libintl1 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
+            libintl1 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl.8"))
         if libintl2 is None:
             libintl2 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
     elif hasattr(locale, "bindtextdomain"):

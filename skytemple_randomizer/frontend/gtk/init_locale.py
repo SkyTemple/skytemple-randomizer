@@ -88,7 +88,7 @@ def init_locale():
     elif sys.platform == "darwin":
         import ctypes
 
-        libintl = ctypes.cdll.LoadLibrary("libintl.dylib")
+        libintl = ctypes.cdll.LoadLibrary("libintl-8.dylib")
     libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
     libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)

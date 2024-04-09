@@ -33,11 +33,11 @@ rm skytemple_randomizer.icns
 
 # Since the library search path for the app is wrong, execute a shell script that sets is correctly
 # and launches the app instead of launching run_skytemple directly
-appdir=dist/SkyTempleRandomizer.app/Contents/MacOS
-resdir=dist/SkyTempleRandomizer.app/Contents/Resources
+appdir="dist/SkyTemple Randomizer.app/Contents/MacOS"
+resdir="dist/SkyTemple Randomizer.app/Contents/Resources"
 
 # Change "run_skytemple" to "pre_run_skytemple" in the launcher info to launch the shell script instead of the app
-#sed -i '' 's/run_skytemple/pre_run_skytemple/' dist/SkyTempleRandomizer.app/Contents/Info.plist
+sed -i '' 's/run_skytemple/pre_run_skytemple/' "dist/SkyTemple Randomizer.app/Contents/Info.plist"
 
 # Create a shell script that sets LD_LIBRARY_PATH and launches SkyTemple
 printf '#!/bin/sh\nLD_LIBRARY_PATH="$(dirname $0)/../Resources" PATH="$PATH:$(dirname $0)/../Resources/skytemple_files/_resources" "$(dirname $0)/run_skytemple"\n' > $appdir/pre_run_skytemple

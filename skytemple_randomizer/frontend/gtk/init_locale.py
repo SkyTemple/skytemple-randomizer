@@ -95,20 +95,14 @@ def init_locale():
                 libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))  # type: ignore
     elif system == "Darwin":
         import ctypes
-        import subprocess
 
-        # look away! Avert your eyes!
-        proc = subprocess.Popen(
-            ["defaults", "read", "NSGlobalDomain", "AppleLocale"],
-            stdout=subprocess.PIPE,
-        )
-        lang = proc.stdout.read()  # type: ignore
-        if isinstance(lang, bytes):
-            lang = str(lang, "ascii")  # type: ignore
-        lang = lang.strip("\n")  # type: ignore
+        # TODO: Move to skytemple-files
+        from Foundation import NSLocale  # type: ignore
+
+        lang = NSLocale.preferredLanguages()[0].replace("-", "_")  # type: ignore
         locale.setlocale(locale.LC_ALL, lang)
         print(f"LANG={lang}")
-        os.environ["LANG"] = lang
+        os.environ["LANG"] = lang  # type: ignore
         libintl = ctypes.cdll.LoadLibrary("libintl.8.dylib")  # type: ignore
     libintl.bindtextdomain(APP, LOCALE_DIR)  # type: ignore
     try:

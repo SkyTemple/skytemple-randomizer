@@ -23,9 +23,10 @@ from time import sleep
 from typing import TYPE_CHECKING, Callable, TypedDict
 
 import click
+import sys
 from ndspy.rom import NintendoDSRom
 
-from skytemple_randomizer.frontend.abstract import AbstractFrontend
+from skytemple_randomizer.frontend.abstract import AbstractFrontend, PortraitDebugLine
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 from skytemple_randomizer.config import RandomizerConfig, get_effective_seed
@@ -37,6 +38,15 @@ if TYPE_CHECKING:
 class CliFrontend(AbstractFrontend):
     def idle_add(self, fn: Callable):
         fn()
+
+    def portrait_debug__add(self, line: PortraitDebugLine):
+        if line.status == "failed":
+            print(
+                f"Warning: Failed to download a portrait/sprite: {line.monster_name} {line.form_name} "
+                f"({line.monster_idx}/{line.form_idx}):\n{line.traceback}",
+                file=sys.stderr,
+                flush=True,
+            )
 
 
 class Progress(TypedDict):

@@ -26,9 +26,12 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data
 
 from skytemple_randomizer.config import RandomizerConfig, ConfigFileLoader
 from skytemple_randomizer.data_dir import data_dir
-from skytemple_randomizer.frontend.abstract import AbstractFrontend
+from skytemple_randomizer.frontend.abstract import AbstractFrontend, PortraitDebugLine
 from skytemple_randomizer.frontend.gtk.settings import (
     SkyTempleRandomizerSettingsStoreGtk,
+)
+from skytemple_randomizer.frontend.gtk.widgets.window_portrait_debug import (
+    PortraitDebugWindow,
 )
 
 if TYPE_CHECKING:
@@ -43,6 +46,7 @@ class GtkFrontend(AbstractFrontend):
     __randomization_settings: RandomizerConfig | None
     __application: MainApp | None
     __window: AppWindow | None
+    __portrait_debug_window: PortraitDebugWindow | None
     __input_rom: NintendoDSRom | None
     __input_rom_static_data: Pmd2Data | None
 
@@ -50,6 +54,7 @@ class GtkFrontend(AbstractFrontend):
         self.__settings = None
         self.__randomization_settings = None
         self.__window = None
+        self.__portrait_debug_window = None
         self.__application = None
         self.__input_rom = None
         self.__input_rom_static_data = None
@@ -93,6 +98,15 @@ class GtkFrontend(AbstractFrontend):
         self.__window = value
 
     @property
+    def portrait_debug_window(self) -> PortraitDebugWindow:
+        assert self.__portrait_debug_window is not None
+        return self.__portrait_debug_window
+
+    @portrait_debug_window.setter
+    def portrait_debug_window(self, value):
+        self.__portrait_debug_window = value
+
+    @property
     def application(self) -> MainApp:
         assert self.__application is not None
         return self.__application
@@ -121,3 +135,11 @@ class GtkFrontend(AbstractFrontend):
 
     def idle_add(self, fn: Callable):
         GLib.idle_add(fn)
+
+    def portrait_debug__clear(self):
+        if self.__portrait_debug_window is not None:
+            self.__portrait_debug_window.clear_debugs()
+
+    def portrait_debug__add(self, line: PortraitDebugLine):
+        if self.__portrait_debug_window is not None:
+            self.__portrait_debug_window.add_debug(line)

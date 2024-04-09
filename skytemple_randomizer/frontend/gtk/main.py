@@ -77,12 +77,6 @@ from skytemple_randomizer.frontend.gtk.widgets.window_portrait_debug import (
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.widgets import AppWindow
 
-if getattr(sys, "frozen", False):
-    # Running via PyInstaller. Fix SSL configuration
-    os.environ["SSL_CERT_FILE"] = os.path.join(
-        os.path.dirname(sys.executable), "certifi", "cacert.pem"
-    )
-
 SKYTEMPLE_DEV = "SKYTEMPLE_DEV" in os.environ
 
 

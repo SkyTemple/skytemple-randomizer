@@ -85,24 +85,17 @@ def init_locale():
         libintl_loc = os.path.join(os.path.dirname(__file__), "intl.dll")
         if os.path.exists(libintl_loc):
             libintl2 = ctypes.cdll.LoadLibrary(libintl_loc)
-        else:
-            try:
-                libintl1 = ctypes.cdll.LoadLibrary(
-                    ctypes.util.find_library("libintl-8")
-                )
-            except Exception:
-                pass
-            try:
-                libintl2 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
-            except Exception:
-                pass
-            assert libintl1 is not None or libintl2 is not None
+        if libintl1 is None:
+            libintl1 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
+        if libintl2 is None:
+            libintl2 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
     elif hasattr(locale, "bindtextdomain"):
         libintl1 = locale
     elif sys.platform == "darwin":
         import ctypes
 
         libintl1 = ctypes.cdll.LoadLibrary("libintl.dylib")
+        libintl2 = ctypes.cdll.LoadLibrary("libintl-8.dylib")
     for libintl in (libintl1, libintl2):
         if libintl is not None:
             libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore

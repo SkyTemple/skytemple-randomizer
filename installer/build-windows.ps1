@@ -44,9 +44,3 @@ if ($LASTEXITCODE) { exit $LASTEXITCODE }
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
     exit 1
 }
-
-# Check if we need to copy the cacert file
-if (Test-Path ".\dist\skytemple\certifi\cacert.pem") {
-  echo "Moved cacert to correct place"
-  cp dist/skytemple/certifi/cacert.pem dist/skytemple/certifi.pem
-}

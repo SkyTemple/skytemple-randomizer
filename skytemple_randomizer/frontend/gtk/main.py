@@ -15,9 +15,28 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
-import sys
 
+import platform
+import sys
+import os
+
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.gtk.init_locale import init_locale
+
+# Load SSL under Windows and macOS
+if getattr(sys, "frozen", False) and platform.system() in ["Windows", "Darwin"]:
+    ca_bundle_path = os.path.abspath(
+        os.path.join(data_dir(), "..", "certifi", "cacert.pem")
+    )
+    assert os.path.exists(ca_bundle_path)
+    print("Certificates at: ", ca_bundle_path)
+    os.environ["SSL_CERT_FILE"] = ca_bundle_path
+    os.environ["REQUESTS_CA_BUNDLE"] = ca_bundle_path
+    if platform.system() == "Windows":
+        import ctypes
+
+        ctypes.cdll.msvcrt._putenv(f"SSL_CERT_FILE={ca_bundle_path}")
+        ctypes.cdll.msvcrt._putenv(f"REQUESTS_CA_BUNDLE={ca_bundle_path}")
 
 try:
     init_locale()

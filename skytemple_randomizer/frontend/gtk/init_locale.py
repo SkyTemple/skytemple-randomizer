@@ -26,10 +26,9 @@ from skytemple_randomizer.data_dir import data_dir
 # TODO: Maybe want to get rid of duplication between SkyTemple and the Randomizer. And clean this up in general...
 def init_locale():
     LOCALE_DIR = os.path.abspath(os.path.join(data_dir(), "locale"))
-    locale.setlocale(locale.LC_ALL, "")
-    libintl1 = None
-    libintl2 = None
-    if sys.platform.startswith("win"):
+    if hasattr(locale, "bindtextdomain"):
+        libintl = locale
+    elif sys.platform.startswith("win"):
         import ctypes
         import ctypes.util
 
@@ -40,12 +39,12 @@ def init_locale():
             ctypes.cdll.msvcrt._putenv(f"LANG={lang}.{enc}")
             try:
                 locale.setlocale(locale.LC_ALL, f"{lang}.{enc}")
-            except Exception:
+            except:
                 failed_to_set_locale = True
 
         try:
             locale.getlocale()
-        except Exception:
+        except:
             failed_to_set_locale = True
 
         if failed_to_set_locale:
@@ -59,17 +58,15 @@ def init_locale():
                 # If this returns None for lang, then we bail!
                 if lang is not None:
                     os.environ["LANG"] = lang
-                    os.environ["LC_ALL"] = lang
                     ctypes.cdll.msvcrt._putenv(f"LANG={lang}")
-                    ctypes.cdll.msvcrt._putenv(f"LC_ALL={lang}")
                     try:
                         locale.setlocale(locale.LC_ALL, lang)
-                    except Exception:
+                    except:
                         failed_to_set_locale = True
 
                     try:
                         locale.getlocale()
-                    except Exception:
+                    except:
                         failed_to_set_locale = True
                 else:
                     failed_to_set_locale = True
@@ -77,38 +74,33 @@ def init_locale():
                 if failed_to_set_locale:
                     print(f"WARNING: Failed to set locale to {lang} falling back to C.")
                     os.environ["LANG"] = "C"
-                    os.environ["LC_ALL"] = "C"
                     ctypes.cdll.msvcrt._putenv("LANG=C")
-                    ctypes.cdll.msvcrt._putenv("LC_ALL=C")
                     locale.setlocale(locale.LC_ALL, "C")
-            except Exception:
+            except:
                 failed_to_set_locale = True
 
-        libintl_loc = os.path.abspath(os.path.join(data_dir(), "..", "libintl-8.dll"))
+        libintl_loc = os.path.join(os.path.dirname(__file__), "libintl-8.dll")
         if os.path.exists(libintl_loc):
-            libintl1 = ctypes.cdll.LoadLibrary(libintl_loc)
-        libintl_loc = os.path.abspath(os.path.join(data_dir(), "..", "intl.dll"))
+            libintl = ctypes.cdll.LoadLibrary(libintl_loc)
+        libintl_loc = os.path.join(os.path.dirname(__file__), "intl.dll")
         if os.path.exists(libintl_loc):
-            libintl2 = ctypes.cdll.LoadLibrary(libintl_loc)
-        if libintl1 is None:
-            libintl1 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
-        if libintl2 is None:
-            libintl2 = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
-    elif hasattr(locale, "bindtextdomain"):
-        libintl1 = locale
+            libintl = ctypes.cdll.LoadLibrary(libintl_loc)
+        else:
+            try:
+                libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
+            except:
+                libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("intl"))
     elif sys.platform == "darwin":
         import ctypes
 
-        libintl1 = ctypes.cdll.LoadLibrary("libintl.dylib")
-        libintl2 = ctypes.cdll.LoadLibrary("libintl.8.dylib")
-    for libintl in (libintl1, libintl2):
-        if libintl is not None:
-            libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
-            try:
-                libintl.bind_textdomain_codeset("org.skytemple.Randomizer", "UTF-8")  # type: ignore
-            except Exception:
-                pass
-            libintl.textdomain("org.skytemple.Randomizer")
+        libintl = ctypes.cdll.LoadLibrary("libintl.dylib")
+    libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
+    try:
+        libintl.bind_textdomain_codeset(APP, "UTF-8")  # type: ignore
+        libintl.libintl_setlocale(0, settings.get_locale())  # type: ignore
+    except:
+        pass
+    libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)
     gettext.textdomain("org.skytemple.Randomizer")
     try:

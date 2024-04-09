@@ -26,6 +26,7 @@ from skytemple_randomizer.data_dir import data_dir
 # TODO: Maybe want to get rid of duplication between SkyTemple and the Randomizer. And clean this up in general...
 def init_locale():
     LOCALE_DIR = os.path.abspath(os.path.join(data_dir(), "locale"))
+    locale.setlocale(locale.LC_ALL, "")
     libintl1 = None
     libintl2 = None
     if sys.platform.startswith("win"):
@@ -79,10 +80,10 @@ def init_locale():
             except Exception:
                 failed_to_set_locale = True
 
-        libintl_loc = os.path.join(os.path.dirname(__file__), "libintl-8.dll")
+        libintl_loc = os.path.abspath(os.path.join(data_dir(), "..", "libintl-8.dll"))
         if os.path.exists(libintl_loc):
             libintl1 = ctypes.cdll.LoadLibrary(libintl_loc)
-        libintl_loc = os.path.join(os.path.dirname(__file__), "intl.dll")
+        libintl_loc = os.path.abspath(os.path.join(data_dir(), "..", "intl.dll"))
         if os.path.exists(libintl_loc):
             libintl2 = ctypes.cdll.LoadLibrary(libintl_loc)
         if libintl1 is None:

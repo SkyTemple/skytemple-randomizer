@@ -49,7 +49,7 @@ def init_locale():
 
         if failed_to_set_locale:
             failed_to_set_locale = False
-
+            lang = None
             try:
                 lang, enc = locale.getlocale()
                 print(
@@ -85,11 +85,36 @@ def init_locale():
             libintl = ctypes.cdll.LoadLibrary(libintl_loc)
         else:
             libintl = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libintl-8"))
+        if lang is not None:
+            try:
+                libintl.libintl_setlocale(0, lang)  # type: ignore
+            except Exception:
+                pass
     elif sys.platform == "darwin":
         import ctypes
+        import subprocess
 
+        # look away! Avert your eyes!
+        proc = subprocess.Popen(
+            "defaults read NSGlobalDomain AppleLocale", stdout=subprocess.PIPE
+        )
+        lang = proc.stdout.read()
+        if isinstance(lang, bytes):
+            lang = str(lang, "ascii")
+        lang = lang.strip("\n")
+        locale.setlocale(locale.LC_ALL, lang)
+        os.environ["LANG"] = lang
         libintl = ctypes.cdll.LoadLibrary("libintl.8.dylib")
+        try:
+            libintl.libintl_setlocale(0, lang)  # type: ignore
+        except Exception:
+            pass
+
     libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
+    try:
+        libintl.bind_textdomain_codeset("org.skytemple.Randomizer", "UTF-8")  # type: ignore
+    except Exception:
+        pass
     libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)
     gettext.textdomain("org.skytemple.Randomizer")

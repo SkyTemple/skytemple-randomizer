@@ -19,12 +19,13 @@ from __future__ import annotations
 import os
 from typing import cast
 
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, GObject
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "popover_help.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "popover_help.ui"))
 class HelpPopover(Gtk.Popover):
     __gtype_name__ = "StHelpPopover"
 

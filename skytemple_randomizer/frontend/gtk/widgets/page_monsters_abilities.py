@@ -26,6 +26,7 @@ from skytemple_files.data.md.protocol import Ability
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib
@@ -35,7 +36,9 @@ from skytemple_randomizer.lists import DEFAULTABILITYPOOL
 from skytemple_randomizer.string_provider import StringProvider, StringType
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_monsters_abilities.ui"))
+@LocalePatchedGtkTemplate(
+    filename=os.path.join(MAIN_PATH, "page_monsters_abilities.ui")
+)
 class MonstersAbilitiesPage(Adw.PreferencesPage):
     __gtype_name__ = "StMonstersAbilitiesPage"
 

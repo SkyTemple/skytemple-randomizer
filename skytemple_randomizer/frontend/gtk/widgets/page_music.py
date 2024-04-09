@@ -22,12 +22,13 @@ from typing import cast
 from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_music.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_music.ui"))
 class MusicPage(Adw.PreferencesPage):
     __gtype_name__ = "StMusicPage"
     row_topmenu_music = cast(Adw.SwitchRow, Gtk.Template.Child())

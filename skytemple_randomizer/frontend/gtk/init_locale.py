@@ -18,6 +18,7 @@ import gettext
 import locale
 import os
 import platform
+from io import SEEK_SET, BytesIO
 
 from skytemple_randomizer.data_dir import data_dir
 
@@ -143,3 +144,30 @@ def init_locale():
     except Exception as ex:
         print("Failed setting up Python locale.")
         print(ex)
+
+
+# Hot-patch GtkTemplate decorator under MacOS and Windows to load strings from the locale
+#
+# Yes, this is absolutely awful, but even with our best efforts, the code above just doesn't
+# reliably work.
+class LocalePatchedGtkTemplate:
+    def __init__(self, filename: str) -> None:
+        from gi.repository import Gtk
+        from skytemple_files.common.i18n_util import _
+        from xml.etree import ElementTree
+
+        system = platform.system()
+        if system == "Windows" or system == "Darwin":
+            tree = ElementTree.parse(filename)
+            for node in tree.iter():
+                if "translatable" in node.attrib and node.text is not None:
+                    node.text = _(node.text)
+            content = BytesIO()
+            tree.write(content, encoding="utf-8", xml_declaration=True)
+            content.seek(0, SEEK_SET)
+            self._impl = Gtk.Template(string=str(content.read(), "utf-8"))
+        else:
+            self._impl = Gtk.Template(filename=filename)
+
+    def __call__(self, cls):
+        return self._impl.__call__(cls)

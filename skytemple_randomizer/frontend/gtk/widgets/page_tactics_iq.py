@@ -20,12 +20,13 @@ import os
 from typing import cast
 
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_tactics_iq.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_tactics_iq.ui"))
 class TacticsIqPage(Adw.PreferencesPage):
     __gtype_name__ = "StTacticsIqPage"
     row_randomize_iq_groups = cast(Adw.SwitchRow, Gtk.Template.Child())

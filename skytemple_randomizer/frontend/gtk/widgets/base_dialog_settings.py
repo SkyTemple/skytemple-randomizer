@@ -22,6 +22,7 @@ from dataclasses import dataclass
 from typing import cast, Callable
 
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -43,7 +44,7 @@ class SubpageStackEntry:
     icon_name: str
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "base_dialog_settings.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "base_dialog_settings.ui"))
 class BaseSettingsDialog(Adw.Dialog):
     __gtype_name__ = "StBaseSettingsDialog"
 

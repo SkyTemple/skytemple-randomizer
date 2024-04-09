@@ -19,7 +19,10 @@ import sys
 
 from skytemple_randomizer.frontend.gtk.init_locale import init_locale
 
-init_locale()
+try:
+    init_locale()
+except Exception:
+    print("Critical failure while trying to init locales.")
 
 try:
     import gi

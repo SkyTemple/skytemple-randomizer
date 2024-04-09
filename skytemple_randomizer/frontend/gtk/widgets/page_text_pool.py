@@ -28,6 +28,7 @@ from skytemple_files.common.util import open_utf8
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.hacks import force_adw_entry_row_no_title
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib, Gio
@@ -56,7 +57,7 @@ class TextPool(Enum):
         raise KeyError(self)
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_text_pool.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_text_pool.ui"))
 class TextPoolPage(Adw.PreferencesPage):
     __gtype_name__ = "StTextPoolPage"
     pool_list = cast(Gtk.ListBox, Gtk.Template.Child())

@@ -21,6 +21,7 @@ from typing import cast
 
 from skytemple_randomizer.config import RandomizerConfig, DungeonModeConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -34,7 +35,7 @@ from skytemple_randomizer.frontend.gtk.widgets import (
 )
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_dungeons.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_dungeons.ui"))
 class DungeonsPage(Adw.PreferencesPage):
     __gtype_name__ = "StDungeonsPage"
     row_dungeon_mode = cast(Adw.ComboRow, Gtk.Template.Child())

@@ -28,6 +28,7 @@ from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -35,7 +36,7 @@ from gi.repository import Gtk, Adw
 from skytemple_randomizer.frontend.gtk.widgets import HelpPopover
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_patches.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_patches.ui"))
 class PatchesPage(Adw.PreferencesPage):
     __gtype_name__ = "StPatchesPage"
     row_patch_moveshortcuts = cast(Adw.SwitchRow, Gtk.Template.Child())

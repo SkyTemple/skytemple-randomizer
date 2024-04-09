@@ -59,7 +59,9 @@ def init_locale():
                 # If this returns None for lang, then we bail!
                 if lang is not None:
                     os.environ["LANG"] = lang
+                    os.environ["LC_ALL"] = lang
                     ctypes.cdll.msvcrt._putenv(f"LANG={lang}")
+                    ctypes.cdll.msvcrt._putenv(f"LC_ALL={lang}")
                     try:
                         locale.setlocale(locale.LC_ALL, lang)
                     except Exception:
@@ -75,7 +77,9 @@ def init_locale():
                 if failed_to_set_locale:
                     print(f"WARNING: Failed to set locale to {lang} falling back to C.")
                     os.environ["LANG"] = "C"
+                    os.environ["LC_ALL"] = "C"
                     ctypes.cdll.msvcrt._putenv("LANG=C")
+                    ctypes.cdll.msvcrt._putenv("LC_ALL=C")
                     locale.setlocale(locale.LC_ALL, "C")
             except Exception:
                 failed_to_set_locale = True

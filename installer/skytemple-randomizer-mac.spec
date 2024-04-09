@@ -86,6 +86,5 @@ app = BUNDLE(
     name="SkyTemple Randomizer.app",
     icon="skytemple_randomizer.icns",
     version=os.getenv("PACKAGE_VERSION", "0.0.0"),
-    bundle_identifier="de.parakoopa.skytemple_randomizer",
-    info_plist={"LSEnvironment": {"LC_CTYPE": "en_US.UTF-8"}},
+    bundle_identifier="org.skytemple.Randomizer",
 )

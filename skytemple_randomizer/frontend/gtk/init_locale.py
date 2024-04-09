@@ -39,12 +39,12 @@ def init_locale():
             ctypes.cdll.msvcrt._putenv(f"LANG={lang}.{enc}")
             try:
                 locale.setlocale(locale.LC_ALL, f"{lang}.{enc}")
-            except:
+            except Exception:
                 failed_to_set_locale = True
 
         try:
             locale.getlocale()
-        except:
+        except Exception:
             failed_to_set_locale = True
 
         if failed_to_set_locale:
@@ -61,12 +61,12 @@ def init_locale():
                     ctypes.cdll.msvcrt._putenv(f"LANG={lang}")
                     try:
                         locale.setlocale(locale.LC_ALL, lang)
-                    except:
+                    except Exception:
                         failed_to_set_locale = True
 
                     try:
                         locale.getlocale()
-                    except:
+                    except Exception:
                         failed_to_set_locale = True
                 else:
                     failed_to_set_locale = True
@@ -76,7 +76,7 @@ def init_locale():
                     os.environ["LANG"] = "C"
                     ctypes.cdll.msvcrt._putenv("LANG=C")
                     locale.setlocale(locale.LC_ALL, "C")
-            except:
+            except Exception:
                 failed_to_set_locale = True
                 print("failed to set locale under windows :(")
 
@@ -88,7 +88,7 @@ def init_locale():
     elif sys.platform == "darwin":
         import ctypes
 
-        libintl = ctypes.cdll.LoadLibrary("libintl-8.dylib")
+        libintl = ctypes.cdll.LoadLibrary("libintl.8.dylib")
     libintl.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)  # type: ignore
     libintl.textdomain("org.skytemple.Randomizer")
     gettext.bindtextdomain("org.skytemple.Randomizer", LOCALE_DIR)

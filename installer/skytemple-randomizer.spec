@@ -5,6 +5,7 @@ import sys
 pkg_path = os.path.abspath(os.path.join("..", "skytemple_randomizer"))
 site_packages = next(p for p in sys.path if "site-packages" in p)
 
+additional_files = []
 additional_datas = [
     (os.path.join(pkg_path, "data"), "data"),
     (os.path.join(pkg_path, "frontend", "gtk", "widgets", "*.ui"), "."),

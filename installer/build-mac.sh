@@ -40,5 +40,5 @@ resdir="dist/SkyTemple Randomizer.app/Contents/Resources"
 sed -i '' 's/run_skytemple/pre_run_skytemple/' "dist/SkyTemple Randomizer.app/Contents/Info.plist"
 
 # Create a shell script that sets LD_LIBRARY_PATH and launches SkyTemple
-printf '#!/bin/sh\nLD_LIBRARY_PATH="$(dirname $0)/../Resources" PATH="$PATH:$(dirname $0)/../Resources/skytemple_files/_resources" "$(dirname $0)/run_skytemple"\n' > $appdir/pre_run_skytemple
-chmod +x $appdir/pre_run_skytemple
+printf '#!/bin/sh\nLD_LIBRARY_PATH="$(dirname $0)/../Resources" PATH="$PATH:$(dirname $0)/../Resources/skytemple_files/_resources" "$(dirname $0)/run_skytemple"\n' > "$appdir/pre_run_skytemple"
+chmod +x "$appdir/pre_run_skytemple"

@@ -52,6 +52,9 @@ from gi.repository import Adw, Gtk, GLib, Gdk, Gio
 Gtk.init()
 Adw.init()
 
+from skytemple_randomizer.frontend.gtk.widgets.window_portrait_debug import (
+    PortraitDebugWindow,
+)
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.widgets import AppWindow
 
@@ -81,13 +84,25 @@ class MainApp(Adw.Application):
         frontend.application = self
         self.development_mode = SKYTEMPLE_DEV
 
+        portrait_debug = Gio.SimpleAction(name="portrait_debug")
+        portrait_debug.connect(
+            "activate",
+            lambda *args: GtkFrontend.instance().portrait_debug_window.show(),
+        )
+        self.add_action(portrait_debug)
+        self.set_accels_for_action("app.portrait_debug", ("<Alt>Return",))
+
     def do_activate(self, file: str | None = None) -> None:
         window = AppWindow(application=self)
+        portrait_debug_window = PortraitDebugWindow(application=self)
         frontend = GtkFrontend.instance()
         frontend.window = window
+        frontend.portrait_debug_window = portrait_debug_window
         self.show_start_stack()
         if file is not None:
             window.stack_item_start.load_rom(file)
+        # XXX: Not sure why destroy or hide don't fire?
+        window.connect("close-request", lambda *args: portrait_debug_window.destroy())
         window.present()
 
     def on_open(self, _, files: list[Gio.File], *args):

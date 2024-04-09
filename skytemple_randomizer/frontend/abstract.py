@@ -14,12 +14,31 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from __future__ import annotations
+
 from abc import abstractmethod, ABC
-from typing import Callable
+from typing import Callable, NamedTuple, Literal
+
+
+class PortraitDebugLine(NamedTuple):
+    status: Literal["success"] | Literal["skipped"] | Literal["failed"]
+    monster_idx: str
+    monster_name: str
+    form_idx: str
+    form_name: str
+    traceback: str
 
 
 class AbstractFrontend(ABC):
     @abstractmethod
     def idle_add(self, fn: Callable):
         """Run code in main thread, whenever next possible."""
+        pass
+
+    def portrait_debug__clear(self):
+        """Clear the debug output for portrait debugging info, if supported."""
+        pass
+
+    def portrait_debug__add(self, line: PortraitDebugLine):
+        """Add a new entry to the debug output for portrait debugging info, if supported"""
         pass

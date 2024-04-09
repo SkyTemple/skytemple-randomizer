@@ -28,12 +28,13 @@ from skytemple_files.common.util import get_ppmdu_config_for_rom
 from skytemple_files.common.version_util import get_event_banner
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Gdk, GdkPixbuf, Adw, GLib, Gio
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "stack_start.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "stack_start.ui"))
 class StartStack(Adw.Bin):
     __gtype_name__ = "StStartStack"
 

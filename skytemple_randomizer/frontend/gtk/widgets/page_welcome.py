@@ -21,12 +21,13 @@ from typing import cast
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_welcome.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_welcome.ui"))
 class WelcomePage(Adw.Bin):
     __gtype_name__ = "StWelcomePage"
 

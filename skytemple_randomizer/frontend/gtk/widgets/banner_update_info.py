@@ -25,10 +25,11 @@ from gi.repository import Gtk, Adw
 from skytemple_files.common.version_util import check_newest_release, ReleaseType
 
 from skytemple_randomizer.config import version
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "banner_update_info.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "banner_update_info.ui"))
 class UpdateInfoBanner(Adw.Bin):
     __gtype_name__ = "StUpdateInfoBanner"
 

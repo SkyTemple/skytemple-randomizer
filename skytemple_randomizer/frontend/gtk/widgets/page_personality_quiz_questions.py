@@ -30,6 +30,7 @@ from skytemple_randomizer.export_quiz_xml import (
 )
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.hacks import force_adw_entry_row_no_title
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib, Gio
@@ -37,7 +38,9 @@ from gi.repository import Gtk, Adw, GLib, Gio
 from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import MAIN_PAGE_TAG
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_personality_quiz_questions.ui"))
+@LocalePatchedGtkTemplate(
+    filename=os.path.join(MAIN_PATH, "page_personality_quiz_questions.ui")
+)
 class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
     __gtype_name__ = "StPersonalityQuizQuestionsPage"
     pool_list = cast(Gtk.ListBox, Gtk.Template.Child())

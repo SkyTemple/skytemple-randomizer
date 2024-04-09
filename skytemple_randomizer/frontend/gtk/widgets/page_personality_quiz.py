@@ -20,6 +20,7 @@ import os
 from typing import Callable, cast
 
 from skytemple_randomizer.config import RandomizerConfig, QuizMode
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -27,7 +28,7 @@ from gi.repository import Gtk, Adw
 from skytemple_randomizer.frontend.gtk.widgets import RandomizationSettingsWidget
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_personality_quiz.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_personality_quiz.ui"))
 class PersonalityQuizPage(Adw.PreferencesPage):
     __gtype_name__ = "StPersonalityQuizPage"
     row_mode = cast(Adw.ComboRow, Gtk.Template.Child())

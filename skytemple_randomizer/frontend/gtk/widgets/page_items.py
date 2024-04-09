@@ -26,6 +26,7 @@ from skytemple_files.common.types.file_types import FileType
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib
@@ -37,7 +38,7 @@ from skytemple_randomizer.string_provider import StringProvider, StringType
 ITEM_FILE = "BALANCE/item_p.bin"
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_items.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_items.ui"))
 class ItemsPage(Adw.PreferencesPage):
     __gtype_name__ = "StItemsPage"
 

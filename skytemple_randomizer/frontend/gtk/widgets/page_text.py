@@ -24,6 +24,7 @@ from skytemple_files.common.ppmdu_config.data import GAME_REGION_JP
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -39,7 +40,7 @@ from skytemple_randomizer.frontend.gtk.widgets import (
 )
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_text.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_text.ui"))
 class TextPage(Adw.PreferencesPage):
     __gtype_name__ = "StTextPage"
 

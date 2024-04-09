@@ -32,6 +32,7 @@ from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_randomizer.config import RandomizerConfig, version, get_effective_seed
 from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, Gio, GLib
@@ -41,7 +42,7 @@ from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "dialog_randomize.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "dialog_randomize.ui"))
 class RandomizeDialog(Adw.Dialog):
     __gtype_name__ = "StRandomizeDialog"
 

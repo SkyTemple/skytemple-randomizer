@@ -298,7 +298,7 @@ jobs:
           ./build-mac.sh $PACKAGE_VERSION
 
           # Creating a zip makes the artifact upload much faster since there are so many files
-          zip -r skytemple-randomizer-mac.zip dist/SkyTempleRandomizer.app > /dev/null
+          zip -r skytemple-randomizer-mac.zip "dist/SkyTemple Randomizer.app" > /dev/null
 
       - name: Upload .app
         uses: actions/upload-artifact@v4
@@ -314,11 +314,11 @@ jobs:
           brew install graphicsmagick imagemagick
 
           # This tool returns exit code 2 if the DMG was created but code signing failed for some reason
-          npx create-dmg --dmg-title="SkyTemple Randomizer" installer/dist/SkyTempleRandomizer.app installer || true
+          npx create-dmg --dmg-title="SkyTemple Randomizer" "installer/dist/SkyTemple Randomizer.app" installer || true
 
       - name: Upload .dmg
         uses: actions/upload-artifact@v4
         with:
           name: skytemple-randomizer-mac-dmg-x86_64
           path: |
-            installer/SkyTempleRandomizer*.dmg
+            installer/SkyTemple Randomizer*.dmg

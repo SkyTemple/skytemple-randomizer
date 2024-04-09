@@ -1,5 +1,7 @@
+# type: ignore
 # Source: https://github.com/gaphor/gaphor/blob/main/gaphor/ui/macosshim.py
 from gi.repository import GLib, Gtk
+
 
 def init_macos_shortcuts():
     """Add <Cmd>-<..> shortcuts for macOS."""

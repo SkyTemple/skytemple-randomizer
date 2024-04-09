@@ -182,7 +182,7 @@ def main(argv: list[str] | None = None):
         )
 
     if sys.platform == "darwin":
-        from macos_keyboard_shim import init_macos_shortcuts
+        from skytemple_randomizer.frontend.gtk.macos_keyboard_shim import init_macos_shortcuts
         init_macos_shortcuts()
 
     # Load main window + controller

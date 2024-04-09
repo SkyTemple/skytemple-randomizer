@@ -72,11 +72,14 @@ def init_locale():
 
                 if failed_to_set_locale:
                     print(f"WARNING: Failed to set locale to {lang} falling back to C.")
+                    lang = "C"
                     os.environ["LANG"] = "C"
                     ctypes.cdll.msvcrt._putenv("LANG=C")
                     locale.setlocale(locale.LC_ALL, "C")
             except Exception:
                 failed_to_set_locale = True
+                lang = "C"
+                print("final setlocale failed windows")
 
         libintl_loc = os.path.join(os.path.dirname(__file__), "libintl-8.dll")
         if os.path.exists(libintl_loc):
@@ -106,15 +109,12 @@ def init_locale():
         print(f"LANG={lang}")
         os.environ["LANG"] = lang
         libintl = ctypes.cdll.LoadLibrary("libintl.8.dylib")  # type: ignore
-    if not os.getenv("LC_ALL"):
-        try:
-            os.environ["LC_ALL"] = lang  # type: ignore
-            locale.setlocale(locale.LC_ALL, lang)
-        except locale.Error:
-            print("Failed setting locale")
     libintl.bindtextdomain(APP, LOCALE_DIR)  # type: ignore
     try:
         libintl.bind_textdomain_codeset(APP, "UTF-8")  # type: ignore
+    except Exception:
+        pass
+    try:
         libintl.libintl_setlocale(0, lang)  # type: ignore
     except Exception:
         pass
@@ -122,13 +122,14 @@ def init_locale():
     gettext.bindtextdomain(APP, LOCALE_DIR)
     gettext.textdomain(APP)
     try:
-        if os.environ["LC_ALL"] != "C":
-            loc = os.environ["LC_ALL"]
-            if loc == "":
+        if "LC_ALL" not in os.environ or os.environ["LC_ALL"] != "C":
+            if "LC_ALL" not in os.environ:
                 loc = locale.getlocale()[0]  # type: ignore
+            else:
+                loc = os.environ["LC_ALL"]
             from skytemple_files.common.i18n_util import reload_locale
 
-            base_loc = loc.split("_")[0]
+            base_loc = loc.split("_")[0]  # type: ignore
             fallback_loc = base_loc
             for subdir in next(os.walk(LOCALE_DIR))[1]:
                 if subdir.startswith(base_loc):
@@ -137,7 +138,7 @@ def init_locale():
             reload_locale(
                 APP,
                 localedir=LOCALE_DIR,
-                main_languages=list({loc, base_loc, fallback_loc}),
+                main_languages=list({loc, base_loc, fallback_loc}),  # type: ignore
             )
     except Exception as ex:
         print("Failed setting up Python locale.")

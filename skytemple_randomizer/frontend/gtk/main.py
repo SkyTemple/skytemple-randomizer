@@ -165,6 +165,14 @@ def main(argv: list[str] | None = None):
             os.path.join(os.path.dirname(__file__), "skytemple_randomizer.css")
         )
     )
+    if platform.system() == "Windows":
+        style_provider.load_from_path(
+            os.path.abspath(
+                os.path.join(
+                    os.path.dirname(__file__), "skytemple_randomizer-windows.css"
+                )
+            )
+        )
     default_display = Gdk.Display.get_default()
     if default_display is not None:
         Gtk.StyleContext.add_provider_for_display(

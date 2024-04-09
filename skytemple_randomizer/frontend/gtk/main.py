@@ -181,6 +181,10 @@ def main(argv: list[str] | None = None):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
         )
 
+    if sys.platform == "darwin":
+        from macos_keyboard_shim import init_macos_shortcuts
+        init_macos_shortcuts()
+
     # Load main window + controller
     app = MainApp()
     sys.exit(app.run(argv))

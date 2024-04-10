@@ -373,7 +373,7 @@ jobs:
           chmod +x armips
 
           # Package
-          ./build-mac-arm.sh $PACKAGE_VERSION
+          ./build-mac.sh $PACKAGE_VERSION
 
       - name: Create installer
         run: |

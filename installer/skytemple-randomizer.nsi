@@ -1,3 +1,5 @@
+!include LogicLib.nsh
+
 ;;; UNINSTALL LOG MACRO:
 ;;; https://nsis.sourceforge.io/Uninstall_only_installed_files
 ;AddItem macro

@@ -60,6 +60,7 @@ Section "install"
   DetailPrint "Installing."
   ; the payload of this installer is described in an externally generated list of files
   !include  ${INST_LIST}
+  SetOutPath "$INSTDIR\."
   File ${PRODUCT_ICON}
 
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}.lnk" "$INSTDIR\${APPEXE}" "" "$INSTDIR\${PRODUCT_ICON}"

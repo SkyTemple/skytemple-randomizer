@@ -23,6 +23,7 @@ from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import RandomizerConfig, ItemAlgorithm
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -41,7 +42,7 @@ from skytemple_randomizer.frontend.gtk.widgets import (
 )
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_tweaks.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_tweaks.ui"))
 class TweaksPage(Adw.PreferencesPage):
     __gtype_name__ = "StTweaksPage"
     row_item_randomization_algorithm = cast(Adw.ComboRow, Gtk.Template.Child())

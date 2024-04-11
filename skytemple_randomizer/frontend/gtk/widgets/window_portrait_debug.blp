@@ -1,0 +1,67 @@
+using Gtk 4.0;
+using Adw 1;
+translation-domain "org.skytemple.Randomizer";
+
+template $PortraitDebugWindow: Adw.Window {
+    title: 'Portrait Debug';
+    width-request: 320;
+    height-request: 160;
+    hide-on-close: true;
+
+    content: Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {}
+
+        content: Gtk.ScrolledWindow {
+            Adw.Clamp {
+                maximum-size: 420;
+
+                Box {
+                  Frame {
+                    ColumnView column_view {
+                        show-column-separators: true;
+                        show-row-separators: true;
+                        hexpand: true;
+
+                        ColumnViewColumn col1_ok {
+                            title: "OK?";
+
+                            factory: SignalListItemFactory {};
+                        }
+
+                        ColumnViewColumn col2_monster_id {
+                            title: "P#";
+
+                            factory: SignalListItemFactory {};
+                        }
+
+                        ColumnViewColumn col3_monster_name {
+                            title: "Monster";
+
+                            factory: SignalListItemFactory {};
+                        }
+
+                        ColumnViewColumn col4_form_id {
+                            title: "F#";
+
+                            factory: SignalListItemFactory {};
+                        }
+
+                        ColumnViewColumn col5_form_name {
+                            title: "Form Name";
+
+                            factory: SignalListItemFactory {};
+                        }
+
+                        ColumnViewColumn col6_traceback {
+                            title: "Details";
+
+                            factory: SignalListItemFactory {};
+                        }
+                    }
+                  }
+                }
+            }
+        };
+    };
+}

@@ -19,7 +19,7 @@ python -m venv C:\skytemple-venv
 C:\skytemple-venv\Scripts\activate.ps1
 
 # Install PyInstaller
-pip install setuptools wheel 'pyinstaller~=5.0'
+pip install setuptools wheel 'pyinstaller~=6.0'
 
 # Install certifi for cert handling
 pip3 install -U certifi
@@ -30,23 +30,17 @@ bash .\generate-mo.sh
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-mac-windows.txt
 pip3 install '..[gtk]'
+# pip likes to troll us. Force reinstall the proper PyGObject versions
+pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
+pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
 
 if ($env:IS_DEV_BUILD) {
   bash .\install-skytemple-components-from-git.sh
 }
 
-pyinstaller skytemple-randomizer.spec
+pyinstaller --log-level=DEBUG skytemple-randomizer.spec
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
     exit 1
 }
-
-# Check if we need to copy the cacert file
-if (Test-Path ".\dist\skytemple\certifi\cacert.pem") {
-  echo "Moved cacert to correct place"
-  cp dist/skytemple/certifi/cacert.pem dist/skytemple/certifi.pem
-}
-
-echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/VERSION -Encoding utf8
-echo $env:PACKAGE_VERSION | Out-File -FilePath dist/skytemple_randomizer/data/VERSION -Encoding utf8

@@ -15,14 +15,33 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
+
+import platform
 import sys
+import os
 
-from ndspy.rom import NintendoDSRom
-from skytemple_files.common.ppmdu_config.data import Pmd2Data
-
+from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.gtk.init_locale import init_locale
 
-init_locale()
+# Load SSL under Windows and macOS
+if getattr(sys, "frozen", False) and platform.system() in ["Windows", "Darwin"]:
+    ca_bundle_path = os.path.abspath(
+        os.path.join(data_dir(), "..", "certifi", "cacert.pem")
+    )
+    assert os.path.exists(ca_bundle_path)
+    print("Certificates at: ", ca_bundle_path)
+    os.environ["SSL_CERT_FILE"] = ca_bundle_path
+    os.environ["REQUESTS_CA_BUNDLE"] = ca_bundle_path
+    if platform.system() == "Windows":
+        import ctypes
+
+        ctypes.cdll.msvcrt._putenv(f"SSL_CERT_FILE={ca_bundle_path}")
+        ctypes.cdll.msvcrt._putenv(f"REQUESTS_CA_BUNDLE={ca_bundle_path}")
+
+try:
+    init_locale()
+except Exception:
+    print("Critical failure while trying to init locales.")
 
 try:
     import gi
@@ -43,6 +62,8 @@ import os
 import sys
 
 from skytemple_icons import icons
+from ndspy.rom import NintendoDSRom
+from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_randomizer.data_dir import data_dir
 
 from gi.repository import Adw, Gtk, GLib, Gdk, Gio
@@ -50,14 +71,11 @@ from gi.repository import Adw, Gtk, GLib, Gdk, Gio
 Gtk.init()
 Adw.init()
 
+from skytemple_randomizer.frontend.gtk.widgets.window_portrait_debug import (
+    PortraitDebugWindow,
+)
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.widgets import AppWindow
-
-if getattr(sys, "frozen", False):
-    # Running via PyInstaller. Fix SSL configuration
-    os.environ["SSL_CERT_FILE"] = os.path.join(
-        os.path.dirname(sys.executable), "certifi", "cacert.pem"
-    )
 
 SKYTEMPLE_DEV = "SKYTEMPLE_DEV" in os.environ
 
@@ -79,13 +97,25 @@ class MainApp(Adw.Application):
         frontend.application = self
         self.development_mode = SKYTEMPLE_DEV
 
+        portrait_debug = Gio.SimpleAction(name="portrait_debug")
+        portrait_debug.connect(
+            "activate",
+            lambda *args: GtkFrontend.instance().portrait_debug_window.show(),
+        )
+        self.add_action(portrait_debug)
+        self.set_accels_for_action("app.portrait_debug", ("<Alt>Return",))
+
     def do_activate(self, file: str | None = None) -> None:
         window = AppWindow(application=self)
+        portrait_debug_window = PortraitDebugWindow(application=self)
         frontend = GtkFrontend.instance()
         frontend.window = window
+        frontend.portrait_debug_window = portrait_debug_window
         self.show_start_stack()
         if file is not None:
             window.stack_item_start.load_rom(file)
+        # XXX: Not sure why destroy or hide don't fire?
+        window.connect("close-request", lambda *args: portrait_debug_window.destroy())
         window.present()
 
     def on_open(self, _, files: list[Gio.File], *args):
@@ -135,6 +165,14 @@ def main(argv: list[str] | None = None):
             os.path.join(os.path.dirname(__file__), "skytemple_randomizer.css")
         )
     )
+    if platform.system() == "Windows":
+        style_provider.load_from_path(
+            os.path.abspath(
+                os.path.join(
+                    os.path.dirname(__file__), "skytemple_randomizer-windows.css"
+                )
+            )
+        )
     default_display = Gdk.Display.get_default()
     if default_display is not None:
         Gtk.StyleContext.add_provider_for_display(
@@ -142,6 +180,13 @@ def main(argv: list[str] | None = None):
             style_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
         )
+
+    if platform.system() == "Darwin":
+        from skytemple_randomizer.frontend.gtk.macos_keyboard_shim import (  # type: ignore
+            init_macos_shortcuts,
+        )
+
+        init_macos_shortcuts()
 
     # Load main window + controller
     app = MainApp()

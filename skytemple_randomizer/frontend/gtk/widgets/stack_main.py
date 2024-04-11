@@ -26,6 +26,7 @@ from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GObject
@@ -39,7 +40,7 @@ from skytemple_randomizer.frontend.gtk.widgets import (
 )
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "stack_main.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "stack_main.ui"))
 class MainStack(Adw.Bin):
     __gtype_name__ = "StMainStack"
 

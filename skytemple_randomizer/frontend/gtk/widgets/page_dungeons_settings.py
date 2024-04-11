@@ -20,12 +20,13 @@ import os
 from typing import cast
 
 from skytemple_randomizer.config import RandomizerConfig
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_dungeons_settings.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_dungeons_settings.ui"))
 class DungeonsSettingsPage(Adw.PreferencesPage):
     __gtype_name__ = "StDungeonsSettingsPage"
     row_layouts = cast(Adw.SwitchRow, Gtk.Template.Child())

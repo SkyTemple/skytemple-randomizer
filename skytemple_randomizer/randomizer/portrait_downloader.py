@@ -50,7 +50,7 @@ from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 
 from skytemple_randomizer.config import RandomizerConfig
-from skytemple_randomizer.frontend.abstract import AbstractFrontend
+from skytemple_randomizer.frontend.abstract import AbstractFrontend, PortraitDebugLine
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.special import fun
 from skytemple_randomizer.spritecollab import (
@@ -75,7 +75,6 @@ class PortraitDownloader(AbstractRandomizer):
         frontend: AbstractFrontend,
     ):
         super().__init__(config, rom, static_data, seed, frontend)
-        self._debugs: list[tuple[str, str, str, str, str]] = []
 
         self.monster_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(MONSTER_BIN))
         self.monster_ground_bin = FileType.BIN_PACK.deserialize(
@@ -125,6 +124,7 @@ class PortraitDownloader(AbstractRandomizer):
     def run(self, status: Status):
         if not self.config["improvements"]["download_portraits"]:
             return status.done()
+        self.frontend.idle_add(self.frontend.portrait_debug__clear)
 
         patcher = Patcher(self.rom, self.static_data)
         self.is_expand_poke_list_applied = False
@@ -237,12 +237,6 @@ class PortraitDownloader(AbstractRandomizer):
             self.sprite_size_table, arm9, self.static_data
         )
         set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
-
-        def add_rows():
-            # TODO
-            pass
-
-        self.frontend.idle_add(add_rows)
 
         status.done()
 
@@ -413,11 +407,22 @@ class PortraitDownloader(AbstractRandomizer):
                 for subindex, image in enumerate(portraits):
                     if image is not None:
                         kaos.set(mdidx - 1, subindex, image)
-                self._debugs.append(
-                    (f"{pokedex_number:04}", poke_name, form_id, form_name, "✓")
+                self.append_debug_line(
+                    PortraitDebugLine(
+                        "success",
+                        f"{pokedex_number:04}",
+                        poke_name,
+                        form_id,
+                        form_name,
+                        "✓",
+                    )
                 )
             else:
-                self._debugs.append((f"{pokedex_number:04}", poke_name, "-", "-", "-"))
+                self.append_debug_line(
+                    PortraitDebugLine(
+                        "skipped", f"{pokedex_number:04}", poke_name, "-", "-", "-"
+                    )
+                )
 
             if sprites:
                 spr_result = await get_sprites(sc, forms)
@@ -451,8 +456,15 @@ class PortraitDownloader(AbstractRandomizer):
                     )
         except Exception:
             traceback_str = "".join(traceback.format_exception(*sys.exc_info()))
-            self._debugs.append(
-                (f"{pokedex_number:04}", poke_name, form_id, form_name, traceback_str)
+            self.append_debug_line(
+                PortraitDebugLine(
+                    "failed",
+                    f"{pokedex_number:04}",
+                    poke_name,
+                    form_id,
+                    form_name,
+                    traceback_str,
+                )
             )
 
         self.current += 1
@@ -493,3 +505,9 @@ class PortraitDownloader(AbstractRandomizer):
             self.monster_attack_bin.append(xdata)
         else:
             self.monster_attack_bin[id] = xdata
+
+    def append_debug_line(self, line: PortraitDebugLine):
+        def add_row():
+            self.frontend.portrait_debug__add(line)
+
+        self.frontend.idle_add(add_row)

@@ -20,6 +20,7 @@ import os
 import webbrowser
 
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk
@@ -27,7 +28,7 @@ from gi.repository import Gtk
 from skytemple_randomizer.frontend.gtk.ui_util import show_about_dialog
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "grid_links.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "grid_links.ui"))
 class LinksGrid(Gtk.Grid):
     __gtype_name__ = "StLinksGrid"
 

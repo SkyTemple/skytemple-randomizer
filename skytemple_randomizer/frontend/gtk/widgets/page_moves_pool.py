@@ -27,6 +27,7 @@ from skytemple_files.common.types.file_types import FileType
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib
@@ -38,7 +39,7 @@ from skytemple_randomizer.string_provider import StringProvider, StringType
 WAZA_P = "BALANCE/waza_p.bin"
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_moves_pool.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_moves_pool.ui"))
 class MovesPoolPage(Adw.PreferencesPage):
     __gtype_name__ = "StMovesPoolPage"
 

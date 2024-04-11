@@ -29,12 +29,13 @@ from skytemple_randomizer.config import (
     deep_typeddict_to_dict,
 )
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib, Gio
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_settings.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_settings.ui"))
 class SettingsPage(Adw.Bin):
     __gtype_name__ = "StSettingsPage"
 

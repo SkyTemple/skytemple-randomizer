@@ -21,6 +21,7 @@ import os
 from typing import TYPE_CHECKING, cast
 
 from skytemple_randomizer.config import RandomizerConfig, MovesetConfig
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw
@@ -29,7 +30,7 @@ if TYPE_CHECKING:
     from skytemple_randomizer.frontend.gtk.widgets import MonstersPage
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_movesets.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_movesets.ui"))
 class MovesetsPage(Adw.PreferencesPage):
     __gtype_name__ = "StMovesetsPage"
     row_movesets = cast(Adw.SwitchRow, Gtk.Template.Child())

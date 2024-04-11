@@ -30,6 +30,7 @@ from skytemple_files.patch.patches import Patcher
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
+from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 
 from gi.repository import Gtk, Adw, GLib
@@ -44,7 +45,7 @@ class MonstersPoolType(Enum):
     STARTERS = auto()
 
 
-@Gtk.Template(filename=os.path.join(MAIN_PATH, "page_monsters_pool.ui"))
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_monsters_pool.ui"))
 class MonstersPoolPage(Adw.PreferencesPage):
     __gtype_name__ = "StMonstersPoolPage"
 

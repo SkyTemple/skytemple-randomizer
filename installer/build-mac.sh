@@ -23,27 +23,17 @@ cp $icons_path/512x512/apps/skytemple_randomizer.png skytemple_randomizer.iconse
 iconutil -c icns skytemple_randomizer.iconset
 rm -rf skytemple_randomizer.iconset
 
-# Build the app
-pyinstaller skytemple-randomizer-mac.spec --noconfirm
-
-# Check if we need to copy the cacert file
-if [ -f "dist/skytemple_randomizer/certifi/cacert.pem" ]; then
-  echo "Moved cacert to correct place"
-  cp -rf dist/skytemple_randomizer/certifi/cacert.pem dist/skytemple_randomizer/cacert.pem
+# :(((((((((( PIL ships an old harfbuzz version and PyInstaller is being dumb dumb
+ARCH=$(uname -m)
+if [ "$ARCH" = "arm64" ]; then
+    # ARM homebrew path
+    cp -f /opt/homebrew/Cellar/harfbuzz/*/lib/libharfbuzz.0.dylib "$VIRTUAL_ENV/lib/python3.12/site-packages/PIL/.dylibs/libharfbuzz.0.dylib"
+else
+    # Intel homebrew path
+    cp -f /usr/local/Cellar/harfbuzz/*/lib/libharfbuzz.0.dylib "$VIRTUAL_ENV/lib/python3.12/site-packages/PIL/.dylibs/libharfbuzz.0.dylib"
 fi
 
+# Build the app
+pyinstaller --log-level=DEBUG skytemple-randomizer-mac.spec --noconfirm
+
 rm skytemple_randomizer.icns
-
-# Since the library search path for the app is wrong, execute a shell script that sets is correctly
-# and launches the app instead of launching run_skytemple directly
-appdir=dist/SkyTempleRandomizer.app/Contents/MacOS
-
-# Change "run_skytemple" to "pre_run_skytemple" in the launcher info to launch the shell script instead of the app
-sed -i '' 's/run_skytemple/pre_run_skytemple/' dist/SkyTempleRandomizer.app/Contents/Info.plist
-
-# Create a shell script that sets LD_LIBRARY_PATH and launches SkyTemple
-printf '#!/bin/sh\nLD_LIBRARY_PATH="$(dirname $0)" PATH="$PATH:$(dirname $0)/skytemple_files/_resources" "$(dirname $0)/run_skytemple"\n' > $appdir/pre_run_skytemple
-chmod +x $appdir/pre_run_skytemple
-
-echo $1 > $appdir/VERSION
-echo $1 > $appdir/data/VERSION

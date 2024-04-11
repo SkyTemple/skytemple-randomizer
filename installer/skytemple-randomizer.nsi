@@ -1,21 +1,5 @@
 !include LogicLib.nsh
 
-Function UninstallPrevious
-    ; Check for uninstaller.
-    ReadRegStr $R0 HKLM "${HKLM_REG_KEY}" "InstallDir"
-
-    ${If} $R0 == ""
-        Goto Done
-    ${EndIf}
-
-    DetailPrint "Removing previous installation."
-
-    ; Run the uninstaller silently.
-    ExecWait '"$R0\Uninstall.exe /S"'
-
-    Done:
-FunctionEnd
-
 !define PRODUCT_NAME "SkyTemple Randomizer"
 
 !define FILES_SOURCE_PATH "dist\skytemple_randomizer"
@@ -50,6 +34,22 @@ OutFile "skytemple-randomizer-${PRODUCT_VERSION}-x64-install.exe"
 InstallDir "$PROGRAMFILES64\${PRODUCT_NAME}"
 ShowInstDetails show
 
+Function UninstallPrevious
+    ; Check for uninstaller.
+    ReadRegStr $R0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "UninstallString"
+
+    ${If} $R0 == ""
+        Goto Done
+    ${EndIf}
+
+    DetailPrint "Removing previous installation."
+
+    ; Run the uninstaller silently.
+    ExecShellWait "open" "$R0" "/S" SW_HIDE
+
+    Done:
+FunctionEnd
+
 Section "" SecUninstallPrevious
 
     Call UninstallPrevious
@@ -57,6 +57,7 @@ Section "" SecUninstallPrevious
 SectionEnd
 
 Section "install"
+  DetailPrint "Installing."
   ; the payload of this installer is described in an externally generated list of files
   !include  ${INST_LIST}
   File ${PRODUCT_ICON}

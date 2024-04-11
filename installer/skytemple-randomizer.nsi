@@ -1,6 +1,8 @@
+!include LogicLib.nsh
+
 !define PRODUCT_NAME "SkyTemple Randomizer"
 
-!define DIST_DIR "dist\skytemple_randomizer"
+!define FILES_SOURCE_PATH "dist\skytemple_randomizer"
 !define APPEXE "skytemple_randomizer.exe"
 !define PRODUCT_ICON "skytemple_randomizer.ico"
 
@@ -16,11 +18,14 @@ RequestExecutionLevel admin
 ; UI pages
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "license.txt"
-!insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "French"
+!insertmacro MUI_LANGUAGE "German"
+!insertmacro MUI_LANGUAGE "Spanish"
+!insertmacro MUI_LANGUAGE "Japanese"
 ; Modern UI end
 
 Name "${PRODUCT_NAME} - ${PRODUCT_VERSION}"
@@ -29,9 +34,33 @@ OutFile "skytemple-randomizer-${PRODUCT_VERSION}-x64-install.exe"
 InstallDir "$PROGRAMFILES64\${PRODUCT_NAME}"
 ShowInstDetails show
 
+Function UninstallPrevious
+    ; Check for uninstaller.
+    ReadRegStr $R0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "UninstallString"
+
+    ${If} $R0 == ""
+        Goto Done
+    ${EndIf}
+
+    DetailPrint "Removing previous installation."
+
+    ; Run the uninstaller silently.
+    ExecShellWait "open" "$R0" "/S" SW_HIDE
+
+    Done:
+FunctionEnd
+
+Section "" SecUninstallPrevious
+
+    Call UninstallPrevious
+
+SectionEnd
+
 Section "install"
-  setOutPath $INSTDIR
-  File /r "${DIST_DIR}\*"
+  DetailPrint "Installing."
+  ; the payload of this installer is described in an externally generated list of files
+  !include  ${INST_LIST}
+  SetOutPath "$INSTDIR\."
   File ${PRODUCT_ICON}
 
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}.lnk" "$INSTDIR\${APPEXE}" "" "$INSTDIR\${PRODUCT_ICON}"
@@ -51,13 +80,17 @@ Section "install"
                    "NoRepair" 1
 SectionEnd
 
-# Uninstaller
-
+;--------------------------------
+; Uninstaller
+;--------------------------------
 Section "Uninstall"
-  Delete "$INSTDIR\${APPEXE}"
   Delete "$INSTDIR\${PRODUCT_ICON}"
   Delete "$SMPROGRAMS\${PRODUCT_NAME}.lnk"
+
   Delete $INSTDIR\uninstall.exe
-  RMDir /r $INSTDIR
+
+  ; Remove the files (using externally generated file list)
+  !include ${UNINST_LIST}
+
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 SectionEnd

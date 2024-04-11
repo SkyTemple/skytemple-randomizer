@@ -62,8 +62,6 @@ for cur_dir, dirs, my_files in os.walk(source_dir):
 
     # and truncate dir name
     my_dir = cur_dir[len(source_dir) :]
-    if my_dir == "":
-        my_dir = "\\."
 
     # save it for uninstall
     stack_of_visited.append((my_files, my_dir))

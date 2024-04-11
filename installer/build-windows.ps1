@@ -44,3 +44,7 @@ if ($LASTEXITCODE) { exit $LASTEXITCODE }
 if(!(Test-Path ".\dist\skytemple_randomizer\skytemple_randomizer.exe")){
     exit 1
 }
+
+python gen_list_files_for_nsis.py dist\skytemple_randomizer install_list.nsh uninstall_list.nsh
+
+if ($LASTEXITCODE) { exit $LASTEXITCODE }

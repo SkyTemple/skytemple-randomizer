@@ -181,6 +181,13 @@ def main(argv: list[str] | None = None):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
         )
 
+    if platform.system() == "Darwin":
+        from skytemple_randomizer.frontend.gtk.macos_keyboard_shim import (  # type: ignore
+            init_macos_shortcuts,
+        )
+
+        init_macos_shortcuts()
+
     # Load main window + controller
     app = MainApp()
     sys.exit(app.run(argv))

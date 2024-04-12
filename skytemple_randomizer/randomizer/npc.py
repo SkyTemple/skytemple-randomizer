@@ -60,7 +60,7 @@ class NpcRandomizer(AbstractRandomizer):
             patcher.apply("ActorAndLevelLoader")
 
         status.step(_("Randomizing NPC actor list..."))
-        mapped_actors = self._randomize_actors(main_string_file, pokemon_string_data)
+        mapped_actors = self._randomize_actors()
         mapped_actor_names_by_lang = {}
 
         for lang in self.static_data.string_index_data.languages:

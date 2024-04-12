@@ -59,7 +59,7 @@ from skytemple_randomizer.randomizer.special_pc import SpecialPcRandomizer
 from skytemple_randomizer.randomizer.starter import StarterRandomizer
 from skytemple_randomizer.randomizer.text_main import TextMainRandomizer
 from skytemple_randomizer.randomizer.text_script import TextScriptRandomizer
-from skytemple_randomizer.randomizer.util.util import save_scripts, clear_script_cache
+from skytemple_randomizer.randomizer.util.util import save_scripts, clear_script_cache, clear_strings_cache
 from skytemple_randomizer.status import Status
 
 
@@ -135,6 +135,7 @@ class RandomizerThread(Thread):
     def run(self):
         logger.info("Randomizer thread started.")
         clear_script_cache()
+        clear_strings_cache()
         self.thread_id = threading.get_ident()
         try:
             for randomizer in self.randomizers:

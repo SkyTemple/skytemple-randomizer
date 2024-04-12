@@ -128,42 +128,60 @@ class NpcRandomizer(AbstractRandomizer):
             )
             csk_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(
-                    "Job Debriefing Related Strings"
+                    "Job Debriefing Related Strings (Secondary)"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
-                    "(MAROWAK-DOJO-STRS-UNMAPPED)"
+                    "Game Trade Strings"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
                     "Spinda's Juice Bar Strings"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
-                    "(CHIMECHO-ASM-STR-UNMAPPED)"
-                ),
-                self.static_data.string_index_data.string_blocks.get(
-                    "Game and Dungeon Hints"
+                    "Chimecho Assembly Strings"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
                     "Mime Jr. Spa Strings"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
-                    "Adventure Log Strings"
+                    "Adventure Log Entries"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "Floor-Wide Status"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
+                    "IQ Skills Descriptions"
                 ),
             ]
-            # Kecleon needs extra care, because some item long descriptions contain references to the shop (should be replaced) and the Pokemon itself (should not be replaced) at the same time.
-            # Instead we replace some of the mentions of the specific text "Kecleon's Shop" (note: things like music track names should not be replaced).
-            kecleon_shop_text = {
-                # IMPORTANT: match.group(1) should always be Kecleon's name
-                "English": re.compile(r"(Kecleon)(?:\[CR])?'s\sShop"),
-                "French": re.compile(r"Magasins\s(Kecleon)"),
-                "German": re.compile(r"(Kecleon)-Laden"),
-                "Italian": re.compile(r"Magazzini\s(?:\[CS:.])?(Kecleon)"),
-                "Spanish": re.compile(r"Tienda\s(Kecleon)"),
-                "Japanese": re.compile(r"(カクレオン)(?:\[CR])?の\s?お?みせ"),
+            # Some pokemons (Kecleon, Shaymin) need extra care, because some item long descriptions contain references to the shop (should be replaced) and the Pokemon itself (should not be replaced) at the same time.
+            # Instead we replace some of the mentions of the specific shop names (note: things like music track names should not be replaced).
+            shop_texts = {
+                # IMPORTANT: match.group(1) should always be the Pokemon name to replace
+                "English": [
+                    re.compile(r"(Kecleon)(?:\[CR])?'s\sShop"),
+                    re.compile(r"(Shaymin)(?:\[CR])?'s\sDelivery\sService"),
+                ],
+                "French": [
+                    re.compile(r"Magasins\s(Kecleon)"),
+                    re.compile(r"Service\sde\sLivraison\s(Shaymin)"),
+                ],
+                "German": [
+                    re.compile(r"(Kecleon)-Laden"),
+                    re.compile(r"(Shaymin)-Lieferservice"),
+                ],
+                "Italian": [
+                    re.compile(r"Magazzini\s(?:\[CS:.])?(Kecleon)"),
+                    re.compile(r"Servizio\sConsegne\s(?:\[CS:.])?(Shaymin)"),
+                ],
+                "Spanish": [
+                    re.compile(r"Repartos\s(Kecleon)"),
+                    re.compile(r"Service\sde\sLivraison\s(Shaymin)"),
+                ],
+                "Japanese": [
+                    re.compile(r"(カクレオン)(?:\[CR])?の\s?お?みせ"),
+                    re.compile(r"(シェイミ)(?:\[CR])?のたくはいびん"),
+                ]
             }
-            kecleon_replace_regions = [
-                self.static_data.string_index_data.string_blocks.get(
-                    "Floor-Wide Status Names+Desc"
-                ),
+            shop_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(
                     "Item Long Descriptions"
                 ),
@@ -174,13 +192,13 @@ class NpcRandomizer(AbstractRandomizer):
             )
             plain_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(
-                    "(SPECIAL-EPISODES-STRS-UNMAPPED)"
+                    "Special Episode Item Handling Strings"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
-                    "(JOURNAL-STRS-UNMAPPED)"
+                    "Chapter and Special Episode Strings"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
-                    "Pokemon WAIT Dialogue"
+                    "Game and Dungeon Hints"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
                     "Ground Map Names"
@@ -192,11 +210,15 @@ class NpcRandomizer(AbstractRandomizer):
                     "Dungeon Names (Selection)"
                 ),
                 self.static_data.string_index_data.string_blocks.get(
+                    "Dungeon Names (SetDungeonBanner)"
+                ),
+                self.static_data.string_index_data.string_blocks.get(
                     "Dungeon Names (Banner)"
                 ),
             ]
 
             for idx, text in enumerate(lang_string_file.strings):
+                string_id = idx + 1
                 new_text = standard_npc_text.sub(
                     lambda match: match.expand(
                         f"[CS:{match.group(1)}]{match.group(2)}{mapped_actor_names[match.group(3)]}{match.group(4)}[CR]"
@@ -204,7 +226,7 @@ class NpcRandomizer(AbstractRandomizer):
                     text,
                 )
                 if any(
-                    block.begin < idx < block.end
+                    block.begin < string_id <= block.end
                     for block in csk_replace_regions
                     if block is not None
                 ):
@@ -215,18 +237,19 @@ class NpcRandomizer(AbstractRandomizer):
                         new_text,
                     )
                 if any(
-                    block.begin < idx < block.end
-                    for block in kecleon_replace_regions
+                    block.begin < string_id <= block.end
+                    for block in shop_replace_regions
                     if block is not None
                 ):
-                    new_text = kecleon_shop_text[lang.name].sub(
-                        lambda match: match.string[match.start(0) : match.start(1)]
-                        + mapped_actor_names[match.group(1)]
-                        + match.string[match.end(1) : match.end(0)],
-                        new_text,
-                    )
+                    for shop_regex in shop_texts[lang.name]:
+                        new_text = shop_regex.sub(
+                            lambda match: match.string[match.start(0) : match.start(1)]
+                            + mapped_actor_names[match.group(1)]
+                            + match.string[match.end(1) : match.end(0)],
+                            new_text,
+                        )
                 if any(
-                    block.begin < idx < block.end
+                    block.begin < string_id <= block.end
                     for block in plain_replace_regions
                     if block is not None
                 ):

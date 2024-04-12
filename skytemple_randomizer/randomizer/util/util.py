@@ -488,6 +488,14 @@ SKIP_JP_INVALID_SSB = [
 ]
 
 
+_str_file_cache: dict[Pmd2Language, Str] = {}
+
+
+def clear_strings_cache():
+    global _str_file_cache
+    _str_file_cache = {}
+
+
 def get_main_string_file(
     rom: NintendoDSRom, static_data: Pmd2Data
 ) -> tuple[Pmd2Language, Str]:
@@ -499,23 +507,25 @@ def get_main_string_file(
     # If we didn't find english, just take the first
     if lang is None:
         lang = static_data.string_index_data.languages[0]
-    return lang, FileType.STR.deserialize(
-        rom.getFileByName(f"MESSAGE/{lang.filename}"),
-        string_encoding=static_data.string_encoding,
-    )
+    return lang, get_lang_string_file(rom, static_data, lang)
 
 
 def get_all_string_files(
     rom: NintendoDSRom, static_data: Pmd2Data
 ) -> Iterable[tuple[Pmd2Language, Str]]:
     for lang in static_data.string_index_data.languages:
-        yield (
-            lang,
-            FileType.STR.deserialize(
-                rom.getFileByName(f"MESSAGE/{lang.filename}"),
-                string_encoding=static_data.string_encoding,
-            ),
+        yield lang, get_lang_string_file(rom, static_data, lang)
+
+
+def get_lang_string_file(
+    rom: NintendoDSRom, static_data: Pmd2Data, lang: Pmd2Language
+) -> Str:
+    if _str_file_cache.get(lang) is None:
+        _str_file_cache[lang] = FileType.STR.deserialize(
+            rom.getFileByName(f"MESSAGE/{lang.filename}"),
+            string_encoding=static_data.string_encoding,
         )
+    return _str_file_cache[lang]
 
 
 def clone_missing_portraits(kao, index: int, *, force=False):
@@ -605,6 +615,12 @@ def get_allowed_move_ids(
     return lst
 
 
+def get_pokemon_name(rom: NintendoDSRom, static_data: Pmd2Data, md_id: int, lang: Pmd2Language):
+    lang_str = get_lang_string_file(rom, static_data, lang)
+    name_region_begin = static_data.string_index_data.string_blocks["Pokemon Names"].begin
+    return lang_str.strings[name_region_begin + (md_id % 600)]
+
+
 def replace_strings(original: str, replacement_map: dict[str, str]):
     """Replaces all strings from the replacement map in original and returns the new string"""
     string = original
@@ -647,7 +663,6 @@ def replace_text_script(
                     replace_strings(string, replace_map)
                     for string in script.strings[lang.name.lower()]
                 ]
-
 
 _ssb_file_cache: dict[str, Ssb] = {}
 

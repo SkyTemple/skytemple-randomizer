@@ -22,7 +22,6 @@ from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.protocol import Gender
-from skytemple_files.data.str.model import Str
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -34,6 +33,7 @@ from skytemple_randomizer.randomizer.util.util import (
     replace_text_main,
     clone_missing_portraits,
     get_all_string_files,
+    get_pokemon_name,
     SKIP_JP_INVALID_SSB,
     Roster,
 )
@@ -63,18 +63,14 @@ class NpcRandomizer(AbstractRandomizer):
         mapped_actors = self._randomize_actors(main_string_file, pokemon_string_data)
         mapped_actor_names_by_lang = {}
 
-        for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
+        for lang in self.static_data.string_index_data.languages:
             names_mapped: dict[str, str] = {}
             mapped_actor_names_by_lang[lang] = names_mapped
             for old, new in mapped_actors.items():
                 old_base = old % 600
                 new_base = new % 600
-                old_name = self._get_name(
-                    lang_string_file, old_base, pokemon_string_data
-                )
-                new_name = self._get_name(
-                    lang_string_file, new_base, pokemon_string_data
-                )
+                old_name = get_pokemon_name(self.rom, self.static_data, old_base, lang)
+                new_name = get_pokemon_name(self.rom, self.static_data, new_base, lang)
                 names_mapped[old_name] = new_name
 
         status.step(_("Replacing main text that mentions NPCs..."))
@@ -179,7 +175,7 @@ class NpcRandomizer(AbstractRandomizer):
                 "Japanese": [
                     re.compile(r"(カクレオン)(?:\[CR])?の\s?お?みせ"),
                     re.compile(r"(シェイミ)(?:\[CR])?のたくはいびん"),
-                ]
+                ],
             }
             shop_replace_regions = [
                 self.static_data.string_index_data.string_blocks.get(
@@ -286,7 +282,7 @@ class NpcRandomizer(AbstractRandomizer):
                         for text in script.strings[lang.name.lower()]
                     ]
 
-    def _randomize_actors(self, string_file, pokemon_string_data) -> dict[int, int]:
+    def _randomize_actors(self) -> dict[int, int]:
         """Returns a dict that maps old entids -> new entids"""
         actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
             FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),
@@ -302,8 +298,11 @@ class NpcRandomizer(AbstractRandomizer):
         new_entid: u16
         for actor in actor_list.list:
             if actor.entid > 0:
-                old_name = self._get_name(
-                    string_file, actor.entid % num_entities, pokemon_string_data
+                old_name = get_pokemon_name(
+                    self.rom,
+                    self.static_data,
+                    actor.entid % num_entities,
+                    self.static_data.string_index_data.languages[0],
                 )
                 if old_name in mapped_for_names.keys():
                     new_entid = mapped_for_names[old_name]
@@ -335,8 +334,3 @@ class NpcRandomizer(AbstractRandomizer):
             FileType.SIR0.serialize(FileType.SIR0.wrap_obj(actor_list)),
         )
         return mapped
-
-    @staticmethod
-    def _get_name(string_file: Str, index: int, pokemon_string_data):
-        """Returns a Pokémon name from the string file"""
-        return string_file.strings[pokemon_string_data.begin + index]

@@ -25,7 +25,12 @@ from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids, get_pokemon_name, get_all_string_files, Roster
+from skytemple_randomizer.randomizer.util.util import (
+    get_allowed_md_ids,
+    get_pokemon_name,
+    get_all_string_files,
+    Roster,
+)
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to fixed room monster spawn indices.
@@ -243,17 +248,23 @@ class BossRandomizer(AbstractRandomizer):
         # Also update strings for bazaar monsters
         for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
             extra_ff_replace_name_map = {
-                get_pokemon_name(self.rom, self.static_data, old_monster_id, lang): get_pokemon_name(self.rom, self.static_data, new_monster_id, lang)
+                get_pokemon_name(
+                    self.rom, self.static_data, old_monster_id, lang
+                ): get_pokemon_name(self.rom, self.static_data, new_monster_id, lang)
                 for old_monster_id, new_monster_id in extra_ff_replace_map.items()
             }
-            replace_regex = re.compile(r"\[CS:(.)]([^\[]*)(" + "|".join(extra_ff_replace_name_map.keys()) + r")([^\[]*)\[CR]")
+            replace_regex = re.compile(
+                r"\[CS:(.)]([^\[]*)("
+                + "|".join(extra_ff_replace_name_map.keys())
+                + r")([^\[]*)\[CR]"
+            )
             for region in [r for r in extra_ff_str_replace_regions if r is not None]:
                 for idx in range(region.begin, region.end):
                     lang_string_file.strings[idx] = replace_regex.sub(
                         lambda match: match.expand(
                             f"[CS:{match.group(1)}]{match.group(2)}{extra_ff_replace_name_map[match.group(3)]}{match.group(4)}[CR]"
                         ),
-                        lang_string_file.strings[idx]
+                        lang_string_file.strings[idx],
                     )
             self.rom.setFileByName(
                 f"MESSAGE/{lang.filename}", FileType.STR.serialize(lang_string_file)

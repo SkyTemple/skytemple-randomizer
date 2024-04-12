@@ -615,9 +615,13 @@ def get_allowed_move_ids(
     return lst
 
 
-def get_pokemon_name(rom: NintendoDSRom, static_data: Pmd2Data, md_id: int, lang: Pmd2Language):
+def get_pokemon_name(
+    rom: NintendoDSRom, static_data: Pmd2Data, md_id: int, lang: Pmd2Language
+):
     lang_str = get_lang_string_file(rom, static_data, lang)
-    name_region_begin = static_data.string_index_data.string_blocks["Pokemon Names"].begin
+    name_region_begin = static_data.string_index_data.string_blocks[
+        "Pokemon Names"
+    ].begin
     return lang_str.strings[name_region_begin + (md_id % 600)]
 
 
@@ -663,6 +667,7 @@ def replace_text_script(
                     replace_strings(string, replace_map)
                     for string in script.strings[lang.name.lower()]
                 ]
+
 
 _ssb_file_cache: dict[str, Ssb] = {}
 

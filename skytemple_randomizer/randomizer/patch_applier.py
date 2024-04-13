@@ -54,6 +54,8 @@ class PatchApplier(AbstractRandomizer):
             patcher.apply("ExtraSpace")
         if not patcher.is_applied("AntiSoftlock"):
             patcher.apply("AntiSoftlock")
+        if not patcher.is_applied("FixEvolutionGlitch"): # need to check rom region, will only work on US
+            patcher.apply("FixEvolutionGlitch")
 
         if self.config["improvements"]["patch_moveshortcuts"]:
             status.step(_("Apply 'MoveShortcuts' patch..."))

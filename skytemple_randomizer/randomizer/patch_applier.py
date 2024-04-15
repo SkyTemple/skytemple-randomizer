@@ -55,7 +55,13 @@ class PatchApplier(AbstractRandomizer):
             patcher.apply("ExtraSpace")
         if not patcher.is_applied("AntiSoftlock"):
             patcher.apply("AntiSoftlock")
-        if not patcher.is_applied("FixEvolutionGlitch") and self.static_data.game_region == GAME_REGION_US: # Patch only exists for US ROMs
+        # FixEvolutionGlitch shenanigans
+        cannot_apply_fixevo = True
+        try:
+            cannot_apply_fixevo = patcher.is_applied("FixEvolutionGlitch")
+        except NotImplementedError:
+            pass
+        if not cannot_apply_fixevo:
             patcher.apply("FixEvolutionGlitch")
 
         if self.config["improvements"]["patch_moveshortcuts"]:

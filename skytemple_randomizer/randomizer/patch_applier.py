@@ -17,7 +17,6 @@
 from time import sleep
 
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.ppmdu_config.data import GAME_REGION_US
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.config import QuizMode
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer

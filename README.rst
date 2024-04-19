@@ -104,7 +104,7 @@ status of the randomization for progress display. See the GTK implementation for
 
 .. _SkyTemple: https://github.com/SkyTemple/SkyTemple
 
-.. _gvsbuild:: https://github.com/wingtk/gvsbuild
+.. _gvsbuild: https://github.com/wingtk/gvsbuild
 
 See also
 --------

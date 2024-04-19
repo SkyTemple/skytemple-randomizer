@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-19 17:28+0000\n"
-"PO-Revision-Date: 2024-04-19 17:36\n"
+"POT-Creation-Date: 2024-04-19 20:06+0000\n"
+"PO-Revision-Date: 2024-04-19 21:01\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -4675,16 +4675,20 @@ msgstr "Aktiviere \"Gehemeine Items\"-Modus..."
 msgid "Enabling \"Blind Moves\" Mode..."
 msgstr "Aktiere „Geheime Attacken“-Modus..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
+#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:209
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:82
 msgid "Apply 'ActorAndLevelLoader' patch..."
 msgstr "Patch 'ActorAndLevelLoader' wird angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:208
+#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:214
 msgid "Updating bosses..."
 msgstr "Bosse werden aktualisiert..."
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:231
+msgid "Updating bazaar monsters..."
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/chapter.py:60
 msgid "Randomizing Chapter Names..."
@@ -4790,15 +4794,15 @@ msgstr "TM/VM-Attackensets werden randomisiert..."
 msgid "Randomizing NPC actor list..."
 msgstr "NPC-Akteurliste wird randomisiert..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:80
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:76
 msgid "Replacing main text that mentions NPCs..."
 msgstr "Der Haupttext, der NPCs erwähnt, wird ersetzt..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:95
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:91
 msgid "Replacing script text that mentions NPCs..."
 msgstr "Der Skripttext, der NPCs erwähnt, wird ersetzt..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:101
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:97
 msgid "Cloning missing NPC portraits..."
 msgstr "Fehlende NPC-Porträts werden geklont..."
 
@@ -4814,27 +4818,27 @@ msgstr "Overworld-Musik wird randomisiert..."
 msgid "Apply base patches by psy_commando and End45..."
 msgstr "Basispatches von psy_commando und End45 werden angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:59
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:67
 msgid "Apply 'MoveShortcuts' patch..."
 msgstr "Patch „MoveShortcuts“ wird angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:64
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:72
 msgid "Apply 'UnusedDungeonChance' patch..."
 msgstr "Patch „UnusedDungeonChance“ wird angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:69
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:77
 msgid "Apply 'Complete Team Control' patches..."
 msgstr "Patches 'Complete Team Control' wird angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:83
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:91
 msgid "Apply personality test patches..."
 msgstr "Persönlichkeitstest-Patches werden angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:91
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:99
 msgid "Apply 'FixMemorySoftlock' patch..."
 msgstr "'FixMemorySoftlock' Patch wird angewendet..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:96
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:104
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr "'AbarmOneRoomMonsterHouses' Patch wird angwendet..."
 
@@ -4895,11 +4899,11 @@ msgstr "Der gesamte Skripttext wird randomisiert: Zeichenketten werden gelesen..
 msgid "Randomizing all script text: Writing strings..."
 msgstr "Der gesamte Skripttext wird randomisiert: Zeichenketten werden geschrieben..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:152
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:157
 msgid "Randomizing..."
 msgstr "Randomisiere..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:156
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:161
 msgid "Saving scripts..."
 msgstr "Speichere Skripte..."
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-19 17:28+0000\n"
-"PO-Revision-Date: 2024-04-19 17:36\n"
+"POT-Creation-Date: 2024-04-19 20:06+0000\n"
+"PO-Revision-Date: 2024-04-19 21:01\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -4693,16 +4693,20 @@ msgstr "Blind Items モードを有効にしています..."
 msgid "Enabling \"Blind Moves\" Mode..."
 msgstr "Blind Moves モードを有効にしています..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:203
+#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:209
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:57
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:82
 msgid "Apply 'ActorAndLevelLoader' patch..."
 msgstr "パッチ 'ActerAndLevelLoader' を適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:208
+#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:214
 msgid "Updating bosses..."
 msgstr "ボスを更新中..."
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:231
+msgid "Updating bazaar monsters..."
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/chapter.py:60
 msgid "Randomizing Chapter Names..."
@@ -4808,15 +4812,15 @@ msgstr "技マシン習得技をランダマイズ中..."
 msgid "Randomizing NPC actor list..."
 msgstr "NPC アクターリストをランダマイズ中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:80
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:76
 msgid "Replacing main text that mentions NPCs..."
 msgstr "NPCに関するメインテキストを置換中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:95
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:91
 msgid "Replacing script text that mentions NPCs..."
 msgstr "NPCに関するスクリプトテキストを置換中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:101
+#: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:97
 msgid "Cloning missing NPC portraits..."
 msgstr "不足しているNPCの顔グラフィックをクローン中..."
 
@@ -4832,27 +4836,27 @@ msgstr "オーバーワールドBGMをランダマイズ中..."
 msgid "Apply base patches by psy_commando and End45..."
 msgstr "psy_commando と End45 による基本パッチの適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:59
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:67
 msgid "Apply 'MoveShortcuts' patch..."
 msgstr "パッチ 'MoveShortcuts' を適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:64
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:72
 msgid "Apply 'UnusedDungeonChance' patch..."
 msgstr "パッチ 'UnusedDungeonChance' を適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:69
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:77
 msgid "Apply 'Complete Team Control' patches..."
 msgstr "パッチ 'Complete Team Control' を適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:83
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:91
 msgid "Apply personality test patches..."
 msgstr "性格診断パッチを適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:91
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:99
 msgid "Apply 'FixMemorySoftlock' patch..."
 msgstr "パッチ 'FixMemorySoftlock' を適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:96
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:104
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr "パッチ 'DisarmOneRoomMonsterHouses' を適用中..."
 
@@ -4913,11 +4917,11 @@ msgstr "スクリプトテキストのランダマイズ: 文字列の読み込�
 msgid "Randomizing all script text: Writing strings..."
 msgstr "スクリプトテキストのランダマイズ: 文字列の書き込み中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:152
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:157
 msgid "Randomizing..."
 msgstr "ランダマイズ中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:156
+#: skytemple_randomizer/skytemple_randomizer/randomizer_thread.py:161
 msgid "Saving scripts..."
 msgstr "スクリプトを保存中..."
 

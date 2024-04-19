@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-04-07 21:18+0000\n"
-"PO-Revision-Date: 2024-04-07 21:19\n"
+"POT-Creation-Date: 2024-04-19 17:28+0000\n"
+"PO-Revision-Date: 2024-04-19 17:36\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -17,498 +17,882 @@ msgstr ""
 "X-Crowdin-File: /[SkyTemple.skytemple-randomizer] master/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot\n"
 "X-Crowdin-File-ID: 30\n"
 
-#: /dev/fd/63:1 /dev/fd/63:120
+#: /dev/fd/63:1 /dev/fd/63:214
 msgid "English"
 msgstr "Inglese"
 
-#: /dev/fd/63:2 /dev/fd/63:125
+#: /dev/fd/63:2 /dev/fd/63:219
+msgid "Friend Rescue Set Phrases"
+msgstr ""
+
+#: /dev/fd/63:3 /dev/fd/63:220
+msgid "Friend Rescue Message Input Strings"
+msgstr ""
+
+#: /dev/fd/63:4 /dev/fd/63:221
+msgid "Debug Strings (Game Init)"
+msgstr ""
+
+#: /dev/fd/63:5 /dev/fd/63:222
+msgid "Util Strings"
+msgstr ""
+
+#: /dev/fd/63:6 /dev/fd/63:223
+msgid "Chapter and Special Episode Strings"
+msgstr ""
+
+#: /dev/fd/63:7 /dev/fd/63:224
 msgid "Explorer Ranks Names"
 msgstr "Nomi Ranghi Esploratore"
 
-#: /dev/fd/63:3 /dev/fd/63:126
+#: /dev/fd/63:8 /dev/fd/63:225
+msgid "Default Menu Strings 1"
+msgstr ""
+
+#: /dev/fd/63:9 /dev/fd/63:226
+msgid "Default Menu Strings 2"
+msgstr ""
+
+#: /dev/fd/63:10 /dev/fd/63:227
+msgid "Debug Strings (Main Menu)"
+msgstr ""
+
+#: /dev/fd/63:11 /dev/fd/63:228
 msgid "Default Team Names"
 msgstr "Nomi Squadra Predefiniti"
 
-#: /dev/fd/63:4 /dev/fd/63:127
-msgid "Job Debriefing Related Strings"
-msgstr "Stringhe correlate al Debriefing del lavoro"
-
-#: /dev/fd/63:5 /dev/fd/63:128
-msgid "Member Joined Menu"
-msgstr "Menu Membro Iscritto"
-
-#: /dev/fd/63:6 /dev/fd/63:129
-msgid "Some Item Menu Strings"
-msgstr "Alcune stringhe del menu oggetti"
-
-#: /dev/fd/63:7 /dev/fd/63:130
-msgid "Gummi Eating Strings"
-msgstr "Gummi Eating Strings"
-
-#: /dev/fd/63:8 /dev/fd/63:131
-msgid "Items and Pokemon Menu Strings"
-msgstr "Oggetti e Stringhe dei Menu Pokemon"
-
-#: /dev/fd/63:9 /dev/fd/63:132
-msgid "Kangaskhan Storage Strings"
-msgstr "Stringhe del Deposito Kangaskhan"
-
-#: /dev/fd/63:10 /dev/fd/63:133
-msgid "Evolution Strings"
-msgstr "Stringhe Di Evoluzione"
-
-#: /dev/fd/63:11 /dev/fd/63:134
-msgid "Music tracks names"
-msgstr "Nomi tracce musicali"
-
-#: /dev/fd/63:12 /dev/fd/63:135
-msgid "Personality Quiz Questions"
-msgstr "Quiz Di Personalità"
-
-#: /dev/fd/63:13 /dev/fd/63:136
-msgid "Personality Quiz Answers"
-msgstr "Quiz Di Personalità"
-
-#: /dev/fd/63:14 /dev/fd/63:137
-msgid "Personality Quiz result strings"
-msgstr "Stringhe risultato Quiz di Personalità"
-
-#: /dev/fd/63:15 /dev/fd/63:138
-msgid "Personality string natures"
-msgstr "Personality string natures"
-
-#: /dev/fd/63:16 /dev/fd/63:139
-msgid "Weather Change Feedback"
-msgstr "Feedback cambio meteo"
-
-#: /dev/fd/63:17 /dev/fd/63:140
-msgid "Weather Names"
-msgstr "Nomi Meteo"
-
-#: /dev/fd/63:18 /dev/fd/63:141
-msgid "Floor-Wide Status Names+Desc"
+#: /dev/fd/63:12 /dev/fd/63:229
+msgid "Save Data Strings"
 msgstr ""
 
-#: /dev/fd/63:19 /dev/fd/63:142
-msgid "IQ Skills Menu"
-msgstr "Menu Abilità QI"
+#: /dev/fd/63:13 /dev/fd/63:230
+msgid "Prize Ticket Strings"
+msgstr ""
 
-#: /dev/fd/63:20 /dev/fd/63:143
-msgid "Test Dungeon"
-msgstr "Dungeon di prova"
+#: /dev/fd/63:14 /dev/fd/63:231
+msgid "Job Debriefing Related Strings (Primary)"
+msgstr ""
 
-#: /dev/fd/63:21 /dev/fd/63:144
-msgid "Mission Objectives"
-msgstr "Obiettivi missione"
+#: /dev/fd/63:15 /dev/fd/63:232
+msgid "Job Debriefing Related Strings (Secondary)"
+msgstr ""
 
-#: /dev/fd/63:22 /dev/fd/63:145
-msgid "Mission Failure/Faint Strings"
-msgstr "Stringhe Missione fallita/Sconfitta"
+#: /dev/fd/63:16 /dev/fd/63:233
+msgid "Dungeon Item Action Menu Strings"
+msgstr ""
 
-#: /dev/fd/63:23 /dev/fd/63:146
-msgid "Speed Change Feedback"
-msgstr "Feedback cambio velocità"
-
-#: /dev/fd/63:24 /dev/fd/63:147
-msgid "Potential Recruit Strings"
-msgstr "Stringhe di potenziale reclutamento"
-
-#: /dev/fd/63:25 /dev/fd/63:148
+#: /dev/fd/63:17 /dev/fd/63:234
 msgid "Gummi Feedback"
 msgstr "Gummi Feedback"
 
-#: /dev/fd/63:26 /dev/fd/63:149
-msgid "Traps Feedback"
-msgstr "Feedback trappole"
-
-#: /dev/fd/63:27 /dev/fd/63:150
-msgid "More Dungeon Feedback"
-msgstr "Feedback ulteriori Dungeon"
-
-#: /dev/fd/63:28 /dev/fd/63:151
-msgid "Something's Stirring String"
-msgstr "Stringa Qualcosa si agita"
-
-#: /dev/fd/63:29 /dev/fd/63:152
-msgid "Some Fake items Dialogue"
+#: /dev/fd/63:18 /dev/fd/63:235
+msgid "Dungeon Item Pickup Menu Strings"
 msgstr ""
 
-#: /dev/fd/63:30 /dev/fd/63:153
-msgid "Shaymin Form Change Strings"
+#: /dev/fd/63:19 /dev/fd/63:236
+msgid "Storage Space Full Strings"
 msgstr ""
 
-#: /dev/fd/63:31 /dev/fd/63:154
-msgid "Recruited A Pokemon Strings"
+#: /dev/fd/63:20 /dev/fd/63:237
+msgid "Treasure Bag Full Strings"
 msgstr ""
 
-#: /dev/fd/63:32 /dev/fd/63:155
-msgid "Battle Feedback Messages"
+#: /dev/fd/63:21 /dev/fd/63:238
+msgid "New Recruit Full Strings"
 msgstr ""
 
-#: /dev/fd/63:33 /dev/fd/63:156
-msgid "Misson Feedback"
+#: /dev/fd/63:22 /dev/fd/63:239
+msgid "Kangaskhan Storage Filter Strings"
 msgstr ""
 
-#: /dev/fd/63:34 /dev/fd/63:157
+#: /dev/fd/63:23 /dev/fd/63:240
+msgid "Kangaskhan Storage Strings"
+msgstr "Stringhe del Deposito Kangaskhan"
+
+#: /dev/fd/63:24 /dev/fd/63:241
+msgid "Kecleon Market Strings"
+msgstr ""
+
+#: /dev/fd/63:25 /dev/fd/63:242
+msgid "Duskull Bank Strings"
+msgstr ""
+
+#: /dev/fd/63:26 /dev/fd/63:243
+msgid "Chansey Day Care Strings"
+msgstr ""
+
+#: /dev/fd/63:27 /dev/fd/63:244
+msgid "Croagunk Swap Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:28 /dev/fd/63:245
+msgid "Xatu Appraisal Strings"
+msgstr ""
+
+#: /dev/fd/63:29 /dev/fd/63:246
+msgid "Electivire Link Shop Strings"
+msgstr ""
+
+#: /dev/fd/63:30 /dev/fd/63:247
+msgid "Chimecho Assembly Strings"
+msgstr ""
+
+#: /dev/fd/63:31 /dev/fd/63:248
+msgid "Luminous Spring Strings"
+msgstr ""
+
+#: /dev/fd/63:32 /dev/fd/63:249
+msgid "Diary Strings"
+msgstr ""
+
+#: /dev/fd/63:33 /dev/fd/63:250
+msgid "Level Up Strings"
+msgstr ""
+
+#: /dev/fd/63:34 /dev/fd/63:251
+msgid "Exclusive Items Strings"
+msgstr ""
+
+#: /dev/fd/63:35 /dev/fd/63:252
+msgid "Special Episode Item Handling Strings"
+msgstr ""
+
+#: /dev/fd/63:36 /dev/fd/63:253
+msgid "Demo Dungeon Strings"
+msgstr ""
+
+#: /dev/fd/63:37 /dev/fd/63:254
+msgid "Sky Jukebox Menu Strings"
+msgstr ""
+
+#: /dev/fd/63:38 /dev/fd/63:255
+msgid "Music Tracks"
+msgstr ""
+
+#: /dev/fd/63:39 /dev/fd/63:256
+msgid "Personality Quiz Questions"
+msgstr "Quiz Di Personalità"
+
+#: /dev/fd/63:40 /dev/fd/63:257
+msgid "Personality Quiz Answers"
+msgstr "Quiz Di Personalità"
+
+#: /dev/fd/63:41 /dev/fd/63:258
+msgid "Personality Quiz Results"
+msgstr ""
+
+#: /dev/fd/63:42 /dev/fd/63:259
+msgid "Personality Quiz Aura"
+msgstr ""
+
+#: /dev/fd/63:43 /dev/fd/63:260
+msgid "Partner Selection Strings"
+msgstr ""
+
+#: /dev/fd/63:44 /dev/fd/63:261
+msgid "New Game Welcome"
+msgstr ""
+
+#: /dev/fd/63:45 /dev/fd/63:262
+msgid "Personality Quiz Aura Finger Move"
+msgstr ""
+
+#: /dev/fd/63:46 /dev/fd/63:263
+msgid "Personality Quiz Debug (Breakdown)"
+msgstr ""
+
+#: /dev/fd/63:47 /dev/fd/63:264
+msgid "Personality Quiz Debug (Colored)"
+msgstr ""
+
+#: /dev/fd/63:48 /dev/fd/63:265
+msgid "Sentry Duty Strings"
+msgstr ""
+
+#: /dev/fd/63:49 /dev/fd/63:266
+msgid "Sentry Duty Hints"
+msgstr ""
+
+#: /dev/fd/63:50 /dev/fd/63:267
+msgid "Dungeon Item Usage (Basic)"
+msgstr ""
+
+#: /dev/fd/63:51 /dev/fd/63:268
+msgid "Dungeon Menu Strings (Primary)"
+msgstr ""
+
+#: /dev/fd/63:52 /dev/fd/63:269
+msgid "Dungeon Status Effect Strings"
+msgstr ""
+
+#: /dev/fd/63:53 /dev/fd/63:270
+msgid "Dungeon Menu Strings (Details)"
+msgstr ""
+
+#: /dev/fd/63:54 /dev/fd/63:271
+msgid "Dungeon Menu Strings (Secondary)"
+msgstr ""
+
+#: /dev/fd/63:55
+msgid "Dungeon Defeated Dialogue Strings"
+msgstr ""
+
+#: /dev/fd/63:56
+msgid "Dungeon Cleared Dialogue Strings"
+msgstr ""
+
+#: /dev/fd/63:57 /dev/fd/63:274
+msgid "Dungeon Item Usage (Bag)"
+msgstr ""
+
+#: /dev/fd/63:58 /dev/fd/63:275
+msgid "Weather Change Feedback"
+msgstr "Feedback cambio meteo"
+
+#: /dev/fd/63:59 /dev/fd/63:276
+msgid "Weather Names"
+msgstr "Nomi Meteo"
+
+#: /dev/fd/63:60 /dev/fd/63:277
+msgid "Floor-Wide Status"
+msgstr ""
+
+#: /dev/fd/63:61 /dev/fd/63:278
+msgid "Story Mission Objectives"
+msgstr ""
+
+#: /dev/fd/63:62 /dev/fd/63:279
+msgid "Mission Failure/Faint Strings"
+msgstr "Stringhe Missione fallita/Sconfitta"
+
+#: /dev/fd/63:63 /dev/fd/63:280
+msgid "Speed Change Feedback"
+msgstr "Feedback cambio velocità"
+
+#: /dev/fd/63:64 /dev/fd/63:281
+msgid "Dungeon Potential Recruit Strings"
+msgstr ""
+
+#: /dev/fd/63:65 /dev/fd/63:282
+msgid "Dungeon Gummi Feedback"
+msgstr ""
+
+#: /dev/fd/63:66 /dev/fd/63:283
+msgid "Traps Feedback (Primary)"
+msgstr ""
+
+#: /dev/fd/63:67 /dev/fd/63:284
+msgid "Nothing At Feet String"
+msgstr ""
+
+#: /dev/fd/63:68 /dev/fd/63:285
+msgid "Dungeon Friend Rescue Strings"
+msgstr ""
+
+#: /dev/fd/63:69 /dev/fd/63:286
+msgid "Dungeon General Feedback 1"
+msgstr ""
+
+#: /dev/fd/63:70 /dev/fd/63:287
+msgid "Dungeon General Feedback 2"
+msgstr ""
+
+#: /dev/fd/63:71 /dev/fd/63:288
+msgid "Something's Stirring Strings"
+msgstr ""
+
+#: /dev/fd/63:72 /dev/fd/63:289
+msgid "Dungeon General Feedback 3"
+msgstr ""
+
+#: /dev/fd/63:73 /dev/fd/63:290
+msgid "Dungeon New Recruit Strings"
+msgstr ""
+
+#: /dev/fd/63:74 /dev/fd/63:291
+msgid "Dungeon General Feedback 4"
+msgstr ""
+
+#: /dev/fd/63:75 /dev/fd/63:292
+msgid "Status Effect Resolved Feedback"
+msgstr ""
+
+#: /dev/fd/63:76 /dev/fd/63:293
+msgid "Status Effect Apply Feedback"
+msgstr ""
+
+#: /dev/fd/63:77 /dev/fd/63:294
+msgid "Pokemon Stats Change Feedback 1"
+msgstr ""
+
+#: /dev/fd/63:78 /dev/fd/63:295
+msgid "Status Effect Protect Feedback 1"
+msgstr ""
+
+#: /dev/fd/63:79 /dev/fd/63:296
+msgid "PP Recover Strings"
+msgstr ""
+
+#: /dev/fd/63:80 /dev/fd/63:297
+msgid "Conversion/Sketch Strings"
+msgstr ""
+
+#: /dev/fd/63:81 /dev/fd/63:298
+msgid "Status Effect Protect Feedback 2"
+msgstr ""
+
+#: /dev/fd/63:82 /dev/fd/63:299
+msgid "Dungeon Pokemon Stat Names"
+msgstr ""
+
+#: /dev/fd/63:83 /dev/fd/63:300
+msgid "Pokemon Stats Change Feedback 2"
+msgstr ""
+
+#: /dev/fd/63:84 /dev/fd/63:301
+msgid "Dungeon General Feedback 5"
+msgstr ""
+
+#: /dev/fd/63:85 /dev/fd/63:302
+msgid "Mission Feedback"
+msgstr ""
+
+#: /dev/fd/63:86 /dev/fd/63:303
+msgid "Dungeon General Feedback 6"
+msgstr ""
+
+#: /dev/fd/63:87 /dev/fd/63:304
 msgid "Kecleon Dungeon Shop Strings"
 msgstr ""
 
-#: /dev/fd/63:35 /dev/fd/63:158
-msgid "Misc Battle Events Strings"
+#: /dev/fd/63:88 /dev/fd/63:305
+msgid "Anchored Feedback"
 msgstr ""
 
-#: /dev/fd/63:36 /dev/fd/63:159
-msgid "Secret Bazaar Stairs Found"
+#: /dev/fd/63:89 /dev/fd/63:306
+msgid "Traps Feedback (Secondary)"
 msgstr ""
 
-#: /dev/fd/63:37 /dev/fd/63:160
-msgid "Kirlia Secret Bazaar Greeting"
+#: /dev/fd/63:90 /dev/fd/63:307
+msgid "Dungeon General Feedback 7"
 msgstr ""
 
-#: /dev/fd/63:38 /dev/fd/63:161
+#: /dev/fd/63:91 /dev/fd/63:308
+msgid "Move Feedback (Primary)"
+msgstr ""
+
+#: /dev/fd/63:92 /dev/fd/63:309
+msgid "Dungeon Level Up Detail Strings"
+msgstr ""
+
+#: /dev/fd/63:93 /dev/fd/63:310
+msgid "Kirlia Secret Bazaar Strings"
+msgstr ""
+
+#: /dev/fd/63:94 /dev/fd/63:311
 msgid "Grab Bags Shop Strings"
 msgstr ""
 
-#: /dev/fd/63:39 /dev/fd/63:162
+#: /dev/fd/63:95 /dev/fd/63:312
 msgid "Shedinja Shop Strings"
 msgstr ""
 
-#: /dev/fd/63:40 /dev/fd/63:163
+#: /dev/fd/63:96 /dev/fd/63:313
 msgid "Mime Jr. Spa Strings"
 msgstr ""
 
-#: /dev/fd/63:41 /dev/fd/63:164
+#: /dev/fd/63:97 /dev/fd/63:314
 msgid "Swalot's Shop Strings"
 msgstr ""
 
-#: /dev/fd/63:42 /dev/fd/63:165
-msgid "Team Tactics Menu strings"
+#: /dev/fd/63:98 /dev/fd/63:315
+msgid "Team Tactics Menu Strings"
 msgstr ""
 
-#: /dev/fd/63:43 /dev/fd/63:166
-msgid "Item Became Sticky"
+#: /dev/fd/63:99 /dev/fd/63:316
+msgid "Item Became Sticky String"
 msgstr ""
 
-#: /dev/fd/63:44 /dev/fd/63:167
+#: /dev/fd/63:100 /dev/fd/63:317
 msgid "Pokemon LEVEL_UP Dialogue"
 msgstr ""
 
-#: /dev/fd/63:45 /dev/fd/63:168
+#: /dev/fd/63:101 /dev/fd/63:318
 msgid "Pokemon WAIT Dialogue"
 msgstr ""
 
-#: /dev/fd/63:46 /dev/fd/63:169
+#: /dev/fd/63:102 /dev/fd/63:319
 msgid "Pokemon HEALTHY Dialogue"
 msgstr ""
 
-#: /dev/fd/63:47 /dev/fd/63:170
+#: /dev/fd/63:103 /dev/fd/63:320
 msgid "Pokemon HALF_LIFE Dialogue"
 msgstr ""
 
-#: /dev/fd/63:48 /dev/fd/63:171
+#: /dev/fd/63:104 /dev/fd/63:321
 msgid "Pokemon PINCH Dialogue"
 msgstr ""
 
-#: /dev/fd/63:49 /dev/fd/63:172
+#: /dev/fd/63:105 /dev/fd/63:322
 msgid "Pokemon GROUND_WAIT Dialogue"
 msgstr ""
 
-#: /dev/fd/63:50 /dev/fd/63:173
+#: /dev/fd/63:106 /dev/fd/63:323
 msgid "Item Names"
 msgstr "Nomi Oggetti"
 
-#: /dev/fd/63:51 /dev/fd/63:174
+#: /dev/fd/63:107 /dev/fd/63:324
 msgid "Move Names"
 msgstr "Nomi delle Mosse"
 
-#: /dev/fd/63:52 /dev/fd/63:175
+#: /dev/fd/63:108 /dev/fd/63:325
 msgid "Pokemon Names"
 msgstr "Nomi Pokémon"
 
-#: /dev/fd/63:53 /dev/fd/63:176
+#: /dev/fd/63:109 /dev/fd/63:326
 msgid "Pokemon Categories"
 msgstr "Categorie Pokemon"
 
-#: /dev/fd/63:54 /dev/fd/63:177
+#: /dev/fd/63:110 /dev/fd/63:327
 msgid "Tactics Names"
 msgstr ""
 
-#: /dev/fd/63:55 /dev/fd/63:178
+#: /dev/fd/63:111 /dev/fd/63:328
 msgid "Tactics Descriptions"
 msgstr ""
 
-#: /dev/fd/63:56 /dev/fd/63:179
+#: /dev/fd/63:112 /dev/fd/63:329
 msgid "IQ Skills Names"
 msgstr "Nomi Abilità QI"
 
-#: /dev/fd/63:57 /dev/fd/63:180
+#: /dev/fd/63:113 /dev/fd/63:330
 msgid "IQ Skills Descriptions"
 msgstr "Descrizioni Abilità IQ"
 
-#: /dev/fd/63:58 /dev/fd/63:181
+#: /dev/fd/63:114 /dev/fd/63:331
 msgid "Move Targets Strings"
 msgstr ""
 
-#: /dev/fd/63:59 /dev/fd/63:182
+#: /dev/fd/63:115 /dev/fd/63:332
 msgid "Accuracy/Power Stars Ratings"
 msgstr ""
 
-#: /dev/fd/63:60 /dev/fd/63:183
+#: /dev/fd/63:116 /dev/fd/63:333
+msgid "Always Hit/No Damage Strings"
+msgstr ""
+
+#: /dev/fd/63:117 /dev/fd/63:334
 msgid "Move Descriptions"
 msgstr ""
 
-#: /dev/fd/63:61 /dev/fd/63:184
+#: /dev/fd/63:118 /dev/fd/63:335
 msgid "Item Long Descriptions"
 msgstr "Descrizioni Lunghe Oggetto"
 
-#: /dev/fd/63:62 /dev/fd/63:185
+#: /dev/fd/63:119 /dev/fd/63:336
 msgid "Item Short Descriptions"
 msgstr ""
 
-#: /dev/fd/63:63 /dev/fd/63:186
+#: /dev/fd/63:120 /dev/fd/63:337
 msgid "Trap Names"
 msgstr "Nomi Trappole"
 
-#: /dev/fd/63:64 /dev/fd/63:187
+#: /dev/fd/63:121 /dev/fd/63:338
 msgid "Trap Descriptions"
 msgstr "Descrizioni Trappole"
 
-#: /dev/fd/63:65 /dev/fd/63:188
-msgid "Statuses Names and Descriptions"
+#: /dev/fd/63:122 /dev/fd/63:339
+msgid "Status Names and Descriptions"
 msgstr ""
 
-#: /dev/fd/63:66 /dev/fd/63:189
+#: /dev/fd/63:123 /dev/fd/63:340
+msgid "Auxiliary Move Descriptions"
+msgstr ""
+
+#: /dev/fd/63:124 /dev/fd/63:341
 msgid "Type Names"
 msgstr "Nome tipo"
 
-#: /dev/fd/63:67 /dev/fd/63:190
+#: /dev/fd/63:125 /dev/fd/63:342
 msgid "Ability Names"
 msgstr "Nomi Abilità"
 
-#: /dev/fd/63:68 /dev/fd/63:191
+#: /dev/fd/63:126 /dev/fd/63:343
 msgid "Ability Descriptions"
 msgstr ""
 
-#: /dev/fd/63:69 /dev/fd/63:192
-msgid "Debug Menu Strings"
+#: /dev/fd/63:127 /dev/fd/63:344
+msgid "Wireless Connection Strings"
 msgstr ""
 
-#: /dev/fd/63:70 /dev/fd/63:193
+#: /dev/fd/63:128 /dev/fd/63:345
+msgid "Friend Code Strings"
+msgstr ""
+
+#: /dev/fd/63:129 /dev/fd/63:346
+msgid "Email Strings"
+msgstr ""
+
+#: /dev/fd/63:130 /dev/fd/63:347
+msgid "Wi-fi Connection Strings"
+msgstr ""
+
+#: /dev/fd/63:131 /dev/fd/63:348
+msgid "Wonder Mail S Strings"
+msgstr ""
+
+#: /dev/fd/63:132 /dev/fd/63:349
+msgid "Game Trade Strings"
+msgstr ""
+
+#: /dev/fd/63:133 /dev/fd/63:350
+msgid "Mission Board Strings"
+msgstr ""
+
+#: /dev/fd/63:134 /dev/fd/63:351
+msgid "SOS Mail Strings"
+msgstr ""
+
+#: /dev/fd/63:135 /dev/fd/63:352
+msgid "Mission Title Set Phrases"
+msgstr ""
+
+#: /dev/fd/63:136 /dev/fd/63:353
+msgid "Mission Description Set Phrases"
+msgstr ""
+
+#: /dev/fd/63:137 /dev/fd/63:354
+msgid "Mission Detail Strings"
+msgstr ""
+
+#: /dev/fd/63:138 /dev/fd/63:355
+msgid "Mission Objective Strings"
+msgstr ""
+
+#: /dev/fd/63:139 /dev/fd/63:356
+msgid "Debug Strings (Mission)"
+msgstr ""
+
+#: /dev/fd/63:140 /dev/fd/63:357
+msgid "Debug Strings (Switch)"
+msgstr ""
+
+#: /dev/fd/63:141 /dev/fd/63:358
+msgid "Debug Strings (Data)"
+msgstr ""
+
+#: /dev/fd/63:142 /dev/fd/63:359
+msgid "Debug Strings (Checks)"
+msgstr ""
+
+#: /dev/fd/63:143 /dev/fd/63:360
+msgid "Debug Strings (General)"
+msgstr ""
+
+#: /dev/fd/63:144 /dev/fd/63:361
+msgid "Debug Strings (Manipulation)"
+msgstr ""
+
+#: /dev/fd/63:145 /dev/fd/63:362
+msgid "Debug Strings (Testing)"
+msgstr ""
+
+#: /dev/fd/63:146 /dev/fd/63:363
+msgid "Debug Strings (Scripts)"
+msgstr ""
+
+#: /dev/fd/63:147 /dev/fd/63:364
+msgid "Debug Strings (Menu)"
+msgstr ""
+
+#: /dev/fd/63:148 /dev/fd/63:365
+msgid "Debug Strings (Status)"
+msgstr ""
+
+#: /dev/fd/63:149 /dev/fd/63:366
+msgid "Debug Strings (Dungeon 1)"
+msgstr ""
+
+#: /dev/fd/63:150 /dev/fd/63:367
 msgid "Portrait Names"
 msgstr ""
 
-#: /dev/fd/63:71 /dev/fd/63:194
+#: /dev/fd/63:151 /dev/fd/63:368
+msgid "Debug Strings (Dungeon 2)"
+msgstr ""
+
+#: /dev/fd/63:152 /dev/fd/63:369
+msgid "Debug Strings (PKMN Storage)"
+msgstr ""
+
+#: /dev/fd/63:153 /dev/fd/63:370
+msgid "Debug Strings (Message)"
+msgstr ""
+
+#: /dev/fd/63:154 /dev/fd/63:371
+msgid "Debug Strings (Triggers)"
+msgstr ""
+
+#: /dev/fd/63:155 /dev/fd/63:372
+msgid "Debug Strings (Bulletin 1)"
+msgstr ""
+
+#: /dev/fd/63:156 /dev/fd/63:373
+msgid "Debug Strings (Bulletin 2)"
+msgstr ""
+
+#: /dev/fd/63:157 /dev/fd/63:374
+msgid "Debug Strings (Mail)"
+msgstr ""
+
+#: /dev/fd/63:158 /dev/fd/63:375
+msgid "Debug Strings (Name)"
+msgstr ""
+
+#: /dev/fd/63:159 /dev/fd/63:376
+msgid "Debug Strings (Parameters)"
+msgstr ""
+
+#: /dev/fd/63:160 /dev/fd/63:377
+msgid "Debug Strings (Counter)"
+msgstr ""
+
+#: /dev/fd/63:161 /dev/fd/63:378
+msgid "Game and Dungeon Hints"
+msgstr ""
+
+#: /dev/fd/63:162 /dev/fd/63:379
+msgid "Adventure Log Entries"
+msgstr ""
+
+#: /dev/fd/63:163 /dev/fd/63:380
 msgid "Ground Map Names"
 msgstr ""
 
-#: /dev/fd/63:72 /dev/fd/63:195
+#: /dev/fd/63:164 /dev/fd/63:381
 msgid "Dungeon Names (Main)"
 msgstr ""
 
-#: /dev/fd/63:73 /dev/fd/63:196
+#: /dev/fd/63:165 /dev/fd/63:382
 msgid "Dungeon Names (Selection)"
 msgstr ""
 
-#: /dev/fd/63:74 /dev/fd/63:197
+#: /dev/fd/63:166 /dev/fd/63:383
 msgid "Dungeon Names (SetDungeonBanner)"
 msgstr ""
 
-#: /dev/fd/63:75 /dev/fd/63:198
+#: /dev/fd/63:167 /dev/fd/63:384
 msgid "Dungeon Names (Banner)"
 msgstr ""
 
-#: /dev/fd/63:76 /dev/fd/63:199
+#: /dev/fd/63:168 /dev/fd/63:385
+msgid "Staff Roll 1"
+msgstr ""
+
+#: /dev/fd/63:169 /dev/fd/63:386
+msgid "Special Mission Strings"
+msgstr ""
+
+#: /dev/fd/63:170 /dev/fd/63:387
+msgid "Super Hasbrello and Bidoof Family"
+msgstr ""
+
+#: /dev/fd/63:171 /dev/fd/63:388
 msgid "Spinda's Juice Bar Strings"
 msgstr ""
 
-#: /dev/fd/63:77 /dev/fd/63:200
+#: /dev/fd/63:172 /dev/fd/63:389
 msgid "Recycle Shop Strings"
 msgstr ""
 
-#: /dev/fd/63:78 /dev/fd/63:201
-msgid "Staff Roll"
+#: /dev/fd/63:173 /dev/fd/63:390
+msgid "Staff Roll 2"
 msgstr ""
 
-#: /dev/fd/63:79 /dev/fd/63:202
-msgid "New Pokemon Names"
+#: /dev/fd/63:174 /dev/fd/63:391
+msgid "Staff Roll 3"
 msgstr ""
 
-#: /dev/fd/63:80 /dev/fd/63:203
-msgid "New Pokemon Categories"
-msgstr ""
-
-#: /dev/fd/63:81 /dev/fd/63:204
+#: /dev/fd/63:175 /dev/fd/63:392
 msgid "Thrown - Pierce"
 msgstr ""
 
-#: /dev/fd/63:82 /dev/fd/63:205
+#: /dev/fd/63:176 /dev/fd/63:393
 msgid "Thrown - Rock"
 msgstr ""
 
-#: /dev/fd/63:83 /dev/fd/63:206
+#: /dev/fd/63:177 /dev/fd/63:394
 msgid "Berries, Seeds, Vitamins"
 msgstr ""
 
-#: /dev/fd/63:84 /dev/fd/63:207
+#: /dev/fd/63:178 /dev/fd/63:395
 msgid "Foods, Gummies"
 msgstr ""
 
-#: /dev/fd/63:85 /dev/fd/63:208
+#: /dev/fd/63:179 /dev/fd/63:396
 msgid "Hold"
 msgstr ""
 
-#: /dev/fd/63:86 /dev/fd/63:209
+#: /dev/fd/63:180 /dev/fd/63:397
 msgid "TMs, HMs"
 msgstr "MT, MN"
 
-#: /dev/fd/63:87 /dev/fd/63:210
+#: /dev/fd/63:181 /dev/fd/63:398
 msgid "Poké (Money)"
 msgstr ""
 
-#: /dev/fd/63:88 /dev/fd/63:211
+#: /dev/fd/63:182 /dev/fd/63:399
 msgid "Unknown 7"
 msgstr ""
 
-#: /dev/fd/63:89 /dev/fd/63:212
+#: /dev/fd/63:183 /dev/fd/63:400
 msgid "Other"
 msgstr "Altro"
 
-#: /dev/fd/63:90 /dev/fd/63:213
+#: /dev/fd/63:184 /dev/fd/63:401
 msgid "Orbs"
 msgstr "Sfere"
 
-#: /dev/fd/63:91 /dev/fd/63:214
+#: /dev/fd/63:185 /dev/fd/63:402
 msgid "Link Box"
 msgstr "Combinatore"
 
-#: /dev/fd/63:92 /dev/fd/63:215
+#: /dev/fd/63:186 /dev/fd/63:403
 msgid "Used TM"
 msgstr "MT Usata"
 
-#: /dev/fd/63:93 /dev/fd/63:216
+#: /dev/fd/63:187 /dev/fd/63:404
 msgid "Treasure Box 1"
 msgstr ""
 
-#: /dev/fd/63:94 /dev/fd/63:217
+#: /dev/fd/63:188 /dev/fd/63:405
 msgid "Treasure Box 2"
 msgstr ""
 
-#: /dev/fd/63:95 /dev/fd/63:218
+#: /dev/fd/63:189 /dev/fd/63:406
 msgid "Treasure Box 3"
 msgstr ""
 
-#: /dev/fd/63:96 /dev/fd/63:219
+#: /dev/fd/63:190 /dev/fd/63:407
 msgid "Exclusive Items"
 msgstr ""
 
-#: /dev/fd/63:97 /dev/fd/63:220
+#: /dev/fd/63:191 /dev/fd/63:408
 msgid "Red component"
 msgstr ""
 
-#: /dev/fd/63:98 /dev/fd/63:221
+#: /dev/fd/63:192 /dev/fd/63:409
 msgid "Green component"
 msgstr ""
 
-#: /dev/fd/63:99 /dev/fd/63:222
+#: /dev/fd/63:193 /dev/fd/63:410
 msgid "Blue component"
 msgstr ""
 
-#: /dev/fd/63:100 /dev/fd/63:223
+#: /dev/fd/63:194 /dev/fd/63:411
 msgid "Alpha component"
 msgstr ""
 
-#: /dev/fd/63:101 /dev/fd/63:224
+#: /dev/fd/63:195 /dev/fd/63:412
 msgid "Conversion 2 Type when hit by a Fairy move"
 msgstr ""
 
-#: /dev/fd/63:102 /dev/fd/63:225
+#: /dev/fd/63:196 /dev/fd/63:413
 msgid "ID of the first icon in markfont.dat (23 entries used)"
 msgstr ""
 
-#: /dev/fd/63:103 /dev/fd/63:226
+#: /dev/fd/63:197 /dev/fd/63:414
 msgid "Display accuracy and power values"
 msgstr ""
 
-#: /dev/fd/63:104 /dev/fd/63:227
+#: /dev/fd/63:198 /dev/fd/63:415
 msgid "ID of the first icon in markfont.dat (24 entries used)"
 msgstr ""
 
-#: /dev/fd/63:105 /dev/fd/63:228
+#: /dev/fd/63:199 /dev/fd/63:416
 msgid "String ID for push dialogue"
 msgstr ""
 
-#: /dev/fd/63:106 /dev/fd/63:229
+#: /dev/fd/63:200 /dev/fd/63:417
 msgid "String mentioned above is replaced by a default text when applying"
 msgstr ""
 
-#: /dev/fd/63:107 /dev/fd/63:230
+#: /dev/fd/63:201 /dev/fd/63:418
 msgid "Only interruptions don't heal HP"
 msgstr ""
 
-#: /dev/fd/63:108 /dev/fd/63:231
+#: /dev/fd/63:202 /dev/fd/63:419
 #, c-format
 msgid "% of exp. shared"
 msgstr ""
 
-#: /dev/fd/63:109 /dev/fd/63:232
+#: /dev/fd/63:203 /dev/fd/63:420
 msgid "String ID for the Menu Option"
 msgstr ""
 
-#: /dev/fd/63:110 /dev/fd/63:233
+#: /dev/fd/63:204 /dev/fd/63:421
 msgid "String ID to confirm the appraise all"
 msgstr ""
 
-#: /dev/fd/63:111 /dev/fd/63:234
+#: /dev/fd/63:205 /dev/fd/63:422
 msgid "String ID before revealing the items"
 msgstr ""
 
-#: /dev/fd/63:112 /dev/fd/63:235
+#: /dev/fd/63:206 /dev/fd/63:423
 msgid "String ID when revealing an item"
 msgstr ""
 
-#: /dev/fd/63:113 /dev/fd/63:236
+#: /dev/fd/63:207 /dev/fd/63:424
 msgid "All strings mentioned above are replaced by a default text when applying"
 msgstr ""
 
-#: /dev/fd/63:114 /dev/fd/63:237
+#: /dev/fd/63:208 /dev/fd/63:425
 msgid "Cost of each Treasure Box (Only for Appraise All option)"
 msgstr ""
 
-#: /dev/fd/63:115 /dev/fd/63:238
+#: /dev/fd/63:209 /dev/fd/63:426
 msgid "Update the level and stats of evolved enemies"
 msgstr "Aggiorna il livello e le statistiche dei nemici evoluti"
 
-#: /dev/fd/63:116 /dev/fd/63:239
+#: /dev/fd/63:210 /dev/fd/63:427
 msgid "Fully heal enemies after evolving"
 msgstr ""
 
-#: /dev/fd/63:117 /dev/fd/63:240
+#: /dev/fd/63:211 /dev/fd/63:428
 msgid "Update the moves of evolved enemies"
 msgstr "Aggiorna le mosse dei nemici evoluti"
 
-#: /dev/fd/63:118 /dev/fd/63:241
+#: /dev/fd/63:212 /dev/fd/63:429
 msgid "Increase Atk/SpAtk/Def/SpDef of evolved enemies by"
 msgstr ""
 
-#: /dev/fd/63:119 /dev/fd/63:242
+#: /dev/fd/63:213 /dev/fd/63:430
 msgid "Let enemies evolve even if the defeated pokémon is revived"
 msgstr "Permetti che i nemici si evolvano anche se il Pokémon sconfitto viene rianimato"
 
-#: /dev/fd/63:121
+#: /dev/fd/63:215
 msgid "French"
 msgstr "Francese"
 
-#: /dev/fd/63:122
+#: /dev/fd/63:216
 msgid "German"
 msgstr "Tedesco"
 
-#: /dev/fd/63:123
+#: /dev/fd/63:217
 msgid "Italian"
 msgstr "Italiano"
 
-#: /dev/fd/63:124
+#: /dev/fd/63:218
 msgid "Spanish"
 msgstr "Spagnolo"
+
+#: /dev/fd/63:272
+msgid "Dungeon Defeated Dialog Strings"
+msgstr ""
+
+#: /dev/fd/63:273
+msgid "Dungeon Cleared Dialog Strings"
+msgstr ""
 
 #: explorerscript/explorerscript/macro.py:85
 #, python-brace-format
@@ -1128,7 +1512,7 @@ msgstr "Asessuato"
 #: skytemple-files/skytemple_files/data/md/protocol.py:428
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:158
 #: skytemple_randomizer/skytemple_randomizer/frontend/cli/info.py:133
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:78
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:81
 msgid "Unused"
 msgstr "Inutilizzato"
 
@@ -3174,11 +3558,11 @@ msgstr ""
 msgid "A question must contain two XML sub-nodes: {}, {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:117
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:131
 msgid "Error"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:119
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:133
 msgid "_OK"
 msgstr ""
 
@@ -3199,46 +3583,46 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:116
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:117
 msgid "This will stop the randomization process and allow you to change settings again."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:118
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:119
 msgid "Cancel randomization?"
-msgstr ""
-
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:120
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:152
-msgid "_No"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:121
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:153
+msgid "_No"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:122
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:154
 msgid "_Yes"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:159
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:160
 msgid "Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:165
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:166
 msgid "The path of the ROM file needs to end in '.nds'."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:177
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:210
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:178
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:211
 msgid "Randomizing... ({}%)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:234
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
 msgid "Randomizing failed!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:236
 msgid "Error: {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:242
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:243
 msgid "Randomizing complete!"
 msgstr ""
 
@@ -3372,67 +3756,67 @@ msgstr ""
 msgid "Sticky item chance will be randomized between 0% and this value (inclusive)."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:41
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:42
 msgid "Unlock at Start"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:43
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:44
 msgid "Randomize IQ"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:45
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:46
 msgid "Spawn Monster Houses"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:47
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:48
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:39
 msgid "Randomize Weather"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:49
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:50
 msgid "Randomize"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:133
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:136
 msgid "Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.\n"
 "You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked.\n"
 "Please note that entering story dungeons prematurely can mess with the game's story progression."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:227
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:308
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:173
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:230
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:311
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:174
 msgid "Failed to import: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:240
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:243
 msgid "Missing dungeon ID in CSV"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:276
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:191
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:279
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:192
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:309
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:361
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:224
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:312
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:364
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:225
 msgid "Failed to export: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:364
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:377
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:240
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:367
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:380
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:241
 msgid "Failed to export. Details: {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:371
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:249
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:374
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:250
 msgid "Import from CSV"
 msgstr "Importa da CSV"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:375
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:253
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:378
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:254
 msgid "Export to CSV"
 msgstr "Esporta come CSV"
 
@@ -3521,26 +3905,26 @@ msgstr ""
 msgid "If enabled, Explorer Ranks give random items as rewards upon unlocking a new level."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items.py:143
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items.py:144
 msgid "Only these items will spawn on dungeon floors."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items_categories.py:149
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items_categories.py:150
 msgid "Controls weight biases when randomizing items.\n"
 "A higher multiplier compared to other categories means that items from that category are more likely to spawn than others.\n\n"
 "This only applies to the 'Balanced' item algorithm!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:113
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:114
 msgid "Tactics & IQ"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:120
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:121
 msgid "Move Names for \"Blind Moves\" Mode"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:127
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:95
 msgid "A lot of names from the default list are from fantasynamegenerators.com."
 msgstr ""
 
@@ -3624,38 +4008,38 @@ msgstr ""
 msgid "Tactics &amp; IQ"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:147
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:199
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:148
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:182
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:150
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:200
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:149
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:183
 msgid "Reset to Default"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:151
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:203
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:152
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:187
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:154
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:204
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:153
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:188
 msgid "Select None"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:207
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:208
 msgid "Copy from \"Allowed Pokémon\""
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:209
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:210
 msgid "Copy from Starters"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:220
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:221
 msgid "Only the Pokémon selected will be used for any randomization option."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:224
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:225
 msgid "Only the Pokémon selected can appear as random starter options.\n"
 "They also need to be in the list of \"Allowed Pokémon\"."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:161
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:162
 msgid "Only the moves selected will be used for any movesets or TM/HM randomization."
 msgstr ""
 
@@ -3691,7 +4075,7 @@ msgstr ""
 msgid "If enabled then what Pokémon can learn which TMs/HMs is randomized."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.py:77
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.py:78
 msgid "Dungeon music randomization can be enabled or disabled with the dungeon layout randomization setting."
 msgstr ""
 
@@ -3711,15 +4095,15 @@ msgstr ""
 msgid "If enabled, the music that plays outside of dungeons is randomized (for the most part)."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:91
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:99
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:113
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:121
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:92
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:100
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:114
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:122
 msgid "Installs the patch '{}' by {}:\n"
 "{}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:108
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:109
 msgid "Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle. Patch by Cipnit."
 msgstr ""
 
@@ -3783,49 +4167,49 @@ msgstr ""
 msgid "If enabled, the questions from the base game will also be included in the pool of possible questions."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:98
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:101
 msgid "Edit Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:149
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:152
 msgid "Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:165
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:168
 msgid "Answers"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:170
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:235
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:173
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:238
 msgid "Answer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:226
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:229
 msgid "Remove Question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:250
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:253
 msgid "Add Answer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:271
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:274
 msgid "Remove Answer"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:328
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:331
 msgid "Failed to import. Make sure your XML matches the same format as with the export button. Details: {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:385
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:388
 msgid "Import questions from XML"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:390
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:393
 msgid "Export questions to XML"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:91
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:92
 msgid "Questions"
 msgstr ""
 
@@ -3834,29 +4218,29 @@ msgstr ""
 msgid "Add question"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:99
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:100
 msgid "Failed to load settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:112
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:113
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:121
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:122
 msgid "Settings loaded!"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:154
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:155
 msgid "Failed to save settings: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:162
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:163
 msgid "The path of the settings file needs to end in '.json'."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:184
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:185
 msgid "Settings saved!"
 msgstr ""
 
@@ -3948,18 +4332,18 @@ msgstr ""
 msgid "If enabled, tactics are fully unlocked at random levels. One random tactic is available from the beginning."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:85
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:101
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:125
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:86
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:102
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:126
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:242
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:243
 msgid "1st Word"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:248
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:249
 msgid "2nd Word"
 msgstr ""
 
@@ -4047,7 +4431,7 @@ msgid "Controls how Pokémon and NPC names in texts are replaced.\n\n"
 "This is typically slower than doing a simple replacement."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:111
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:112
 msgid "Remove Text"
 msgstr ""
 
@@ -4056,16 +4440,16 @@ msgstr ""
 msgid "Add text"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:88
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:89
 msgid "Item Names for \"Blind Items\" Mode"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:197
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:202
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:198
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:203
 msgid "Allowed Items"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:208
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:209
 msgid "Category Weights"
 msgstr ""
 
@@ -4158,11 +4542,11 @@ msgid "Welcome to the Randomizer!\n"
 "Click the \"Randomize\" button to randomize your ROM, or configure options by selecting a page."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:149
 msgid "Your settings will be discarded and will be replaced by default settings matching the new ROM you open. Make sure to save your settings if you need them."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:150
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:151
 msgid "Close current ROM?"
 msgstr ""
 
@@ -4182,29 +4566,29 @@ msgstr ""
 msgid "_Randomize"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:60
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:61
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:61
 msgid "Load ROM"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:66
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:67
 msgid "Load {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:70
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:71
 msgid "Load another ROM"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:105
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:106
 msgid "Failed to load ROM: Error while opening file ({})."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:120
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:129
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:121
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:130
 msgid "Failed to load ROM:"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:123
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:124
 msgid "Are you sure you provided a ROM? A ROM usually has the file extension \".nds\"."
 msgstr ""
 
@@ -4388,7 +4772,7 @@ msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:159
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:460
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:472
 msgid "Downloading portraits and sprites... {}/{}"
 msgstr ""
 

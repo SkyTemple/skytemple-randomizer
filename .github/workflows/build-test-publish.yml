@@ -131,6 +131,8 @@ jobs:
       - package-windows
       - package-mac
       - package-mac-arm64
+    concurrency:
+      group: "${{ github.workflow }}-${{ github.ref }}"
     steps:
       - name: Clear
         run: |
@@ -140,25 +142,25 @@ jobs:
         id: artifact_wheel
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/whl
           name: wheels
       - name: Download Windows
         id: artifact_windows
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/win
           name: skytemple-randomizer-windows-app-x64
       - name: Download MacOS Intel
         id: artifact_macos_x86
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/mac_x86
           name: skytemple-randomizer-mac-dmg-x86_64
       - name: Download MacOS ARM
         id: artifact_macos_arm64
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/mac_arm64
           name: skytemple-randomizer-mac-dmg-arm64
       - name: Copy over distributions
         run: |
@@ -193,19 +195,19 @@ jobs:
         id: artifact_windows
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/win
           name: skytemple-randomizer-windows-app-x64
       - name: Download MacOS Intel
         id: artifact_macos_x86
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/mac_x86
           name: skytemple-randomizer-mac-dmg-x86_64
       - name: Download MacOS ARM
         id: artifact_macos_arm64
         uses: actions/download-artifact@v4
         with:
-          path: ${{ github.workspace }}/artifacts
+          path: ${{ github.workspace }}/artifacts/mac_arm64
           name: skytemple-randomizer-mac-dmg-arm64
       - name: Copy over distributions
         run: |

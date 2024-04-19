@@ -1,6 +1,6 @@
 ndspy==3.0.0
 click==8.1.7
-skytemple-files[spritecollab]==1.6.6
+skytemple-files[spritecollab]==1.7.0
 skytemple-icons==1.3.2
 packaging
 importlib_metadata>=4.6; python_version < "3.10"

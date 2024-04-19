@@ -14,6 +14,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+import re
 from random import choice
 
 from range_typed_integers import u16
@@ -24,7 +25,12 @@ from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
-from skytemple_randomizer.randomizer.util.util import get_allowed_md_ids, Roster
+from skytemple_randomizer.randomizer.util.util import (
+    get_allowed_md_ids,
+    get_pokemon_name,
+    get_all_string_files,
+    Roster,
+)
 from skytemple_randomizer.status import Status
 
 # Maps actor list indices to fixed room monster spawn indices.
@@ -193,7 +199,7 @@ EXTRA_FF_MONSTER_RANDOMIZE = [16, 18, 19, 20]
 class BossRandomizer(AbstractRandomizer):
     def step_count(self) -> int:
         if self.config["starters_npcs"]["npcs"]:
-            return 2
+            return 3
         return 0
 
     def run(self, status: Status):
@@ -222,9 +228,46 @@ class BossRandomizer(AbstractRandomizer):
                 for bi in ACTOR_TO_BOSS_MAPPING[i]:
                     boss_list[bi].md_idx = actor.entid
 
+        status.step(_("Updating bazaar monsters..."))
+        extra_ff_str_replace_regions = [
+            self.static_data.string_index_data.string_blocks.get(
+                "Kirlia Secret Bazaar Strings"
+            ),
+            self.static_data.string_index_data.string_blocks.get(
+                "Shedinja Shop Strings"
+            ),
+        ]
+        extra_ff_replace_map = {}
         for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
-            boss_list[extra_id].md_idx = u16(
+            old_monster_id = boss_list[extra_id].md_idx
+            new_monster_id = u16(
                 choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS))
+            )
+            boss_list[extra_id].md_idx = new_monster_id
+            extra_ff_replace_map[old_monster_id] = new_monster_id
+        # Also update strings for bazaar monsters
+        for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
+            extra_ff_replace_name_map = {
+                get_pokemon_name(
+                    self.rom, self.static_data, old_monster_id, lang
+                ): get_pokemon_name(self.rom, self.static_data, new_monster_id, lang)
+                for old_monster_id, new_monster_id in extra_ff_replace_map.items()
+            }
+            replace_regex = re.compile(
+                r"\[CS:(.)]([^\[]*)("
+                + "|".join(extra_ff_replace_name_map.keys())
+                + r")([^\[]*)\[CR]"
+            )
+            for region in [r for r in extra_ff_str_replace_regions if r is not None]:
+                for idx in range(region.begin, region.end):
+                    lang_string_file.strings[idx] = replace_regex.sub(
+                        lambda match: match.expand(
+                            f"[CS:{match.group(1)}]{match.group(2)}{extra_ff_replace_name_map[match.group(3)]}{match.group(4)}[CR]"
+                        ),
+                        lang_string_file.strings[idx],
+                    )
+            self.rom.setFileByName(
+                f"MESSAGE/{lang.filename}", FileType.STR.serialize(lang_string_file)
             )
 
         HardcodedFixedFloorTables.set_monster_spawn_list(

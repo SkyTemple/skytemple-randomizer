@@ -62,7 +62,7 @@ class StarterRandomizer(AbstractRandomizer):
             "Pokemon Names"
         ]
         results_string_start = self.static_data.string_index_data.string_blocks[
-            "Personality Quiz result strings"
+            "Personality Quiz Results"
         ].begin
         langs = list(get_all_string_files(self.rom, self.static_data))
 

@@ -211,8 +211,6 @@ jobs:
           name: skytemple-randomizer-mac-dmg-arm64
       - name: Copy over distributions
         run: |
-          $GITHUB_REF_NAME
-          
           PATH_WIN=$(eval echo "${{ steps.artifact_windows.outputs.download-path }}/*.exe")
           PATH_MACOS=$(eval echo "${{ steps.artifact_macos_x86.outputs.download-path }}/*.dmg")
           PATH_MACOS_ARM=$(eval echo "${{ steps.artifact_macos_arm64.outputs.download-path }}/*.dmg")

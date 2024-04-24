@@ -16,6 +16,11 @@
     <p>SkyTemple Randomizer is in NO WAY affiliated with Nintendo, The Pokémon Company, Spike Chunsoft or any of their affiliates. This is an unofficial fan project.</p>
   </description>
 
+	<branding>
+		<color type="primary" scheme_preference="light">#7f75a3</color>
+		<color type="primary" scheme_preference="dark">#28273c</color>
+	</branding>
+
   <launchable type="desktop-id">org.skytemple.Randomizer.desktop</launchable>
 
   <screenshots>
@@ -63,9 +68,9 @@
   </content_rating>
 
   <releases>
-    <release version="2.0.0b1" date="2024-04-19">
-      <description>Pre Release - Changelog can be found on GitHub (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/2.0.0b1).</description>
-      <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/2.0.0b1</url>
+    <release version="2.0.0" date="2024-04-25">
+      <description>Changelog can be found on GitHub (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/2.0.0).</description>
+      <url>https://github.com/SkyTemple/skytemple-randomizer/releases/tag/2.0.0</url>
     </release>
     <release version="1.6.0" date="2023-11-24">
       <description>Changelog can be found on GitHub (https://github.com/SkyTemple/skytemple-randomizer/releases/tag/1.6.0).</description>

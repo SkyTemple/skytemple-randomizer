@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-19 20:06+0000\n"
-"PO-Revision-Date: 2024-04-19 21:01\n"
+"PO-Revision-Date: 2024-04-24 22:35\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -4688,7 +4688,7 @@ msgstr "Bosse werden aktualisiert..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:231
 msgid "Updating bazaar monsters..."
-msgstr ""
+msgstr "Aktualisiere Basar-Monster..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/chapter.py:60
 msgid "Randomizing Chapter Names..."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-19 20:06+0000\n"
-"PO-Revision-Date: 2024-04-19 21:01\n"
+"PO-Revision-Date: 2024-04-25 01:09\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -4593,7 +4593,7 @@ msgstr "不足している顔グラフィック &amp; スプライトをダウ�
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:134
 msgid "Downloaded from SpriteCollab (sprites.pmdcollab.org)"
-msgstr "SpriteCollab (sprites.pmdcollab.org) からダウンロード済み"
+msgstr "SpriteCollab (sprites.pmdcollab.org) からダウンロード"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:142
 msgid "Patches"

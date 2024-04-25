@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-19 20:06+0000\n"
-"PO-Revision-Date: 2024-04-25 02:14\n"
+"PO-Revision-Date: 2024-04-25 03:11\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -2302,12 +2302,12 @@ msgstr "PIL イメージを CHR ファイルに変換できません。幅と高
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:117
 #, python-brace-format
 msgid "Can not import map background: Width of image must match the expected width: {expected_width}px"
-msgstr ""
+msgstr "マップ背景をインポートできません。画像の幅は{expected_width}pxである必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:126
 #, python-brace-format
 msgid "Can not import map background: Height of image must match the expected height: {expected_height}px"
-msgstr ""
+msgstr "マップ背景をインポートできません。画像の高さは{expected_height}pxである必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:136
 #, python-brace-format
@@ -2424,7 +2424,7 @@ msgstr "不透明"
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:205
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:234
 msgid "Tile and masks list must have exactly 3 items"
-msgstr ""
+msgstr "タイルとマスクのリストは、必ず3つの項目を持つ必要があります。"
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:212
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:241
@@ -2634,11 +2634,11 @@ msgstr "ボス敵"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:153
 msgid "Waiting for Rescue Ally"
-msgstr "救助待ち中の味方"
+msgstr "救助待ち中のポケモン"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:161
 msgid "Helping Ally"
-msgstr "救助対象の味方"
+msgstr "救助対象のポケモン"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:164
 msgid "Other Game Team Leader"
@@ -2688,7 +2688,7 @@ msgstr "'{guest1_index}' は有効なゲストポケモンのインデックス�
 #: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:58
 #, python-brace-format
 msgid "'{guest2_index}' is not a valid guest pokémon index"
-msgstr "'{guest2_index}' は有効なゲストポケモンインデックスではありません。"
+msgstr "'{guest2_index}' は有効なゲストポケモンのインデックスではありません。"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:69
 msgid "Game Main Menu"

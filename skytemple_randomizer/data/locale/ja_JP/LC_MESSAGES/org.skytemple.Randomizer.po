@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-04-19 20:06+0000\n"
-"PO-Revision-Date: 2024-04-25 01:09\n"
+"PO-Revision-Date: 2024-04-25 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: /dev/fd/63:4 /dev/fd/63:221
 msgid "Debug Strings (Game Init)"
-msgstr ""
+msgstr "デバッグ文字列 (ゲーム開始時)"
 
 #: /dev/fd/63:5 /dev/fd/63:222
 msgid "Util Strings"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: /dev/fd/63:6 /dev/fd/63:223
 msgid "Chapter and Special Episode Strings"
-msgstr ""
+msgstr "チャプター・スペシャルエピソード文字列"
 
 #: /dev/fd/63:7 /dev/fd/63:224
 msgid "Explorer Ranks Names"
@@ -47,15 +47,15 @@ msgstr "たんけんたいランクの名称"
 
 #: /dev/fd/63:8 /dev/fd/63:225
 msgid "Default Menu Strings 1"
-msgstr ""
+msgstr "デフォルトメニュー文字列1"
 
 #: /dev/fd/63:9 /dev/fd/63:226
 msgid "Default Menu Strings 2"
-msgstr ""
+msgstr "デフォルトメニュー文字列2"
 
 #: /dev/fd/63:10 /dev/fd/63:227
 msgid "Debug Strings (Main Menu)"
-msgstr ""
+msgstr "デバッグ文字列 (メインメニュー)"
 
 #: /dev/fd/63:11 /dev/fd/63:228
 msgid "Default Team Names"
@@ -63,7 +63,7 @@ msgstr "デフォルトのチーム名"
 
 #: /dev/fd/63:12 /dev/fd/63:229
 msgid "Save Data Strings"
-msgstr ""
+msgstr "セーブデータ文字列"
 
 #: /dev/fd/63:13 /dev/fd/63:230
 msgid "Prize Ticket Strings"
@@ -103,19 +103,19 @@ msgstr ""
 
 #: /dev/fd/63:22 /dev/fd/63:239
 msgid "Kangaskhan Storage Filter Strings"
-msgstr ""
+msgstr "ガルーラのそうこ フィルター文字列"
 
 #: /dev/fd/63:23 /dev/fd/63:240
 msgid "Kangaskhan Storage Strings"
-msgstr "「ガルーラのそうこ」の文字列"
+msgstr "ガルーラのそうこ関連文字列"
 
 #: /dev/fd/63:24 /dev/fd/63:241
 msgid "Kecleon Market Strings"
-msgstr ""
+msgstr "カクレオンしょうてん関連文字列"
 
 #: /dev/fd/63:25 /dev/fd/63:242
 msgid "Duskull Bank Strings"
-msgstr ""
+msgstr "ヨマワルぎんこう関連文字列"
 
 #: /dev/fd/63:26 /dev/fd/63:243
 msgid "Chansey Day Care Strings"
@@ -207,11 +207,11 @@ msgstr ""
 
 #: /dev/fd/63:48 /dev/fd/63:265
 msgid "Sentry Duty Strings"
-msgstr ""
+msgstr "みはりばん文字列"
 
 #: /dev/fd/63:49 /dev/fd/63:266
 msgid "Sentry Duty Hints"
-msgstr ""
+msgstr "みはりばんヒント"
 
 #: /dev/fd/63:50 /dev/fd/63:267
 msgid "Dungeon Item Usage (Basic)"
@@ -832,7 +832,7 @@ msgstr "メニューオプションの文字列 ID"
 
 #: /dev/fd/63:204 /dev/fd/63:421
 msgid "String ID to confirm the appraise all"
-msgstr "すべて評価を確認するための文字列ID"
+msgstr "「すべてかんてい」時に確認する時の文字列ID"
 
 #: /dev/fd/63:205 /dev/fd/63:422
 msgid "String ID before revealing the items"
@@ -939,19 +939,19 @@ msgstr "値(X)はインデックスベースの割り当て( {self.ctx.start.lin
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_reset.py:43
 msgid "No target for reset."
-msgstr "リセットの対象はありません。"
+msgstr "リセットの対象が存在していません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_scenario.py:43
 msgid "No variable for assignment set."
-msgstr "代入セット用の変数はありません。"
+msgstr "代入セット用の変数がありません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/atoms/scn_var.py:41
 msgid "scn() without a variable."
-msgstr "scn() 変数なし。"
+msgstr "scn() 変数がありません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/atoms/value_of.py:41
 msgid "value() without a variable."
-msgstr "value() 変数なし。"
+msgstr "value() 変数がありません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:53
 msgid "No target ID set for with(){} block."
@@ -986,7 +986,7 @@ msgstr "変数 {var_target_name} は 'not' と一緒に使用することはで�
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:47
 msgid "No variable for if condition."
-msgstr "If 条件の変数はありません。"
+msgstr "If 条件の変数がありません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:49
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:46
@@ -3121,7 +3121,7 @@ msgstr "依頼の報酬/宝箱のコンテンツやカクレオン商店の道�
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:153
 msgid "Don't have enough space to put filenames! "
-msgstr ""
+msgstr "ファイル名を入れるスペースが足りません。 "
 
 #: skytemple-files/skytemple_files/patch/handler/extract_move_code.py:80
 msgid "Extracts move effects code and put it in files."
@@ -3365,7 +3365,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:256
 #, python-brace-format
 msgid "Unknown operation {in_op.op_code.name}."
-msgstr ""
+msgstr "不明な操作 ({in_op.op_code.name}) です。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:283
 msgid "The number of parameters for {normal_op_code.name} must be at least {normal_op_code.params}, is {self._correct_param_list_len(in_op.params)}."
@@ -3378,12 +3378,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:409
 #, python-brace-format
 msgid "Unknown language for string: {lang}"
-msgstr ""
+msgstr "文字列の言語 {lang} が不明です。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:415
 #, python-brace-format
 msgid "Invalid parameter supplied for an operation: {param}"
-msgstr ""
+msgstr "無効なパラメータ {param} が設定されています。"
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:186
 msgid "Could not compile script: All languages must have the same amount of strings."
@@ -3582,7 +3582,7 @@ msgstr ""
 #: skytemple-rust/src/st_kao.rs:97
 msgid "This portrait does not compress well, the result size is greater than 800 bytes ({} bytes total).\n"
 " If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
-msgstr "この顔グラフィックは圧縮できません。結果のサイズが 800 バイト (合計 {} バイト) を超えています。\n"
+msgstr "このポートレートは圧縮できません。結果のサイズが 800 バイト (合計 {} バイト) を超えています。\n"
 "最適化された圧縮アルゴリズム 'ProvideATUPXSupport' を適用することで、より適切に圧縮できる可能性があります。"
 
 #: skytemple_randomizer/skytemple_randomizer/export_quiz_xml.py:99
@@ -4325,7 +4325,7 @@ msgstr "基本設定"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
 msgid "Randomization Seed"
-msgstr "ランダム化 Seed"
+msgstr "Seed値"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
 msgid "Use Native File Handlers"
@@ -4706,7 +4706,7 @@ msgstr "ボスを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:231
 msgid "Updating bazaar monsters..."
-msgstr ""
+msgstr "ひみつのバザーのポケモンを更新中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/chapter.py:60
 msgid "Randomizing Chapter Names..."

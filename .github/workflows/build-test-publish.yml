@@ -8,6 +8,7 @@ on:
       - master
       - release
       - version/*
+      - conditional-disable-pango
   pull_request:
     branches-ignore:
       - l10n_master
@@ -233,9 +234,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: "C:\\gtk-build"
-          key: win-gtk-build-2024-5-0-1-1
+          key: win-gtk-build-conditional-disable-pango
           restore-keys: |
-            win-gtk-build-2024-5-0-1
+            win-gtk-build-conditional-disable-pango
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -265,7 +266,7 @@ jobs:
       
           python -m pip install --user pipx
           python -m pipx ensurepath
-          pipx install "gvsbuild==2024.5.0"
+          pipx install "git+https://github.com/theCapypara/gvsbuild@conditional-disable-pango"
       - name: Build GTK and other libs
         run: |
           $env:path = "C:\pipx_bin;" + $env:path

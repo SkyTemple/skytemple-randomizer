@@ -87,6 +87,9 @@ class PatchApplier(AbstractRandomizer):
         if not patcher.is_applied("NoWeatherStop"):
             patcher.apply("NoWeatherStop")
 
+        if not patcher.is_applied("RemoveBodySizeCheck"):
+            patcher.apply("RemoveBodySizeCheck")
+
         if self.config["quiz"]["mode"] != QuizMode.TEST:
             status.step(_("Apply personality test patches..."))
             if not patcher.is_applied("ChooseStarter"):

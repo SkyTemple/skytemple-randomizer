@@ -25,7 +25,7 @@ from skytemple_randomizer.status import Status
 from skytemple_files.common.i18n_util import _
 
 MIN_PNTS = u32(1)
-MAX_UNLOCK_PNTS = u32(200000)
+MAX_UNLOCK_PNTS = u32(100000)
 
 
 class ExplorerRanksRandomizer(AbstractRandomizer):
@@ -55,6 +55,19 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
                 unlocks.append(u32(randint(MIN_PNTS, MAX_UNLOCK_PNTS)))
             unlocks.append(ranks[-1].points_needed_next)
             unlocks.sort()
+
+            # Sort unlocks by distance to next rank
+            previous_points_needed = 0
+            points_to_next_array = []
+            for points_needed in unlocks:
+                points_to_next_array.append(points_needed - previous_points_needed)
+                previous_points_needed = points_needed
+            points_to_next_array.sort()
+
+            # Rebuild unlocks array
+            for i, points_to_next in enumerate(points_to_next_array):
+                previous_unlock = 0 if i == 0 else unlocks[i - 1]
+                unlocks[i] = u32(previous_unlock + points_to_next)
 
         for i in range(len(ranks)):
             if rand_unlocks:

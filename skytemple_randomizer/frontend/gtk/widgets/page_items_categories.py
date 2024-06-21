@@ -76,11 +76,7 @@ class ItemsCategoriesPage(Adw.PreferencesPage):
                 # Skip irrelevant
                 if i in [7, 11, 12, 13, 14, 15]:
                     continue
-                val = (
-                    config["item"]["weights"][i]
-                    if i in config["item"]["weights"]
-                    else 0
-                )
+                val = config["item"]["weights"][i] if i in config["item"]["weights"] else 0
                 cats[i] = (
                     cast(Number, val),
                     entry.name_localized,
@@ -111,9 +107,7 @@ class ItemsCategoriesPage(Adw.PreferencesPage):
     def on_row_notify_value(self, idx: int, row: Adw.SpinRow, *args):
         if self.randomization_settings is None or self._suppress_signals:
             return
-        self.randomization_settings["item"]["weights"][idx] = cast(
-            Number, row.get_value()
-        )
+        self.randomization_settings["item"]["weights"][idx] = cast(Number, row.get_value())
 
     def on_search_changed(self, search_entry: Gtk.SearchEntry):
         if self._suppress_signals:
@@ -124,9 +118,7 @@ class ItemsCategoriesPage(Adw.PreferencesPage):
     def on_button_reset_clicked(self, *args):
         self._suppress_signals = True
         assert self.randomization_settings is not None
-        self.randomization_settings["item"]["weights"] = cast(
-            dict[int, Number], DEFAULITEMCATWEIGHTPOOL
-        ).copy()
+        self.randomization_settings["item"]["weights"] = cast(dict[int, Number], DEFAULITEMCATWEIGHTPOOL).copy()
         for i, row in self.rows.items():
             val = (
                 self.randomization_settings["item"]["weights"][i]
@@ -154,7 +146,5 @@ class ItemsCategoriesPage(Adw.PreferencesPage):
         if self.search_text == "":
             match = True
         else:
-            match = (
-                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
-            )
+            match = self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
         return match

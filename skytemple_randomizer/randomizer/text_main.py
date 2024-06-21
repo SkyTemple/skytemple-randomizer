@@ -40,16 +40,12 @@ class TextMainRandomizer(AbstractRandomizer):
             return self.run_for_jp(status)
 
         for lang, strings in get_all_string_files(self.rom, self.static_data):
-            for string_block in self._collect_categories(
-                self.static_data.string_index_data.string_blocks
-            ):
+            for string_block in self._collect_categories(self.static_data.string_index_data.string_blocks):
                 part = strings.strings[string_block.begin : string_block.end]
                 shuffle(part)
                 strings.strings[string_block.begin : string_block.end] = part
 
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings))
 
         status.done()
 
@@ -63,8 +59,6 @@ class TextMainRandomizer(AbstractRandomizer):
         for cat in sorted(string_cats.values(), key=lambda c: c.begin):
             if cat.begin > current_index:
                 # yield a placeholder category
-                yield Pmd2StringBlock(
-                    f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin
-                )
+                yield Pmd2StringBlock(f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin)
             yield cat
             current_index = cat.end

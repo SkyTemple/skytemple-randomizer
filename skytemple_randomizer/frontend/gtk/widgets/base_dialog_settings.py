@@ -95,9 +95,7 @@ class BaseSettingsDialog(Adw.Dialog):
                     entry.icon_name,
                 )
                 self._children.append(entry.child)
-            view_switcher = Adw.ViewSwitcher(
-                stack=stack, policy=Adw.ViewSwitcherPolicy.WIDE
-            )
+            view_switcher = Adw.ViewSwitcher(stack=stack, policy=Adw.ViewSwitcherPolicy.WIDE)
             self.header_bar.set_title_widget(view_switcher)
             self.content.set_child(cast(Gtk.Stack, stack))
             self.stack = stack
@@ -131,9 +129,7 @@ class BaseSettingsDialog(Adw.Dialog):
             assert self.action_bar is not None
             self.action_bar.pack_end(end_button_factory())
 
-        self.main_navigation_page.set_title(
-            kwargs["title"] if "title" in kwargs else ""
-        )
+        self.main_navigation_page.set_title(kwargs["title"] if "title" in kwargs else "")
         self.main_navigation_page.set_tag(MAIN_PAGE_TAG)
 
         self._getter = getter
@@ -182,9 +178,7 @@ class BaseSettingsDialog(Adw.Dialog):
         if self.help_popover is not None:
             self.help_popover.label = text  # type: ignore
 
-    def connect_on_stack_switch_signal(
-        self, on_stack_switch_page: Callable[[Gtk.Widget], None]
-    ):
+    def connect_on_stack_switch_signal(self, on_stack_switch_page: Callable[[Gtk.Widget], None]):
         if self.stack is not None:
             self.stack.connect(
                 "notify::visible-child",

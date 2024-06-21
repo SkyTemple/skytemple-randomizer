@@ -96,9 +96,7 @@ class TextPage(Adw.PreferencesPage):
                 end_button_factory=page1_pp_qs.create_window_end_buttons,
                 content_width=512,
             )
-            page1_pp_qs.navigation_view = cast(
-                BaseSettingsDialog, dialog
-            ).navigation_view
+            page1_pp_qs.navigation_view = cast(BaseSettingsDialog, dialog).navigation_view
         if w == self.button_randomize_location_names:
             dialog = self._make_location_names_dialog()
         if w == self.button_randomize_chapter_titles:
@@ -123,54 +121,42 @@ class TextPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["quiz"]["randomize"] = (
-            self.row_personality_quiz.get_active()
-        )
+        self.randomization_settings["quiz"]["randomize"] = self.row_personality_quiz.get_active()
 
     @Gtk.Template.Callback()
     def on_row_location_names_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["locations"]["randomize"] = (
-            self.row_location_names.get_active()
-        )
+        self.randomization_settings["locations"]["randomize"] = self.row_location_names.get_active()
 
     @Gtk.Template.Callback()
     def on_row_chapter_titles_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["chapters"]["randomize"] = (
-            self.row_chapter_titles.get_active()
-        )
+        self.randomization_settings["chapters"]["randomize"] = self.row_chapter_titles.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_main_text_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["text"]["main"] = (
-            self.row_randomize_main_text.get_active()
-        )
+        self.randomization_settings["text"]["main"] = self.row_randomize_main_text.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_story_dialogue_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["text"]["story"] = (
-            self.row_randomize_story_dialogue.get_active()
-        )
+        self.randomization_settings["text"]["story"] = self.row_randomize_story_dialogue.get_active()
 
     @Gtk.Template.Callback()
     def on_row_enable_instant_text_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["text"]["instant"] = (
-            self.row_enable_instant_text.get_active()
-        )
+        self.randomization_settings["text"]["instant"] = self.row_enable_instant_text.get_active()
 
     @Gtk.Template.Callback()
     def on_row_text_replacement_algorithm_notify_selected(self, *args):
@@ -190,11 +176,7 @@ class TextPage(Adw.PreferencesPage):
         self.row_randomize_main_text.set_active(config["text"]["main"])
         self.row_randomize_story_dialogue.set_active(config["text"]["story"])
         self.row_enable_instant_text.set_active(config["text"]["instant"])
-        replacement_algo = (
-            0
-            if self.randomization_settings["starters_npcs"]["npcs_use_smart_replace"]
-            else 1
-        )
+        replacement_algo = 0 if self.randomization_settings["starters_npcs"]["npcs_use_smart_replace"] else 1
         self.row_text_replacement_algorithm.set_selected(replacement_algo)
         self._suppress_signals = False
 
@@ -227,9 +209,7 @@ class TextPage(Adw.PreferencesPage):
             active_c.on_button_export_clicked()
 
         def end_button_factory():
-            button_import, button_export, w = (
-                TextPoolPage.raw_create_window_end_buttons()
-            )
+            button_import, button_export, w = TextPoolPage.raw_create_window_end_buttons()
             button_import.connect("clicked", on_button_import_clicked)
             button_export.connect("clicked", on_button_export_clicked)
             return w

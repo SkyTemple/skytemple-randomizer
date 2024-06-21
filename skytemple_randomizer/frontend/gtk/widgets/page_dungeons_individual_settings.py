@@ -50,9 +50,7 @@ NOT_LOCALIZED_TITLE_RANDOMIZE = "Randomize"
 TITLE_RANDOMIZE = _("Randomize")
 
 
-@LocalePatchedGtkTemplate(
-    filename=os.path.join(MAIN_PATH, "page_dungeons_individual_settings.ui")
-)
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_dungeons_individual_settings.ui"))
 class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
     __gtype_name__ = "StDungeonsIndividualSettingsPage"
 
@@ -143,15 +141,11 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
         if self.search_text == "":
             match = True
         else:
-            match = (
-                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
-            )
+            match = self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
         return match
 
     @staticmethod
-    def _get_or_default(
-        configs: dict[int, DungeonSettingsConfig], i: int
-    ) -> DungeonSettingsConfig:
+    def _get_or_default(configs: dict[int, DungeonSettingsConfig], i: int) -> DungeonSettingsConfig:
         if i not in configs:
             configs[i] = {
                 "randomize": False,
@@ -162,60 +156,40 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
             }
         return configs[i]
 
-    def on_row_randomize_notify_active(
-        self, idx: int, switch_row: Adw.SwitchRow, *args
-    ):
+    def on_row_randomize_notify_active(self, idx: int, switch_row: Adw.SwitchRow, *args):
         if self.randomization_settings is None or self._suppress_signals:
             return
-        self.randomization_settings["dungeons"]["settings"][idx]["randomize"] = (
-            switch_row.get_active()
-        )
+        self.randomization_settings["dungeons"]["settings"][idx]["randomize"] = switch_row.get_active()
 
-    def on_row_randomize_weather_notify_active(
-        self, idx: int, switch_row: Adw.SwitchRow, *args
-    ):
+    def on_row_randomize_weather_notify_active(self, idx: int, switch_row: Adw.SwitchRow, *args):
         if self.randomization_settings is None or self._suppress_signals:
             return
-        self.randomization_settings["dungeons"]["settings"][idx][
-            "randomize_weather"
-        ] = switch_row.get_active()
+        self.randomization_settings["dungeons"]["settings"][idx]["randomize_weather"] = switch_row.get_active()
 
-    def on_row_monster_houses_notify_active(
-        self, idx: int, switch_row: Adw.SwitchRow, *args
-    ):
+    def on_row_monster_houses_notify_active(self, idx: int, switch_row: Adw.SwitchRow, *args):
         if self.randomization_settings is None or self._suppress_signals:
             return
-        self.randomization_settings["dungeons"]["settings"][idx]["monster_houses"] = (
-            switch_row.get_active()
-        )
+        self.randomization_settings["dungeons"]["settings"][idx]["monster_houses"] = switch_row.get_active()
 
     def on_row_enemy_iq_notify_active(self, idx: int, switch_row: Adw.SwitchRow, *args):
         if self.randomization_settings is None or self._suppress_signals:
             return
-        self.randomization_settings["dungeons"]["settings"][idx]["enemy_iq"] = (
-            switch_row.get_active()
-        )
+        self.randomization_settings["dungeons"]["settings"][idx]["enemy_iq"] = switch_row.get_active()
 
     def on_row_unlock_notify_active(self, idx: int, switch_row: Adw.SwitchRow, *args):
         if self.randomization_settings is None or self._suppress_signals:
             return
-        self.randomization_settings["dungeons"]["settings"][idx]["unlock"] = (
-            switch_row.get_active()
-        )
+        self.randomization_settings["dungeons"]["settings"][idx]["unlock"] = switch_row.get_active()
 
     def on_button_import_clicked(self, *args):
         frontend = GtkFrontend.instance()
         csv_filter = Gtk.FileFilter()
         csv_filter.add_suffix("csv")
         csv_filter.add_mime_type("text/csv")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir, default_filter=csv_filter
-            )
+            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=csv_filter)
 
         else:
             dialog_for_file = Gtk.FileDialog(default_filter=csv_filter)
@@ -245,31 +219,17 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
                     assert self.randomization_settings is not None
                     self.randomization_settings["dungeons"]["settings"][idx] = {
                         "randomize": bool(int(setting[NOT_LOCALIZED_TITLE_RANDOMIZE])),
-                        "unlock": bool(
-                            int(setting[NOT_LOCALIZED_TITLE_UNLOCK_AT_START])
-                        ),
-                        "randomize_weather": bool(
-                            int(setting[NOT_LOCALIZED_TITLE_RANDOMIZE_WEATHER])
-                        ),
-                        "monster_houses": bool(
-                            int(setting[NOT_LOCALIZED_TITLE_RANDOMIZER_MONSTER_HOUSES])
-                        ),
-                        "enemy_iq": bool(
-                            int(setting[NOT_LOCALIZED_TITLE_RANDOMIZE_IQ])
-                        ),
+                        "unlock": bool(int(setting[NOT_LOCALIZED_TITLE_UNLOCK_AT_START])),
+                        "randomize_weather": bool(int(setting[NOT_LOCALIZED_TITLE_RANDOMIZE_WEATHER])),
+                        "monster_houses": bool(int(setting[NOT_LOCALIZED_TITLE_RANDOMIZER_MONSTER_HOUSES])),
+                        "enemy_iq": bool(int(setting[NOT_LOCALIZED_TITLE_RANDOMIZE_IQ])),
                     }
-                    new_current = self.randomization_settings["dungeons"]["settings"][
-                        idx
-                    ]
+                    new_current = self.randomization_settings["dungeons"]["settings"][idx]
                     self._suppress_signals = True
                     self.rows__randomize[idx].set_active(new_current["randomize"])
                     self.rows__unlock[idx].set_active(new_current["unlock"])
-                    self.rows__randomize_weather[idx].set_active(
-                        new_current["randomize_weather"]
-                    )
-                    self.rows__monster_houses[idx].set_active(
-                        new_current["monster_houses"]
-                    )
+                    self.rows__randomize_weather[idx].set_active(new_current["randomize_weather"])
+                    self.rows__monster_houses[idx].set_active(new_current["monster_houses"])
                     self.rows__randomize_iq[idx].set_active(new_current["enemy_iq"])
                     self._suppress_signals = False
 
@@ -286,9 +246,7 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
         csv_filter = Gtk.FileFilter()
         csv_filter.add_suffix("csv")
         csv_filter.add_mime_type("text/csv")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
             dialog_for_file = Gtk.FileDialog(
@@ -297,9 +255,7 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
                 initial_name="dungon_settings.csv",
             )
         else:
-            dialog_for_file = Gtk.FileDialog(
-                default_filter=csv_filter, initial_name="dungon_settings.csv"
-            )
+            dialog_for_file = Gtk.FileDialog(default_filter=csv_filter, initial_name="dungon_settings.csv")
         dialog_for_file.save(frontend.window, None, self.on_export_file_saved)
 
     def on_export_file_saved(self, dialog, result):
@@ -317,9 +273,7 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
         path = file.get_path()
         assert path is not None
 
-        string_provider = StringProvider(
-            frontend.input_rom, frontend.input_rom_static_data
-        )
+        string_provider = StringProvider(frontend.input_rom, frontend.input_rom_static_data)
 
         try:
             with open_utf8(path, "w", newline="") as result_file:
@@ -342,24 +296,12 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
                     wr.writerow(
                         {
                             NOT_LOCALIZED_DUNGEON_ID: str(idx),
-                            NOT_LOCALIZED_DUNGEON_NAME: string_provider.get_value(
-                                StringType.DUNGEON_NAMES_MAIN, idx
-                            ),
-                            NOT_LOCALIZED_TITLE_RANDOMIZE: (
-                                "1" if settings["randomize"] else "0"
-                            ),
-                            NOT_LOCALIZED_TITLE_RANDOMIZE_WEATHER: (
-                                "1" if settings["randomize_weather"] else "0"
-                            ),
-                            NOT_LOCALIZED_TITLE_RANDOMIZER_MONSTER_HOUSES: (
-                                "1" if settings["monster_houses"] else "0"
-                            ),
-                            NOT_LOCALIZED_TITLE_RANDOMIZE_IQ: (
-                                "1" if settings["enemy_iq"] else "0"
-                            ),
-                            NOT_LOCALIZED_TITLE_UNLOCK_AT_START: (
-                                "1" if settings["unlock"] else "0"
-                            ),
+                            NOT_LOCALIZED_DUNGEON_NAME: string_provider.get_value(StringType.DUNGEON_NAMES_MAIN, idx),
+                            NOT_LOCALIZED_TITLE_RANDOMIZE: ("1" if settings["randomize"] else "0"),
+                            NOT_LOCALIZED_TITLE_RANDOMIZE_WEATHER: ("1" if settings["randomize_weather"] else "0"),
+                            NOT_LOCALIZED_TITLE_RANDOMIZER_MONSTER_HOUSES: ("1" if settings["monster_houses"] else "0"),
+                            NOT_LOCALIZED_TITLE_RANDOMIZE_IQ: ("1" if settings["enemy_iq"] else "0"),
+                            NOT_LOCALIZED_TITLE_UNLOCK_AT_START: ("1" if settings["unlock"] else "0"),
                         }
                     )
         except Exception as e:
@@ -370,13 +312,9 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
 
     def create_window_end_buttons(self) -> Gtk.Widget:
         box = Gtk.Box(spacing=5)
-        button_import = Gtk.Button(
-            icon_name="skytemple-import-symbolic", tooltip_text=_("Import from CSV")
-        )
+        button_import = Gtk.Button(icon_name="skytemple-import-symbolic", tooltip_text=_("Import from CSV"))
         button_import.connect("clicked", self.on_button_import_clicked)
-        button_export = Gtk.Button(
-            icon_name="skytemple-export-symbolic", tooltip_text=_("Export to CSV")
-        )
+        button_export = Gtk.Button(icon_name="skytemple-export-symbolic", tooltip_text=_("Export to CSV"))
         button_export.connect("clicked", self.on_button_export_clicked)
         box.append(button_import)
         box.append(button_export)
@@ -386,39 +324,23 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
         row = Adw.ExpanderRow(title=name1, subtitle=f"{name2} #{i:03}")
 
         row_randomize = Adw.SwitchRow(title=TITLE_RANDOMIZE, active=config["randomize"])
-        row_randomize.connect(
-            "notify::active", partial(self.on_row_randomize_notify_active, i)
-        )
+        row_randomize.connect("notify::active", partial(self.on_row_randomize_notify_active, i))
         row.add_row(row_randomize)
 
-        row_randomize_weather = Adw.SwitchRow(
-            title=TITLE_RANDOMIZE_WEATHER, active=config["randomize_weather"]
-        )
-        row_randomize_weather.connect(
-            "notify::active", partial(self.on_row_randomize_weather_notify_active, i)
-        )
+        row_randomize_weather = Adw.SwitchRow(title=TITLE_RANDOMIZE_WEATHER, active=config["randomize_weather"])
+        row_randomize_weather.connect("notify::active", partial(self.on_row_randomize_weather_notify_active, i))
         row.add_row(row_randomize_weather)
 
-        row_monster_houses = Adw.SwitchRow(
-            title=TITLE_RANDOMIZER_MONSTER_HOUSES, active=config["monster_houses"]
-        )
-        row_monster_houses.connect(
-            "notify::active", partial(self.on_row_monster_houses_notify_active, i)
-        )
+        row_monster_houses = Adw.SwitchRow(title=TITLE_RANDOMIZER_MONSTER_HOUSES, active=config["monster_houses"])
+        row_monster_houses.connect("notify::active", partial(self.on_row_monster_houses_notify_active, i))
         row.add_row(row_monster_houses)
 
-        row_enemy_iq = Adw.SwitchRow(
-            title=TITLE_RANDOMIZE_IQ, active=config["enemy_iq"]
-        )
-        row_enemy_iq.connect(
-            "notify::active", partial(self.on_row_enemy_iq_notify_active, i)
-        )
+        row_enemy_iq = Adw.SwitchRow(title=TITLE_RANDOMIZE_IQ, active=config["enemy_iq"])
+        row_enemy_iq.connect("notify::active", partial(self.on_row_enemy_iq_notify_active, i))
         row.add_row(row_enemy_iq)
 
         row_unlock = Adw.SwitchRow(title=TITLE_UNLOCK_AT_START, active=config["unlock"])
-        row_unlock.connect(
-            "notify::active", partial(self.on_row_unlock_notify_active, i)
-        )
+        row_unlock.connect("notify::active", partial(self.on_row_unlock_notify_active, i))
         row.add_row(row_unlock)
 
         self.rows__randomize[i] = row_randomize

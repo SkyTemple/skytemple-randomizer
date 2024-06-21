@@ -149,24 +149,18 @@ class MovesPoolPage(Adw.PreferencesPage):
             tooltip_text=_("Reset to Default"),
         )
         button_reset.connect("clicked", self.on_button_reset_clicked)
-        button_none = Gtk.Button(
-            icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None")
-        )
+        button_none = Gtk.Button(icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None"))
         button_none.connect("clicked", self.on_button_none_clicked)
         box.append(button_reset)
         box.append(button_none)
         return box
 
     def help_pool(self, *args) -> str:
-        return _(
-            "Only the moves selected will be used for any movesets or TM/HM randomization."
-        )
+        return _("Only the moves selected will be used for any movesets or TM/HM randomization.")
 
     def pool_filter(self, row: Adw.SwitchRow):
         if self.search_text == "":
             match = True
         else:
-            match = (
-                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
-            )
+            match = self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
         return match

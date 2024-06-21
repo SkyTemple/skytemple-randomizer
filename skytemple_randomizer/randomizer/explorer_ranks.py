@@ -44,9 +44,7 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
             return status.done()
 
         status.step(_("Randomizing rank data..."))
-        arm9 = bytearray(
-            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
-        )
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         ranks = HardcodedRankUpTable.get_rank_up_table(arm9, self.static_data)
 
         if rand_unlocks:

@@ -82,9 +82,7 @@ class DungeonsPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["mode"] = DungeonModeConfig(
-            self.row_dungeon_mode.get_selected()
-        )
+        self.randomization_settings["dungeons"]["mode"] = DungeonModeConfig(self.row_dungeon_mode.get_selected())
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True

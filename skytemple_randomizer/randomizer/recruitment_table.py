@@ -92,18 +92,14 @@ class RecruitmentTableRandomizer(AbstractRandomizer):
         )
 
         binary = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay11)
-        sp_list = HardcodedRecruitmentTables.get_monster_species_list(
-            binary, self.static_data
-        )
+        sp_list = HardcodedRecruitmentTables.get_monster_species_list(binary, self.static_data)
 
         for i, actor in enumerate(actor_list.list):
             if i in ACTOR_TO_RECRUIT_MAPPING:
                 for bi in ACTOR_TO_RECRUIT_MAPPING[i]:
                     sp_list[bi] = actor.entid
 
-        HardcodedRecruitmentTables.set_monster_species_list(
-            sp_list, binary, self.static_data
-        )
+        HardcodedRecruitmentTables.set_monster_species_list(sp_list, binary, self.static_data)
         set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay11, binary)
 
         status.done()

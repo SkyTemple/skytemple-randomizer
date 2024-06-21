@@ -36,9 +36,7 @@ from skytemple_randomizer.lists import DEFAULTABILITYPOOL
 from skytemple_randomizer.string_provider import StringProvider, StringType
 
 
-@LocalePatchedGtkTemplate(
-    filename=os.path.join(MAIN_PATH, "page_monsters_abilities.ui")
-)
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_monsters_abilities.ui"))
 class MonstersAbilitiesPage(Adw.PreferencesPage):
     __gtype_name__ = "StMonstersAbilitiesPage"
 
@@ -80,9 +78,7 @@ class MonstersAbilitiesPage(Adw.PreferencesPage):
             for ability in Ability:
                 name = _("Unused") + f" 0x{ability.value:0x}"
                 if ability.value < 124:
-                    name = string_provider.get_value(
-                        StringType.ABILITY_NAMES, ability.value
-                    )
+                    name = string_provider.get_value(StringType.ABILITY_NAMES, ability.value)
                 abilities[ability.value] = (
                     ability.value in self.pool(),
                     name,
@@ -150,9 +146,7 @@ class MonstersAbilitiesPage(Adw.PreferencesPage):
             tooltip_text=_("Reset to Default"),
         )
         button_reset.connect("clicked", self.on_button_reset_clicked)
-        button_none = Gtk.Button(
-            icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None")
-        )
+        button_none = Gtk.Button(icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None"))
         button_none.connect("clicked", self.on_button_none_clicked)
         box.append(button_reset)
         box.append(button_none)
@@ -162,9 +156,7 @@ class MonstersAbilitiesPage(Adw.PreferencesPage):
         if self.search_text == "":
             match = True
         else:
-            match = (
-                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
-            )
+            match = self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
         return match
 
     def get_enabled(self) -> bool:

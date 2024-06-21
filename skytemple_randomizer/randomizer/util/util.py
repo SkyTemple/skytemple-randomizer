@@ -496,9 +496,7 @@ def clear_strings_cache():
     _str_file_cache = {}
 
 
-def get_main_string_file(
-    rom: NintendoDSRom, static_data: Pmd2Data
-) -> tuple[Pmd2Language, Str]:
+def get_main_string_file(rom: NintendoDSRom, static_data: Pmd2Data) -> tuple[Pmd2Language, Str]:
     lang = None
     for mlang in static_data.string_index_data.languages:
         if mlang.locale == "en-US":
@@ -510,16 +508,12 @@ def get_main_string_file(
     return lang, get_lang_string_file(rom, static_data, lang)
 
 
-def get_all_string_files(
-    rom: NintendoDSRom, static_data: Pmd2Data
-) -> Iterable[tuple[Pmd2Language, Str]]:
+def get_all_string_files(rom: NintendoDSRom, static_data: Pmd2Data) -> Iterable[tuple[Pmd2Language, Str]]:
     for lang in static_data.string_index_data.languages:
         yield lang, get_lang_string_file(rom, static_data, lang)
 
 
-def get_lang_string_file(
-    rom: NintendoDSRom, static_data: Pmd2Data, lang: Pmd2Language
-) -> Str:
+def get_lang_string_file(rom: NintendoDSRom, static_data: Pmd2Data, lang: Pmd2Language) -> Str:
     if _str_file_cache.get(lang) is None:
         _str_file_cache[lang] = FileType.STR.deserialize(
             rom.getFileByName(f"MESSAGE/{lang.filename}"),
@@ -552,9 +546,7 @@ class MoveRoster(Enum):
     STAB = auto()
 
 
-def get_allowed_md_ids(
-    conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON
-) -> list[u16]:
+def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> list[u16]:
     from skytemple_randomizer.randomizer.special import fun
 
     num_entities = FileType.MD.properties().num_entities
@@ -570,9 +562,7 @@ def get_allowed_md_ids(
     return list(ents)
 
 
-def get_allowed_md_starter_ids(
-    conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS
-) -> list[u16]:
+def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS) -> list[u16]:
     from skytemple_randomizer.randomizer.special import fun
 
     num_entities = FileType.MD.properties().num_entities
@@ -615,13 +605,9 @@ def get_allowed_move_ids(
     return lst
 
 
-def get_pokemon_name(
-    rom: NintendoDSRom, static_data: Pmd2Data, md_id: int, lang: Pmd2Language
-):
+def get_pokemon_name(rom: NintendoDSRom, static_data: Pmd2Data, md_id: int, lang: Pmd2Language):
     lang_str = get_lang_string_file(rom, static_data, lang)
-    name_region_begin = static_data.string_index_data.string_blocks[
-        "Pokemon Names"
-    ].begin
+    name_region_begin = static_data.string_index_data.string_blocks["Pokemon Names"].begin
     return lang_str.strings[name_region_begin + (md_id % 600)]
 
 
@@ -633,9 +619,7 @@ def replace_strings(original: str, replacement_map: dict[str, str]):
     return string
 
 
-def replace_text_main(
-    string_file: Str, replace_map: dict[str, str], start_idx, end_idx
-):
+def replace_text_main(string_file: Str, replace_map: dict[str, str], start_idx, end_idx):
     new_strings = []
     for idx, string in enumerate(string_file.strings):
         if idx < start_idx or idx > end_idx:
@@ -659,13 +643,10 @@ def replace_text_script(
             if file_path in SKIP_JP_INVALID_SSB:
                 continue
             script = get_script(file_path, rom, static_data)
-            script.constants = [
-                replace_strings(string, replace_map) for string in script.constants
-            ]
+            script.constants = [replace_strings(string, replace_map) for string in script.constants]
             if len(script.strings) > 0:  # for jp this is empty.
                 script.strings[lang.name.lower()] = [
-                    replace_strings(string, replace_map)
-                    for string in script.strings[lang.name.lower()]
+                    replace_strings(string, replace_map) for string in script.strings[lang.name.lower()]
                 ]
 
 
@@ -685,9 +666,7 @@ def clear_script_cache_for(file_path):
 def get_script(file_path, rom, static_data):
     global _ssb_file_cache
     if file_path not in _ssb_file_cache:
-        _ssb_file_cache[file_path] = FileType.SSB.deserialize(
-            rom.getFileByName(file_path), static_data
-        )
+        _ssb_file_cache[file_path] = FileType.SSB.deserialize(rom.getFileByName(file_path), static_data)
     return _ssb_file_cache[file_path]
 
 

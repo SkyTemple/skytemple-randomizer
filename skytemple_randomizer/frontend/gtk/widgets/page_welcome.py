@@ -34,6 +34,4 @@ class WelcomePage(Adw.Bin):
     current_rom_name = cast(Gtk.Label, Gtk.Template.Child())
 
     def set_input_rom(self, path: str, static_data: Pmd2Data):
-        self.current_rom_name.set_text(
-            f"{os.path.basename(path)} ({static_data.game_edition})"
-        )
+        self.current_rom_name.set_text(f"{os.path.basename(path)} ({static_data.game_edition})")

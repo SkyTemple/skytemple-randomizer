@@ -105,14 +105,10 @@ class MonstersPoolPage(Adw.PreferencesPage):
 
         def finish_load():
             for baseid, (activated, name) in monster_bases.items():
-                row = Adw.SwitchRow(
-                    title=name, subtitle=f"#{baseid:03}", active=activated
-                )
+                row = Adw.SwitchRow(title=name, subtitle=f"#{baseid:03}", active=activated)
                 self.pool_list.append(row)
                 self.rows[baseid] = row
-                row.connect(
-                    "notify::active", partial(self.on_row_notify_active, baseid)
-                )
+                row.connect("notify::active", partial(self.on_row_notify_active, baseid))
             self.stack.set_visible_child(self.pool_list)
 
         self.pool_list.set_filter_func(self.pool_filter)
@@ -200,17 +196,13 @@ class MonstersPoolPage(Adw.PreferencesPage):
             tooltip_text=_("Reset to Default"),
         )
         button_reset.connect("clicked", self.on_button_reset_clicked)
-        button_none = Gtk.Button(
-            icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None")
-        )
+        button_none = Gtk.Button(icon_name="skytemple-edit-delete-symbolic", tooltip_text=_("Select None"))
         button_none.connect("clicked", self.on_button_none_clicked)
         if self.pool_type == MonstersPoolType.STARTERS:
             copy_text = _('Copy from "Allowed Pokémon"')
         else:
             copy_text = _("Copy from Starters")
-        button_copy = Gtk.Button(
-            icon_name="skytemple-import-symbolic", tooltip_text=copy_text
-        )
+        button_copy = Gtk.Button(icon_name="skytemple-import-symbolic", tooltip_text=copy_text)
         button_copy.connect("clicked", self.on_button_copy_clicked)
         box.append(button_reset)
         box.append(button_none)
@@ -229,9 +221,7 @@ class MonstersPoolPage(Adw.PreferencesPage):
         if self.search_text == "":
             match = True
         else:
-            match = (
-                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
-            )
+            match = self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
         return match
 
 

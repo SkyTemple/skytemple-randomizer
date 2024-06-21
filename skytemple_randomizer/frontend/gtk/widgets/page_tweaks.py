@@ -91,9 +91,7 @@ class TweaksPage(Adw.PreferencesPage):
                 getter=page_bt.get_enabled,
                 setter=page_bt.set_enabled,
                 end_button_factory=page_bt.create_window_end_buttons,
-                help_callback=_(
-                    "A lot of names from the default list are from fantasynamegenerators.com."
-                ),
+                help_callback=_("A lot of names from the default list are from fantasynamegenerators.com."),
                 content_width=512,
             )
 
@@ -117,38 +115,28 @@ class TweaksPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["item"]["global_items"] = (
-            self.row_randomize_global_items.get_active()
-        )
+        self.randomization_settings["item"]["global_items"] = self.row_randomize_global_items.get_active()
 
     @Gtk.Template.Callback()
     def on_row_download_sprites_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["improvements"]["download_portraits"] = (
-            self.row_download_sprites.get_active()
-        )
+        self.randomization_settings["improvements"]["download_portraits"] = self.row_download_sprites.get_active()
 
     @Gtk.Template.Callback()
     def on_row_blind_items_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["item"]["blind_items"]["enable"] = (
-            self.row_blind_items.get_active()
-        )
+        self.randomization_settings["item"]["blind_items"]["enable"] = self.row_blind_items.get_active()
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True
         self.randomization_settings = config
-        self.row_item_randomization_algorithm.set_selected(
-            config["item"]["algorithm"].value
-        )
+        self.row_item_randomization_algorithm.set_selected(config["item"]["algorithm"].value)
         self.row_randomize_global_items.set_active(config["item"]["global_items"])
-        self.row_download_sprites.set_active(
-            config["improvements"]["download_portraits"]
-        )
+        self.row_download_sprites.set_active(config["improvements"]["download_portraits"])
         self.row_blind_items.set_active(config["item"]["blind_items"]["enable"])
         self._suppress_signals = False
 

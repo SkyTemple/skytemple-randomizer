@@ -48,9 +48,7 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 patcher.apply("CompressIQData")
         ov10 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay10)
         ov29 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay29)
-        arm9 = bytearray(
-            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
-        )
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
 
         if self.config["iq"]["randomize_tactics"]:
             status.step(_("Randomizing tactics..."))
@@ -78,12 +76,8 @@ class IqTacticsRandomizer(AbstractRandomizer):
 
         if self.config["iq"]["randomize_iq_gain"]:
             status.step(_("Randomizing IQ gain..."))
-            iq_gains = HardcodedIq.get_gummi_iq_gains(
-                arm9, self.static_data, additional_types_patch_applied
-            )
-            belly_gains = HardcodedIq.get_gummi_belly_heal(
-                arm9, self.static_data, additional_types_patch_applied
-            )
+            iq_gains = HardcodedIq.get_gummi_iq_gains(arm9, self.static_data, additional_types_patch_applied)
+            belly_gains = HardcodedIq.get_gummi_belly_heal(arm9, self.static_data, additional_types_patch_applied)
 
             new_iq_gains = []
             for lst in iq_gains:
@@ -99,19 +93,11 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 for e in lst:
                     li.append(randrange(10, 40))
 
-            HardcodedIq.set_gummi_iq_gains(
-                new_iq_gains, arm9, self.static_data, additional_types_patch_applied
-            )
-            HardcodedIq.set_gummi_belly_heal(
-                new_belly_gains, arm9, self.static_data, additional_types_patch_applied
-            )
-            HardcodedIq.set_wonder_gummi_gain(
-                u8(randrange(5, 20)), arm9, self.static_data
-            )
+            HardcodedIq.set_gummi_iq_gains(new_iq_gains, arm9, self.static_data, additional_types_patch_applied)
+            HardcodedIq.set_gummi_belly_heal(new_belly_gains, arm9, self.static_data, additional_types_patch_applied)
+            HardcodedIq.set_wonder_gummi_gain(u8(randrange(5, 20)), arm9, self.static_data)
             HardcodedIq.set_nectar_gain(u8(randrange(5, 20)), ov29, self.static_data)
-            HardcodedIq.set_juice_bar_nectar_gain(
-                u8(randrange(5, 20)), arm9, self.static_data
-            )
+            HardcodedIq.set_juice_bar_nectar_gain(u8(randrange(5, 20)), arm9, self.static_data)
 
         if self.config["iq"]["randomize_iq_groups"]:
             status.step(_("Randomizing IQ groups..."))

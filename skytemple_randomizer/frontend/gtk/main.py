@@ -25,9 +25,7 @@ from skytemple_randomizer.frontend.gtk.init_locale import init_locale
 
 # Load SSL under Windows and macOS
 if getattr(sys, "frozen", False) and platform.system() in ["Windows", "Darwin"]:
-    ca_bundle_path = os.path.abspath(
-        os.path.join(data_dir(), "..", "certifi", "cacert.pem")
-    )
+    ca_bundle_path = os.path.abspath(os.path.join(data_dir(), "..", "certifi", "cacert.pem"))
     assert os.path.exists(ca_bundle_path)
     print("Certificates at: ", ca_bundle_path)
     os.environ["SSL_CERT_FILE"] = ca_bundle_path
@@ -40,9 +38,7 @@ if getattr(sys, "frozen", False) and platform.system() in ["Windows", "Darwin"]:
     else:
         # Make sure armips can be found.
         base_path = os.path.abspath(os.path.join(data_dir(), ".."))
-        os.environ["PATH"] = (
-            f"{base_path}/skytemple_files/_resources:{os.environ['PATH']}"
-        )
+        os.environ["PATH"] = f"{base_path}/skytemple_files/_resources:{os.environ['PATH']}"
 
 try:
     init_locale()
@@ -91,11 +87,7 @@ class MainApp(Adw.Application):
 
     def __init__(self):
         # Load Builder and Window
-        app_id = (
-            "org.skytemple.Randomizer.Devel"
-            if SKYTEMPLE_DEV
-            else "org.skytemple.Randomizer"
-        )
+        app_id = "org.skytemple.Randomizer.Devel" if SKYTEMPLE_DEV else "org.skytemple.Randomizer"
         super().__init__(application_id=app_id, flags=Gio.ApplicationFlags.HANDLES_OPEN)
         self.connect("open", self.on_open)
         GLib.set_application_name("SkyTemple Randomizer")
@@ -130,9 +122,7 @@ class MainApp(Adw.Application):
     def show_start_stack(self, disable_recent: bool = False):
         frontend = GtkFrontend.instance()
         frontend.window.stack_item_start.init_recent(disable_recent)
-        frontend.window.content_stack.set_visible_child(
-            frontend.window.stack_item_start
-        )
+        frontend.window.content_stack.set_visible_child(frontend.window.stack_item_start)
 
     def show_main_stack(
         self,
@@ -166,18 +156,10 @@ def main(argv: list[str] | None = None):
 
     # Load CSS
     style_provider = Gtk.CssProvider()
-    style_provider.load_from_path(
-        os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "skytemple_randomizer.css")
-        )
-    )
+    style_provider.load_from_path(os.path.abspath(os.path.join(os.path.dirname(__file__), "skytemple_randomizer.css")))
     if platform.system() == "Windows":
         style_provider.load_from_path(
-            os.path.abspath(
-                os.path.join(
-                    os.path.dirname(__file__), "skytemple_randomizer-windows.css"
-                )
-            )
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "skytemple_randomizer-windows.css"))
         )
     default_display = Gdk.Display.get_default()
     if default_display is not None:

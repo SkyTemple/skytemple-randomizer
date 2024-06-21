@@ -67,9 +67,7 @@ class TextPoolPage(Adw.PreferencesPage):
     pool: TextPool
     _suppress_signals: bool
 
-    def __init__(
-        self, *args, pool: TextPool, parent_page: RandomizationSettingsWidget, **kwargs
-    ):
+    def __init__(self, *args, pool: TextPool, parent_page: RandomizationSettingsWidget, **kwargs):
         super().__init__(*args, **kwargs)
         self.parent_page = parent_page
         self.pool = pool
@@ -108,13 +106,9 @@ class TextPoolPage(Adw.PreferencesPage):
         row_text.set_text(value)
         row_text.connect("changed", self.on_text_changed)
 
-        remove_button = Gtk.Button(
-            icon_name="skytemple-list-remove-symbolic", tooltip_text=_("Remove Text")
-        )
+        remove_button = Gtk.Button(icon_name="skytemple-list-remove-symbolic", tooltip_text=_("Remove Text"))
         remove_button.add_css_class("flat")
-        remove_button.connect(
-            "clicked", partial(self.on_button_remove_text_clicked, row_text)
-        )
+        remove_button.connect("clicked", partial(self.on_button_remove_text_clicked, row_text))
 
         row_text.add_suffix(remove_button)
         return row_text
@@ -152,14 +146,10 @@ class TextPoolPage(Adw.PreferencesPage):
         csv_filter = Gtk.FileFilter()
         csv_filter.add_suffix("csv")
         csv_filter.add_mime_type("text/csv")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir, default_filter=csv_filter
-            )
+            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=csv_filter)
 
         else:
             dialog_for_file = Gtk.FileDialog(default_filter=csv_filter)
@@ -199,9 +189,7 @@ class TextPoolPage(Adw.PreferencesPage):
         csv_filter = Gtk.FileFilter()
         csv_filter.add_suffix("csv")
         csv_filter.add_mime_type("text/csv")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
             dialog_for_file = Gtk.FileDialog(
@@ -210,9 +198,7 @@ class TextPoolPage(Adw.PreferencesPage):
                 initial_name=self.pool.csv_name(),
             )
         else:
-            dialog_for_file = Gtk.FileDialog(
-                default_filter=csv_filter, initial_name=self.pool.csv_name()
-            )
+            dialog_for_file = Gtk.FileDialog(default_filter=csv_filter, initial_name=self.pool.csv_name())
         dialog_for_file.save(frontend.window, None, self.on_export_file_saved)
 
     def on_export_file_saved(self, dialog, result):
@@ -272,13 +258,9 @@ class TextPoolPage(Adw.PreferencesPage):
         elif self.pool == TextPool.LOCATIONS_B:
             return self.randomization_settings["locations"]["second"].split("\n")
         elif self.pool == TextPool.BLIND_MOVE_NAMES:
-            return self.randomization_settings["pokemon"]["blind_moves"]["names"].split(
-                "\n"
-            )
+            return self.randomization_settings["pokemon"]["blind_moves"]["names"].split("\n")
         elif self.pool == TextPool.BLIND_ITEM_NAMES:
-            return self.randomization_settings["item"]["blind_items"]["names"].split(
-                "\n"
-            )
+            return self.randomization_settings["item"]["blind_items"]["names"].split("\n")
         else:
             raise KeyError(self.pool)
 
@@ -291,13 +273,9 @@ class TextPoolPage(Adw.PreferencesPage):
         elif self.pool == TextPool.LOCATIONS_B:
             self.randomization_settings["locations"]["second"] = "\n".join(pool)
         elif self.pool == TextPool.BLIND_MOVE_NAMES:
-            self.randomization_settings["pokemon"]["blind_moves"]["names"] = "\n".join(
-                pool
-            )
+            self.randomization_settings["pokemon"]["blind_moves"]["names"] = "\n".join(pool)
         elif self.pool == TextPool.BLIND_ITEM_NAMES:
-            self.randomization_settings["item"]["blind_items"]["names"] = "\n".join(
-                pool
-            )
+            self.randomization_settings["item"]["blind_items"]["names"] = "\n".join(pool)
         else:
             raise KeyError(self.pool)
 

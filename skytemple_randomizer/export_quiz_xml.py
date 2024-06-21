@@ -94,10 +94,4 @@ def import_personality_quiz_xml(file: BufferedReader) -> list[QuizQuestion]:
 
 
 def raise_missing_node():
-    raise XmlValidateError(
-        _(
-            "A question must contain two XML sub-nodes: {}, {}".format(
-                XML_TEXT, XML_ANSWERS
-            )
-        )
-    )
+    raise XmlValidateError(_("A question must contain two XML sub-nodes: {}, {}".format(XML_TEXT, XML_ANSWERS)))

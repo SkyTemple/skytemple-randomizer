@@ -51,9 +51,7 @@ class UpdateInfoBanner(Adw.Bin):
                 return
             new_version = check_newest_release(ReleaseType.SKYTEMPLE_RANDOMIZER)
             if packaging.version.parse(ver) < packaging.version.parse(new_version):
-                self.update_info.set_title(
-                    self.update_info.get_title().replace("{version}", new_version)
-                )
+                self.update_info.set_title(self.update_info.get_title().replace("{version}", new_version))
                 return
         except Exception:
             pass

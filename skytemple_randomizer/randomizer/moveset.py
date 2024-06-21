@@ -46,12 +46,8 @@ class MovesetRandomizer(AbstractRandomizer):
         return i
 
     def run(self, status: Status):
-        md: MdProtocol = FileType.MD.deserialize(
-            self.rom.getFileByName("BALANCE/monster.md")
-        )
-        waza_p: WazaPProtocol = FileType.WAZA_P.deserialize(
-            self.rom.getFileByName("BALANCE/waza_p.bin")
-        )
+        md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
+        waza_p: WazaPProtocol = FileType.WAZA_P.deserialize(self.rom.getFileByName("BALANCE/waza_p.bin"))
 
         if self.config["pokemon"]["movesets"] != MovesetConfig.NO:
             status.step(_("Randomizing Level-Up movesets..."))
@@ -60,20 +56,12 @@ class MovesetRandomizer(AbstractRandomizer):
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
 
             for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
-                waza_p_entry.egg_moves = [
-                    choice(valid_move_ids) for __ in waza_p_entry.egg_moves
-                ]
+                waza_p_entry.egg_moves = [choice(valid_move_ids) for __ in waza_p_entry.egg_moves]
 
                 for idx, e in enumerate(waza_p_entry.level_up_moves):
-                    if (
-                        idx > 0
-                        or self.config["pokemon"]["movesets"]
-                        == MovesetConfig.FULLY_RANDOM
-                    ):
+                    if idx > 0 or self.config["pokemon"]["movesets"] == MovesetConfig.FULLY_RANDOM:
                         e.move_id = choice(valid_move_ids)
-                    elif (
-                        self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_DAMAGE
-                    ):
+                    elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_DAMAGE:
                         assert_not_empty(damaging_move_ids)
                         e.move_id = choice(damaging_move_ids)
                     elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_STAB:
@@ -90,27 +78,17 @@ class MovesetRandomizer(AbstractRandomizer):
         allowed_move_ids = get_allowed_move_ids(self.config, MoveRoster.DEFAULT)
         if self.config["pokemon"]["tms_hms"]:
             status.step(_("Randomizing TMs/HMs..."))
-            item_p: ItemPProtocol = FileType.ITEM_P.deserialize(
-                self.rom.getFileByName("BALANCE/item_p.bin")
-            )
+            item_p: ItemPProtocol = FileType.ITEM_P.deserialize(self.rom.getFileByName("BALANCE/item_p.bin"))
             move_names = self.static_data.string_index_data.string_blocks["Move Names"]
             item_names = self.static_data.string_index_data.string_blocks["Item Names"]
-            long_descs = self.static_data.string_index_data.string_blocks[
-                "Item Long Descriptions"
-            ]
-            short_descs = self.static_data.string_index_data.string_blocks[
-                "Item Short Descriptions"
-            ]
-            str_files: list[tuple[Pmd2Language, Str]] = list(
-                get_all_string_files(self.rom, self.static_data)
-            )
+            long_descs = self.static_data.string_index_data.string_blocks["Item Long Descriptions"]
+            short_descs = self.static_data.string_index_data.string_blocks["Item Short Descriptions"]
+            str_files: list[tuple[Pmd2Language, Str]] = list(get_all_string_files(self.rom, self.static_data))
             for item in item_p.item_list:
                 if item.category == 5:
                     move_id = choice(allowed_move_ids)
                     item.move_id = move_id
-                    this_move_names = [
-                        t.strings[move_names.begin + move_id] for __, t in str_files
-                    ]
+                    this_move_names = [t.strings[move_names.begin + move_id] for __, t in str_files]
                     self._update_all_langs(
                         [f"[M:I0]{name}" for name in this_move_names],
                         str_files,
@@ -123,43 +101,30 @@ class MovesetRandomizer(AbstractRandomizer):
                     )
                     # TODO: Long description links.
                     self._update_all_langs(
-                        [
-                            f"Teaches the move [CS:M]{name}[CR].\n[C]\n[equip_list]"
-                            for name in this_move_names
-                        ],
+                        [f"Teaches the move [CS:M]{name}[CR].\n[C]\n[equip_list]" for name in this_move_names],
                         str_files,
                         long_descs.begin + item.item_id,
                     )
 
-            self.rom.setFileByName(
-                "BALANCE/item_p.bin", FileType.ITEM_P.serialize(item_p)
-            )
+            self.rom.setFileByName("BALANCE/item_p.bin", FileType.ITEM_P.serialize(item_p))
             for lang, string_file in str_files:
-                self.rom.setFileByName(
-                    f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
-                )
+                self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file))
 
         if self.config["pokemon"]["tm_hm_movesets"]:
             status.step(_("Randomizing TM/HM movesets..."))
-            item_p = FileType.ITEM_P.deserialize(
-                self.rom.getFileByName("BALANCE/item_p.bin")
-            )
+            item_p = FileType.ITEM_P.deserialize(self.rom.getFileByName("BALANCE/item_p.bin"))
             move_ids = []
             for item in item_p.item_list:
                 if item.category == 5:
                     move_ids.append(item.move_id)
 
             for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
-                waza_p_entry.tm_hm_moves = [
-                    choice(move_ids) for __ in waza_p_entry.tm_hm_moves
-                ]
+                waza_p_entry.tm_hm_moves = [choice(move_ids) for __ in waza_p_entry.tm_hm_moves]
 
         self.rom.setFileByName("BALANCE/waza_p.bin", FileType.WAZA_P.serialize(waza_p))
         status.done()
 
     @staticmethod
-    def _update_all_langs(
-        texts: list[str], str_files: list[tuple[Pmd2Language, Str]], index: int
-    ):
+    def _update_all_langs(texts: list[str], str_files: list[tuple[Pmd2Language, Str]], index: int):
         for text, (__, str_file) in zip(texts, str_files):
             str_file.strings[index] = text

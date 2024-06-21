@@ -53,10 +53,6 @@ class RomArgument(click.Argument):
             static_data = get_ppmdu_config_for_rom(rom)
             return LoadedRom(rom=rom, static_data=static_data)
         except struct.error:
-            Error(
-                "Failed to open ROM. Not a valid ROM file.", internal_error=False
-            ).print_and_exit()
+            Error("Failed to open ROM. Not a valid ROM file.", internal_error=False).print_and_exit()
         except Exception as e:
-            Error.from_current_exception(
-                "Failed to open ROM", internal_error=False
-            ).print_and_exit()
+            Error.from_current_exception("Failed to open ROM", internal_error=False).print_and_exit()

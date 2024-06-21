@@ -20,22 +20,16 @@ from skytemple_files.graphics.kao.protocol import KaoImageProtocol
 _INSTANCE: Optional[SpriteCollabClient] = None
 # A dict of credits for all portraits requested (and found) during the randomization
 # Key is full form name
-_COLLECTED_PORTRAITS: dict[
-    tuple[str, str], tuple[list[Credit], list[MonsterHistory]]
-] = {}
+_COLLECTED_PORTRAITS: dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]] = {}
 # A list of all sprites requested (and found) during the randomization
 # Key is full form name
-_COLLECTED_SPRITES: dict[
-    tuple[str, str], tuple[list[Credit], list[MonsterHistory]]
-] = {}
+_COLLECTED_SPRITES: dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]] = {}
 
 
 def sprite_collab() -> SpriteCollabClient:
     global _INSTANCE
     if _INSTANCE is None:
-        _INSTANCE = SpriteCollabClient(
-            cache_size=5_000, use_ssl=platform.system() != "Windows"
-        )
+        _INSTANCE = SpriteCollabClient(cache_size=5_000, use_ssl=platform.system() != "Windows")
     return _INSTANCE
 
 
@@ -68,9 +62,7 @@ async def get_details_and_portraits(
     if len(involved_forms) < 1:
         return None
     #   - Fetch details of all involved forms
-    details = await session.monster_form_details(
-        [x for x in valid_forms_to_try if x in involved_forms]
-    )
+    details = await session.monster_form_details([x for x in valid_forms_to_try if x in involved_forms])
     #   - update credits
     for detail in details:
         _COLLECTED_PORTRAITS[(detail.full_form_name, f"{detail.monster_id:04}")] = (
@@ -107,23 +99,20 @@ async def get_sprites(
             details = await session.monster_form_details([form_path])
             #   - update credits
             for detail in details:
-                _COLLECTED_SPRITES[
-                    (detail.full_form_name, f"{detail.monster_id:04}")
-                ] = (list(detail.sprite_credits), list(detail.sprite_history))
+                _COLLECTED_SPRITES[(detail.full_form_name, f"{detail.monster_id:04}")] = (
+                    list(detail.sprite_credits),
+                    list(detail.sprite_history),
+                )
             return form
     return None
 
 
-def portrait_credits() -> (
-    dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]]
-):
+def portrait_credits() -> dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]]:
     """Returns all portrait credits, sorted by key. Key is full form name, with monster name."""
     return dict(_COLLECTED_PORTRAITS)
 
 
-def sprite_credits() -> (
-    dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]]
-):
+def sprite_credits() -> dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]]:
     """Returns all sprite credits, sorted by key. Key is full form name, with monster name."""
     return dict(_COLLECTED_SPRITES)
 
@@ -132,9 +121,7 @@ async def _filter_valid_forms(
     session: SpriteCollabSession, forms_to_try: Sequence[tuple[int, str]]
 ) -> Sequence[tuple[int, str]]:
     """Returns all forms in forms_to_try for which a form exists at the server."""
-    all_forms = [
-        (x.monster_id, x.form_path) for x in await session.list_monster_forms(False)
-    ]
+    all_forms = [(x.monster_id, x.form_path) for x in await session.list_monster_forms(False)]
     valid_forms = []
 
     for monster_id, form_path in forms_to_try:

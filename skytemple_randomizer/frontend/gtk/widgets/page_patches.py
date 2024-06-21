@@ -66,21 +66,11 @@ class PatchesPage(Adw.PreferencesPage):
         self._suppress_signals = True
         self.randomization_settings = config
 
-        self.row_patch_moveshortcuts.set_active(
-            config["improvements"]["patch_moveshortcuts"]
-        )
-        self.row_patch_unuseddungeonchance.set_active(
-            config["improvements"]["patch_unuseddungeonchance"]
-        )
-        self.row_patch_totalteamcontrol.set_active(
-            config["improvements"]["patch_totalteamcontrol"]
-        )
-        self.row_patch_disarm_monster_houses.set_active(
-            config["improvements"]["patch_disarm_monster_houses"]
-        )
-        self.row_patch_fixmemorysoftlock.set_active(
-            config["improvements"]["patch_fixmemorysoftlock"]
-        )
+        self.row_patch_moveshortcuts.set_active(config["improvements"]["patch_moveshortcuts"])
+        self.row_patch_unuseddungeonchance.set_active(config["improvements"]["patch_unuseddungeonchance"])
+        self.row_patch_totalteamcontrol.set_active(config["improvements"]["patch_totalteamcontrol"])
+        self.row_patch_disarm_monster_houses.set_active(config["improvements"]["patch_disarm_monster_houses"])
+        self.row_patch_fixmemorysoftlock.set_active(config["improvements"]["patch_fixmemorysoftlock"])
 
         move_shortcut_patch = MoveShortcutsPatch()
         unused_dungeon_patch = UnusedDungeonChancePatch()
@@ -133,9 +123,7 @@ class PatchesPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["improvements"]["patch_moveshortcuts"] = (
-            self.row_patch_moveshortcuts.get_active()
-        )
+        self.randomization_settings["improvements"]["patch_moveshortcuts"] = self.row_patch_moveshortcuts.get_active()
 
     @Gtk.Template.Callback()
     def on_row_patch_unuseddungeonchance_notify_active(self, *args):

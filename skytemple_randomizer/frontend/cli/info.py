@@ -61,9 +61,7 @@ def ppmdu_config():
             if elem.tag == "External":
                 filepath = os.path.join(os.path.dirname(f), elem.attrib["filepath"])
                 this_file_root = (
-                    XmlCombiner([this_file_root, ElementTree.parse(filepath).getroot()])
-                    .combine()
-                    .getroot()
+                    XmlCombiner([this_file_root, ElementTree.parse(filepath).getroot()]).combine().getroot()
                 )
         roots.append(this_file_root)
     root = XmlCombiner(roots).combine().getroot()
@@ -83,9 +81,7 @@ def info_monsters(rom: LoadedRom):
     monster_bases = {}
     for entry in monster_md.entries:
         baseid = getattr(entry, b_attr)
-        monster_bases[baseid] = string_provider.get_value(
-            StringType.POKEMON_NAMES, baseid
-        )
+        monster_bases[baseid] = string_provider.get_value(StringType.POKEMON_NAMES, baseid)
 
     click.echo(json.dumps(monster_bases), nl=False)
 

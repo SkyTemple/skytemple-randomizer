@@ -51,15 +51,11 @@ class DungeonsChancesPage(Adw.PreferencesPage):
         self._suppress_signals = True
         self.randomization_settings = config
 
-        self.row_random_weather_chance.set_value(
-            config["dungeons"]["random_weather_chance"].value
-        )
+        self.row_random_weather_chance.set_value(config["dungeons"]["random_weather_chance"].value)
         self.row_max_mh_chance.set_value(config["dungeons"]["max_mh_chance"].value)
         self.row_max_hs_chance.set_value(config["dungeons"]["max_hs_chance"].value)
         self.row_max_ks_chance.set_value(config["dungeons"]["max_ks_chance"].value)
-        self.row_max_sticky_chance.set_value(
-            config["dungeons"]["max_sticky_chance"].value
-        )
+        self.row_max_sticky_chance.set_value(config["dungeons"]["max_sticky_chance"].value)
 
         self._suppress_signals = False
 
@@ -77,33 +73,25 @@ class DungeonsChancesPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["max_mh_chance"].value = int(
-            self.row_max_mh_chance.get_value()
-        )
+        self.randomization_settings["dungeons"]["max_mh_chance"].value = int(self.row_max_mh_chance.get_value())
 
     @Gtk.Template.Callback()
     def on_row_max_hs_chance_notify_value(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["max_hs_chance"].value = int(
-            self.row_max_hs_chance.get_value()
-        )
+        self.randomization_settings["dungeons"]["max_hs_chance"].value = int(self.row_max_hs_chance.get_value())
 
     @Gtk.Template.Callback()
     def on_row_max_ks_chance_notify_value(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["max_ks_chance"].value = int(
-            self.row_max_ks_chance.get_value()
-        )
+        self.randomization_settings["dungeons"]["max_ks_chance"].value = int(self.row_max_ks_chance.get_value())
 
     @Gtk.Template.Callback()
     def on_row_max_sticky_chance_notify_value(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["max_sticky_chance"].value = int(
-            self.row_max_sticky_chance.get_value()
-        )
+        self.randomization_settings["dungeons"]["max_sticky_chance"].value = int(self.row_max_sticky_chance.get_value())

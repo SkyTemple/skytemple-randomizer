@@ -60,18 +60,14 @@ class MusicPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"]["topmenu_music"] = (
-            self.row_topmenu_music.get_active()
-        )
+        self.randomization_settings["starters_npcs"]["topmenu_music"] = self.row_topmenu_music.get_active()
 
     @Gtk.Template.Callback()
     def on_row_overworld_music_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"]["overworld_music"] = (
-            self.row_overworld_music.get_active()
-        )
+        self.randomization_settings["starters_npcs"]["overworld_music"] = self.row_overworld_music.get_active()
 
     def help_text(self) -> str:
         return _(

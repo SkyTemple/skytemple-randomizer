@@ -48,12 +48,8 @@ class ExplorerRankPage(Adw.PreferencesPage):
         self._suppress_signals = True
         self.randomization_settings = config
 
-        self.row_explorer_rank_unlocks.set_active(
-            config["starters_npcs"]["explorer_rank_unlocks"]
-        )
-        self.row_explorer_rank_rewards.set_active(
-            config["starters_npcs"]["explorer_rank_rewards"]
-        )
+        self.row_explorer_rank_unlocks.set_active(config["starters_npcs"]["explorer_rank_unlocks"])
+        self.row_explorer_rank_rewards.set_active(config["starters_npcs"]["explorer_rank_rewards"])
 
         self._suppress_signals = False
 

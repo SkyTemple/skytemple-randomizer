@@ -85,14 +85,10 @@ class StartStack(Adw.Bin):
         nds_filter = Gtk.FileFilter()
         nds_filter.add_suffix("nds")
         nds_filter.add_mime_type("application/x-nintendo-ds-rom")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir, default_filter=nds_filter
-            )
+            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=nds_filter)
         else:
             dialog_for_file = Gtk.FileDialog(default_filter=nds_filter)
         dialog_for_file.open(frontend.window, None, self.on_file_loaded)
@@ -120,9 +116,7 @@ class StartStack(Adw.Bin):
             GtkFrontend.instance().display_error(
                 _("Failed to load ROM:")
                 + " "
-                + _(
-                    'Are you sure you provided a ROM? A ROM usually has the file extension ".nds".'
-                ),
+                + _('Are you sure you provided a ROM? A ROM usually has the file extension ".nds".'),
                 cast(Gtk.Window, self.get_root()),
             )
         except Exception as e:

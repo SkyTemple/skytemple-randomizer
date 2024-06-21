@@ -102,9 +102,7 @@ def check_done(randomizer: RandomizerThread) -> bool:
     if randomizer.error:
         from skytemple_randomizer.frontend.cli import Error
 
-        Error.from_exception(
-            *randomizer.error, prepend_msg="Randomizing failed"
-        ).print_and_exit(2)
+        Error.from_exception(*randomizer.error, prepend_msg="Randomizing failed").print_and_exit(2)
     else:
         click.echo(json.dumps(Done(done=True)))
     return True

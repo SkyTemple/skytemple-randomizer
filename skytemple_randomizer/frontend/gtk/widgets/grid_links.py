@@ -34,9 +34,7 @@ class LinksGrid(Gtk.Grid):
 
     @Gtk.Template.Callback()
     def on_button_wiki_clicked(self, *args):
-        webbrowser.open_new_tab(
-            "https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer"
-        )
+        webbrowser.open_new_tab("https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer")
 
     @Gtk.Template.Callback()
     def on_button_discord_clicked(self, *args):

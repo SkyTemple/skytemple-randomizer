@@ -48,15 +48,11 @@ class DungeonUnlocker(AbstractRandomizer):
         status.step(_("Unlocking dungeons..."))
 
         new_ops: list[SsbOperation] = []
-        coro_id = self.static_data.script_data.common_routine_info__by_name[
-            "EVENT_DIVIDE"
-        ].id
+        coro_id = self.static_data.script_data.common_routine_info__by_name["EVENT_DIVIDE"].id
         ops = self.static_data.script_data.op_codes__by_name
 
         # DECOMPILE
-        ssb: Ssb = get_script(
-            "SCRIPT/COMMON/unionall.ssb", self.rom, static_data=self.static_data
-        )
+        ssb: Ssb = get_script("SCRIPT/COMMON/unionall.ssb", self.rom, static_data=self.static_data)
         routine_ops = list(OpsLabelJumpToResolver(ssb.get_filled_routine_ops()))
 
         # CREATE NEW OPS
@@ -69,68 +65,31 @@ class DungeonUnlocker(AbstractRandomizer):
                         SkyTempleSsbOperation(
                             off(),
                             ops["debug_Print"][0],
-                            [
-                                SsbOpParamConstString(
-                                    "SkyTemple Randomizer: Dungeon Unlock..."
-                                )
-                            ],
+                            [SsbOpParamConstString("SkyTemple Randomizer: Dungeon Unlock...")],
                         )
                     )
                 label_closed = SsbLabel(9000 + dungeon_id, coro_id)
                 label_request = SsbLabel(9200 + dungeon_id, coro_id)
                 label_else = SsbLabel(9400 + dungeon_id, coro_id)
-                new_ops.append(
-                    SkyTempleSsbOperation(
-                        off(), ops["SwitchDungeonMode"][0], [dungeon_id]
-                    )
-                )
-                new_ops.append(
-                    SsbLabelJump(
-                        SkyTempleSsbOperation(off(), ops["Case"][0], [0]), label_closed
-                    )
-                )
-                new_ops.append(
-                    SsbLabelJump(
-                        SkyTempleSsbOperation(off(), ops["Case"][0], [2]), label_request
-                    )
-                )
-                new_ops.append(
-                    SsbLabelJump(
-                        SkyTempleSsbOperation(off(), ops["Jump"][0], []), label_else
-                    )
-                )
+                new_ops.append(SkyTempleSsbOperation(off(), ops["SwitchDungeonMode"][0], [dungeon_id]))
+                new_ops.append(SsbLabelJump(SkyTempleSsbOperation(off(), ops["Case"][0], [0]), label_closed))
+                new_ops.append(SsbLabelJump(SkyTempleSsbOperation(off(), ops["Case"][0], [2]), label_request))
+                new_ops.append(SsbLabelJump(SkyTempleSsbOperation(off(), ops["Jump"][0], []), label_else))
                 new_ops.append(label_closed)
-                new_ops.append(
-                    SkyTempleSsbOperation(
-                        off(), ops["flag_SetDungeonMode"][0], [dungeon_id, 1]
-                    )
-                )
-                new_ops.append(
-                    SsbLabelJump(
-                        SkyTempleSsbOperation(off(), ops["Jump"][0], []), label_else
-                    )
-                )
+                new_ops.append(SkyTempleSsbOperation(off(), ops["flag_SetDungeonMode"][0], [dungeon_id, 1]))
+                new_ops.append(SsbLabelJump(SkyTempleSsbOperation(off(), ops["Jump"][0], []), label_else))
                 new_ops.append(label_request)
-                new_ops.append(
-                    SkyTempleSsbOperation(
-                        off(), ops["flag_SetDungeonMode"][0], [dungeon_id, 3]
-                    )
-                )
+                new_ops.append(SkyTempleSsbOperation(off(), ops["flag_SetDungeonMode"][0], [dungeon_id, 3]))
                 new_ops.append(label_else)
 
         routine_ops[coro_id] = new_ops + routine_ops[coro_id]
         # COMPILE
         label_finalizer = LabelFinalizer(strip_last_label(routine_ops))
-        routine_ops = OpsLabelJumpToRemover(
-            routine_ops, label_finalizer.label_offsets
-        ).routines
+        routine_ops = OpsLabelJumpToRemover(routine_ops, label_finalizer.label_offsets).routines
         new_ssb, __ = ScriptCompiler(self.static_data).compile_structured(
             [b for a, b in ssb.routine_info],
             routine_ops,
-            [
-                x.name
-                for x in self.static_data.script_data.common_routine_info__by_id.values()
-            ],
+            [x.name for x in self.static_data.script_data.common_routine_info__by_id.values()],
             SourceMap.create_empty(),
         )
 

@@ -68,9 +68,7 @@ class MovesetsPage(Adw.PreferencesPage):
             return
         assert self.randomization_settings is not None
         if self.row_movesets.get_active():
-            self.randomization_settings["pokemon"]["movesets"] = (
-                self.current_restriction()
-            )
+            self.randomization_settings["pokemon"]["movesets"] = self.current_restriction()
         else:
             self.randomization_settings["pokemon"]["movesets"] = MovesetConfig.NO
 
@@ -86,9 +84,7 @@ class MovesetsPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"]["tm_hm_movesets"] = (
-            self.row_tm_hm_movesets.get_active()
-        )
+        self.randomization_settings["pokemon"]["tm_hm_movesets"] = self.row_tm_hm_movesets.get_active()
 
     def select_restriction(self, config: MovesetConfig):
         selected_idx = config.value - 1

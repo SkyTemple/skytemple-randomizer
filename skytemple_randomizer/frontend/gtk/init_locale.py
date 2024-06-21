@@ -57,9 +57,7 @@ def init_locale():
 
             try:
                 lang, enc = locale.getlocale()
-                print(
-                    f"WARNING: Failed processing current locale {lang}.{enc}. Falling back to {lang}"
-                )
+                print(f"WARNING: Failed processing current locale {lang}.{enc}. Falling back to {lang}")
                 # If this returns None for lang, then we bail!
                 if lang is not None:
                     os.environ["LANG"] = lang

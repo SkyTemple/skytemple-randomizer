@@ -113,9 +113,7 @@ class RandomizeDialog(Adw.Dialog):
                 self.force_close()
 
         d = Adw.AlertDialog(
-            body=_(
-                "This will stop the randomization process and allow you to change settings again."
-            ),
+            body=_("This will stop the randomization process and allow you to change settings again."),
             heading=_("Cancel randomization?"),
         )
         d.add_response("No", _("_No"))
@@ -135,9 +133,7 @@ class RandomizeDialog(Adw.Dialog):
         nds_filter = Gtk.FileFilter()
         nds_filter.add_suffix("nds")
         nds_filter.add_mime_type("application/x-nintendo-ds-rom")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
             dialog_for_file = Gtk.FileDialog(
@@ -146,9 +142,7 @@ class RandomizeDialog(Adw.Dialog):
                 initial_name="randomized_rom.nds",
             )
         else:
-            dialog_for_file = Gtk.FileDialog(
-                default_filter=nds_filter, initial_name="randomized_rom.nds"
-            )
+            dialog_for_file = Gtk.FileDialog(default_filter=nds_filter, initial_name="randomized_rom.nds")
         dialog_for_file.save(frontend.window, None, self.do_save)
 
     def do_save(self, dialog, result):
@@ -179,9 +173,7 @@ class RandomizeDialog(Adw.Dialog):
 
         # Configure and start randomizer
         status = Status()
-        status.subscribe(
-            lambda a, b: GLib.idle_add(partial(self.on_update_status, a, b))
-        )
+        status.subscribe(lambda a, b: GLib.idle_add(partial(self.on_update_status, a, b)))
         random.seed(self.seed)
         randomizer = RandomizerThread(
             status,
@@ -217,9 +209,7 @@ class RandomizeDialog(Adw.Dialog):
         thread_id = self._randomizer.get_thread_id()
         if thread_id is None:
             return
-        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(
-            ctypes.c_long(thread_id), ctypes.py_object(SystemExit)
-        )
+        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(ctypes.c_long(thread_id), ctypes.py_object(SystemExit))
         if res > 1:
             ctypes.pythonapi.PyThreadState_SetAsyncExc(ctypes.c_long(thread_id), 0)
             raise ValueError("Failed to stop thread")

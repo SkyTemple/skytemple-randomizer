@@ -123,9 +123,7 @@ class MonstersPage(Adw.PreferencesPage):
                 getter=page_bt.get_enabled,
                 setter=page_bt.set_enabled,
                 end_button_factory=page_bt.create_window_end_buttons,
-                help_callback=_(
-                    "A lot of names from the default list are from fantasynamegenerators.com."
-                ),
+                help_callback=_("A lot of names from the default list are from fantasynamegenerators.com."),
                 content_width=512,
             )
 
@@ -140,54 +138,42 @@ class MonstersPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"]["starters"] = (
-            self.row_randomize_starters.get_active()
-        )
+        self.randomization_settings["starters_npcs"]["starters"] = self.row_randomize_starters.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_npcs_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["starters_npcs"]["npcs"] = (
-            self.row_randomize_npcs.get_active()
-        )
+        self.randomization_settings["starters_npcs"]["npcs"] = self.row_randomize_npcs.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_abilities_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"]["abilities"] = (
-            self.row_randomize_abilities.get_active()
-        )
+        self.randomization_settings["pokemon"]["abilities"] = self.row_randomize_abilities.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_typings_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"]["typings"] = (
-            self.row_randomize_typings.get_active()
-        )
+        self.randomization_settings["pokemon"]["typings"] = self.row_randomize_typings.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_tms_hms_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"]["tms_hms"] = (
-            self.row_randomize_tms_hms.get_active()
-        )
+        self.randomization_settings["pokemon"]["tms_hms"] = self.row_randomize_tms_hms.get_active()
 
     @Gtk.Template.Callback()
     def on_row_blind_moves_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"]["blind_moves"]["enable"] = (
-            self.row_blind_moves.get_active()
-        )
+        self.randomization_settings["pokemon"]["blind_moves"]["enable"] = self.row_blind_moves.get_active()
 
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True

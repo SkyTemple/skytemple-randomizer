@@ -54,18 +54,14 @@ class SpecialPcRandomizer(AbstractRandomizer):
         return 0 + sp_poke_moves
 
     def run(self, status: Status):
-        arm9 = bytearray(
-            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
-        )
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         pcs = HardcodedDefaultStarters.get_special_episode_pcs(arm9, self.static_data)
 
         if self.config["starters_npcs"]["npcs"]:
             status.step(_("Updating special episode Pokémon..."))
 
             actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-                FileType.SIR0.deserialize(
-                    self.rom.getFileByName("BALANCE/actor_list.bin")
-                ),
+                FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),
                 ActorListBin,
             )
 
@@ -80,9 +76,7 @@ class SpecialPcRandomizer(AbstractRandomizer):
             valid_move_ids = get_allowed_move_ids(self.config)
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
 
-            md: MdProtocol = FileType.MD.deserialize(
-                self.rom.getFileByName("BALANCE/monster.md")
-            )
+            md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
             for pc in pcs:
                 pc.move2 = choice(valid_move_ids)
                 pc.move3 = choice(valid_move_ids)
@@ -96,11 +90,7 @@ class SpecialPcRandomizer(AbstractRandomizer):
                 elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[pc.poke_id]
                     pc.move1 = choice(
-                        assert_not_empty(
-                            get_allowed_move_ids(
-                                self.config, MoveRoster.STAB, md_entry.type_primary
-                            )
-                        )
+                        assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
                     )
 
         HardcodedDefaultStarters.set_special_episode_pcs(pcs, arm9, self.static_data)

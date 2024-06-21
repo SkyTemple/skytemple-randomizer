@@ -96,9 +96,7 @@ class StringProvider:
     def __init__(self, rom: NintendoDSRom, static_data: Pmd2Data):
         self.static_data = static_data
         self.model = FileType.STR.deserialize(
-            rom.getFileByName(
-                f"{MESSAGE_DIR}/{self._get_locale_from_app_locale().filename}"
-            ),
+            rom.getFileByName(f"{MESSAGE_DIR}/{self._get_locale_from_app_locale().filename}"),
             string_encoding=self.static_data.string_encoding,
         )
 

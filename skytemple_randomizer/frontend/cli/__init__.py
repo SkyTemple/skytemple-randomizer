@@ -49,13 +49,9 @@ def init(cli: click.Group):
         output_rom: str | None,
     ):
         if print_result is False and output_rom is None:
-            Error(
-                "Either OUTPUT_ROM or --print-result must be specified."
-            ).print_and_exit()
+            Error("Either OUTPUT_ROM or --print-result must be specified.").print_and_exit()
         elif print_result is True and output_rom is not None:
-            Error(
-                "If --print-result is set, no OUTPUT_ROM must be specified."
-            ).print_and_exit()
+            Error("If --print-result is set, no OUTPUT_ROM must be specified.").print_and_exit()
 
         try:
             rom = run_randomization(input_rom, config)
@@ -75,9 +71,7 @@ def init(cli: click.Group):
         # Currently the default config is the same for all regions.
         click.echo(
             json.dumps(
-                deep_typeddict_to_dict(
-                    ConfigFileLoader.load(os.path.join(data_dir(), "default.json"))
-                ),
+                deep_typeddict_to_dict(ConfigFileLoader.load(os.path.join(data_dir(), "default.json"))),
                 cls=EnumJsonEncoder,
             ),
             nl=False,

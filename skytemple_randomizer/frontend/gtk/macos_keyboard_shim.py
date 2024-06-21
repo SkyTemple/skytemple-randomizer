@@ -85,11 +85,5 @@ def init_macos_shortcuts():
 
     # Gtk.TextView
 
-    Gtk.TextView.add_shortcut(
-        new_shortcut_with_args("<Meta>a", "select-all", GLib.Variant.new_boolean(True))
-    )
-    Gtk.TextView.add_shortcut(
-        new_shortcut_with_args(
-            "<Meta><Shift>a", "select-all", GLib.Variant.new_boolean(False)
-        )
-    )
+    Gtk.TextView.add_shortcut(new_shortcut_with_args("<Meta>a", "select-all", GLib.Variant.new_boolean(True)))
+    Gtk.TextView.add_shortcut(new_shortcut_with_args("<Meta><Shift>a", "select-all", GLib.Variant.new_boolean(False)))

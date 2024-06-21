@@ -99,9 +99,7 @@ QUESTION_MAPPING = {
     63: [168, 169, 170],
     66: [173, 174],
 }
-FALLBACK_QUESTION = (
-    """[CS:B]Um... there weren't enough questions available during randomization.[CR]"""
-)
+FALLBACK_QUESTION = """[CS:B]Um... there weren't enough questions available during randomization.[CR]"""
 FALLBACK_ANSWER = "How embarrassing..."
 
 
@@ -126,12 +124,8 @@ class QuizRandomizer(AbstractRandomizer):
             return status.done()
         status.step(_("Randomizing Quiz..."))
 
-        question_block = self.static_data.string_index_data.string_blocks[
-            "Personality Quiz Questions"
-        ]
-        answer_block = self.static_data.string_index_data.string_blocks[
-            "Personality Quiz Answers"
-        ]
+        question_block = self.static_data.string_index_data.string_blocks["Personality Quiz Questions"]
+        answer_block = self.static_data.string_index_data.string_blocks["Personality Quiz Answers"]
 
         for lang, string_file in get_all_string_files(self.rom, self.static_data):
             two_answers_pool = []
@@ -173,9 +167,7 @@ class QuizRandomizer(AbstractRandomizer):
                         answer, self.static_data.string_encoding
                     )
 
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file))
 
         status.done()
 
@@ -207,9 +199,7 @@ class QuizRandomizer(AbstractRandomizer):
 if __name__ == "__main__":
     import json
 
-    with open(
-        "/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json"
-    ) as f_test:
+    with open("/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json") as f_test:
         data = json.load(f_test)
     for question in data["quiz"]["questions"]:
         for answer in question["answers"]:

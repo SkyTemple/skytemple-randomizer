@@ -51,51 +51,31 @@ class StarterRandomizer(AbstractRandomizer):
         if not self.config["starters_npcs"]["starters"]:
             return status.done()
         status.step(_("Randomizing Partner Starters..."))
-        md: MdProtocol = FileType.MD.deserialize(
-            self.rom.getFileByName("BALANCE/monster.md")
-        )
+        md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
         num_entities = FileType.MD.properties().num_entities
-        overlay13 = get_binary_from_rom(
-            self.rom, self.static_data.bin_sections.overlay13
-        )
-        pokemon_string_data = self.static_data.string_index_data.string_blocks[
-            "Pokemon Names"
-        ]
-        results_string_start = self.static_data.string_index_data.string_blocks[
-            "Personality Quiz Results"
-        ].begin
+        overlay13 = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay13)
+        pokemon_string_data = self.static_data.string_index_data.string_blocks["Pokemon Names"]
+        results_string_start = self.static_data.string_index_data.string_blocks["Personality Quiz Results"].begin
         langs = list(get_all_string_files(self.rom, self.static_data))
 
-        orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(
-            overlay13, self.static_data
-        )
+        orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
         new_partner_ids = [
             self._random_gender(
-                md.get_by_index(
-                    choice(
-                        get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS)
-                    )
-                ),
+                md.get_by_index(choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS))),
                 md,
             )
             for _ in range(0, len(orig_partner_ids))
         ]
-        HardcodedPersonalityTestStarters.set_partner_md_ids(
-            new_partner_ids, overlay13, self.static_data
-        )
+        HardcodedPersonalityTestStarters.set_partner_md_ids(new_partner_ids, overlay13, self.static_data)
 
         status.step(_("Randomizing Player Starters..."))
         # The player options are put into two-pairs for each nature, first male then female.
-        orig_player_ids = HardcodedPersonalityTestStarters.get_player_md_ids(
-            overlay13, self.static_data
-        )
+        orig_player_ids = HardcodedPersonalityTestStarters.get_player_md_ids(overlay13, self.static_data)
         new_player_ids = []
         new_id: u16
         k = 0  # Index of text for "Will be..."
         for i in range(0, len(orig_player_ids)):
-            new_id = choice(
-                get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS)
-            )
+            new_id = choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS))
             if k % 3 == 0:
                 k += 1
             # todo: refactor, this isn't really efficient.
@@ -107,18 +87,14 @@ class StarterRandomizer(AbstractRandomizer):
                             string_file,
                             orig_player_ids[i] % num_entities,
                             pokemon_string_data,
-                        ): self._get_name(
-                            string_file, new_id % num_entities, pokemon_string_data
-                        )
+                        ): self._get_name(string_file, new_id % num_entities, pokemon_string_data)
                     },
                 )
             if i % 2 == 1 and new_id + num_entities <= 1154:
                 new_id += u16(num_entities)  # type: ignore
             new_player_ids.append(new_id)
             k += 1
-        HardcodedPersonalityTestStarters.set_player_md_ids(
-            new_player_ids, overlay13, self.static_data
-        )
+        HardcodedPersonalityTestStarters.set_player_md_ids(new_player_ids, overlay13, self.static_data)
 
         status.step(_("Cloning missing starter portraits..."))
         kao = FileType.KAO.deserialize(self.rom.getFileByName("FONT/kaomado.kao"))
@@ -128,9 +104,7 @@ class StarterRandomizer(AbstractRandomizer):
 
         set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay13, overlay13)
         for lang, string_file in langs:
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file))
         self.rom.setFileByName("FONT/kaomado.kao", FileType.KAO.serialize(kao))
 
         status.done()

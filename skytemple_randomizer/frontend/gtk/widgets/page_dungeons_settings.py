@@ -60,12 +60,8 @@ class DungeonsSettingsPage(Adw.PreferencesPage):
         self.row_monsters.set_active(config["dungeons"]["pokemon"])
         self.row_traps.set_active(config["dungeons"]["traps"])
         self.row_fixed_rooms.set_active(config["dungeons"]["fixed_rooms"])
-        self.row_min_floor_change_percent.set_value(
-            config["dungeons"]["min_floor_change_percent"].value
-        )
-        self.row_max_floor_change_percent.set_value(
-            config["dungeons"]["max_floor_change_percent"].value
-        )
+        self.row_min_floor_change_percent.set_value(config["dungeons"]["min_floor_change_percent"].value)
+        self.row_max_floor_change_percent.set_value(config["dungeons"]["max_floor_change_percent"].value)
 
         self._suppress_signals = False
 
@@ -74,18 +70,14 @@ class DungeonsSettingsPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["layouts"] = (
-            self.row_layouts.get_active()
-        )
+        self.randomization_settings["dungeons"]["layouts"] = self.row_layouts.get_active()
 
     @Gtk.Template.Callback()
     def on_row_weather_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["weather"] = (
-            self.row_weather.get_active()
-        )
+        self.randomization_settings["dungeons"]["weather"] = self.row_weather.get_active()
 
     @Gtk.Template.Callback()
     def on_row_items_notify_active(self, *args):
@@ -99,9 +91,7 @@ class DungeonsSettingsPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["pokemon"] = (
-            self.row_monsters.get_active()
-        )
+        self.randomization_settings["dungeons"]["pokemon"] = self.row_monsters.get_active()
 
     @Gtk.Template.Callback()
     def on_row_traps_notify_active(self, *args):
@@ -115,9 +105,7 @@ class DungeonsSettingsPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["dungeons"]["fixed_rooms"] = (
-            self.row_fixed_rooms.get_active()
-        )
+        self.randomization_settings["dungeons"]["fixed_rooms"] = self.row_fixed_rooms.get_active()
 
     @Gtk.Template.Callback()
     def on_row_min_floor_change_percent_notify_value(self, *args):

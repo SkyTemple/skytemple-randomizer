@@ -79,14 +79,10 @@ class SettingsPage(Adw.Bin):
         json_filter = Gtk.FileFilter()
         json_filter.add_suffix("json")
         json_filter.add_mime_type("application/json")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir, default_filter=json_filter
-            )
+            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=json_filter)
         else:
             dialog_for_file = Gtk.FileDialog(default_filter=json_filter)
         dialog_for_file.open(frontend.window, None, self.on_file_loaded)
@@ -97,9 +93,7 @@ class SettingsPage(Adw.Bin):
         except Exception as e:
             if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
                 GtkFrontend.instance().display_error(
-                    _("Failed to load settings: Error while opening file ({}).").format(
-                        e
-                    ),
+                    _("Failed to load settings: Error while opening file ({}).").format(e),
                     cast(Gtk.Window, self.get_root()),
                 )
             return
@@ -110,9 +104,7 @@ class SettingsPage(Adw.Bin):
             frontend.randomization_settings = ConfigFileLoader.load(path)
         except Exception as e:
             frontend.display_error(
-                _("The config file you tried to import is invalid:\n{}:\n{}").format(
-                    e.__class__.__name__, e
-                ),
+                _("The config file you tried to import is invalid:\n{}:\n{}").format(e.__class__.__name__, e),
                 cast(Gtk.Window, self.get_root()),
             )
             return
@@ -130,9 +122,7 @@ class SettingsPage(Adw.Bin):
         json_filter = Gtk.FileFilter()
         json_filter.add_suffix("json")
         json_filter.add_mime_type("application/json")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
             dialog_for_file = Gtk.FileDialog(
@@ -141,9 +131,7 @@ class SettingsPage(Adw.Bin):
                 initial_name="settings.json",
             )
         else:
-            dialog_for_file = Gtk.FileDialog(
-                default_filter=json_filter, initial_name="settings.json"
-            )
+            dialog_for_file = Gtk.FileDialog(default_filter=json_filter, initial_name="settings.json")
         dialog_for_file.save(frontend.window, None, self.do_save)
 
     def do_save(self, dialog, result):
@@ -152,9 +140,7 @@ class SettingsPage(Adw.Bin):
         except Exception as e:
             if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
                 GtkFrontend.instance().display_error(
-                    _("Failed to save settings: Error while opening file ({}).").format(
-                        e
-                    ),
+                    _("Failed to save settings: Error while opening file ({}).").format(e),
                     cast(Gtk.Window, self.get_root()),
                 )
             return
@@ -190,8 +176,6 @@ class SettingsPage(Adw.Bin):
     def populate_settings(self, config: RandomizerConfig):
         self._suppress_signals = True
         self.row_seed.set_text(config["seed"])
-        self.row_native_file_handlers.set_active(
-            config["starters_npcs"]["native_file_handlers"]
-        )
+        self.row_native_file_handlers.set_active(config["starters_npcs"]["native_file_handlers"])
         self.randomization_settings = config
         self._suppress_signals = False

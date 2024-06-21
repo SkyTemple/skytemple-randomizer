@@ -280,9 +280,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
         shuffle(pool)
         allowed = self.config["dungeons"]["items_enabled"]
 
-        item_p: ItemPProtocol = FileType.ITEM_P.deserialize(
-            self.rom.getFileByName("BALANCE/item_p.bin")
-        )
+        item_p: ItemPProtocol = FileType.ITEM_P.deserialize(self.rom.getFileByName("BALANCE/item_p.bin"))
         strings = list(self.get_strings())
         for item in item_p.item_list:
             if item.item_id not in allowed:
@@ -293,12 +291,8 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
             item.buy_price = randrange(1, 3001)
             item.sell_price = item.buy_price // randrange(1, 20)
             self.modify_string(strings, StringType.ITEM_NAMES, item.item_id, pool.pop())
-            self.modify_string(
-                strings, StringType.ITEM_SHORT_DESCRIPTIONS, item.item_id, "???"
-            )
-            self.modify_string(
-                strings, StringType.ITEM_LONG_DESCRIPTIONS, item.item_id, "???"
-            )
+            self.modify_string(strings, StringType.ITEM_SHORT_DESCRIPTIONS, item.item_id, "???")
+            self.modify_string(strings, StringType.ITEM_LONG_DESCRIPTIONS, item.item_id, "???")
         self.rom.setFileByName("BALANCE/item_p.bin", FileType.ITEM_P.serialize(item_p))
         self.save_strings(strings)
 
@@ -308,18 +302,14 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
         shuffle(pool)
         allowed = self.config["pokemon"]["moves_enabled"]
 
-        waza_p: WazaPProtocol = FileType.WAZA_P.deserialize(
-            self.rom.getFileByName("BALANCE/waza_p.bin")
-        )
+        waza_p: WazaPProtocol = FileType.WAZA_P.deserialize(self.rom.getFileByName("BALANCE/waza_p.bin"))
         strings = list(self.get_strings())
         for move in waza_p.moves:
             if move.move_id not in allowed:
                 continue
             move.type = u8(randrange(1, 18))
             self.modify_string(strings, StringType.MOVE_NAMES, move.move_id, pool.pop())
-            self.modify_string(
-                strings, StringType.MOVE_DESCRIPTIONS, move.move_id, "???"
-            )
+            self.modify_string(strings, StringType.MOVE_DESCRIPTIONS, move.move_id, "???")
 
         self.rom.setFileByName("BALANCE/waza_p.bin", FileType.WAZA_P.serialize(waza_p))
         self.save_strings(strings)
@@ -329,9 +319,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
 
     def save_strings(self, strings: Iterable[tuple[Pmd2Language, Str]]):
         for lang, string_file in strings:
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file))
 
     def modify_string(
         self,

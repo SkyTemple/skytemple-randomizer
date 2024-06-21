@@ -126,15 +126,11 @@ on Crossroads."""  # noqa: W291
             string_file.strings[str_offset] = info_text
 
         for lang, string_file in langs:
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(string_file))
 
         status.step(_("Placing Info NPC..."))
         # Place NPC in scene
-        scene: Ssa = FileType.SSA.deserialize(
-            self.rom.getFileByName(f"SCRIPT/{MAP}/{SCENE}")
-        )
+        scene: Ssa = FileType.SSA.deserialize(self.rom.getFileByName(f"SCRIPT/{MAP}/{SCENE}"))
         layer = scene.layer_list[0]
         already_exists = any(a.script_id == TALK_SCRIPT for a in layer.actors)
         if not already_exists:
@@ -144,11 +140,7 @@ on Crossroads."""  # noqa: W291
                     actor_id=ACTOR_TO_USE,
                     pos=SsaPosition(
                         scriptdata=self.static_data.script_data,
-                        direction=u16(
-                            self.static_data.script_data.directions__by_name[
-                                "Down"
-                            ].ssa_id
-                        ),
+                        direction=u16(self.static_data.script_data.directions__by_name["Down"].ssa_id),
                         x_pos=NPC_X,
                         y_pos=NPC_Y,
                         x_offset=u16(0),
@@ -166,11 +158,7 @@ on Crossroads."""  # noqa: W291
                     actor_id=TWO_ACTOR_TO_USE,
                     pos=SsaPosition(
                         scriptdata=self.static_data.script_data,
-                        direction=u16(
-                            self.static_data.script_data.directions__by_name[
-                                "Down"
-                            ].ssa_id
-                        ),
+                        direction=u16(self.static_data.script_data.directions__by_name["Down"].ssa_id),
                         x_pos=TWO_NPC_X,
                         y_pos=TWO_NPC_Y,
                         x_offset=u16(0),
@@ -188,11 +176,7 @@ on Crossroads."""  # noqa: W291
                     actor_id=THREE_ACTOR_TO_USE,
                     pos=SsaPosition(
                         scriptdata=self.static_data.script_data,
-                        direction=u16(
-                            self.static_data.script_data.directions__by_name[
-                                "Down"
-                            ].ssa_id
-                        ),
+                        direction=u16(self.static_data.script_data.directions__by_name["Down"].ssa_id),
                         x_pos=THREE_NPC_X,
                         y_pos=THREE_NPC_Y,
                         x_offset=u16(0),
@@ -210,11 +194,7 @@ on Crossroads."""  # noqa: W291
                     actor_id=FOUR_ACTOR_TO_USE,
                     pos=SsaPosition(
                         scriptdata=self.static_data.script_data,
-                        direction=u16(
-                            self.static_data.script_data.directions__by_name[
-                                "Down"
-                            ].ssa_id
-                        ),
+                        direction=u16(self.static_data.script_data.directions__by_name["Down"].ssa_id),
                         x_pos=FOUR_NPC_X,
                         y_pos=FOUR_NPC_Y,
                         x_offset=u16(0),
@@ -588,9 +568,7 @@ macro patches() {{
 
     def _artist_credits(
         self,
-        credits: Mapping[
-            tuple[str, str], tuple[Sequence[Credit], Sequence[MonsterHistory]]
-        ],
+        credits: Mapping[tuple[str, str], tuple[Sequence[Credit], Sequence[MonsterHistory]]],
     ):
         if fun.is_fun_allowed():
             return fun.get_artist_credits(self.rom, self.static_data)
@@ -606,9 +584,7 @@ macro patches() {{
                     if len(others_short) != len(others):
                         main += " + more"
                     others_short_f = [parse_credit(x, False) for x in others_short]
-                    others = (
-                        f"More Authors: [CS:A]{', '.join(others_short_f) + main}[CR]"
-                    )
+                    others = f"More Authors: [CS:A]{', '.join(others_short_f) + main}[CR]"
                 out_credits += f"""
         case menu("{name}"):
             message_Talk("Main Author: [CS:A]{escape(parse_credit(credits_entry[0], True))}[CR]\\n{escape(others)}\\nsprites.pmdcollab.org/#/{escape(monster_id)}");
@@ -665,9 +641,7 @@ macro patches() {{
             if len(collected_licenses) > 0:
                 out_text += f'message_Talk("Licenses for others: {", ".join(collected_licenses)}");'
         else:
-            out_text = (
-                f'message_Talk("Licenses that apply: {", ".join(collected_licenses)}");'
-            )
+            out_text = f'message_Talk("Licenses that apply: {", ".join(collected_licenses)}");'
         return out_text
 
     def _patch_credits(self):

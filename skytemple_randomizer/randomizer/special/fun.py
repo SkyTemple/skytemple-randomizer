@@ -138,9 +138,7 @@ class FunPortrait(Enum):
         return obj
 
     # ignore the first param since it's already set by __new__
-    def __init__(
-        self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]
-    ):
+    def __init__(self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]):
         if isinstance(credit, dict):
             credit = credit[choice(list(credit.keys()))]
         self.file_name = str(self.value) + ".png"
@@ -216,9 +214,7 @@ def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
 
 def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
     for lang, strings in get_all_string_files(rom, static_data):
-        for string_block in _collect_text_categories(
-            static_data.string_index_data.string_blocks
-        ):
+        for string_block in _collect_text_categories(static_data.string_index_data.string_blocks):
             for i in range(9, string_block.end - string_block.begin):
                 if randrange(0, 500) == 0:
                     try:
@@ -244,10 +240,7 @@ def get_artist_credits(rom: NintendoDSRom, static_data: Pmd2Data):
     credits = ""
     lang, msg = get_main_string_file(rom, static_data)
     for entry in _get_fun_portraits():
-        name = msg.strings[
-            static_data.string_index_data.string_blocks["Pokemon Names"].begin
-            + entry.value
-        ]
+        name = msg.strings[static_data.string_index_data.string_blocks["Pokemon Names"].begin + entry.value]
         credits += f"""
         case menu("{name}"):
             message_Talk("Author: [CS:A]{escape(entry.credit.value)}[CR]\\n{escape(entry.credit.url)}");
@@ -279,8 +272,6 @@ def _collect_text_categories(string_cats):
     for cat in sorted(string_cats.values(), key=lambda c: c.begin):
         if cat.begin > current_index:
             # yield a placeholder category
-            yield Pmd2StringBlock(
-                f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin
-            )
+            yield Pmd2StringBlock(f"({current_index} - {cat.begin - 1})", "", current_index, cat.begin)
         yield cat
         current_index = cat.end

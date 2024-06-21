@@ -59,9 +59,7 @@ class GlobalItemsRandomizer(AbstractRandomizer):
         for i in range(0, ITEM_LIST_COUNT):
             self.rom.setFileByName(
                 f"TABLEDAT/list_{i:02}.bin",
-                ItemListHandler.serialize(
-                    randomize_items(self.config, self.static_data)
-                ),
+                ItemListHandler.serialize(randomize_items(self.config, self.static_data)),
             )
 
         status.done()

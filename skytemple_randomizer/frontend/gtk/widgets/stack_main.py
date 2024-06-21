@@ -78,9 +78,7 @@ class MainStack(Adw.Bin):
         self.rom = rom
         self.rom_static_data = rom_static_data
 
-        cast(WelcomePage, self.page_start.get_child()).set_input_rom(
-            self.input_rom_path, self.rom_static_data
-        )
+        cast(WelcomePage, self.page_start.get_child()).set_input_rom(self.input_rom_path, self.rom_static_data)
 
         frontend = GtkFrontend.instance()
         frontend.init_rom(self.rom, self.rom_static_data)
@@ -124,9 +122,7 @@ class MainStack(Adw.Bin):
         frontend = GtkFrontend.instance()
         dialog = BaseSettingsDialog(
             title=_("Settings"),
-            content=SettingsPage(
-                repopulate_randomization_settings=self.populate_settings
-            ),
+            content=SettingsPage(repopulate_randomization_settings=self.populate_settings),
             content_width=320,
         )
         dialog.populate_settings(GtkFrontend.instance().randomization_settings)
@@ -134,9 +130,7 @@ class MainStack(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_help_clicked(self, *args):
-        webbrowser.open_new_tab(
-            "https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer"
-        )
+        webbrowser.open_new_tab("https://wiki.skytemple.org/index.php/SkyTemple:UI-Link/skytemple-randomizer")
 
     @Gtk.Template.Callback()
     def on_button_load_rom_clicked(self, *args):
@@ -158,15 +152,13 @@ class MainStack(Adw.Bin):
 
     def populate_settings(self):
         frontend = GtkFrontend.instance()
-        cast(
-            RandomizationSettingsWidget, self.page_dungeons.get_child()
-        ).populate_settings(frontend.randomization_settings)
-        cast(
-            RandomizationSettingsWidget, self.page_monsters.get_child()
-        ).populate_settings(frontend.randomization_settings)
-        cast(RandomizationSettingsWidget, self.page_text.get_child()).populate_settings(
+        cast(RandomizationSettingsWidget, self.page_dungeons.get_child()).populate_settings(
             frontend.randomization_settings
         )
-        cast(
-            RandomizationSettingsWidget, self.page_tweaks.get_child()
-        ).populate_settings(frontend.randomization_settings)
+        cast(RandomizationSettingsWidget, self.page_monsters.get_child()).populate_settings(
+            frontend.randomization_settings
+        )
+        cast(RandomizationSettingsWidget, self.page_text.get_child()).populate_settings(frontend.randomization_settings)
+        cast(RandomizationSettingsWidget, self.page_tweaks.get_child()).populate_settings(
+            frontend.randomization_settings
+        )

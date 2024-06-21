@@ -219,9 +219,7 @@ class BossRandomizer(AbstractRandomizer):
         )
 
         binary = get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay29)
-        boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(
-            binary, self.static_data
-        )
+        boss_list = HardcodedFixedFloorTables.get_monster_spawn_list(binary, self.static_data)
 
         for i, actor in enumerate(actor_list.list):
             if i in ACTOR_TO_BOSS_MAPPING:
@@ -230,33 +228,25 @@ class BossRandomizer(AbstractRandomizer):
 
         status.step(_("Updating bazaar monsters..."))
         extra_ff_str_replace_regions = [
-            self.static_data.string_index_data.string_blocks.get(
-                "Kirlia Secret Bazaar Strings"
-            ),
-            self.static_data.string_index_data.string_blocks.get(
-                "Shedinja Shop Strings"
-            ),
+            self.static_data.string_index_data.string_blocks.get("Kirlia Secret Bazaar Strings"),
+            self.static_data.string_index_data.string_blocks.get("Shedinja Shop Strings"),
         ]
         extra_ff_replace_map = {}
         for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
             old_monster_id = boss_list[extra_id].md_idx
-            new_monster_id = u16(
-                choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS))
-            )
+            new_monster_id = u16(choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS)))
             boss_list[extra_id].md_idx = new_monster_id
             extra_ff_replace_map[old_monster_id] = new_monster_id
         # Also update strings for bazaar monsters
         for lang, lang_string_file in get_all_string_files(self.rom, self.static_data):
             extra_ff_replace_name_map = {
-                get_pokemon_name(
-                    self.rom, self.static_data, old_monster_id, lang
-                ): get_pokemon_name(self.rom, self.static_data, new_monster_id, lang)
+                get_pokemon_name(self.rom, self.static_data, old_monster_id, lang): get_pokemon_name(
+                    self.rom, self.static_data, new_monster_id, lang
+                )
                 for old_monster_id, new_monster_id in extra_ff_replace_map.items()
             }
             replace_regex = re.compile(
-                r"\[CS:(.)]([^\[]*)("
-                + "|".join(extra_ff_replace_name_map.keys())
-                + r")([^\[]*)\[CR]"
+                r"\[CS:(.)]([^\[]*)(" + "|".join(extra_ff_replace_name_map.keys()) + r")([^\[]*)\[CR]"
             )
             for region in [r for r in extra_ff_str_replace_regions if r is not None]:
                 for idx in range(region.begin, region.end):
@@ -266,13 +256,9 @@ class BossRandomizer(AbstractRandomizer):
                         ),
                         lang_string_file.strings[idx],
                     )
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(lang_string_file)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(lang_string_file))
 
-        HardcodedFixedFloorTables.set_monster_spawn_list(
-            binary, boss_list, self.static_data
-        )
+        HardcodedFixedFloorTables.set_monster_spawn_list(binary, boss_list, self.static_data)
         set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay29, binary)
 
         status.done()
@@ -282,9 +268,7 @@ class BossRandomizer(AbstractRandomizer):
 def create_mapping():
     from ndspy.rom import NintendoDSRom
 
-    rom = NintendoDSRom.fromFile(
-        "/home/marco/dev/skytemple/skytemple/skyworkcopy_us_unpatched.nds"
-    )
+    rom = NintendoDSRom.fromFile("/home/marco/dev/skytemple/skytemple/skyworkcopy_us_unpatched.nds")
     from skytemple_files.common.util import get_ppmdu_config_for_rom
 
     static_data = get_ppmdu_config_for_rom(rom)

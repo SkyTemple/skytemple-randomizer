@@ -38,9 +38,7 @@ from gi.repository import Gtk, Adw, GLib, Gio
 from skytemple_randomizer.frontend.gtk.widgets.base_dialog_settings import MAIN_PAGE_TAG
 
 
-@LocalePatchedGtkTemplate(
-    filename=os.path.join(MAIN_PATH, "page_personality_quiz_questions.ui")
-)
+@LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_personality_quiz_questions.ui"))
 class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
     __gtype_name__ = "StPersonalityQuizQuestionsPage"
     pool_list = cast(Gtk.ListBox, Gtk.Template.Child())
@@ -71,9 +69,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
     def reload(self):
         if self.randomization_settings is not None:
             self.pool_list.remove_all()
-            for i, question in enumerate(
-                self.randomization_settings["quiz"]["questions"]
-            ):
+            for i, question in enumerate(self.randomization_settings["quiz"]["questions"]):
                 row = self._make_row(question)
                 self.pool_list.append(row)
 
@@ -95,9 +91,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
         row.add_suffix(img)
         return row
 
-    def _make_settings_page(
-        self, i, question: QuizQuestion, question_row: Adw.ActionRow
-    ):
+    def _make_settings_page(self, i, question: QuizQuestion, question_row: Adw.ActionRow):
         page = Adw.NavigationPage(title=_("Edit Question"))
         toolbar_view = Adw.ToolbarView()
         header = Adw.HeaderBar()
@@ -112,30 +106,22 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
                 False,
             )
             if self.randomization_settings is not None:
-                self.randomization_settings["quiz"]["questions"][i]["question"] = (
-                    contents
-                )
+                self.randomization_settings["quiz"]["questions"][i]["question"] = contents
             question_row.set_title(contents)
 
         def on_question_state_flags_changed(e: Gtk.Widget, flags: Gtk.StateFlags):
             focused = not not (flags & Gtk.StateFlags.FOCUSED)
             if focused:
-                question_preference_row.add_css_class(
-                    "skytemple-randomizer--row-focused"
-                )
+                question_preference_row.add_css_class("skytemple-randomizer--row-focused")
             else:
-                question_preference_row.remove_css_class(
-                    "skytemple-randomizer--row-focused"
-                )
+                question_preference_row.remove_css_class("skytemple-randomizer--row-focused")
 
             # Sometimes this event is not called for TextView when focused is lost. This is an awful
             # hack, but we poll every 100ms to see if maybe the focus did move away:
             def did_move_away():
                 focused = not not (e.get_state_flags() & Gtk.StateFlags.FOCUSED)
                 if not focused:
-                    question_preference_row.remove_css_class(
-                        "skytemple-randomizer--row-focused"
-                    )
+                    question_preference_row.remove_css_class("skytemple-randomizer--row-focused")
                     return False
                 return True
 
@@ -152,9 +138,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
         label = Gtk.Label(label=_("Question"), halign=Gtk.Align.START)
         label.add_css_class("subtitle")
         question_element.append(label)
-        text = Gtk.TextView(
-            buffer=Gtk.TextBuffer(text=question["question"]), accepts_tab=False
-        )
+        text = Gtk.TextView(buffer=Gtk.TextBuffer(text=question["question"]), accepts_tab=False)
         text.add_css_class("skytemple-randomizer__text-view-as-row")
         text.get_buffer().connect("changed", on_question_text_changed)
         question_element.append(text)
@@ -174,9 +158,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
             force_adw_entry_row_no_title(row_answer)
             row_answer.set_text(answer)
             row_answer.connect("changed", partial(self._on_answer_changed, i))
-            remove_button = self._make_remove_answer_button(
-                i, answers_group, row_answer
-            )
+            remove_button = self._make_remove_answer_button(i, answers_group, row_answer)
             row_answer.add_suffix(remove_button)
             answers_group.add(row_answer)
 
@@ -214,9 +196,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
             self.navigation_view.push(settings_for_question)
         self.randomization_settings["quiz"]["questions"].append(question)
 
-    def _make_remove_question_button(
-        self, i: int, question_row: Adw.ActionRow
-    ) -> Gtk.Button:
+    def _make_remove_question_button(self, i: int, question_row: Adw.ActionRow) -> Gtk.Button:
         def on_clicked(*args):
             self.pool_list.remove(question_row)
             if self.navigation_view:
@@ -231,27 +211,19 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
         button.connect("clicked", on_clicked)
         return button
 
-    def _make_add_answer_button(
-        self, question_i: int, group_answers: Adw.PreferencesGroup
-    ) -> Gtk.Button:
+    def _make_add_answer_button(self, question_i: int, group_answers: Adw.PreferencesGroup) -> Gtk.Button:
         def on_clicked(*args):
             row_answer = Adw.EntryRow(title=_("Answer"))
             force_adw_entry_row_no_title(row_answer)
-            remove_button = self._make_remove_answer_button(
-                question_i, group_answers, row_answer
-            )
+            remove_button = self._make_remove_answer_button(question_i, group_answers, row_answer)
             row_answer.add_suffix(remove_button)
             row_answer.grab_focus()
             row_answer.connect("changed", partial(self._on_answer_changed, question_i))
             group_answers.add(row_answer)
             if self.randomization_settings is not None:
-                self.randomization_settings["quiz"]["questions"][question_i][
-                    "answers"
-                ].append("")
+                self.randomization_settings["quiz"]["questions"][question_i]["answers"].append("")
 
-        button = Gtk.Button(
-            icon_name="skytemple-list-add-symbolic", tooltip_text=_("Add Answer")
-        )
+        button = Gtk.Button(icon_name="skytemple-list-add-symbolic", tooltip_text=_("Add Answer"))
         button.add_css_class("flat")
         button.connect("clicked", on_clicked)
         return button
@@ -266,13 +238,9 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
             index = row_answer.get_index()
             group_answers.remove(row_answer)
             if self.randomization_settings is not None:
-                del self.randomization_settings["quiz"]["questions"][question_i][
-                    "answers"
-                ][index]
+                del self.randomization_settings["quiz"]["questions"][question_i]["answers"][index]
 
-        button = Gtk.Button(
-            icon_name="skytemple-list-remove-symbolic", tooltip_text=_("Remove Answer")
-        )
+        button = Gtk.Button(icon_name="skytemple-list-remove-symbolic", tooltip_text=_("Remove Answer"))
         button.add_css_class("flat")
         button.connect("clicked", on_clicked)
         return button
@@ -280,23 +248,17 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
     def _on_answer_changed(self, question_i: int, row: Adw.EntryRow):
         answer_index = row.get_index()
         if self.randomization_settings is not None:
-            self.randomization_settings["quiz"]["questions"][question_i]["answers"][
-                answer_index
-            ] = row.get_text()
+            self.randomization_settings["quiz"]["questions"][question_i]["answers"][answer_index] = row.get_text()
 
     def on_button_import_clicked(self, *args):
         frontend = GtkFrontend.instance()
         csv_filter = Gtk.FileFilter()
         csv_filter.add_suffix("xml")
         csv_filter.add_mime_type("text/xml")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir, default_filter=csv_filter
-            )
+            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=csv_filter)
 
         else:
             dialog_for_file = Gtk.FileDialog(default_filter=csv_filter)
@@ -321,9 +283,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
             with open_utf8(path) as xml_file:
                 if self.navigation_view:
                     self.navigation_view.pop_to_tag(MAIN_PAGE_TAG)
-                self.randomization_settings["quiz"]["questions"] = (
-                    import_personality_quiz_xml(xml_file)
-                )
+                self.randomization_settings["quiz"]["questions"] = import_personality_quiz_xml(xml_file)
                 self.reload()
         except Exception as e:
             GtkFrontend.instance().display_error(
@@ -338,9 +298,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
         csv_filter = Gtk.FileFilter()
         csv_filter.add_suffix("xml")
         csv_filter.add_mime_type("text/xml")
-        documents_dir = GLib.get_user_special_dir(
-            GLib.UserDirectory.DIRECTORY_DOCUMENTS
-        )
+        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
         if documents_dir is not None:
             default_dir = Gio.File.new_for_path(documents_dir)
             dialog_for_file = Gtk.FileDialog(
@@ -349,9 +307,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
                 initial_name="personality_quiz_questions.xml",
             )
         else:
-            dialog_for_file = Gtk.FileDialog(
-                default_filter=csv_filter, initial_name="personality_quiz_questions.xml"
-            )
+            dialog_for_file = Gtk.FileDialog(default_filter=csv_filter, initial_name="personality_quiz_questions.xml")
         dialog_for_file.save(frontend.window, None, self.on_export_file_saved)
 
     def on_export_file_saved(self, dialog, result):
@@ -372,9 +328,7 @@ class PersonalityQuizQuestionsPage(Adw.PreferencesPage):
 
         try:
             with open_utf8(path, "w", newline="") as xml_file:
-                export_personality_quiz_xml(
-                    self.randomization_settings["quiz"]["questions"], xml_file
-                )
+                export_personality_quiz_xml(self.randomization_settings["quiz"]["questions"], xml_file)
         except Exception as e:
             GtkFrontend.instance().display_error(
                 _("Failed to export. Details: {}").format(e),

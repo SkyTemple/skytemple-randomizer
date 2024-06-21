@@ -33,12 +33,8 @@ class Error:
     error_type: str | None = None
 
     @classmethod
-    def from_current_exception(
-        cls, prepend_msg: str = "", internal_error=True
-    ) -> Error:
-        return cls.from_exception(
-            *sys.exc_info(), prepend_msg=prepend_msg, internal_error=internal_error
-        )
+    def from_current_exception(cls, prepend_msg: str = "", internal_error=True) -> Error:
+        return cls.from_exception(*sys.exc_info(), prepend_msg=prepend_msg, internal_error=internal_error)
 
     @classmethod
     def from_exception(

@@ -243,11 +243,7 @@ class ConfigFileLoader:
 
     @classmethod
     def _handle(cls, target, typ: type):
-        if (
-            hasattr(typ, "__bases__")
-            and dict in typ.__bases__
-            and len(typ.__annotations__) > 0
-        ):
+        if hasattr(typ, "__bases__") and dict in typ.__bases__ and len(typ.__annotations__) > 0:
             if not isinstance(target, dict):
                 raise ValueError(f"Value in JSON must be an object for {typ}.")
             kwargs = {}
@@ -1145,9 +1141,7 @@ class ConfigFileLoader:
                     elif field == "npcs_use_smart_replace":
                         target[field] = False
                     else:
-                        raise KeyError(
-                            f"Configuration '{field_type}' missing for {typ} ({field}))."
-                        )
+                        raise KeyError(f"Configuration '{field_type}' missing for {typ} ({field})).")
                 kwargs[field] = cls._handle(target[field], field_type)
             v = typ(**kwargs)
             v[CLASSREF] = typ
@@ -1163,27 +1157,19 @@ class ConfigFileLoader:
             return typ(target)
         elif typ == bool:
             if not isinstance(target, bool):
-                raise ValueError(
-                    f"Expected a boolean for a field, but got {target.__class__.__name__}"
-                )
+                raise ValueError(f"Expected a boolean for a field, but got {target.__class__.__name__}")
             return target
         elif is_int(typ):
             if not isinstance(target, int):
-                raise ValueError(
-                    f"Expected an integer for a field, but got {target.__class__.__name__}"
-                )
+                raise ValueError(f"Expected an integer for a field, but got {target.__class__.__name__}")
             return target
         elif typ == IntRange:
             if not isinstance(target, int):
-                raise ValueError(
-                    f"Expected an IntRange for a field, but got {target.__class__.__name__}"
-                )
+                raise ValueError(f"Expected an IntRange for a field, but got {target.__class__.__name__}")
             return typ(target)
         elif typ == str:
             if not isinstance(target, str):
-                raise ValueError(
-                    f"Expected a string for a field, but got {target.__class__.__name__}"
-                )
+                raise ValueError(f"Expected a string for a field, but got {target.__class__.__name__}")
             return target
         elif typ == dict[int, DungeonSettingsConfig]:
             if not isinstance(target, dict):
@@ -1200,9 +1186,7 @@ class ConfigFileLoader:
                 d[int(idx)] = conf
             return d
         elif typ.__name__.lower() == "list" and is_int(typ.__args__[0]):  # type: ignore
-            if not isinstance(target, list) or not all(
-                isinstance(x, int) for x in target
-            ):
+            if not isinstance(target, list) or not all(isinstance(x, int) for x in target):
                 raise ValueError(f"Value in JSON must be a list of integers for {typ}.")
             return target
         elif typ == list[QuizQuestion]:

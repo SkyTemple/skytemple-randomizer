@@ -60,18 +60,14 @@ class GuestRandomizer(AbstractRandomizer):
         patcher = Patcher(self.rom, self.static_data)
         if not patcher.is_applied("EditExtraPokemon"):
             patcher.apply("EditExtraPokemon")
-        arm9 = bytearray(
-            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
-        )
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         guests = GuestPokemonList.read(arm9, self.static_data)
 
         if self.config["starters_npcs"]["npcs"]:
             status.step(_("Updating guest Pokémon..."))
 
             actor_list: ActorListBin = FileType.SIR0.unwrap_obj(
-                FileType.SIR0.deserialize(
-                    self.rom.getFileByName("BALANCE/actor_list.bin")
-                ),
+                FileType.SIR0.deserialize(self.rom.getFileByName("BALANCE/actor_list.bin")),
                 ActorListBin,
             )
 
@@ -86,9 +82,7 @@ class GuestRandomizer(AbstractRandomizer):
             valid_move_ids = get_allowed_move_ids(self.config)
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
 
-            md: MdProtocol = FileType.MD.deserialize(
-                self.rom.getFileByName("BALANCE/monster.md")
-            )
+            md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
             for guest in guests:
                 if self.config["pokemon"]["movesets"] == MovesetConfig.FULLY_RANDOM:
                     guest.moves = [
@@ -108,11 +102,7 @@ class GuestRandomizer(AbstractRandomizer):
                 elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[guest.poke_id]
                     first = choice(
-                        assert_not_empty(
-                            get_allowed_move_ids(
-                                self.config, MoveRoster.STAB, md_entry.type_primary
-                            )
-                        )
+                        assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
                     )
                     guest.moves = [
                         first,

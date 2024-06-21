@@ -56,9 +56,7 @@ class TacticsIqPage(Adw.PreferencesPage):
         self.row_randomize_iq_gain.set_active(config["iq"]["randomize_iq_gain"])
         self.row_randomize_iq_skills.set_active(config["iq"]["randomize_iq_skills"])
         self.row_keep_universal_skills.set_active(config["iq"]["keep_universal_skills"])
-        self.row_randomize_iq_skill_groups.set_active(
-            config["iq"]["randomize_iq_groups"]
-        )
+        self.row_randomize_iq_skill_groups.set_active(config["iq"]["randomize_iq_groups"])
         self.row_randomize_tactics.set_active(config["iq"]["randomize_tactics"])
 
         self._suppress_signals = False
@@ -68,51 +66,39 @@ class TacticsIqPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["pokemon"]["iq_groups"] = (
-            self.row_randomize_iq_groups.get_active()
-        )
+        self.randomization_settings["pokemon"]["iq_groups"] = self.row_randomize_iq_groups.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_iq_gain_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["iq"]["randomize_iq_gain"] = (
-            self.row_randomize_iq_gain.get_active()
-        )
+        self.randomization_settings["iq"]["randomize_iq_gain"] = self.row_randomize_iq_gain.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_iq_skills_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["iq"]["randomize_iq_skills"] = (
-            self.row_randomize_iq_skills.get_active()
-        )
+        self.randomization_settings["iq"]["randomize_iq_skills"] = self.row_randomize_iq_skills.get_active()
 
     @Gtk.Template.Callback()
     def on_row_keep_universal_skills_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["iq"]["keep_universal_skills"] = (
-            self.row_keep_universal_skills.get_active()
-        )
+        self.randomization_settings["iq"]["keep_universal_skills"] = self.row_keep_universal_skills.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_iq_skill_groups_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["iq"]["randomize_iq_groups"] = (
-            self.row_randomize_iq_skill_groups.get_active()
-        )
+        self.randomization_settings["iq"]["randomize_iq_groups"] = self.row_randomize_iq_skill_groups.get_active()
 
     @Gtk.Template.Callback()
     def on_row_randomize_tactics_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["iq"]["randomize_tactics"] = (
-            self.row_randomize_tactics.get_active()
-        )
+        self.randomization_settings["iq"]["randomize_tactics"] = self.row_randomize_tactics.get_active()

@@ -73,9 +73,7 @@ Especially thank you DasK, Audino, Keldaan and MaxSchersey!"""
             "Aviivix (UI Icons) https://twitter.com/aviivix",
             "Edael (Duskako Sprites) https://twitter.com/Exodus_Drake",
         ],
-        comments=_(
-            "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
-        ),
+        comments=_("Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."),
         developers=CREDITS.splitlines(),
         issue_url="https://github.com/SkyTemple/skytemple-randomizer",
         license_type=Gtk.License.GPL_3_0,

@@ -147,7 +147,5 @@ class ItemsPage(Adw.PreferencesPage):
         if self.search_text == "":
             match = True
         else:
-            match = (
-                self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
-            )
+            match = self.search_text in f"{row.get_title()} {row.get_subtitle()}".lower()
         return match

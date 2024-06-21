@@ -67,9 +67,7 @@ class MonsterRandomizer(AbstractRandomizer):
         if not self._has_something_to_randomize():
             return status.done()
         status.step(_("Randomizing Pokémon data..."))
-        md: MdProtocol = FileType.MD.deserialize(
-            self.rom.getFileByName("BALANCE/monster.md")
-        )
+        md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
         num_entities = FileType.MD.properties().num_entities
         for midx in range(0, num_entities):
             if len(md.entries) <= midx + num_entities:
@@ -92,9 +90,7 @@ class MonsterRandomizer(AbstractRandomizer):
                 secn_entry.type_secondary = type2.value
 
             if self.config["pokemon"]["abilities"]:
-                ability_ids = self.config["pokemon"]["abilities_enabled"] + [
-                    Ability.NONE.value
-                ]
+                ability_ids = self.config["pokemon"]["abilities_enabled"] + [Ability.NONE.value]
                 if len(ability_ids) > 0:
                     ability1 = Ability(choice(ability_ids))
                     ability2 = Ability(choice(ability_ids))

@@ -68,15 +68,11 @@ class ChapterRandomizer(AbstractRandomizer):
                         chapter_name = random_txt_line(self.config["chapters"]["text"])
                         string_index = op.params[5] - len(ssb.constants)
                         if len(ssb.strings) > 0:  # for jp this is empty.
-                            for lang, __ in get_all_string_files(
-                                self.rom, self.static_data
-                            ):
+                            for lang, __ in get_all_string_files(self.rom, self.static_data):
                                 ssb.strings[lang.name.lower()][string_index] = strlossy(
                                     chapter_name, self.static_data.string_encoding
                                 )
                         else:  # jp
-                            ssb.constants[op.params[5]] = strlossy(
-                                chapter_name, self.static_data.string_encoding
-                            )
+                            ssb.constants[op.params[5]] = strlossy(chapter_name, self.static_data.string_encoding)
 
         status.done()

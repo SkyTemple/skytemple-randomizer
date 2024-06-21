@@ -45,9 +45,7 @@ class SkyTempleRandomizerSettingsStoreGtk:
                 with open_utf8(self.config_file, "r") as f:
                     self.loaded_config.read_file(f)
             except BaseException as err:
-                logger.error(
-                    "Error reading config, falling back to default.", exc_info=err
-                )
+                logger.error("Error reading config, falling back to default.", exc_info=err)
 
     def get_window_size(self) -> Optional[tuple[int, int]]:
         if SECT_WINDOW in self.loaded_config:

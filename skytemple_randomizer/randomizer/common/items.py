@@ -34,9 +34,7 @@ MIN_ITEMS_PER_CAT = 4
 MAX_ITEMS_PER_CAT = 18
 
 
-def randomize_items(
-    config: RandomizerConfig, static_data: Pmd2Data
-) -> MappaItemListProtocol:
+def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     if config["item"]["algorithm"] == ItemAlgorithm.BALANCED:
         return balanced_item_randomizer(config, static_data)
     if config["item"]["algorithm"] == ItemAlgorithm.CLASSIC:
@@ -45,9 +43,7 @@ def randomize_items(
     raise NotImplementedError("Unknown item algorithm.")
 
 
-def classic_item_randomizer(
-    config: RandomizerConfig, static_data: Pmd2Data
-) -> MappaItemListProtocol:
+def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     categories = {}
     items = OrderedDict()
     cats_as_list = list(CLASSIC_ALLOWED_ITEM_CATS)
@@ -68,9 +64,7 @@ def classic_item_randomizer(
 
         cat_item_ids: list[int] = []
         if cat.number_of_items is not None:
-            allowed_cat_item_ids = [
-                x for x in cat.item_ids() if x in get_allowed_item_ids(config)
-            ]
+            allowed_cat_item_ids = [x for x in cat.item_ids() if x in get_allowed_item_ids(config)]
             upper_limit = min(MAX_ITEMS_PER_CAT, len(allowed_cat_item_ids))
             if upper_limit <= MIN_ITEMS_PER_CAT:
                 n_items = MIN_ITEMS_PER_CAT
@@ -78,9 +72,7 @@ def classic_item_randomizer(
                 n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
             cat_item_ids = []
             if len(allowed_cat_item_ids) > 0:
-                cat_item_ids = sorted(
-                    {choice(allowed_cat_item_ids) for _ in range(0, n_items)}
-                )
+                cat_item_ids = sorted({choice(allowed_cat_item_ids) for _ in range(0, n_items)})
                 cat_weights = sorted(random_weights(len(cat_item_ids)))
 
                 for item_id, weight in zip(cat_item_ids, cat_weights):
@@ -88,14 +80,10 @@ def classic_item_randomizer(
         if len(cat_item_ids) == 0:
             categories[cat.id] = 0
 
-    return FileType.MAPPA_BIN.get_item_list_model()(
-        categories, dict(sorted(items.items(), key=lambda i: i[0]))
-    )
+    return FileType.MAPPA_BIN.get_item_list_model()(categories, dict(sorted(items.items(), key=lambda i: i[0])))
 
 
-def balanced_item_randomizer(
-    config: RandomizerConfig, static_data: Pmd2Data
-) -> MappaItemListProtocol:
+def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     categories = OrderedDict()
     items = OrderedDict()
 
@@ -110,9 +98,7 @@ def balanced_item_randomizer(
     all_allowed_item_ids = []
     for cat_id in cats_as_list:
         cat = static_data.dungeon_data.item_categories[cat_id]
-        items_in_cats[cat_id] = [
-            x for x in cat.item_ids() if x in get_allowed_item_ids(config)
-        ]
+        items_in_cats[cat_id] = [x for x in cat.item_ids() if x in get_allowed_item_ids(config)]
         all_allowed_item_ids.extend(items_in_cats[cat_id])
 
     # We roll random items and then check their category.
@@ -148,14 +134,11 @@ def balanced_item_randomizer(
         )
     weights_before = 0
     total_items_weighted = sum(
-        item_count_weighted
-        for item_count_weighted in weighted_chosen_items_per_cat_count.values()
+        item_count_weighted for item_count_weighted in weighted_chosen_items_per_cat_count.values()
     )
     for cat_id, chosen_items in chosen_items_per_cat.items():
         item_count_weighted = weighted_chosen_items_per_cat_count[cat_id]
-        categories[cat_id] = weights_before + ceil(
-            MAX_WEIGHT * (item_count_weighted / total_items_weighted)
-        )
+        categories[cat_id] = weights_before + ceil(MAX_WEIGHT * (item_count_weighted / total_items_weighted))
         weights_before = categories[cat_id]
 
         # Randomize the item weights in each category
@@ -166,6 +149,4 @@ def balanced_item_randomizer(
 
     categories[next(reversed(categories))] = MAX_WEIGHT
 
-    return FileType.MAPPA_BIN.get_item_list_model()(
-        categories, dict(sorted(items.items(), key=lambda i: i[0]))
-    )
+    return FileType.MAPPA_BIN.get_item_list_model()(categories, dict(sorted(items.items(), key=lambda i: i[0])))

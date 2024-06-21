@@ -55,6 +55,9 @@ skytemple_randomizer = "skytemple_randomizer.main:main"
 packages.find.include = ["skytemple_randomizer", "skytemple_randomizer.*"]
 packages.find.exclude = ["installer", "blueprint-compiler"]
 
+[tool.ruff]
+line-length = 120
+
 [tool.ruff.lint]
 select = [ "W", "E", "F"]
 ignore = [

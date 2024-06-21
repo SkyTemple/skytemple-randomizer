@@ -58,9 +58,7 @@ class PersonalityQuizPage(Adw.PreferencesPage):
         self.randomization_settings = config
         self.row_mode.set_selected(config["quiz"]["mode"].value)
         self.row_randomize.set_active(config["quiz"]["randomize"])
-        self.row_include_vanilla_questions.set_active(
-            config["quiz"]["include_vanilla_questions"]
-        )
+        self.row_include_vanilla_questions.set_active(config["quiz"]["include_vanilla_questions"])
         self._suppress_signals = False
 
     @Gtk.Template.Callback()
@@ -68,18 +66,14 @@ class PersonalityQuizPage(Adw.PreferencesPage):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["quiz"]["mode"] = QuizMode(
-            self.row_mode.get_selected()
-        )
+        self.randomization_settings["quiz"]["mode"] = QuizMode(self.row_mode.get_selected())
 
     @Gtk.Template.Callback()
     def on_row_randomize_notify_active(self, *args):
         if self._suppress_signals:
             return
         assert self.randomization_settings is not None
-        self.randomization_settings["quiz"]["randomize"] = (
-            self.row_randomize.get_active()
-        )
+        self.randomization_settings["quiz"]["randomize"] = self.row_randomize.get_active()
         self.on_change_quiz_active(self.row_randomize.get_active())
 
     @Gtk.Template.Callback()

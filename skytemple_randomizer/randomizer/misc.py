@@ -35,9 +35,7 @@ class MiscRandomizer(AbstractRandomizer):
             return status.done()
         status.step(_("Enabling instant text..."))
 
-        arm9 = bytearray(
-            get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9)
-        )
+        arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         HardcodedTextSpeed.set_text_speed(DEBUG_SPEED, arm9, self.static_data)
         set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)
 

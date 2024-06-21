@@ -77,31 +77,21 @@ class FixedRoomRandomizer(AbstractRandomizer):
         if not self.config["dungeons"]["fixed_rooms"]:
             return status.done()
 
-        mappa: MappaBinProtocol = FileType.MAPPA_BIN.deserialize(
-            self.rom.getFileByName("BALANCE/mappa_s.bin")
-        )
-        fixed: FixedBin = FileType.FIXED_BIN.deserialize(
-            self.rom.getFileByName("BALANCE/fixed.bin")
-        )
+        mappa: MappaBinProtocol = FileType.MAPPA_BIN.deserialize(self.rom.getFileByName("BALANCE/mappa_s.bin"))
+        fixed: FixedBin = FileType.FIXED_BIN.deserialize(self.rom.getFileByName("BALANCE/fixed.bin"))
 
         status.step(_("Randomizing Boss Floor Layouts..."))
         for i in BOSS_ROOMS:
             fixed_room = fixed.fixed_floors[i]
-            for floor_list, floor_id in self._get_dungeon_floors_for_fixed_room(
-                mappa.floor_lists, i
-            ):
+            for floor_list, floor_id in self._get_dungeon_floors_for_fixed_room(mappa.floor_lists, i):
                 self._assign_dungeon_floor_regular_tileset(floor_list, floor_id)
-            w, h, new_layout = self._get_random_room(
-                self._get_special_in_floor(fixed_room)
-            )
+            w, h, new_layout = self._get_random_room(self._get_special_in_floor(fixed_room))
             fixed_room.width = w
             fixed_room.height = h
             fixed_room.actions = new_layout
 
         self.rom.setFileByName("BALANCE/fixed.bin", FileType.FIXED_BIN.serialize(fixed))
-        self.rom.setFileByName(
-            "BALANCE/mappa_s.bin", FileType.MAPPA_BIN.serialize(mappa)
-        )
+        self.rom.setFileByName("BALANCE/mappa_s.bin", FileType.MAPPA_BIN.serialize(mappa))
         mappag_after = FileType.MAPPA_G_BIN.serialize(convert_mappa_to_mappag(mappa))
         self.rom.setFileByName("BALANCE/mappa_gs.bin", mappag_after)
 
@@ -115,13 +105,9 @@ class FixedRoomRandomizer(AbstractRandomizer):
                 if floor.layout.fixed_floor_id == ff_id:
                     yield fl, flooridx
 
-    def _assign_dungeon_floor_regular_tileset(
-        self, floor_list: Sequence[MappaFloorProtocol], floor_id: int
-    ):
+    def _assign_dungeon_floor_regular_tileset(self, floor_list: Sequence[MappaFloorProtocol], floor_id: int):
         if floor_list[floor_id].layout.tileset_id >= START_DUNGEON_BGS:
-            floor_list[floor_id].layout.tileset_id = floor_list[
-                floor_id - 1
-            ].layout.tileset_id
+            floor_list[floor_id].layout.tileset_id = floor_list[floor_id - 1].layout.tileset_id
 
     def _get_special_in_floor(self, floor: FixedFloor):
         lst = []
@@ -138,9 +124,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
                 lst.append(action)
         return lst
 
-    def _get_random_room(
-        self, entities_and_special_tiles_to_preserve: list[FixedFloorActionRule]
-    ):
+    def _get_random_room(self, entities_and_special_tiles_to_preserve: list[FixedFloorActionRule]):
         room_data = self._get_random_room_txt()
         width = len(room_data[0])
         height = len(room_data)
@@ -154,9 +138,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
                 elif char == ".":
                     actions.append(FLOOR)
                 else:
-                    raise ValueError(
-                        f"Invalid fixed floor layout data found (char: {char})."
-                    )
+                    raise ValueError(f"Invalid fixed floor layout data found (char: {char}).")
 
         # Randomly replace floor with entities to preserve
         while len(entities_and_special_tiles_to_preserve) > 0:
@@ -170,7 +152,5 @@ class FixedRoomRandomizer(AbstractRandomizer):
         from skytemple_randomizer.data_dir import data_dir
 
         i = randrange(0, 1000)
-        with open_utf8(
-            os.path.join(data_dir(), "fixed_floor_layouts", f"{i}.txt")
-        ) as f:
+        with open_utf8(os.path.join(data_dir(), "fixed_floor_layouts", f"{i}.txt")) as f:
             return f.read().splitlines()

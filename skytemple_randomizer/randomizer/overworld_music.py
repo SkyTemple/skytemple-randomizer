@@ -47,15 +47,9 @@ class OverworldMusicRandomizer(AbstractRandomizer):
     def run(self, status: Status):
         if self.config["starters_npcs"]["topmenu_music"]:
             status.step(_("Randomizing Titlescreen Music..."))
-            ov0 = bytearray(
-                get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay0)
-            )
-            ov9 = bytearray(
-                get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay9)
-            )
-            HardcodedMainMenuMusic.set_main_menu_music(
-                self._get_random_music_id(), ov0, self.static_data, ov9
-            )
+            ov0 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay0))
+            ov9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.overlay9))
+            HardcodedMainMenuMusic.set_main_menu_music(self._get_random_music_id(), ov0, self.static_data, ov9)
             set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay0, ov0)
             set_binary_in_rom(self.rom, self.static_data.bin_sections.overlay9, ov9)
 
@@ -72,9 +66,7 @@ class OverworldMusicRandomizer(AbstractRandomizer):
 
             for rtn in ssb.routine_ops:
                 for op in rtn:
-                    op_c = self.static_data.script_data.op_codes__by_name[
-                        op.op_code.name
-                    ][0]
+                    op_c = self.static_data.script_data.op_codes__by_name[op.op_code.name][0]
                     for i, param_spec in enumerate(op_c.arguments):
                         if param_spec.type == "Bgm":
                             # Only randomize real music (looping tracks)
@@ -82,14 +74,10 @@ class OverworldMusicRandomizer(AbstractRandomizer):
                                 op.params[i] = self._get_random_music_id()
                     # We don't really support this, so replace it with Null.
                     if op_c.name == "WaitBgmSignal":
-                        op.op_code = self.static_data.script_data.op_codes__by_name[
-                            "Null"
-                        ][0]
+                        op.op_code = self.static_data.script_data.op_codes__by_name["Null"][0]
                     # Replace with a generic Wait, maintaining the parameter count as opposed to Null.
                     elif op_c.name == "WaitBgm" or op_c.name == "WaitBgm2":
-                        op.op_code = self.static_data.script_data.op_codes__by_name[
-                            "Wait"
-                        ][0]
+                        op.op_code = self.static_data.script_data.op_codes__by_name["Wait"][0]
                         op.params = [60]
         status.done()
 

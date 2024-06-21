@@ -36,21 +36,11 @@ class LocationRandomizer(AbstractRandomizer):
         if not self.config["locations"]["randomize"]:
             return
         status.step(_("Randomizing Location Names..."))
-        ground_map_names = self.static_data.string_index_data.string_blocks[
-            "Ground Map Names"
-        ]
-        dunge_names_main = self.static_data.string_index_data.string_blocks[
-            "Dungeon Names (Main)"
-        ]
-        dunge_names_sele = self.static_data.string_index_data.string_blocks[
-            "Dungeon Names (Selection)"
-        ]
-        dunge_names_sdba = self.static_data.string_index_data.string_blocks[
-            "Dungeon Names (SetDungeonBanner)"
-        ]
-        dunge_names_bann = self.static_data.string_index_data.string_blocks[
-            "Dungeon Names (Banner)"
-        ]
+        ground_map_names = self.static_data.string_index_data.string_blocks["Ground Map Names"]
+        dunge_names_main = self.static_data.string_index_data.string_blocks["Dungeon Names (Main)"]
+        dunge_names_sele = self.static_data.string_index_data.string_blocks["Dungeon Names (Selection)"]
+        dunge_names_sdba = self.static_data.string_index_data.string_blocks["Dungeon Names (SetDungeonBanner)"]
+        dunge_names_bann = self.static_data.string_index_data.string_blocks["Dungeon Names (Banner)"]
 
         rename_dungeon_map_all = {}
         for lang, strings in get_all_string_files(self.rom, self.static_data):
@@ -79,9 +69,7 @@ class LocationRandomizer(AbstractRandomizer):
                 rename_dungeon_map[orig_name] = new_name
                 strings.strings[i] = new_name
 
-            self.rom.setFileByName(
-                f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings)
-            )
+            self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings))
 
         status.step(_("Replacing script text that mentions locations..."))
         replace_text_script(self.rom, self.static_data, rename_dungeon_map_all)

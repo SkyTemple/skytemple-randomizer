@@ -34,12 +34,8 @@ class ConfigArgument(click.Argument):
         super().__init__(param_decls, required, **attrs, callback=self.read_config)
 
     @staticmethod
-    def read_config(
-        _ctx: click.Context, _slf: click.Parameter, val: Any
-    ) -> RandomizerConfig:
+    def read_config(_ctx: click.Context, _slf: click.Parameter, val: Any) -> RandomizerConfig:
         try:
             return ConfigFileLoader.load(val)
         except Exception as e:
-            Error.from_current_exception(
-                "The config file provided is invalid", internal_error=False
-            ).print_and_exit()
+            Error.from_current_exception("The config file provided is invalid", internal_error=False).print_and_exit()

@@ -75,9 +75,7 @@ class GtkFrontend(AbstractFrontend):
         # TODO: Support different default configs based on region?
         self.__input_rom = rom
         self.__input_rom_static_data = rom_static_data
-        self.__randomization_settings = ConfigFileLoader.load(
-            os.path.join(data_dir(), "default.json")
-        )
+        self.__randomization_settings = ConfigFileLoader.load(os.path.join(data_dir(), "default.json"))
 
     @property
     def randomization_settings(self) -> RandomizerConfig:

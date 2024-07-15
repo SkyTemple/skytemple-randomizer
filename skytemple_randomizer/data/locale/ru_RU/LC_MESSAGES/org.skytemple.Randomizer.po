@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-06-21 18:59+0000\n"
-"PO-Revision-Date: 2024-06-21 19:48\n"
+"PO-Revision-Date: 2024-07-15 18:55\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: /dev/fd/63:150 /dev/fd/63:367
 msgid "Portrait Names"
-msgstr ""
+msgstr "Названия портретов"
 
 #: /dev/fd/63:151 /dev/fd/63:368
 msgid "Debug Strings (Dungeon 2)"
@@ -747,7 +747,7 @@ msgstr ""
 
 #: /dev/fd/63:183 /dev/fd/63:400
 msgid "Other"
-msgstr ""
+msgstr "Прочее"
 
 #: /dev/fd/63:184 /dev/fd/63:401
 msgid "Orbs"
@@ -1096,7 +1096,7 @@ msgstr ""
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/operations/macro_call.py:46
 #, python-brace-format
 msgid "Macro {name} not found."
-msgstr ""
+msgstr "Макро {name} не найден."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_resolution_order.py:89
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_resolution_order.py:93
@@ -1133,7 +1133,7 @@ msgstr ""
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:113
 #, python-brace-format
 msgid "Unexpected break; in line {ctx.start.line}"
-msgstr ""
+msgstr "Неожиданный break; в строке {ctx.start.line}"
 
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:136
 #, python-brace-format
@@ -1230,11 +1230,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:139
 msgid "One Layer (#00)"
-msgstr ""
+msgstr "Один слой (#00)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
 msgid "One Layer (#01)"
-msgstr ""
+msgstr "Один слой (#01)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
 msgid "One Layer (#02)"

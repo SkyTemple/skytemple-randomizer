@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-06-21 18:59+0000\n"
-"PO-Revision-Date: 2024-07-15 18:55\n"
+"PO-Revision-Date: 2024-07-15 20:29\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1238,35 +1238,35 @@ msgstr "Один слой (#01)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
 msgid "One Layer (#02)"
-msgstr ""
+msgstr "Один слой (#02)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
 msgid "One Layer (#03)"
-msgstr ""
+msgstr "Один слой (#03)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
 msgid "One Layer (#04)"
-msgstr ""
+msgstr "Один слой (#04)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
 msgid "Two Layers (#05)"
-msgstr ""
+msgstr "Два слоя (#05)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
 msgid "Two Layers (#06)"
-msgstr ""
+msgstr "Два слоя (#06)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
 msgid "Two Layers (#07)"
-msgstr ""
+msgstr "Два слоя (#07)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
 msgid "Two Layers (#08)"
-msgstr ""
+msgstr "Два слоя (#08)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
 msgid "Two Layers (#09)"
-msgstr ""
+msgstr "Два слоя (#09)"
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Dungeon Tileset (#10)"
@@ -1278,7 +1278,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:271
 msgid "This function has no description."
-msgstr ""
+msgstr "У этой функции нет описания."
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:313
 msgid "Down"
@@ -1351,7 +1351,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/util.py:498
 msgid "This ROM is not supported by SkyTemple."
-msgstr ""
+msgstr "Этот ROM не поддерживается SkyTemple."
 
 #: skytemple-files/skytemple_files/common/util.py:568
 #: skytemple-files/skytemple_files/common/util.py:587
@@ -1368,12 +1368,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/common/util.py:611
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
-msgstr ""
+msgstr "Файл {file_name} уже существует в этой папке."
 
 #: skytemple-files/skytemple_files/common/util.py:634
 #, python-brace-format
 msgid "Folder {path} already exists."
-msgstr ""
+msgstr "Папка {path} уже существует."
 
 #: skytemple-files/skytemple_files/common/xml_util.py:34
 #, python-brace-format
@@ -1387,19 +1387,19 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/anim/model.py:45
 msgid "Head"
-msgstr ""
+msgstr "Голова"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:46
 msgid "Left Hand"
-msgstr ""
+msgstr "Левая рука"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:47
 msgid "Right Hand"
-msgstr ""
+msgstr "Правая рука"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:48
 msgid "Center"
-msgstr ""
+msgstr "По центру"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:49
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:36
@@ -1441,12 +1441,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:72
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:176
 msgid "ARMIPS could not be found. Make sure, that 'armips' is inside your system's PATH."
-msgstr ""
+msgstr "Не удалось найти ARMIPS. Убедитесь, что 'armips' находится в PATH вашей системы."
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:78
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:188
 msgid "ARMIPS reported an error while applying the patch."
-msgstr ""
+msgstr "ARMIPS сообщил об ошибке при применении патча."
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:89
 #, python-brace-format
@@ -1455,7 +1455,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/data_cd/model.py:76
 msgid "To delete this effect, no items must use it."
-msgstr ""
+msgstr "Чтобы удалить этот эффект, ни один объект не должен его использовать."
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:36
 msgid "Always"
@@ -1551,15 +1551,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:482
 msgid "Attack > Defense"
-msgstr ""
+msgstr "Атака больше защиты"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:483
 msgid "Attack < Defense"
-msgstr ""
+msgstr "Атака меньше защиты"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:484
 msgid "Attack = Defense"
-msgstr ""
+msgstr "Атака равна защиты"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:485
 msgid "Sun Ribbon"
@@ -2025,11 +2025,11 @@ msgstr ""
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:610
 #, python-brace-format
 msgid "Unknown trap {name}."
-msgstr ""
+msgstr "Неизвестная ловушка {name}."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:617
 msgid "Trap lists need an entry for all of the 25 traps"
-msgstr ""
+msgstr "В списках ловушек должны быть все 25 ловушек"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:53
 msgid "Medium Large"
@@ -3293,7 +3293,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:110
 msgid "'{}' missing in scene data."
-msgstr ""
+msgstr "'{}' отсутствует в данных сцены."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:458
 msgid "The event ID {} is out of bounds for one of the triggers."
@@ -3316,7 +3316,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/constants.py:251
 #, python-brace-format
 msgid "Unknown constant {constant_as_string}."
-msgstr ""
+msgstr "Неизвестная константа {constant_as_string}."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:149
 msgid "The routine data lists for the decompiler must have the same lengths."
@@ -3347,20 +3347,20 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:227
 #, python-brace-format
 msgid "Unknown operation {in_op.op_code.name}."
-msgstr ""
+msgstr "Неизвестная операция {in_op.op_code.name}."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:243
 msgid "The number of parameters for {normal_op_code.name} must be at least {normal_op_code.params}, is {self._correct_param_list_len(in_op.params)}."
-msgstr ""
+msgstr "Количество параметров для {normal_op_code.name} должно быть не менее {normal_op_code.params}, в данный момент {self._correct_param_list_len(in_op.params)}."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:262
 msgid "The number of parameters for {op_code.name} must be {op_code.params}, is {self._correct_param_list_len(in_op.params)}."
-msgstr ""
+msgstr "Количество параметров для {op_code.name} должно быть {op_code.params}, в данный момент {self._correct_param_list_len(in_op.params)}."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:352
 #, python-brace-format
 msgid "Unknown language for string: {lang}"
-msgstr ""
+msgstr "Неизвестный язык для строки: {lang}"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:356
 #, python-brace-format
@@ -3369,7 +3369,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:168
 msgid "Could not compile script: All languages must have the same amount of strings."
-msgstr ""
+msgstr "Не удалось скомпилировать скрипт: Все языки должны иметь одинаковое количество строк."
 
 #: skytemple-rust/src/dse/st_smdl/eoc.rs:37
 #: skytemple-rust/src/dse/st_smdl/trk.rs:116

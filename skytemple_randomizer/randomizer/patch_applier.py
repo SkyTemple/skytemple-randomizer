@@ -44,7 +44,7 @@ class PatchApplier(AbstractRandomizer):
     def run(self, status: Status):
         patcher = Patcher(self.rom, self.static_data)
 
-        status.step(_("Apply base patches by psy_commando and End45..."))
+        status.step(_("Apply base patches by psy_commando and Frostbyte..."))
         sleep(5)  # gotta give some spotlight to them.
         if not patcher.is_applied("ActorAndLevelLoader"):
             patcher.apply("ActorAndLevelLoader")

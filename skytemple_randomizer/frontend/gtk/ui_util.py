@@ -40,7 +40,7 @@ Aikku93 (via tilequant) https://github.com/aikku93
 techticks (MacOS packaging) https://github.com/tech-ticks
 marius851000 (via skytemple-rust) https://github.com/marius851000
 UsernameFodder (via pmdsky-debug) https://reddit.com/u/UsernameFodder
-End45 (via patches) https://github.com/End45
+Frostbyte (via patches + contributions) https://github.com/Frostbyte0x70
 Anonymous (via patches + contributions)
 Cipnit (via CTC patch) https://www.pokecommunity.com/member.php?u=751556
 Adex (via patches + JP support) https://github.com/Adex-8x
@@ -50,7 +50,7 @@ in2erval (code contributions) https://github.com/in2erval
 Please see GitHub for more minor contributors.
 
 Lead Hackers:
-End45 https://github.com/End45
+Frostbyte https://github.com/Frostbyte0x70
 UsernameFodder https://reddit.com/u/UsernameFodder
 Anonymous
 psy_commando https://github.com/psyCommando

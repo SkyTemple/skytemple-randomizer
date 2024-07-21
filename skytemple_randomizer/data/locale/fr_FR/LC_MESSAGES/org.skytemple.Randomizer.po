@@ -3039,8 +3039,8 @@ msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
 msgstr "[CS:S]Contrôle réglé en[CR] [CS:C]manuel[CR][CS:S].[CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:121
-msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by End45 before applying this patch."
-msgstr "Appuyer sur Start dans un donjon permet de basculer entre le mode automatique et le mode manuel. En mode manuel, vous pouvez contrôler vous partenaires pendant leurs tours. Vous devez appliquer le correctif pour l'overlay de code supplémentaire de End45 avant d'appliquer ce patch."
+msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by Frostbyte before applying this patch."
+msgstr "Appuyer sur Start dans un donjon permet de basculer entre le mode automatique et le mode manuel. En mode manuel, vous pouvez contrôler vous partenaires pendant leurs tours. Vous devez appliquer le correctif pour l'overlay de code supplémentaire de Frostbyte avant d'appliquer ce patch."
 
 #: skytemple-files/skytemple_files/patch/handler/compress_iq_data.py:50
 msgid "Optimizes the way the list of IQ skills learnt by each IQ group is stored, removing the limit of max 25 skills per group."
@@ -4778,7 +4778,7 @@ msgid "Randomizing Overworld Music..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:47
-msgid "Apply base patches by psy_commando and End45..."
+msgid "Apply base patches by psy_commando and Frostbyte..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:67

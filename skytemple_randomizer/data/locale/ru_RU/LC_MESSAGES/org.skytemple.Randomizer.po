@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-21 21:03\n"
+"PO-Revision-Date: 2024-07-22 19:45\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3503,7 +3503,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:129
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:131
 msgid "_OK"
@@ -4280,7 +4280,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:124
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:108
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:223
 msgid "1st Word"
@@ -4465,7 +4465,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:167
 msgid "Music"
-msgstr ""
+msgstr "Музыка"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:187
 msgid "Explorer Rank"

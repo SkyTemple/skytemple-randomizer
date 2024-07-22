@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-22 04:51\n"
+"PO-Revision-Date: 2024-07-22 06:13\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -1508,12 +1508,12 @@ msgstr "WBA"
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:72
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:176
 msgid "ARMIPS could not be found. Make sure, that 'armips' is inside your system's PATH."
-msgstr ""
+msgstr "ARMIPSが見つかりません。'armips' が環境変数の PATH 内にあることを確認してください。"
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:78
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:188
 msgid "ARMIPS reported an error while applying the patch."
-msgstr ""
+msgstr "ARMIPS によるパッチの適用中にエラーが発生しました。"
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:89
 #, python-brace-format
@@ -1526,7 +1526,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:36
 msgid "Always"
-msgstr ""
+msgstr "常時"
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:37
 msgid "Flag Not Set"
@@ -2008,19 +2008,19 @@ msgstr "タイルフラグ 0xA は 1 に設定されています (これがど�
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:166
 msgid "F/W, Room; Key Door"
-msgstr ""
+msgstr "床/壁 (部屋) - 鍵ドア"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:172
 msgid "Spawns a locked Key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr ""
+msgstr "ロックされた鍵ドアを生成します。固定フロアIDが 0xA5 未満の場合、これは壁になります。そうでない場合は床になります。"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:178
 msgid "F/W, Room; Key Door (Escort)"
-msgstr ""
+msgstr "床/壁 (部屋) - 鍵ドア (護衛)"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:184
 msgid "Spawns a locked Key Door (meant to be opened by an escort mission client). If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr ""
+msgstr "ロックされた鍵ドア (護衛中の依頼主が開けるためのもの) を生成します。固定部屋IDが 0xA5 未満の場合、これは壁になります。そうでない場合は床になります。"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:208
 msgid "Attendant1 Spawn Floor"
@@ -2041,7 +2041,7 @@ msgid "Could not save floor: It contains too much empty data.\n"
 "Please check the floors you edited and fill them with more data. If you are using the randomizer, check your allowed item list."
 msgstr "フロアを保存できませんでした。空のデータが多すぎます。\n"
 "このエラーは、多くのスポーンリストが空になっていることが原因と考えられます。\n"
-"編集したフロアを確認し、データを正しく入力してください。ランダマイザーを使用している場合、許可されているアイテムリストを確認してください。"
+"編集したフロアを確認し、データを正しく入力してください。ランダマイザーを使用している場合、許可されている道具リストを確認してください。"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:290
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:326
@@ -2677,15 +2677,15 @@ msgstr "通常の敵"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:118
 msgid "Outlaw"
-msgstr "おたずねもの"
+msgstr "お尋ね者"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:120
 msgid "Outlaw Enemy"
-msgstr "おたずねもの (潜伏)"
+msgstr "お尋ね者 (潜伏)"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:122
 msgid "Outlaw Running Away"
-msgstr "おたずねもの (逃走)"
+msgstr "お尋ね者 (逃走)"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:126
 msgid "Rival Team Leader"
@@ -3017,7 +3017,7 @@ msgstr "このパッチは再適用できません。"
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:104
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:112
 msgid "The source data specification was not found in the configuration."
-msgstr "ソースデータの仕様が構成に見つかりません。"
+msgstr "指定したソースデータが構成内に存在しません。"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:127
 msgid "\n\n"
@@ -3163,7 +3163,9 @@ msgstr "mappa_t/mappa_y/mappa_s の各種データを完全にロードするの
 msgid "Use filestreams to access waza_p/waza_p2 data instead of loading them entirely.\n"
 "This patch is useless on its own.\n"
 "Depends on the ActorAndLevelLoader patch, as it needs some space provided by this one."
-msgstr ""
+msgstr "waza_p/waza_p2 のデータを完全にロードするのではなく、ファイルストリームを使ってアクセスするように変更します。\n"
+"このパッチ単体では機能しません。\n"
+"ActorAndLevelLoader パッチに依存しています。"
 
 #: skytemple-files/skytemple_files/patch/handler/extra_space.py:50
 msgid "This patch adds a new overlay 36 to the game, which is loaded at address 0x023A7080 and provides extra space for patches to place code and data in."
@@ -3279,7 +3281,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/remove_body_size_check.py:48
 msgid "Removes the total body size check before entering a dungeon."
-msgstr ""
+msgstr "ダンジョン突入前に「からだのおおきさ」をチェックする処理を削除します。"
 
 #: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:48
 msgid "Allows the partner to be of the same type as the player in the personality test."

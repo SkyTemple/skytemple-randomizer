@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-22 02:50\n"
+"PO-Revision-Date: 2024-07-22 04:51\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -3100,7 +3100,7 @@ msgstr "性格診断で主人公を選択するメニューを追加します。
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:104
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
-msgstr "[CS:S]コントロールモード：[CR] [CS:C]じどう[CR][CS:S][CR]"
+msgstr "[CS:S]コントロールモード：[CR] [CS:C]オート[CR][CS:S][CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:107
 msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
@@ -3108,7 +3108,8 @@ msgstr "[CS:S]コントロールモード：[CR] [CS:E]マニュアル[CR][CS:S]
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:119
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by Frostbyte before applying this patch."
-msgstr ""
+msgstr "ダンジョン内でSTARTボタンを押すと、オートモードとマニュアルモードを切り替えることができます。マニュアルモードでは、仲間の行動を操作することができます。 \n"
+"このパッチを適用するには、Frostbyte が作成した追加オーバーレイを適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/compress_iq_data.py:50
 msgid "Optimizes the way the list of IQ skills learnt by each IQ group is stored, removing the limit of max 25 skills per group."
@@ -3120,7 +3121,8 @@ msgstr "ゲーム開始時にダンジョンに表示されるヒントメッセ
 
 #: skytemple-files/skytemple_files/patch/handler/disarm_one_room_mh.py:44
 msgid "Disarms one-room Monster House floors, which can appear in cases like a layout generation failure. These floors will still be one giant room, but will no longer be Monster Houses."
-msgstr "レイアウト生成の失敗などの場合に現れる大部屋モンスターハウスを無効化します。これらのフロアは大部屋のままですが、モンスターハウスではなくなります。"
+msgstr "レイアウト生成の失敗などの場合に現れる大部屋モンスターハウスを無効化します。\n"
+"これらのフロアは大部屋のままですが、モンスターハウスではなくなります。"
 
 #: skytemple-files/skytemple_files/patch/handler/dungeon_interrupt.py:50
 msgid "Implements dungeon interruptions. "
@@ -3138,7 +3140,9 @@ msgstr ""
 msgid "Implements shared experience points between all members (GtI style). \n"
 "This is disabled during Special Episodes and dungeons with level 1 or no exp. restrictions. \n"
 "Needs the ExtractDungeonData patch to be applied to free some space used by this."
-msgstr ""
+msgstr "チームメンバーで経験値を共有します (マグナゲート方式)。\n"
+"スペシャルエピソードやレベル1ダンジョン、経験値が手に入らないダンジョンでは無効になります。\n"
+"このパッチを利用するには ExtractDungeonData パッチを適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
 msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
@@ -3152,7 +3156,8 @@ msgstr "許可されるポケモンのエントリを2048に拡張し、すべ�
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
 "This patch is useless on its own, unless you have a too big mappa file."
-msgstr ""
+msgstr "mappa_t/mappa_y/mappa_s の各種データを完全にロードするのではなく、ファイルストリームを使ってアクセスするように変更します。\n"
+"このパッチは、サイズが大きい mappa ファイルがある場合に有効です。"
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_waza.py:49
 msgid "Use filestreams to access waza_p/waza_p2 data instead of loading them entirely.\n"
@@ -3234,7 +3239,8 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
 msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."
-msgstr "技のショートカット (L+A) を GtI や Super (L+A/B/X/Y) のようなショートカット機能に置き換えます。このパッチを適用する前に ExtraSpace パッチを適用する必要があります。"
+msgstr "技のショートカット (L+A) をマグナゲートや超ポケダン方式のショートカット機能 (L+A/B/X/Y) に置き換えます。\n"
+"このパッチを利用するには ExtraSpace パッチを適用する必要があります。"
 
 #: skytemple-files/skytemple_files/patch/handler/negative_enemy_density.py:49
 msgid "Makes negative enemy density values work as intended (the absolute value of the density is used, without adding a random variation)."
@@ -3431,7 +3437,7 @@ msgstr "不明なコルーチン {err}"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:225
 msgid "Coroutines and regular routines can not be mixed in a script file."
-msgstr ""
+msgstr "コルーチンと通常のルーチンをスクリプトファイルに混在させることはできません。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:238
 #, python-brace-format
@@ -3467,7 +3473,7 @@ msgstr ""
 #: skytemple-rust/src/image/tiled.rs:232
 msgid "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
-msgstr "インポートした画像が複雑すぎます。ユニークタイルが多すぎます ({}、最大 1024) 。\n"
+msgstr "インポートした画像が複雑すぎます。また、ユニークタイルが多すぎます ({}、最大 1024) 。\n"
 "ユニークタイルを少なくしてください。ユニークタイルとは、画像の 8 x 8 のセクションで、画像内の他の場所に存在しないタイルのことです (反転したタイルや、別のサブパレットを使ったタイルを含む) 。"
 
 #: skytemple-rust/src/python_image.rs:54
@@ -3953,7 +3959,7 @@ msgstr "有効にすると、すべての NPC がランダム化され、スク�
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:90
 msgid "Moves"
-msgstr "わざ"
+msgstr "技"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:93
 msgid "Randomize Movesets"

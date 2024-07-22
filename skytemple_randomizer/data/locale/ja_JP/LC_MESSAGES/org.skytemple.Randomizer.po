@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-21 21:03\n"
+"PO-Revision-Date: 2024-07-22 02:50\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -4777,7 +4777,7 @@ msgstr "オーバーワールドBGMをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:47
 msgid "Apply base patches by psy_commando and Frostbyte..."
-msgstr ""
+msgstr "psy_commando と Frostbyte による基本パッチの適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:67
 msgid "Apply 'MoveShortcuts' patch..."

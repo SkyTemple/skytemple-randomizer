@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-22 06:13\n"
+"PO-Revision-Date: 2024-07-22 08:13\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -363,7 +363,7 @@ msgstr ""
 
 #: /dev/fd/63:87 /dev/fd/63:306
 msgid "Kecleon Dungeon Shop Strings"
-msgstr "カクレオン商店の文字列"
+msgstr "カクレオンのおみせ文字列"
 
 #: /dev/fd/63:88 /dev/fd/63:307
 msgid "Anchored Feedback"
@@ -571,7 +571,7 @@ msgstr ""
 
 #: /dev/fd/63:139 /dev/fd/63:358
 msgid "Debug Strings (Mission)"
-msgstr ""
+msgstr "デバッグ文字列 (依頼)"
 
 #: /dev/fd/63:140 /dev/fd/63:359
 msgid "Debug Strings (Switch)"
@@ -579,7 +579,7 @@ msgstr ""
 
 #: /dev/fd/63:141 /dev/fd/63:360
 msgid "Debug Strings (Data)"
-msgstr ""
+msgstr "デバッグ文字列 (データ)"
 
 #: /dev/fd/63:142 /dev/fd/63:361
 msgid "Debug Strings (Checks)"
@@ -587,7 +587,7 @@ msgstr ""
 
 #: /dev/fd/63:143 /dev/fd/63:362
 msgid "Debug Strings (General)"
-msgstr ""
+msgstr "デバッグ文字列 (全般)"
 
 #: /dev/fd/63:144 /dev/fd/63:363
 msgid "Debug Strings (Manipulation)"
@@ -595,23 +595,23 @@ msgstr ""
 
 #: /dev/fd/63:145 /dev/fd/63:364
 msgid "Debug Strings (Testing)"
-msgstr ""
+msgstr "デバッグ文字列 (テスト)"
 
 #: /dev/fd/63:146 /dev/fd/63:365
 msgid "Debug Strings (Scripts)"
-msgstr ""
+msgstr "デバッグ文字列 (スクリプト)"
 
 #: /dev/fd/63:147 /dev/fd/63:366
 msgid "Debug Strings (Menu)"
-msgstr ""
+msgstr "デバッグ文字列 (メニュー)"
 
 #: /dev/fd/63:148 /dev/fd/63:367
 msgid "Debug Strings (Status)"
-msgstr ""
+msgstr "デバッグ文字列 (ステータス)"
 
 #: /dev/fd/63:149 /dev/fd/63:368
 msgid "Debug Strings (Dungeon 1)"
-msgstr ""
+msgstr "デバッグ文字列 (ダンジョン1)"
 
 #: /dev/fd/63:150 /dev/fd/63:369
 msgid "Portrait Names"
@@ -687,7 +687,7 @@ msgstr "ダンジョン名 (バナー)"
 
 #: /dev/fd/63:168 /dev/fd/63:387
 msgid "Staff Roll 1"
-msgstr ""
+msgstr "スタッフロール 1"
 
 #: /dev/fd/63:169 /dev/fd/63:388
 msgid "Special Mission Strings"
@@ -707,19 +707,19 @@ msgstr "「たんけんリサイクル」の文字列"
 
 #: /dev/fd/63:173 /dev/fd/63:392
 msgid "Staff Roll 2"
-msgstr ""
+msgstr "スタッフロール 2"
 
 #: /dev/fd/63:174 /dev/fd/63:393
 msgid "Staff Roll 3"
-msgstr ""
+msgstr "スタッフロール 3"
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "新規ポケモン名"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "新規分類名"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
@@ -832,7 +832,7 @@ msgstr "HPを回復せずに中断"
 #: /dev/fd/63:204 /dev/fd/63:423
 #, c-format
 msgid "% of exp. shared"
-msgstr "Expのシェア率"
+msgstr "Expの共有率"
 
 #: /dev/fd/63:205 /dev/fd/63:424
 msgid "String ID for the Menu Option"
@@ -844,23 +844,23 @@ msgstr "「すべてかんてい」時に確認する時の文字列ID"
 
 #: /dev/fd/63:207 /dev/fd/63:426
 msgid "String ID before revealing the items"
-msgstr "アイテム公開前の文字列 ID"
+msgstr "鑑定前の文字列ID"
 
 #: /dev/fd/63:208 /dev/fd/63:427
 msgid "String ID when revealing an item"
-msgstr "アイテムを公開するときの文字列 ID"
+msgstr "鑑定後の文字列ID"
 
 #: /dev/fd/63:209 /dev/fd/63:428
 msgid "All strings mentioned above are replaced by a default text when applying"
-msgstr "上記のすべての文字列は適用時にデフォルトテキストに置き換えられます"
+msgstr "上記のすべての文字列は適用時にデフォルトのテキストに置き換えられます"
 
 #: /dev/fd/63:210 /dev/fd/63:429
 msgid "Cost of each Treasure Box (Only for Appraise All option)"
-msgstr "各宝箱のコスト (「すべて鑑定」オプションのみ)"
+msgstr "各宝箱のコスト (「すべてかんてい」選択時のみ)"
 
 #: /dev/fd/63:211 /dev/fd/63:430
 msgid "Update the level and stats of evolved enemies"
-msgstr "進化した敵のレベルと統計を更新"
+msgstr "進化した敵のレベルとステータスを更新する"
 
 #: /dev/fd/63:212 /dev/fd/63:431
 msgid "Fully heal enemies after evolving"
@@ -868,11 +868,11 @@ msgstr "敵が進化した後完全に回復させる"
 
 #: /dev/fd/63:213 /dev/fd/63:432
 msgid "Update the moves of evolved enemies"
-msgstr "進化した敵の技を更新"
+msgstr "進化した敵の技を更新する"
 
 #: /dev/fd/63:214 /dev/fd/63:433
 msgid "Increase Atk/SpAtk/Def/SpDef of evolved enemies by"
-msgstr "進化した敵の攻撃・特攻・防御・特防を増加"
+msgstr "進化した敵の攻撃・防御・特攻・特防を増加"
 
 #: /dev/fd/63:215 /dev/fd/63:434
 msgid "Let enemies evolve even if the defeated pokémon is revived"
@@ -896,39 +896,39 @@ msgstr "スペイン語"
 
 #: /dev/fd/63:274
 msgid "Dungeon Defeated Dialog Strings"
-msgstr ""
+msgstr "ダンジョン失敗時のダイアログ文字列"
 
 #: /dev/fd/63:275
 msgid "Dungeon Cleared Dialog Strings"
-msgstr ""
+msgstr "ダンジョンクリア時のダイアログ文字列"
 
 #: explorerscript/explorerscript/common_syntax.py:99
 #: explorerscript/explorerscript/common_syntax.py:187
 msgid "Integer not allowed at this position."
-msgstr ""
+msgstr "この箇所では整数は使用できません。"
 
 #: explorerscript/explorerscript/common_syntax.py:103
 #: explorerscript/explorerscript/common_syntax.py:189
 msgid "Decimal not allowed at this position."
-msgstr ""
+msgstr "この箇所では小数は使用できません。"
 
 #: explorerscript/explorerscript/common_syntax.py:114
 msgid "Constant not allowed at this position."
-msgstr ""
+msgstr "この箇所では定数は使用できません。"
 
 #: explorerscript/explorerscript/common_syntax.py:125
 #: explorerscript/explorerscript/common_syntax.py:191
 msgid "Variable or constant not allowed at this position."
-msgstr ""
+msgstr "この箇所では変数または定数は使用できません。"
 
 #: explorerscript/explorerscript/common_syntax.py:129
 #: explorerscript/explorerscript/common_syntax.py:194
 msgid "String not allowed at this position."
-msgstr ""
+msgstr "この箇所では文字列は使用できません。"
 
 #: explorerscript/explorerscript/common_syntax.py:227
 msgid "Invalid target for routine."
-msgstr ""
+msgstr "ルーチンの対象が無効です。"
 
 #: explorerscript/explorerscript/common_syntax.py:256
 msgid "Position Marker arguments need to be an integer or a decimal with '.5' as the decimal places."
@@ -1035,7 +1035,7 @@ msgstr "If 条件の変数がありません。"
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:61
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:58
 msgid "No operator set for if condition."
-msgstr "if条件に演算子が設定されていません。"
+msgstr "if 条件に演算子が設定されていません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:63
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:60
@@ -1066,11 +1066,11 @@ msgstr "{self.ctx.start.line} 行での操作が不明です)。"
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/default_case_block.py:59
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/default_case_block.py:73
 msgid "Invalid message switch case call."
-msgstr "無効なメッセージスイッチのケースコール。"
+msgstr "無効な message switch の case が呼び出されました。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_header.py:74
 msgid "Unknown case operation."
-msgstr "不明なケース操作です。"
+msgstr "不明な case 操作です。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:54
 msgid "No value set for case menu condition."
@@ -1086,46 +1086,46 @@ msgstr ""
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:71
 msgid "Invalid message switch."
-msgstr "無効なメッセージスイッチです。"
+msgstr "無効なメッセージ switch です。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:76
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:89
 #, python-brace-format
 msgid "A message_ switch can only contain cases with strings (line {self.ctx.start.line})."
-msgstr "Message_switchは文字列( {self.ctx.start.line}行)の場合のみ使用できます。"
+msgstr "message_ switchは文字列の場合のみ使用できます ({self.ctx.start.line}行目)。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:80
 #, python-brace-format
 msgid "Invalid case type for message_ switch (line {self.ctx.start.line})."
-msgstr "Message_ switch ({self.ctx.start.line}行目) のケースタイプが無効です。"
+msgstr "message_ switch の case タイプが無効です ({self.ctx.start.line}行目)。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:109
 #, python-brace-format
 msgid "A switch block can only have a single default case (line {self.ctx.start.line}"
-msgstr "スイッチブロックにはデフォルトケースを 1 つだけ指定できます ({self.ctx.start.line}行目"
+msgstr "switch ブロックには default case を 1 つだけ指定できます ({self.ctx.start.line}行目"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:84
 #, python-brace-format
 msgid "A switch case must contain a list of statements (line {self.ctx.start.line})."
-msgstr "Switch caseにはステートメントのリストが含まれている必要があります ( {self.ctx.start.line}行目)。"
+msgstr "switch case にはステートメントのリストが含まれている必要があります ( {self.ctx.start.line}行目)。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:132
 #, python-brace-format
 msgid "Unexpected switch end (line {self.ctx.start.line})"
-msgstr "予期しないswitch終了 ( {self.ctx.start.line}行目)"
+msgstr "予期しない switch の終了 ( {self.ctx.start.line}行目)"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:146
 #, python-brace-format
 msgid "A switch block can only have a single default case (line {self.ctx.start.line})."
-msgstr "Switchブロックには、デフォルトケースを 1 つだけ指定できます ( {self.ctx.start.line}行目)。"
+msgstr "switch ブロックには、default case を 1 つだけ指定できます ( {self.ctx.start.line}行目)。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:80
 msgid "Invalid content for a switch-header"
-msgstr "Switch-headerの内容が無効です"
+msgstr "switch-header の内容が無効です"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:87
 msgid "Unknown switch operation."
-msgstr "不明なswitch操作。"
+msgstr "不明な switch 操作。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/dungeon_mode.py:44
 msgid "No dungeon id set for dungeon_mode switch condition."
@@ -1160,7 +1160,7 @@ msgstr "マクロを解決しようとしているときに依存関係サイク
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_visitor.py:95
 msgid "Macros can not alias."
-msgstr "マクロにはエイリアスを付けることはできません。"
+msgstr "マクロにエイリアスを付けることはできません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/statement_visitor.py:322
 msgid "Fatal compilation error: Unexpected compilation handler on stack."
@@ -1216,7 +1216,7 @@ msgstr "インポートが無効です ('{import_file}') 。\n"
 
 #: explorerscript/explorerscript/ssb_script/ssb_converting/compiler/compiler_visitor.py:147
 msgid "Operations in SSBScript cannot contain an inline context."
-msgstr ""
+msgstr "SSBScript の操作にインラインコンテキストを含めることはできません。"
 
 #: explorerscript/explorerscript/syntax_error_listener.py:41
 #, python-brace-format
@@ -1414,7 +1414,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/util.py:493
 msgid "The file you tried to open does not seem to be a valid NDS ROM file."
-msgstr ""
+msgstr "このファイルは有効な NDS ROM ファイルではありません。"
 
 #: skytemple-files/skytemple_files/common/util.py:502
 msgid "This ROM is not supported by SkyTemple."
@@ -3203,7 +3203,7 @@ msgstr "道具効果コードを抽出し、ファイルに入れます。"
 
 #: skytemple-files/skytemple_files/patch/handler/extract_sp_code.py:72
 msgid "Extracts special processes code and put it in files."
-msgstr ""
+msgstr "特殊処理コードを抽出し、ファイルに格納します。"
 
 #: skytemple-files/skytemple_files/patch/handler/fairy_gummies.py:113
 msgid "Implements Fairy-type specialized gummies. Uses unused item 138.\n"

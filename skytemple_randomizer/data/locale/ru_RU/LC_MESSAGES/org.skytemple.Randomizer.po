@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-23 08:19\n"
+"PO-Revision-Date: 2024-07-23 11:36\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1710,22 +1710,22 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/monster_xml.py:211
 #, python-brace-format
 msgid "Invalid XML. '{XML_STRINGS__NAME}' missing for language {xml_lang.tag}."
-msgstr ""
+msgstr "Недопустимый XML. '{XML_STRINGS__NAME}' отсутствует для языка {xml_lang.tag}."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:215
 #, python-brace-format
 msgid "Invalid XML. '{XML_STRINGS__CATEGORY}' missing for language {xml_lang.tag}."
-msgstr ""
+msgstr "Недопустимый XML. '{XML_STRINGS__CATEGORY}' отсутствует для языка {xml_lang.tag}."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:375
 #, python-brace-format
 msgid "Invalid XML. '{XML_GENENT_EXCLUSIVE_ITEMS}' needs four item IDs."
-msgstr ""
+msgstr "Недопустимый XML. Для '{XML_GENENT_EXCLUSIVE_ITEMS}' требуется четыре ID предметов."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:438
 #, python-brace-format
 msgid "Invalid XML. '{a}' missing for a {b}."
-msgstr ""
+msgstr "Недопустимый XML. '{a}' отсутствует для {b}."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:481
 #, python-brace-format
@@ -3515,100 +3515,100 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 msgid "New version available: {version}"
-msgstr ""
+msgstr "Доступна новая версия: {version}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
-msgstr ""
+msgstr "Обновить сейчас"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:26
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:40
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:116
 msgid "This will stop the randomization process and allow you to change settings again."
-msgstr ""
+msgstr "Это остановит процесс рандомизации и позволит вам снова изменить настройки."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:117
 msgid "Cancel randomization?"
-msgstr ""
+msgstr "Отменить рандомизацию?"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:119
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:147
 msgid "_No"
-msgstr ""
+msgstr "_Нет"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:120
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.py:148
 msgid "_Yes"
-msgstr ""
+msgstr "_Да"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:154
 msgid "Error while opening file ({})."
-msgstr ""
+msgstr "Ошибка открытия файла ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:160
 msgid "The path of the ROM file needs to end in '.nds'."
-msgstr ""
+msgstr "Путь к ROM файлу должен заканчиваться на '.nds'."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:172
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:203
 msgid "Randomizing... ({}%)"
-msgstr ""
+msgstr "Рандомизация... ({}%)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:225
 msgid "Randomizing failed!"
-msgstr ""
+msgstr "Рандомизация не удалась!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:226
 msgid "Error: {}"
-msgstr ""
+msgstr "Ошибка: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:233
 msgid "Randomizing complete!"
-msgstr ""
+msgstr "Рандомизация завершена!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:10
 msgid "Randomization Progress"
-msgstr ""
+msgstr "Прогресс рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:67
 msgid "Select Output File & Start Randomization"
-msgstr ""
+msgstr "Выбрать выходной файл и начать рандомизацию"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:122
 msgid "Input ROM"
-msgstr ""
+msgstr "Входной ROM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:129
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:152
 msgid "Open Folder in File Browser"
-msgstr ""
+msgstr "Открыть папку в файловом браузере"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:145
 msgid "Output ROM"
-msgstr ""
+msgstr "Выходной ROM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:146
 msgid "(Not yet chosen.)"
-msgstr ""
+msgstr "(Ещё не выбран.)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:171
 msgid "Game Region"
-msgstr ""
+msgstr "Регион игры"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:186
 msgid "Randomizer Version"
-msgstr ""
+msgstr "Версия программы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:201
 msgid "Seed"
-msgstr ""
+msgstr "Зерно генерации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"
-msgstr ""
+msgstr "О программе"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
@@ -3718,50 +3718,52 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:50
 msgid "Randomize"
-msgstr ""
+msgstr "Рандомизировать"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:134
 msgid "Here you can decide which dungeons you want to have affected by the randomization and whether or randomize weather or not.\n"
 "You can also disable Monster Houses for dungeons (recommended for early game). Additionally you can force dungeons to be unlocked.\n"
 "Please note that entering story dungeons prematurely can mess with the game's story progression."
-msgstr ""
+msgstr "Здесь вы можете решить какие подземелья должны быть затронуты рандомизацией, а также должна ли быть случайной погода.\n"
+"Также вы можете отключить Засады Монстров в подземельях(рекомендуется в начале игры). Также вы можете принудительно открыть подземелья. \n"
+"Обратите внимание: ранний вход в сюжетное подземелье может нарушить сюжетную прогрессию игры."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:204
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:273
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:164
 msgid "Failed to import: Error while opening file ({})."
-msgstr ""
+msgstr "Импортирование не удалось: ошибка открытия файла ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:217
 msgid "Missing dungeon ID in CSV"
-msgstr ""
+msgstr "Отсутствует ID подземелья в CSV"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:239
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:182
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
-msgstr ""
+msgstr "Не удалось импортировать. Убедитесь, что ваш CSV фай имеет тот же формат, что и при использовании кнопки экспортирования. Детали: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:268
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:320
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:211
 msgid "Failed to export: Error while opening file ({})."
-msgstr ""
+msgstr "Экспортирование не удалось: ошибка открытия файла({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:309
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:334
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:227
 msgid "Failed to export. Details: {}"
-msgstr ""
+msgstr "Экспортирование не удалось. Детали: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:315
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:236
 msgid "Import from CSV"
-msgstr ""
+msgstr "Импортировать из CSV"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:317
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:240
 msgid "Export to CSV"
-msgstr ""
+msgstr "Экспортировать в CSV"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:14
 msgid "Randomize Layouts, Tilesets and Music"
@@ -3773,15 +3775,15 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:50
 msgid "Whether or not to randomize weather. The chances of this occurring can be changed under 'Chance Thresholds'."
-msgstr ""
+msgstr "Следует ли рандомизировать погоду. Шанс происхождения этого может быть изменен в \"Порогах вероятностей\"."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:64
 msgid "Randomize Dungeon Items"
-msgstr ""
+msgstr "Рандомизировать предметы в подземельях"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:75
 msgid "Whether or not to randomize items on the floor, in dungeon shops, in monster houses and buried."
-msgstr ""
+msgstr "Следует ли рандомизировать предметы на этаже, в магазинах внутри подземелья, в засадах монстров и в стенах."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:89
 msgid "Randomize Pokémon Spawns"
@@ -3793,7 +3795,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:114
 msgid "Randomize Traps"
-msgstr ""
+msgstr "Рандомизировать ловушки"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:125
 msgid "Whether or not to randomize traps and Wonder Tile spawn chances."
@@ -3810,7 +3812,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:168
 msgid "Floor Count"
-msgstr ""
+msgstr "Количество этажей"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:171
 msgid "Max. Removal of Floors"
@@ -3860,7 +3862,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:114
 msgid "Tactics & IQ"
-msgstr ""
+msgstr "Тактики и IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:121
 msgid "Move Names for \"Blind Moves\" Mode"
@@ -3869,7 +3871,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
 msgid "A lot of names from the default list are from fantasynamegenerators.com."
-msgstr ""
+msgstr "Многие имена в списке по умолчанию взяты из fantasynamegenerators.com."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57

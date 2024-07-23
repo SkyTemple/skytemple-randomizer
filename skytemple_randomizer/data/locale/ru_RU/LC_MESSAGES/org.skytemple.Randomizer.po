@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-23 11:36\n"
+"PO-Revision-Date: 2024-07-23 22:29\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3836,7 +3836,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:14
 msgid "Randomize Explorer Rank Unlocks"
-msgstr ""
+msgstr "Рандомизация разблокировки рангов исследователя"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:25
 msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."
@@ -3844,11 +3844,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:39
 msgid "Randomize Explorer Rank Rewards"
-msgstr ""
+msgstr "Рандомизация наград за ранги исследователя"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:50
 msgid "If enabled, Explorer Ranks give random items as rewards upon unlocking a new level."
-msgstr ""
+msgstr "Если включено, то при достижении нового ранга исследователя будут даваться случайные предметы в качестве награды."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_items.py:144
 msgid "Only these items will spawn on dungeon floors."
@@ -3880,19 +3880,19 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:18
 msgid "Allowed Pokémon"
-msgstr ""
+msgstr "Разрешенные покемоны"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:38
 msgid "Randomize Starters"
-msgstr ""
+msgstr "Рандомизировать стартовых покемонов"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:47
 msgid "Configure which starters are available"
-msgstr ""
+msgstr "Настроить какие стартовые покемоны доступны"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:60
 msgid "Randomize NPCs and Bosses"
-msgstr ""
+msgstr "Рандомизировать NPC и боссов"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:71
 msgid "If enabled all NPCs are randomized and all mentions of them\n"
@@ -3903,7 +3903,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:90
 msgid "Moves"
-msgstr ""
+msgstr "Приемы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:93
 msgid "Randomize Movesets"
@@ -3919,7 +3919,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:138
 msgid "Move Pool"
-msgstr ""
+msgstr "Набор приемов"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:158
 msgid "\"Blind Moves\" Mode"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-24 08:33\n"
+"PO-Revision-Date: 2024-07-24 09:44\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: /dev/fd/63:93 /dev/fd/63:312
 msgid "Kirlia Secret Bazaar Strings"
-msgstr ""
+msgstr "キルリアのひみつのバザーの文字列"
 
 #: /dev/fd/63:94 /dev/fd/63:313
 msgid "Grab Bags Shop Strings"
@@ -407,11 +407,11 @@ msgstr "「ベロベルトランドリー」の文字列"
 
 #: /dev/fd/63:98 /dev/fd/63:317
 msgid "Team Tactics Menu Strings"
-msgstr ""
+msgstr "「さくせんかいぎ」メニュー文字列"
 
 #: /dev/fd/63:99 /dev/fd/63:318
 msgid "Item Became Sticky String"
-msgstr ""
+msgstr "ネバついた道具の文字列"
 
 #: /dev/fd/63:100 /dev/fd/63:319
 msgid "Pokemon LEVEL_UP Dialogue"
@@ -659,7 +659,7 @@ msgstr ""
 
 #: /dev/fd/63:161 /dev/fd/63:380
 msgid "Game and Dungeon Hints"
-msgstr ""
+msgstr "ゲームとダンジョンのヒント"
 
 #: /dev/fd/63:162 /dev/fd/63:381
 msgid "Adventure Log Entries"
@@ -2962,19 +2962,19 @@ msgstr "このメニューには {num_entries} エントリが必要です。"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:88
 msgid "Standing Animation (loop)"
-msgstr "立ちアニメーション(ループ)"
+msgstr "立ちアニメーション (ループ)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:89
 msgid "Standing Animation (1st frame)"
-msgstr "立ちアニメーション(1フレーム目)"
+msgstr "立ちアニメーション (1フレーム目)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:90
 msgid "Special"
-msgstr ""
+msgstr "特殊"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:91
 msgid "Walking Animation (1st frame)"
-msgstr "歩きアニメーション(1フレーム目)"
+msgstr "歩きアニメーション (1フレーム目)"
 
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:219
 #, python-brace-format
@@ -3023,7 +3023,9 @@ msgstr "指定したソースデータが構成内に存在しません。"
 msgid "\n\n"
 "The list was extracted anyway.\n"
 "You can already edit it through SkyTemple, but it won't be used in game, until you successfully apply the patch."
-msgstr ""
+msgstr "\n\n"
+"リストを抽出しました。\n"
+"SkyTempleで編集することができますが、パッチを正しく適用するまでゲーム上では使用されません。"
 
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
@@ -3227,8 +3229,8 @@ msgstr "ゲームがスプライトを読み込もうとしてメモリ不足に
 
 #: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:49
 msgid "Fixes an issue that causes saving to fail on the No$GBA emulator. Warning: Causes saving to fail on the MelonDS emulator instead."
-msgstr "No$GBA エミュレータでセーブに失敗する問題を修正します。\n"
-"注意: 代わりに MelonDs エミュレータで保存が失敗します。"
+msgstr "No$GBA エミュレータでセーブが行えない問題を修正します。\n"
+"注意: 代わりに MelonDS エミュレータでセーブが行えなくなります。"
 
 #: skytemple-files/skytemple_files/patch/handler/move_growth.py:176
 msgid "Implements move growth (PoC/Unfinished). \n"
@@ -3448,11 +3450,11 @@ msgstr "不明な操作 ({in_op.op_code.name}) です。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:255
 msgid "The number of parameters for {normal_op_code.name} must be at least {normal_op_code.params}, is {self._correct_param_list_len(in_op.params)}."
-msgstr ""
+msgstr "{normal_op_code.name} のパラメータ数は {normal_op_code.params} 以上でなければなりません。現在のパラメータ数は {self._correct_param_list_len(in_op.params)} です。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:276
 msgid "The number of parameters for {op_code.name} must be {op_code.params}, is {self._correct_param_list_len(in_op.params)}."
-msgstr ""
+msgstr "{op_code.name} のパラメータ数は {op_code.params} である必要があります。現在のパラメータ数は {self._correct_param_list_len(in_op.params)} です。"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:373
 #, python-brace-format
@@ -3470,7 +3472,8 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:169
 msgid "Could not compile script: All languages must have the same amount of strings."
-msgstr ""
+msgstr "スクリプトをコンパイルできませんでした。\n"
+"すべての言語で文字列の数が同じである必要があります。"
 
 #: skytemple-rust/src/image/tiled.rs:232
 msgid "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
@@ -3484,7 +3487,7 @@ msgstr "入力された画像はインデックス付き画像ではありませ
 
 #: skytemple-rust/src/romfs.rs:101
 msgid "ROM Header checksum does not match contents."
-msgstr "ROMヘッダチェックサムが内容と一致しません。"
+msgstr "ROM ヘッダチェックサムが内容と一致しません。"
 
 #: skytemple-rust/src/romfs.rs:110
 msgid "Error reading the filesystem from ROM: {}"
@@ -3507,11 +3510,11 @@ msgstr "このチャンクの新しいタイルマッピングには {} タイ�
 
 #: skytemple-rust/src/st_dbg.rs:123
 msgid "Can not import map background: Width of image must match the expected width: {}px"
-msgstr ""
+msgstr "マップの背景をインポートできません。画像の幅は {}px である必要があります。"
 
 #: skytemple-rust/src/st_dbg.rs:129
 msgid "Can not import map background: Height of image must match the expected height: {}px"
-msgstr ""
+msgstr "マップの背景をインポートできません。画像の高さは {}px である必要があります。"
 
 #: skytemple-rust/src/st_dpc.rs:149
 msgid "The image to import can only use the first 12 palettes. Tried to use palette {}"

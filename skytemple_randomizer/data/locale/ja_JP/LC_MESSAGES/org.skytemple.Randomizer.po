@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-24 06:16\n"
+"PO-Revision-Date: 2024-07-24 08:33\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -503,7 +503,7 @@ msgstr "わなの説明"
 
 #: /dev/fd/63:122 /dev/fd/63:341
 msgid "Status Names and Descriptions"
-msgstr ""
+msgstr "状態名・説明"
 
 #: /dev/fd/63:123 /dev/fd/63:342
 msgid "Auxiliary Move Descriptions"
@@ -523,35 +523,35 @@ msgstr "とくせいの説明"
 
 #: /dev/fd/63:127 /dev/fd/63:346
 msgid "Wireless Connection Strings"
-msgstr ""
+msgstr "ワイヤレス通信文字列"
 
 #: /dev/fd/63:128 /dev/fd/63:347
 msgid "Friend Code Strings"
-msgstr ""
+msgstr "フレンドコード文字列"
 
 #: /dev/fd/63:129 /dev/fd/63:348
 msgid "Email Strings"
-msgstr ""
+msgstr "Eメール文字列"
 
 #: /dev/fd/63:130 /dev/fd/63:349
 msgid "Wi-fi Connection Strings"
-msgstr ""
+msgstr "Wi-Fi通信文字列"
 
 #: /dev/fd/63:131 /dev/fd/63:350
 msgid "Wonder Mail S Strings"
-msgstr ""
+msgstr "ふしぎなメールS文字列"
 
 #: /dev/fd/63:132 /dev/fd/63:351
 msgid "Game Trade Strings"
-msgstr ""
+msgstr "どうぐこうかん文字列"
 
 #: /dev/fd/63:133 /dev/fd/63:352
 msgid "Mission Board Strings"
-msgstr ""
+msgstr "依頼掲示板文字列"
 
 #: /dev/fd/63:134 /dev/fd/63:353
 msgid "SOS Mail Strings"
-msgstr ""
+msgstr "たすけてメール文字列"
 
 #: /dev/fd/63:135 /dev/fd/63:354
 msgid "Mission Title Set Phrases"

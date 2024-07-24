@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-21 21:09\n"
+"PO-Revision-Date: 2024-07-24 21:11\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -207,15 +207,15 @@ msgstr "Persönlichkeitstest Debug (farbig)"
 
 #: /dev/fd/63:48 /dev/fd/63:267
 msgid "Sentry Duty Strings"
-msgstr ""
+msgstr "Wachdienst Zeichenketten"
 
 #: /dev/fd/63:49 /dev/fd/63:268
 msgid "Sentry Duty Hints"
-msgstr ""
+msgstr "Wachdienst Hinweise"
 
 #: /dev/fd/63:50 /dev/fd/63:269
 msgid "Dungeon Item Usage (Basic)"
-msgstr ""
+msgstr "Verwendung von Dungeon-Items (Allgemein)"
 
 #: /dev/fd/63:51 /dev/fd/63:270
 msgid "Dungeon Menu Strings (Primary)"
@@ -243,7 +243,7 @@ msgstr ""
 
 #: /dev/fd/63:57 /dev/fd/63:276
 msgid "Dungeon Item Usage (Bag)"
-msgstr ""
+msgstr "Verwendung von Dungeon-Items (Tasche)"
 
 #: /dev/fd/63:58 /dev/fd/63:277
 msgid "Weather Change Feedback"
@@ -255,11 +255,11 @@ msgstr "Wetter-Namen"
 
 #: /dev/fd/63:60 /dev/fd/63:279
 msgid "Floor-Wide Status"
-msgstr ""
+msgstr "Etagenweiter Status"
 
 #: /dev/fd/63:61 /dev/fd/63:280
 msgid "Story Mission Objectives"
-msgstr ""
+msgstr "Story-Missionsziele"
 
 #: /dev/fd/63:62 /dev/fd/63:281
 msgid "Mission Failure/Faint Strings"
@@ -283,7 +283,7 @@ msgstr ""
 
 #: /dev/fd/63:67 /dev/fd/63:286
 msgid "Nothing At Feet String"
-msgstr ""
+msgstr "\"Nichts am Boden\"-Zeichenkette"
 
 #: /dev/fd/63:68 /dev/fd/63:287
 msgid "Dungeon Friend Rescue Strings"
@@ -527,15 +527,15 @@ msgstr ""
 
 #: /dev/fd/63:128 /dev/fd/63:347
 msgid "Friend Code Strings"
-msgstr ""
+msgstr "Freundescode-Zeichenketten"
 
 #: /dev/fd/63:129 /dev/fd/63:348
 msgid "Email Strings"
-msgstr ""
+msgstr "E-Mail-Zeichenketten"
 
 #: /dev/fd/63:130 /dev/fd/63:349
 msgid "Wi-fi Connection Strings"
-msgstr ""
+msgstr "Wi-Fi-Connection Zeichenketten"
 
 #: /dev/fd/63:131 /dev/fd/63:350
 msgid "Wonder Mail S Strings"
@@ -547,11 +547,11 @@ msgstr ""
 
 #: /dev/fd/63:133 /dev/fd/63:352
 msgid "Mission Board Strings"
-msgstr ""
+msgstr "Missionsbrett Zeichenketten"
 
 #: /dev/fd/63:134 /dev/fd/63:353
 msgid "SOS Mail Strings"
-msgstr ""
+msgstr "SOS-Brief"
 
 #: /dev/fd/63:135 /dev/fd/63:354
 msgid "Mission Title Set Phrases"
@@ -571,47 +571,47 @@ msgstr ""
 
 #: /dev/fd/63:139 /dev/fd/63:358
 msgid "Debug Strings (Mission)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Mission)"
 
 #: /dev/fd/63:140 /dev/fd/63:359
 msgid "Debug Strings (Switch)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Schalter)"
 
 #: /dev/fd/63:141 /dev/fd/63:360
 msgid "Debug Strings (Data)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Daten)"
 
 #: /dev/fd/63:142 /dev/fd/63:361
 msgid "Debug Strings (Checks)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Checks)"
 
 #: /dev/fd/63:143 /dev/fd/63:362
 msgid "Debug Strings (General)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Allgemein)"
 
 #: /dev/fd/63:144 /dev/fd/63:363
 msgid "Debug Strings (Manipulation)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Manipulation)"
 
 #: /dev/fd/63:145 /dev/fd/63:364
 msgid "Debug Strings (Testing)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Tests)"
 
 #: /dev/fd/63:146 /dev/fd/63:365
 msgid "Debug Strings (Scripts)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Skripte)"
 
 #: /dev/fd/63:147 /dev/fd/63:366
 msgid "Debug Strings (Menu)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Menü)"
 
 #: /dev/fd/63:148 /dev/fd/63:367
 msgid "Debug Strings (Status)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Status)"
 
 #: /dev/fd/63:149 /dev/fd/63:368
 msgid "Debug Strings (Dungeon 1)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Dungeon 1)"
 
 #: /dev/fd/63:150 /dev/fd/63:369
 msgid "Portrait Names"
@@ -619,43 +619,43 @@ msgstr "Portrait-Namen"
 
 #: /dev/fd/63:151 /dev/fd/63:370
 msgid "Debug Strings (Dungeon 2)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Dungeon 2)"
 
 #: /dev/fd/63:152 /dev/fd/63:371
 msgid "Debug Strings (PKMN Storage)"
-msgstr ""
+msgstr "Debug-Zeichenketten (PKMN-Lager)"
 
 #: /dev/fd/63:153 /dev/fd/63:372
 msgid "Debug Strings (Message)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Nachrichten)"
 
 #: /dev/fd/63:154 /dev/fd/63:373
 msgid "Debug Strings (Triggers)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Trigger)"
 
 #: /dev/fd/63:155 /dev/fd/63:374
 msgid "Debug Strings (Bulletin 1)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Infobrett 1)"
 
 #: /dev/fd/63:156 /dev/fd/63:375
 msgid "Debug Strings (Bulletin 2)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Infobrett 2)"
 
 #: /dev/fd/63:157 /dev/fd/63:376
 msgid "Debug Strings (Mail)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Briefe)"
 
 #: /dev/fd/63:158 /dev/fd/63:377
 msgid "Debug Strings (Name)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Name)"
 
 #: /dev/fd/63:159 /dev/fd/63:378
 msgid "Debug Strings (Parameters)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Parameter)"
 
 #: /dev/fd/63:160 /dev/fd/63:379
 msgid "Debug Strings (Counter)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Zähler)"
 
 #: /dev/fd/63:161 /dev/fd/63:380
 msgid "Game and Dungeon Hints"
@@ -691,7 +691,7 @@ msgstr "Mitwirkende 1"
 
 #: /dev/fd/63:169 /dev/fd/63:388
 msgid "Special Mission Strings"
-msgstr ""
+msgstr "Zeichenketten für besondere Missionen"
 
 #: /dev/fd/63:170 /dev/fd/63:389
 msgid "Super Hasbrello and Bidoof Family"
@@ -715,11 +715,11 @@ msgstr "Mitwirkende 3"
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "Neue Pokémon-Namen"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "Neue Pokémon-Kategorien"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
@@ -932,7 +932,7 @@ msgstr "Ungültiges Ziel für Routine."
 
 #: explorerscript/explorerscript/common_syntax.py:256
 msgid "Position Marker arguments need to be an integer or a decimal with '.5' as the decimal places."
-msgstr ""
+msgstr "Positionsmarker-Argumente müssen eine Ganzzahl oder eine Dezimalzahl mit '.5' als Nachkommastelle sein."
 
 #: explorerscript/explorerscript/macro.py:105
 #, python-brace-format
@@ -1009,11 +1009,11 @@ msgstr "Ungültiger \"with(){{}}\" Ziel-Typ '{for_type}'."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:108
 msgid "Operations inside with(){} blocks cannot contain an inline `actor`, `object` or `performer` context."
-msgstr ""
+msgstr "Operationen innerhalb von with(){} Blöcken können keinen inline `actor`, `object` oder `performer` Kontext enthalten."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:117
 msgid "Each statement inside a with(){} block needs to contain exactly one binary operation. The handler for it generated multiple operations."
-msgstr ""
+msgstr "Jede Anweisung in einem \"with() {}\" Block muss exakt eine binäre Operation beinhalten. Es wurden mehrere Operationen generiert."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:138
 msgid "A with(){} block can not contain labels."
@@ -1374,7 +1374,7 @@ msgstr "Unten links"
 
 #: skytemple-files/skytemple_files/common/rw_value.py:440
 msgid "'{str(value)}' cannot be encoded as a shifted immediate."
-msgstr ""
+msgstr "'{str(value)}' kann nicht als Shifted Immediate kodiert werden."
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."

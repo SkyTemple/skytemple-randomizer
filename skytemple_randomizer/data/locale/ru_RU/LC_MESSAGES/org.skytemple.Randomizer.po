@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-24 14:31\n"
+"PO-Revision-Date: 2024-07-24 15:36\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3927,66 +3927,67 @@ msgstr "Режим \"Слепые приемы\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:169
 msgid "Enable \"Blind Moves\" mode: Move names are replaced with random names and move types are randomized."
-msgstr ""
+msgstr "Включает режим \"Слепые приемы\": имена приемов заменяются случайными именами, а типы приемов рандомизируются."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:184
 msgid "Configure move names in \"Blind Moves\" Mode"
-msgstr ""
+msgstr "Настройка имен приемы в режиме \"Слепые приемы\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:199
 msgid "Additional Pokémon Properties"
-msgstr ""
+msgstr "Дополнительные свойства покемонов"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:202
 msgid "Randomize Abilities"
-msgstr ""
+msgstr "Рандомизировать способности"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:211
 msgid "Configure which abilities are available"
-msgstr ""
+msgstr "Настроить какие способности доступны"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:224
 msgid "Randomize Typings"
-msgstr ""
+msgstr "Рандомизировать типы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:232
 msgid "Tactics &amp; IQ"
-msgstr ""
+msgstr "Тактики &amp; IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:146
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:196
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:149
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:171
 msgid "Reset to Default"
-msgstr ""
+msgstr "Сбросить на значения по умолчанию"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:149
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:199
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:152
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:176
 msgid "Select None"
-msgstr ""
+msgstr "Снять выделение"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:202
 msgid "Copy from \"Allowed Pokémon\""
-msgstr ""
+msgstr "Скопировать из списка \"Разрешенные покемоны\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:204
 msgid "Copy from Starters"
-msgstr ""
+msgstr "Скопировать из Стартовых покемонов"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:213
 msgid "Only the Pokémon selected will be used for any randomization option."
-msgstr ""
+msgstr "Только выбранные покемоны будут использоваться при любом варианте рандомизации."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_pool.py:217
 msgid "Only the Pokémon selected can appear as random starter options.\n"
 "They also need to be in the list of \"Allowed Pokémon\"."
-msgstr ""
+msgstr "Только выбранные покемоны могут появиться в качестве случайных стартовых покемонов.\n"
+"Они также должны быть в списке \"Разрешенные покемоны\"."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_moves_pool.py:159
 msgid "Only the moves selected will be used for any movesets or TM/HM randomization."
-msgstr ""
+msgstr "Только выбранные приемы будут использоваться для любых наборов приемов или рандомизации TM/HM."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:14
 msgid "Randomize Level-Up Movesets"

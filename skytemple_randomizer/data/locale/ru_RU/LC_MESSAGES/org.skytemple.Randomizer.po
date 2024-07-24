@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-24 15:36\n"
+"PO-Revision-Date: 2024-07-24 18:17\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1816,7 +1816,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
 msgid "Everyone"
-msgstr ""
+msgstr "Все"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
@@ -1829,7 +1829,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:65
 msgid "Everyone except user"
-msgstr ""
+msgstr "Все, кроме пользователя"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:66
 msgid "All allies except user"

@@ -56,10 +56,10 @@ class GuestRandomizer(AbstractRandomizer):
         return 1 + guest_poke_moves
 
     def run(self, status: Status):
-        status.step(_("Apply 'EditExtraPokemon' patch..."))
+        status.step(_("Apply 'EditGuestPokemon' patch..."))
         patcher = Patcher(self.rom, self.static_data)
-        if not patcher.is_applied("EditExtraPokemon"):
-            patcher.apply("EditExtraPokemon")
+        if not patcher.is_applied("EditGuestPokemon"):
+            patcher.apply("EditGuestPokemon")
         arm9 = bytearray(get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9))
         guests = GuestPokemonList.read(arm9, self.static_data)
 

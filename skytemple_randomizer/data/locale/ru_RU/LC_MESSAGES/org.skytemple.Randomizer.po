@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-27 09:08+0000\n"
-"PO-Revision-Date: 2024-07-27 09:12\n"
+"PO-Revision-Date: 2024-07-27 22:11\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -483,23 +483,23 @@ msgstr ""
 
 #: /dev/fd/63:117 /dev/fd/63:336
 msgid "Move Descriptions"
-msgstr ""
+msgstr "Описание приемов"
 
 #: /dev/fd/63:118 /dev/fd/63:337
 msgid "Item Long Descriptions"
-msgstr ""
+msgstr "Подробное описание предмета"
 
 #: /dev/fd/63:119 /dev/fd/63:338
 msgid "Item Short Descriptions"
-msgstr ""
+msgstr "Краткое описание предмета"
 
 #: /dev/fd/63:120 /dev/fd/63:339
 msgid "Trap Names"
-msgstr ""
+msgstr "Названия ловушек"
 
 #: /dev/fd/63:121 /dev/fd/63:340
 msgid "Trap Descriptions"
-msgstr ""
+msgstr "Описание ловушек"
 
 #: /dev/fd/63:122 /dev/fd/63:341
 msgid "Status Names and Descriptions"
@@ -511,15 +511,15 @@ msgstr ""
 
 #: /dev/fd/63:124 /dev/fd/63:343
 msgid "Type Names"
-msgstr ""
+msgstr "Названия типов"
 
 #: /dev/fd/63:125 /dev/fd/63:344
 msgid "Ability Names"
-msgstr ""
+msgstr "Названия способностей"
 
 #: /dev/fd/63:126 /dev/fd/63:345
 msgid "Ability Descriptions"
-msgstr ""
+msgstr "Описания способностей"
 
 #: /dev/fd/63:127 /dev/fd/63:346
 msgid "Wireless Connection Strings"
@@ -905,7 +905,7 @@ msgstr ""
 #: explorerscript/explorerscript/common_syntax.py:99
 #: explorerscript/explorerscript/common_syntax.py:187
 msgid "Integer not allowed at this position."
-msgstr ""
+msgstr "Целое число недопустимо в этой позиции."
 
 #: explorerscript/explorerscript/common_syntax.py:103
 #: explorerscript/explorerscript/common_syntax.py:189
@@ -928,7 +928,7 @@ msgstr ""
 
 #: explorerscript/explorerscript/common_syntax.py:227
 msgid "Invalid target for routine."
-msgstr ""
+msgstr "Недопустимая цель для рутины."
 
 #: explorerscript/explorerscript/common_syntax.py:256
 msgid "Position Marker arguments need to be an integer or a decimal with '.5' as the decimal places."
@@ -999,7 +999,7 @@ msgstr "Не указан ID цели для блока with(){}."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:86
 msgid "A with(){} block needs at least one statement."
-msgstr ""
+msgstr "В блоке with(){} должна быть по крайней мере одна команда."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:98
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/operations/operation.py:75

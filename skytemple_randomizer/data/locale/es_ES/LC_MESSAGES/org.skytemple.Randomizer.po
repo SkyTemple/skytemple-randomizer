@@ -3130,7 +3130,7 @@ msgstr "Implementa interrupciones de territorio. "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "Permite colocar entidades especiales de sala fija #124-127 (enemigos del Laberinto del Explorador) en cualquier sala fija sin que el juego se bloquee."
 
-#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
 msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
 msgstr "Cambia la forma en la que el juego determina cuándo añadir Pokémon adicionales al equipo para que pueda editarse más fácilmente."
 
@@ -4651,7 +4651,7 @@ msgid "Randomizing global item lists..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditGuestPokemon' patch..."
+msgid "Apply 'EditExtraPokemon' patch..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67

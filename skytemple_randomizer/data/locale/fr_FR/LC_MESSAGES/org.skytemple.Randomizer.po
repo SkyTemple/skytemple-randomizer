@@ -3129,7 +3129,7 @@ msgstr "Implémente les interruptions à mi-donjon. "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "Permet de placer des entités spéciales (ID entre 124 et 127, ennemies du dojo Ossatueur) dans toute salle statique sans faire planter le jeu."
 
-#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
 msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
 msgstr "Change la manière dont le jeu détermine quand est-ce qu'un pokémon doit être ajouté dans l'équipe durant le scénario pour modifier ceux-ci plus aisément"
 
@@ -4637,7 +4637,7 @@ msgid "Randomizing global item lists..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditGuestPokemon' patch..."
+msgid "Apply 'EditExtraPokemon' patch..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67

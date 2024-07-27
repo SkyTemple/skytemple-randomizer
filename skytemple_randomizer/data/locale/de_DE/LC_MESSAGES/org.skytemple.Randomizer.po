@@ -3129,7 +3129,7 @@ msgstr "Implementiert Dungeon-Unterbrechungen. "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "Ermöglicht das Platzieren spezieller statischer Raum-Entitäten #124 -127 (Feinde des Explorer-Labyrinths) in einen statischen Raum, ohne dass das Spiel abstürzt."
 
-#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
 msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
 msgstr "Ändert die Art und Weise, wie das Spiel bestimmt, wann dem Team zusätzliche Pokémon hinzugefügt werden, damit diese Information einfacher bearbeitet werden kann"
 
@@ -4678,8 +4678,8 @@ msgid "Randomizing global item lists..."
 msgstr "Listen der globalen Items werden randomisiert..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditGuestPokemon' patch..."
-msgstr "'EditGuestPokemon' Patch wird angewendet..."
+msgid "Apply 'EditExtraPokemon' patch..."
+msgstr "'EditExtraPokemon' Patch wird angewendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67
 msgid "Updating guest Pokémon..."

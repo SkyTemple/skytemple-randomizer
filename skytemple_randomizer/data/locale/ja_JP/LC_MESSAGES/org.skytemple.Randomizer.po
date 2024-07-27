@@ -3130,7 +3130,7 @@ msgstr "ダンジョンの中断を実装します。 "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "ゲームをクラッシュさせることなく、任意の固定フロアに特別な固定フロアエンティティ #124 -127 (たんけんたいのまの敵) を配置できます。"
 
-#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
 msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
 msgstr ""
 
@@ -4696,8 +4696,8 @@ msgid "Randomizing global item lists..."
 msgstr "グローバル道具リストをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditGuestPokemon' patch..."
-msgstr "パッチ 'EditGuestPokemon' を適用中..."
+msgid "Apply 'EditExtraPokemon' patch..."
+msgstr "パッチ 'EditExtraPokemon' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67
 msgid "Updating guest Pokémon..."

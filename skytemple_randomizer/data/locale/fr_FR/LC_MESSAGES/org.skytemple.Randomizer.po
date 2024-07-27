@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-21 21:09\n"
+"POT-Creation-Date: 2024-07-27 09:08+0000\n"
+"PO-Revision-Date: 2024-07-27 09:13\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -3129,9 +3129,9 @@ msgstr "Implémente les interruptions à mi-donjon. "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "Permet de placer des entités spéciales (ID entre 124 et 127, ennemies du dojo Ossatueur) dans toute salle statique sans faire planter le jeu."
 
-#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
-msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
-msgstr "Change la manière dont le jeu détermine quand est-ce qu'un pokémon doit être ajouté dans l'équipe durant le scénario pour modifier ceux-ci plus aisément"
+#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
+msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
@@ -3455,7 +3455,7 @@ msgid "Invalid parameter supplied for an operation: {param}"
 msgstr "Paramètre invalide pour une opération : {param}"
 
 #: skytemple-files/skytemple_files/script/ssb/ssb_number.py:94
-msgid "enc: 0x{:0x}, The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
+msgid "The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
 msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:169
@@ -4637,7 +4637,7 @@ msgid "Randomizing global item lists..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditExtraPokemon' patch..."
+msgid "Apply 'EditGuestPokemon' patch..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-27 09:08+0000\n"
-"PO-Revision-Date: 2024-07-27 22:11\n"
+"PO-Revision-Date: 2024-07-27 23:08\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1112,7 +1112,7 @@ msgstr "В case switch-сообщения должен быть список в�
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:132
 #, python-brace-format
 msgid "Unexpected switch end (line {self.ctx.start.line})"
-msgstr ""
+msgstr "Неожиданное окончание switch(строка {self.ctx.start.line})"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_block.py:146
 #, python-brace-format
@@ -1178,12 +1178,12 @@ msgstr ""
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:193
 #, python-brace-format
 msgid "Unexpected continue; in line {ctx.start.line}"
-msgstr ""
+msgstr "Неожиданный continue; в строке {ctx.start.line}"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:199
 #, python-brace-format
 msgid "Unexpected break_loop; in line {ctx.start.line}"
-msgstr ""
+msgstr "Неожиданный break_loop; в строке {ctx.start.line}"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/utils.py:205
 #, python-brace-format
@@ -1219,7 +1219,7 @@ msgstr ""
 #: explorerscript/explorerscript/syntax_error_listener.py:41
 #, python-brace-format
 msgid "line {self.line}:{self.column}: {self.msg}"
-msgstr ""
+msgstr "строка {self.line}:{self.column}: {self.msg}"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:89
 #, python-brace-format

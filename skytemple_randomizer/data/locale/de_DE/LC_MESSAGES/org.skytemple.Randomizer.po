@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-27 09:08+0000\n"
-"PO-Revision-Date: 2024-07-27 09:13\n"
+"PO-Revision-Date: 2024-07-28 09:00\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3131,7 +3131,7 @@ msgstr "Ermöglicht das Platzieren spezieller statischer Raum-Entitäten #124 -1
 
 #: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
 msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
-msgstr ""
+msgstr "Ändert die Art und Weise, wie das Spiel bestimmt, wann dem Team Gast-Pokémon hinzugefügt werden, damit diese Information einfacher bearbeitet werden kann"
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
@@ -4679,7 +4679,7 @@ msgstr "Listen der globalen Items werden randomisiert..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
 msgid "Apply 'EditGuestPokemon' patch..."
-msgstr ""
+msgstr "'EditGuestPokemon' Patch wird angewendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67
 msgid "Updating guest Pokémon..."

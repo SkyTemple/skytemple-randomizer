@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-27 09:08+0000\n"
-"PO-Revision-Date: 2024-07-27 09:13\n"
+"PO-Revision-Date: 2024-07-31 06:43\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -23,11 +23,11 @@ msgstr "英語"
 
 #: /dev/fd/63:2 /dev/fd/63:221
 msgid "Friend Rescue Set Phrases"
-msgstr ""
+msgstr "友達救助 フレーズ"
 
 #: /dev/fd/63:3 /dev/fd/63:222
 msgid "Friend Rescue Message Input Strings"
-msgstr ""
+msgstr "友達救助 依頼文文字列"
 
 #: /dev/fd/63:4 /dev/fd/63:223
 msgid "Debug Strings (Game Init)"
@@ -663,7 +663,7 @@ msgstr "ゲームとダンジョンのヒント"
 
 #: /dev/fd/63:162 /dev/fd/63:381
 msgid "Adventure Log Entries"
-msgstr ""
+msgstr "かつやくのあとエントリ"
 
 #: /dev/fd/63:163 /dev/fd/63:382
 msgid "Ground Map Names"
@@ -691,11 +691,11 @@ msgstr "スタッフロール 1"
 
 #: /dev/fd/63:169 /dev/fd/63:388
 msgid "Special Mission Strings"
-msgstr ""
+msgstr "特別任務文字列"
 
 #: /dev/fd/63:170 /dev/fd/63:389
 msgid "Super Hasbrello and Bidoof Family"
-msgstr ""
+msgstr "スーパーハスブレロ、ビッパの家族"
 
 #: /dev/fd/63:171 /dev/fd/63:390
 msgid "Spinda's Juice Bar Strings"
@@ -3239,7 +3239,12 @@ msgid "Implements move growth (PoC/Unfinished). \n"
 "The last version of ChangeMoveStatsDisplay must be used with this.\n"
 "May be incompatible if markfont.dat has been modified (except for ChangeMoveStatsDisplay)\n"
 "Makes all prior save files incompatible. "
-msgstr ""
+msgstr "技の成長を実装します (試験的/未完成)。\n"
+"'ActorAndLevelLoader'、'ExtractAnimData'、'ChangeMoveStatsDisplay' パッチが必要です。 \n"
+"'MoveShortcuts' パッチと併用する場合、このパッチは 'MoveShortcuts' パッチよりも後に適用 (または再適用) する必要があります。 \n"
+"また、'ChangeMoveStatsDisplay' パッチは最新バージョンを使用する必要があります。\n"
+"makefont.dat が変更されている場合は互換性が無くなる可能性があります。\n"
+"パッチ適用後以降のすべてのセーブファイルには互換性が無くなります。  "
 
 #: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
 msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."
@@ -3261,7 +3266,7 @@ msgstr "オブジェクトテーブルを ROM 内の別のファイルに抽出�
 
 #: skytemple-files/skytemple_files/patch/handler/partners_trigger_hidden_traps.py:50
 msgid "Recommended for CTC. Without this patch, partners cannot trigger hidden traps - this balances the game, as making your partners dodge traps with manual movement is easy, but this patch is not recommended for mods which use pitfall traps, as they instakill partners which step on them."
-msgstr ""
+msgstr "'CompleteTeamControl' パッチ使用時に推奨。パートナー操作時、正しく罠が発動するようにします。これはゲームバランスを改善するためのものですが「おとしあな」の罠を踏んでしまうとそのまま倒れてしまうため、これを使用するMODには推奨されません。"
 
 #: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
 msgid "Changes implementation of idle animation to an editable table."
@@ -3468,7 +3473,7 @@ msgstr "無効なパラメータ {param} が設定されています。"
 
 #: skytemple-files/skytemple_files/script/ssb/ssb_number.py:94
 msgid "The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
-msgstr ""
+msgstr "値 '{}' を保存できません。固定小数点数には -64.0 から 63.996 までの値を使用してください。"
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:169
 msgid "Could not compile script: All languages must have the same amount of strings."
@@ -4708,7 +4713,7 @@ msgstr "グローバル道具リストをランダマイズ中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
 msgid "Apply 'EditGuestPokemon' patch..."
-msgstr ""
+msgstr "パッチ 'EditGuestPokemon' を適用中..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67
 msgid "Updating guest Pokémon..."

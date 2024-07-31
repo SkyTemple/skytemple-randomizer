@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-07-27 09:08+0000\n"
-"PO-Revision-Date: 2024-07-31 06:43\n"
+"PO-Revision-Date: 2024-07-31 08:05\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -35,7 +35,7 @@ msgstr "デバッグ文字列 (ゲーム開始時)"
 
 #: /dev/fd/63:5 /dev/fd/63:224
 msgid "Util Strings"
-msgstr ""
+msgstr "ユーティリティ文字列"
 
 #: /dev/fd/63:6 /dev/fd/63:225
 msgid "Chapter and Special Episode Strings"
@@ -1377,7 +1377,7 @@ msgstr "左下"
 
 #: skytemple-files/skytemple_files/common/rw_value.py:440
 msgid "'{str(value)}' cannot be encoded as a shifted immediate."
-msgstr ""
+msgstr "'{str (value)}' はシフトされた即値としてエンコードすることはできません。"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
@@ -3197,7 +3197,7 @@ msgstr "依頼の報酬/宝箱のコンテンツやカクレオン商店の道�
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:139
 msgid "Don't have enough space to put filenames! "
-msgstr "ファイル名を入れるスペースが足りません。 "
+msgstr "ファイル名を入れるスペースが不足しています。 "
 
 #: skytemple-files/skytemple_files/patch/handler/extract_move_code.py:80
 msgid "Extracts move effects code and put it in files."
@@ -3240,11 +3240,11 @@ msgid "Implements move growth (PoC/Unfinished). \n"
 "May be incompatible if markfont.dat has been modified (except for ChangeMoveStatsDisplay)\n"
 "Makes all prior save files incompatible. "
 msgstr "技の成長を実装します (試験的/未完成)。\n"
-"'ActorAndLevelLoader'、'ExtractAnimData'、'ChangeMoveStatsDisplay' パッチが必要です。 \n"
-"'MoveShortcuts' パッチと併用する場合、このパッチは 'MoveShortcuts' パッチよりも後に適用 (または再適用) する必要があります。 \n"
-"また、'ChangeMoveStatsDisplay' パッチは最新バージョンを使用する必要があります。\n"
+"ActorAndLevelLoader、ExtractAnimData、ChangeMoveStatsDisplay パッチが必要です。 \n"
+"MoveShortcuts パッチと併用する場合、このパッチは MoveShortcuts パッチよりも後に適用 (または再適用) する必要があります。 \n"
+"また、ChangeMoveStatsDisplay パッチは最新バージョンを使用する必要があります。\n"
 "makefont.dat が変更されている場合は互換性が無くなる可能性があります。\n"
-"パッチ適用後以降のすべてのセーブファイルには互換性が無くなります。  "
+"パッチ適用後以降のすべてのセーブファイルには互換性が無くなります。 "
 
 #: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
 msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."

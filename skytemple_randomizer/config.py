@@ -225,7 +225,7 @@ def get_effective_seed(seed: Optional[str]):
 
 
 def is_int(typ):
-    return typ == int or typ == u8 or typ == u16 or typ == u32
+    return typ is int or typ == u8 or typ == u16 or typ == u32
 
 
 class ConfigFileLoader:
@@ -253,29 +253,29 @@ class ConfigFileLoader:
                     if field == "weather" and type(target[field]) == int:  # noqa: E721
                         target[field] = bool(target[field])
                 else:
-                    if field == "overworld_music" and field_type == bool:
+                    if field == "overworld_music" and field_type is bool:
                         target[field] = True
-                    elif field == "patch_disarm_monster_houses" and field_type == bool:
+                    elif field == "patch_disarm_monster_houses" and field_type is bool:
                         target[field] = True
-                    elif field == "patch_totalteamcontrol" and field_type == bool:
+                    elif field == "patch_totalteamcontrol" and field_type is bool:
                         target[field] = False
-                    elif field == "explorer_rank_unlocks" and field_type == bool:
+                    elif field == "explorer_rank_unlocks" and field_type is bool:
                         target[field] = False
-                    elif field == "explorer_rank_rewards" and field_type == bool:
+                    elif field == "explorer_rank_rewards" and field_type is bool:
                         target[field] = True
-                    elif field == "randomize_tactics" and field_type == bool:
+                    elif field == "randomize_tactics" and field_type is bool:
                         target[field] = False
-                    elif field == "randomize_iq_gain" and field_type == bool:
+                    elif field == "randomize_iq_gain" and field_type is bool:
                         target[field] = False
-                    elif field == "randomize_iq_skills" and field_type == bool:
+                    elif field == "randomize_iq_skills" and field_type is bool:
                         target[field] = False
-                    elif field == "randomize_iq_groups" and field_type == bool:
+                    elif field == "randomize_iq_groups" and field_type is bool:
                         target[field] = False
-                    elif field == "patch_fixmemorysoftlock" and field_type == bool:
+                    elif field == "patch_fixmemorysoftlock" and field_type is bool:
                         target[field] = True
-                    elif field == "tm_hm_movesets" and field_type == bool:
+                    elif field == "tm_hm_movesets" and field_type is bool:
                         target[field] = True
-                    elif field == "tms_hms" and field_type == bool:
+                    elif field == "tms_hms" and field_type is bool:
                         target[field] = True
                     elif field == "max_sticky_chance":
                         target[field] = 10
@@ -1155,7 +1155,7 @@ class ConfigFileLoader:
             if not isinstance(target, int):
                 raise ValueError(f"Value in JSON must be an integer for {typ}.")
             return typ(target)
-        elif typ == bool:
+        elif typ is bool:
             if not isinstance(target, bool):
                 raise ValueError(f"Expected a boolean for a field, but got {target.__class__.__name__}")
             return target
@@ -1167,7 +1167,7 @@ class ConfigFileLoader:
             if not isinstance(target, int):
                 raise ValueError(f"Expected an IntRange for a field, but got {target.__class__.__name__}")
             return typ(target)
-        elif typ == str:
+        elif typ is str:
             if not isinstance(target, str):
                 raise ValueError(f"Expected a string for a field, but got {target.__class__.__name__}")
             return target

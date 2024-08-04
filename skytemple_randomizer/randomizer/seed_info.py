@@ -223,7 +223,7 @@ def 0 {{
     message_ResetActor();
     message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
-    §l_menu;
+    @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Show Settings"):
             ~settings();
@@ -237,7 +237,7 @@ def 0 {{
 }}
 
 macro settings() {{
-    §l_settings;
+    @l_settings;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("General"):
             message_Mail("Randomize Starters?: {self._bool(self.config['starters_npcs']['starters'])}\\nRandomize NPCs and Bosses?: {self._bool(self.config['starters_npcs']['npcs'])}\\nRandomize OW Music?: {self._bool(self.config['starters_npcs']['overworld_music'])}\\nRandomize Top-Menu Music?: {self._bool(self.config['starters_npcs']['topmenu_music'])}\\nRandomize Explorer Rank Unlocks?: {self._bool(self.config['starters_npcs']['explorer_rank_unlocks'])}\\nRandomize Explorer Rank Rewards?: {self._bool(self.config['starters_npcs']['explorer_rank_rewards'])}\\Use Native File Handlers: {self._bool(self.config['starters_npcs']['native_file_handlers'])}");
@@ -311,7 +311,7 @@ def 0 {{
     message_ResetActor();
     message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
-    §l_menu;
+    @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Portrait Credits"):
             ~artists();
@@ -328,7 +328,7 @@ def 0 {{
 }}
 
 macro artists() {{
-    §l_artists;
+    @l_artists;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._artist_credits(portrait_credits())}
         case menu("Goodbye!"):
@@ -339,7 +339,7 @@ macro artists() {{
 }}
 
 macro licenses() {{
-    §l_licenses;
+    @l_licenses;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._license_explanations()}
         case menu("Goodbye!"):
@@ -380,7 +380,7 @@ def 0 {{
     message_ResetActor();
     message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
-    §l_menu;
+    @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Sprite Credits"):
             ~artists();
@@ -397,7 +397,7 @@ def 0 {{
 }}
 
 macro artists() {{
-    §l_artists;
+    @l_artists;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._artist_credits(sprite_credits())}
         case menu("Goodbye!"):
@@ -408,7 +408,7 @@ macro artists() {{
 }}
 
 macro licenses() {{
-    §l_licenses;
+    @l_licenses;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._license_explanations()}
         case menu("Goodbye!"):
@@ -469,7 +469,7 @@ def 0 {{
     message_ResetActor();
     message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
-    §l_menu;
+    @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("Patch Credits"):
             ~patches();
@@ -483,7 +483,7 @@ def 0 {{
 }}
 
 macro patches() {{
-    §l_patches;
+    @l_patches;
     switch ( message_SwitchMenu(0, 1) ) {{
         {self._patch_credits()}
         case menu("Goodbye!"):

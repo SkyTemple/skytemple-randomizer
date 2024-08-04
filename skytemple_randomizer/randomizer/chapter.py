@@ -66,6 +66,7 @@ class ChapterRandomizer(AbstractRandomizer):
                 for op in rtn:
                     if op.op_code.name == "back_SetBanner2":
                         chapter_name = random_txt_line(self.config["chapters"]["text"])
+                        assert isinstance(op.params[5], int)
                         string_index = op.params[5] - len(ssb.constants)
                         if len(ssb.strings) > 0:  # for jp this is empty.
                             for lang, __ in get_all_string_files(self.rom, self.static_data):

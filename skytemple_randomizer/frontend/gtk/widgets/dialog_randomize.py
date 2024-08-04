@@ -228,7 +228,9 @@ class RandomizeDialog(Adw.Dialog):
             self.status_row.add_css_class("error")
         else:
             assert self.output_file is not None
-            self.rom.saveToFile(self.output_file.get_path(), updateDeviceCapacity=True)
+            out_path = self.output_file.get_path()
+            assert out_path is not None
+            self.rom.saveToFile(out_path, updateDeviceCapacity=True)
             status_img_path = os.path.join(data_dir(), "duskako_happy.png")
             self.status_row.set_title(_("Randomizing complete!"))
             self.status_row.set_subtitle("")

@@ -407,6 +407,7 @@ class PortraitDownloader(AbstractRandomizer):
                         md_gender1=md_gender1,
                         md_gender2=md_gender2,
                         monster_bin=self.monster_bin,
+                        m_attack_bin=self.monster_attack_bin,
                         sprite_size_table=self.sprite_size_table,
                         is_expand_poke_list_patch_applied=self.is_expand_poke_list_applied,
                     )

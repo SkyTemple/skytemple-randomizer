@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-21 21:09\n"
+"POT-Creation-Date: 2024-08-04 17:21+0000\n"
+"PO-Revision-Date: 2024-08-04 18:04\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -207,43 +207,43 @@ msgstr "Persönlichkeitstest Debug (farbig)"
 
 #: /dev/fd/63:48 /dev/fd/63:267
 msgid "Sentry Duty Strings"
-msgstr ""
+msgstr "Wachdienst Zeichenketten"
 
 #: /dev/fd/63:49 /dev/fd/63:268
 msgid "Sentry Duty Hints"
-msgstr ""
+msgstr "Wachdienst Hinweise"
 
 #: /dev/fd/63:50 /dev/fd/63:269
 msgid "Dungeon Item Usage (Basic)"
-msgstr ""
+msgstr "Verwendung von Dungeon-Items (Allgemein)"
 
 #: /dev/fd/63:51 /dev/fd/63:270
 msgid "Dungeon Menu Strings (Primary)"
-msgstr ""
+msgstr "Dungeon-Menüstrings (primär)"
 
 #: /dev/fd/63:52 /dev/fd/63:271
 msgid "Dungeon Status Effect Strings"
-msgstr ""
+msgstr "Zeichenketten für Dungeon Statuseffekte"
 
 #: /dev/fd/63:53 /dev/fd/63:272
 msgid "Dungeon Menu Strings (Details)"
-msgstr ""
+msgstr "Dungeon-Menü Zeichenketten (Details)"
 
 #: /dev/fd/63:54 /dev/fd/63:273
 msgid "Dungeon Menu Strings (Secondary)"
-msgstr ""
+msgstr "Dungeon-Menüstrings (sekundär)"
 
 #: /dev/fd/63:55
 msgid "Dungeon Defeated Dialogue Strings"
-msgstr ""
+msgstr "Besiegt im Dungeon-Zeichenketten"
 
 #: /dev/fd/63:56
 msgid "Dungeon Cleared Dialogue Strings"
-msgstr ""
+msgstr "Dungeon geschafft-Zeichenketten"
 
 #: /dev/fd/63:57 /dev/fd/63:276
 msgid "Dungeon Item Usage (Bag)"
-msgstr ""
+msgstr "Verwendung von Dungeon-Items (Tasche)"
 
 #: /dev/fd/63:58 /dev/fd/63:277
 msgid "Weather Change Feedback"
@@ -255,11 +255,11 @@ msgstr "Wetter-Namen"
 
 #: /dev/fd/63:60 /dev/fd/63:279
 msgid "Floor-Wide Status"
-msgstr ""
+msgstr "Etagenweiter Status"
 
 #: /dev/fd/63:61 /dev/fd/63:280
 msgid "Story Mission Objectives"
-msgstr ""
+msgstr "Story-Missionsziele"
 
 #: /dev/fd/63:62 /dev/fd/63:281
 msgid "Mission Failure/Faint Strings"
@@ -271,95 +271,95 @@ msgstr "Änderungen der Geschwindigkeit"
 
 #: /dev/fd/63:64 /dev/fd/63:283
 msgid "Dungeon Potential Recruit Strings"
-msgstr ""
+msgstr "Dungeon-Zeichenketten für potentielle Anwärter"
 
 #: /dev/fd/63:65 /dev/fd/63:284
 msgid "Dungeon Gummi Feedback"
-msgstr ""
+msgstr "Feedback zu Gummis in Dungeons"
 
 #: /dev/fd/63:66 /dev/fd/63:285
 msgid "Traps Feedback (Primary)"
-msgstr ""
+msgstr "Feedback zu Fallen (primär)"
 
 #: /dev/fd/63:67 /dev/fd/63:286
 msgid "Nothing At Feet String"
-msgstr ""
+msgstr "\"Nichts am Boden\"-Zeichenkette"
 
 #: /dev/fd/63:68 /dev/fd/63:287
 msgid "Dungeon Friend Rescue Strings"
-msgstr ""
+msgstr "Zeichenketten zur Dungeon-Freundesrettung"
 
 #: /dev/fd/63:69 /dev/fd/63:288
 msgid "Dungeon General Feedback 1"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 1"
 
 #: /dev/fd/63:70 /dev/fd/63:289
 msgid "Dungeon General Feedback 2"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 2"
 
 #: /dev/fd/63:71 /dev/fd/63:290
 msgid "Something's Stirring Strings"
-msgstr ""
+msgstr "'Da ist irgendetwas...' Zeichenkette"
 
 #: /dev/fd/63:72 /dev/fd/63:291
 msgid "Dungeon General Feedback 3"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 3"
 
 #: /dev/fd/63:73 /dev/fd/63:292
 msgid "Dungeon New Recruit Strings"
-msgstr ""
+msgstr "Dungeon-Zeichenketten für neue Anwärter"
 
 #: /dev/fd/63:74 /dev/fd/63:293
 msgid "Dungeon General Feedback 4"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 4"
 
 #: /dev/fd/63:75 /dev/fd/63:294
 msgid "Status Effect Resolved Feedback"
-msgstr ""
+msgstr "Feedback zu aufgelösten Statuseffekten"
 
 #: /dev/fd/63:76 /dev/fd/63:295
 msgid "Status Effect Apply Feedback"
-msgstr ""
+msgstr "Feedback zu angewendeten Statuseffekten"
 
 #: /dev/fd/63:77 /dev/fd/63:296
 msgid "Pokemon Stats Change Feedback 1"
-msgstr ""
+msgstr "Feedback zu geänderten Statuswerten 1"
 
 #: /dev/fd/63:78 /dev/fd/63:297
 msgid "Status Effect Protect Feedback 1"
-msgstr ""
+msgstr "Feedback zu Schutz vor Statuseffekten 1"
 
 #: /dev/fd/63:79 /dev/fd/63:298
 msgid "PP Recover Strings"
-msgstr ""
+msgstr "AP-Auffüllung Zeichenketten"
 
 #: /dev/fd/63:80 /dev/fd/63:299
 msgid "Conversion/Sketch Strings"
-msgstr ""
+msgstr "Umwandlung/Nachahmer Zeichenketten"
 
 #: /dev/fd/63:81 /dev/fd/63:300
 msgid "Status Effect Protect Feedback 2"
-msgstr ""
+msgstr "Feedback zu Schutz vor Statuseffekten 2"
 
 #: /dev/fd/63:82 /dev/fd/63:301
 msgid "Dungeon Pokemon Stat Names"
-msgstr ""
+msgstr "Namen von Pokémon Statuswerten"
 
 #: /dev/fd/63:83 /dev/fd/63:302
 msgid "Pokemon Stats Change Feedback 2"
-msgstr ""
+msgstr "Feedback zu geänderten Statuswerten 2"
 
 #: /dev/fd/63:84 /dev/fd/63:303
 msgid "Dungeon General Feedback 5"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 5"
 
 #: /dev/fd/63:85 /dev/fd/63:304
 msgid "Mission Feedback"
-msgstr ""
+msgstr "Feedback für Missionen"
 
 #: /dev/fd/63:86 /dev/fd/63:305
 msgid "Dungeon General Feedback 6"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 6"
 
 #: /dev/fd/63:87 /dev/fd/63:306
 msgid "Kecleon Dungeon Shop Strings"
@@ -367,27 +367,27 @@ msgstr "Zeichenketten für Dungeon Kecleon-Läden"
 
 #: /dev/fd/63:88 /dev/fd/63:307
 msgid "Anchored Feedback"
-msgstr ""
+msgstr "Verankert-Feedback"
 
 #: /dev/fd/63:89 /dev/fd/63:308
 msgid "Traps Feedback (Secondary)"
-msgstr ""
+msgstr "Feedback zu Fallen (sekundär)"
 
 #: /dev/fd/63:90 /dev/fd/63:309
 msgid "Dungeon General Feedback 7"
-msgstr ""
+msgstr "Allgemeines Dungeon-Feedback 7"
 
 #: /dev/fd/63:91 /dev/fd/63:310
 msgid "Move Feedback (Primary)"
-msgstr ""
+msgstr "Feedback zu Attacken (primär)"
 
 #: /dev/fd/63:92 /dev/fd/63:311
 msgid "Dungeon Level Up Detail Strings"
-msgstr ""
+msgstr "Zeichenketten zu Levelaufstieg in Dungeons"
 
 #: /dev/fd/63:93 /dev/fd/63:312
 msgid "Kirlia Secret Bazaar Strings"
-msgstr ""
+msgstr "Kirlia Geheimbasar Zeichenketten"
 
 #: /dev/fd/63:94 /dev/fd/63:313
 msgid "Grab Bags Shop Strings"
@@ -407,11 +407,11 @@ msgstr "Schluckwech-Shop Zeichenketten"
 
 #: /dev/fd/63:98 /dev/fd/63:317
 msgid "Team Tactics Menu Strings"
-msgstr ""
+msgstr "Menü für Taktikauswahl"
 
 #: /dev/fd/63:99 /dev/fd/63:318
 msgid "Item Became Sticky String"
-msgstr ""
+msgstr "'Item wurde klebrig'-Zeichenkette"
 
 #: /dev/fd/63:100 /dev/fd/63:319
 msgid "Pokemon LEVEL_UP Dialogue"
@@ -479,7 +479,7 @@ msgstr "Zeichenketten für Genauigkeit und Stärke"
 
 #: /dev/fd/63:116 /dev/fd/63:335
 msgid "Always Hit/No Damage Strings"
-msgstr ""
+msgstr "Trifft Immer/Kein Schaden Zeichenketten"
 
 #: /dev/fd/63:117 /dev/fd/63:336
 msgid "Move Descriptions"
@@ -503,11 +503,11 @@ msgstr "Fallenbeschreibungen"
 
 #: /dev/fd/63:122 /dev/fd/63:341
 msgid "Status Names and Descriptions"
-msgstr ""
+msgstr "Statusnamen und -beschreibungen"
 
 #: /dev/fd/63:123 /dev/fd/63:342
 msgid "Auxiliary Move Descriptions"
-msgstr ""
+msgstr "Beschreibungen von Hilfsattacken"
 
 #: /dev/fd/63:124 /dev/fd/63:343
 msgid "Type Names"
@@ -523,95 +523,95 @@ msgstr "Fähigkeitsbeschreibungen"
 
 #: /dev/fd/63:127 /dev/fd/63:346
 msgid "Wireless Connection Strings"
-msgstr ""
+msgstr "Wi-Fi Zeichenketten"
 
 #: /dev/fd/63:128 /dev/fd/63:347
 msgid "Friend Code Strings"
-msgstr ""
+msgstr "Freundescode-Zeichenketten"
 
 #: /dev/fd/63:129 /dev/fd/63:348
 msgid "Email Strings"
-msgstr ""
+msgstr "E-Mail-Zeichenketten"
 
 #: /dev/fd/63:130 /dev/fd/63:349
 msgid "Wi-fi Connection Strings"
-msgstr ""
+msgstr "Wi-Fi-Connection Zeichenketten"
 
 #: /dev/fd/63:131 /dev/fd/63:350
 msgid "Wonder Mail S Strings"
-msgstr ""
+msgstr "S-Wunderbrief Zeichenketten"
 
 #: /dev/fd/63:132 /dev/fd/63:351
 msgid "Game Trade Strings"
-msgstr ""
+msgstr "Tausch-Zeichenketten"
 
 #: /dev/fd/63:133 /dev/fd/63:352
 msgid "Mission Board Strings"
-msgstr ""
+msgstr "Missionsbrett Zeichenketten"
 
 #: /dev/fd/63:134 /dev/fd/63:353
 msgid "SOS Mail Strings"
-msgstr ""
+msgstr "SOS-Brief"
 
 #: /dev/fd/63:135 /dev/fd/63:354
 msgid "Mission Title Set Phrases"
-msgstr ""
+msgstr "Missionstitel-Phrasen"
 
 #: /dev/fd/63:136 /dev/fd/63:355
 msgid "Mission Description Set Phrases"
-msgstr ""
+msgstr "Missionsbeschreibung-Phrasen"
 
 #: /dev/fd/63:137 /dev/fd/63:356
 msgid "Mission Detail Strings"
-msgstr ""
+msgstr "Missionsdetails Zeichenketten"
 
 #: /dev/fd/63:138 /dev/fd/63:357
 msgid "Mission Objective Strings"
-msgstr ""
+msgstr "Missionsziele Zeichenketten"
 
 #: /dev/fd/63:139 /dev/fd/63:358
 msgid "Debug Strings (Mission)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Mission)"
 
 #: /dev/fd/63:140 /dev/fd/63:359
 msgid "Debug Strings (Switch)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Schalter)"
 
 #: /dev/fd/63:141 /dev/fd/63:360
 msgid "Debug Strings (Data)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Daten)"
 
 #: /dev/fd/63:142 /dev/fd/63:361
 msgid "Debug Strings (Checks)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Checks)"
 
 #: /dev/fd/63:143 /dev/fd/63:362
 msgid "Debug Strings (General)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Allgemein)"
 
 #: /dev/fd/63:144 /dev/fd/63:363
 msgid "Debug Strings (Manipulation)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Manipulation)"
 
 #: /dev/fd/63:145 /dev/fd/63:364
 msgid "Debug Strings (Testing)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Tests)"
 
 #: /dev/fd/63:146 /dev/fd/63:365
 msgid "Debug Strings (Scripts)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Skripte)"
 
 #: /dev/fd/63:147 /dev/fd/63:366
 msgid "Debug Strings (Menu)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Menü)"
 
 #: /dev/fd/63:148 /dev/fd/63:367
 msgid "Debug Strings (Status)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Status)"
 
 #: /dev/fd/63:149 /dev/fd/63:368
 msgid "Debug Strings (Dungeon 1)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Dungeon 1)"
 
 #: /dev/fd/63:150 /dev/fd/63:369
 msgid "Portrait Names"
@@ -619,51 +619,51 @@ msgstr "Portrait-Namen"
 
 #: /dev/fd/63:151 /dev/fd/63:370
 msgid "Debug Strings (Dungeon 2)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Dungeon 2)"
 
 #: /dev/fd/63:152 /dev/fd/63:371
 msgid "Debug Strings (PKMN Storage)"
-msgstr ""
+msgstr "Debug-Zeichenketten (PKMN-Lager)"
 
 #: /dev/fd/63:153 /dev/fd/63:372
 msgid "Debug Strings (Message)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Nachrichten)"
 
 #: /dev/fd/63:154 /dev/fd/63:373
 msgid "Debug Strings (Triggers)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Trigger)"
 
 #: /dev/fd/63:155 /dev/fd/63:374
 msgid "Debug Strings (Bulletin 1)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Infobrett 1)"
 
 #: /dev/fd/63:156 /dev/fd/63:375
 msgid "Debug Strings (Bulletin 2)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Infobrett 2)"
 
 #: /dev/fd/63:157 /dev/fd/63:376
 msgid "Debug Strings (Mail)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Briefe)"
 
 #: /dev/fd/63:158 /dev/fd/63:377
 msgid "Debug Strings (Name)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Name)"
 
 #: /dev/fd/63:159 /dev/fd/63:378
 msgid "Debug Strings (Parameters)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Parameter)"
 
 #: /dev/fd/63:160 /dev/fd/63:379
 msgid "Debug Strings (Counter)"
-msgstr ""
+msgstr "Debug-Zeichenketten (Zähler)"
 
 #: /dev/fd/63:161 /dev/fd/63:380
 msgid "Game and Dungeon Hints"
-msgstr ""
+msgstr "Spiel- und Dungeon-Tipps"
 
 #: /dev/fd/63:162 /dev/fd/63:381
 msgid "Adventure Log Entries"
-msgstr ""
+msgstr "Abenteuer-Log-Einträge"
 
 #: /dev/fd/63:163 /dev/fd/63:382
 msgid "Ground Map Names"
@@ -691,7 +691,7 @@ msgstr "Mitwirkende 1"
 
 #: /dev/fd/63:169 /dev/fd/63:388
 msgid "Special Mission Strings"
-msgstr ""
+msgstr "Zeichenketten für besondere Missionen"
 
 #: /dev/fd/63:170 /dev/fd/63:389
 msgid "Super Hasbrello and Bidoof Family"
@@ -715,11 +715,11 @@ msgstr "Mitwirkende 3"
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "Neue Pokémon-Namen"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "Neue Pokémon-Kategorien"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
@@ -896,11 +896,11 @@ msgstr "Spanisch"
 
 #: /dev/fd/63:274
 msgid "Dungeon Defeated Dialog Strings"
-msgstr ""
+msgstr "Besiegt im Dungeon-Zeichenketten"
 
 #: /dev/fd/63:275
 msgid "Dungeon Cleared Dialog Strings"
-msgstr ""
+msgstr "Dungeon geschafft-Zeichenketten"
 
 #: explorerscript/explorerscript/common_syntax.py:99
 #: explorerscript/explorerscript/common_syntax.py:187
@@ -932,7 +932,7 @@ msgstr "Ungültiges Ziel für Routine."
 
 #: explorerscript/explorerscript/common_syntax.py:256
 msgid "Position Marker arguments need to be an integer or a decimal with '.5' as the decimal places."
-msgstr ""
+msgstr "Positionsmarker-Argumente müssen eine Ganzzahl oder eine Dezimalzahl mit '.5' als Nachkommastelle sein."
 
 #: explorerscript/explorerscript/macro.py:105
 #, python-brace-format
@@ -1009,11 +1009,11 @@ msgstr "Ungültiger \"with(){{}}\" Ziel-Typ '{for_type}'."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:108
 msgid "Operations inside with(){} blocks cannot contain an inline `actor`, `object` or `performer` context."
-msgstr ""
+msgstr "Operationen innerhalb von with(){} Blöcken können keinen inline `actor`, `object` oder `performer` Kontext enthalten."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:117
 msgid "Each statement inside a with(){} block needs to contain exactly one binary operation. The handler for it generated multiple operations."
-msgstr ""
+msgstr "Jede Anweisung in einem \"with() {}\" Block muss exakt eine binäre Operation beinhalten. Es wurden mehrere Operationen generiert."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:138
 msgid "A with(){} block can not contain labels."
@@ -1288,93 +1288,105 @@ msgstr "Fehler in der XML-Datei: Dauer für eine Palette oder eine ihrer Farben 
 msgid "No match found for rule {orig_rule}. Input set correct?"
 msgstr "Keine Übereinstimmung für Regel {orig_rule} gefunden. Eingabedaten korrekt?"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
 msgid "One Layer (#00)"
 msgstr "Eine Ebene (#00)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
 msgid "One Layer (#01)"
 msgstr "Eine Ebene (#01)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
 msgid "One Layer (#02)"
 msgstr "Eine Ebene (#02)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
 msgid "One Layer (#03)"
 msgstr "Eine Ebene (#03)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
 msgid "One Layer (#04)"
 msgstr "Eine Ebene (#04)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
 msgid "Two Layers (#05)"
 msgstr "Zwei Ebenen (#05)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
 msgid "Two Layers (#06)"
 msgstr "Zwei Ebenen (#06)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Two Layers (#07)"
 msgstr "Zwei Ebenen (#07)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
 msgid "Two Layers (#08)"
 msgstr "Zwei Ebenen (#08)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
 msgid "Two Layers (#09)"
 msgstr "Zwei Ebenen (#09)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:152
 msgid "Dungeon Tileset (#10)"
 msgstr "Dungeon-Tileset (#10)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:153
 msgid "Use Fixed Room (#11)"
 msgstr "Statischen Raum nutzen (#11)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:272
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:274
 msgid "This function has no description."
 msgstr "Diese Funktion hat keine Beschreibung."
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:314
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
 msgid "Down"
 msgstr "Unten"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
 msgid "Down Right"
 msgstr "Unten rechts"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
 msgid "Right"
 msgstr "Rechts"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
 msgid "Up Right"
 msgstr "Oben rechts"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
 msgid "Up"
 msgstr "Oben"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
 msgid "Up Left"
 msgstr "Oben links"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
 msgid "Left"
 msgstr "Links"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
 msgid "Down Left"
 msgstr "Unten links"
 
 #: skytemple-files/skytemple_files/common/rw_value.py:440
 msgid "'{str(value)}' cannot be encoded as a shifted immediate."
-msgstr ""
+msgstr "'{str(value)}' kann nicht als Shifted Immediate kodiert werden."
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:94
+msgid "Sprite VRAM Size"
+msgstr "Sprite VRAM-Größe"
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:98
+msgid "Body Size"
+msgstr "Körpergröße"
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:105
+msgid "Sprite File Size"
+msgstr "Sprite Dateigröße"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
@@ -1410,32 +1422,32 @@ msgid "An image selected to import is too complex. It has too many unique tiles 
 msgstr "Ein Bild, das importiert werden sollte, ist zu komplex. Es hat zu viele einzigartige Kacheln ({len_final_tiles}). Maximal sind 1024 erlaubt.\n"
 "Versuche, weniger einzigartige Kacheln im Bild zu haben. Einzigartige Kacheln sind 8x8 Bereiche im Bild, die nirgendwo sonst im Bild vorkommen (inklusive gedrehter oder gespiegelter Variationen oder mit einer anderen Palette)."
 
-#: skytemple-files/skytemple_files/common/util.py:493
+#: skytemple-files/skytemple_files/common/util.py:494
 msgid "The file you tried to open does not seem to be a valid NDS ROM file."
 msgstr "Die zu öffnende Datei scheint keine gültige NDS-ROM-Datei zu sein."
 
-#: skytemple-files/skytemple_files/common/util.py:502
+#: skytemple-files/skytemple_files/common/util.py:503
 msgid "This ROM is not supported by SkyTemple."
 msgstr "Diese ROM wird nicht unterstützt von SkyTemple."
 
-#: skytemple-files/skytemple_files/common/util.py:572
-#: skytemple-files/skytemple_files/common/util.py:591
+#: skytemple-files/skytemple_files/common/util.py:573
+#: skytemple-files/skytemple_files/common/util.py:592
 #, python-brace-format
 msgid "Binary {binary.name} not found."
 msgstr "Binärdatei {binary.name} wurde nicht gefunden."
 
-#: skytemple-files/skytemple_files/common/util.py:612
-#: skytemple-files/skytemple_files/common/util.py:643
+#: skytemple-files/skytemple_files/common/util.py:613
+#: skytemple-files/skytemple_files/common/util.py:644
 #, python-brace-format
 msgid "Folder {dir_name} does not exist."
 msgstr "Ordner {dir_name} existiert nicht."
 
-#: skytemple-files/skytemple_files/common/util.py:615
+#: skytemple-files/skytemple_files/common/util.py:616
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
 msgstr "Datei {file_name} existiert in diesem Ordner bereits."
 
-#: skytemple-files/skytemple_files/common/util.py:638
+#: skytemple-files/skytemple_files/common/util.py:639
 #, python-brace-format
 msgid "Folder {path} already exists."
 msgstr "Ordner {path} existiert bereits."
@@ -3129,9 +3141,9 @@ msgstr "Implementiert Dungeon-Unterbrechungen. "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "Ermöglicht das Platzieren spezieller statischer Raum-Entitäten #124 -127 (Feinde des Explorer-Labyrinths) in einen statischen Raum, ohne dass das Spiel abstürzt."
 
-#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
-msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
-msgstr "Ändert die Art und Weise, wie das Spiel bestimmt, wann dem Team zusätzliche Pokémon hinzugefügt werden, damit diese Information einfacher bearbeitet werden kann"
+#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
+msgstr "Ändert die Art und Weise, wie das Spiel bestimmt, wann dem Team Gast-Pokémon hinzugefügt werden, damit diese Information einfacher bearbeitet werden kann"
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
@@ -3143,10 +3155,10 @@ msgstr "Implementiert geteilte Erfahrungspunkte zwischen allen Teammitgliedern (
 
 #: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
 msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
-"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile patches to work.\n"
+"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr "Erweitert die Anzahl der erlaubten Pokémon auf 2048 und macht alle Einträge unabhängig voneinander. Benötigt die Patches ChangeEvoSystem, ExternalizeWazaFile und ExternalizeMappaFile.\n"
+msgstr "Erweitert die Anzahl der erlaubten Pokémon auf 2048 und macht alle Einträge unabhängig voneinander. Benötigt die Patches ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile und SpriteSizeInMonsterData.\n"
 "Es wird dringend empfohlen alle Dungeon-Fehler zu beheben, bevor dieser Patch angewendet wird, und ein Backup deiner ROM zu erstellen."
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
@@ -3296,6 +3308,10 @@ msgid "Skips the quiz, only leaving the gender question.\n"
 msgstr "Überspringt das Persönlichkeitsquiz. Der Spieler wird nur nach dem Geschlecht gefragt.\n"
 "Der \"ChooseStarter\"-Patch muss angewendet sein. "
 
+#: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
+msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
+msgstr "Ändert Sprite-Größe und Sprite-Dateigröße-Werte, damit sie in den Daten jedes Pokémon enthalten sind."
+
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
@@ -3312,71 +3328,71 @@ msgstr "Bietet Unterstützung für ATUPX Container, welche einen andere Komprimi
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr "Behebt die „ungenutzte“ Chance für Dungeons. Diese Chance bestimmt jetzt die Wahrscheinlichkeit, dass ein Wandlabyrinth-Raum auf einer Dungeon-Ebene generiert wird."
 
-#: skytemple-files/skytemple_files/patch/patches.py:232
-#: skytemple-files/skytemple_files/patch/patches.py:242
+#: skytemple-files/skytemple_files/patch/patches.py:234
+#: skytemple-files/skytemple_files/patch/patches.py:244
 #, python-brace-format
 msgid "The patch '{name}' was not found."
 msgstr "Der Patch '{name}' wurde nicht gefunden."
 
-#: skytemple-files/skytemple_files/patch/patches.py:249
+#: skytemple-files/skytemple_files/patch/patches.py:251
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
 msgstr "Der Patch '{patch_name}' muss angewendet werden, bevor du '{name} ' anwenden kannst."
 
-#: skytemple-files/skytemple_files/patch/patches.py:255
+#: skytemple-files/skytemple_files/patch/patches.py:257
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr "Der Patch '{patch_name}' muss angewendet werden, bevor du '{name} ' anwenden kannst. Dieser Patch wurde nicht gefunden."
 
-#: skytemple-files/skytemple_files/patch/patches.py:265
+#: skytemple-files/skytemple_files/patch/patches.py:267
 msgid "No configuration was given."
 msgstr "Es wurde keine Konfiguration angegeben."
 
-#: skytemple-files/skytemple_files/patch/patches.py:268
+#: skytemple-files/skytemple_files/patch/patches.py:270
 msgid "Missing configuration value."
 msgstr "Fehlender Konfigurationswert."
 
-#: skytemple-files/skytemple_files/patch/patches.py:273
-#: skytemple-files/skytemple_files/patch/patches.py:279
-#: skytemple-files/skytemple_files/patch/patches.py:285
-#: skytemple-files/skytemple_files/patch/patches.py:293
-#: skytemple-files/skytemple_files/patch/patches.py:307
+#: skytemple-files/skytemple_files/patch/patches.py:275
+#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:295
+#: skytemple-files/skytemple_files/patch/patches.py:309
 msgid "Invalid configuration value."
 msgstr "Ungültiger Konfigurationswert."
 
-#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:283
 msgid "Must be >= {}."
 msgstr "Muss >= {} sein."
 
-#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:289
 msgid "Must be <= {}."
 msgstr "Muss <= {} sein."
 
-#: skytemple-files/skytemple_files/patch/patches.py:394
+#: skytemple-files/skytemple_files/patch/patches.py:396
 msgid "config.xml missing in patch package."
 msgstr "config.xml fehlt im Patch-Paket."
 
-#: skytemple-files/skytemple_files/patch/patches.py:396
+#: skytemple-files/skytemple_files/patch/patches.py:398
 msgid "Syntax error in the config.xml while reading patch package."
 msgstr "Syntax-Fehler in der config.xml des Patch-Paketes."
 
-#: skytemple-files/skytemple_files/patch/patches.py:406
+#: skytemple-files/skytemple_files/patch/patches.py:408
 msgid "patch.py missing in patch package."
 msgstr "patch.py fehlt im Patch-Paket."
 
-#: skytemple-files/skytemple_files/patch/patches.py:408
+#: skytemple-files/skytemple_files/patch/patches.py:410
 msgid "The patch.py of the patch package contains a syntax error."
 msgstr "Die patch.py von diesem Patch-Paket enthält einen Syntaxfehler."
 
-#: skytemple-files/skytemple_files/patch/patches.py:413
+#: skytemple-files/skytemple_files/patch/patches.py:415
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
 msgstr "Die patch.py des Patch-Paketes enthält keinen 'PatchHandler'."
 
-#: skytemple-files/skytemple_files/patch/patches.py:419
+#: skytemple-files/skytemple_files/patch/patches.py:421
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr "Das Patch-Paket enthält keinen Eintrag für den Namen des Handlers in der config.xml."
 
-#: skytemple-files/skytemple_files/patch/patches.py:426
+#: skytemple-files/skytemple_files/patch/patches.py:428
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr "Kein Patch für Handler '{handler.name}' gefunden in der Konfiguration."
@@ -3401,13 +3417,12 @@ msgstr "Unbekannter Richtungswert."
 msgid "Can not save a scene event without a defined triggered script."
 msgstr "Ein Szenenereignis kann nicht ohne ein definiertes ausgelöstes Skript gespeichert werden."
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:99
+#: skytemple-files/skytemple_files/script/ssb/constants.py:96
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
 msgstr "Ungültiger DungeonMode: {string}"
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:250
-#: skytemple-files/skytemple_files/script/ssb/constants.py:251
+#: skytemple-files/skytemple_files/script/ssb/constants.py:186
 #, python-brace-format
 msgid "Unknown constant {constant_as_string}."
 msgstr "Unbekannte Konstante {constant_as_string}."
@@ -3462,8 +3477,8 @@ msgid "Invalid parameter supplied for an operation: {param}"
 msgstr "Ungültiger Parameter angegeben für Operation: {param}"
 
 #: skytemple-files/skytemple_files/script/ssb/ssb_number.py:94
-msgid "enc: 0x{:0x}, The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
-msgstr ""
+msgid "The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
+msgstr "Der Wert '{}' kann nicht gespeichert werden. Bitte verwende einen Wert zwischen -64.0 und 63.996 für Festkommazahlen."
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:169
 msgid "Could not compile script: All languages must have the same amount of strings."
@@ -3598,7 +3613,7 @@ msgstr "Randomisierung fehlgeschlagen!"
 msgid "Error: {}"
 msgstr "Fehler: {}"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:233
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
 msgid "Randomizing complete!"
 msgstr "Randomisierung abgeschlossen!"
 
@@ -4678,8 +4693,8 @@ msgid "Randomizing global item lists..."
 msgstr "Listen der globalen Items werden randomisiert..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditExtraPokemon' patch..."
-msgstr "'EditExtraPokemon' Patch wird angewendet..."
+msgid "Apply 'EditGuestPokemon' patch..."
+msgstr "'EditGuestPokemon' Patch wird angewendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67
 msgid "Updating guest Pokémon..."
@@ -4786,7 +4801,7 @@ msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr "'AbarmOneRoomMonsterHouses' Patch wird angwendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:427
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:428
 msgid "Downloading portraits and sprites... {}/{}"
 msgstr "Portraits und Sprites werden heruntergeladen... {}/{}"
 

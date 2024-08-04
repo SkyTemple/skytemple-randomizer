@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-07-21 21:02+0000\n"
-"PO-Revision-Date: 2024-07-21 21:09\n"
+"POT-Creation-Date: 2024-08-04 17:21+0000\n"
+"PO-Revision-Date: 2024-08-04 18:04\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -1288,93 +1288,105 @@ msgstr "Erreur dans le fichier XML : la durée et/ou les couleurs d'une palette 
 msgid "No match found for rule {orig_rule}. Input set correct?"
 msgstr "Aucune correspondance trouvée pour la règle {orig_rule}. Le jeu de tuiles importé est-il correct ?"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
 msgid "One Layer (#00)"
 msgstr "Un calque (#00)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
 msgid "One Layer (#01)"
 msgstr "Un calque (#01)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
 msgid "One Layer (#02)"
 msgstr "Un calque (#02)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
 msgid "One Layer (#03)"
 msgstr "Un calque (#03)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
 msgid "One Layer (#04)"
 msgstr "Un calque (#04)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
 msgid "Two Layers (#05)"
 msgstr "Deux calques (#05)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
 msgid "Two Layers (#06)"
 msgstr "Deux calques (#06)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Two Layers (#07)"
 msgstr "Deux calques (#07)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
 msgid "Two Layers (#08)"
 msgstr "Deux calques (#08)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
 msgid "Two Layers (#09)"
 msgstr "Deux calques (#09)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:152
 msgid "Dungeon Tileset (#10)"
 msgstr "Set de tuiles de Donjon (#10)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:153
 msgid "Use Fixed Room (#11)"
 msgstr "Utiliser la Salle Prédéfinie (#11)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:272
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:274
 msgid "This function has no description."
 msgstr "La fonction n'a pas de description."
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:314
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
 msgid "Down"
 msgstr "Bas"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
 msgid "Down Right"
 msgstr "En bas à droite"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
 msgid "Right"
 msgstr "Droite"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
 msgid "Up Right"
 msgstr "En haut à droite"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
 msgid "Up"
 msgstr "Haut"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
 msgid "Up Left"
 msgstr "En haut à gauche"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
 msgid "Left"
 msgstr "Gauche"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
 msgid "Down Left"
 msgstr "En bas à gauche"
 
 #: skytemple-files/skytemple_files/common/rw_value.py:440
 msgid "'{str(value)}' cannot be encoded as a shifted immediate."
 msgstr ""
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:94
+msgid "Sprite VRAM Size"
+msgstr ""
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:98
+msgid "Body Size"
+msgstr ""
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:105
+msgid "Sprite File Size"
+msgstr "Taille du fichier sprite"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
@@ -1410,32 +1422,32 @@ msgid "An image selected to import is too complex. It has too many unique tiles 
 msgstr "L'image sélectionnée pour l'importation est trop complexe. Elle contient trop de tuiles uniques ({len_final_tiles}, 1024 maximum sont autorisées).\n"
 "Veuillez faire en sorte qu'il y ait moins de tuiles uniques. Les tuiles uniques sont des portions de dimensions 8x8 de l'image d'origine qui sont identiques à aucune autre (qu'elles soient retournées ou qu'elles utilisent une sous-palette différente)."
 
-#: skytemple-files/skytemple_files/common/util.py:493
+#: skytemple-files/skytemple_files/common/util.py:494
 msgid "The file you tried to open does not seem to be a valid NDS ROM file."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:502
+#: skytemple-files/skytemple_files/common/util.py:503
 msgid "This ROM is not supported by SkyTemple."
 msgstr "Cette ROM n'est pas supportée par SkyTemple."
 
-#: skytemple-files/skytemple_files/common/util.py:572
-#: skytemple-files/skytemple_files/common/util.py:591
+#: skytemple-files/skytemple_files/common/util.py:573
+#: skytemple-files/skytemple_files/common/util.py:592
 #, python-brace-format
 msgid "Binary {binary.name} not found."
 msgstr "Binaire {binary.name} introuvable."
 
-#: skytemple-files/skytemple_files/common/util.py:612
-#: skytemple-files/skytemple_files/common/util.py:643
+#: skytemple-files/skytemple_files/common/util.py:613
+#: skytemple-files/skytemple_files/common/util.py:644
 #, python-brace-format
 msgid "Folder {dir_name} does not exist."
 msgstr "Dossier {dir_name} non existant."
 
-#: skytemple-files/skytemple_files/common/util.py:615
+#: skytemple-files/skytemple_files/common/util.py:616
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
 msgstr "Le fichier {file_name} existe déjà dans ce dossier."
 
-#: skytemple-files/skytemple_files/common/util.py:638
+#: skytemple-files/skytemple_files/common/util.py:639
 #, python-brace-format
 msgid "Folder {path} already exists."
 msgstr "Le dossier {path} existe déjà."
@@ -3129,9 +3141,9 @@ msgstr "Implémente les interruptions à mi-donjon. "
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
 msgstr "Permet de placer des entités spéciales (ID entre 124 et 127, ennemies du dojo Ossatueur) dans toute salle statique sans faire planter le jeu."
 
-#: skytemple-files/skytemple_files/patch/handler/edit_extra_pokemon.py:49
-msgid "Changes the way the game determines when to add additional pokémon to the team so it can be edited more easily"
-msgstr "Change la manière dont le jeu détermine quand est-ce qu'un pokémon doit être ajouté dans l'équipe durant le scénario pour modifier ceux-ci plus aisément"
+#: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
+msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
+msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
@@ -3143,12 +3155,10 @@ msgstr "Implémente le partage des points d'expérience entre tous les membres (
 
 #: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
 msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
-"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile patches to work.\n"
+"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr "Permet d'avoir jusqu'a 2048 entrées de pokémon, et les rends indépendante.\n"
-"À besoin des correctifs ''ChangeEvoSystem', 'ExternalizeWazaFile' et 'ExternalizeMappaFile' pour fonctionner\n"
-"Il est fortement recommander de corriger toutes les erreurs des donjons avant d'appliquer ce patch, et de faire une backup de votre de ROM avant d'appliquer ce patch."
+msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
@@ -3289,6 +3299,10 @@ msgid "Skips the quiz, only leaving the gender question.\n"
 msgstr "Passe le quiz, en ne gardant que la question du genre.\n"
 "Nécessite l'application du correctif ChooseStarter. "
 
+#: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
+msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
@@ -3305,71 +3319,71 @@ msgstr "Fournit le support pour les conteneurs ATUPX, qui utilisent un algorithm
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:232
-#: skytemple-files/skytemple_files/patch/patches.py:242
+#: skytemple-files/skytemple_files/patch/patches.py:234
+#: skytemple-files/skytemple_files/patch/patches.py:244
 #, python-brace-format
 msgid "The patch '{name}' was not found."
 msgstr "Le correctif « {name} » est introuvable."
 
-#: skytemple-files/skytemple_files/patch/patches.py:249
+#: skytemple-files/skytemple_files/patch/patches.py:251
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
 msgstr "Le correctif « {patch_name} » doit être appliqué avant d'appliquer le correctif « {name} »."
 
-#: skytemple-files/skytemple_files/patch/patches.py:255
+#: skytemple-files/skytemple_files/patch/patches.py:257
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr "Le correctif « {patch_name} » doit être appliqué avant d'appliquer le correctif « {name} ». Ce correctif est introuvable."
 
-#: skytemple-files/skytemple_files/patch/patches.py:265
+#: skytemple-files/skytemple_files/patch/patches.py:267
 msgid "No configuration was given."
 msgstr "Aucune configuration fournie."
 
-#: skytemple-files/skytemple_files/patch/patches.py:268
+#: skytemple-files/skytemple_files/patch/patches.py:270
 msgid "Missing configuration value."
 msgstr "Valeur de configuration manquante."
 
-#: skytemple-files/skytemple_files/patch/patches.py:273
-#: skytemple-files/skytemple_files/patch/patches.py:279
-#: skytemple-files/skytemple_files/patch/patches.py:285
-#: skytemple-files/skytemple_files/patch/patches.py:293
-#: skytemple-files/skytemple_files/patch/patches.py:307
+#: skytemple-files/skytemple_files/patch/patches.py:275
+#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:295
+#: skytemple-files/skytemple_files/patch/patches.py:309
 msgid "Invalid configuration value."
 msgstr "Valeur de configuration invalide."
 
-#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:283
 msgid "Must be >= {}."
 msgstr "Doit être ≥ {}."
 
-#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:289
 msgid "Must be <= {}."
 msgstr "Doit être ≤ {}."
 
-#: skytemple-files/skytemple_files/patch/patches.py:394
+#: skytemple-files/skytemple_files/patch/patches.py:396
 msgid "config.xml missing in patch package."
 msgstr "Fichier config.xml manquant dans le paquet de correctifs."
 
-#: skytemple-files/skytemple_files/patch/patches.py:396
+#: skytemple-files/skytemple_files/patch/patches.py:398
 msgid "Syntax error in the config.xml while reading patch package."
 msgstr "Erreur de syntaxe dans le fichier config.xml lors de la lecture du paquet de correctifs."
 
-#: skytemple-files/skytemple_files/patch/patches.py:406
+#: skytemple-files/skytemple_files/patch/patches.py:408
 msgid "patch.py missing in patch package."
 msgstr "Fichier patch.py manquant dans le paquet de correctifs."
 
-#: skytemple-files/skytemple_files/patch/patches.py:408
+#: skytemple-files/skytemple_files/patch/patches.py:410
 msgid "The patch.py of the patch package contains a syntax error."
 msgstr "patch.py du paquet du patch contient un erreur syntaxique."
 
-#: skytemple-files/skytemple_files/patch/patches.py:413
+#: skytemple-files/skytemple_files/patch/patches.py:415
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
 msgstr "Le fichier patch.py du paquet de correctifs ne contient pas de gestionnaire de correctifs (« PatchHandler »)."
 
-#: skytemple-files/skytemple_files/patch/patches.py:419
+#: skytemple-files/skytemple_files/patch/patches.py:421
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr "Le paquet de correctifs ne contient aucune entrée de configuration dans config.xml pour le nom du correctif géré par ce gestionnaire."
 
-#: skytemple-files/skytemple_files/patch/patches.py:426
+#: skytemple-files/skytemple_files/patch/patches.py:428
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr "Aucun correctif trouvé dans la configuration pour le gestionnaire « {handler.name} »."
@@ -3394,13 +3408,12 @@ msgstr ""
 msgid "Can not save a scene event without a defined triggered script."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:99
+#: skytemple-files/skytemple_files/script/ssb/constants.py:96
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
 msgstr "DungeonMode invalide : {string}"
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:250
-#: skytemple-files/skytemple_files/script/ssb/constants.py:251
+#: skytemple-files/skytemple_files/script/ssb/constants.py:186
 #, python-brace-format
 msgid "Unknown constant {constant_as_string}."
 msgstr "Constante inconnue : {constant_as_string}."
@@ -3455,7 +3468,7 @@ msgid "Invalid parameter supplied for an operation: {param}"
 msgstr "Paramètre invalide pour une opération : {param}"
 
 #: skytemple-files/skytemple_files/script/ssb/ssb_number.py:94
-msgid "enc: 0x{:0x}, The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
+msgid "The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
 msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:169
@@ -3591,7 +3604,7 @@ msgstr ""
 msgid "Error: {}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:233
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
 msgid "Randomizing complete!"
 msgstr ""
 
@@ -4637,7 +4650,7 @@ msgid "Randomizing global item lists..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:59
-msgid "Apply 'EditExtraPokemon' patch..."
+msgid "Apply 'EditGuestPokemon' patch..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/guest.py:67
@@ -4745,7 +4758,7 @@ msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:427
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:428
 msgid "Downloading portraits and sprites... {}/{}"
 msgstr ""
 

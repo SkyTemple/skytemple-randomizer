@@ -1,0 +1,15 @@
+# Requirements for the stable Linux, macOS and Windows releases
+# XXX:
+# Below is just a crutch since the Flatpak pip helper has problems with detecting extra dependencies.
+# These are the dependencies of SkyTemple Files spritecollab extra:
+gql[aiohttp] >= 3.5.0
+graphql-core >= 3.2.0
+aiohttp[speedups]
+lru-dict >= 1.1.8
+# Actual dependencies of SkyTemple Randomizer itself:
+ndspy==4.1.0
+click==8.1.7
+skytemple-rust==1.8.2
+skytemple-files[spritecollab]==1.8.1
+skytemple-icons==1.3.2
+packaging

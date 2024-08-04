@@ -28,7 +28,7 @@ pip3 install -U certifi
 bash .\generate-mo.sh
 
 # install SkyTemple Randomizer
-pip3 install -r ../requirements-mac-windows.txt
+pip3 install -r ../requirements-frozen.txt
 pip3 install '..[gtk]'
 # pip likes to troll us. Force reinstall the proper PyGObject versions
 pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)

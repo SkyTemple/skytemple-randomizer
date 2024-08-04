@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-07-27 09:08+0000\n"
-"PO-Revision-Date: 2024-07-28 12:27\n"
+"POT-Creation-Date: 2024-08-04 17:21+0000\n"
+"PO-Revision-Date: 2024-08-04 18:04\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -1288,93 +1288,105 @@ msgstr "Fehler in der XML-Datei: Dauer für eine Palette oder eine ihrer Farben 
 msgid "No match found for rule {orig_rule}. Input set correct?"
 msgstr "Keine Übereinstimmung für Regel {orig_rule} gefunden. Eingabedaten korrekt?"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:140
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
 msgid "One Layer (#00)"
 msgstr "Eine Ebene (#00)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:141
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
 msgid "One Layer (#01)"
 msgstr "Eine Ebene (#01)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
 msgid "One Layer (#02)"
 msgstr "Eine Ebene (#02)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
 msgid "One Layer (#03)"
 msgstr "Eine Ebene (#03)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
 msgid "One Layer (#04)"
 msgstr "Eine Ebene (#04)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
 msgid "Two Layers (#05)"
 msgstr "Zwei Ebenen (#05)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
 msgid "Two Layers (#06)"
 msgstr "Zwei Ebenen (#06)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Two Layers (#07)"
 msgstr "Zwei Ebenen (#07)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
 msgid "Two Layers (#08)"
 msgstr "Zwei Ebenen (#08)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
 msgid "Two Layers (#09)"
 msgstr "Zwei Ebenen (#09)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:152
 msgid "Dungeon Tileset (#10)"
 msgstr "Dungeon-Tileset (#10)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:153
 msgid "Use Fixed Room (#11)"
 msgstr "Statischen Raum nutzen (#11)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:272
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:274
 msgid "This function has no description."
 msgstr "Diese Funktion hat keine Beschreibung."
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:314
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
 msgid "Down"
 msgstr "Unten"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
 msgid "Down Right"
 msgstr "Unten rechts"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
 msgid "Right"
 msgstr "Rechts"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
 msgid "Up Right"
 msgstr "Oben rechts"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
 msgid "Up"
 msgstr "Oben"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
 msgid "Up Left"
 msgstr "Oben links"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
 msgid "Left"
 msgstr "Links"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
 msgid "Down Left"
 msgstr "Unten links"
 
 #: skytemple-files/skytemple_files/common/rw_value.py:440
 msgid "'{str(value)}' cannot be encoded as a shifted immediate."
 msgstr "'{str(value)}' kann nicht als Shifted Immediate kodiert werden."
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:94
+msgid "Sprite VRAM Size"
+msgstr "Sprite VRAM-Größe"
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:98
+msgid "Body Size"
+msgstr "Körpergröße"
+
+#: skytemple-files/skytemple_files/common/sprite_util.py:105
+msgid "Sprite File Size"
+msgstr "Sprite Dateigröße"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
@@ -1410,32 +1422,32 @@ msgid "An image selected to import is too complex. It has too many unique tiles 
 msgstr "Ein Bild, das importiert werden sollte, ist zu komplex. Es hat zu viele einzigartige Kacheln ({len_final_tiles}). Maximal sind 1024 erlaubt.\n"
 "Versuche, weniger einzigartige Kacheln im Bild zu haben. Einzigartige Kacheln sind 8x8 Bereiche im Bild, die nirgendwo sonst im Bild vorkommen (inklusive gedrehter oder gespiegelter Variationen oder mit einer anderen Palette)."
 
-#: skytemple-files/skytemple_files/common/util.py:493
+#: skytemple-files/skytemple_files/common/util.py:494
 msgid "The file you tried to open does not seem to be a valid NDS ROM file."
 msgstr "Die zu öffnende Datei scheint keine gültige NDS-ROM-Datei zu sein."
 
-#: skytemple-files/skytemple_files/common/util.py:502
+#: skytemple-files/skytemple_files/common/util.py:503
 msgid "This ROM is not supported by SkyTemple."
 msgstr "Diese ROM wird nicht unterstützt von SkyTemple."
 
-#: skytemple-files/skytemple_files/common/util.py:572
-#: skytemple-files/skytemple_files/common/util.py:591
+#: skytemple-files/skytemple_files/common/util.py:573
+#: skytemple-files/skytemple_files/common/util.py:592
 #, python-brace-format
 msgid "Binary {binary.name} not found."
 msgstr "Binärdatei {binary.name} wurde nicht gefunden."
 
-#: skytemple-files/skytemple_files/common/util.py:612
-#: skytemple-files/skytemple_files/common/util.py:643
+#: skytemple-files/skytemple_files/common/util.py:613
+#: skytemple-files/skytemple_files/common/util.py:644
 #, python-brace-format
 msgid "Folder {dir_name} does not exist."
 msgstr "Ordner {dir_name} existiert nicht."
 
-#: skytemple-files/skytemple_files/common/util.py:615
+#: skytemple-files/skytemple_files/common/util.py:616
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
 msgstr "Datei {file_name} existiert in diesem Ordner bereits."
 
-#: skytemple-files/skytemple_files/common/util.py:638
+#: skytemple-files/skytemple_files/common/util.py:639
 #, python-brace-format
 msgid "Folder {path} already exists."
 msgstr "Ordner {path} existiert bereits."
@@ -3143,10 +3155,10 @@ msgstr "Implementiert geteilte Erfahrungspunkte zwischen allen Teammitgliedern (
 
 #: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
 msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
-"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile patches to work.\n"
+"Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr "Erweitert die Anzahl der erlaubten Pokémon auf 2048 und macht alle Einträge unabhängig voneinander. Benötigt die Patches ChangeEvoSystem, ExternalizeWazaFile und ExternalizeMappaFile.\n"
+msgstr "Erweitert die Anzahl der erlaubten Pokémon auf 2048 und macht alle Einträge unabhängig voneinander. Benötigt die Patches ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile und SpriteSizeInMonsterData.\n"
 "Es wird dringend empfohlen alle Dungeon-Fehler zu beheben, bevor dieser Patch angewendet wird, und ein Backup deiner ROM zu erstellen."
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
@@ -3296,6 +3308,10 @@ msgid "Skips the quiz, only leaving the gender question.\n"
 msgstr "Überspringt das Persönlichkeitsquiz. Der Spieler wird nur nach dem Geschlecht gefragt.\n"
 "Der \"ChooseStarter\"-Patch muss angewendet sein. "
 
+#: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
+msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
+msgstr "Ändert Sprite-Größe und Sprite-Dateigröße-Werte, damit sie in den Daten jedes Pokémon enthalten sind."
+
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
@@ -3312,71 +3328,71 @@ msgstr "Bietet Unterstützung für ATUPX Container, welche einen andere Komprimi
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr "Behebt die „ungenutzte“ Chance für Dungeons. Diese Chance bestimmt jetzt die Wahrscheinlichkeit, dass ein Wandlabyrinth-Raum auf einer Dungeon-Ebene generiert wird."
 
-#: skytemple-files/skytemple_files/patch/patches.py:232
-#: skytemple-files/skytemple_files/patch/patches.py:242
+#: skytemple-files/skytemple_files/patch/patches.py:234
+#: skytemple-files/skytemple_files/patch/patches.py:244
 #, python-brace-format
 msgid "The patch '{name}' was not found."
 msgstr "Der Patch '{name}' wurde nicht gefunden."
 
-#: skytemple-files/skytemple_files/patch/patches.py:249
+#: skytemple-files/skytemple_files/patch/patches.py:251
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
 msgstr "Der Patch '{patch_name}' muss angewendet werden, bevor du '{name} ' anwenden kannst."
 
-#: skytemple-files/skytemple_files/patch/patches.py:255
+#: skytemple-files/skytemple_files/patch/patches.py:257
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr "Der Patch '{patch_name}' muss angewendet werden, bevor du '{name} ' anwenden kannst. Dieser Patch wurde nicht gefunden."
 
-#: skytemple-files/skytemple_files/patch/patches.py:265
+#: skytemple-files/skytemple_files/patch/patches.py:267
 msgid "No configuration was given."
 msgstr "Es wurde keine Konfiguration angegeben."
 
-#: skytemple-files/skytemple_files/patch/patches.py:268
+#: skytemple-files/skytemple_files/patch/patches.py:270
 msgid "Missing configuration value."
 msgstr "Fehlender Konfigurationswert."
 
-#: skytemple-files/skytemple_files/patch/patches.py:273
-#: skytemple-files/skytemple_files/patch/patches.py:279
-#: skytemple-files/skytemple_files/patch/patches.py:285
-#: skytemple-files/skytemple_files/patch/patches.py:293
-#: skytemple-files/skytemple_files/patch/patches.py:307
+#: skytemple-files/skytemple_files/patch/patches.py:275
+#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:295
+#: skytemple-files/skytemple_files/patch/patches.py:309
 msgid "Invalid configuration value."
 msgstr "Ungültiger Konfigurationswert."
 
-#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:283
 msgid "Must be >= {}."
 msgstr "Muss >= {} sein."
 
-#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:289
 msgid "Must be <= {}."
 msgstr "Muss <= {} sein."
 
-#: skytemple-files/skytemple_files/patch/patches.py:394
+#: skytemple-files/skytemple_files/patch/patches.py:396
 msgid "config.xml missing in patch package."
 msgstr "config.xml fehlt im Patch-Paket."
 
-#: skytemple-files/skytemple_files/patch/patches.py:396
+#: skytemple-files/skytemple_files/patch/patches.py:398
 msgid "Syntax error in the config.xml while reading patch package."
 msgstr "Syntax-Fehler in der config.xml des Patch-Paketes."
 
-#: skytemple-files/skytemple_files/patch/patches.py:406
+#: skytemple-files/skytemple_files/patch/patches.py:408
 msgid "patch.py missing in patch package."
 msgstr "patch.py fehlt im Patch-Paket."
 
-#: skytemple-files/skytemple_files/patch/patches.py:408
+#: skytemple-files/skytemple_files/patch/patches.py:410
 msgid "The patch.py of the patch package contains a syntax error."
 msgstr "Die patch.py von diesem Patch-Paket enthält einen Syntaxfehler."
 
-#: skytemple-files/skytemple_files/patch/patches.py:413
+#: skytemple-files/skytemple_files/patch/patches.py:415
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
 msgstr "Die patch.py des Patch-Paketes enthält keinen 'PatchHandler'."
 
-#: skytemple-files/skytemple_files/patch/patches.py:419
+#: skytemple-files/skytemple_files/patch/patches.py:421
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr "Das Patch-Paket enthält keinen Eintrag für den Namen des Handlers in der config.xml."
 
-#: skytemple-files/skytemple_files/patch/patches.py:426
+#: skytemple-files/skytemple_files/patch/patches.py:428
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr "Kein Patch für Handler '{handler.name}' gefunden in der Konfiguration."
@@ -3401,13 +3417,12 @@ msgstr "Unbekannter Richtungswert."
 msgid "Can not save a scene event without a defined triggered script."
 msgstr "Ein Szenenereignis kann nicht ohne ein definiertes ausgelöstes Skript gespeichert werden."
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:99
+#: skytemple-files/skytemple_files/script/ssb/constants.py:96
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
 msgstr "Ungültiger DungeonMode: {string}"
 
-#: skytemple-files/skytemple_files/script/ssb/constants.py:250
-#: skytemple-files/skytemple_files/script/ssb/constants.py:251
+#: skytemple-files/skytemple_files/script/ssb/constants.py:186
 #, python-brace-format
 msgid "Unknown constant {constant_as_string}."
 msgstr "Unbekannte Konstante {constant_as_string}."
@@ -3598,7 +3613,7 @@ msgstr "Randomisierung fehlgeschlagen!"
 msgid "Error: {}"
 msgstr "Fehler: {}"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:233
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:235
 msgid "Randomizing complete!"
 msgstr "Randomisierung abgeschlossen!"
 
@@ -4786,7 +4801,7 @@ msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr "'AbarmOneRoomMonsterHouses' Patch wird angwendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:136
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:427
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:428
 msgid "Downloading portraits and sprites... {}/{}"
 msgstr "Portraits und Sprites werden heruntergeladen... {}/{}"
 

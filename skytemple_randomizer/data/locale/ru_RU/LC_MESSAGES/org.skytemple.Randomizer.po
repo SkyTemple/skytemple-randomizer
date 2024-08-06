@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-04 17:21+0000\n"
-"PO-Revision-Date: 2024-08-06 17:56\n"
+"PO-Revision-Date: 2024-08-06 18:53\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -4164,59 +4164,61 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:342
 msgid "Import questions from XML"
-msgstr ""
+msgstr "Импортировать вопросы из XML файла"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:347
 msgid "Export questions to XML"
-msgstr ""
+msgstr "Экспортировать вопросы в XML файл"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:92
 msgid "Questions"
-msgstr ""
+msgstr "Вопросы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:16
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:40
 msgid "Add question"
-msgstr ""
+msgstr "Добавить вопрос"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:96
 msgid "Failed to load settings: Error while opening file ({})."
-msgstr ""
+msgstr "Не удалось загрузить настройки: ошибка открытия файла ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:107
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
-msgstr ""
+msgstr "Файл конфигурации, который вы пытались импортировать, неверен:\n"
+"{}:\n"
+"{}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:114
 msgid "Settings loaded!"
-msgstr ""
+msgstr "Настройки загружены!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:143
 msgid "Failed to save settings: Error while opening file ({})."
-msgstr ""
+msgstr "Не удалось сохранить настройки: Ошибка при открытии файла ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:149
 msgid "The path of the settings file needs to end in '.json'."
-msgstr ""
+msgstr "Путь к файлу настроек должен заканчиваться на '.json'."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:171
 msgid "Settings saved!"
-msgstr ""
+msgstr "Настройки сохранены!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:16
 msgid "Backup &amp; Share Randomization Settings"
-msgstr ""
+msgstr "Резервное копирование &amp; Поделитесь настройками рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:23
 msgid "Load from File"
-msgstr ""
+msgstr "Загрузить из файла"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:32
 msgid "Save to File"
-msgstr ""
+msgstr "Сохранить в файл"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:45
 msgid "Basic Settings"
@@ -4224,7 +4226,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
 msgid "Randomization Seed"
-msgstr ""
+msgstr "Зерно рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
 msgid "Use Native File Handlers"

@@ -138,7 +138,7 @@ class FunPortrait(Enum):
         return obj
 
     # ignore the first param since it's already set by __new__
-    def __init__(self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]):
+    def __init__(self, _: str, credit: FunArtistCredit | dict[str, FunArtistCredit]):
         if isinstance(credit, dict):
             credit = credit[choice(list(credit.keys()))]
         self.file_name = str(self.value) + ".png"

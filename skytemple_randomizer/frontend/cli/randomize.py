@@ -20,7 +20,8 @@ import json
 import random
 from functools import partial
 from time import sleep
-from typing import TYPE_CHECKING, Callable, TypedDict
+from typing import TYPE_CHECKING, TypedDict
+from collections.abc import Callable
 
 import click
 import sys

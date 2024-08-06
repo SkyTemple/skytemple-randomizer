@@ -19,7 +19,8 @@ from __future__ import annotations
 import os
 import sys
 from dataclasses import dataclass
-from typing import cast, Callable
+from typing import cast
+from collections.abc import Callable
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate

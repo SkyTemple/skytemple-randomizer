@@ -18,7 +18,8 @@ from __future__ import annotations
 
 import json
 import os
-from typing import Callable, cast
+from typing import cast
+from collections.abc import Callable
 
 from gi.repository import Gtk, Adw, GLib, Gio
 from skytemple_files.common.i18n_util import _

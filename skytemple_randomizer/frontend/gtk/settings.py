@@ -17,7 +17,6 @@
 import configparser
 import logging
 import os
-from typing import Optional
 
 from skytemple_files.common.project_file_manager import ProjectFileManager
 from skytemple_files.common.util import open_utf8
@@ -48,7 +47,7 @@ class SkyTempleRandomizerSettingsStoreGtk:
             except BaseException as err:
                 logger.error("Error reading config, falling back to default.", exc_info=err)
 
-    def get_window_size(self) -> Optional[tuple[int, int]]:
+    def get_window_size(self) -> tuple[int, int] | None:
         if SECT_WINDOW in self.loaded_config:
             if (
                 KEY_WINDOW_SIZE_X in self.loaded_config[SECT_WINDOW]
@@ -86,7 +85,7 @@ class SkyTempleRandomizerSettingsStoreGtk:
         self.loaded_config[SECT_WINDOW][KEY_WINDOW_IS_MAX] = str(value)
         self._save()
 
-    def get_recent_rom(self) -> Optional[str]:
+    def get_recent_rom(self) -> str | None:
         if SECT_WINDOW in self.loaded_config:
             if KEY_RECENT_ROM in self.loaded_config[SECT_WINDOW]:
                 return self.loaded_config[SECT_WINDOW][KEY_RECENT_ROM]

@@ -14,7 +14,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from typing import Iterable
+from collections.abc import Iterable
 
 from range_typed_integers import u8
 from skytemple_files.common.i18n_util import _

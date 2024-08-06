@@ -18,7 +18,6 @@ import asyncio
 import sys
 import traceback
 from random import Random
-from typing import Optional
 from collections.abc import Coroutine
 
 from ndspy.rom import NintendoDSRom
@@ -430,7 +429,7 @@ class PortraitDownloader(AbstractRandomizer):
         status.step(_("Downloading portraits and sprites... {}/{}").format(self.current, self.total))
 
     @staticmethod
-    def get_both_md_entries(md: MdProtocol, item_id: int) -> tuple[MdEntryProtocol, Optional[MdEntryProtocol]]:
+    def get_both_md_entries(md: MdProtocol, item_id: int) -> tuple[MdEntryProtocol, MdEntryProtocol | None]:
         num_entites = FileType.MD.properties().num_entities
         if item_id + num_entites < len(md):
             return md[item_id], md[item_id + num_entites]

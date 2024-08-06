@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-04 17:21+0000\n"
-"PO-Revision-Date: 2024-08-06 16:48\n"
+"PO-Revision-Date: 2024-08-06 17:56\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3369,7 +3369,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "Unknown or extra XML element '{}' in scene data."
-msgstr ""
+msgstr "Неизвестный или лишний элемент XML '{}' в данных сцены."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:110
 msgid "'{}' missing in scene data."
@@ -3381,7 +3381,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:542
 msgid "Unknown direction value."
-msgstr ""
+msgstr "Неизвестное значение направления."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:57
 msgid "Can not save a scene event without a defined triggered script."
@@ -3399,29 +3399,29 @@ msgstr "Неизвестная константа {constant_as_string}."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:163
 msgid "The routine data lists for the decompiler must have the same lengths."
-msgstr ""
+msgstr "Списки данных рутин для декомпилятора должны иметь одинаковую длину."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:176
 #, python-brace-format
 msgid "Routine {i} not found."
-msgstr ""
+msgstr "Рутина {i} не найдена."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:196
 msgid "The script must contain exactly {len(self.rom_data.script_data.common_routine_info)} coroutines."
-msgstr ""
+msgstr "Скрипт должен содержать ровно {len(self.rom_data.script_data.common_routine_info)} сопрограмм."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:203
 msgid "The script must not contain any duplicate coroutines."
-msgstr ""
+msgstr "Скрипт не должен содержать повторяющихся корутин."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:211
 #, python-brace-format
 msgid "Unknown coroutine {err}"
-msgstr ""
+msgstr "Неизвестная корутина {err}"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:225
 msgid "Coroutines and regular routines can not be mixed in a script file."
-msgstr ""
+msgstr "Корутины и обычные рутины нельзя смешивать в файле сценария."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:238
 #, python-brace-format

@@ -7,7 +7,7 @@
     "explorer_rank_unlocks": false,
     "explorer_rank_rewards": true,
     "native_file_handlers": true,
-    "npcs_use_smart_replace": true
+    "npcs_use_smart_replace": false
   },
   "dungeons": {
     "mode": 0,

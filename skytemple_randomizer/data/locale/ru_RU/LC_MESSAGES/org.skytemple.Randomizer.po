@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-08 15:36\n"
+"PO-Revision-Date: 2024-08-08 16:40\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -743,7 +743,7 @@ msgstr ""
 
 #: /dev/fd/63:182 /dev/fd/63:401
 msgid "TMs, HMs"
-msgstr ""
+msgstr "TM, HM"
 
 #: /dev/fd/63:183 /dev/fd/63:402
 msgid "Poké (Money)"
@@ -827,7 +827,7 @@ msgstr ""
 
 #: /dev/fd/63:203 /dev/fd/63:422
 msgid "Only interruptions don't heal HP"
-msgstr ""
+msgstr "Только прерывания не восстанавливают ОЗ"
 
 #: /dev/fd/63:204 /dev/fd/63:423
 #, c-format
@@ -910,7 +910,7 @@ msgstr "Целое число недопустимо в этой позиции.
 #: explorerscript/explorerscript/common_syntax.py:103
 #: explorerscript/explorerscript/common_syntax.py:189
 msgid "Decimal not allowed at this position."
-msgstr ""
+msgstr "Десятичные числа недопустимы в этой позиции."
 
 #: explorerscript/explorerscript/common_syntax.py:114
 msgid "Constant not allowed at this position."
@@ -1821,11 +1821,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"
-msgstr ""
+msgstr "Враги"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:61
 msgid "Allies"
-msgstr ""
+msgstr "Союзники"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
 msgid "Everyone"
@@ -1834,7 +1834,7 @@ msgstr "Все"
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:64
 msgid "Two-turn move"
@@ -1876,7 +1876,7 @@ msgstr "Недопустимый "
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:75
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:116
 msgid "Special / Invalid"
-msgstr ""
+msgstr "Особый / Неверный"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:98
 msgid "In front"
@@ -1912,11 +1912,11 @@ msgstr "Спереди, срезая углы"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:110
 msgid "Two tiles away; cuts corners"
-msgstr ""
+msgstr "На расстоянии двух плиток; срезает углы"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:141
 msgid "No condition"
-msgstr ""
+msgstr "Нет условия"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
 msgid "Based on AI Condition 1 Chance"
@@ -1924,7 +1924,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
 msgid "Current HP <= 25%"
-msgstr ""
+msgstr "Текущее ОЗ <= 25%"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
 msgid "Has at least one negative status condition"
@@ -2117,15 +2117,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:56
 msgid "Ring"
-msgstr ""
+msgstr "Кольцо"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:59
 msgid "Crossroads"
-msgstr ""
+msgstr "Перекресток"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:63
 msgid "Two Rooms, One Monster House"
-msgstr ""
+msgstr "Две комнаты, одна засада монстров"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:65
 msgid "Line"
@@ -2226,7 +2226,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
 msgid "Sticky Trap"
-msgstr ""
+msgstr "Липкая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
 msgid "Grimy Trap"
@@ -2238,7 +2238,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
 msgid "Pitfall Trap"
-msgstr ""
+msgstr "Яма-ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
 msgid "Warp Trap"
@@ -2286,7 +2286,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
 msgid "Wonder Tile"
-msgstr ""
+msgstr "Чудо-плитка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
 msgid "Pokemon Trap"

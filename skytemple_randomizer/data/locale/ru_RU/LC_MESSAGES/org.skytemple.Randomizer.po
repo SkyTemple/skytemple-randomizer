@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-08 13:48\n"
+"PO-Revision-Date: 2024-08-08 15:36\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1386,7 +1386,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:105
 msgid "Sprite File Size"
-msgstr ""
+msgstr "Размер файла спрайта"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
@@ -1714,7 +1714,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/md/protocol.py:547
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:548
 msgid "Large"
@@ -1871,7 +1871,7 @@ msgstr "Все союзники кроме пользователя"
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:158
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:159
 msgid "Invalid "
-msgstr ""
+msgstr "Недопустимый "
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:75
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:116
@@ -2186,11 +2186,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
 msgid "Hail"
-msgstr ""
+msgstr "Град"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:106
 msgid "Fog"
-msgstr ""
+msgstr "Туман"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:107
 msgid "Snow"
@@ -2396,7 +2396,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
 #: skytemple-rust/src/st_dpla.rs:130
 msgid "This palette has no animation."
-msgstr ""
+msgstr "Эта палитра не имеет анимации."
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:96
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:98
@@ -2460,7 +2460,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:40
 msgid "Palette Only"
-msgstr ""
+msgstr "Только палитра"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:41
 msgid "2 bits per pixel (4 colors)"
@@ -2591,7 +2591,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:330
 msgid "Sleep"
-msgstr "Сон"
+msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:333
 msgid "Speed -1"
@@ -2683,7 +2683,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:118
 msgid "Outlaw"
-msgstr ""
+msgstr "Преступник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:120
 msgid "Outlaw Enemy"
@@ -2711,7 +2711,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:141
 msgid "Helping Ally"
-msgstr ""
+msgstr "Союзник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:144
 msgid "Other Game Team Leader"
@@ -2985,7 +2985,7 @@ msgstr "Анимация ходьбы (1-й кадр)"
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:219
 #, python-brace-format
 msgid "Error while applying the patch: {ex}"
-msgstr ""
+msgstr "Ошибка при применении патча: {ex}"
 
 #: skytemple-files/skytemple_files/patch/category.py:27
 msgid "Improvements and Tweaks"
@@ -2993,7 +2993,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/category.py:31
 msgid "New Mechanics"
-msgstr ""
+msgstr "Новые механики"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:33
@@ -3008,7 +3008,7 @@ msgstr ""
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:35
 msgid "Others"
-msgstr "Другое"
+msgstr "Прочее"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
@@ -3282,7 +3282,8 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
 msgid "Skips the quiz, only leaving the gender question.\n"
 "Needs ChooseStarter patch to be applied. "
-msgstr ""
+msgstr "Пропускает викторину, оставляя только вопрос о поле.\n"
+"Требуется применение патча ChooseStarter. "
 
 #: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
 msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
@@ -3306,12 +3307,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/patches.py:246
 #, python-brace-format
 msgid "The patch '{name}' was not found."
-msgstr ""
+msgstr "Патч '{name}' не найден."
 
 #: skytemple-files/skytemple_files/patch/patches.py:253
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
-msgstr ""
+msgstr "Перед применением '{name}' необходимо применить патч '{patch_name}'."
 
 #: skytemple-files/skytemple_files/patch/patches.py:259
 #, python-brace-format

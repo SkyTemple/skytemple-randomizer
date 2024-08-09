@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-09 10:13\n"
+"PO-Revision-Date: 2024-08-09 11:24\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1700,11 +1700,11 @@ msgstr ""
 #. TRANSLATORS: Movement Type
 #: skytemple-files/skytemple_files/data/md/protocol.py:522
 msgid "Lava"
-msgstr ""
+msgstr "Лава"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
-msgstr ""
+msgstr "Вода"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:546
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
@@ -2464,15 +2464,15 @@ msgstr "Только палитра"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:41
 msgid "2 bits per pixel (4 colors)"
-msgstr ""
+msgstr "2 бита на пиксель (4 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:42
 msgid "4 bits per pixel (16 colors)"
-msgstr ""
+msgstr "4 бита на пиксель (16 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:43
 msgid "8 bits per pixel (256 colors)"
-msgstr ""
+msgstr "8 бит на пиксель (256 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:209
 msgid "Can not convert PIL image to WTE: Must be indexed image (=using a palette)"
@@ -2989,7 +2989,7 @@ msgstr "Ошибка при применении патча: {ex}"
 
 #: skytemple-files/skytemple_files/patch/category.py:27
 msgid "Improvements and Tweaks"
-msgstr ""
+msgstr "Улучшения и исправления"
 
 #: skytemple-files/skytemple_files/patch/category.py:31
 msgid "New Mechanics"
@@ -3003,7 +3003,7 @@ msgstr "Исправления ошибок"
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:34
 msgid "Utility"
-msgstr ""
+msgstr "Утилиты"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:35
@@ -3013,11 +3013,12 @@ msgstr "Прочее"
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "Указывает игре загружать списки актеров и уровней из отдельных файлов.\n"
+"Распаковывает оба файла при применении патча."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:98
 msgid "This patch can not be re-applied."
-msgstr ""
+msgstr "Этот патч не может быть применен повторно."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:104
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:112
@@ -3349,19 +3350,19 @@ msgstr "config.xml отсутствует в пакете патча."
 
 #: skytemple-files/skytemple_files/patch/patches.py:400
 msgid "Syntax error in the config.xml while reading patch package."
-msgstr ""
+msgstr "Синтаксическая ошибка в config.xml при чтении пакета патча."
 
 #: skytemple-files/skytemple_files/patch/patches.py:410
 msgid "patch.py missing in patch package."
-msgstr ""
+msgstr "patch.py отсутствует в пакете патча."
 
 #: skytemple-files/skytemple_files/patch/patches.py:412
 msgid "The patch.py of the patch package contains a syntax error."
-msgstr ""
+msgstr "В файле patch.py пакета патча содержится синтаксическая ошибка."
 
 #: skytemple-files/skytemple_files/patch/patches.py:417
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
-msgstr ""
+msgstr "В файле patch.py пакета патча отсутствует 'PatchHandler'."
 
 #: skytemple-files/skytemple_files/patch/patches.py:423
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
@@ -3395,7 +3396,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/constants.py:96
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
-msgstr ""
+msgstr "Неверный режим подземелья: {string}"
 
 #: skytemple-files/skytemple_files/script/ssb/constants.py:186
 #, python-brace-format

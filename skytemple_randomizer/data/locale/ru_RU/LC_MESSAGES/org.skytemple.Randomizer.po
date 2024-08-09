@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-09 17:48\n"
+"PO-Revision-Date: 2024-08-09 18:46\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3691,27 +3691,27 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:48
 msgid "Max. Monster House Chance"
-msgstr ""
+msgstr "Макс. шанс Засады монстров"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:67
 msgid "Monster house chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "Шанс появления Засады монстров будет рандомизирован в диапазоне от 0% до этого значения (включительно)."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:81
 msgid "Max. Hidden Stairs Chance"
-msgstr ""
+msgstr "Макс. шанс появления Скрытой лестницы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:100
 msgid "Hidden stairs chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "Шанс появления Скрытой лестницы будет рандомизирован в диапазоне от 0% до этого значения (включительно)."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:114
 msgid "Max. Kecleon Shop Chance"
-msgstr ""
+msgstr "Макс. шанс появления магазина Кеклеона"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:133
 msgid "Kecleon shop chance will be randomized between 0% and this value (inclusive)."
-msgstr ""
+msgstr "Шанс появления магазина Кеклеона будет рандомизирован в диапазоне от 0% до этого значения (включительно)."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:147
 msgid "Max. Sticky Item Chance"
@@ -3736,7 +3736,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:48
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:39
 msgid "Randomize Weather"
-msgstr ""
+msgstr "Рандомизировать погоду"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:50
 msgid "Randomize"
@@ -4061,7 +4061,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:50
 msgid "If enabled, the music that plays outside of dungeons is randomized (for the most part)."
-msgstr ""
+msgstr "Если включено, музыка, играющая вне подземелий, будет рандомизирована (по большей части)."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:82
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:90
@@ -4069,11 +4069,12 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:112
 msgid "Installs the patch '{}' by {}:\n"
 "{}"
-msgstr ""
+msgstr "Устанавливает патч '{}' от {}:\n"
+"{}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:99
 msgid "Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle. Patch by Cipnit."
-msgstr ""
+msgstr "Устанавливает патчи, позволяющие вручную управлять членами команды в подземельях. Нажмите Start, чтобы включить/выключить ручной контроль. Патч от Cipnit."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:14
 msgid "Apply \"MoveShortcuts\" Patch"
@@ -4085,15 +4086,15 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:60
 msgid "Apply \"Complete Team Control\" Patch"
-msgstr ""
+msgstr "Применить патч \"Complete Team Control\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:83
 msgid "Apply \"Disarm Monster Houses\" Patch"
-msgstr ""
+msgstr "Применить патч \"Disarm Monster Houses\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:106
 msgid "Apply \"Fix Memory Softlock\" Patch"
-msgstr ""
+msgstr "Применить патч \"Fix Memory Softlock\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:14
 msgid "Personality Quiz Mode"
@@ -4101,15 +4102,15 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:21
 msgid "Default: Ask for Personality"
-msgstr ""
+msgstr "По умолчанию: Спросить о личности"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:22
 msgid "Ask + Allow Selection"
-msgstr ""
+msgstr "Спросить + разрешить выбор"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:23
 msgid "Select Manually"
-msgstr ""
+msgstr "Выбрать вручную"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:34
 msgid "Change the behaviour of the hero starter selection in the personality test, using patches by an anonymous contributor.\n"
@@ -4137,36 +4138,36 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:95
 msgid "Edit Question"
-msgstr ""
+msgstr "Редактировать вопрос"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:138
 msgid "Question"
-msgstr ""
+msgstr "Вопрос"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:152
 msgid "Answers"
-msgstr ""
+msgstr "Ответы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:157
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:216
 msgid "Answer"
-msgstr ""
+msgstr "Ответ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:209
 msgid "Remove Question"
-msgstr ""
+msgstr "Удалить вопрос"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:226
 msgid "Add Answer"
-msgstr ""
+msgstr "Добавить ответ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:243
 msgid "Remove Answer"
-msgstr ""
+msgstr "Удалить ответ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:291
 msgid "Failed to import. Make sure your XML matches the same format as with the export button. Details: {}"
-msgstr ""
+msgstr "Не удалось импортировать. Убедитесь, что ваш XML файл имеет тот же формат, что и при использовании кнопки экспортирования. Детали: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:342
 msgid "Import questions from XML"
@@ -4311,16 +4312,16 @@ msgstr "Настройки"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:223
 msgid "1st Word"
-msgstr ""
+msgstr "1-е слово"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:229
 msgid "2nd Word"
-msgstr ""
+msgstr "2-е слово"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:79
 msgid "_Text"
-msgstr ""
+msgstr "_Текст"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:16
 msgid "Text Pools"
@@ -4328,7 +4329,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:17
 msgid "Configure what texts can be used for the quiz, location names and chapter titles."
-msgstr ""
+msgstr "Настройка текстов, которые могут использоваться для теста личности, названий локаций и глав."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:29
 msgid "Configure the questions for the personality quiz"

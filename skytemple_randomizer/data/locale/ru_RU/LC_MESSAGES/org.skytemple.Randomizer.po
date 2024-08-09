@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-08-04 17:21+0000\n"
-"PO-Revision-Date: 2024-08-04 18:04\n"
+"POT-Creation-Date: 2024-08-07 13:21+0000\n"
+"PO-Revision-Date: 2024-08-09 16:26\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -743,7 +743,7 @@ msgstr ""
 
 #: /dev/fd/63:182 /dev/fd/63:401
 msgid "TMs, HMs"
-msgstr ""
+msgstr "TM, HM"
 
 #: /dev/fd/63:183 /dev/fd/63:402
 msgid "Poké (Money)"
@@ -827,7 +827,7 @@ msgstr ""
 
 #: /dev/fd/63:203 /dev/fd/63:422
 msgid "Only interruptions don't heal HP"
-msgstr ""
+msgstr "Только прерывания не восстанавливают ОЗ"
 
 #: /dev/fd/63:204 /dev/fd/63:423
 #, c-format
@@ -910,7 +910,7 @@ msgstr "Целое число недопустимо в этой позиции.
 #: explorerscript/explorerscript/common_syntax.py:103
 #: explorerscript/explorerscript/common_syntax.py:189
 msgid "Decimal not allowed at this position."
-msgstr ""
+msgstr "Десятичные числа недопустимы в этой позиции."
 
 #: explorerscript/explorerscript/common_syntax.py:114
 msgid "Constant not allowed at this position."
@@ -1386,7 +1386,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:105
 msgid "Sprite File Size"
-msgstr ""
+msgstr "Размер файла спрайта"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
@@ -1687,7 +1687,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:519
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестно"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:520
 msgid "Hovering"
@@ -1700,11 +1700,11 @@ msgstr ""
 #. TRANSLATORS: Movement Type
 #: skytemple-files/skytemple_files/data/md/protocol.py:522
 msgid "Lava"
-msgstr ""
+msgstr "Лава"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
-msgstr ""
+msgstr "Вода"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:546
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
@@ -1714,7 +1714,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/md/protocol.py:547
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:548
 msgid "Large"
@@ -1821,11 +1821,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"
-msgstr ""
+msgstr "Враги"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:61
 msgid "Allies"
-msgstr ""
+msgstr "Союзники"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
 msgid "Everyone"
@@ -1834,7 +1834,7 @@ msgstr "Все"
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:64
 msgid "Two-turn move"
@@ -1871,12 +1871,12 @@ msgstr "Все союзники кроме пользователя"
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:158
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:159
 msgid "Invalid "
-msgstr ""
+msgstr "Недопустимый "
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:75
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:116
 msgid "Special / Invalid"
-msgstr ""
+msgstr "Особый / Неверный"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:98
 msgid "In front"
@@ -1912,11 +1912,11 @@ msgstr "Спереди, срезая углы"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:110
 msgid "Two tiles away; cuts corners"
-msgstr ""
+msgstr "На расстоянии двух плиток; срезает углы"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:141
 msgid "No condition"
-msgstr ""
+msgstr "Нет условия"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
 msgid "Based on AI Condition 1 Chance"
@@ -1924,7 +1924,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
 msgid "Current HP <= 25%"
-msgstr ""
+msgstr "Текущее ОЗ <= 25%"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
 msgid "Has at least one negative status condition"
@@ -2117,15 +2117,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:56
 msgid "Ring"
-msgstr ""
+msgstr "Кольцо"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:59
 msgid "Crossroads"
-msgstr ""
+msgstr "Перекресток"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:63
 msgid "Two Rooms, One Monster House"
-msgstr ""
+msgstr "Две комнаты, одна засада монстров"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:65
 msgid "Line"
@@ -2174,7 +2174,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:102
 msgid "Sandstorm"
-msgstr ""
+msgstr "Песчаная буря"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:103
 msgid "Cloudy"
@@ -2186,11 +2186,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
 msgid "Hail"
-msgstr ""
+msgstr "Град"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:106
 msgid "Fog"
-msgstr ""
+msgstr "Туман"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:107
 msgid "Snow"
@@ -2226,7 +2226,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
 msgid "Sticky Trap"
-msgstr ""
+msgstr "Липкая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
 msgid "Grimy Trap"
@@ -2238,7 +2238,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
 msgid "Pitfall Trap"
-msgstr ""
+msgstr "Яма-ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
 msgid "Warp Trap"
@@ -2286,7 +2286,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
 msgid "Wonder Tile"
-msgstr ""
+msgstr "Чудо-плитка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
 msgid "Pokemon Trap"
@@ -2396,7 +2396,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
 #: skytemple-rust/src/st_dpla.rs:130
 msgid "This palette has no animation."
-msgstr ""
+msgstr "Эта палитра не имеет анимации."
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:96
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:98
@@ -2460,19 +2460,19 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:40
 msgid "Palette Only"
-msgstr ""
+msgstr "Только палитра"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:41
 msgid "2 bits per pixel (4 colors)"
-msgstr ""
+msgstr "2 бита на пиксель (4 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:42
 msgid "4 bits per pixel (16 colors)"
-msgstr ""
+msgstr "4 бита на пиксель (16 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:43
 msgid "8 bits per pixel (256 colors)"
-msgstr ""
+msgstr "8 бит на пиксель (256 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:209
 msgid "Can not convert PIL image to WTE: Must be indexed image (=using a palette)"
@@ -2515,39 +2515,39 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:308
 msgid "White"
-msgstr ""
+msgstr "Белый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:309
 msgid "Black"
-msgstr ""
+msgstr "Чёрный"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:310
 msgid "Red"
-msgstr ""
+msgstr "Красный"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:311
 msgid "Blue"
-msgstr ""
+msgstr "Синий"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:312
 msgid "Green"
-msgstr ""
+msgstr "Зеленый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:313
 msgid "Yellow"
-msgstr ""
+msgstr "Желтый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:314
 msgid "Orange"
-msgstr ""
+msgstr "Оранжевый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:315
 msgid "Purple"
-msgstr ""
+msgstr "Фиолетовый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:316
 msgid "Pink"
-msgstr ""
+msgstr "Розовый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:320
 msgid "Leaves"
@@ -2683,7 +2683,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:118
 msgid "Outlaw"
-msgstr ""
+msgstr "Преступник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:120
 msgid "Outlaw Enemy"
@@ -2711,7 +2711,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:141
 msgid "Helping Ally"
-msgstr ""
+msgstr "Союзник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:144
 msgid "Other Game Team Leader"
@@ -2731,7 +2731,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:150
 msgid "Unknown 5"
-msgstr ""
+msgstr "Неизвестно 5"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:155
 msgid "Bazaar Host"
@@ -2980,44 +2980,45 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:91
 msgid "Walking Animation (1st frame)"
-msgstr ""
+msgstr "Анимация ходьбы (1-й кадр)"
 
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:219
 #, python-brace-format
 msgid "Error while applying the patch: {ex}"
-msgstr ""
+msgstr "Ошибка при применении патча: {ex}"
 
 #: skytemple-files/skytemple_files/patch/category.py:27
 msgid "Improvements and Tweaks"
-msgstr ""
+msgstr "Улучшения и исправления"
 
 #: skytemple-files/skytemple_files/patch/category.py:31
 msgid "New Mechanics"
-msgstr ""
+msgstr "Новые механики"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:33
 msgid "Bugfixes"
-msgstr ""
+msgstr "Исправления ошибок"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:34
 msgid "Utility"
-msgstr ""
+msgstr "Утилиты"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:35
 msgid "Others"
-msgstr ""
+msgstr "Прочее"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "Указывает игре загружать списки актеров и уровней из отдельных файлов.\n"
+"Распаковывает оба файла при применении патча."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:98
 msgid "This patch can not be re-applied."
-msgstr ""
+msgstr "Этот патч не может быть применен повторно."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:104
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:112
@@ -3205,6 +3206,10 @@ msgstr ""
 msgid "Makes the game always move the PoV to your partners when they use moves or are attacked, even if the partner is only one tile away, when far-off pals is enabled. Recommended for CTC since the PoV stays on your last pokemon at the end of a manual movement round without this, and CTC already reduces the amount of time the game pauses for between PoV changes."
 msgstr ""
 
+#: skytemple-files/skytemple_files/patch/handler/fast_chimecho.py:47
+msgid "Shorten Chimecho Team Assembly menu interactions. Adding, removing and making leader are now fast interactions that immediately go back to the team member selection menu."
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/fix_evolution.py:45
 msgid "Fixes the evolution glitch that freezes the game when attempting to evolve a pokémon whose name has 10 characters."
 msgstr ""
@@ -3215,7 +3220,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:49
 msgid "Fixes an issue that causes saving to fail on the No$GBA emulator. Warning: Causes saving to fail on the MelonDS emulator instead."
-msgstr ""
+msgstr "Устраняет проблему, из-за которой не удавалось сохранение игры на эмуляторе No$GBA. Внимание: вместо этого, сохранения не будут удаваться на эмуляторе MelonDS."
 
 #: skytemple-files/skytemple_files/patch/handler/move_growth.py:176
 msgid "Implements move growth (PoC/Unfinished). \n"
@@ -3278,7 +3283,8 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
 msgid "Skips the quiz, only leaving the gender question.\n"
 "Needs ChooseStarter patch to be applied. "
-msgstr ""
+msgstr "Пропускает викторину, оставляя только вопрос о поле.\n"
+"Требуется применение патча ChooseStarter. "
 
 #: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
 msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
@@ -3298,78 +3304,78 @@ msgstr ""
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:234
-#: skytemple-files/skytemple_files/patch/patches.py:244
+#: skytemple-files/skytemple_files/patch/patches.py:236
+#: skytemple-files/skytemple_files/patch/patches.py:246
 #, python-brace-format
 msgid "The patch '{name}' was not found."
-msgstr ""
+msgstr "Патч '{name}' не найден."
 
-#: skytemple-files/skytemple_files/patch/patches.py:251
+#: skytemple-files/skytemple_files/patch/patches.py:253
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
-msgstr ""
+msgstr "Перед применением '{name}' необходимо применить патч '{patch_name}'."
 
-#: skytemple-files/skytemple_files/patch/patches.py:257
+#: skytemple-files/skytemple_files/patch/patches.py:259
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:267
+#: skytemple-files/skytemple_files/patch/patches.py:269
 msgid "No configuration was given."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:270
+#: skytemple-files/skytemple_files/patch/patches.py:272
 msgid "Missing configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:275
-#: skytemple-files/skytemple_files/patch/patches.py:281
-#: skytemple-files/skytemple_files/patch/patches.py:287
-#: skytemple-files/skytemple_files/patch/patches.py:295
-#: skytemple-files/skytemple_files/patch/patches.py:309
+#: skytemple-files/skytemple_files/patch/patches.py:277
+#: skytemple-files/skytemple_files/patch/patches.py:283
+#: skytemple-files/skytemple_files/patch/patches.py:289
+#: skytemple-files/skytemple_files/patch/patches.py:297
+#: skytemple-files/skytemple_files/patch/patches.py:311
 msgid "Invalid configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:283
+#: skytemple-files/skytemple_files/patch/patches.py:285
 msgid "Must be >= {}."
-msgstr ""
+msgstr "Должен быть >= {}."
 
-#: skytemple-files/skytemple_files/patch/patches.py:289
+#: skytemple-files/skytemple_files/patch/patches.py:291
 msgid "Must be <= {}."
-msgstr ""
-
-#: skytemple-files/skytemple_files/patch/patches.py:396
-msgid "config.xml missing in patch package."
-msgstr ""
+msgstr "Должен быть <= {}."
 
 #: skytemple-files/skytemple_files/patch/patches.py:398
-msgid "Syntax error in the config.xml while reading patch package."
-msgstr ""
+msgid "config.xml missing in patch package."
+msgstr "config.xml отсутствует в пакете патча."
 
-#: skytemple-files/skytemple_files/patch/patches.py:408
-msgid "patch.py missing in patch package."
-msgstr ""
+#: skytemple-files/skytemple_files/patch/patches.py:400
+msgid "Syntax error in the config.xml while reading patch package."
+msgstr "Синтаксическая ошибка в config.xml при чтении пакета патча."
 
 #: skytemple-files/skytemple_files/patch/patches.py:410
+msgid "patch.py missing in patch package."
+msgstr "patch.py отсутствует в пакете патча."
+
+#: skytemple-files/skytemple_files/patch/patches.py:412
 msgid "The patch.py of the patch package contains a syntax error."
-msgstr ""
+msgstr "В файле patch.py пакета патча содержится синтаксическая ошибка."
 
-#: skytemple-files/skytemple_files/patch/patches.py:415
+#: skytemple-files/skytemple_files/patch/patches.py:417
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
-msgstr ""
+msgstr "В файле patch.py пакета патча отсутствует 'PatchHandler'."
 
-#: skytemple-files/skytemple_files/patch/patches.py:421
+#: skytemple-files/skytemple_files/patch/patches.py:423
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:428
+#: skytemple-files/skytemple_files/patch/patches.py:430
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "Unknown or extra XML element '{}' in scene data."
-msgstr ""
+msgstr "Неизвестный или лишний элемент XML '{}' в данных сцены."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:110
 msgid "'{}' missing in scene data."
@@ -3381,7 +3387,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:542
 msgid "Unknown direction value."
-msgstr ""
+msgstr "Неизвестное значение направления."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:57
 msgid "Can not save a scene event without a defined triggered script."
@@ -3390,7 +3396,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/script/ssb/constants.py:96
 #, python-brace-format
 msgid "Invalid DungeonMode: {string}"
-msgstr ""
+msgstr "Неверный режим подземелья: {string}"
 
 #: skytemple-files/skytemple_files/script/ssb/constants.py:186
 #, python-brace-format
@@ -3399,29 +3405,29 @@ msgstr "Неизвестная константа {constant_as_string}."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:163
 msgid "The routine data lists for the decompiler must have the same lengths."
-msgstr ""
+msgstr "Списки данных рутин для декомпилятора должны иметь одинаковую длину."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:176
 #, python-brace-format
 msgid "Routine {i} not found."
-msgstr ""
+msgstr "Рутина {i} не найдена."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:196
 msgid "The script must contain exactly {len(self.rom_data.script_data.common_routine_info)} coroutines."
-msgstr ""
+msgstr "Скрипт должен содержать ровно {len(self.rom_data.script_data.common_routine_info)} сопрограмм."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:203
 msgid "The script must not contain any duplicate coroutines."
-msgstr ""
+msgstr "Скрипт не должен содержать повторяющихся корутин."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:211
 #, python-brace-format
 msgid "Unknown coroutine {err}"
-msgstr ""
+msgstr "Неизвестная корутина {err}"
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:225
 msgid "Coroutines and regular routines can not be mixed in a script file."
-msgstr ""
+msgstr "Корутины и обычные рутины нельзя смешивать в файле сценария."
 
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:238
 #, python-brace-format
@@ -3527,7 +3533,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:76
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
-msgstr ""
+msgstr "Приложение для рандомизации ROM игры Pokémon Mystery Dungeon Explorers of Sky."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 msgid "New version available: {version}"
@@ -3633,15 +3639,15 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
 msgid "_Dungeons"
-msgstr ""
+msgstr "_Подземелья"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:18
 msgid "Randomization Mode"
-msgstr ""
+msgstr "Режим рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:25
 msgid "Fully random"
-msgstr ""
+msgstr "Полностью случайный"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:26
 msgid "Consistent per Dungeon"
@@ -3654,19 +3660,19 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:56
 msgid "Randomization Settings"
-msgstr ""
+msgstr "Параметры рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:76
 msgid "Chance Thresholds"
-msgstr ""
+msgstr "Пороги вероятностей"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:100
 msgid "Per-Dungeon Settings"
-msgstr ""
+msgstr "Настройки для каждого подземелья"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:14
 msgid "Random Weather Chance"
-msgstr ""
+msgstr "Шанс случайной погоды"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:15
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:49
@@ -3676,7 +3682,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:172
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:208
 msgid "in percent (%)"
-msgstr ""
+msgstr "в процентах (%)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:33
 msgid "Chance of applying a random weather that isn't \"clear\" to each floor. If the chance doesn't pass, \"clear\" weather will be used instead.\n"
@@ -3717,11 +3723,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:42
 msgid "Unlock at Start"
-msgstr ""
+msgstr "Разблокировать в начале"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:44
 msgid "Randomize IQ"
-msgstr ""
+msgstr "Рандомизировать IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:46
 msgid "Spawn Monster Houses"
@@ -4164,59 +4170,61 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:342
 msgid "Import questions from XML"
-msgstr ""
+msgstr "Импортировать вопросы из XML файла"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:347
 msgid "Export questions to XML"
-msgstr ""
+msgstr "Экспортировать вопросы в XML файл"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:12
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.py:92
 msgid "Questions"
-msgstr ""
+msgstr "Вопросы"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:16
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.ui:40
 msgid "Add question"
-msgstr ""
+msgstr "Добавить вопрос"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:96
 msgid "Failed to load settings: Error while opening file ({})."
-msgstr ""
+msgstr "Не удалось загрузить настройки: ошибка открытия файла ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:107
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
-msgstr ""
+msgstr "Файл конфигурации, который вы пытались импортировать, неверен:\n"
+"{}:\n"
+"{}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:114
 msgid "Settings loaded!"
-msgstr ""
+msgstr "Настройки загружены!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:143
 msgid "Failed to save settings: Error while opening file ({})."
-msgstr ""
+msgstr "Не удалось сохранить настройки: Ошибка при открытии файла ({})."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:149
 msgid "The path of the settings file needs to end in '.json'."
-msgstr ""
+msgstr "Путь к файлу настроек должен заканчиваться на '.json'."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:171
 msgid "Settings saved!"
-msgstr ""
+msgstr "Настройки сохранены!"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:16
 msgid "Backup &amp; Share Randomization Settings"
-msgstr ""
+msgstr "Резервное копирование &amp; Поделитесь настройками рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:23
 msgid "Load from File"
-msgstr ""
+msgstr "Загрузить из файла"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:32
 msgid "Save to File"
-msgstr ""
+msgstr "Сохранить в файл"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:45
 msgid "Basic Settings"
@@ -4224,7 +4232,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
 msgid "Randomization Seed"
-msgstr ""
+msgstr "Зерно рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
 msgid "Use Native File Handlers"
@@ -4366,24 +4374,24 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:145
 msgid "Options"
-msgstr ""
+msgstr "Опции"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:148
 msgid "Enable Instant Text"
-msgstr ""
+msgstr "Включить мгновенный текст"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:156
 msgid "Text Replacement Algorithm"
-msgstr ""
+msgstr "Алгоритм замены текста"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:163
 msgid "Smart"
-msgstr ""
+msgstr "Умный"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:164
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
 msgid "Classic"
-msgstr ""
+msgstr "Классический"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:175
 msgid "Controls how Pokémon and NPC names in texts are replaced.\n\n"

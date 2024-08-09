@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-09 18:46\n"
+"PO-Revision-Date: 2024-08-09 20:14\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3503,12 +3503,12 @@ msgstr ""
 
 #: skytemple-rust/src/st_dpla.rs:111
 msgid "Palette is invalid."
-msgstr ""
+msgstr "Палитра является недопустимой."
 
 #: skytemple-rust/src/st_dpla.rs:116 skytemple-rust/src/st_dpla.rs:173
 #: skytemple-rust/src/st_dpla.rs:209 skytemple-rust/src/st_dpla.rs:217
 msgid "Palette index out of range."
-msgstr ""
+msgstr "Индекс палитры вне диапазона."
 
 #: skytemple-rust/src/st_dpla.rs:267
 msgid "Frame durations out of range while trying to build color."
@@ -3517,7 +3517,8 @@ msgstr ""
 #: skytemple-rust/src/st_kao.rs:100
 msgid "This portrait does not compress well, the result size is greater than 800 bytes ({} bytes total).\n"
 " If you haven't done already, try applying the 'ProvideATUPXSupport' to install an optimized compression algorithm, which might be able to better compress this image."
-msgstr ""
+msgstr "Этот портрет плохо сжимается, размер результата превышает 800 байт ({} байт всего).\n"
+" Если вы еще не сделали этого, попробуйте применить 'ProvideATUPXSupport', чтобы установить оптимизированный алгоритм сжатия, который, возможно, сможет лучше сжать это изображение."
 
 #: skytemple_randomizer/skytemple_randomizer/export_quiz_xml.py:97
 msgid "A question must contain two XML sub-nodes: {}, {}"
@@ -3888,7 +3889,7 @@ msgstr "Тактики и IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:121
 msgid "Move Names for \"Blind Moves\" Mode"
-msgstr ""
+msgstr "Названия приемов для режима \"Слепые приемы\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.py:126
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.py:94
@@ -4013,35 +4014,35 @@ msgstr "Только выбранные приемы будут использо
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:14
 msgid "Randomize Level-Up Movesets"
-msgstr ""
+msgstr "Рандомизировать наборы приёмов при повышении уровня"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:25
 msgid "If enabled then what moves Pokémon can learn by level-up is randomized."
-msgstr ""
+msgstr "Если включено, то рандомизируются приемы, которые покемон может выучить при повышении уровня."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:39
 msgid "First Move Restrictions"
-msgstr ""
+msgstr "Ограничения первого приема"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:48
 msgid "Must deal damage"
-msgstr ""
+msgstr "Должен наносить урон"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:49
 msgid "Must be STAB"
-msgstr ""
+msgstr "Должен быть того же типа, что и покемон"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:60
 msgid "Configure additional restrictions for a Pokémon's first move."
-msgstr ""
+msgstr "Настройка дополнительных ограничений для первого приема покемона."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:78
 msgid "Randomize TM/HM Movesets"
-msgstr ""
+msgstr "Рандомизировать наборы приёмов, изучаемых из TM/HM"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:89
 msgid "If enabled then what Pokémon can learn which TMs/HMs is randomized."
-msgstr ""
+msgstr "Если включено, то рандомизируется, какие покемоны могут выучить какие TM/HM."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.py:74
 msgid "Dungeon music randomization can be enabled or disabled with the dungeon layout randomization setting."
@@ -4049,11 +4050,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:14
 msgid "Randomize Titlescreen Music"
-msgstr ""
+msgstr "Рандомизировать музыку главного меню"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:25
 msgid "If enabled, the music that plays on the titlescreen is randomized."
-msgstr ""
+msgstr "Если включено, музыка, воспроизводимая на главном меню, рандомизируется."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_music.ui:39
 msgid "Randomize Overworld Music"
@@ -4098,7 +4099,7 @@ msgstr "Применить патч \"Fix Memory Softlock\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:14
 msgid "Personality Quiz Mode"
-msgstr ""
+msgstr "Режим теста о личности"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:21
 msgid "Default: Ask for Personality"
@@ -4130,7 +4131,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:76
 msgid "Include Vanilla Question"
-msgstr ""
+msgstr "Добавить вопросы из оригинальной игры"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:88
 msgid "If enabled, the questions from the base game will also be included in the pool of possible questions."
@@ -4538,7 +4539,7 @@ msgstr "_Начать"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:117
 msgid "Help (online)"
-msgstr ""
+msgstr "Справка (онлайн)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:135
 msgid "_Randomize"

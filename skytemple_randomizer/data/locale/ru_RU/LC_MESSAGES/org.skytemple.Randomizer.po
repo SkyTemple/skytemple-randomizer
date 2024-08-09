@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-09 11:24\n"
+"PO-Revision-Date: 2024-08-09 16:26\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3533,7 +3533,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:76
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
-msgstr ""
+msgstr "Приложение для рандомизации ROM игры Pokémon Mystery Dungeon Explorers of Sky."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 msgid "New version available: {version}"
@@ -3639,15 +3639,15 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
 msgid "_Dungeons"
-msgstr ""
+msgstr "_Подземелья"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:18
 msgid "Randomization Mode"
-msgstr ""
+msgstr "Режим рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:25
 msgid "Fully random"
-msgstr ""
+msgstr "Полностью случайный"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:26
 msgid "Consistent per Dungeon"
@@ -3660,19 +3660,19 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:56
 msgid "Randomization Settings"
-msgstr ""
+msgstr "Параметры рандомизации"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:76
 msgid "Chance Thresholds"
-msgstr ""
+msgstr "Пороги вероятностей"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:100
 msgid "Per-Dungeon Settings"
-msgstr ""
+msgstr "Настройки для каждого подземелья"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:14
 msgid "Random Weather Chance"
-msgstr ""
+msgstr "Шанс случайной погоды"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:15
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:49
@@ -3682,7 +3682,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:172
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:208
 msgid "in percent (%)"
-msgstr ""
+msgstr "в процентах (%)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_chances.ui:33
 msgid "Chance of applying a random weather that isn't \"clear\" to each floor. If the chance doesn't pass, \"clear\" weather will be used instead.\n"
@@ -3723,11 +3723,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:42
 msgid "Unlock at Start"
-msgstr ""
+msgstr "Разблокировать в начале"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:44
 msgid "Randomize IQ"
-msgstr ""
+msgstr "Рандомизировать IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:46
 msgid "Spawn Monster Houses"
@@ -4374,24 +4374,24 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:145
 msgid "Options"
-msgstr ""
+msgstr "Опции"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:148
 msgid "Enable Instant Text"
-msgstr ""
+msgstr "Включить мгновенный текст"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:156
 msgid "Text Replacement Algorithm"
-msgstr ""
+msgstr "Алгоритм замены текста"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:163
 msgid "Smart"
-msgstr ""
+msgstr "Умный"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:164
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:28
 msgid "Classic"
-msgstr ""
+msgstr "Классический"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:175
 msgid "Controls how Pokémon and NPC names in texts are replaced.\n\n"

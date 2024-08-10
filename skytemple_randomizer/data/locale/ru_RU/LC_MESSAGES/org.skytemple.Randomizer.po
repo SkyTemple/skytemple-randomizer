@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-09 20:14\n"
+"PO-Revision-Date: 2024-08-10 15:00\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3322,11 +3322,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/patches.py:269
 msgid "No configuration was given."
-msgstr ""
+msgstr "Конфигурация не была указана."
 
 #: skytemple-files/skytemple_files/patch/patches.py:272
 msgid "Missing configuration value."
-msgstr ""
+msgstr "Отсутствует значение конфигурации."
 
 #: skytemple-files/skytemple_files/patch/patches.py:277
 #: skytemple-files/skytemple_files/patch/patches.py:283
@@ -3334,7 +3334,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/patches.py:297
 #: skytemple-files/skytemple_files/patch/patches.py:311
 msgid "Invalid configuration value."
-msgstr ""
+msgstr "Неправильное значение конфигурации."
 
 #: skytemple-files/skytemple_files/patch/patches.py:285
 msgid "Must be >= {}."
@@ -3450,7 +3450,7 @@ msgstr "Неизвестный язык для строки: {lang}"
 #: skytemple-files/skytemple_files/script/ssb/script_compiler.py:377
 #, python-brace-format
 msgid "Invalid parameter supplied for an operation: {param}"
-msgstr ""
+msgstr "Указан неверный параметр для операции: {param}"
 
 #: skytemple-files/skytemple_files/script/ssb/ssb_number.py:94
 msgid "The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
@@ -3475,15 +3475,15 @@ msgstr ""
 
 #: skytemple-rust/src/romfs.rs:110
 msgid "Error reading the filesystem from ROM: {}"
-msgstr ""
+msgstr "Ошибка чтения файловой системы из ROM: {}"
 
 #: skytemple-rust/src/st_bma.rs:467
 msgid "Can not import map background: Width of both images must match the current map width: {}px"
-msgstr ""
+msgstr "Невозможно импортировать фон карты: Ширина обоих изображений должна соответствовать текущей ширине карты: {}px"
 
 #: skytemple-rust/src/st_bma.rs:479
 msgid "Can not import map background: Height of both images must match the current map width: {}px"
-msgstr ""
+msgstr "Невозможно импортировать фон карты: Высота обоих изображений должна соответствовать текущей ширине карты: {}px"
 
 #: skytemple-rust/src/st_bpc.rs:541
 msgid "new tilemapping for this chunk must contain {} tiles."
@@ -3635,7 +3635,7 @@ msgstr "О программе"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
-msgstr ""
+msgstr "Википедия"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-10 15:00\n"
+"PO-Revision-Date: 2024-08-10 16:35\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1928,11 +1928,11 @@ msgstr "Текущее ОЗ <= 25%"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
 msgid "Has at least one negative status condition"
-msgstr ""
+msgstr "Имеет как минимум одно негативное состояние"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:145
 msgid "Is asleep, in a nightmare or napping"
-msgstr ""
+msgstr "Спит, видит кошмар или дремлет"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:146
 msgid "Is a ghost-type Pokémon and does not have the exposed status"
@@ -1941,7 +1941,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:149
 #, python-format
 msgid "Current HP <= 25% or has at least one negative status condition"
-msgstr ""
+msgstr "Текущий ОЗ <= 25% или имеет хотя бы одно негативное состояние"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:55
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:235
@@ -2202,7 +2202,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:131
 msgid "No darkness"
-msgstr ""
+msgstr "Нет темноты"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:132
 msgid "1-tile vision (Heavy darkness)"
@@ -3318,7 +3318,7 @@ msgstr "Перед применением '{name}' необходимо прим
 #: skytemple-files/skytemple_files/patch/patches.py:259
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
-msgstr ""
+msgstr "Перед применением '{name}' необходимо применить патч '{patch_name}'. Не удалось найти этот патч."
 
 #: skytemple-files/skytemple_files/patch/patches.py:269
 msgid "No configuration was given."

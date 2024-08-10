@@ -17,7 +17,8 @@
 from __future__ import annotations
 
 import struct
-from typing import Any, Sequence
+from typing import Any
+from collections.abc import Sequence
 
 import click
 from ndspy.rom import NintendoDSRom

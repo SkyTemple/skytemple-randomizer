@@ -15,7 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from random import shuffle, randrange, choice
-from typing import Iterable
+from collections.abc import Iterable
 
 from range_typed_integers import u8
 from skytemple_files.common.ppmdu_config.data import Pmd2Language, Pmd2StringBlock

@@ -20,7 +20,8 @@ import csv
 import os
 from enum import Enum, auto
 from functools import partial
-from typing import cast, Sequence
+from typing import cast
+from collections.abc import Sequence
 
 from skytemple_files.common.i18n_util import _
 from skytemple_files.common.util import open_utf8
@@ -221,7 +222,7 @@ class TextPoolPage(Adw.PreferencesPage):
                 wr = csv.writer(
                     result_file,
                 )
-                wr.writerows(((x,) for x in self.get_pool()))
+                wr.writerows((x,) for x in self.get_pool())
         except Exception as e:
             GtkFrontend.instance().display_error(
                 _("Failed to export. Details: {}").format(e),

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-08-07 13:21+0000\n"
-"PO-Revision-Date: 2024-08-11 11:19\n"
+"POT-Creation-Date: 2024-08-12 10:25+0000\n"
+"PO-Revision-Date: 2024-08-12 10:25\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -4082,7 +4082,7 @@ msgid "Apply \"MoveShortcuts\" Patch"
 msgstr "Применить патч \"MoveShortcuts\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:37
-msgid "Apply \"UnusedDungeonPatch\" Patch"
+msgid "Apply \"UnusedDungeonChance\" Patch"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:60

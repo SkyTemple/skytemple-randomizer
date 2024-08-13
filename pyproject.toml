@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "skytemple-randomizer"
-version = "2.0.1"
+version = "2.0.2"
 authors = [
     {name = 'Marco "Capypara" Köpcke', email = "hello@capypara.de"},
     # see About dialog or GitHub contributors list for additional people.

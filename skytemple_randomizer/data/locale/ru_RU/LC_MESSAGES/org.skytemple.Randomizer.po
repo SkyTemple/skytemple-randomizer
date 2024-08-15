@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-12 10:25+0000\n"
-"PO-Revision-Date: 2024-08-12 10:25\n"
+"PO-Revision-Date: 2024-08-15 19:41\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -4083,7 +4083,7 @@ msgstr "Применить патч \"MoveShortcuts\""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:37
 msgid "Apply \"UnusedDungeonChance\" Patch"
-msgstr ""
+msgstr "Применить патч 'UnusedDungeonChance'"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:60
 msgid "Apply \"Complete Team Control\" Patch"
@@ -4230,7 +4230,7 @@ msgstr "Сохранить в файл"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:45
 msgid "Basic Settings"
-msgstr ""
+msgstr "Основные настройки"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:48
 msgid "Randomization Seed"
@@ -4248,15 +4248,15 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:14
 msgid "Randomize Pokémon's IQ Groups"
-msgstr ""
+msgstr "Рандомизировать IQ-группы покемонов"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:25
 msgid "Assigns all Pokémon in the game a random IQ group."
-msgstr ""
+msgstr "Присваивает всем покемонам в игре случайную IQ-группу."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:39
 msgid "Randomize IQ Gain"
-msgstr ""
+msgstr "Рандомизировать увеличение IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:50
 msgid "If enabled, the amount of belly the gummies fill and the amount of IQ they give are fully random for each type."
@@ -4346,7 +4346,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:64
 msgid "Randomize Chapter Titles"
-msgstr ""
+msgstr "Рандомизировать названия глав"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:73
 msgid "Configure the pool of chapter titles used for randomization"

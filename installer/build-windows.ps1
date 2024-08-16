@@ -26,7 +26,8 @@ pip3 install -U certifi
 
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-frozen.txt
-pip3 install '..[gtk]'
+# No build isolation to re-use system PyGObject.
+pip3 install --no-build-isolation '..[gtk]'
 # pip likes to troll us. Force reinstall the proper PyGObject versions
 pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
 pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)

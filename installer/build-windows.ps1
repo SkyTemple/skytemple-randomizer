@@ -24,11 +24,16 @@ pip install setuptools wheel 'pyinstaller~=6.0'
 # Install certifi for cert handling
 pip3 install -U certifi
 
+# Just to make sure: force reinstall the proper PyGObject versions
+pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
+pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
+
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-frozen.txt
 # No build isolation to re-use system PyGObject.
 pip3 install --no-build-isolation '..[gtk]'
-# pip likes to troll us. Force reinstall the proper PyGObject versions
+
+# Just to make sure: force reinstall the proper PyGObject versions
 pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pygobject\dist\PyGObject*.whl)
 pip install --force-reinstall (Resolve-Path C:\gtk-build\build\x64\release\pycairo\dist\pycairo*.whl)
 

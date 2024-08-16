@@ -8,11 +8,11 @@ from setuptools.build_meta import *  # noqa: F403
 
 def build_wheel(wheel_directory, config_settings=None, metadata_directory=None):
     """
-    Build the wheel, but before: build all UI XML files.
+    Build the wheel, but before: Build all UI files and MO files
     """
-    print("Building Blueprint files...")
+    print("Building Blueprint files and locale message files...")
     if platform.system() == "Windows":
-        subprocess.run(["powershell.exe", r".\build-blp-to-ui.ps1"], check=True)
+        subprocess.run(["powershell.exe", r".\_custom_build\_build.ps1"], check=True)
     else:
-        subprocess.run(["./build-blp-to-ui.sh"], check=True)
+        subprocess.run(["make"], check=True)
     return _orig.build_wheel(wheel_directory, config_settings, metadata_directory)

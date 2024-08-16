@@ -38,7 +38,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install gobject-introspection
-      run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev
+      run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
@@ -77,6 +77,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+      - name: Install gobject-introspection
+        run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1
       - name: Rewrite version for dev if not tag
         if: "!startsWith(github.ref, 'refs/tags/')"
         run: |
@@ -84,8 +86,6 @@ jobs:
       - name: Note version
         run: |
           echo "PACKAGE_VERSION=$(tomlq '.project.version' pyproject.toml -r)" >> $GITHUB_ENV
-      - name: Run make
-        run: make
       - name: Build Python wheels
         run: |
           python3 -m pip install --upgrade build
@@ -397,8 +397,6 @@ jobs:
           python -c 'import gi; gi.require_version("Gtk", "4.0"); gi.require_version("Adw", "1"); from gi.repository import GObject, Gio, GLib, Gtk, Gdk, Adw'
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           
-          # Convert Blueprint files
-          .\build-blp-to-ui.ps1
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
 
           cd installer
@@ -456,18 +454,12 @@ jobs:
         run: |
           . .venv/bin/activate
           pip3 install "pygobject>=3.44.0"
-      - name: Convert Blueprint files
-        run: |
-          . .venv/bin/activate
-          ./build-blp-to-ui.sh
       - name: Install and package
         run: |
           . .venv/bin/activate
           # Install other dependencies and SkyTemple Randomizer itself
           pip3 install skytemple-rust 'pyinstaller~=6.0'
           pip3 install -r requirements-frozen.txt
-          # Generate MO localization files
-          installer/generate-mo.sh
           pip3 install '.[gtk]'
           if [ -n "$IS_DEV_BUILD" ]; then
             installer/install-skytemple-components-from-git.sh
@@ -533,18 +525,12 @@ jobs:
         run: |
           . .venv/bin/activate
           pip3 install "pygobject>=3.44.0"
-      - name: Convert Blueprint files
-        run: |
-          . .venv/bin/activate
-          ./build-blp-to-ui.sh
       - name: Install and package
         run: |
           . .venv/bin/activate
           # Install other dependencies and SkyTemple Randomizer itself
           pip3 install skytemple-rust 'pyinstaller~=6.0'
           pip3 install -r requirements-frozen.txt
-          # Generate MO localization files
-          installer/generate-mo.sh
           pip3 install '.[gtk]'
           if [ -n "$IS_DEV_BUILD" ]; then
             installer/install-skytemple-components-from-git.sh

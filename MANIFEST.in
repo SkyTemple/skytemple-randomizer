@@ -4,5 +4,4 @@ graft skytemple_randomizer/data
 include skytemple_randomizer/py.typed
 graft _custom_build
 graft blueprint-compiler
-include build-blp-to-ui.ps1
-include build-blp-to-ui.sh
+include Makefile

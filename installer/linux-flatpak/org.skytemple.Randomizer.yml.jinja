@@ -73,7 +73,6 @@ modules:
   - name: randomizer
     buildsystem: simple
     build-commands:
-      - make
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}/links" --prefix=${FLATPAK_DEST} --no-deps '.[gtk]'
       # Icons
       - install -Dm644 skytemple_randomizer/data/icons/hicolor/16x16/apps/skytemple_randomizer.png /app/share/icons/hicolor/16x16/apps/org.skytemple.Randomizer.png

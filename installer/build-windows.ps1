@@ -24,9 +24,6 @@ pip install setuptools wheel 'pyinstaller~=6.0'
 # Install certifi for cert handling
 pip3 install -U certifi
 
-# Generate MO localization files
-bash .\generate-mo.sh
-
 # install SkyTemple Randomizer
 pip3 install -r ../requirements-frozen.txt
 pip3 install '..[gtk]'

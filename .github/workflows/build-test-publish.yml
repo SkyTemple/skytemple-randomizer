@@ -69,8 +69,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build the Python wheel
-    container:
-      image: ghcr.io/skytemple/gtk4-build-image:1
     steps:
       # For tags we assume the version in pyproject.toml is correct!
       - name: Checkout

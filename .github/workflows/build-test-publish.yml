@@ -67,7 +67,7 @@ jobs:
         run: ruff format --check skytemple_randomizer
         
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     name: Build the Python wheel
     steps:
       # For tags we assume the version in pyproject.toml is correct!
@@ -86,7 +86,7 @@ jobs:
           echo "PACKAGE_VERSION=$(tomlq '.project.version' pyproject.toml -r)" >> $GITHUB_ENV
       - name: Build Python wheels
         run: |
-          python3 -m pip install --upgrade build
+          python3 -m pip install --break-system-packages --upgrade build
           python3 -m build
       - name: Upload wheels
         uses: actions/upload-artifact@v4

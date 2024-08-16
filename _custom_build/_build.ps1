@@ -1,3 +1,5 @@
+# Windows build script.
+# This is normally run from backend.py and assumes the working directory to be the source distribution root directory.
 $ErrorActionPreference = "Stop"
 # Convert the Blueprint UI files to XML.
 # This requires the blueprint-compiler submodule to be checked out.

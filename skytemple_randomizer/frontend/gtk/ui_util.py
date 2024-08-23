@@ -93,12 +93,6 @@ def open_dir(directory):
         AppInfo.launch_default_for_uri(pathlib.Path(directory).as_uri())
 
 
-try:
-    raise TypeError
-except TypeError as exc:
-    TracebackType = type(exc.__traceback__)
-
-
 def csv_filter() -> Gtk.FileFilter:
     csv_filter = Gtk.FileFilter()
     csv_filter.add_suffix("csv")
@@ -137,7 +131,7 @@ def run_file_dialog(
     filters: Iterable[Gtk.FileFilter],
     *,
     callback_ok: Callable[[Gtk.FileDialog, Gio.File | None], None],
-    callback_error: Callable[[Gtk.FileDialog, type[BaseException], BaseException, TracebackType], None],
+    callback_error: Callable[[Gtk.FileDialog, type[BaseException], BaseException, Any], None],
     with_any_filter: bool = True,
     initial_name: str | None = None,
     save: bool = False,

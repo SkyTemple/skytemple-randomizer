@@ -24,6 +24,7 @@ from skytemple_files.common.util import open_utf8
 
 CONFIG_FILE_NAME = "randomizer.ini"
 
+SECT_FOLDERS = "Folders"
 SECT_WINDOW = "Window"
 
 KEY_WINDOW_SIZE_X = "width"
@@ -95,6 +96,18 @@ class SkyTempleRandomizerSettingsStoreGtk:
         if SECT_WINDOW not in self.loaded_config:
             self.loaded_config[SECT_WINDOW] = {}
         self.loaded_config[SECT_WINDOW][KEY_RECENT_ROM] = value
+        self._save()
+
+    def get_file_picker_preset_path(self, key: str) -> Optional[str]:
+        if SECT_FOLDERS in self.loaded_config:
+            if key in self.loaded_config[SECT_FOLDERS]:
+                return self.loaded_config[SECT_FOLDERS][key]
+        return None
+
+    def set_file_picker_preset_path(self, key: str, value: str):
+        if SECT_FOLDERS not in self.loaded_config:
+            self.loaded_config[SECT_FOLDERS] = {}
+        self.loaded_config[SECT_FOLDERS][key] = value
         self._save()
 
     def _save(self):

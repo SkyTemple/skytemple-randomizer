@@ -20,6 +20,7 @@ import json
 import os
 from typing import Callable, cast
 
+from gi.repository import Gtk, Adw, GLib, Gio
 from skytemple_files.common.i18n_util import _
 
 from skytemple_randomizer.config import (
@@ -31,8 +32,7 @@ from skytemple_randomizer.config import (
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
-
-from gi.repository import Gtk, Adw, GLib, Gio
+from skytemple_randomizer.frontend.gtk.ui_util import run_file_dialog, json_filter
 
 
 @LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "page_settings.ui"))
@@ -75,28 +75,23 @@ class SettingsPage(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_load_clicked(self, *args):
-        frontend = GtkFrontend.instance()
-        json_filter = Gtk.FileFilter()
-        json_filter.add_suffix("json")
-        json_filter.add_mime_type("application/json")
-        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
-        if documents_dir is not None:
-            default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=json_filter)
-        else:
-            dialog_for_file = Gtk.FileDialog(default_filter=json_filter)
-        dialog_for_file.open(frontend.window, None, self.on_file_loaded)
+        run_file_dialog(
+            GtkFrontend.instance(),
+            "settings",
+            (json_filter(),),
+            callback_ok=self.on_file_loaded,
+            callback_error=self.on_file_loaded_err,
+        )
 
-    def on_file_loaded(self, dialog, result):
-        try:
-            file: Gio.File = dialog.open_finish(result)
-        except Exception as e:
-            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
-                GtkFrontend.instance().display_error(
-                    _("Failed to load settings: Error while opening file ({}).").format(e),
-                    cast(Gtk.Window, self.get_root()),
-                )
-            return
+    def on_file_loaded_err(self, _dialog, _exc_type, e, _trb):
+        if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+            GtkFrontend.instance().display_error(
+                _("Failed to load settings: Error while opening file ({}).").format(e),
+                cast(Gtk.Window, self.get_root()),
+            )
+
+    def on_file_loaded(self, _dialog: Gtk.FileDialog, file: Gio.File | None):
+        assert file is not None
         path = file.get_path()
         assert path is not None
         frontend = GtkFrontend.instance()
@@ -118,33 +113,28 @@ class SettingsPage(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_save_clicked(self, *args):
-        frontend = GtkFrontend.instance()
-        json_filter = Gtk.FileFilter()
-        json_filter.add_suffix("json")
-        json_filter.add_mime_type("application/json")
-        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
-        if documents_dir is not None:
-            default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir,
-                default_filter=json_filter,
-                initial_name="settings.json",
-            )
-        else:
-            dialog_for_file = Gtk.FileDialog(default_filter=json_filter, initial_name="settings.json")
-        dialog_for_file.save(frontend.window, None, self.do_save)
+        run_file_dialog(
+            GtkFrontend.instance(),
+            "settings",
+            (json_filter(),),
+            callback_ok=self.do_save,
+            callback_error=self.do_save_err,
+            initial_name="settings.json",
+            save=True,
+        )
 
-    def do_save(self, dialog, result):
-        try:
-            file = dialog.save_finish(result)
-        except Exception as e:
-            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
-                GtkFrontend.instance().display_error(
-                    _("Failed to save settings: Error while opening file ({}).").format(e),
-                    cast(Gtk.Window, self.get_root()),
-                )
-            return
-        if not file.get_path().lower().endswith(".json"):
+    def do_save_err(self, _dialog, _exc_type, e, _trb):
+        if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+            GtkFrontend.instance().display_error(
+                _("Failed to save settings: Error while opening file ({}).").format(e),
+                cast(Gtk.Window, self.get_root()),
+            )
+
+    def do_save(self, _dialog: Gtk.FileDialog, file: Gio.File | None):
+        assert file is not None
+        path = file.get_path()
+        assert path is not None
+        if not path.lower().endswith(".json"):
             GtkFrontend.instance().display_error(
                 _("The path of the settings file needs to end in '.json'."),
                 cast(Gtk.Window, self.get_root()),

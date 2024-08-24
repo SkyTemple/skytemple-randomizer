@@ -16,6 +16,7 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import inspect
 import os
+import sys
 from random import Random
 
 _DEBUG_FILE_PATH = os.environ.get("SKYTEMPLE_RANDOMIZER_DEBUG_DIR_RNG", "/tmp/rng_debug")
@@ -68,9 +69,6 @@ class DebugRandom(Random):
     def betavariate(self, alpha, beta):
         return self._debug("betavariate", super().betavariate, alpha, beta)
 
-    def binomialvariate(self, n=1, p=0.5):
-        return self._debug("binomialvariate", super().binomialvariate, n, p)
-
     def triangular(self, low=0.0, high=1.0, mode=None):
         return self._debug("triangular", super().triangular, low, high, mode)
 
@@ -80,8 +78,14 @@ class DebugRandom(Random):
     def sample(self, population, k, *, counts=None):
         return self._debug("sample", super().sample, population, k, counts=counts)
 
-    def shuffle(self, x):
-        self._debug("shuffle", super().shuffle, x)
+    if sys.version_info >= (3, 11):
+
+        def shuffle(self, x) -> None:
+            self._debug("shuffle", super().shuffle, x)
+    else:
+
+        def shuffle(self, x, random=None) -> None:
+            self._debug("shuffle", super().shuffle, x, random)
 
     def choices(self, population, weights=None, *, cum_weights=None, k=1):
         return self._debug("choices", super().choices, population, weights, cum_weights=cum_weights, k=k)

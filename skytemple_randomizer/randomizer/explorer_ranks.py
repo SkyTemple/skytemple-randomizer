@@ -14,8 +14,6 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import randint, choice
-
 from range_typed_integers import u32
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.rank_up_table import HardcodedRankUpTable
@@ -50,7 +48,7 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
         if rand_unlocks:
             unlocks = []
             for i in range(len(ranks) - 1):
-                unlocks.append(u32(randint(MIN_PNTS, MAX_UNLOCK_PNTS)))
+                unlocks.append(u32(self.rng.randint(MIN_PNTS, MAX_UNLOCK_PNTS)))
             unlocks.append(ranks[-1].points_needed_next)
             unlocks.sort()
 
@@ -72,7 +70,7 @@ class ExplorerRanksRandomizer(AbstractRandomizer):
                 # noinspection PyUnboundLocalVariable
                 ranks[i].points_needed_next = unlocks[i]
             if rand_rewards:
-                ranks[i].item_awarded = u32(choice(get_allowed_item_ids(self.config)))
+                ranks[i].item_awarded = u32(self.rng.choice(get_allowed_item_ids(self.config)))
 
         HardcodedRankUpTable.set_rank_up_table(ranks, arm9, self.static_data)
         set_binary_in_rom(self.rom, self.static_data.bin_sections.arm9, arm9)

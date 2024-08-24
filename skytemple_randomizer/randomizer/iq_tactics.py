@@ -14,9 +14,6 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice, randrange
-
-
 from range_typed_integers import u8, i32, i16
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.hardcoded.iq import HardcodedIq, IqGroupsSkills
@@ -60,14 +57,14 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 if tactic == 999:
                     new_tactics.append(tactic)
                 else:
-                    if choice([True] + [False] * 12):
+                    if self.rng.choice([True] + [False] * 12):
                         new_tactics.append(i16(-1))
                         minus_one_added = True
                     else:
-                        new_tactics.append(i16(randrange(6, 51)))
+                        new_tactics.append(i16(self.rng.randrange(6, 51)))
 
             while not minus_one_added:
-                idx = randrange(0, len(new_tactics))
+                idx = self.rng.randrange(0, len(new_tactics))
                 if new_tactics[idx] != 999:
                     new_tactics[idx] = i16(-1)
                     minus_one_added = True
@@ -84,20 +81,20 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 li: list[int] = []
                 new_iq_gains.append(li)
                 for e in lst:
-                    li.append(randrange(1, 6))
+                    li.append(self.rng.randrange(1, 6))
 
             new_belly_gains = []
             for lst in belly_gains:
                 li = []
                 new_belly_gains.append(li)
                 for e in lst:
-                    li.append(randrange(10, 40))
+                    li.append(self.rng.randrange(10, 40))
 
             HardcodedIq.set_gummi_iq_gains(new_iq_gains, arm9, self.static_data, additional_types_patch_applied)
             HardcodedIq.set_gummi_belly_heal(new_belly_gains, arm9, self.static_data, additional_types_patch_applied)
-            HardcodedIq.set_wonder_gummi_gain(u8(randrange(5, 20)), arm9, self.static_data)
-            HardcodedIq.set_nectar_gain(u8(randrange(5, 20)), ov29, self.static_data)
-            HardcodedIq.set_juice_bar_nectar_gain(u8(randrange(5, 20)), arm9, self.static_data)
+            HardcodedIq.set_wonder_gummi_gain(u8(self.rng.randrange(5, 20)), arm9, self.static_data)
+            HardcodedIq.set_nectar_gain(u8(self.rng.randrange(5, 20)), ov29, self.static_data)
+            HardcodedIq.set_juice_bar_nectar_gain(u8(self.rng.randrange(5, 20)), arm9, self.static_data)
 
         if self.config["iq"]["randomize_iq_groups"]:
             status.step(_("Randomizing IQ groups..."))
@@ -113,10 +110,10 @@ class IqTacticsRandomizer(AbstractRandomizer):
                 new_iq_groups.append(li2)
                 for idx in range(len(iq_skills)):
                     if self.config["iq"]["keep_universal_skills"]:
-                        if idx in [2, 3, 7, 8, 20, 22, 23] or choice([True, False]):
+                        if idx in [2, 3, 7, 8, 20, 22, 23] or self.rng.choice([True, False]):
                             li2.append(u8(idx))
                     else:
-                        if idx in [22] or choice([True, False]):
+                        if idx in [22] or self.rng.choice([True, False]):
                             li2.append(u8(idx))
 
             IqGroupsSkills.write_compressed(arm9, new_iq_groups, self.static_data)
@@ -128,15 +125,15 @@ class IqTacticsRandomizer(AbstractRandomizer):
             for skill_idx, skill in enumerate(iq_skills):
                 if skill.iq_required != 9999:
                     if self.config["iq"]["keep_universal_skills"]:
-                        if skill_idx in [2, 3, 22, 23] or choice([True] + [False] * 12):
+                        if skill_idx in [2, 3, 22, 23] or self.rng.choice([True] + [False] * 12):
                             skill.iq_required = i32(-1)
                         else:
-                            skill.iq_required = i32(randrange(1, 900))
+                            skill.iq_required = i32(self.rng.randrange(1, 900))
                     else:
-                        if skill_idx in [22] or choice([True] + [False] * 12):
+                        if skill_idx in [22] or self.rng.choice([True] + [False] * 12):
                             skill.iq_required = i32(-1)
                         else:
-                            skill.iq_required = i32(randrange(1, 900))
+                            skill.iq_required = i32(self.rng.randrange(1, 900))
 
             HardcodedIq.set_iq_skills(iq_skills, arm9, self.static_data)
 

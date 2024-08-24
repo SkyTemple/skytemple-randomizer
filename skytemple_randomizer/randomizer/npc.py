@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import re
-from random import choice, randrange
 
 from range_typed_integers import u16
 from skytemple_files.common.i18n_util import _
@@ -24,6 +23,7 @@ from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.data.md.protocol import Gender
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
+
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
     get_main_string_file,
@@ -241,16 +241,16 @@ class NpcRandomizer(AbstractRandomizer):
                     if new_entid >= 1154:
                         new_entid -= u16(num_entities)  # type: ignore
                 else:
-                    new_entid = choice(get_allowed_md_ids(self.config, True, roster=Roster.NPCS))
+                    new_entid = self.rng.choice(get_allowed_md_ids(self.rng, self.config, True, roster=Roster.NPCS))
                     # Make it less likely to get duplicates
-                    while new_entid in mapped.values() and randrange(0, 4) != 0:
-                        new_entid = choice(get_allowed_md_ids(self.config, True, roster=Roster.NPCS))
+                    while new_entid in mapped.values() and self.rng.randrange(0, 4) != 0:
+                        new_entid = self.rng.choice(get_allowed_md_ids(self.rng, self.config, True, roster=Roster.NPCS))
                     # Due to the way the string replacing works we don't want anything that previously existed.
                     while (
                         md.get_by_index(new_entid).gender == Gender.INVALID
                         or new_entid % num_entities in old_entid_bases
                     ):
-                        new_entid = choice(get_allowed_md_ids(self.config, True, roster=Roster.NPCS))
+                        new_entid = self.rng.choice(get_allowed_md_ids(self.rng, self.config, True, roster=Roster.NPCS))
                 mapped[actor.entid] = new_entid
                 mapped_for_names[old_name] = new_entid
                 actor.entid = new_entid

@@ -36,6 +36,7 @@ from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
 from skytemple_randomizer.frontend.gtk.ui_util import open_dir, run_file_dialog, nds_filter
+from skytemple_randomizer.randomizer.util.debug import DebugRandom
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
@@ -160,11 +161,16 @@ class RandomizeDialog(Adw.Dialog):
         # Configure and start randomizer
         status = Status()
         status.subscribe(lambda a, b: GLib.idle_add(partial(self.on_update_status, a, b)))
-        random.seed(self.seed)
+        rng: random.Random
+        if "SKYTEMPLE_RANDOMIZER_DEBUG_DIR_RNG" in os.environ:
+            rng = DebugRandom(self.seed)
+        else:
+            rng = random.Random(self.seed)
         randomizer = RandomizerThread(
             status,
             self.rom,
             self.randomization_settings,
+            rng,
             str(self.seed),
             GtkFrontend.instance(),
         )
@@ -216,7 +222,7 @@ class RandomizeDialog(Adw.Dialog):
             assert self.output_file is not None
             out_path = self.output_file.get_path()
             assert out_path is not None
-            self.rom.saveToFile(out_path, updateDeviceCapacity=True)
+            self._randomizer.rom.saveToFile(out_path, updateDeviceCapacity=True)
             status_img_path = os.path.join(data_dir(), "duskako_happy.png")
             self.status_row.set_title(_("Randomizing complete!"))
             self.status_row.set_subtitle("")

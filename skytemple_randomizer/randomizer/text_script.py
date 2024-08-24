@@ -14,8 +14,6 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import shuffle
-
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_JP
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.script.ssb.model import Ssb
@@ -54,7 +52,7 @@ class TextScriptRandomizer(AbstractRandomizer):
 
         status.step(_("Randomizing all script text: Writing strings..."))
         for lang, (all_strings, ssb_map) in all_strings_langs.items():
-            shuffle(all_strings)
+            self.rng.shuffle(all_strings)
             for file_path, script in ssb_map.items():
                 samples = []
                 for ___ in range(0, len(script.strings[lang.name.lower()])):

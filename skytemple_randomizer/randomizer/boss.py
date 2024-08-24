@@ -15,7 +15,6 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import re
-from random import choice
 
 from range_typed_integers import u16
 from skytemple_files.common.i18n_util import _
@@ -234,7 +233,7 @@ class BossRandomizer(AbstractRandomizer):
         extra_ff_replace_map = {}
         for extra_id in EXTRA_FF_MONSTER_RANDOMIZE:
             old_monster_id = boss_list[extra_id].md_idx
-            new_monster_id = u16(choice(get_allowed_md_ids(self.config, False, roster=Roster.NPCS)))
+            new_monster_id = u16(self.rng.choice(get_allowed_md_ids(self.rng, self.config, False, roster=Roster.NPCS)))
             boss_list[extra_id].md_idx = new_monster_id
             extra_ff_replace_map[old_monster_id] = new_monster_id
         # Also update strings for bazaar monsters

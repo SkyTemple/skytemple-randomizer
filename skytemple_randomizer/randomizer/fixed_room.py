@@ -15,11 +15,11 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
-from random import randrange
 from collections.abc import Iterable, Sequence
+from random import Random
 
 from ndspy.rom import NintendoDSRom
-
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import open_utf8, get_binary_from_rom
@@ -39,11 +39,11 @@ from skytemple_files.dungeon_data.mappa_g_bin.mappa_converter import (
     convert_mappa_to_mappag,
 )
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons
+
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 BOSS_ROOMS = range(1, 81)
 FLOOR = TileRule(TileRuleType.FLOOR_ROOM)
@@ -58,10 +58,11 @@ class FixedRoomRandomizer(AbstractRandomizer):
         config: RandomizerConfig,
         rom: NintendoDSRom,
         static_data: Pmd2Data,
+        rng: Random,
         seed: str,
         frontend: AbstractFrontend,
     ):
-        super().__init__(config, rom, static_data, seed, frontend)
+        super().__init__(config, rom, static_data, rng, seed, frontend)
 
         self.dungeons = HardcodedDungeons.get_dungeon_list(
             get_binary_from_rom(self.rom, self.static_data.bin_sections.arm9),
@@ -142,7 +143,7 @@ class FixedRoomRandomizer(AbstractRandomizer):
 
         # Randomly replace floor with entities to preserve
         while len(entities_and_special_tiles_to_preserve) > 0:
-            index = randrange(0, len(actions))
+            index = self.rng.randrange(0, len(actions))
             if actions[index] == FLOOR:
                 actions[index] = entities_and_special_tiles_to_preserve.pop()  # type: ignore
 
@@ -151,6 +152,6 @@ class FixedRoomRandomizer(AbstractRandomizer):
     def _get_random_room_txt(self):
         from skytemple_randomizer.data_dir import data_dir
 
-        i = randrange(0, 1000)
+        i = self.rng.randrange(0, 1000)
         with open_utf8(os.path.join(data_dir(), "fixed_floor_layouts", f"{i}.txt")) as f:
             return f.read().splitlines()

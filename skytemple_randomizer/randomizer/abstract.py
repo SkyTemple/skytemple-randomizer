@@ -15,6 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from abc import ABC, abstractmethod
+from random import Random
 
 from ndspy.rom import NintendoDSRom
 
@@ -30,12 +31,14 @@ class AbstractRandomizer(ABC):
         config: RandomizerConfig,
         rom: NintendoDSRom,
         static_data: Pmd2Data,
+        rng: Random,
         seed: str,
         frontend: AbstractFrontend,
     ):
         self.config = config
         self.rom = rom
         self.static_data = static_data
+        self.rng = rng
         self.seed = seed
         self.frontend = frontend
 

@@ -14,14 +14,14 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
-
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.data.md.protocol import MdProtocol
 from skytemple_files.hardcoded.guest_pokemon import GuestPokemonList
 from skytemple_files.list.actor.model import ActorListBin
 from skytemple_files.patch.patches import Patcher
+
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
@@ -30,7 +30,6 @@ from skytemple_randomizer.randomizer.util.util import (
     assert_not_empty,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 # Maps actor list indices to guest Pokémon indices
 ACTOR_TO_GUEST_MAPPING = {
@@ -86,29 +85,29 @@ class GuestRandomizer(AbstractRandomizer):
             for guest in guests:
                 if self.config["pokemon"]["movesets"] == MovesetConfig.FULLY_RANDOM:
                     guest.moves = [
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
                     ]
                 elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_DAMAGE:
                     assert_not_empty(damaging_move_ids)
                     guest.moves = [
-                        choice(damaging_move_ids),
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
+                        self.rng.choice(damaging_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
                     ]
                 elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[guest.poke_id]
-                    first = choice(
+                    first = self.rng.choice(
                         assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
                     )
                     guest.moves = [
                         first,
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
-                        choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
+                        self.rng.choice(valid_move_ids),
                     ]
 
         GuestPokemonList.write(guests, arm9, self.static_data)

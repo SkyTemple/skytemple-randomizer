@@ -62,11 +62,12 @@ class Done(TypedDict):
 def run_randomization(rom: LoadedRom, config: RandomizerConfig) -> NintendoDSRom:
     status = Status()
     seed = get_effective_seed(config["seed"])
-    random.seed(seed)
+    rng = random.Random(seed)
     randomizer = RandomizerThread(
         status,
         rom.rom,
         config,
+        rng,
         str(seed),
         CliFrontend(),
     )
@@ -78,7 +79,7 @@ def run_randomization(rom: LoadedRom, config: RandomizerConfig) -> NintendoDSRom
             break
         sleep(0.2)
 
-    return rom.rom
+    return randomizer.rom
 
 
 def status_update(randomizer: RandomizerThread, progress: int, description: str):

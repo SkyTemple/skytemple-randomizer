@@ -17,6 +17,7 @@
 import asyncio
 import sys
 import traceback
+from random import Random
 from typing import Optional
 from collections.abc import Coroutine
 
@@ -71,10 +72,11 @@ class PortraitDownloader(AbstractRandomizer):
         config: RandomizerConfig,
         rom: NintendoDSRom,
         static_data: Pmd2Data,
+        rng: Random,
         seed: str,
         frontend: AbstractFrontend,
     ):
-        super().__init__(config, rom, static_data, seed, frontend)
+        super().__init__(config, rom, static_data, rng, seed, frontend)
 
         self.monster_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(MONSTER_BIN))
         self.monster_ground_bin = FileType.BIN_PACK.deserialize(rom.getFileByName(GROUND_BIN))

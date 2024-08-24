@@ -14,22 +14,22 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
+from random import Random
 
+from skytemple_files.common.i18n_util import _
 from skytemple_files.script.ssb.model import Ssb
 
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
-
 
 SCRIPT_NAME = "SCRIPT/D14P12A/m14a0103.ssb"
 
 
 class FixQuicksandPit(AbstractRandomizer):
-    def __init__(self, config, rom, static_data, seed, frontend: AbstractFrontend):
-        super().__init__(config, rom, static_data, seed, frontend)
+    def __init__(self, config, rom, static_data, rng: Random, seed, frontend: AbstractFrontend):
+        super().__init__(config, rom, static_data, rng, seed, frontend)
         self.bgs = [b for b in self.static_data.script_data.bgms if b.loops]
 
     def step_count(self) -> int:

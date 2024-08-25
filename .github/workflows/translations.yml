@@ -7,11 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     name: Build and commit POT file
-    container:
-      image: ghcr.io/skytemple/gtk4-build-image:1
     steps:
+      - name: Install gobject-introspection and other build deps
+        run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
       - name: Checkout skytemple
         uses: actions/checkout@v4
         with:
@@ -52,7 +52,7 @@ jobs:
       - name: Convert Blueprint files
         run: |
           cd skytemple_randomizer
-          ./build-blp-to-ui.sh
+          make
       - name: Generate Strings
         run: |
           find . \

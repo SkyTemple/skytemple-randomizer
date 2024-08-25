@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 12:23\n"
+"PO-Revision-Date: 2024-08-25 12:26\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -2435,7 +2435,9 @@ msgstr "Kann PIL Bild nicht in KAO umwandeln: Bilddimensionen müssen {img_dim}x
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:459
 msgid "This portrait does not compress well, the result size is greater than {limit} bytes ({len(new_img_compressed)} bytes total).\n"
 "If you haven't done already, try applying the 'ProvideATUPXSupport' ASM patch to install an optimized compression algorithm, which might be able to better compress this image.If this still doesn't work, try the 'ExpandPortraitStructs' instead."
-msgstr ""
+msgstr "Dieses Portrait lässt sich nicht gut komprimieren, die Größe nach dem Komprimieren ist größer als {limit} Bytes ({len(new_img_compressed)} Bytes insgesamt).\n"
+" Falls du es noch nicht probiert hast, versuche den Patch 'ProvideATUPXSupport' anzuwenden, um einen optimierten Kompressionsalgorithmus zu installieren, welcher möglicherweise in der Lage ist, dieses Bild besser zu komprimieren.\n"
+"Sollte das immer noch nicht funktionieren, probiere den Patch 'ExpandPortraitStructs'."
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:110
 #, python-brace-format
@@ -3162,7 +3164,7 @@ msgstr "Erweitert die Anzahl der erlaubten Pokémon auf 2048 und macht alle Eint
 
 #: skytemple-files/skytemple_files/patch/handler/expand_portrait.py:48
 msgid "Expands portraits structure by 8 bytes, which is enough to cover all cases."
-msgstr ""
+msgstr "Vergrößert die Porträt-Datenstruktur um 8 Bytes, was ausreicht, um alle Fälle abzudecken."
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
@@ -3550,7 +3552,9 @@ msgstr "Beim Versuch, eine Farbtabelle zu generieren, lag die Frame-Dauer außer
 msgid "This portrait does not compress well, the result size is greater than {} bytes ({} bytes total).\n"
 " If you haven't done already, try applying the 'ProvideATUPXSupport' ASM patch to install an optimized compression algorithm, which might be able to better compress this image.\n"
 "If this still doesn't work, try the 'ExpandPortraitStructs' instead."
-msgstr ""
+msgstr "Dieses Portrait lässt sich nicht gut komprimieren, die Größe nach dem Komprimieren ist größer als {} Bytes ({} Bytes insgesamt).\n"
+" Falls du es noch nicht probiert hast, versuche den Patch 'ProvideATUPXSupport' anzuwenden, um einen optimierten Kompressionsalgorithmus zu installieren, welcher möglicherweise in der Lage ist, dieses Bild besser zu komprimieren.\n"
+"Sollte das immer noch nicht funktionieren, probiere den Patch 'ExpandPortraitStructs'."
 
 #: skytemple_randomizer/skytemple_randomizer/export_quiz_xml.py:97
 msgid "A question must contain two XML sub-nodes: {}, {}"
@@ -3570,23 +3574,23 @@ msgstr "Anwendung zum Randomisieren der ROM von Pokémon Mystery Dungeon Erkundu
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:100
 msgid "CSV File (*.csv)"
-msgstr ""
+msgstr "CSV-Datei (*.csv)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:108
 msgid "XML Document (*.xml)"
-msgstr ""
+msgstr "XML Dokument (*.xml)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:116
 msgid "Nintendo DS ROM (*.nds)"
-msgstr ""
+msgstr "Nintendo DS ROM (*.nds)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:124
 msgid "JSON Document (*.json)"
-msgstr ""
+msgstr "JSON-Dokument (*.json)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:156
 msgid "Any File"
-msgstr ""
+msgstr "Alle Dateien"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 #, python-brace-format

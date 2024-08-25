@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 12:23\n"
+"PO-Revision-Date: 2024-08-25 13:22\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -619,7 +619,7 @@ msgstr "ポートレート名"
 
 #: /dev/fd/63:151 /dev/fd/63:370
 msgid "Debug Strings (Dungeon 2)"
-msgstr ""
+msgstr "デバッグ文字列 (ダンジョン2)"
 
 #: /dev/fd/63:152 /dev/fd/63:371
 msgid "Debug Strings (PKMN Storage)"
@@ -1385,7 +1385,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:98
 msgid "Body Size"
-msgstr ""
+msgstr "からだのおおきさ"
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:105
 msgid "Sprite File Size"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-12 10:25+0000\n"
-"PO-Revision-Date: 2024-08-12 10:25\n"
+"PO-Revision-Date: 2024-08-25 12:18\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3227,7 +3227,7 @@ msgstr "Sorgt dafür, dass das Spiel die Kamera immer zu deinen Partnern wechsel
 
 #: skytemple-files/skytemple_files/patch/handler/fast_chimecho.py:47
 msgid "Shorten Chimecho Team Assembly menu interactions. Adding, removing and making leader are now fast interactions that immediately go back to the team member selection menu."
-msgstr ""
+msgstr "Verkürzt die Interaktionen im Palimpalim-Treffpunkt Menü. Hinzufügen, Entfernen und Anführer-Wechsel sind jetzt schnelle Aktionen, die nach Auswahl sofort zum Auswahlmenü zurückkehren."
 
 #: skytemple-files/skytemple_files/patch/handler/fix_evolution.py:45
 msgid "Fixes the evolution glitch that freezes the game when attempting to evolve a pokémon whose name has 10 characters."
@@ -4123,7 +4123,7 @@ msgstr "„MoveShortcuts“ Patch anwenden"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:37
 msgid "Apply \"UnusedDungeonChance\" Patch"
-msgstr ""
+msgstr "Patch „UnusedDungeonChance“ wird angewendet"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:60
 msgid "Apply \"Complete Team Control\" Patch"

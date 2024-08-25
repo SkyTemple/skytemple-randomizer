@@ -1,6 +1,7 @@
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["setuptools", "pygobject"]
+build-backend = "backend"
+backend-path = ["_custom_build"]
 
 [project]
 name = "skytemple-randomizer"
@@ -54,6 +55,9 @@ skytemple_randomizer = "skytemple_randomizer.main:main"
 [tool.setuptools]
 packages.find.include = ["skytemple_randomizer", "skytemple_randomizer.*"]
 packages.find.exclude = ["installer", "blueprint-compiler"]
+
+[tool.setuptools.package-data]
+"*" = ["*.ui"]  # Make sure that UI files also get added to the wheel but NOT sdist.
 
 [tool.ruff]
 line-length = 120

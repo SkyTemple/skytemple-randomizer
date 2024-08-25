@@ -73,8 +73,8 @@ modules:
   - name: randomizer
     buildsystem: simple
     build-commands:
-      - make
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}/links" --prefix=${FLATPAK_DEST} --no-deps '.[gtk]'
+      # No build isolation so we don't have to rebuild PyGObject. It's only needed for building the UI files from Blueprint files.
+      - pip3 install --verbose --no-build-isolation --exists-action=i --no-index --find-links="file://${PWD}/links" --prefix=${FLATPAK_DEST} --no-deps '.[gtk]'
       # Icons
       - install -Dm644 skytemple_randomizer/data/icons/hicolor/16x16/apps/skytemple_randomizer.png /app/share/icons/hicolor/16x16/apps/org.skytemple.Randomizer.png
       - install -Dm644 skytemple_randomizer/data/icons/hicolor/32x32/apps/skytemple_randomizer.png /app/share/icons/hicolor/32x32/apps/org.skytemple.Randomizer.png
@@ -92,5 +92,3 @@ modules:
       - {{ skytemple_randomizer_ref }}
       - type: file
         path: assets/run.sh
-      {{ "setuptools"|pip_add_group("links") }}
-      {{ "flit"|pip_add_group("links") }}

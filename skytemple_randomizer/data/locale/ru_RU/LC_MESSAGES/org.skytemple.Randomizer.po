@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 12:23\n"
+"PO-Revision-Date: 2024-08-25 13:22\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -179,7 +179,7 @@ msgstr "Ответы теста на характер"
 
 #: /dev/fd/63:41 /dev/fd/63:260
 msgid "Personality Quiz Results"
-msgstr ""
+msgstr "Результаты теста на характер"
 
 #: /dev/fd/63:42 /dev/fd/63:261
 msgid "Personality Quiz Aura"
@@ -539,7 +539,7 @@ msgstr ""
 
 #: /dev/fd/63:131 /dev/fd/63:350
 msgid "Wonder Mail S Strings"
-msgstr ""
+msgstr "Строки Чудо Почты S"
 
 #: /dev/fd/63:132 /dev/fd/63:351
 msgid "Game Trade Strings"
@@ -1488,7 +1488,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/md/protocol.py:67
 #: skytemple-files/skytemple_files/data/md/protocol.py:429
 msgid "Invalid"
-msgstr ""
+msgstr "Недопустимый"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:63
 msgid "WAN File 0"

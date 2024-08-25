@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 12:24\n"
+"PO-Revision-Date: 2024-08-25 13:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -715,11 +715,11 @@ msgstr ""
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "新的宝可梦名称"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "新的宝可梦分类"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
@@ -1686,7 +1686,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:519
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:520
 msgid "Hovering"
@@ -2730,7 +2730,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:150
 msgid "Unknown 5"
-msgstr ""
+msgstr "未知 5"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:155
 msgid "Bazaar Host"

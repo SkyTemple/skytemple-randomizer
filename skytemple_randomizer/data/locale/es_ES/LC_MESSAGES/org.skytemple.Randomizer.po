@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 12:23\n"
+"PO-Revision-Date: 2024-08-25 13:22\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -715,11 +715,11 @@ msgstr ""
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "Nuevos nombres de Pokémon"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "Nuevas categorías de Pokémon"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
@@ -1382,7 +1382,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:98
 msgid "Body Size"
-msgstr ""
+msgstr "Tamaño del cuerpo"
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:105
 msgid "Sprite File Size"
@@ -3590,7 +3590,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 #, python-brace-format
 msgid "New version available: {version}"
-msgstr ""
+msgstr "Nueva versión disponible: {version}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
@@ -3675,7 +3675,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.ui:201
 msgid "Seed"
-msgstr ""
+msgstr "Semilla"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"

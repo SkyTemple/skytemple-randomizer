@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-12 10:25+0000\n"
-"PO-Revision-Date: 2024-08-12 10:25\n"
+"PO-Revision-Date: 2024-08-25 12:18\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -23,7 +23,7 @@ msgstr "Inglés"
 
 #: /dev/fd/63:2 /dev/fd/63:221
 msgid "Friend Rescue Set Phrases"
-msgstr ""
+msgstr "Frases de rescate de amigo"
 
 #: /dev/fd/63:3 /dev/fd/63:222
 msgid "Friend Rescue Message Input Strings"
@@ -31,15 +31,15 @@ msgstr ""
 
 #: /dev/fd/63:4 /dev/fd/63:223
 msgid "Debug Strings (Game Init)"
-msgstr ""
+msgstr "Cadenas de depuración (Inicio del juego)"
 
 #: /dev/fd/63:5 /dev/fd/63:224
 msgid "Util Strings"
-msgstr ""
+msgstr "Cadenas útiles"
 
 #: /dev/fd/63:6 /dev/fd/63:225
 msgid "Chapter and Special Episode Strings"
-msgstr ""
+msgstr "Cadenas de capítulos y episodios especiales"
 
 #: /dev/fd/63:7 /dev/fd/63:226
 msgid "Explorer Ranks Names"
@@ -47,15 +47,15 @@ msgstr "Nombres de rangos de explorador"
 
 #: /dev/fd/63:8 /dev/fd/63:227
 msgid "Default Menu Strings 1"
-msgstr ""
+msgstr "Cadena de menú por defecto 1"
 
 #: /dev/fd/63:9 /dev/fd/63:228
 msgid "Default Menu Strings 2"
-msgstr ""
+msgstr "Cadena de menú por defecto 2"
 
 #: /dev/fd/63:10 /dev/fd/63:229
 msgid "Debug Strings (Main Menu)"
-msgstr ""
+msgstr "Cadenas de depuración (Menú principal)"
 
 #: /dev/fd/63:11 /dev/fd/63:230
 msgid "Default Team Names"
@@ -63,7 +63,7 @@ msgstr "Nombres del equipo por defecto"
 
 #: /dev/fd/63:12 /dev/fd/63:231
 msgid "Save Data Strings"
-msgstr ""
+msgstr "Guardar cadenas de datos"
 
 #: /dev/fd/63:13 /dev/fd/63:232
 msgid "Prize Ticket Strings"

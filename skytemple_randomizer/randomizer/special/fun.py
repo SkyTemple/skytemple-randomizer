@@ -15,19 +15,20 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
-from enum import Enum
-from random import choice, randrange
-from typing import Union
 from collections.abc import Sequence
+from enum import Enum
+from random import Random
+from typing import Union
 
 from PIL import Image
 from ndspy.rom import NintendoDSRom
 from range_typed_integers import u16
-
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Data, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_files_from_rom_with_extension
 from skytemple_files.graphics.kao.protocol import KaoProtocol
+
 from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.seed_info import escape
@@ -40,7 +41,6 @@ from skytemple_randomizer.randomizer.util.util import (
     SKIP_JP_INVALID_SSB,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class FunArtistCredit(Enum):
@@ -140,6 +140,8 @@ class FunPortrait(Enum):
     # ignore the first param since it's already set by __new__
     def __init__(self, _: str, credit: Union[FunArtistCredit, dict[str, FunArtistCredit]]):
         if isinstance(credit, dict):
+            from random import choice
+
             credit = credit[choice(list(credit.keys()))]
         self.file_name = str(self.value) + ".png"
         self.credit = credit
@@ -172,7 +174,7 @@ def _get_fun_portraits() -> Sequence[FunPortraitLike]:
     return list(FunPortrait)
 
 
-def get_allowed_md_ids(base_set: set[u16], roster: Roster) -> list[u16]:
+def get_allowed_md_ids(rng: Random, base_set: set[u16], roster: Roster) -> list[u16]:
     s = set()
     num_entities = FileType.MD.properties().num_entities
     for x in _get_fun_portraits():
@@ -186,7 +188,7 @@ def get_allowed_md_ids(base_set: set[u16], roster: Roster) -> list[u16]:
     elif roster == Roster.DUNGEON:
         extras_max = 50
     for __ in range(0, extras_max):
-        y = choice(extra_candidates)
+        y = rng.choice(extra_candidates)
         s.add(y)
         if y + num_entities <= 1154:
             s.add(u16(y + num_entities))
@@ -212,11 +214,11 @@ def replace_portraits(rom: NintendoDSRom, static_data: Pmd2Data):
     rom.setFileByName("FONT/kaomado.kao", FileType.KAO.serialize(kao))
 
 
-def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
+def process_text_strings(rng: Random, rom: NintendoDSRom, static_data: Pmd2Data):
     for lang, strings in get_all_string_files(rom, static_data):
         for string_block in _collect_text_categories(static_data.string_index_data.string_blocks):
             for i in range(9, string_block.end - string_block.begin):
-                if randrange(0, 500) == 0:
+                if rng.randrange(0, 500) == 0:
                     try:
                         strings.strings[string_block.begin + i] = "April Fools!"
                     except IndexError:
@@ -225,14 +227,14 @@ def process_text_strings(rom: NintendoDSRom, static_data: Pmd2Data):
         rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings))
 
 
-def process_story_strings(rom: NintendoDSRom, static_data: Pmd2Data):
+def process_story_strings(rng: Random, rom: NintendoDSRom, static_data: Pmd2Data):
     for lang, __ in get_all_string_files(rom, static_data):
         for file_path in get_files_from_rom_with_extension(rom, "ssb"):
             if file_path in SKIP_JP_INVALID_SSB:
                 continue
             script = get_script(file_path, rom, static_data)
             for i in range(9, len(script.strings[lang.name.lower()])):
-                if randrange(0, 500) == 0:
+                if rng.randrange(0, 500) == 0:
                     script.strings[lang.name.lower()][i] = "April Fools!"
 
 
@@ -261,8 +263,8 @@ class SpecialFunRandomizer(AbstractRandomizer):
 
         status.step(_("Finishing up..."))
 
-        process_text_strings(self.rom, self.static_data)
-        process_story_strings(self.rom, self.static_data)
+        process_text_strings(self.rng, self.rom, self.static_data)
+        process_story_strings(self.rng, self.rom, self.static_data)
 
         status.done()
 

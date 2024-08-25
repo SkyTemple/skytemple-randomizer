@@ -19,6 +19,7 @@ from __future__ import annotations
 import logging
 import sys
 import threading
+from random import Random
 from threading import Thread, Lock
 
 from ndspy.rom import NintendoDSRom
@@ -27,8 +28,8 @@ from skytemple_files.common.impl_cfg import (
     change_implementation_type,
     ImplementationType,
 )
-
 from skytemple_files.common.util import get_ppmdu_config_for_rom
+
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
@@ -65,7 +66,6 @@ from skytemple_randomizer.randomizer.util.util import (
     clear_strings_cache,
 )
 from skytemple_randomizer.status import Status
-
 
 RANDOMIZERS = [
     PatchApplier,
@@ -105,6 +105,7 @@ class RandomizerThread(Thread):
         status: Status,
         rom: NintendoDSRom,
         config: RandomizerConfig,
+        rng: Random,
         seed: str,
         frontend: AbstractFrontend,
     ):
@@ -116,7 +117,10 @@ class RandomizerThread(Thread):
         """
         super().__init__()
         self.status = status
-        self.rom = rom
+        # Make sure we open a copy of the ROM, this makes absolutely sure we don't change the input ROM, in case
+        # we re-run randomization in the app's lifetime!
+        self.rom = NintendoDSRom(rom.save(updateDeviceCapacity=True))
+        self.rng = rng
         self.config = config
         self.lock = Lock()
         self.done = False
@@ -127,10 +131,10 @@ class RandomizerThread(Thread):
             impl_type = ImplementationType.NATIVE
         change_implementation_type(impl_type)
 
-        self.static_data = get_ppmdu_config_for_rom(rom)
+        self.static_data = get_ppmdu_config_for_rom(self.rom)
         self.randomizers: list[AbstractRandomizer] = []
         for cls in RANDOMIZERS:
-            self.randomizers.append(cls(config, rom, self.static_data, seed, frontend))  # type: ignore
+            self.randomizers.append(cls(config, self.rom, self.static_data, self.rng, seed, frontend))  # type: ignore
 
         self.total_steps = sum(x.step_count() for x in self.randomizers) + 1
         self.error = None
@@ -162,10 +166,10 @@ class RandomizerThread(Thread):
             save_scripts(self.rom, self.static_data)
         except (SystemExit, KeyboardInterrupt):
             logger.info("Randomizer was asked to exit.")
-            self.error = sys.exc_info()  #  type: ignore
+            self.error = sys.exc_info()  # type: ignore
         except BaseException as error:
             logger.error("Exception during randomization.", exc_info=error)
-            self.error = sys.exc_info()  #  type: ignore
+            self.error = sys.exc_info()  # type: ignore
 
         with self.lock:
             self.done = True

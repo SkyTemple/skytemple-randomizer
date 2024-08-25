@@ -14,13 +14,13 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
-
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.data.md.protocol import MdProtocol
 from skytemple_files.hardcoded.default_starters import HardcodedDefaultStarters
 from skytemple_files.list.actor.model import ActorListBin
+
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
@@ -29,7 +29,6 @@ from skytemple_randomizer.randomizer.util.util import (
     assert_not_empty,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 # Maps actor list indices to special PC indices
 ACTOR_TO_SPC_MAPPING = {
@@ -78,18 +77,18 @@ class SpecialPcRandomizer(AbstractRandomizer):
 
             md: MdProtocol = FileType.MD.deserialize(self.rom.getFileByName("BALANCE/monster.md"))
             for pc in pcs:
-                pc.move2 = choice(valid_move_ids)
-                pc.move3 = choice(valid_move_ids)
-                pc.move4 = choice(valid_move_ids)
+                pc.move2 = self.rng.choice(valid_move_ids)
+                pc.move3 = self.rng.choice(valid_move_ids)
+                pc.move4 = self.rng.choice(valid_move_ids)
                 pc.do_not_fix_entire_moveset = False
                 if self.config["pokemon"]["movesets"] == MovesetConfig.FULLY_RANDOM:
-                    pc.move1 = choice(valid_move_ids)
+                    pc.move1 = self.rng.choice(valid_move_ids)
                 elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_DAMAGE:
                     assert_not_empty(damaging_move_ids)
-                    pc.move1 = choice(damaging_move_ids)
+                    pc.move1 = self.rng.choice(damaging_move_ids)
                 elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_STAB:
                     md_entry = md.entries[pc.poke_id]
-                    pc.move1 = choice(
+                    pc.move1 = self.rng.choice(
                         assert_not_empty(get_allowed_move_ids(self.config, MoveRoster.STAB, md_entry.type_primary))
                     )
 

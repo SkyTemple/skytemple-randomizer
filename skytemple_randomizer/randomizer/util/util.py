@@ -16,9 +16,9 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 
-from enum import Enum, auto
-from random import sample, choice
 from collections.abc import Iterable
+from enum import Enum, auto
+from random import Random
 
 from ndspy.rom import NintendoDSRom
 from range_typed_integers import u16
@@ -31,7 +31,6 @@ from skytemple_files.graphics.kao import SUBENTRIES
 from skytemple_files.script.ssb.model import Ssb
 
 from skytemple_randomizer.config import RandomizerConfig
-
 
 DAMAGING_MOVES = {
     1,
@@ -471,7 +470,6 @@ STAB_DICT = {
     PokeType.POISON: {147, 198, 200, 279, 280, 283, 332, 459, 485, 495},
 }
 
-
 # These files only exist in the JP ROM and are broken:
 SKIP_JP_INVALID_SSB = [
     "SCRIPT/D42P21A/enter23.ssb",
@@ -486,7 +484,6 @@ SKIP_JP_INVALID_SSB = [
     "SCRIPT/D73P11A/us2303.ssb",
     "SCRIPT/D73P11A/us2305.ssb",
 ]
-
 
 _str_file_cache: dict[Pmd2Language, Str] = {}
 
@@ -546,7 +543,7 @@ class MoveRoster(Enum):
     STAB = auto()
 
 
-def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> list[u16]:
+def get_allowed_md_ids(rng: Random, conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.DUNGEON) -> list[u16]:
     from skytemple_randomizer.randomizer.special import fun
 
     num_entities = FileType.MD.properties().num_entities
@@ -558,11 +555,13 @@ def get_allowed_md_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Ro
                 to_add.add(u16(ent + num_entities))
         ents.update(to_add)
     if fun.is_fun_allowed():
-        return fun.get_allowed_md_ids(ents, roster)
+        return fun.get_allowed_md_ids(rng, ents, roster)
     return list(ents)
 
 
-def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS) -> list[u16]:
+def get_allowed_md_starter_ids(
+    rng: Random, conf: RandomizerConfig, with_plus_600=False, *, roster=Roster.STARTERS
+) -> list[u16]:
     from skytemple_randomizer.randomizer.special import fun
 
     num_entities = FileType.MD.properties().num_entities
@@ -574,7 +573,7 @@ def get_allowed_md_starter_ids(conf: RandomizerConfig, with_plus_600=False, *, r
                 to_add.add(u16(ent + num_entities))
         ents.update(to_add)
     if fun.is_fun_allowed():
-        return fun.get_allowed_md_ids(ents, roster)
+        return fun.get_allowed_md_ids(rng, ents, roster)
     return list(ents)
 
 
@@ -683,19 +682,19 @@ def ranks(sample):
     return sorted(indices, key=lambda i: indices[i])
 
 
-def sample_with_minimum_distance(n, k, d):
+def sample_with_minimum_distance(rng: Random, n, k, d):
     """
     Sample of k elements from range(n), with a minimum distance d.
     """
-    smpl = sample(range(n - (k - 1) * (d - 1)), k)
+    smpl = rng.sample(range(n - (k - 1) * (d - 1)), k)
     return [s + (d - 1) * r for s, r in zip(smpl, ranks(smpl))]
 
 
-def random_txt_line(text: str):
+def random_txt_line(rng: Random, text: str):
     lines = text.splitlines()
     line = ""
     while line == "":
-        line = choice(lines)
+        line = rng.choice(lines)
     return line.strip().replace("\\n", "\n")
 
 

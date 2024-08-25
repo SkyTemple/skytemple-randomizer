@@ -15,22 +15,18 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 import os
-from random import randint
 
-from ndspy.rom import NintendoDSRom
-from skytemple_files.common.ppmdu_config.data import Pmd2Data
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
+
 from skytemple_randomizer.config import (
-    RandomizerConfig,
     QuizQuestion,
 )
 from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.export_quiz_xml import import_personality_quiz_xml
-from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files, strlossy
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 QUESTION_MAPPING = {
     0: [0, 1, 2],
@@ -104,16 +100,6 @@ FALLBACK_ANSWER = "How embarrassing..."
 
 
 class QuizRandomizer(AbstractRandomizer):
-    def __init__(
-        self,
-        config: RandomizerConfig,
-        rom: NintendoDSRom,
-        static_data: Pmd2Data,
-        seed: str,
-        frontend: AbstractFrontend,
-    ):
-        super().__init__(config, rom, static_data, seed, frontend)
-
     def step_count(self) -> int:
         if self.config["quiz"]["randomize"]:
             return 1
@@ -171,11 +157,10 @@ class QuizRandomizer(AbstractRandomizer):
 
         status.done()
 
-    @staticmethod
-    def _pick_question(answer_len, pool) -> QuizQuestion:
+    def _pick_question(self, answer_len, pool) -> QuizQuestion:
         question_idx = 0
         if len(pool) > 1:
-            question_idx = randint(0, len(pool) - 1)
+            question_idx = self.rng.randint(0, len(pool) - 1)
         question = pool.pop(question_idx)
         question["answers"] = question["answers"][:answer_len]
         assert len(question["answers"]) == answer_len

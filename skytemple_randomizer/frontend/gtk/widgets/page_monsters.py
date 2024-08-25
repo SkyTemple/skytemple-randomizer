@@ -183,4 +183,5 @@ class MonstersPage(Adw.PreferencesPage):
         self.row_randomize_abilities.set_active(config["pokemon"]["abilities"])
         self.row_randomize_typings.set_active(config["pokemon"]["typings"])
         self.row_blind_moves.set_active(config["pokemon"]["blind_moves"]["enable"])
+        self.row_randomize_tms_hms.set_active(config["pokemon"]["tms_hms"])
         self._suppress_signals = False

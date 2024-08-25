@@ -14,9 +14,10 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
+from random import Random
 
 from range_typed_integers import u8
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.util import (
     get_files_from_rom_with_extension,
     get_binary_from_rom,
@@ -24,16 +25,16 @@ from skytemple_files.common.util import (
 )
 from skytemple_files.hardcoded.main_menu_music import HardcodedMainMenuMusic
 from skytemple_files.script.ssb.model import Ssb
+
 from skytemple_randomizer.frontend.abstract import AbstractFrontend
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_script, SKIP_JP_INVALID_SSB
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class OverworldMusicRandomizer(AbstractRandomizer):
-    def __init__(self, config, rom, static_data, seed, frontend: AbstractFrontend):
-        super().__init__(config, rom, static_data, seed, frontend)
+    def __init__(self, config, rom, static_data, rng: Random, seed, frontend: AbstractFrontend):
+        super().__init__(config, rom, static_data, rng, seed, frontend)
         self.bgs = [u8(b.id) for b in self.static_data.script_data.bgms if b.loops]
 
     def step_count(self) -> int:
@@ -82,5 +83,5 @@ class OverworldMusicRandomizer(AbstractRandomizer):
         status.done()
 
     def _get_random_music_id(self):
-        r = choice(self.bgs)
+        r = self.rng.choice(self.bgs)
         return r

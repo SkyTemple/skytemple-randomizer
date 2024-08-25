@@ -14,14 +14,14 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
-
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Language
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.data.item_p.protocol import ItemPProtocol
 from skytemple_files.data.md.protocol import PokeType, MdProtocol
 from skytemple_files.data.str.model import Str
 from skytemple_files.data.waza_p.protocol import WazaPProtocol
+
 from skytemple_randomizer.config import MovesetConfig
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
@@ -31,7 +31,6 @@ from skytemple_randomizer.randomizer.util.util import (
     assert_not_empty,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class MovesetRandomizer(AbstractRandomizer):
@@ -56,16 +55,16 @@ class MovesetRandomizer(AbstractRandomizer):
             damaging_move_ids = get_allowed_move_ids(self.config, MoveRoster.DAMAGING)
 
             for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
-                waza_p_entry.egg_moves = [choice(valid_move_ids) for __ in waza_p_entry.egg_moves]
+                waza_p_entry.egg_moves = [self.rng.choice(valid_move_ids) for __ in waza_p_entry.egg_moves]
 
                 for idx, e in enumerate(waza_p_entry.level_up_moves):
                     if idx > 0 or self.config["pokemon"]["movesets"] == MovesetConfig.FULLY_RANDOM:
-                        e.move_id = choice(valid_move_ids)
+                        e.move_id = self.rng.choice(valid_move_ids)
                     elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_DAMAGE:
                         assert_not_empty(damaging_move_ids)
-                        e.move_id = choice(damaging_move_ids)
+                        e.move_id = self.rng.choice(damaging_move_ids)
                     elif self.config["pokemon"]["movesets"] == MovesetConfig.FIRST_STAB:
-                        e.move_id = choice(
+                        e.move_id = self.rng.choice(
                             assert_not_empty(
                                 get_allowed_move_ids(
                                     self.config,
@@ -86,7 +85,7 @@ class MovesetRandomizer(AbstractRandomizer):
             str_files: list[tuple[Pmd2Language, Str]] = list(get_all_string_files(self.rom, self.static_data))
             for item in item_p.item_list:
                 if item.category == 5:
-                    move_id = choice(allowed_move_ids)
+                    move_id = self.rng.choice(allowed_move_ids)
                     item.move_id = move_id
                     this_move_names = [t.strings[move_names.begin + move_id] for __, t in str_files]
                     self._update_all_langs(
@@ -119,7 +118,7 @@ class MovesetRandomizer(AbstractRandomizer):
                     move_ids.append(item.move_id)
 
             for md_entry, waza_p_entry in zip(md.entries, waza_p.learnsets):
-                waza_p_entry.tm_hm_moves = [choice(move_ids) for __ in waza_p_entry.tm_hm_moves]
+                waza_p_entry.tm_hm_moves = [self.rng.choice(move_ids) for __ in waza_p_entry.tm_hm_moves]
 
         self.rom.setFileByName("BALANCE/waza_p.bin", FileType.WAZA_P.serialize(waza_p))
         status.done()

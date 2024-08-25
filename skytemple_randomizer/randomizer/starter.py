@@ -19,9 +19,8 @@ Based on mdrngzer.
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
-
 from range_typed_integers import u16
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.common.util import get_binary_from_rom, set_binary_in_rom
 from skytemple_files.data.md.protocol import MdProtocol, MdEntryProtocol, Gender
@@ -29,6 +28,7 @@ from skytemple_files.data.str.model import Str
 from skytemple_files.hardcoded.personality_test_starters import (
     HardcodedPersonalityTestStarters,
 )
+
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
     get_allowed_md_starter_ids,
@@ -38,7 +38,6 @@ from skytemple_randomizer.randomizer.util.util import (
     Roster,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class StarterRandomizer(AbstractRandomizer):
@@ -61,7 +60,9 @@ class StarterRandomizer(AbstractRandomizer):
         orig_partner_ids = HardcodedPersonalityTestStarters.get_partner_md_ids(overlay13, self.static_data)
         new_partner_ids = [
             self._random_gender(
-                md.get_by_index(choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS))),
+                md.get_by_index(
+                    self.rng.choice(get_allowed_md_starter_ids(self.rng, self.config, roster=Roster.STARTERS))
+                ),
                 md,
             )
             for _ in range(0, len(orig_partner_ids))
@@ -75,7 +76,7 @@ class StarterRandomizer(AbstractRandomizer):
         new_id: u16
         k = 0  # Index of text for "Will be..."
         for i in range(0, len(orig_player_ids)):
-            new_id = choice(get_allowed_md_starter_ids(self.config, roster=Roster.STARTERS))
+            new_id = self.rng.choice(get_allowed_md_starter_ids(self.rng, self.config, roster=Roster.STARTERS))
             if k % 3 == 0:
                 k += 1
             # todo: refactor, this isn't really efficient.
@@ -109,14 +110,13 @@ class StarterRandomizer(AbstractRandomizer):
 
         status.done()
 
-    @staticmethod
-    def _random_gender(entry: MdEntryProtocol, md: MdProtocol):
+    def _random_gender(self, entry: MdEntryProtocol, md: MdProtocol):
         """50% male (nothing added to index), 50% female (+600 added to index)"""
         num_entities = FileType.MD.properties().num_entities
         original_index = entry.md_index
         if original_index + num_entities > 1154:
             return original_index
-        if choice([True, False]):
+        if self.rng.choice([True, False]):
             new_index = original_index + num_entities
             if Gender(md.get_by_index(new_index).gender) == Gender.INVALID:
                 return original_index

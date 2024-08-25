@@ -15,7 +15,9 @@
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
+
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import (
     replace_text_script,
@@ -23,7 +25,6 @@ from skytemple_randomizer.randomizer.util.util import (
     get_all_string_files,
 )
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class LocationRandomizer(AbstractRandomizer):
@@ -78,7 +79,7 @@ class LocationRandomizer(AbstractRandomizer):
 
     def _generate_name(self) -> str:
         return (
-            random_txt_line(self.config["locations"]["first"])
+            random_txt_line(self.rng, self.config["locations"]["first"])
             + " "
-            + random_txt_line(self.config["locations"]["second"])
+            + random_txt_line(self.rng, self.config["locations"]["second"])
         )

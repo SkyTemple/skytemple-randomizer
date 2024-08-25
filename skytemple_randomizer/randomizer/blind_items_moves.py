@@ -14,10 +14,10 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import shuffle, randrange, choice
 from typing import Iterable
 
 from range_typed_integers import u8
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Language, Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.data.item_p.protocol import ItemPProtocol
@@ -28,8 +28,6 @@ from skytemple_files.patch.patches import Patcher
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.randomizer.util.util import get_all_string_files
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
-
 from skytemple_randomizer.string_provider import StringType
 
 SPRITE_PALETTES_COMBINATIONS = [
@@ -277,7 +275,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
     def blind_items(self, status: Status):
         status.step(_('Enabling "Blind Items" Mode...'))
         pool = self.config["item"]["blind_items"]["names"].splitlines()
-        shuffle(pool)
+        self.rng.shuffle(pool)
         allowed = self.config["dungeons"]["items_enabled"]
 
         item_p: ItemPProtocol = FileType.ITEM_P.deserialize(self.rom.getFileByName("BALANCE/item_p.bin"))
@@ -285,11 +283,11 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
         for item in item_p.item_list:
             if item.item_id not in allowed:
                 continue
-            sprite, palette = choice(SPRITE_PALETTES_COMBINATIONS)
+            sprite, palette = self.rng.choice(SPRITE_PALETTES_COMBINATIONS)
             item.sprite = u8(sprite)
             item.palette = u8(palette)
-            item.buy_price = randrange(1, 3001)
-            item.sell_price = item.buy_price // randrange(1, 20)
+            item.buy_price = self.rng.randrange(1, 3001)
+            item.sell_price = item.buy_price // self.rng.randrange(1, 20)
             self.modify_string(strings, StringType.ITEM_NAMES, item.item_id, pool.pop())
             self.modify_string(strings, StringType.ITEM_SHORT_DESCRIPTIONS, item.item_id, "???")
             self.modify_string(strings, StringType.ITEM_LONG_DESCRIPTIONS, item.item_id, "???")
@@ -299,7 +297,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
     def blind_moves(self, status: Status):
         status.step(_('Enabling "Blind Moves" Mode...'))
         pool = self.config["pokemon"]["blind_moves"]["names"].splitlines()
-        shuffle(pool)
+        self.rng.shuffle(pool)
         allowed = self.config["pokemon"]["moves_enabled"]
 
         waza_p: WazaPProtocol = FileType.WAZA_P.deserialize(self.rom.getFileByName("BALANCE/waza_p.bin"))
@@ -307,7 +305,7 @@ class BlindItemsMovesRandomizer(AbstractRandomizer):
         for move in waza_p.moves:
             if move.move_id not in allowed:
                 continue
-            move.type = u8(randrange(1, 18))
+            move.type = u8(self.rng.randrange(1, 18))
             self.modify_string(strings, StringType.MOVE_NAMES, move.move_id, pool.pop())
             self.modify_string(strings, StringType.MOVE_DESCRIPTIONS, move.move_id, "???")
 

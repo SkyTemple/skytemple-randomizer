@@ -14,13 +14,12 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import choice
-
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.data.md.protocol import MdProtocol, IQGroup, PokeType, Ability
+
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 VALID_IQ_GROUPS = [
     IQGroup.A,
@@ -75,15 +74,15 @@ class MonsterRandomizer(AbstractRandomizer):
             base_entry = md.entries[midx]
             secn_entry = md.entries[midx + num_entities]
             if self.config["pokemon"]["iq_groups"]:
-                group = choice(VALID_IQ_GROUPS)
+                group = self.rng.choice(VALID_IQ_GROUPS)
                 base_entry.iq_group = group.value
                 secn_entry.iq_group = group.value
 
             if self.config["pokemon"]["typings"]:
-                type1 = choice(VALID_FIRST_TYPE)
-                type2 = choice(VALID_SECOND_TYPE)
+                type1 = self.rng.choice(VALID_FIRST_TYPE)
+                type2 = self.rng.choice(VALID_SECOND_TYPE)
                 while type1 == type2:
-                    type2 = choice(VALID_SECOND_TYPE)
+                    type2 = self.rng.choice(VALID_SECOND_TYPE)
                 base_entry.type_primary = type1.value
                 secn_entry.type_primary = type1.value
                 base_entry.type_secondary = type2.value
@@ -92,10 +91,10 @@ class MonsterRandomizer(AbstractRandomizer):
             if self.config["pokemon"]["abilities"]:
                 ability_ids = self.config["pokemon"]["abilities_enabled"] + [Ability.NONE.value]
                 if len(ability_ids) > 0:
-                    ability1 = Ability(choice(ability_ids))
-                    ability2 = Ability(choice(ability_ids))
+                    ability1 = Ability(self.rng.choice(ability_ids))
+                    ability2 = Ability(self.rng.choice(ability_ids))
                     while ability2 == ability1:
-                        ability2 = Ability(choice(ability_ids))
+                        ability2 = Ability(self.rng.choice(ability_ids))
                     base_entry.ability_primary = ability1.value
                     base_entry.ability_secondary = ability2.value
                     secn_entry.ability_primary = ability1.value

@@ -22,6 +22,7 @@ from functools import partial
 from threading import Thread
 from typing import cast
 
+from gi.repository import Gtk, Adw, GLib, Gio
 from skytemple_files.common.i18n_util import _
 from skytemple_files.common.util import get_binary_from_rom, open_utf8
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons
@@ -30,9 +31,7 @@ from skytemple_randomizer.config import RandomizerConfig, DungeonSettingsConfig
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
-
-from gi.repository import Gtk, Adw, GLib, Gio
-
+from skytemple_randomizer.frontend.gtk.ui_util import run_file_dialog, csv_filter
 from skytemple_randomizer.string_provider import StringProvider, StringType
 
 # This may seem silly, but we need to do it like this for gettext.
@@ -182,30 +181,23 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
         self.randomization_settings["dungeons"]["settings"][idx]["unlock"] = switch_row.get_active()
 
     def on_button_import_clicked(self, *args):
-        frontend = GtkFrontend.instance()
-        csv_filter = Gtk.FileFilter()
-        csv_filter.add_suffix("csv")
-        csv_filter.add_mime_type("text/csv")
-        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
-        if documents_dir is not None:
-            default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=csv_filter)
+        run_file_dialog(
+            GtkFrontend.instance(),
+            "misc",
+            (csv_filter(),),
+            callback_ok=self.on_import_file_loaded,
+            callback_error=self.on_import_file_loaded_err,
+        )
 
-        else:
-            dialog_for_file = Gtk.FileDialog(default_filter=csv_filter)
-        dialog_for_file.open(frontend.window, None, self.on_import_file_loaded)
+    def on_import_file_loaded_err(self, _dialog, _exc_type, e, _trb):
+        if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+            GtkFrontend.instance().display_error(
+                _("Failed to import: Error while opening file ({}).").format(e),
+                cast(Gtk.Window, self.get_root()),
+            )
 
-    def on_import_file_loaded(self, dialog, result):
-        try:
-            file: Gio.File = dialog.open_finish(result)
-        except Exception as e:
-            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
-                GtkFrontend.instance().display_error(
-                    _("Failed to import: Error while opening file ({}).").format(e),
-                    cast(Gtk.Window, self.get_root()),
-                )
-            return
-
+    def on_import_file_loaded(self, _dialog: Gtk.FileDialog, file: Gio.File | None):
+        assert file is not None
         path = file.get_path()
         assert path is not None
 
@@ -242,34 +234,26 @@ class DungeonsIndividualSettingsPage(Adw.PreferencesPage):
             )
 
     def on_button_export_clicked(self, *args):
-        frontend = GtkFrontend.instance()
-        csv_filter = Gtk.FileFilter()
-        csv_filter.add_suffix("csv")
-        csv_filter.add_mime_type("text/csv")
-        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
-        if documents_dir is not None:
-            default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir,
-                default_filter=csv_filter,
-                initial_name="dungon_settings.csv",
+        run_file_dialog(
+            GtkFrontend.instance(),
+            "misc",
+            (csv_filter(),),
+            callback_ok=self.on_export_file_saved,
+            callback_error=self.on_export_file_saved_err,
+            initial_name="dungon_settings.csv",
+            save=True,
+        )
+
+    def on_export_file_saved_err(self, _dialog, _exc_type, e, _trb):
+        if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+            GtkFrontend.instance().display_error(
+                _("Failed to export: Error while opening file ({}).").format(e),
+                cast(Gtk.Window, self.get_root()),
             )
-        else:
-            dialog_for_file = Gtk.FileDialog(default_filter=csv_filter, initial_name="dungon_settings.csv")
-        dialog_for_file.save(frontend.window, None, self.on_export_file_saved)
 
-    def on_export_file_saved(self, dialog, result):
+    def on_export_file_saved(self, _dialog: Gtk.FileDialog, file: Gio.File | None):
         frontend = GtkFrontend.instance()
-        try:
-            file = dialog.save_finish(result)
-        except Exception as e:
-            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
-                frontend.display_error(
-                    _("Failed to export: Error while opening file ({}).").format(e),
-                    cast(Gtk.Window, self.get_root()),
-                )
-            return
-
+        assert file is not None
         path = file.get_path()
         assert path is not None
 

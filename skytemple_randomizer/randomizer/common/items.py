@@ -17,7 +17,7 @@
 from collections import OrderedDict
 from math import ceil
 from numbers import Number
-from random import choice, randrange
+from random import Random
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
 from skytemple_files.common.types.file_types import FileType
@@ -34,30 +34,30 @@ MIN_ITEMS_PER_CAT = 4
 MAX_ITEMS_PER_CAT = 18
 
 
-def randomize_items(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+def randomize_items(rng: Random, config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     if config["item"]["algorithm"] == ItemAlgorithm.BALANCED:
-        return balanced_item_randomizer(config, static_data)
+        return balanced_item_randomizer(rng, config, static_data)
     if config["item"]["algorithm"] == ItemAlgorithm.CLASSIC:
-        return classic_item_randomizer(config, static_data)
+        return classic_item_randomizer(rng, config, static_data)
 
     raise NotImplementedError("Unknown item algorithm.")
 
 
-def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+def classic_item_randomizer(rng: Random, config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     categories = {}
     items = OrderedDict()
     cats_as_list = list(CLASSIC_ALLOWED_ITEM_CATS)
 
     # 1/8 chance for money to get a chance
-    if choice([True] + [False] * 7):
+    if rng.choice([True] + [False] * 7):
         cats_as_list.append(6)
 
     # 1/8 chance for Link Box to get a chance
-    if choice([True] + [False] * 7):
+    if rng.choice([True] + [False] * 7):
         cats_as_list.append(10)
 
     cats_as_list.sort()
-    weights = sorted(random_weights(len(cats_as_list)))
+    weights = sorted(random_weights(rng, len(cats_as_list)))
     for i, cat_id in enumerate(cats_as_list):
         cat = static_data.dungeon_data.item_categories[cat_id]
         categories[cat.id] = weights[i]
@@ -69,11 +69,11 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
             if upper_limit <= MIN_ITEMS_PER_CAT:
                 n_items = MIN_ITEMS_PER_CAT
             else:
-                n_items = randrange(MIN_ITEMS_PER_CAT, upper_limit)
+                n_items = rng.randrange(MIN_ITEMS_PER_CAT, upper_limit)
             cat_item_ids = []
             if len(allowed_cat_item_ids) > 0:
-                cat_item_ids = sorted({choice(allowed_cat_item_ids) for _ in range(0, n_items)})
-                cat_weights = sorted(random_weights(len(cat_item_ids)))
+                cat_item_ids = sorted({rng.choice(allowed_cat_item_ids) for _ in range(0, n_items)})
+                cat_weights = sorted(random_weights(rng, len(cat_item_ids)))
 
                 for item_id, weight in zip(cat_item_ids, cat_weights):
                     items[item_id] = weight
@@ -83,7 +83,7 @@ def classic_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> 
     return FileType.MAPPA_BIN.get_item_list_model()(categories, dict(sorted(items.items(), key=lambda i: i[0])))
 
 
-def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
+def balanced_item_randomizer(rng: Random, config: RandomizerConfig, static_data: Pmd2Data) -> MappaItemListProtocol:
     categories = OrderedDict()
     items = OrderedDict()
 
@@ -103,10 +103,10 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
 
     # We roll random items and then check their category.
     # We also take note of the items for that category in chosen_items_per_cat.
-    for _ in range(0, randrange(min_items, max_items)):
+    for _ in range(0, rng.randrange(min_items, max_items)):
         if len(all_allowed_item_ids) < 1:
             break
-        item_index = choice(range(0, len(all_allowed_item_ids)))
+        item_index = rng.choice(range(0, len(all_allowed_item_ids)))
         item_id = all_allowed_item_ids.pop(item_index)
         item_cat_id = -1
         for cat_id, items_in_this_cat in items_in_cats.items():
@@ -142,7 +142,7 @@ def balanced_item_randomizer(config: RandomizerConfig, static_data: Pmd2Data) ->
         weights_before = categories[cat_id]
 
         # Randomize the item weights in each category
-        cat_weights = sorted(random_weights(len(chosen_items)))
+        cat_weights = sorted(random_weights(rng, len(chosen_items)))
 
         for item_id, weight in zip(sorted(chosen_items), cat_weights):
             items[item_id] = weight

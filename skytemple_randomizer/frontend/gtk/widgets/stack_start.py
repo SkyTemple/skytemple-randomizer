@@ -22,6 +22,7 @@ import sys
 import webbrowser
 from typing import cast
 
+from gi.repository import Gtk, Gdk, GdkPixbuf, Adw, GLib, Gio
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.i18n_util import _
 from skytemple_files.common.util import get_ppmdu_config_for_rom
@@ -30,8 +31,7 @@ from skytemple_files.common.version_util import get_event_banner
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
-
-from gi.repository import Gtk, Gdk, GdkPixbuf, Adw, GLib, Gio
+from skytemple_randomizer.frontend.gtk.ui_util import run_file_dialog, nds_filter
 
 
 @LocalePatchedGtkTemplate(filename=os.path.join(MAIN_PATH, "stack_start.ui"))
@@ -81,28 +81,23 @@ class StartStack(Adw.Bin):
 
     @Gtk.Template.Callback()
     def on_button_load_rom_clicked(self, *args):
-        frontend = GtkFrontend.instance()
-        nds_filter = Gtk.FileFilter()
-        nds_filter.add_suffix("nds")
-        nds_filter.add_mime_type("application/x-nintendo-ds-rom")
-        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
-        if documents_dir is not None:
-            default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(initial_folder=default_dir, default_filter=nds_filter)
-        else:
-            dialog_for_file = Gtk.FileDialog(default_filter=nds_filter)
-        dialog_for_file.open(frontend.window, None, self.on_file_loaded)
+        run_file_dialog(
+            GtkFrontend.instance(),
+            "input_rom",
+            (nds_filter(),),
+            callback_ok=self.on_file_loaded,
+            callback_error=self.on_file_loaded_err,
+        )
 
-    def on_file_loaded(self, dialog, result):
-        try:
-            file: Gio.File = dialog.open_finish(result)
-        except Exception as e:
-            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
-                GtkFrontend.instance().display_error(
-                    _("Failed to load ROM: Error while opening file ({}).").format(e),
-                    cast(Gtk.Window, self.get_root()),
-                )
-            return
+    def on_file_loaded_err(self, _dialog, _exc_type, e, _trb):
+        if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
+            GtkFrontend.instance().display_error(
+                _("Failed to load ROM: Error while opening file ({}).").format(e),
+                cast(Gtk.Window, self.get_root()),
+            )
+
+    def on_file_loaded(self, _dialog: Gtk.FileDialog, file: Gio.File | None):
+        assert file is not None
         path = file.get_path()
         assert path is not None
         GtkFrontend.instance().settings.set_recent_rom(path)

@@ -25,6 +25,7 @@ from functools import partial
 from math import floor
 from typing import cast
 
+from gi.repository import Gtk, Adw, Gio, GLib
 from ndspy.rom import NintendoDSRom
 from skytemple_files.common.i18n_util import _
 from skytemple_files.common.ppmdu_config.data import Pmd2Data
@@ -34,10 +35,8 @@ from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.frontend.gtk.frontend import GtkFrontend
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
-
-from gi.repository import Gtk, Adw, Gio, GLib
-
-from skytemple_randomizer.frontend.gtk.ui_util import open_dir
+from skytemple_randomizer.frontend.gtk.ui_util import open_dir, run_file_dialog, nds_filter
+from skytemple_randomizer.randomizer.util.debug import DebugRandom
 from skytemple_randomizer.randomizer_thread import RandomizerThread
 from skytemple_randomizer.status import Status
 
@@ -129,38 +128,26 @@ class RandomizeDialog(Adw.Dialog):
 
     @Gtk.Template.Callback()
     def on_start_button_clicked(self, *args):
-        frontend = GtkFrontend.instance()
-        nds_filter = Gtk.FileFilter()
-        nds_filter.add_suffix("nds")
-        nds_filter.add_mime_type("application/x-nintendo-ds-rom")
-        documents_dir = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS)
-        if documents_dir is not None:
-            default_dir = Gio.File.new_for_path(documents_dir)
-            dialog_for_file = Gtk.FileDialog(
-                initial_folder=default_dir,
-                default_filter=nds_filter,
-                initial_name="randomized_rom.nds",
-            )
-        else:
-            dialog_for_file = Gtk.FileDialog(default_filter=nds_filter, initial_name="randomized_rom.nds")
-        dialog_for_file.save(frontend.window, None, self.do_save)
+        run_file_dialog(
+            GtkFrontend.instance(),
+            "output_rom",
+            (nds_filter(),),
+            callback_ok=self.do_save,
+            callback_error=self.do_save_err,
+            initial_name="randomized_rom.nds",
+            save=True,
+        )
 
-    def do_save(self, dialog, result):
-        try:
-            file = dialog.save_finish(result)
-        except Exception as e:
-            if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
-                GtkFrontend.instance().display_error(
-                    _("Error while opening file ({}).").format(e),
-                    cast(Gtk.Window, self.get_root()),
-                )
-            return
-        if not file.get_path().lower().endswith(".nds"):
+    def do_save_err(self, _dialog, _exc_type, e, _trb):
+        if not isinstance(e, GLib.GError) or "dismissed" not in str(e).lower():
             GtkFrontend.instance().display_error(
-                _("The path of the ROM file needs to end in '.nds'."),
+                _("Error while opening file ({}).").format(e),
                 cast(Gtk.Window, self.get_root()),
             )
-            return
+        return
+
+    def do_save(self, _dialog: Gtk.FileDialog, file: Gio.File | None):
+        assert file is not None
         self.output_file = file
 
         # Adjust UI
@@ -174,11 +161,16 @@ class RandomizeDialog(Adw.Dialog):
         # Configure and start randomizer
         status = Status()
         status.subscribe(lambda a, b: GLib.idle_add(partial(self.on_update_status, a, b)))
-        random.seed(self.seed)
+        rng: random.Random
+        if "SKYTEMPLE_RANDOMIZER_DEBUG_DIR_RNG" in os.environ:
+            rng = DebugRandom(self.seed)
+        else:
+            rng = random.Random(self.seed)
         randomizer = RandomizerThread(
             status,
             self.rom,
             self.randomization_settings,
+            rng,
             str(self.seed),
             GtkFrontend.instance(),
         )
@@ -230,7 +222,7 @@ class RandomizeDialog(Adw.Dialog):
             assert self.output_file is not None
             out_path = self.output_file.get_path()
             assert out_path is not None
-            self.rom.saveToFile(out_path, updateDeviceCapacity=True)
+            self._randomizer.rom.saveToFile(out_path, updateDeviceCapacity=True)
             status_img_path = os.path.join(data_dir(), "duskako_happy.png")
             self.status_row.set_title(_("Randomizing complete!"))
             self.status_row.set_subtitle("")

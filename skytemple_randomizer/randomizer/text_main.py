@@ -14,8 +14,6 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
-from random import shuffle
-
 from skytemple_files.common.ppmdu_config.data import GAME_REGION_JP
 from skytemple_files.common.ppmdu_config.data import Pmd2StringBlock
 from skytemple_files.common.types.file_types import FileType
@@ -42,7 +40,7 @@ class TextMainRandomizer(AbstractRandomizer):
         for lang, strings in get_all_string_files(self.rom, self.static_data):
             for string_block in self._collect_categories(self.static_data.string_index_data.string_blocks):
                 part = strings.strings[string_block.begin : string_block.end]
-                shuffle(part)
+                self.rng.shuffle(part)
                 strings.strings[string_block.begin : string_block.end] = part
 
             self.rom.setFileByName(f"MESSAGE/{lang.filename}", FileType.STR.serialize(strings))

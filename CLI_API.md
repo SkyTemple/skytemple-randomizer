@@ -1,6 +1,6 @@
 # SkyTemple Randomizer CLI API
 
-Documentation for version: `2.0.0`
+Documentation for version: `2.1.0`
 
 The Randomizer can be controlled via CLI API. It supports randomizing the game but also
 provides access to all the information from a ROM which is also available via 

@@ -5,16 +5,16 @@ backend-path = ["_custom_build"]
 
 [project]
 name = "skytemple-randomizer"
-version = "2.1.0"
+version = "2.2.0"
 authors = [
-    {name = 'Marco "Capypara" Köpcke', email = "hello@capypara.de"},
+    { name = 'Marco "Capypara" Köpcke', email = "hello@capypara.de" },
     # see About dialog or GitHub contributors list for additional people.
 ]
 description = "Randomizer GUI to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky"
 readme = "README.rst"
 requires-python = ">=3.9"
 keywords = ["rom-hacking", "game-modding", "skytemple", "gtk", "randomizer"]
-license = {text = "GPL-3.0-or-later"}
+license = { text = "GPL-3.0-or-later" }
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python",
@@ -63,9 +63,9 @@ packages.find.exclude = ["installer", "blueprint-compiler"]
 line-length = 120
 
 [tool.ruff.lint]
-select = [ "W", "E", "F"]
+select = ["W", "E", "F"]
 ignore = [
-  "E402",  # Module level import not at top of file -> gi imports may come after gi.require_version.
-  "E501",  # Line too long. Maybe enable later.
-  "F841",  # Unused variable: f-string magic
+    "E402", # Module level import not at top of file -> gi imports may come after gi.require_version.
+    "E501", # Line too long. Maybe enable later.
+    "F841", # Unused variable: f-string magic
 ]

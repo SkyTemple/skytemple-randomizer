@@ -206,7 +206,8 @@
     "patch_unuseddungeonchance": true,
     "patch_disarm_monster_houses": true,
     "patch_totalteamcontrol": false,
-    "patch_fixmemorysoftlock": true
+    "patch_fixmemorysoftlock": true,
+    "patch_sametypepartner": false
   },
   "pokemon": {
     "iq_groups": true,

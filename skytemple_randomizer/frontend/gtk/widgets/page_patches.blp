@@ -74,5 +74,19 @@ template $StPatchesPage: Adw.PreferencesPage {
                 }
             }
         }
+        Adw.SwitchRow row_patch_sametypepartner {
+            title: _('Apply "SameTypePartner" Patch');
+            icon-name: 'skytemple-e-patch-symbolic';
+            activatable: true;
+            notify::active => $on_row_patch_sametypepartner_notify_active();
+            [suffix]
+            Box {
+                MenuButton {
+                    icon-name: 'skytemple-help-about-symbolic';
+                    popover: $StHelpPopover help_popover_patch_sametypepartner {};
+                    styles ['flat']
+                }
+            }
+        }
     }
 }

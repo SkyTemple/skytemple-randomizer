@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-14 12:54\n"
+"PO-Revision-Date: 2024-09-14 16:44\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3050,7 +3050,8 @@ msgstr "Оценить все"
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:58
 msgid " And to appraise all your items, \n"
 "you will pay [CS:G][gold_left:0][CR][M:S0]?"
-msgstr ""
+msgstr " И для оценки всех ваших предметов,\n"
+"вы заплатите [CS:G][gold_left:0][CR][M:S0]?"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:62
 msgid " And so...[K]it is revealed...[C] Within the boxes...[K]\n"
@@ -3093,7 +3094,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:55
 msgid "Then, who would you like to be?"
-msgstr ""
+msgstr "Тогда кем бы вы хотели стать?"
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:65
 msgid "Adds an extra menu during the personality test to choose the starter."
@@ -3101,11 +3102,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:104
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
-msgstr ""
+msgstr "[CS:S]Режим управления изменен на[CR] [CS:C]автоматический[CR][CS:S].[CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:107
 msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
-msgstr ""
+msgstr "[CS:S]Режим управления изменен на[CR] [CS:E]ручной[CR][CS:S].[CR]"
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:119
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by Frostbyte before applying this patch."

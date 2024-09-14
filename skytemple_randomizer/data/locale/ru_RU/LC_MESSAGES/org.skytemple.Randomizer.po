@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-14 09:57\n"
+"PO-Revision-Date: 2024-09-14 11:31\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -2266,7 +2266,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:170
 msgid "Poison Trap"
-msgstr ""
+msgstr "Ядовитая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
 msgid "Selfdestruct Trap"
@@ -2278,7 +2278,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
 msgid "Pp Zero Trap"
-msgstr ""
+msgstr "Ноль-ОС ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:174
 msgid "Chestnut Trap"
@@ -2310,7 +2310,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:181
 msgid "Random Trap"
-msgstr ""
+msgstr "Случайная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:182
 msgid "Grudge Trap"
@@ -3045,7 +3045,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:56
 msgid "Appraise all"
-msgstr ""
+msgstr "Оценить все"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:58
 msgid " And to appraise all your items, \n"
@@ -3249,11 +3249,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
 msgid "Extracts the object table to a separate file in the ROM."
-msgstr ""
+msgstr "Извлекает таблицу объектов в отдельный файл в ROM."
 
 #: skytemple-files/skytemple_files/patch/handler/partners_trigger_hidden_traps.py:50
 msgid "Recommended for CTC. Without this patch, partners cannot trigger hidden traps - this balances the game, as making your partners dodge traps with manual movement is easy, but this patch is not recommended for mods which use pitfall traps, as they instakill partners which step on them."
-msgstr ""
+msgstr "Рекомендуется для CTC. Без этого патча напарники не могут активировать скрытые ловушки - это уравновешивает игру, так как заставить напарников уворачиваться от ловушек с помощью ручного движения очень просто, но этот патч не рекомендуется для модов, использующих ямы-ловушки, так как они немедленно убивают наступивших на них напарников."
 
 #: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
 msgid "Changes implementation of idle animation to an editable table."
@@ -3266,7 +3266,8 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:55
 msgid "Implements pushing allies in dungeons.\n"
 "Uses the same command style as PSMD"
-msgstr ""
+msgstr "Реализует подталкивание союзников в подземельях.\n"
+"Использует тот же стиль управления, что и в PSMD"
 
 #: skytemple-files/skytemple_files/patch/handler/reduce_jumpcut_pause_time.py:50
 msgid "Reduces the amount of time the game pauses for before changing the PoV, like when far-off pals is enabled, from 60 frames to 12. This is already applied in the CTC hack."
@@ -3278,11 +3279,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:48
 msgid "Allows the partner to be of the same type as the player in the personality test."
-msgstr ""
+msgstr "Позволяет партнеру быть того же типа, что и игрок в тесте личности."
 
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:47
 msgid "Who would you like to be?"
-msgstr ""
+msgstr "Кем бы вы хотели стать?"
 
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
 msgid "Skips the quiz, only leaving the gender question.\n"
@@ -3534,7 +3535,7 @@ msgstr "Ошибка"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:131
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:77
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
@@ -3542,19 +3543,19 @@ msgstr "Приложение для рандомизации ROM игры Pokém
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:100
 msgid "CSV File (*.csv)"
-msgstr ""
+msgstr "CSV-файл (*.csv)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:108
 msgid "XML Document (*.xml)"
-msgstr ""
+msgstr "XML-документ (*.xml)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:116
 msgid "Nintendo DS ROM (*.nds)"
-msgstr ""
+msgstr "Nintendo DS ROM (*.nds)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:124
 msgid "JSON Document (*.json)"
-msgstr ""
+msgstr "JSON-документ (*.json)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:156
 msgid "Any File"
@@ -3920,7 +3921,7 @@ msgstr "Многие имена в списке по умолчанию взят
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:57
 msgid "_Pokémon"
-msgstr ""
+msgstr "_Покемоны"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters.ui:18
 msgid "Allowed Pokémon"
@@ -4359,7 +4360,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:42
 msgid "Randomize Location Names"
-msgstr ""
+msgstr "Рандомизировать имён локаций"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:51
 msgid "Configure the pool of location names used for randomization"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-14 17:52\n"
+"PO-Revision-Date: 2024-09-14 20:52\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1952,17 +1952,17 @@ msgstr "Пол, комната"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:64
 msgid "Wall, Hallway; Absolute Mover"
-msgstr ""
+msgstr "Стена, Коридор, Идеальный Проходчик"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:73
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:190
 msgid "Wall, Hallway; Impassable"
-msgstr ""
+msgstr "Стена, коридор; непроходимая"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:82
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:199
 msgid "Wall, Hallway"
-msgstr ""
+msgstr "Стена, коридор"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:91
 msgid "Leader Spawn Floor"
@@ -1974,7 +1974,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:109
 msgid "Chasm, Hallway"
-msgstr ""
+msgstr "Пропасть, коридор"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:114
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:153

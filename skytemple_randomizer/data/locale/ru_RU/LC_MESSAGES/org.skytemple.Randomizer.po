@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-14 20:52\n"
+"PO-Revision-Date: 2024-09-14 22:25\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1979,7 +1979,7 @@ msgstr "Пропасть, коридор"
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:114
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:153
 msgid "Tile type is forced to be \"Void / Chasm\" (Still rendered as tileset's secondary terrain!)."
-msgstr ""
+msgstr "Тип плитки принудительно установлен на \"Пустота / Бездна\" (по-прежнему отображается как второстепенный рельеф набора плитки!)."
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:118
 msgid "Chasm, Hallway; All Chasm"
@@ -2005,31 +2005,31 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:148
 msgid "Chasm, Hallway; Impassable"
-msgstr ""
+msgstr "Пропасть, коридор; непроходимая"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:157
 msgid "Floor, Hallway; Flag 0xA"
-msgstr ""
+msgstr "Пол, коридор; флаг 0xA"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:162
 msgid "Tile flag 0xA is set to 1 (Unknown what this does)."
-msgstr ""
+msgstr "Флаг 0xA у этой плитки имеет значение 1 (Что это делает - неизвестно)."
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:166
 msgid "F/W, Room; Key Door"
-msgstr ""
+msgstr "П/С, комната, дверь с замком"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:172
 msgid "Spawns a locked Key Door. If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr ""
+msgstr "Создает закрытую дверь с замком. Если ID фиксированной комнаты &lt; 0xA5, это будет стена. Иначе, это будет пол."
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:178
 msgid "F/W, Room; Key Door (Escort)"
-msgstr ""
+msgstr "П/С, комната, дверь с замком (Сопровождение)"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:184
 msgid "Spawns a locked Key Door (meant to be opened by an escort mission client). If the fixed room id is &lt; 0xA5, this will be a Wall. Otherwise it will be Floor."
-msgstr ""
+msgstr "Создает закрытую дверь с замком (которую должен открыть клиент миссии сопровождения). Если ID фиксированной комнаты &lt; 0xA5, это будет стена. Иначе это будет пол."
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:208
 msgid "Attendant1 Spawn Floor"
@@ -2059,7 +2059,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:294
 #, python-brace-format
 msgid "Missing {k} for Floor data."
-msgstr ""
+msgstr "Отсутствует {k} в данных этажа."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:418
 #, python-brace-format
@@ -2069,22 +2069,22 @@ msgstr ""
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:421
 #, python-brace-format
 msgid "{XML_FLOOR_LAYOUT__GENSET} missing for {XML_FLOOR_LAYOUT}."
-msgstr ""
+msgstr "{XML_FLOOR_LAYOUT__GENSET} отсутствует для {XML_FLOOR_LAYOUT}."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:424
 #, python-brace-format
 msgid "{XML_FLOOR_LAYOUT__CHANCES} missing for {XML_FLOOR_LAYOUT}."
-msgstr ""
+msgstr "{XML_FLOOR_LAYOUT__CHANCES} отсутствует для {XML_FLOOR_LAYOUT}."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:427
 #, python-brace-format
 msgid "{XML_FLOOR_LAYOUT__TERRAINSET} missing for {XML_FLOOR_LAYOUT}."
-msgstr ""
+msgstr "{XML_FLOOR_LAYOUT__TERRAINSET} отсутствует для {XML_FLOOR_LAYOUT}."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:430
 #, python-brace-format
 msgid "{XML_FLOOR_LAYOUT__MISCSET} missing for {XML_FLOOR_LAYOUT}."
-msgstr ""
+msgstr "{XML_FLOOR_LAYOUT__MISCSET} отсутствует для {XML_FLOOR_LAYOUT}."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:500
 msgid "Invalid structure type {ele.get(XML_FLOOR_LAYOUT__STRUCTURE)}"
@@ -2109,7 +2109,7 @@ msgstr "В списках ловушек должны быть все 25 лов�
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:53
 msgid "Medium Large"
-msgstr ""
+msgstr "Средне-большой"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:55
 msgid "Single Monster House"
@@ -2129,19 +2129,19 @@ msgstr "Две комнаты, одна засада монстров"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:65
 msgid "Line"
-msgstr ""
+msgstr "Линия"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:66
 msgid "Cross"
-msgstr ""
+msgstr "Крест"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:67
 msgid "Small Medium"
-msgstr ""
+msgstr "Малый средний"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:68
 msgid "Beetle"
-msgstr ""
+msgstr "Жук"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:71
 msgid "Outer Rooms"
@@ -2149,15 +2149,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:74
 msgid "Medium Large (12)"
-msgstr ""
+msgstr "Средне-большой (12)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:75
 msgid "Medium Large (13)"
-msgstr ""
+msgstr "Средне-большой (13)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:76
 msgid "Medium Large (14)"
-msgstr ""
+msgstr "Средне-большой (14)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:77
 msgid "Medium Large (15)"
@@ -2551,28 +2551,28 @@ msgstr "Розовый"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:320
 msgid "Leaves"
-msgstr ""
+msgstr "Листья"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:321
 msgid "Snowflakes"
-msgstr ""
+msgstr "Снежинки"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:322
 msgid "Flames"
-msgstr ""
+msgstr "Огни"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:323
 msgid "Sand"
-msgstr ""
+msgstr "Песок"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:324
 msgid "Bubbles"
-msgstr ""
+msgstr "Пузыри"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:325
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:355
 msgid "Earthquake"
-msgstr ""
+msgstr "Землетрясение"
 
 #. TRANSLATORS: Effect of a tileset's secret power move
 #. TRANSLATORS: Move name
@@ -2591,56 +2591,56 @@ msgstr "???"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:330
 msgid "Sleep"
-msgstr ""
+msgstr "Сон"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:333
 msgid "Speed -1"
-msgstr ""
+msgstr "Скорость -1"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:337
 msgid "Attack -1"
-msgstr ""
+msgstr "Атака -1"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:342
 msgid "Accuracy -1"
-msgstr ""
+msgstr "Точность -1"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:345
 msgid "Cringe"
-msgstr ""
+msgstr "Съеживание"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:346
 msgid "Freeze"
-msgstr ""
+msgstr "Заморозка"
 
 #. TRANSLATORS: Status
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:347
 msgid "Paralysis"
-msgstr ""
+msgstr "Паралич"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:358
 msgid "Rock Slide"
-msgstr ""
+msgstr "Камнепад"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:360
 msgid "Tri Attack"
-msgstr ""
+msgstr "Три-Атака"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:361
 msgid "Hydro Pump"
-msgstr ""
+msgstr "Гидронасос"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:362
 msgid "Blizzard"
-msgstr ""
+msgstr "Метель"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:363
 msgid "Ice Beam"
-msgstr ""
+msgstr "Луч льда"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:364

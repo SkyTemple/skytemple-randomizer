@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-14 16:44\n"
+"PO-Revision-Date: 2024-09-14 17:52\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1785,15 +1785,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:29
 msgid "Healthy"
-msgstr ""
+msgstr "Здоров"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:30
 msgid "Half Life"
-msgstr ""
+msgstr "Ранен"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:31
 msgid "Pinch"
-msgstr ""
+msgstr "Сильно ранен"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:32
 msgid "Level Up"
@@ -1948,7 +1948,7 @@ msgstr "Текущий ОЗ <= 25% или имеет хотя бы одно не
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:253
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:262
 msgid "Floor, Room"
-msgstr ""
+msgstr "Пол, комната"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:64
 msgid "Wall, Hallway; Absolute Mover"
@@ -2587,7 +2587,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:357
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:359
 msgid "???"
-msgstr ""
+msgstr "???"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:330
 msgid "Sleep"
@@ -2679,7 +2679,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:116
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:139
 msgid "Normal Enemy"
-msgstr ""
+msgstr "Обычный враг"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:118
 msgid "Outlaw"
@@ -2687,11 +2687,11 @@ msgstr "Преступник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:120
 msgid "Outlaw Enemy"
-msgstr ""
+msgstr "Враг-преступник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:122
 msgid "Outlaw Running Away"
-msgstr ""
+msgstr "Убегающий преступник"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:126
 msgid "Rival Team Leader"
@@ -2703,11 +2703,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:130
 msgid "Strong Enemy"
-msgstr ""
+msgstr "Сильный враг"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:133
 msgid "Waiting for Rescue Ally"
-msgstr ""
+msgstr "Союзник, ожидающий спасения"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:141
 msgid "Helping Ally"
@@ -2964,7 +2964,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:734
 #, python-brace-format
 msgid "This menu must have {num_entries} entries!"
-msgstr ""
+msgstr "Это меню должно иметь {num_entries} записей!"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:88
 msgid "Standing Animation (loop)"
@@ -3262,7 +3262,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:44
 msgid "[string:0] pushed [string:1]!"
-msgstr ""
+msgstr "[string:0] толкнул [string:1]!"
 
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:55
 msgid "Implements pushing allies in dungeons.\n"

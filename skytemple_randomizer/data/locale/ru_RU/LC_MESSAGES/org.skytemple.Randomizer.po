@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-14 11:31\n"
+"PO-Revision-Date: 2024-09-14 12:54\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: /dev/fd/63:1 /dev/fd/63:216
 msgid "English"
-msgstr "Русский"
+msgstr "Английский"
 
 #: /dev/fd/63:2 /dev/fd/63:221
 msgid "Friend Rescue Set Phrases"
@@ -1766,7 +1766,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:587
 msgid "Incompatible XML. The number of portraits don't match with the expected value of {len(value_to_update)}"
-msgstr ""
+msgstr "Несовместимый XML. Количество портретов не совпадает с ожидаемым значением {len (value_to_update)}"
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:603
 #, python-brace-format
@@ -3060,7 +3060,7 @@ msgstr ""
 #. TRANSLATORS: Appraise All Reveal Before
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:65
 msgid " ...a [me_play:1][string0]!"
-msgstr ""
+msgstr " ...[me_play:1][string0]!"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:75
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
@@ -3288,7 +3288,7 @@ msgstr "Кем бы вы хотели стать?"
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
 msgid "Skips the quiz, only leaving the gender question.\n"
 "Needs ChooseStarter patch to be applied. "
-msgstr "Пропускает викторину, оставляя только вопрос о поле.\n"
+msgstr "Пропускает тест на личность, оставляя только вопрос о поле.\n"
 "Требуется применение патча ChooseStarter. "
 
 #: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
@@ -3298,7 +3298,8 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
-msgstr ""
+msgstr "Заменяет старое отображение статистик полосами.\n"
+"Этот патч может быть несовместим если файл markfont.dat был изменён."
 
 #: skytemple-files/skytemple_files/patch/handler/support_atupx.py:51
 msgid "Provide support for ATUPX containers, which use a different algorithm than PX compression.\n"
@@ -3559,7 +3560,7 @@ msgstr "JSON-документ (*.json)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:156
 msgid "Any File"
-msgstr ""
+msgstr "Любой файл"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 #, python-brace-format

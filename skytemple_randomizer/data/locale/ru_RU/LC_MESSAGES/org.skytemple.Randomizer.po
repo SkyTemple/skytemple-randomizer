@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-15 11:11\n"
+"PO-Revision-Date: 2024-09-15 12:07\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3197,11 +3197,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/extract_move_code.py:80
 msgid "Extracts move effects code and put it in files."
-msgstr ""
+msgstr "Извлекает код эффектов приемов и помещает его в файлы."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_sp_code.py:72
 msgid "Extracts special processes code and put it in files."
-msgstr ""
+msgstr "Извлекает код особых процессов и помещает его в файлы."
 
 #: skytemple-files/skytemple_files/patch/handler/fairy_gummies.py:113
 msgid "Implements Fairy-type specialized gummies. Uses unused item 138.\n"
@@ -3219,7 +3219,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/fix_evolution.py:45
 msgid "Fixes the evolution glitch that freezes the game when attempting to evolve a pokémon whose name has 10 characters."
-msgstr ""
+msgstr "Исправлена ошибка эволюции, из-за которого игра зависает при попытке эволюционировать покемона, имя которого состоит из 10 символов."
 
 #: skytemple-files/skytemple_files/patch/handler/fix_memory_softlock.py:47
 msgid "If the game runs out of memory trying to load a sprite, a default one will be used instead, preventing the crash."
@@ -3311,7 +3311,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
-msgstr ""
+msgstr "Исправлен неиспользованный шанс для подземелий. Теперь он определяет шанс появления комнаты-лабиринта на этаже."
 
 #: skytemple-files/skytemple_files/patch/patches.py:238
 #: skytemple-files/skytemple_files/patch/patches.py:248
@@ -3392,7 +3392,7 @@ msgstr "'{}' отсутствует в данных сцены."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:458
 msgid "The event ID {} is out of bounds for one of the triggers."
-msgstr ""
+msgstr "ID события {} находится вне границ для одного из триггеров."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:542
 msgid "Unknown direction value."
@@ -3463,7 +3463,7 @@ msgstr "Указан неверный параметр для операции: 
 
 #: skytemple-files/skytemple_files/script/ssb/ssb_number.py:94
 msgid "The value '{}' can not be saved. Please use a value between -64.0 and 63.996 for fixed point numbers."
-msgstr ""
+msgstr "Значение {} не может быть сохранено. Пожалуйста, используйте значение между -64.0 и 63.996 для чисел с фиксированной запятой."
 
 #: skytemple-files/skytemple_files/script/ssb/writer.py:169
 msgid "Could not compile script: All languages must have the same amount of strings."
@@ -3472,11 +3472,12 @@ msgstr "Не удалось скомпилировать скрипт: Все я
 #: skytemple-rust/src/image/tiled.rs:232
 msgid "An image selected to import is too complex. It has too many unique tiles ({}, max allowed are 1024).\n"
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
-msgstr ""
+msgstr "Изображение, выбранное для импорта, слишком сложное. В нем слишком много уникальных плиток ({}, максимально допустимое количество — 1024).\n"
+"Постарайтесь, чтобы уникальных плиток было меньше. Уникальные плитки — это фрагменты изображений размером 8x8, которые больше нигде не встречаются на изображении (в том числе в перевернутом виде или в другой субпалитре)."
 
 #: skytemple-rust/src/python_image.rs:54
 msgid "The image you provided is not an indexed image (it has no palette). Please convert it to an indexed image (with a maximum of {} colors) and try again."
-msgstr ""
+msgstr "Предоставленное вами изображение не является индексированным (в нем нет палитры). Пожалуйста, преобразуйте его в индексированное изображение (содержащее не более {} цветов) и попробуйте снова."
 
 #: skytemple-rust/src/romfs.rs:101
 msgid "ROM Header checksum does not match contents."
@@ -3508,7 +3509,7 @@ msgstr ""
 
 #: skytemple-rust/src/st_dpc.rs:149
 msgid "The image to import can only use the first 12 palettes. Tried to use palette {}"
-msgstr ""
+msgstr "Импортируемое изображение может использовать только 12 палитр. Данное изображение использует палитру {}"
 
 #: skytemple-rust/src/st_dpla.rs:111
 msgid "Palette is invalid."
@@ -4148,7 +4149,7 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:50
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:20
 msgid "Randomize Personality Quiz"
-msgstr ""
+msgstr "Рандомизировать тест на личность"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:61
 msgid "If enabled, the personality quiz questions will be randomized.\n"

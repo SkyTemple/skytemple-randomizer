@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-15 07:51\n"
+"PO-Revision-Date: 2024-09-15 11:11\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3240,15 +3240,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
 msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."
-msgstr ""
+msgstr "Заменяет фиксированный прием (L+A) на функцию быстрый вызов приема как в GtI и Super (L+A/B/X/Y). Патч ExtraSpace должен быть применен до этого патча."
 
 #: skytemple-files/skytemple_files/patch/handler/negative_enemy_density.py:49
 msgid "Makes negative enemy density values work as intended (the absolute value of the density is used, without adding a random variation)."
-msgstr ""
+msgstr "Заставляет отрицательные значения плотности врагов работать как положено (используется абсолютное значение плотности, без добавления случайной вариации)."
 
 #: skytemple-files/skytemple_files/patch/handler/no_weather_stop.py:50
 msgid "Changes weather damage messages so they don't make the player stop running."
-msgstr ""
+msgstr "Изменяет сообщения об уроне от погоды, чтобы они не останавливали игрока."
 
 #: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
 msgid "Extracts the object table to a separate file in the ROM."
@@ -3274,11 +3274,11 @@ msgstr "Реализует подталкивание союзников в по
 
 #: skytemple-files/skytemple_files/patch/handler/reduce_jumpcut_pause_time.py:50
 msgid "Reduces the amount of time the game pauses for before changing the PoV, like when far-off pals is enabled, from 60 frames to 12. This is already applied in the CTC hack."
-msgstr ""
+msgstr "Уменьшает время паузы в игре перед сменой PoV, например, при включении функции \"Группа вдалеке\", с 60 кадров до 12. Уже применяется в патче CTC."
 
 #: skytemple-files/skytemple_files/patch/handler/remove_body_size_check.py:48
 msgid "Removes the total body size check before entering a dungeon."
-msgstr ""
+msgstr "Убирает проверку общего размера покемонов перед входом в подземелье."
 
 #: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:48
 msgid "Allows the partner to be of the same type as the player in the personality test."

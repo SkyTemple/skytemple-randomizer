@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-15 15:18\n"
+"PO-Revision-Date: 2024-09-15 21:52\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -924,7 +924,7 @@ msgstr ""
 #: explorerscript/explorerscript/common_syntax.py:129
 #: explorerscript/explorerscript/common_syntax.py:194
 msgid "String not allowed at this position."
-msgstr ""
+msgstr "Строка недопустима в этой позиции."
 
 #: explorerscript/explorerscript/common_syntax.py:227
 msgid "Invalid target for routine."
@@ -1234,22 +1234,22 @@ msgstr "Недопустимая анимация: анимация поддер
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:127
 #, python-brace-format
 msgid "A required DTEF file is missing: {fn}. Please verify the DTEF package."
-msgstr ""
+msgstr "Отсутствует требуемый DTEF файл: {fn}. Пожалуйста, проверьте DTEF-пакет."
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:135
 #, python-brace-format
 msgid "Can not import image \"{basename}\" as dungeon tileset: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "Невозможно импортировать изображение \"{basename}\" в качестве набора плиток подземелья: изображение должно быть индексировано (=использовать палитру)"
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:138
 #, python-brace-format
 msgid "Can not import image \"{basename}\" as dungeon tileset: Palette must contain  256 RGB colors."
-msgstr ""
+msgstr "Невозможно импортировать изображение \"{basename}\" в качестве набора плиток подземелья: палитра должна содержать 256 RGB цветов."
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:143
 #, python-brace-format
 msgid "Can not import images as dungeon tilesets: The palettes of the images do not match. First image read that didn't match: \"{basename}\""
-msgstr ""
+msgstr "Невозможно импортировать изображения в качестве набора плиток подземелья: палитры изображений не совпадают. Первое прочитанное изображение с несовпадением: \"{basename}\""
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:148
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:149
@@ -1394,7 +1394,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:123
 msgid "Only 4bpp and 8bpp images are supported."
-msgstr ""
+msgstr "Поддерживаются только изображения 4bpp и 8bpp."
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:248
 msgid "Can not convert PIL image to PMD tiled image: Must be indexed image (=using a palette)"
@@ -1709,7 +1709,7 @@ msgstr "Вода"
 #: skytemple-files/skytemple_files/data/md/protocol.py:546
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
 msgid "Small"
-msgstr ""
+msgstr "Малый"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:547
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
@@ -1718,7 +1718,7 @@ msgstr "Средний"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:548
 msgid "Large"
-msgstr ""
+msgstr "Большой"
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:211
 #, python-brace-format

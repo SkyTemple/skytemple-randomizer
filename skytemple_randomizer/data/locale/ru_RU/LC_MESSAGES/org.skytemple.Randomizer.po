@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-15 22:50\n"
+"PO-Revision-Date: 2024-09-15 23:59\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -715,11 +715,11 @@ msgstr "Титры 3"
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "Новые имена покемонов"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "Новые категории покемонов"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
@@ -759,7 +759,7 @@ msgstr "Прочее"
 
 #: /dev/fd/63:186 /dev/fd/63:405
 msgid "Orbs"
-msgstr ""
+msgstr "Орбы"
 
 #: /dev/fd/63:187 /dev/fd/63:406
 msgid "Link Box"
@@ -787,19 +787,19 @@ msgstr "Эксклюзивные предметы"
 
 #: /dev/fd/63:193 /dev/fd/63:412
 msgid "Red component"
-msgstr ""
+msgstr "Красный компонент"
 
 #: /dev/fd/63:194 /dev/fd/63:413
 msgid "Green component"
-msgstr ""
+msgstr "Зеленый компонент"
 
 #: /dev/fd/63:195 /dev/fd/63:414
 msgid "Blue component"
-msgstr ""
+msgstr "Синий компонент"
 
 #: /dev/fd/63:196 /dev/fd/63:415
 msgid "Alpha component"
-msgstr ""
+msgstr "Компонент альфа-канала"
 
 #: /dev/fd/63:197 /dev/fd/63:416
 msgid "Conversion 2 Type when hit by a Fairy move"

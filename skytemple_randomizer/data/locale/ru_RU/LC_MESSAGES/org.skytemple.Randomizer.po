@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-15 13:14\n"
+"PO-Revision-Date: 2024-09-15 14:19\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -307,7 +307,7 @@ msgstr ""
 
 #: /dev/fd/63:73 /dev/fd/63:292
 msgid "Dungeon New Recruit Strings"
-msgstr ""
+msgstr "Строки о новых рекрутах"
 
 #: /dev/fd/63:74 /dev/fd/63:293
 msgid "Dungeon General Feedback 4"
@@ -1492,27 +1492,27 @@ msgstr "Недопустимый"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:63
 msgid "WAN File 0"
-msgstr ""
+msgstr "WAN файл 0"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:64
 msgid "WAN File 1"
-msgstr ""
+msgstr "WAN файл 1"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:65
 msgid "WAN"
-msgstr ""
+msgstr "WAN"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:66
 msgid "WAT"
-msgstr ""
+msgstr "WAT"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:67
 msgid "Screen"
-msgstr ""
+msgstr "Экран"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:68
 msgid "WBA"
-msgstr ""
+msgstr "WBA"
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:72
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:176
@@ -1809,15 +1809,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
 msgid "Physical Move"
-msgstr ""
+msgstr "Физический прием"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
 msgid "Special Move"
-msgstr ""
+msgstr "Особый прием"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:37
 msgid "Status Move"
-msgstr ""
+msgstr "Статусный прием"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"
@@ -2113,7 +2113,7 @@ msgstr "Средне-большой"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:55
 msgid "Single Monster House"
-msgstr ""
+msgstr "Только Засада Монстров"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:56
 msgid "Ring"
@@ -2161,16 +2161,16 @@ msgstr "Средне-большой (14)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:77
 msgid "Medium Large (15)"
-msgstr ""
+msgstr "Средне-большой (15)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:100
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:369
 msgid "Clear"
-msgstr ""
+msgstr "Ясная"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:101
 msgid "Sunny"
-msgstr ""
+msgstr "Солнечная"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:102
 msgid "Sandstorm"
@@ -2178,11 +2178,11 @@ msgstr "Песчаная буря"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:103
 msgid "Cloudy"
-msgstr ""
+msgstr "Облачная"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:104
 msgid "Rainy"
-msgstr ""
+msgstr "Дождь"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
 msgid "Hail"
@@ -2194,11 +2194,11 @@ msgstr "Туман"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:107
 msgid "Snow"
-msgstr ""
+msgstr "Снег"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:108
 msgid "Random"
-msgstr ""
+msgstr "Случайная"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:131
 msgid "No darkness"
@@ -2206,19 +2206,19 @@ msgstr "Нет темноты"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:132
 msgid "1-tile vision (Heavy darkness)"
-msgstr ""
+msgstr "Видимость: 1 плитка (Сильная темнота)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:133
 msgid "2-tile vision (Light darkness)"
-msgstr ""
+msgstr "Видимость: 2 плитки (Легкая темнота)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:134
 msgid "3-tile vision"
-msgstr ""
+msgstr "Видимость: 3 плитки"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:135
 msgid "4-tile vision"
-msgstr ""
+msgstr "Видимость: 4 плитки"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:159
 msgid "Mud Trap"
@@ -2230,11 +2230,11 @@ msgstr "Липкая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
 msgid "Grimy Trap"
-msgstr ""
+msgstr "Грязная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:162
 msgid "Summon Trap"
-msgstr ""
+msgstr "Призывная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
 msgid "Pitfall Trap"
@@ -2242,27 +2242,27 @@ msgstr "Яма-ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
 msgid "Warp Trap"
-msgstr ""
+msgstr "Телепортирующая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:165
 msgid "Gust Trap"
-msgstr ""
+msgstr "Ветряная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:166
 msgid "Spin Trap"
-msgstr ""
+msgstr "Кружащая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:167
 msgid "Slumber Trap"
-msgstr ""
+msgstr "Сонная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:168
 msgid "Slow Trap"
-msgstr ""
+msgstr "Замедляющая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:169
 msgid "Seal Trap"
-msgstr ""
+msgstr "Запрещающая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:170
 msgid "Poison Trap"
@@ -2270,11 +2270,11 @@ msgstr "Ядовитая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
 msgid "Selfdestruct Trap"
-msgstr ""
+msgstr "Подрывная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:172
 msgid "Explosion Trap"
-msgstr ""
+msgstr "Взрывная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
 msgid "Pp Zero Trap"
@@ -2282,7 +2282,7 @@ msgstr "Ноль-ОС ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:174
 msgid "Chestnut Trap"
-msgstr ""
+msgstr "Каштановая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
 msgid "Wonder Tile"
@@ -2290,23 +2290,23 @@ msgstr "Чудо-плитка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
 msgid "Pokemon Trap"
-msgstr ""
+msgstr "Поке-ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:177
 msgid "Spiked Tile"
-msgstr ""
+msgstr "Плитка с шипами"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:178
 msgid "Stealth Rock"
-msgstr ""
+msgstr "Хитрые Скалы"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:179
 msgid "Toxic Spikes"
-msgstr ""
+msgstr "Токсичные шипы"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:180
 msgid "Trip Trap"
-msgstr ""
+msgstr "Скользкая ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:181
 msgid "Random Trap"
@@ -2314,7 +2314,7 @@ msgstr "Случайная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:182
 msgid "Grudge Trap"
-msgstr ""
+msgstr "Обидная ловушка"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:40
 msgid "Invalid Floor List"

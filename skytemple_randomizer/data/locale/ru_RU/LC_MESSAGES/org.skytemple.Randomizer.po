@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-16 15:15\n"
+"PO-Revision-Date: 2024-09-16 16:14\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -23,15 +23,15 @@ msgstr "Английский"
 
 #: /dev/fd/63:2 /dev/fd/63:221
 msgid "Friend Rescue Set Phrases"
-msgstr ""
+msgstr "Спасение друга: выбираемые фразы"
 
 #: /dev/fd/63:3 /dev/fd/63:222
 msgid "Friend Rescue Message Input Strings"
-msgstr ""
+msgstr "Спасение друга: строки ввода сообщения"
 
 #: /dev/fd/63:4 /dev/fd/63:223
 msgid "Debug Strings (Game Init)"
-msgstr ""
+msgstr "Отладочные строки (инициализация игры)"
 
 #: /dev/fd/63:5 /dev/fd/63:224
 msgid "Util Strings"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: /dev/fd/63:10 /dev/fd/63:229
 msgid "Debug Strings (Main Menu)"
-msgstr ""
+msgstr "Отладочные строки (Главное меню)"
 
 #: /dev/fd/63:11 /dev/fd/63:230
 msgid "Default Team Names"
@@ -71,11 +71,11 @@ msgstr "Строки призовых билетов"
 
 #: /dev/fd/63:14 /dev/fd/63:233
 msgid "Job Debriefing Related Strings (Primary)"
-msgstr ""
+msgstr "Строки, связанные с подведением итогов работы (Основные)"
 
 #: /dev/fd/63:15 /dev/fd/63:234
 msgid "Job Debriefing Related Strings (Secondary)"
-msgstr ""
+msgstr "Строки, связанные с подведением итогов работы (Вторичные)"
 
 #: /dev/fd/63:16 /dev/fd/63:235
 msgid "Dungeon Item Action Menu Strings"
@@ -3070,28 +3070,31 @@ msgstr " ...[me_play:1][string0]!"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:75
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
-msgstr ""
+msgstr "Добавляет дополнительное меню при оценке коробок, чтобы оценить все коробки сразу. "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:118
 msgid "Change the evolution system.\n"
 "After applying this, every single Pokémon will have two lists for their evolution and children, and different stat bonuses when a Pokémon evolves into them.\n"
 "This supposedly removes most of the particular cases the game handles for evolutions. "
-msgstr ""
+msgstr "Меняет систему эволюции.\n"
+"После применения патча, у каждого покемона будет два списка - для эволюции и детей, которые могут быть у покемона, а также разные бонусы к статистикам при эволюции.\n"
+"Предполагается, что это устранит большинство особых случаев, которые игра использует для эволюций. "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:209
 #, python-brace-format
 msgid "Infinite recursion detected in pre evolutions for md entry {i}. "
-msgstr ""
+msgstr "Обнаружена бесконечная рекурсия в предэволюциях для md-записи {i}. "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:216
 #, python-brace-format
 msgid "One of the monsters in the pre-evolution chain of monster ${i:04} has an invalid pre evolution configured: ${pre_evo:04}. Can not apply patch."
-msgstr ""
+msgstr "Один из монстров в цепочке предэволюции монстра ${i:04} имеет недопустимую конфигурацию предэволюции: ${pre_evo:04}. Невозможно применить патч."
 
 #: skytemple-files/skytemple_files/patch/handler/change_ff_prop.py:52
 msgid "Changes and adds some properties for fixed floors.\n"
 "Removes restrictions. "
-msgstr ""
+msgstr "Изменяет и добавляет некоторые свойства для фиксированных комнат.\n"
+"Снимает ограничения. "
 
 #: skytemple-files/skytemple_files/patch/handler/change_tbbg.py:48
 msgid "Provides support for editing textbox background color."
@@ -3103,7 +3106,7 @@ msgstr "Тогда кем бы вы хотели стать?"
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:65
 msgid "Adds an extra menu during the personality test to choose the starter."
-msgstr ""
+msgstr "Добавляет дополнительное меню во время теста на личность для выбора стартового покемона."
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:104
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
@@ -3537,7 +3540,7 @@ msgstr "Этот портрет плохо сжимается, размер ре
 
 #: skytemple_randomizer/skytemple_randomizer/export_quiz_xml.py:97
 msgid "A question must contain two XML sub-nodes: {}, {}"
-msgstr ""
+msgstr "Вопрос должен содержать два подузла XML: {}, {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:129
 msgid "Error"
@@ -3766,7 +3769,7 @@ msgstr "Рандомизировать IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:45
 msgid "Spawn Monster Houses"
-msgstr ""
+msgstr "Создавать Засады Монстров"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:47
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:39
@@ -3828,7 +3831,7 @@ msgstr "Рандомизировать планировку, наборы пли
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:25
 msgid "Whether or not to randomize general aspects of the dungeon's layout. This also includes tileset and music and most general settings."
-msgstr ""
+msgstr "Нужно ли рандомизировать общие аспекты планировки подземелья. Сюда также входят набор плиток, музыка и большинство общих настроек."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:50
 msgid "Whether or not to randomize weather. The chances of this occurring can be changed under 'Chance Thresholds'."
@@ -3880,17 +3883,21 @@ msgstr "Макс. удаление этажей"
 msgid "Maximum amount of change in floor count in the lower direction (eg. if this is 10%, a dungeon can have up to 10% less floors).\n"
 "A dungeon will never have less than 1 floor.\n"
 "This setting has no effect if layouts are not randomized."
-msgstr ""
+msgstr "Максимальное изменение количества этажей в меньшую сторону (например, если это значение равно 10%, то в подземелье может быть до 10% меньше этажей чем в оригинальной игре).\n"
+"В подземелье никогда не будет меньше 1 этажа.\n"
+"Эта настройка не влияет, если планировка не рандомизирована."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:207
 msgid "Max. Addition of Floors"
-msgstr ""
+msgstr "Макс. добавление этажей"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:227
 msgid "Maximum amount of change in floor count in the upper direction (eg. if this is 10%, a dungeon can have up to 10% more floors).\n"
 "A dungeon will never have more than 99 floors.\n"
 "This setting has no effect if layouts are not randomized."
-msgstr ""
+msgstr "Максимальное изменение количества этажей в большую сторону (например, если это значение равно 10%, то в подземелье может быть до 10% больше этажей чем в оригинальной игре).\n"
+"В подземелье никогда не будет больше 99 этажей.\n"
+"Эта настройка не влияет, если планировка не рандомизирована."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:14
 msgid "Randomize Explorer Rank Unlocks"
@@ -4152,7 +4159,9 @@ msgstr "Выбрать вручную"
 msgid "Change the behaviour of the hero starter selection in the personality test, using patches by an anonymous contributor.\n"
 "You can select to have the test for selecting your starter (game default) or have an option to be able to select another starter after that or remove the test entirely.\n"
 "Please note that if you selected any but the default option, you may not be able to remove it again if you randomize the ROM again."
-msgstr ""
+msgstr "Меняет поведение выбора стартового покемона в тесте на личность, используя патчи от анонима.\n"
+"Вы можете выбрать тест для выбора стартера (по умолчанию) или опцию, позволяющую выбрать другого стартера после этого, или полностью убрать тест.\n"
+"Обратите внимание, что если вы выбрали любую опцию, кроме стандартной, вы не сможете убрать ее снова, если вы снова рандомизируете ROM."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:50
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:20

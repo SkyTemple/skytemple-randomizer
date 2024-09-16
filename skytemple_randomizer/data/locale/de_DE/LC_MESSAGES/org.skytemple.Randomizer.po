@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 12:26\n"
+"POT-Creation-Date: 2024-09-16 17:06+0000\n"
+"PO-Revision-Date: 2024-09-16 17:30\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3923,8 +3923,8 @@ msgid "Randomize Explorer Rank Unlocks"
 msgstr "Freischaltung der Erkunderränge randomisieren"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:25
-msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."
-msgstr "Falls aktiviert, dann wird randomisiert wann Erkunderränge freigeschaltet werden. Die maximale Anzahl Punkte für den Meister-Rang beträgt 200000."
+msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 100000 points."
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:39
 msgid "Randomize Explorer Rank Rewards"

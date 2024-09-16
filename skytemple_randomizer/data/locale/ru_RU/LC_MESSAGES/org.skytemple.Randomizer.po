@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-16 17:30\n"
+"PO-Revision-Date: 2024-09-16 20:21\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3905,7 +3905,7 @@ msgstr "Рандомизация разблокировки рангов исс�
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:25
 msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 100000 points."
-msgstr ""
+msgstr "Если эта функция включена, количество очков для рангов исследователя будут случайными. Максимальный лимит для разблокировки ранга Мастера составляет 100000 очков."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:39
 msgid "Randomize Explorer Rank Rewards"

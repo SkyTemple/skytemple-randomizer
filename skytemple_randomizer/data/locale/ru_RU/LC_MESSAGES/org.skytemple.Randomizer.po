@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-09-15 23:59\n"
+"PO-Revision-Date: 2024-09-16 13:16\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -2409,12 +2409,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:260
 #, python-brace-format
 msgid "Font parsing: Unexpected {child.tag}"
-msgstr ""
+msgstr "Анализ шрифта: неожиданный {child.tag}"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:45
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is defined multiple times in a font file!"
-msgstr ""
+msgstr "Символ {e.char} в таблице {e.table} определен в файле шрифта несколько раз!"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:58
 #, python-brace-format

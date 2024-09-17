@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-17 15:49\n"
+"PO-Revision-Date: 2024-09-17 16:56\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -735,7 +735,7 @@ msgstr "Ягоды, семена, витамины"
 
 #: /dev/fd/63:180 /dev/fd/63:399
 msgid "Foods, Gummies"
-msgstr "Еда, желе"
+msgstr "Еда, жевательные резинки"
 
 #: /dev/fd/63:181 /dev/fd/63:400
 msgid "Hold"
@@ -1482,7 +1482,7 @@ msgstr "По центру"
 #: skytemple-files/skytemple_files/data/md/protocol.py:480
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:47
 msgid "None"
-msgstr ""
+msgstr "Отсутствует"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:62
 #: skytemple-files/skytemple_files/data/md/protocol.py:67
@@ -1683,7 +1683,7 @@ msgstr "Знает Имитацию"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:518
 msgid "Standard"
-msgstr ""
+msgstr "Стандартные"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:519
 msgid "Unknown"
@@ -1691,20 +1691,20 @@ msgstr "Неизвестно"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:520
 msgid "Hovering"
-msgstr ""
+msgstr "Парит"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:521
 msgid "Phase Through Walls"
-msgstr ""
+msgstr "Может проходить сквозь стены"
 
 #. TRANSLATORS: Movement Type
 #: skytemple-files/skytemple_files/data/md/protocol.py:522
 msgid "Lava"
-msgstr "Лава"
+msgstr "Может ходить по лаве"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
-msgstr "Вода"
+msgstr "Может ходить по воде"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:546
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
@@ -4306,7 +4306,7 @@ msgstr "Рандомизировать увеличение IQ"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:50
 msgid "If enabled, the amount of belly the gummies fill and the amount of IQ they give are fully random for each type."
-msgstr ""
+msgstr "Если эта функция включена, то количество сытости и количество IQ, которое дают жевательные резинки, полностью случайны для каждого типа."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:66
 msgid "IQ Skills"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-16 20:21\n"
+"PO-Revision-Date: 2024-09-17 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -4179,7 +4179,7 @@ msgstr "Добавить вопросы из оригинальной игры"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:88
 msgid "If enabled, the questions from the base game will also be included in the pool of possible questions."
-msgstr ""
+msgstr "Если эта функция включена, вопросы из оригинальной игры также будут включены в список возможных вопросов."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:94
 msgid "Edit Question"
@@ -4288,7 +4288,9 @@ msgstr ""
 msgid "If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\n"
 "This can affect the random values rolled during the randomization.\n\n"
 "This should only be disabled if you run into issues."
-msgstr ""
+msgstr "Если эта функция включена, рандомизатор использует более быстрые реализации для работы с файлами в ROM.\n"
+"Это может повлиять на случайные значения, выпадающие при рандомизации.\n\n"
+"Отключать эту функцию следует только в том случае, если вы столкнулись с проблемами."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tactics_iq.ui:14
 msgid "Randomize Pokémon's IQ Groups"

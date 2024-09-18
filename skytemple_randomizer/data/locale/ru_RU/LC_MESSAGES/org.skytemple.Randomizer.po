@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-17 18:20\n"
+"PO-Revision-Date: 2024-09-18 09:24\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -3046,7 +3046,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/anti_softlock.py:49
 msgid "Allows the player to press A+B+X+Y during cutscenes to force the game to continue past a softlock (this can happen during cutscenes when using custom sprites or the randomizer). Does not work with crashes caused due to internal errors (such as the game running out of memory)."
-msgstr ""
+msgstr "Позволяет игроку нажимать A+B+X+Y во время сюжетных сцен, чтобы заставить игру продолжить после зависания (это может произойти во время сюжетных сцен при использовании пользовательских спрайтов или рандомайзера). Не работает при сбоях, вызванных внутренними ошибками (например, когда в игре закончилась память)."
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:56
 msgid "Appraise all"

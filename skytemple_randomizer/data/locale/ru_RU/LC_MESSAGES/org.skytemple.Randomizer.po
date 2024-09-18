@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-18 17:07\n"
+"PO-Revision-Date: 2024-09-18 18:19\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -215,11 +215,11 @@ msgstr "Подсказки на работе стражами"
 
 #: /dev/fd/63:50 /dev/fd/63:269
 msgid "Dungeon Item Usage (Basic)"
-msgstr ""
+msgstr "Использование предметов в подземелье (Базовое)"
 
 #: /dev/fd/63:51 /dev/fd/63:270
 msgid "Dungeon Menu Strings (Primary)"
-msgstr ""
+msgstr "Строки меню подземелья (основные)"
 
 #: /dev/fd/63:52 /dev/fd/63:271
 msgid "Dungeon Status Effect Strings"
@@ -355,7 +355,7 @@ msgstr ""
 
 #: /dev/fd/63:85 /dev/fd/63:304
 msgid "Mission Feedback"
-msgstr ""
+msgstr "Отзыв о миссии"
 
 #: /dev/fd/63:86 /dev/fd/63:305
 msgid "Dungeon General Feedback 6"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: /dev/fd/63:93 /dev/fd/63:312
 msgid "Kirlia Secret Bazaar Strings"
-msgstr ""
+msgstr "Строки секретного базара Кирлии"
 
 #: /dev/fd/63:94 /dev/fd/63:313
 msgid "Grab Bags Shop Strings"
@@ -407,7 +407,7 @@ msgstr "Строки магазина Свалота"
 
 #: /dev/fd/63:98 /dev/fd/63:317
 msgid "Team Tactics Menu Strings"
-msgstr ""
+msgstr "Строки меню тактик команды"
 
 #: /dev/fd/63:99 /dev/fd/63:318
 msgid "Item Became Sticky String"
@@ -535,7 +535,7 @@ msgstr ""
 
 #: /dev/fd/63:130 /dev/fd/63:349
 msgid "Wi-fi Connection Strings"
-msgstr ""
+msgstr "Строки подключения Wi-Fi"
 
 #: /dev/fd/63:131 /dev/fd/63:350
 msgid "Wonder Mail S Strings"
@@ -555,11 +555,11 @@ msgstr ""
 
 #: /dev/fd/63:135 /dev/fd/63:354
 msgid "Mission Title Set Phrases"
-msgstr ""
+msgstr "Набор фраз для названия миссии"
 
 #: /dev/fd/63:136 /dev/fd/63:355
 msgid "Mission Description Set Phrases"
-msgstr ""
+msgstr "Набор фраз для описания миссии"
 
 #: /dev/fd/63:137 /dev/fd/63:356
 msgid "Mission Detail Strings"
@@ -587,7 +587,7 @@ msgstr ""
 
 #: /dev/fd/63:143 /dev/fd/63:362
 msgid "Debug Strings (General)"
-msgstr ""
+msgstr "Отладочные строки (Общее)"
 
 #: /dev/fd/63:144 /dev/fd/63:363
 msgid "Debug Strings (Manipulation)"
@@ -623,7 +623,7 @@ msgstr "Отладочные строки (Подземелье 2)"
 
 #: /dev/fd/63:152 /dev/fd/63:371
 msgid "Debug Strings (PKMN Storage)"
-msgstr ""
+msgstr "Отладочные строки (хранилище)"
 
 #: /dev/fd/63:153 /dev/fd/63:372
 msgid "Debug Strings (Message)"
@@ -667,7 +667,7 @@ msgstr "Записи в журнале приключений"
 
 #: /dev/fd/63:163 /dev/fd/63:382
 msgid "Ground Map Names"
-msgstr ""
+msgstr "Имя локаций"
 
 #: /dev/fd/63:164 /dev/fd/63:383
 msgid "Dungeon Names (Main)"
@@ -675,15 +675,15 @@ msgstr ""
 
 #: /dev/fd/63:165 /dev/fd/63:384
 msgid "Dungeon Names (Selection)"
-msgstr ""
+msgstr "Названия подземелий (Выбор)"
 
 #: /dev/fd/63:166 /dev/fd/63:385
 msgid "Dungeon Names (SetDungeonBanner)"
-msgstr ""
+msgstr "Названия подземелий (SetDungeonBanner)"
 
 #: /dev/fd/63:167 /dev/fd/63:386
 msgid "Dungeon Names (Banner)"
-msgstr ""
+msgstr "Названия подземелий (Баннер)"
 
 #: /dev/fd/63:168 /dev/fd/63:387
 msgid "Staff Roll 1"
@@ -691,19 +691,19 @@ msgstr "Титры 1"
 
 #: /dev/fd/63:169 /dev/fd/63:388
 msgid "Special Mission Strings"
-msgstr ""
+msgstr "Строки особых миссий"
 
 #: /dev/fd/63:170 /dev/fd/63:389
 msgid "Super Hasbrello and Bidoof Family"
-msgstr ""
+msgstr "Супер Хасбрелло и семья Бидуфа"
 
 #: /dev/fd/63:171 /dev/fd/63:390
 msgid "Spinda's Juice Bar Strings"
-msgstr ""
+msgstr "Строки бара напитков Спинды"
 
 #: /dev/fd/63:172 /dev/fd/63:391
 msgid "Recycle Shop Strings"
-msgstr ""
+msgstr "Строки центра переработки"
 
 #: /dev/fd/63:173 /dev/fd/63:392
 msgid "Staff Roll 2"
@@ -723,11 +723,11 @@ msgstr "Новые категории покемонов"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
-msgstr ""
+msgstr "Бросаемые - Пронизающие"
 
 #: /dev/fd/63:178 /dev/fd/63:397
 msgid "Thrown - Rock"
-msgstr ""
+msgstr "Бросаемые - Камни"
 
 #: /dev/fd/63:179 /dev/fd/63:398
 msgid "Berries, Seeds, Vitamins"
@@ -739,7 +739,7 @@ msgstr "Еда, жевательные резинки"
 
 #: /dev/fd/63:181 /dev/fd/63:400
 msgid "Hold"
-msgstr ""
+msgstr "Удерживаемые"
 
 #: /dev/fd/63:182 /dev/fd/63:401
 msgid "TMs, HMs"
@@ -763,7 +763,7 @@ msgstr "Орбы"
 
 #: /dev/fd/63:187 /dev/fd/63:406
 msgid "Link Box"
-msgstr ""
+msgstr "Связь-ящик"
 
 #: /dev/fd/63:188 /dev/fd/63:407
 msgid "Used TM"
@@ -771,15 +771,15 @@ msgstr "Использованный TM"
 
 #: /dev/fd/63:189 /dev/fd/63:408
 msgid "Treasure Box 1"
-msgstr ""
+msgstr "Шкатулка с сокровищами 1"
 
 #: /dev/fd/63:190 /dev/fd/63:409
 msgid "Treasure Box 2"
-msgstr ""
+msgstr "Шкатулка с сокровищами 2"
 
 #: /dev/fd/63:191 /dev/fd/63:410
 msgid "Treasure Box 3"
-msgstr ""
+msgstr "Шкатулка с сокровищами 3"
 
 #: /dev/fd/63:192 /dev/fd/63:411
 msgid "Exclusive Items"
@@ -803,11 +803,11 @@ msgstr "Компонент альфа-канала"
 
 #: /dev/fd/63:197 /dev/fd/63:416
 msgid "Conversion 2 Type when hit by a Fairy move"
-msgstr ""
+msgstr "Тип статуса \"Конверсия 2\" при получении урона от Волшебного приема"
 
 #: /dev/fd/63:198 /dev/fd/63:417
 msgid "ID of the first icon in markfont.dat (23 entries used)"
-msgstr ""
+msgstr "ID первого иконки в markfont.dat (использовано 23 записи)"
 
 #: /dev/fd/63:199 /dev/fd/63:418
 msgid "Display accuracy and power values"
@@ -815,7 +815,7 @@ msgstr ""
 
 #: /dev/fd/63:200 /dev/fd/63:419
 msgid "ID of the first icon in markfont.dat (24 entries used)"
-msgstr ""
+msgstr "ID первого иконки в markfont.dat (использовано 24 записи)"
 
 #: /dev/fd/63:201 /dev/fd/63:420
 msgid "String ID for push dialogue"
@@ -823,7 +823,7 @@ msgstr ""
 
 #: /dev/fd/63:202 /dev/fd/63:421
 msgid "String mentioned above is replaced by a default text when applying"
-msgstr ""
+msgstr "Вышеупомянутая строки при применении заменяется текстом по умолчанию"
 
 #: /dev/fd/63:203 /dev/fd/63:422
 msgid "Only interruptions don't heal HP"
@@ -832,7 +832,7 @@ msgstr "Только прерывания не восстанавливают О
 #: /dev/fd/63:204 /dev/fd/63:423
 #, c-format
 msgid "% of exp. shared"
-msgstr ""
+msgstr "Сколько опыта распределить, %"
 
 #: /dev/fd/63:205 /dev/fd/63:424
 msgid "String ID for the Menu Option"
@@ -1211,7 +1211,7 @@ msgstr "Импортируемый файл ('{import_file}') не найден.
 #: explorerscript/explorerscript/ssb_converting/ssb_compiler.py:293
 #, python-brace-format
 msgid "Invalid import: '{import_file}'. Non absolute/relative imports must not contain relative paths."
-msgstr ""
+msgstr "Недопустимый импорт: '{import_file}'. Неабсолютный/относительный импорт не должен содержать относительных путей."
 
 #: explorerscript/explorerscript/ssb_script/ssb_converting/compiler/compiler_visitor.py:147
 msgid "Operations in SSBScript cannot contain an inline context."
@@ -1378,11 +1378,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:94
 msgid "Sprite VRAM Size"
-msgstr ""
+msgstr "Размер спрайта в VRAM"
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:98
 msgid "Body Size"
-msgstr ""
+msgstr "Размер"
 
 #: skytemple-files/skytemple_files/common/sprite_util.py:105
 msgid "Sprite File Size"
@@ -1398,7 +1398,7 @@ msgstr "Поддерживаются только изображения 4bpp и
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:248
 msgid "Can not convert PIL image to PMD tiled image: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "Невозможно преобразовать PIL-изображение в плиточное изображение: изображение должно быть индексированным (=использовать палитру)"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:258
 #, python-brace-format
@@ -1777,12 +1777,12 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/monster_xml.py:607
 #, python-brace-format
 msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__PALETTE}' missing for a portrait."
-msgstr ""
+msgstr "Недопустимый XML. '{XML_PORTRAITS_PORTRAIT__PALETTE}' отсутствует для портрета."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:618
 #, python-brace-format
 msgid "Invalid XML. The portrait data of one of the portraits is invalid: {err}"
-msgstr ""
+msgstr "Недопустимый XML. Данные портрета одного из портретов недействительны: {err}"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:29
 msgid "Healthy"
@@ -2405,7 +2405,7 @@ msgstr "Эта палитра не имеет анимации."
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:98
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/model.py:104
 msgid "This must be a color indexed image!"
-msgstr ""
+msgstr "Это должно быть цветное индексированное изображение!"
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:260
 #, python-brace-format
@@ -2430,7 +2430,7 @@ msgstr "Не удалось загрузить KAO из {old_index},{old_subinde
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:352
 #, python-brace-format
 msgid "Can not convert PIL image to Kao: Image dimensions must be {img_dim}x{img_dim}px."
-msgstr ""
+msgstr "Не удается преобразовать PIL-изображение в Kao: Размеры изображения должны быть {img_dim}x{img_dim} пикселей."
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:459
 msgid "This portrait does not compress well, the result size is greater than {limit} bytes ({len(new_img_compressed)} bytes total).\n"
@@ -2460,7 +2460,7 @@ msgstr "Следующие эмоции имеет прозрачные пикс
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:173
 msgid "File should have original and flipped versions of emotions: {str(flipped_tiles)}"
-msgstr ""
+msgstr "Файл должен содержать оригинальную и перевернутую версии эмоций: {str(flipped_tiles)}"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:40
 msgid "Palette Only"
@@ -2480,11 +2480,11 @@ msgstr "8 бит на пиксель (256 цвета)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:209
 msgid "Can not convert PIL image to WTE: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "Невозможно преобразовать PIL-изображение в WTE: изображение должно быть индексированным (=использовать палитру)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:215
 msgid "This image is too big to fit into a WTE file."
-msgstr ""
+msgstr "Изображение слишком велико, чтобы поместиться в файл WTE."
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:43
 msgid "Semi-Opaque"
@@ -2506,7 +2506,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:197
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:220
 msgid "Can not convert PIL image to ZMAPPAT: Must be indexed images (=using a palette)"
-msgstr ""
+msgstr "Невозможно преобразовать PIL-изображение в ZMAPPAT: изображение должно быть индексированным (=использовать палитру)"
 
 #: skytemple-files/skytemple_files/hardcoded/cart_removed.py:59
 #, python-brace-format
@@ -2862,18 +2862,18 @@ msgstr "Подменю бара"
 #: skytemple-files/skytemple_files/hardcoded/menus.py:349
 #: skytemple-files/skytemple_files/hardcoded/menus.py:357
 msgid "Recycle Menu Confirm"
-msgstr "Меню переработки: подтверждение"
+msgstr "Меню центра переработки: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:365
 #: skytemple-files/skytemple_files/hardcoded/menus.py:373
 msgid "Recycle Sub Menu"
-msgstr "Подменю переработки"
+msgstr "Подменю центра переработки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:381
 #: skytemple-files/skytemple_files/hardcoded/menus.py:389
 #: skytemple-files/skytemple_files/hardcoded/menus.py:397
 msgid "Recycle Main Menu"
-msgstr "Главное меню переработки"
+msgstr "Главное меню центра переработки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:405
 msgid "Synthesis Menu Confirm"
@@ -2902,14 +2902,14 @@ msgstr "Главное меню магазина"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:485
 msgid "Storage Menu Confirm"
-msgstr ""
+msgstr "Меню хранилища: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:493
 #: skytemple-files/skytemple_files/hardcoded/menus.py:501
 #: skytemple-files/skytemple_files/hardcoded/menus.py:509
 #: skytemple-files/skytemple_files/hardcoded/menus.py:517
 msgid "Storage Main Menu"
-msgstr ""
+msgstr "Главное меню хранилища"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:525
 msgid "Hatcher Menu Confirm"

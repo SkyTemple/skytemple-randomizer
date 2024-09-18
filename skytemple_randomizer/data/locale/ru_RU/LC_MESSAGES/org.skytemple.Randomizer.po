@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-18 16:03\n"
+"PO-Revision-Date: 2024-09-18 17:07\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -2355,12 +2355,12 @@ msgstr "Имеет {len(self.floors_in_mappa_not_referenced)} этажей в с
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:500
 #, python-brace-format
 msgid "Can not import map background: Width of both images must match the current map width: {expected_width}px"
-msgstr ""
+msgstr "Невозможно импортировать фон локации: Ширина обоих изображений должна соответствовать текущей ширине фона: {expected_width} пикселей"
 
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:511
 #, python-brace-format
 msgid "Can not import map background: Height of both images must match the current map height: {expected_height}px"
-msgstr ""
+msgstr "Невозможно импортировать фон локации: Высота обоих изображений должна соответствовать текущей высоте фона: {expected_height} пикселей"
 
 #: skytemple-files/skytemple_files/graphics/bpa/_model.py:207
 #: skytemple-rust/src/st_bpa.rs:236
@@ -2379,12 +2379,12 @@ msgstr "Невозможно преобразовать PIL-изображени
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:115
 #, python-brace-format
 msgid "Can not import map background: Width of image must match the expected width: {expected_width}px"
-msgstr ""
+msgstr "Невозможно импортировать фон локации: Ширина изображения должна соответствовать ожидаемой ширине: {expected_width} пикселей"
 
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:124
 #, python-brace-format
 msgid "Can not import map background: Height of image must match the expected height: {expected_height}px"
-msgstr ""
+msgstr "Невозможно импортировать фон локации: Высота изображения должна соответствовать ожидаемой высоте: {expected_height} пикселей"
 
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:124
 #, python-brace-format
@@ -2892,13 +2892,13 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:453
 msgid "Shop Menu Confirm"
-msgstr ""
+msgstr "Меню магазина: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:461
 #: skytemple-files/skytemple_files/hardcoded/menus.py:469
 #: skytemple-files/skytemple_files/hardcoded/menus.py:477
 msgid "Shop Main Menu"
-msgstr ""
+msgstr "Главное меню магазина"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:485
 msgid "Storage Menu Confirm"
@@ -3284,7 +3284,7 @@ msgstr "Рекомендуется для CTC. Без этого патча на
 
 #: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
 msgid "Changes implementation of idle animation to an editable table."
-msgstr ""
+msgstr "Меняют реализацию анимации простоя на редактируемую таблицу."
 
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:44
 msgid "[string:0] pushed [string:1]!"
@@ -3526,11 +3526,11 @@ msgstr ""
 
 #: skytemple-rust/src/st_dbg.rs:123
 msgid "Can not import map background: Width of image must match the expected width: {}px"
-msgstr ""
+msgstr "Невозможно импортировать фон локации: Ширина изображения должна соответствовать ожидаемой ширине: {} пикселей"
 
 #: skytemple-rust/src/st_dbg.rs:129
 msgid "Can not import map background: Height of image must match the expected height: {}px"
-msgstr ""
+msgstr "Невозможно импортировать фон локации: Высота изображения должна соответствовать ожидаемой высоте: {} пикселей"
 
 #: skytemple-rust/src/st_dpc.rs:149
 msgid "The image to import can only use the first 12 palettes. Tried to use palette {}"

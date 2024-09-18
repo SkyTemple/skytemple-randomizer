@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-18 12:54\n"
+"PO-Revision-Date: 2024-09-18 14:44\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -79,7 +79,7 @@ msgstr "Строки, связанные с подведением итогов 
 
 #: /dev/fd/63:16 /dev/fd/63:235
 msgid "Dungeon Item Action Menu Strings"
-msgstr ""
+msgstr "Строки меню действий с предметами в подземельях"
 
 #: /dev/fd/63:17 /dev/fd/63:236
 msgid "Gummi Feedback"
@@ -87,7 +87,7 @@ msgstr "Отзывы о жевательной резинке"
 
 #: /dev/fd/63:18 /dev/fd/63:237
 msgid "Dungeon Item Pickup Menu Strings"
-msgstr ""
+msgstr "Строки меню подбора предметов в подземельях"
 
 #: /dev/fd/63:19 /dev/fd/63:238
 msgid "Storage Space Full Strings"
@@ -1403,27 +1403,28 @@ msgstr ""
 #: skytemple-files/skytemple_files/common/tiled_image.py:258
 #, python-brace-format
 msgid "Can not convert PIL image to PMD tiled image: Palette must contain max {max_len_pal} RGB colors and be divisible by {single_palette_size}."
-msgstr ""
+msgstr "Невозможно преобразовать PIL-изображение в плиточное изображение: палитра должна содержать не более {max_len_pal} RGB цветов и быть кратной {single_palette_size}."
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:268
 #, python-brace-format
 msgid "Can not convert PIL image to PMD tiled image: Image dimensions must be {img_width}x{img_height}px."
-msgstr ""
+msgstr "Не удается преобразовать PIL-изображение в плиточное изображение: Размеры изображения должны быть {img_width}x{img_height} пикселей."
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:334
 #: skytemple-files/skytemple_files/common/tiled_image.py:348
 msgid "Can not convert PIL image to PMD tiled image: The color {pix} (from palette {math.floor(pix / single_palette_size)}) used by pixel {x+(idx % 2)}x{y} in tile {tile_id} ({tile_x}x{tile_y} is out of range. Expected are colors from palette {tile_palette_indices[tile_id]} ({tile_palette_indices[tile_id] * single_palette_size} - {(tile_palette_indices[tile_id]+1) * single_palette_size - 1})."
-msgstr ""
+msgstr "Не удается преобразовать PIL-изображение в плиточное изображение: Цвет {pix} (из палитры {math.floor(pix / single_palette_size)}), используемый пикселем {x+(idx % 2)}x{y} в плитке {tile_id} ({tile_x}x{tile_y}, находится вне диапазона. Ожидаются цвета из палитры {tile_palette_indices[tile_id]} ({tile_palette_indices[tile_id] * single_palette_size} - {(tile_palette_indices[tile_id]+1) * single_palette_size - 1})."
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:394
 #, python-brace-format
 msgid "An image selected to import is too complex. It has too many unique tiles ({len_final_tiles}, max allowed are 1024).\n"
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
-msgstr ""
+msgstr "Изображение, выбранное для импорта, слишком сложное. В нем слишком много уникальных плиток ({len_final_tiles}, максимально допустимое количество — 1024).\n"
+"Постарайтесь, чтобы уникальных плиток было меньше. Уникальные плитки — это фрагменты изображений размером 8x8, которые больше нигде не встречаются на изображении (в том числе в перевернутом виде или в другой субпалитре)."
 
 #: skytemple-files/skytemple_files/common/util.py:494
 msgid "The file you tried to open does not seem to be a valid NDS ROM file."
-msgstr ""
+msgstr "Файл, который вы пытались открыть, не является допустимым NDS ROM-файлом."
 
 #: skytemple-files/skytemple_files/common/util.py:503
 msgid "This ROM is not supported by SkyTemple."
@@ -2759,20 +2760,20 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:54
 #, python-brace-format
 msgid "'{guest1_index}' is not a valid guest pokémon index"
-msgstr ""
+msgstr "'{guest1_index}' не является действительным индексом покемона-компаньона"
 
 #: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:58
 #, python-brace-format
 msgid "'{guest2_index}' is not a valid guest pokémon index"
-msgstr ""
+msgstr "'{guest2_index}' не является действительным индексом покемона-компаньона"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:69
 msgid "Game Main Menu"
-msgstr ""
+msgstr "Главное меню игры"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:77
 msgid "Game Sub Menu"
-msgstr ""
+msgstr "Подменю игры"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:85
 msgid "Continue Choice"
@@ -2781,7 +2782,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:93
 #: skytemple-files/skytemple_files/hardcoded/menus.py:101
 msgid "Main Debug Menu"
-msgstr ""
+msgstr "Главное меню отладки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:109
 msgid "Quiz Debug Menu"
@@ -2793,28 +2794,28 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:125
 msgid "Bank Main Menu"
-msgstr ""
+msgstr "Главное меню банка"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:133
 msgid "Evolution Menu Confirm"
-msgstr ""
+msgstr "Меню эволюции: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:141
 msgid "Evolution Sub Menu"
-msgstr ""
+msgstr "Подменю эволюции"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:149
 msgid "Evolution Main Menu"
-msgstr ""
+msgstr "Главное меню эволюции"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:157
 msgid "Assembly Menu Confirm"
-msgstr ""
+msgstr "Меню сборного пункта: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:165
 #: skytemple-files/skytemple_files/hardcoded/menus.py:173
 msgid "Assembly Main Menu"
-msgstr ""
+msgstr "Главное меню сборного пункта"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:181
 #: skytemple-files/skytemple_files/hardcoded/menus.py:189
@@ -2824,11 +2825,11 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:221
 #: skytemple-files/skytemple_files/hardcoded/menus.py:229
 msgid "Assembly Sub Menu"
-msgstr ""
+msgstr "Подменю сборного пункта"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:237
 msgid "Moves Menu Confirm"
-msgstr ""
+msgstr "Меню приемов: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:245
 #: skytemple-files/skytemple_files/hardcoded/menus.py:253
@@ -2838,41 +2839,41 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:293
 #: skytemple-files/skytemple_files/hardcoded/menus.py:301
 msgid "Moves Sub Menu"
-msgstr ""
+msgstr "Подменю приемов"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:261
 msgid "Moves Main Menu"
-msgstr ""
+msgstr "Главное меню приемов"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:309
 #: skytemple-files/skytemple_files/hardcoded/menus.py:317
 msgid "Bar Menu Confirm"
-msgstr ""
+msgstr "Меню бара: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:325
 msgid "Bar Main Menu"
-msgstr ""
+msgstr "Главное меню бара"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:333
 #: skytemple-files/skytemple_files/hardcoded/menus.py:341
 msgid "Bar Sub Menu"
-msgstr ""
+msgstr "Подменю бара"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:349
 #: skytemple-files/skytemple_files/hardcoded/menus.py:357
 msgid "Recycle Menu Confirm"
-msgstr ""
+msgstr "Меню переработки: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:365
 #: skytemple-files/skytemple_files/hardcoded/menus.py:373
 msgid "Recycle Sub Menu"
-msgstr ""
+msgstr "Подменю переработки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:381
 #: skytemple-files/skytemple_files/hardcoded/menus.py:389
 #: skytemple-files/skytemple_files/hardcoded/menus.py:397
 msgid "Recycle Main Menu"
-msgstr ""
+msgstr "Главное меню переработки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:405
 msgid "Synthesis Menu Confirm"
@@ -2920,28 +2921,28 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:541
 msgid "Appraiser Menu Confirm"
-msgstr ""
+msgstr "Меню пункта оценки: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:549
 msgid "Appraiser Main Menu"
-msgstr ""
+msgstr "Главное меню пункта оценки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:557
 msgid "Appraiser Sub Menu"
-msgstr ""
+msgstr "Подменю пункта оценки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:565
 msgid "Discard Items Menu Confirm"
-msgstr ""
+msgstr "Меню отказа от предметов: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:573
 #: skytemple-files/skytemple_files/hardcoded/menus.py:581
 msgid "Discard Items Sub Menu"
-msgstr ""
+msgstr "Подменю отказа от предметов"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:589
 msgid "Discard Items Main Menu"
-msgstr ""
+msgstr "Главное меню отказа от предметов"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:597
 msgid "Dungeon Main Menu"
@@ -3026,7 +3027,7 @@ msgstr "Этот патч не может быть применен повтор
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:104
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:112
 msgid "The source data specification was not found in the configuration."
-msgstr ""
+msgstr "Спецификация исходных данных не найдена в конфигурации."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:127
 msgid "\n\n"
@@ -3038,11 +3039,11 @@ msgstr "\n\n"
 
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
-msgstr ""
+msgstr "Добавляет типы в таблицу эффективности типов. Это заменит старую таблицу эффективности на таблицу 6+ поколения, а Волшебный тип будет добавлен в конец."
 
 #: skytemple-files/skytemple_files/patch/handler/allow_unrecruitable_mons.py:48
 msgid "Allows recruiting the other Deoxys forms and the regis inside dungeons."
-msgstr ""
+msgstr "Позволяет рекрутировать другие формы Деоксиса и Реджи- покемонов в подземельях."
 
 #: skytemple-files/skytemple_files/patch/handler/anti_softlock.py:49
 msgid "Allows the player to press A+B+X+Y during cutscenes to force the game to continue past a softlock (this can happen during cutscenes when using custom sprites or the randomizer). Does not work with crashes caused due to internal errors (such as the game running out of memory)."
@@ -3061,7 +3062,8 @@ msgstr " И для оценки всех ваших предметов,\n"
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:62
 msgid " And so...[K]it is revealed...[C] Within the boxes...[K]\n"
 "were..."
-msgstr ""
+msgstr " И вот...[K]оно было раскрыто[С]... Внутри сундуков...[K]\n"
+"были..."
 
 #. TRANSLATORS: Appraise All Reveal Before
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:65
@@ -3142,44 +3144,53 @@ msgstr "Позволяет поместить особых сущностей ф
 
 #: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
 msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
-msgstr ""
+msgstr "Изменяет способ, которым игра определяет, когда добавлять покемона-компаньона в команду, чтобы их можно было легче редактировать"
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
 "This is disabled during Special Episodes and dungeons with level 1 or no exp. restrictions. \n"
 "Needs the ExtractDungeonData patch to be applied to free some space used by this."
-msgstr ""
+msgstr "Вводит в игру разделение очков опыта для всех участников (в стиле GtI). \n"
+"Отключается в специальных эпизодах, подземельях, сбрасывающие уровень до 1 и подземельях, где нельзя набирать опыт. \n"
+"Перед применением, требуется применить патч ExtractDungeonData, чтобы освободить место, используемое этим патчем."
 
 #: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
 msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
 "Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr ""
+msgstr "Расширяет число допустимых слотов для покемонов до 2048 и делает все слоты независимыми.\n"
+"Для работы необходимы патчи ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData.\n"
+"Настоятельно рекомендуется исправить все ошибки подземелий перед применением этого патча,\n"
+"и сохранить резервную копию вашего ROM перед применением этого патча."
 
 #: skytemple-files/skytemple_files/patch/handler/expand_portrait.py:48
 msgid "Expands portraits structure by 8 bytes, which is enough to cover all cases."
-msgstr ""
+msgstr "Расширяет структуру портретов на 8 байт, что достаточно для всех случаев."
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
 "This patch is useless on its own, unless you have a too big mappa file."
-msgstr ""
+msgstr "Используйте файловые потоки для доступа к данным из mappa_t/mappa_y/mappa_s вместо того, чтобы загружать их целиком.\n"
+"Сам по себе этот патч бесполезен, если только у вас не слишком большой mappa-файл."
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_waza.py:49
 msgid "Use filestreams to access waza_p/waza_p2 data instead of loading them entirely.\n"
 "This patch is useless on its own.\n"
 "Depends on the ActorAndLevelLoader patch, as it needs some space provided by this one."
-msgstr ""
+msgstr "Использует файловые потоки для доступа к данным из waza_p/waza_p2 вместо того, чтобы загружать их целиком.\n"
+"Сам по себе этот патч бесполезен.\n"
+"Зависит от патча ActorAndLevelLoader, так как ему нужно место, предоставляемое этим патчем."
 
 #: skytemple-files/skytemple_files/patch/handler/extra_space.py:50
 msgid "This patch adds a new overlay 36 to the game, which is loaded at address 0x023A7080 and provides extra space for patches to place code and data in."
-msgstr ""
+msgstr "Этот патч добавляет в игру overlay 36, который загружается по адресу 0x023A7080 и предоставляет дополнительное пространство для патчей для размещения кода и данных."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_anims.py:55
 msgid "Extracts animation data and put it in files. \n"
 "Needs ActorAndLevelLoader patch to free some space. "
-msgstr ""
+msgstr "Извлекает данные анимации и помещает их в файлы. \n"
+"Требуется патч ActorAndLevelLoader, чтобы освободить немного места. "
 
 #: skytemple-files/skytemple_files/patch/handler/extract_bar_list.py:66
 msgid "Extracts Spinda bar's item list."
@@ -3389,12 +3400,12 @@ msgstr "В файле patch.py пакета патча отсутствует 'P
 
 #: skytemple-files/skytemple_files/patch/patches.py:425
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
-msgstr ""
+msgstr "Пакет патча не содержит записи об имени патча обработчика в файле config.xml."
 
 #: skytemple-files/skytemple_files/patch/patches.py:432
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
-msgstr ""
+msgstr "В конфигурации не найдено патча для обработчика '{handler.name}'."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "Unknown or extra XML element '{}' in scene data."
@@ -3414,7 +3425,7 @@ msgstr "Неизвестное значение направления."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:57
 msgid "Can not save a scene event without a defined triggered script."
-msgstr ""
+msgstr "Невозможно сохранить событие сцены без определенного запускаемого сценария."
 
 #: skytemple-files/skytemple_files/script/ssb/constants.py:96
 #, python-brace-format
@@ -3495,7 +3506,7 @@ msgstr "Предоставленное вами изображение не яв
 
 #: skytemple-rust/src/romfs.rs:101
 msgid "ROM Header checksum does not match contents."
-msgstr ""
+msgstr "Контрольная сумма заголовка ROM не соответствует содержимому."
 
 #: skytemple-rust/src/romfs.rs:110
 msgid "Error reading the filesystem from ROM: {}"
@@ -3536,7 +3547,7 @@ msgstr "Индекс палитры вне диапазона."
 
 #: skytemple-rust/src/st_dpla.rs:267
 msgid "Frame durations out of range while trying to build color."
-msgstr ""
+msgstr "Длительность кадров выходит за пределы диапазона при попытке построить цвет."
 
 #: skytemple-rust/src/st_kao.rs:137
 msgid "This portrait does not compress well, the result size is greater than {} bytes ({} bytes total).\n"

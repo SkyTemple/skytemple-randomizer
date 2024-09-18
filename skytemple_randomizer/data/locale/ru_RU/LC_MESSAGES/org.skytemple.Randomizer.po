@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-18 14:44\n"
+"PO-Revision-Date: 2024-09-18 16:03\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1225,7 +1225,7 @@ msgstr "строка {self.line}:{self.column}: {self.msg}"
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:89
 #, python-brace-format
 msgid "Invalid tileset. Tileset has chunk dimensions of {dim}px, but only {CHUNK_DIM}px are supported."
-msgstr ""
+msgstr "Недопустимый набор плиток. Набор плиток имеет размеры фрагмента {dim} пикселей, но поддерживаются только {CHUNK_DIM} пикселей."
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:113
 msgid "Invalid animation: Animation is only supported for palettes 10 and 11."
@@ -1434,7 +1434,7 @@ msgstr "Этот ROM не поддерживается SkyTemple."
 #: skytemple-files/skytemple_files/common/util.py:592
 #, python-brace-format
 msgid "Binary {binary.name} not found."
-msgstr ""
+msgstr "Двоичный файл {binary.name} не найден."
 
 #: skytemple-files/skytemple_files/common/util.py:613
 #: skytemple-files/skytemple_files/common/util.py:644
@@ -1937,7 +1937,7 @@ msgstr "Спит, видит кошмар или дремлет"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:146
 msgid "Is a ghost-type Pokémon and does not have the exposed status"
-msgstr ""
+msgstr "Является покемоном призрачного типа и не имеет статуса \"уязвимый\""
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:149
 #, python-format
@@ -1971,7 +1971,7 @@ msgstr "Место появления лидера"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:100
 msgid "Secondary, Room"
-msgstr ""
+msgstr "Вторичный, комната"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:109
 msgid "Chasm, Hallway"
@@ -1984,11 +1984,11 @@ msgstr "Тип плитки принудительно установлен на
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:118
 msgid "Chasm, Hallway; All Chasm"
-msgstr ""
+msgstr "Пропасть, коридор; все поле - пропасть"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:124
 msgid "Tile type is forced to be \"Void / Chasm\" (Still rendered as tileset's secondary terrain!). All tiles outside of defined room are made the tileset's defined secondary terrain."
-msgstr ""
+msgstr "Тип плитки принудительно установлен как \"Пустота / Бездна\" (все равно отображается как вторичная местность набора плиток!). Все плитки за пределами определенной комнаты становятся вторичной местностью, определенной набором плиток."
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:130
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:244
@@ -2067,7 +2067,7 @@ msgstr "Отсутствует {k} в данных этажа."
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:418
 #, python-brace-format
 msgid "Unexpected sub-node for {XML_FLOOR_LAYOUT}: {child.tag}"
-msgstr ""
+msgstr "Неожиданный подузел для {XML_FLOOR_LAYOUT}: {child.tag}"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:421
 #, python-brace-format
@@ -2091,15 +2091,15 @@ msgstr "{XML_FLOOR_LAYOUT__MISCSET} отсутствует для {XML_FLOOR_LAY
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:500
 msgid "Invalid structure type {ele.get(XML_FLOOR_LAYOUT__STRUCTURE)}"
-msgstr ""
+msgstr "Недопустимый тип структуры {ele.get(XML_FLOOR_LAYOUT__STRUCTURE)}"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:504
 msgid "Invalid weather type {ele.get(XML_FLOOR_LAYOUT__WEATHER)}"
-msgstr ""
+msgstr "Недопустимый тип погоды {ele.get(XML_FLOOR_LAYOUT__WEATHER)}"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:508
 msgid "Invalid darkness level type {ele.get(XML_FLOOR_LAYOUT__DARKNESS_LEVEL)}"
-msgstr ""
+msgstr "Неверный тип уровня темноты {ele.get(XML_FLOOR_LAYOUT__DARKNESS_LEVEL)}"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:610
 #, python-brace-format
@@ -2369,12 +2369,12 @@ msgstr "Размеры всех изображений должны быть о�
 
 #: skytemple-files/skytemple_files/graphics/chr/model.py:77
 msgid "Cannot convert PIL image to CHR: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "Невозможно преобразовать PIL-изображение в CHR: изображение должно быть индексированным (=использовать палитру)"
 
 #: skytemple-files/skytemple_files/graphics/chr/model.py:80
 #, python-brace-format
 msgid "Cannot convert PIL image to CHR: width and height must be a multiple of {CHR_TILE_WIDTH}"
-msgstr ""
+msgstr "Невозможно преобразовать PIL-изображение в CHR: ширина и высота должны быть кратны {CHR_TILE_WIDTH}"
 
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:115
 #, python-brace-format
@@ -2389,7 +2389,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:124
 #, python-brace-format
 msgid "The image to import can only use the first 12 palettes. Tried to use palette {tm.pal_idx}"
-msgstr ""
+msgstr "Импортируемое изображение может использовать только 12 палитр. Данное изображение использует палитру {tm.pal_idx}"
 
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:161
 #: skytemple-rust/src/st_dpc.rs:221

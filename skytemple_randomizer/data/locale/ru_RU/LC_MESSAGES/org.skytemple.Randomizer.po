@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-18 20:40\n"
+"PO-Revision-Date: 2024-09-18 21:41\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -51,7 +51,7 @@ msgstr "Строки меню по умолчанию 1"
 
 #: /dev/fd/63:9 /dev/fd/63:228
 msgid "Default Menu Strings 2"
-msgstr ""
+msgstr "Строки меню по умолчанию 2"
 
 #: /dev/fd/63:10 /dev/fd/63:229
 msgid "Debug Strings (Main Menu)"
@@ -671,7 +671,7 @@ msgstr "Имя локаций"
 
 #: /dev/fd/63:164 /dev/fd/63:383
 msgid "Dungeon Names (Main)"
-msgstr ""
+msgstr "Названия подземелий (основные)"
 
 #: /dev/fd/63:165 /dev/fd/63:384
 msgid "Dungeon Names (Selection)"
@@ -819,7 +819,7 @@ msgstr "ID первого иконки в markfont.dat (использовано
 
 #: /dev/fd/63:201 /dev/fd/63:420
 msgid "String ID for push dialogue"
-msgstr ""
+msgstr "ID строки push-диалога"
 
 #: /dev/fd/63:202 /dev/fd/63:421
 msgid "String mentioned above is replaced by a default text when applying"
@@ -1125,7 +1125,7 @@ msgstr "Неверное содержимое switch-заголовка"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:87
 msgid "Unknown switch operation."
-msgstr ""
+msgstr "Неизвестная switch-операция."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/dungeon_mode.py:44
 msgid "No dungeon id set for dungeon_mode switch condition."
@@ -1273,7 +1273,7 @@ msgstr ""
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:237
 #, python-brace-format
 msgid "Invalid variation index {var_idx}."
-msgstr ""
+msgstr "Неверный индекс вариации {var_idx}."
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:280
 msgid "Error in the XML: One of the animation frames doesn't have 16 colors. Each frame must have a value for each color."
@@ -2786,11 +2786,11 @@ msgstr "Главное меню отладки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:109
 msgid "Quiz Debug Menu"
-msgstr ""
+msgstr "Меню отладки теста"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:117
 msgid "Footprint Debug Menu"
-msgstr ""
+msgstr "Меню отладки следов"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:125
 msgid "Bank Main Menu"
@@ -2946,7 +2946,7 @@ msgstr "Главное меню отказа от предметов"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:597
 msgid "Dungeon Main Menu"
-msgstr ""
+msgstr "Главное меню подземелья"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:605
 #: skytemple-files/skytemple_files/hardcoded/menus.py:613
@@ -2955,15 +2955,15 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:637
 #: skytemple-files/skytemple_files/hardcoded/menus.py:645
 msgid "Dungeon Sub Menu"
-msgstr ""
+msgstr "Подменю подземелья"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:653
 msgid "Start Menu Confirm"
-msgstr ""
+msgstr "Меню старта: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:661
 msgid "Dungeon Debug Menu"
-msgstr ""
+msgstr "Меню отладки подземелья"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:734
 #, python-brace-format
@@ -2972,11 +2972,11 @@ msgstr "Это меню должно иметь {num_entries} записей!"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:88
 msgid "Standing Animation (loop)"
-msgstr ""
+msgstr "Анимация стоя (цикл)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:89
 msgid "Standing Animation (1st frame)"
-msgstr ""
+msgstr "Анимация стоя (1-й кадр)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:90
 msgid "Special"
@@ -3514,11 +3514,11 @@ msgstr "Ошибка чтения файловой системы из ROM: {}"
 
 #: skytemple-rust/src/st_bma.rs:467
 msgid "Can not import map background: Width of both images must match the current map width: {}px"
-msgstr "Невозможно импортировать фон карты: Ширина обоих изображений должна соответствовать текущей ширине карты: {}px"
+msgstr "Невозможно импортировать фон локации: Ширина обоих изображений должна соответствовать текущей ширине карты: {}px"
 
 #: skytemple-rust/src/st_bma.rs:479
 msgid "Can not import map background: Height of both images must match the current map width: {}px"
-msgstr "Невозможно импортировать фон карты: Высота обоих изображений должна соответствовать текущей ширине карты: {}px"
+msgstr "Невозможно импортировать фон локации: Высота обоих изображений должна соответствовать текущей ширине карты: {}px"
 
 #: skytemple-rust/src/st_bpc.rs:541
 msgid "new tilemapping for this chunk must contain {} tiles."

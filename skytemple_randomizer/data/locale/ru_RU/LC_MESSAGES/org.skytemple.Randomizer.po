@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-19 15:43\n"
+"PO-Revision-Date: 2024-09-19 17:01\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -876,7 +876,7 @@ msgstr "Увеличивать Атк/Сп. Атк/Защ/Сп. Защ эвол�
 
 #: /dev/fd/63:215 /dev/fd/63:434
 msgid "Let enemies evolve even if the defeated pokémon is revived"
-msgstr "Позволять врагав эволюционировать, если побеждённый ими покемон воскрешён"
+msgstr "Позволять врагам эволюционировать, если побеждённый ими покемон воскрешён"
 
 #: /dev/fd/63:217
 msgid "French"
@@ -1059,7 +1059,7 @@ msgstr "Неверная операция для if-условия: {op.op_code.
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:91
 #, python-brace-format
 msgid "Unknown if operation in line {self.ctx.start.line})."
-msgstr "Неивестная операция if в строке {self.ctx.start.line}."
+msgstr "Неизвестная операция if в строке {self.ctx.start.line})."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_block.py:67
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_block.py:82

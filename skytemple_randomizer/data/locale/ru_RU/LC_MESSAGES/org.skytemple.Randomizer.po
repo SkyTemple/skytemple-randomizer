@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-19 12:21\n"
+"PO-Revision-Date: 2024-09-19 14:09\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1009,7 +1009,7 @@ msgstr "Неверный целевой тип '{for_type}' блока with(){{}
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:108
 msgid "Operations inside with(){} blocks cannot contain an inline `actor`, `object` or `performer` context."
-msgstr ""
+msgstr "Операции внутри блоков with(){} не могут содержать инлайновый контекст `actor`, `object` или `performer`."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:117
 msgid "Each statement inside a with(){} block needs to contain exactly one binary operation. The handler for it generated multiple operations."
@@ -1129,7 +1129,7 @@ msgstr "Неизвестная switch-операция."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/dungeon_mode.py:44
 msgid "No dungeon id set for dungeon_mode switch condition."
-msgstr ""
+msgstr "Не установлен dungeon_id для switch(dungeon_mode)."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/random.py:44
 msgid "No value set for random switch condition."
@@ -1137,12 +1137,12 @@ msgstr "Для случайного switch-условия не установл�
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/scn.py:45
 msgid "No variable set for scn switch condition."
-msgstr ""
+msgstr "Не установлена переменная для switch(scn() )."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_headers/scn.py:52
 #, python-brace-format
 msgid "Index for scn() if condition must be 0 or 1 (line {self.ctx.start.line})."
-msgstr ""
+msgstr "Индекс scn() при if-условии должен быть 1 или 0 (строка {self.ctx.start.line})."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/operations/macro_call.py:47
 #, python-brace-format
@@ -1151,7 +1151,7 @@ msgstr "Макро {name} не найден."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/operations/operation.py:66
 msgid "No target ID set for inline actor/object/performer context."
-msgstr ""
+msgstr "Не задан ID цели для инлайнового контекста actor/object/performer."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_resolution_order.py:99
 #: explorerscript/explorerscript/ssb_converting/compiler/compiler_visitor/macro_resolution_order.py:104
@@ -1215,7 +1215,7 @@ msgstr "Недопустимый импорт: '{import_file}'. Неабсолю
 
 #: explorerscript/explorerscript/ssb_script/ssb_converting/compiler/compiler_visitor.py:147
 msgid "Operations in SSBScript cannot contain an inline context."
-msgstr ""
+msgstr "Операции в SSBScript не могут содержать инлайновый контекст."
 
 #: explorerscript/explorerscript/syntax_error_listener.py:41
 #, python-brace-format
@@ -1281,7 +1281,7 @@ msgstr "Ошибка в XML: Один из кадров анимации сод�
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:288
 msgid "Error in the XML: Durations for a palette or it's colors are not correctly defined."
-msgstr ""
+msgstr "Ошибка в XML: Длительность палитры или ее цветов определена неверно."
 
 #: skytemple-dtef/skytemple_dtef/rules.py:119
 #, python-brace-format
@@ -2739,23 +2739,23 @@ msgstr "Неизвестно 5"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:155
 msgid "Bazaar Host"
-msgstr ""
+msgstr "Базар: владелец"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:160
 msgid "Bazaar Healer"
-msgstr ""
+msgstr "Базар: лекарь"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:165
 msgid "Bazaar Surprise"
-msgstr ""
+msgstr "Базар: мешки с сюрпризом"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:170
 msgid "Bazaar Clean Sticky Items"
-msgstr ""
+msgstr "Базар: чистильщик предметов"
 
 #: skytemple-files/skytemple_files/hardcoded/fixed_floor.py:175
 msgid "Bazaar Escape"
-msgstr ""
+msgstr "Базар: гид побега"
 
 #: skytemple-files/skytemple_files/hardcoded/guest_pokemon.py:54
 #, python-brace-format
@@ -2777,7 +2777,7 @@ msgstr "Подменю игры"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:85
 msgid "Continue Choice"
-msgstr ""
+msgstr "Выбор эпизода для продолжения"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:93
 #: skytemple-files/skytemple_files/hardcoded/menus.py:101

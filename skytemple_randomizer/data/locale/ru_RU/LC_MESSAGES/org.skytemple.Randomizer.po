@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-19 11:13\n"
+"PO-Revision-Date: 2024-09-19 12:21\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -119,7 +119,7 @@ msgstr "Строки банка Даскалла"
 
 #: /dev/fd/63:26 /dev/fd/63:245
 msgid "Chansey Day Care Strings"
-msgstr ""
+msgstr "Строки дневного ухода Ченси"
 
 #: /dev/fd/63:27 /dev/fd/63:246
 msgid "Croagunk Swap Shop Strings"
@@ -155,7 +155,7 @@ msgstr "Строки эксклюзивных предметов"
 
 #: /dev/fd/63:35 /dev/fd/63:254
 msgid "Special Episode Item Handling Strings"
-msgstr ""
+msgstr "Строки переноса предметов в хранилище после особого эпизода"
 
 #: /dev/fd/63:36 /dev/fd/63:255
 msgid "Demo Dungeon Strings"
@@ -1013,7 +1013,7 @@ msgstr ""
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:117
 msgid "Each statement inside a with(){} block needs to contain exactly one binary operation. The handler for it generated multiple operations."
-msgstr ""
+msgstr "Каждый оператор в блоке with(){} должен содержать ровно одну бинарную операцию. Его обработчик сгенерировал несколько операций."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:138
 msgid "A with(){} block can not contain labels."
@@ -1268,7 +1268,7 @@ msgstr "В импортируемом наборе отсутствует пра
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:233
 #, python-brace-format
 msgid "Error when importing mapping. Unknown type: '{mapping_type}'."
-msgstr ""
+msgstr "Ошибка при импорте плиточного строения. Неизвестный тип: '{mapping_type}'."
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:237
 #, python-brace-format
@@ -1390,7 +1390,7 @@ msgstr "Размер файла спрайта"
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:52
 msgid "Tile Mapping can not be processed. The tile number referenced ({idx}) is bigger than the maximum ({0x3FF}). If you are importing an image, please try to have less unique tiles."
-msgstr ""
+msgstr "Не удалось обработать плиточное строение. Номер плитки, на которую ссылаются ({idx}), больше максимального ({0x3FF}). Если вы импортируете изображение, старайтесь, чтобы количество уникальных плиток было меньше."
 
 #: skytemple-files/skytemple_files/common/tiled_image.py:123
 msgid "Only 4bpp and 8bpp images are supported."
@@ -1921,7 +1921,7 @@ msgstr "Нет условия"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
 msgid "Based on AI Condition 1 Chance"
-msgstr ""
+msgstr "На основе шанса ИИ условия 1"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
 msgid "Current HP <= 25%"
@@ -2394,7 +2394,7 @@ msgstr "Импортируемое изображение может испол�
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:161
 #: skytemple-rust/src/st_dpc.rs:221
 msgid "A dungeon background or tilemap can not have more than 400 chunks."
-msgstr ""
+msgstr "Фон или плиточное строение подземелья не может содержать более 400 фрагментов."
 
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
 #: skytemple-rust/src/st_dpla.rs:130
@@ -2501,7 +2501,7 @@ msgstr "Непрозрачный"
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:191
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:214
 msgid "Tile and masks list must have exactly 3 items"
-msgstr ""
+msgstr "В списке плиток и масок должно быть ровно 3 элемента"
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:197
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:220
@@ -2877,18 +2877,18 @@ msgstr "Главное меню центра переработки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:405
 msgid "Synthesis Menu Confirm"
-msgstr ""
+msgstr "Меню обменной лавки: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:413
 #: skytemple-files/skytemple_files/hardcoded/menus.py:421
 #: skytemple-files/skytemple_files/hardcoded/menus.py:445
 msgid "Synthesis Sub Menu"
-msgstr ""
+msgstr "Подменю обменной лавки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:429
 #: skytemple-files/skytemple_files/hardcoded/menus.py:437
 msgid "Synthesis Main Menu"
-msgstr ""
+msgstr "Главное меню обменной лавки"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:453
 msgid "Shop Menu Confirm"
@@ -2913,11 +2913,11 @@ msgstr "Главное меню хранилища"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:525
 msgid "Hatcher Menu Confirm"
-msgstr ""
+msgstr "Меню дневного ухода: подтверждение"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:533
 msgid "Hatcher Main Menu"
-msgstr ""
+msgstr "Главное меню дневного ухода"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:541
 msgid "Appraiser Menu Confirm"
@@ -3522,7 +3522,7 @@ msgstr "Невозможно импортировать фон локации: �
 
 #: skytemple-rust/src/st_bpc.rs:541
 msgid "new tilemapping for this chunk must contain {} tiles."
-msgstr ""
+msgstr "новое плиточное строение для этого фрагмента должен содержать {} плиток."
 
 #: skytemple-rust/src/st_dbg.rs:123
 msgid "Can not import map background: Width of image must match the expected width: {}px"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-18 21:41\n"
+"PO-Revision-Date: 2024-09-19 09:16\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1753,7 +1753,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:523
 msgid "Invalid XML. StatsGrowth must have exactly 100 levels."
-msgstr ""
+msgstr "Недопустимый XML. StatsGrowth должен иметь ровно 100 уровней."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:547
 #: skytemple-files/skytemple_files/data/monster_xml.py:550
@@ -2980,7 +2980,7 @@ msgstr "Анимация стоя (1-й кадр)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:90
 msgid "Special"
-msgstr ""
+msgstr "Особая"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:91
 msgid "Walking Animation (1st frame)"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-24 03:51\n"
+"PO-Revision-Date: 2024-09-24 13:39\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -3340,11 +3340,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/patches.py:287
 msgid "Must be >= {}."
-msgstr ""
+msgstr "{} 이상이어야 합니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:293
 msgid "Must be <= {}."
-msgstr ""
+msgstr "{} 이하여야 합니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:400
 msgid "config.xml missing in patch package."
@@ -4499,7 +4499,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:142
 msgid "Patches"
-msgstr ""
+msgstr "패치"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:164
 msgid "Miscellaneous"

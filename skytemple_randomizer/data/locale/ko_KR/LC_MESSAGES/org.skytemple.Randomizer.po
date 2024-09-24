@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-24 01:38\n"
+"PO-Revision-Date: 2024-09-24 03:51\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -3294,7 +3294,8 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
-msgstr ""
+msgstr "기존 기술의 별 수치 표기를 막대 표기로 대체합니다.\n"
+"markfont.dat 파일을 변경한 경우 호환되지 않을 수 있습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/support_atupx.py:51
 msgid "Provide support for ATUPX containers, which use a different algorithm than PX compression.\n"
@@ -3303,23 +3304,23 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
-msgstr ""
+msgstr "던전의 '미사용' 확률을 변경합니다. 해당 값은 벽 미로 방의 생성 확률을 결정하는 값이 됩니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:238
 #: skytemple-files/skytemple_files/patch/patches.py:248
 #, python-brace-format
 msgid "The patch '{name}' was not found."
-msgstr ""
+msgstr "패치 '{name}'을 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:255
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
-msgstr ""
+msgstr "'{name}'을 적용하기 위해서는 '{patch_name}'패치를 먼저 적용해야 합니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:261
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
-msgstr ""
+msgstr "'{name}'을 적용하기 위해서는 '{patch_name}'패치를 먼저 적용해야 합니다. 해당 패치를 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:271
 msgid "No configuration was given."
@@ -3527,7 +3528,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:129
 msgid "Error"
-msgstr ""
+msgstr "에러"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:131
 msgid "_OK"
@@ -3797,12 +3798,12 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:299
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:219
 msgid "Import from CSV"
-msgstr ""
+msgstr "CSV로부터 가져오기"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:301
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:223
 msgid "Export to CSV"
-msgstr ""
+msgstr "CSV로 내보내기"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:14
 msgid "Randomize Layouts, Tilesets and Music"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-25 02:21\n"
+"PO-Revision-Date: 2024-09-25 11:58\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: /dev/fd/63:23 /dev/fd/63:242
 msgid "Kangaskhan Storage Strings"
-msgstr "캥카 창고 관련 문자열"
+msgstr "캥카 창고 문자열"
 
 #: /dev/fd/63:24 /dev/fd/63:243
 msgid "Kecleon Market Strings"
@@ -171,11 +171,11 @@ msgstr ""
 
 #: /dev/fd/63:39 /dev/fd/63:258
 msgid "Personality Quiz Questions"
-msgstr ""
+msgstr "성격 테스트 질문"
 
 #: /dev/fd/63:40 /dev/fd/63:259
 msgid "Personality Quiz Answers"
-msgstr ""
+msgstr "성격 테스트 답변"
 
 #: /dev/fd/63:41 /dev/fd/63:260
 msgid "Personality Quiz Results"
@@ -247,11 +247,11 @@ msgstr ""
 
 #: /dev/fd/63:58 /dev/fd/63:277
 msgid "Weather Change Feedback"
-msgstr ""
+msgstr "날씨 변경 시 메시지"
 
 #: /dev/fd/63:59 /dev/fd/63:278
 msgid "Weather Names"
-msgstr ""
+msgstr "닐씨명"
 
 #: /dev/fd/63:60 /dev/fd/63:279
 msgid "Floor-Wide Status"
@@ -267,7 +267,7 @@ msgstr ""
 
 #: /dev/fd/63:63 /dev/fd/63:282
 msgid "Speed Change Feedback"
-msgstr ""
+msgstr "속도 변경 시 메시지"
 
 #: /dev/fd/63:64 /dev/fd/63:283
 msgid "Dungeon Potential Recruit Strings"
@@ -363,7 +363,7 @@ msgstr ""
 
 #: /dev/fd/63:87 /dev/fd/63:306
 msgid "Kecleon Dungeon Shop Strings"
-msgstr ""
+msgstr "던전 내 캘리몬 상점 메시지"
 
 #: /dev/fd/63:88 /dev/fd/63:307
 msgid "Anchored Feedback"
@@ -419,7 +419,7 @@ msgstr ""
 
 #: /dev/fd/63:101 /dev/fd/63:320
 msgid "Pokemon WAIT Dialogue"
-msgstr ""
+msgstr "'대기' 상태 대화문"
 
 #: /dev/fd/63:102 /dev/fd/63:321
 msgid "Pokemon HEALTHY Dialogue"

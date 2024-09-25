@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-24 13:39\n"
+"PO-Revision-Date: 2024-09-25 01:01\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: /dev/fd/63:7 /dev/fd/63:226
 msgid "Explorer Ranks Names"
-msgstr ""
+msgstr "탐험대 랭크 이름"
 
 #: /dev/fd/63:8 /dev/fd/63:227
 msgid "Default Menu Strings 1"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: /dev/fd/63:11 /dev/fd/63:230
 msgid "Default Team Names"
-msgstr ""
+msgstr "기본 팀 이름"
 
 #: /dev/fd/63:12 /dev/fd/63:231
 msgid "Save Data Strings"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: /dev/fd/63:17 /dev/fd/63:236
 msgid "Gummi Feedback"
-msgstr ""
+msgstr "구미 섭취 시 메시지"
 
 #: /dev/fd/63:18 /dev/fd/63:237
 msgid "Dungeon Item Pickup Menu Strings"

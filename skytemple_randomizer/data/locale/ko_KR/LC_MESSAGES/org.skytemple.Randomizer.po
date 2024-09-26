@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-09-25 16:21\n"
+"PO-Revision-Date: 2024-09-26 00:30\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: /dev/fd/63:150 /dev/fd/63:369
 msgid "Portrait Names"
-msgstr ""
+msgstr "초상화 이름"
 
 #: /dev/fd/63:151 /dev/fd/63:370
 msgid "Debug Strings (Dungeon 2)"

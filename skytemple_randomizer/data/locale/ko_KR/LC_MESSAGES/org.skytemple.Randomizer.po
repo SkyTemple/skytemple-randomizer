@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-09-16 17:06+0000\n"
-"PO-Revision-Date: 2024-10-01 03:09\n"
+"PO-Revision-Date: 2024-10-01 04:17\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -3364,24 +3364,24 @@ msgstr "패치 패키지를 읽는 중 config.xml에 구문 오류가 발생했�
 
 #: skytemple-files/skytemple_files/patch/patches.py:412
 msgid "patch.py missing in patch package."
-msgstr ""
+msgstr "패치 패키지에 patch.py가 누락되어 있습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:414
 msgid "The patch.py of the patch package contains a syntax error."
-msgstr ""
+msgstr "패치 패키지의 patch.py에 구문 오류가 있습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:419
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
-msgstr ""
+msgstr "패치 패키지의 patch.py에 'PatchHandler'가 없습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:425
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
-msgstr ""
+msgstr "패치 패키지에 config.xml에 핸들러의 패치 이름에 대한 엔트리가 존재하지 않습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:432
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
-msgstr ""
+msgstr "패치 설정에서 핸들러 '{handler.name}'에 대한 패치를 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "Unknown or extra XML element '{}' in scene data."
@@ -3513,12 +3513,12 @@ msgstr ""
 
 #: skytemple-rust/src/st_dpla.rs:111
 msgid "Palette is invalid."
-msgstr ""
+msgstr "팔레트가 유효하지 않습니다."
 
 #: skytemple-rust/src/st_dpla.rs:116 skytemple-rust/src/st_dpla.rs:173
 #: skytemple-rust/src/st_dpla.rs:209 skytemple-rust/src/st_dpla.rs:217
 msgid "Palette index out of range."
-msgstr ""
+msgstr "팔레트 인덱스가 범위를 벗어났습니다."
 
 #: skytemple-rust/src/st_dpla.rs:267
 msgid "Frame durations out of range while trying to build color."

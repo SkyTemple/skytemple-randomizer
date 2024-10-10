@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-10-07 19:03+0000\n"
-"PO-Revision-Date: 2024-10-10 02:51\n"
+"PO-Revision-Date: 2024-10-10 03:47\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -223,7 +223,7 @@ msgstr ""
 
 #: /dev/fd/63:52 /dev/fd/63:271
 msgid "Dungeon Status Effect Strings"
-msgstr ""
+msgstr "던전 상태 이상 문자열"
 
 #: /dev/fd/63:53 /dev/fd/63:272
 msgid "Dungeon Menu Strings (Details)"
@@ -235,15 +235,15 @@ msgstr ""
 
 #: /dev/fd/63:55
 msgid "Dungeon Defeated Dialogue Strings"
-msgstr ""
+msgstr "던전 실패 시 대화 문자열"
 
 #: /dev/fd/63:56
 msgid "Dungeon Cleared Dialogue Strings"
-msgstr ""
+msgstr "던전 클리어 시 대화 문자열"
 
 #: /dev/fd/63:57 /dev/fd/63:276
 msgid "Dungeon Item Usage (Bag)"
-msgstr ""
+msgstr "던전 아이템 사용 (가방)"
 
 #: /dev/fd/63:58 /dev/fd/63:277
 msgid "Weather Change Feedback"
@@ -275,7 +275,7 @@ msgstr ""
 
 #: /dev/fd/63:65 /dev/fd/63:284
 msgid "Dungeon Gummi Feedback"
-msgstr ""
+msgstr "던전 내 구미 섭취 피드백"
 
 #: /dev/fd/63:66 /dev/fd/63:285
 msgid "Traps Feedback (Primary)"
@@ -283,11 +283,11 @@ msgstr ""
 
 #: /dev/fd/63:67 /dev/fd/63:286
 msgid "Nothing At Feet String"
-msgstr ""
+msgstr "발 밑에 아무것도 없음 문자열"
 
 #: /dev/fd/63:68 /dev/fd/63:287
 msgid "Dungeon Friend Rescue Strings"
-msgstr ""
+msgstr "던전 친구 구조 문자열"
 
 #: /dev/fd/63:69 /dev/fd/63:288
 msgid "Dungeon General Feedback 1"
@@ -315,11 +315,11 @@ msgstr "던전 일반 피드백 4"
 
 #: /dev/fd/63:75 /dev/fd/63:294
 msgid "Status Effect Resolved Feedback"
-msgstr ""
+msgstr "상태 이상 해제 피드백"
 
 #: /dev/fd/63:76 /dev/fd/63:295
 msgid "Status Effect Apply Feedback"
-msgstr ""
+msgstr "상태 이상 적용 피드백"
 
 #: /dev/fd/63:77 /dev/fd/63:296
 msgid "Pokemon Stats Change Feedback 1"
@@ -327,7 +327,7 @@ msgstr "포켓몬 능력치 변경 피드백 1"
 
 #: /dev/fd/63:78 /dev/fd/63:297
 msgid "Status Effect Protect Feedback 1"
-msgstr ""
+msgstr "상태 이상 방어 피드백 1"
 
 #: /dev/fd/63:79 /dev/fd/63:298
 msgid "PP Recover Strings"
@@ -339,7 +339,7 @@ msgstr "텍스처/스케치 문자열"
 
 #: /dev/fd/63:81 /dev/fd/63:300
 msgid "Status Effect Protect Feedback 2"
-msgstr ""
+msgstr "상태 이상 방어 피드백 2"
 
 #: /dev/fd/63:82 /dev/fd/63:301
 msgid "Dungeon Pokemon Stat Names"
@@ -375,7 +375,7 @@ msgstr ""
 
 #: /dev/fd/63:90 /dev/fd/63:309
 msgid "Dungeon General Feedback 7"
-msgstr ""
+msgstr "던전 일반 피드백 7"
 
 #: /dev/fd/63:91 /dev/fd/63:310
 msgid "Move Feedback (Primary)"
@@ -415,7 +415,7 @@ msgstr "도구 끈적해짐 문자열"
 
 #: /dev/fd/63:100 /dev/fd/63:319
 msgid "Pokemon LEVEL_UP Dialogue"
-msgstr "포켓몬 레벨 업 시 대화"
+msgstr ""
 
 #: /dev/fd/63:101 /dev/fd/63:320
 msgid "Pokemon WAIT Dialogue"
@@ -663,7 +663,7 @@ msgstr "게임 및 던전 힌트"
 
 #: /dev/fd/63:162 /dev/fd/63:381
 msgid "Adventure Log Entries"
-msgstr ""
+msgstr "모험의 발자취 엔트리"
 
 #: /dev/fd/63:163 /dev/fd/63:382
 msgid "Ground Map Names"
@@ -3128,7 +3128,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:119
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by Frostbyte before applying this patch."
-msgstr ""
+msgstr "던전에서 start 버튼을 눌러 컨트롤 모드를 자동 모드와 수동 모드로 변경할 수 있습니다. 수동 모드에서는 동료의 턴에 동료를 직접 컨트롤 할 수 있습니다. 이 패치를 적용하려면 Frostbyte가 만든 추가 코드 오버레이 패치를 적용해야 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/compress_iq_data.py:50
 msgid "Optimizes the way the list of IQ skills learnt by each IQ group is stored, removing the limit of max 25 skills per group."
@@ -3156,7 +3156,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
 msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
-msgstr ""
+msgstr "게임에서 게스트 포켓몬을 팀에 추가하는 시기를 결정하는 방식을 변경하여 더 쉽게 개조할 수 있게 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
@@ -3308,7 +3308,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/remove_body_size_check.py:48
 msgid "Removes the total body size check before entering a dungeon."
-msgstr ""
+msgstr "던전 입장 시의 포켓몬 크기 제한 검사를 제거합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:48
 msgid "Allows the partner to be of the same type as the player in the personality test."
@@ -3577,32 +3577,32 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:100
 msgid "CSV File (*.csv)"
-msgstr ""
+msgstr "CSV 파일 (*.csv)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:108
 msgid "XML Document (*.xml)"
-msgstr ""
+msgstr "XML 문서 (*.xml)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:116
 msgid "Nintendo DS ROM (*.nds)"
-msgstr ""
+msgstr "닌텐도 DS ROM (*.nds)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:124
 msgid "JSON Document (*.json)"
-msgstr ""
+msgstr "JSON 문서 (*.json)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:156
 msgid "Any File"
-msgstr ""
+msgstr "모든 파일"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 #, python-brace-format
 msgid "New version available: {version}"
-msgstr ""
+msgstr "새로운 버전을 사용 가능합니다: {version}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
-msgstr ""
+msgstr "지금 업데이트"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:26
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:40
@@ -3629,7 +3629,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:144
 msgid "Error while opening file ({})."
-msgstr ""
+msgstr "파일 ({}) 을(를) 여는 중 오류가 발생했습니다."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:159
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:195

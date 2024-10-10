@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-10-07 19:03+0000\n"
-"PO-Revision-Date: 2024-10-10 05:12\n"
+"PO-Revision-Date: 2024-10-10 08:56\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -2221,35 +2221,35 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:159
 msgid "Mud Trap"
-msgstr ""
+msgstr "진흙 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
 msgid "Sticky Trap"
-msgstr ""
+msgstr "끈적끈적 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
 msgid "Grimy Trap"
-msgstr ""
+msgstr "질퍽 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:162
 msgid "Summon Trap"
-msgstr ""
+msgstr "불러내기 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
 msgid "Pitfall Trap"
-msgstr ""
+msgstr "빠뜨리기 구멍"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
 msgid "Warp Trap"
-msgstr ""
+msgstr "워프 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:165
 msgid "Gust Trap"
-msgstr ""
+msgstr "돌풍 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:166
 msgid "Spin Trap"
-msgstr ""
+msgstr "빙글빙글 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:167
 msgid "Slumber Trap"

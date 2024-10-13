@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-10-07 19:03+0000\n"
-"PO-Revision-Date: 2024-10-13 16:12\n"
+"PO-Revision-Date: 2024-10-13 17:10\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -1511,7 +1511,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/anim/model.py:68
 msgid "WBA"
-msgstr ""
+msgstr "WBA"
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:72
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:176
@@ -2511,7 +2511,7 @@ msgstr "이미지 크기는 {IMG_WIDTH}x{IMG_HEIGHT}여야 합니다."
 
 #: skytemple-files/skytemple_files/hardcoded/cart_removed.py:74
 msgid "This image must be compressed better to fit in the arm9 ({len(data)} > {block.end-block.address})."
-msgstr ""
+msgstr "이 이미지는 arm9 ({len (data)} > {block.end-block.address}) 에 맞게 더 잘 압축되어야 합니다."
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:308
 msgid "White"
@@ -2844,105 +2844,105 @@ msgstr "기술 주 메뉴"
 #: skytemple-files/skytemple_files/hardcoded/menus.py:309
 #: skytemple-files/skytemple_files/hardcoded/menus.py:317
 msgid "Bar Menu Confirm"
-msgstr ""
+msgstr "드링크 스탠드 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:325
 msgid "Bar Main Menu"
-msgstr ""
+msgstr "드링크 스탠드 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:333
 #: skytemple-files/skytemple_files/hardcoded/menus.py:341
 msgid "Bar Sub Menu"
-msgstr ""
+msgstr "드링크 스탠드 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:349
 #: skytemple-files/skytemple_files/hardcoded/menus.py:357
 msgid "Recycle Menu Confirm"
-msgstr ""
+msgstr "리사이클 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:365
 #: skytemple-files/skytemple_files/hardcoded/menus.py:373
 msgid "Recycle Sub Menu"
-msgstr ""
+msgstr "리사이클 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:381
 #: skytemple-files/skytemple_files/hardcoded/menus.py:389
 #: skytemple-files/skytemple_files/hardcoded/menus.py:397
 msgid "Recycle Main Menu"
-msgstr ""
+msgstr "리사이클 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:405
 msgid "Synthesis Menu Confirm"
-msgstr ""
+msgstr "트레이드샵 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:413
 #: skytemple-files/skytemple_files/hardcoded/menus.py:421
 #: skytemple-files/skytemple_files/hardcoded/menus.py:445
 msgid "Synthesis Sub Menu"
-msgstr ""
+msgstr "트레이드샵 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:429
 #: skytemple-files/skytemple_files/hardcoded/menus.py:437
 msgid "Synthesis Main Menu"
-msgstr ""
+msgstr "트레이드샵 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:453
 msgid "Shop Menu Confirm"
-msgstr ""
+msgstr "상점 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:461
 #: skytemple-files/skytemple_files/hardcoded/menus.py:469
 #: skytemple-files/skytemple_files/hardcoded/menus.py:477
 msgid "Shop Main Menu"
-msgstr ""
+msgstr "상점 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:485
 msgid "Storage Menu Confirm"
-msgstr ""
+msgstr "창고 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:493
 #: skytemple-files/skytemple_files/hardcoded/menus.py:501
 #: skytemple-files/skytemple_files/hardcoded/menus.py:509
 #: skytemple-files/skytemple_files/hardcoded/menus.py:517
 msgid "Storage Main Menu"
-msgstr ""
+msgstr "창고 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:525
 msgid "Hatcher Menu Confirm"
-msgstr ""
+msgstr "돌보미집 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:533
 msgid "Hatcher Main Menu"
-msgstr ""
+msgstr "돌보미집 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:541
 msgid "Appraiser Menu Confirm"
-msgstr ""
+msgstr "감정소 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:549
 msgid "Appraiser Main Menu"
-msgstr ""
+msgstr "감정소 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:557
 msgid "Appraiser Sub Menu"
-msgstr ""
+msgstr "감정소 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:565
 msgid "Discard Items Menu Confirm"
-msgstr ""
+msgstr "도구 버리기 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:573
 #: skytemple-files/skytemple_files/hardcoded/menus.py:581
 msgid "Discard Items Sub Menu"
-msgstr ""
+msgstr "도구 버리기 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:589
 msgid "Discard Items Main Menu"
-msgstr ""
+msgstr "도구 버리기 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:597
 msgid "Dungeon Main Menu"
-msgstr ""
+msgstr "던전 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:605
 #: skytemple-files/skytemple_files/hardcoded/menus.py:613
@@ -2951,41 +2951,41 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:637
 #: skytemple-files/skytemple_files/hardcoded/menus.py:645
 msgid "Dungeon Sub Menu"
-msgstr ""
+msgstr "던전 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:653
 msgid "Start Menu Confirm"
-msgstr ""
+msgstr "게임 시작 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:661
 msgid "Dungeon Debug Menu"
-msgstr ""
+msgstr "던전 디버그 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:734
 #, python-brace-format
 msgid "This menu must have {num_entries} entries!"
-msgstr ""
+msgstr "이 메뉴는 반드시 {num_entries} 개의 엔트리가 있어야 합니다!"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:88
 msgid "Standing Animation (loop)"
-msgstr ""
+msgstr "서있는 애니메이션 (반복)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:89
 msgid "Standing Animation (1st frame)"
-msgstr ""
+msgstr "서있는 애니메이션 (첫 프레임)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:90
 msgid "Special"
-msgstr ""
+msgstr "특수"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:91
 msgid "Walking Animation (1st frame)"
-msgstr ""
+msgstr "걷는 애니메이션 (첫 프레임)"
 
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:219
 #, python-brace-format
 msgid "Error while applying the patch: {ex}"
-msgstr ""
+msgstr "패치 적용 중 오류가 발생했습니다: {ex}"
 
 #: skytemple-files/skytemple_files/patch/category.py:27
 msgid "Improvements and Tweaks"
@@ -2993,7 +2993,7 @@ msgstr "개선 및 변경"
 
 #: skytemple-files/skytemple_files/patch/category.py:31
 msgid "New Mechanics"
-msgstr ""
+msgstr "새로운 시스템"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:33
@@ -3332,7 +3332,7 @@ msgstr "성격 테스트를 건너뛰고 성별 선택만 남깁니다. ChooseSt
 
 #: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
 msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
-msgstr ""
+msgstr "스프라이트 크기와 파일 사이즈 값이 각 포켓몬 데이터 내에 포함되도록 변경합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
@@ -3368,11 +3368,11 @@ msgstr "'{name}'을 적용하기 위해서는 '{patch_name}'패치를 먼저 적
 
 #: skytemple-files/skytemple_files/patch/patches.py:271
 msgid "No configuration was given."
-msgstr ""
+msgstr "설정이 제공되지 않았습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:274
 msgid "Missing configuration value."
-msgstr ""
+msgstr "설정 값이 누락되었습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:279
 #: skytemple-files/skytemple_files/patch/patches.py:285
@@ -3380,7 +3380,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/patches.py:299
 #: skytemple-files/skytemple_files/patch/patches.py:313
 msgid "Invalid configuration value."
-msgstr ""
+msgstr "설정 값이 유효하지 않습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:287
 msgid "Must be >= {}."

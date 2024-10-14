@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-10-07 19:03+0000\n"
-"PO-Revision-Date: 2024-10-13 17:10\n"
+"PO-Revision-Date: 2024-10-14 08:43\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -2790,7 +2790,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:125
 msgid "Bank Main Menu"
-msgstr ""
+msgstr "은행 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:133
 msgid "Evolution Menu Confirm"
@@ -2806,12 +2806,12 @@ msgstr "진화 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:157
 msgid "Assembly Menu Confirm"
-msgstr ""
+msgstr "편성소 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:165
 #: skytemple-files/skytemple_files/hardcoded/menus.py:173
 msgid "Assembly Main Menu"
-msgstr ""
+msgstr "편성소 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:181
 #: skytemple-files/skytemple_files/hardcoded/menus.py:189
@@ -2821,7 +2821,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:221
 #: skytemple-files/skytemple_files/hardcoded/menus.py:229
 msgid "Assembly Sub Menu"
-msgstr ""
+msgstr "편성소 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:237
 msgid "Moves Menu Confirm"

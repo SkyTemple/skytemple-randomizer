@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-10-07 19:03+0000\n"
-"PO-Revision-Date: 2024-10-07 22:59\n"
+"PO-Revision-Date: 2024-10-15 12:27\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -1092,7 +1092,7 @@ msgstr "Неверное switch-сообщение."
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:89
 #, python-brace-format
 msgid "A message_ switch can only contain cases with strings (line {self.ctx.start.line})."
-msgstr "switch-сообщение может сожержать лишь case-ы со строками (строка {self.ctx.start.line})."
+msgstr "message_switch может содержать лишь case-ы со строками (строка {self.ctx.start.line})."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:80
 #, python-brace-format

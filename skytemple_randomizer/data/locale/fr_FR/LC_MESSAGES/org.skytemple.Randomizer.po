@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-10-07 19:03+0000\n"
-"PO-Revision-Date: 2024-10-07 19:11\n"
+"PO-Revision-Date: 2024-11-13 15:47\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -803,7 +803,7 @@ msgstr "Composant Alpha"
 
 #: /dev/fd/63:197 /dev/fd/63:416
 msgid "Conversion 2 Type when hit by a Fairy move"
-msgstr ""
+msgstr "Type de \"Conversion 2\" quand touché par une attaque de type Fée"
 
 #: /dev/fd/63:198 /dev/fd/63:417
 msgid "ID of the first icon in markfont.dat (23 entries used)"
@@ -856,11 +856,11 @@ msgstr ""
 
 #: /dev/fd/63:210 /dev/fd/63:429
 msgid "Cost of each Treasure Box (Only for Appraise All option)"
-msgstr ""
+msgstr "Coût de chaque Coffre (Seulement pour Expertiser Tous)"
 
 #: /dev/fd/63:211 /dev/fd/63:430
 msgid "Update the level and stats of evolved enemies"
-msgstr ""
+msgstr "Mettre à jour le niveau et les stats des ennemis évolués"
 
 #: /dev/fd/63:212 /dev/fd/63:431
 msgid "Fully heal enemies after evolving"
@@ -905,12 +905,12 @@ msgstr ""
 #: explorerscript/explorerscript/common_syntax.py:99
 #: explorerscript/explorerscript/common_syntax.py:187
 msgid "Integer not allowed at this position."
-msgstr ""
+msgstr "Entier non autorisé à cette position."
 
 #: explorerscript/explorerscript/common_syntax.py:103
 #: explorerscript/explorerscript/common_syntax.py:189
 msgid "Decimal not allowed at this position."
-msgstr ""
+msgstr "Décimale non autorisée à cette position."
 
 #: explorerscript/explorerscript/common_syntax.py:114
 msgid "Constant not allowed at this position."
@@ -3055,12 +3055,13 @@ msgstr "Permet au joueur d'appuyer sur A+B+X+Y pendant les cinématiques pour fo
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:56
 msgid "Appraise all"
-msgstr ""
+msgstr "Expertiser Tous"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:58
 msgid " And to appraise all your items, \n"
 "you will pay [CS:G][gold_left:0][CR][M:S0]?"
-msgstr ""
+msgstr " Et pour expertiser tout cela,\n"
+"vous paierez [CS:G][gold_left:0][CR][M:S0] d'accord ?"
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:62
 msgid " And so...[K]it is revealed...[C] Within the boxes...[K]\n"
@@ -3074,7 +3075,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:75
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
-msgstr ""
+msgstr "Ajoute un menu supplémentaire à l'Expertise Xatu afin d'expertiser tous les coffres en une fois."
 
 #: skytemple-files/skytemple_files/patch/handler/better_enemy_evolution.py:49
 msgid "Allows changing how enemy evolution works. In particular, it allows you to choose if the evolved enemy will get the stats and/or moves from its new species, add extra stats after evolving, heal the enemy after evolving or choosing if the evolution will take place even if the target is revived."
@@ -3218,7 +3219,7 @@ msgstr "Extrait la liste des objets du Bar à Jus Spinda."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_dungeon_data.py:177
 msgid "Extracts the floor ranks, forbidden mission floors, items available in dungeon tables and put them in files. Provides support for reading them from the rom file system."
-msgstr ""
+msgstr "Extrait les rangs des étages, les étages où il est impossible qu'une mission se déroule, la liste des objets disponibles dans les tables du donjon et met tout cela dans un fichier. Permet d'aider à la lecture de ces données depuis un fichier rom."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_code.py:77
 msgid "Extracts item effects code and put it in files."
@@ -3244,7 +3245,9 @@ msgstr "Extrait le code des procédures spéciales et les mets dans des fichiers
 msgid "Implements Fairy-type specialized gummies. Uses unused item 138.\n"
 "Needs ExtractItemCode, ExtractBarItemList and AddTypes patches to be applied for this patch to work.\n"
 "Also, you'll need to reapply this if you apply AddTypes again. "
-msgstr ""
+msgstr "Implémente des Gelées pour le Type Fée. Utilise l'ID d'objet 138 qui est inutilisé.\n"
+"Nécessite les correctifs ExtractItemCode, ExtractBarItemList et AddTypes pour pouvoir utiliser ce correctif.\n"
+"Aussi, si vous réappliquez le correctif AddTypes, il faudra réappliquer ce correctif. "
 
 #: skytemple-files/skytemple_files/patch/handler/far_off_pal_overdrive.py:50
 msgid "Makes the game always move the PoV to your partners when they use moves or are attacked, even if the partner is only one tile away, when far-off pals is enabled. Recommended for CTC since the PoV stays on your last pokemon at the end of a manual movement round without this, and CTC already reduces the amount of time the game pauses for between PoV changes."
@@ -3281,11 +3284,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/negative_enemy_density.py:49
 msgid "Makes negative enemy density values work as intended (the absolute value of the density is used, without adding a random variation)."
-msgstr ""
+msgstr "Fait que les valeurs de densité d'ennemis négatives fonctionnent comme attendu (la valeur absolue de la densité est utilisée, sans ajouter une variable aléatoire à celle-ci)."
 
 #: skytemple-files/skytemple_files/patch/handler/no_weather_stop.py:50
 msgid "Changes weather damage messages so they don't make the player stop running."
-msgstr ""
+msgstr "Change les messages de dégâts liés à la météo pour qu'ils n'empêchent pas le joueur de courir."
 
 #: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
 msgid "Extracts the object table to a separate file in the ROM."
@@ -3301,7 +3304,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
 msgid "Changes implementation of idle animation to an editable table."
-msgstr ""
+msgstr "Change l'implémentation des animations d'inactivité (idle) pour en faire une table éditable."
 
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:44
 msgid "[string:0] pushed [string:1]!"
@@ -3438,7 +3441,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:542
 msgid "Unknown direction value."
-msgstr ""
+msgstr "Valeur de direction inconnue."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/writer.py:57
 msgid "Can not save a scene event without a defined triggered script."
@@ -3555,7 +3558,7 @@ msgstr ""
 
 #: skytemple-rust/src/st_dpla.rs:111
 msgid "Palette is invalid."
-msgstr ""
+msgstr "Palette invalide."
 
 #: skytemple-rust/src/st_dpla.rs:116 skytemple-rust/src/st_dpla.rs:173
 #: skytemple-rust/src/st_dpla.rs:209 skytemple-rust/src/st_dpla.rs:217

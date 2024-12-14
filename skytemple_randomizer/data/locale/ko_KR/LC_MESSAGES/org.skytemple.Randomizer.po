@@ -5,269 +5,269 @@ msgstr ""
 "POT-Creation-Date: 2024-12-14 00:55+0000\n"
 "PO-Revision-Date: 2024-12-14 00:56\n"
 "Last-Translator: \n"
-"Language-Team: Italian\n"
-"Language: it_IT\n"
+"Language-Team: Korean\n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: skytemple\n"
 "X-Crowdin-Project-ID: 442656\n"
-"X-Crowdin-Language: it\n"
+"X-Crowdin-Language: ko\n"
 "X-Crowdin-File: /[SkyTemple.skytemple-randomizer] master/skytemple_randomizer/data/locale/org.skytemple.Randomizer.pot\n"
 "X-Crowdin-File-ID: 30\n"
 
 #: /dev/fd/63:1 /dev/fd/63:216
 msgid "English"
-msgstr "Inglese"
+msgstr "영어"
 
 #: /dev/fd/63:2 /dev/fd/63:221
 msgid "Friend Rescue Set Phrases"
-msgstr "Frasi Soccorso Amico"
+msgstr ""
 
 #: /dev/fd/63:3 /dev/fd/63:222
 msgid "Friend Rescue Message Input Strings"
-msgstr "Stringhe Input dei messaggi di Soccorso Amico"
+msgstr "친구 구조 메시지 입력 문자열"
 
 #: /dev/fd/63:4 /dev/fd/63:223
 msgid "Debug Strings (Game Init)"
-msgstr "Stringhe Debug (Avvio del gioco)"
+msgstr "디버그 문자열 (게임 시작 시)"
 
 #: /dev/fd/63:5 /dev/fd/63:224
 msgid "Util Strings"
-msgstr "Stringhe Util"
+msgstr ""
 
 #: /dev/fd/63:6 /dev/fd/63:225
 msgid "Chapter and Special Episode Strings"
-msgstr "Stringhe di Capitolo ed Episodio Speciale"
+msgstr "챕터 및 스페셜 에피소드 문자열"
 
 #: /dev/fd/63:7 /dev/fd/63:226
 msgid "Explorer Ranks Names"
-msgstr "Nomi Ranghi Esploratore"
+msgstr "탐험대 랭크 이름"
 
 #: /dev/fd/63:8 /dev/fd/63:227
 msgid "Default Menu Strings 1"
-msgstr "Stringhe Menù Predefinite 1"
+msgstr "기본 메뉴 문자열 1"
 
 #: /dev/fd/63:9 /dev/fd/63:228
 msgid "Default Menu Strings 2"
-msgstr "Stringhe Menù Predefinite 2"
+msgstr "기본 메뉴 문자열 2"
 
 #: /dev/fd/63:10 /dev/fd/63:229
 msgid "Debug Strings (Main Menu)"
-msgstr "Stringhe Debug (Menù Principale)"
+msgstr "디버그 문자열 (주 메뉴)"
 
 #: /dev/fd/63:11 /dev/fd/63:230
 msgid "Default Team Names"
-msgstr "Nomi Squadra Predefiniti"
+msgstr "기본 팀 이름"
 
 #: /dev/fd/63:12 /dev/fd/63:231
 msgid "Save Data Strings"
-msgstr "Stringhe Dati di Salvataggio"
+msgstr "저장 데이터 문자열"
 
 #: /dev/fd/63:13 /dev/fd/63:232
 msgid "Prize Ticket Strings"
-msgstr "Stringhe Buono Premio"
+msgstr "경품추천권 문자열"
 
 #: /dev/fd/63:14 /dev/fd/63:233
 msgid "Job Debriefing Related Strings (Primary)"
-msgstr "Stringhe relative al resoconto delle missioni (Primarie)"
+msgstr ""
 
 #: /dev/fd/63:15 /dev/fd/63:234
 msgid "Job Debriefing Related Strings (Secondary)"
-msgstr "Stringhe relative al resoconto delle missioni (Secondarie)"
+msgstr ""
 
 #: /dev/fd/63:16 /dev/fd/63:235
 msgid "Dungeon Item Action Menu Strings"
-msgstr "Stringhe Menù degli Oggetti dei Dungeon"
+msgstr ""
 
 #: /dev/fd/63:17 /dev/fd/63:236
 msgid "Gummi Feedback"
-msgstr "Feedback Caramelle Gommose"
+msgstr "구미 섭취 피드백"
 
 #: /dev/fd/63:18 /dev/fd/63:237
 msgid "Dungeon Item Pickup Menu Strings"
-msgstr "Stringhe Menù di Raccolta Oggetti dei Dungeon"
+msgstr ""
 
 #: /dev/fd/63:19 /dev/fd/63:238
 msgid "Storage Space Full Strings"
-msgstr "Stringhe Deposito Pieno"
+msgstr "창고 가득 찬 경우의 문자열"
 
 #: /dev/fd/63:20 /dev/fd/63:239
 msgid "Treasure Bag Full Strings"
-msgstr "Stringhe Sacca dei Tesori piena"
+msgstr "트레져 백 가득 찬 경우의 문자열"
 
 #: /dev/fd/63:21 /dev/fd/63:240
 msgid "New Recruit Full Strings"
-msgstr "Stringhe Nuovi Reclutamenti pieno"
+msgstr ""
 
 #: /dev/fd/63:22 /dev/fd/63:241
 msgid "Kangaskhan Storage Filter Strings"
-msgstr "Stringhe Filtro Deposito Kangaskhan"
+msgstr "캥카 창고 필터 문자열"
 
 #: /dev/fd/63:23 /dev/fd/63:242
 msgid "Kangaskhan Storage Strings"
-msgstr "Stringhe del Deposito Kangaskhan"
+msgstr "'캥카 창고' 문자열"
 
 #: /dev/fd/63:24 /dev/fd/63:243
 msgid "Kecleon Market Strings"
-msgstr "Stringhe Magazzini Kecleon"
+msgstr "'캘리몬 상점' 문자열"
 
 #: /dev/fd/63:25 /dev/fd/63:244
 msgid "Duskull Bank Strings"
-msgstr "Stringhe Banca Duskull"
+msgstr "'해골몽 은행' 문자열"
 
 #: /dev/fd/63:26 /dev/fd/63:245
 msgid "Chansey Day Care Strings"
-msgstr "Stringhe Pensione Chansey"
+msgstr "'럭키 돌보미집' 문자열"
 
 #: /dev/fd/63:27 /dev/fd/63:246
 msgid "Croagunk Swap Shop Strings"
-msgstr "Stringhe Centro Cambi Croagunk"
+msgstr "'삐딱구리 트레이드샵' 문자열"
 
 #: /dev/fd/63:28 /dev/fd/63:247
 msgid "Xatu Appraisal Strings"
-msgstr "Stringhe Perizie di Xatu"
+msgstr "'네이티오 감정소' 문자열"
 
 #: /dev/fd/63:29 /dev/fd/63:248
 msgid "Electivire Link Shop Strings"
-msgstr "Stringhe Combiteca Electrivire"
+msgstr "'에레키블 링크샵' 문자열"
 
 #: /dev/fd/63:30 /dev/fd/63:249
 msgid "Chimecho Assembly Strings"
-msgstr "Stringhe Raduno Chimecho"
+msgstr "'치렁 편성소' 문자열"
 
 #: /dev/fd/63:31 /dev/fd/63:250
 msgid "Luminous Spring Strings"
-msgstr "Stringhe Sorgente Luccichio"
+msgstr "'빛의 샘' 문자열"
 
 #: /dev/fd/63:32 /dev/fd/63:251
 msgid "Diary Strings"
-msgstr "Stringhe Diario"
+msgstr "일기 문자열"
 
 #: /dev/fd/63:33 /dev/fd/63:252
 msgid "Level Up Strings"
-msgstr "Stringhe Avanzamento di Livello"
+msgstr "레벨 업 문자열"
 
 #: /dev/fd/63:34 /dev/fd/63:253
 msgid "Exclusive Items Strings"
-msgstr "Stringhe Strumenti Esclusivi"
+msgstr "전용 도구 문자열"
 
 #: /dev/fd/63:35 /dev/fd/63:254
 msgid "Special Episode Item Handling Strings"
-msgstr "Stringhe Maneggiamento Oggetti degli Episodi Speciali"
+msgstr "스페셜 에피소드 아이템 취급 관련 문자열"
 
 #: /dev/fd/63:36 /dev/fd/63:255
 msgid "Demo Dungeon Strings"
-msgstr "Stringhe Dungeon Demo"
+msgstr "데모 던전 문자열"
 
 #: /dev/fd/63:37 /dev/fd/63:256
 msgid "Sky Jukebox Menu Strings"
-msgstr "Stringhe Menù Jukebox Cielo"
+msgstr "하늘의 주크박스 메뉴 문자열"
 
 #: /dev/fd/63:38 /dev/fd/63:257
 msgid "Music Tracks"
-msgstr "Tracce musicali"
+msgstr "음악 트랙"
 
 #: /dev/fd/63:39 /dev/fd/63:258
 msgid "Personality Quiz Questions"
-msgstr "Quiz Di Personalità"
+msgstr "성격 테스트 질문"
 
 #: /dev/fd/63:40 /dev/fd/63:259
 msgid "Personality Quiz Answers"
-msgstr "Quiz Di Personalità"
+msgstr "성격 테스트 답변"
 
 #: /dev/fd/63:41 /dev/fd/63:260
 msgid "Personality Quiz Results"
-msgstr "Risultati Test di Personalità"
+msgstr "성격 테스트 결과"
 
 #: /dev/fd/63:42 /dev/fd/63:261
 msgid "Personality Quiz Aura"
-msgstr "Aura Test di Personalità"
+msgstr "성격 테스트 파동"
 
 #: /dev/fd/63:43 /dev/fd/63:262
 msgid "Partner Selection Strings"
-msgstr "Stringhe Selezione Compagno"
+msgstr "파트너 선택 문자열"
 
 #: /dev/fd/63:44 /dev/fd/63:263
 msgid "New Game Welcome"
-msgstr "Messaggio di Benvenuto Nuovo Gioco"
+msgstr "새 게임 환영 문구"
 
 #: /dev/fd/63:45 /dev/fd/63:264
 msgid "Personality Quiz Aura Finger Move"
-msgstr "Movimento Dito Aura Test di Personalità"
+msgstr ""
 
 #: /dev/fd/63:46 /dev/fd/63:265
 msgid "Personality Quiz Debug (Breakdown)"
-msgstr "Debug Test di Personalità (Breakdown)"
+msgstr ""
 
 #: /dev/fd/63:47 /dev/fd/63:266
 msgid "Personality Quiz Debug (Colored)"
-msgstr "Debug Test di Personalità (Colorato)"
+msgstr ""
 
 #: /dev/fd/63:48 /dev/fd/63:267
 msgid "Sentry Duty Strings"
-msgstr "Stringhe Turno di Guardia"
+msgstr "망보기 당번 문자열"
 
 #: /dev/fd/63:49 /dev/fd/63:268
 msgid "Sentry Duty Hints"
-msgstr "Suggerimenti Turno di Guardia"
+msgstr "망보기 당번 힌트"
 
 #: /dev/fd/63:50 /dev/fd/63:269
 msgid "Dungeon Item Usage (Basic)"
-msgstr "Utilizzo Oggetti Dungeon (Base)"
+msgstr "던전 아이템 사용 (기본)"
 
 #: /dev/fd/63:51 /dev/fd/63:270
 msgid "Dungeon Menu Strings (Primary)"
-msgstr "Stringhe Menù Dungeon (Primario)"
+msgstr ""
 
 #: /dev/fd/63:52 /dev/fd/63:271
 msgid "Dungeon Status Effect Strings"
-msgstr "Stringhe Effetti Dungeon"
+msgstr "던전 상태 이상 문자열"
 
 #: /dev/fd/63:53 /dev/fd/63:272
 msgid "Dungeon Menu Strings (Details)"
-msgstr "Stringhe Menù Dungeon (Dettagli)"
+msgstr ""
 
 #: /dev/fd/63:54 /dev/fd/63:273
 msgid "Dungeon Menu Strings (Secondary)"
-msgstr "Stringhe Menù Dungeon (Secondarie)"
+msgstr ""
 
 #: /dev/fd/63:55
 msgid "Dungeon Defeated Dialogue Strings"
-msgstr "Stringhe Dialoghi Sconfitta Dungeon"
+msgstr "던전 실패 시 대화 문자열"
 
 #: /dev/fd/63:56
 msgid "Dungeon Cleared Dialogue Strings"
-msgstr "Stringhe Dialoghi Completamento Dungeon"
+msgstr "던전 클리어 시 대화 문자열"
 
 #: /dev/fd/63:57 /dev/fd/63:276
 msgid "Dungeon Item Usage (Bag)"
-msgstr "Utilizzo Oggetti Dungeon (Sacca)"
+msgstr "던전 아이템 사용 (가방)"
 
 #: /dev/fd/63:58 /dev/fd/63:277
 msgid "Weather Change Feedback"
-msgstr "Feedback cambio meteo"
+msgstr "날씨 변화 피드백"
 
 #: /dev/fd/63:59 /dev/fd/63:278
 msgid "Weather Names"
-msgstr "Nomi Meteo"
+msgstr "날씨 이름"
 
 #: /dev/fd/63:60 /dev/fd/63:279
 msgid "Floor-Wide Status"
-msgstr "Stato per tutto il piano"
+msgstr ""
 
 #: /dev/fd/63:61 /dev/fd/63:280
 msgid "Story Mission Objectives"
-msgstr "Obiettivi Missione della Storia"
+msgstr ""
 
 #: /dev/fd/63:62 /dev/fd/63:281
 msgid "Mission Failure/Faint Strings"
-msgstr "Stringhe Missione fallita/Sconfitta"
+msgstr "의뢰 실패/기절 문자열"
 
 #: /dev/fd/63:63 /dev/fd/63:282
 msgid "Speed Change Feedback"
-msgstr "Feedback cambio velocità"
+msgstr "속도 변화 피드백"
 
 #: /dev/fd/63:64 /dev/fd/63:283
 msgid "Dungeon Potential Recruit Strings"
@@ -275,7 +275,7 @@ msgstr ""
 
 #: /dev/fd/63:65 /dev/fd/63:284
 msgid "Dungeon Gummi Feedback"
-msgstr ""
+msgstr "던전 내 구미 섭취 피드백"
 
 #: /dev/fd/63:66 /dev/fd/63:285
 msgid "Traps Feedback (Primary)"
@@ -283,19 +283,19 @@ msgstr ""
 
 #: /dev/fd/63:67 /dev/fd/63:286
 msgid "Nothing At Feet String"
-msgstr ""
+msgstr "발 밑에 아무것도 없음 문자열"
 
 #: /dev/fd/63:68 /dev/fd/63:287
 msgid "Dungeon Friend Rescue Strings"
-msgstr ""
+msgstr "던전 친구 구조 문자열"
 
 #: /dev/fd/63:69 /dev/fd/63:288
 msgid "Dungeon General Feedback 1"
-msgstr ""
+msgstr "던전 일반 피드백 1"
 
 #: /dev/fd/63:70 /dev/fd/63:289
 msgid "Dungeon General Feedback 2"
-msgstr ""
+msgstr "던전 일반 피드백 2"
 
 #: /dev/fd/63:71 /dev/fd/63:290
 msgid "Something's Stirring Strings"
@@ -303,7 +303,7 @@ msgstr ""
 
 #: /dev/fd/63:72 /dev/fd/63:291
 msgid "Dungeon General Feedback 3"
-msgstr ""
+msgstr "던전 일반 피드백 3"
 
 #: /dev/fd/63:73 /dev/fd/63:292
 msgid "Dungeon New Recruit Strings"
@@ -311,35 +311,35 @@ msgstr ""
 
 #: /dev/fd/63:74 /dev/fd/63:293
 msgid "Dungeon General Feedback 4"
-msgstr ""
+msgstr "던전 일반 피드백 4"
 
 #: /dev/fd/63:75 /dev/fd/63:294
 msgid "Status Effect Resolved Feedback"
-msgstr ""
+msgstr "상태 이상 해제 피드백"
 
 #: /dev/fd/63:76 /dev/fd/63:295
 msgid "Status Effect Apply Feedback"
-msgstr ""
+msgstr "상태 이상 적용 피드백"
 
 #: /dev/fd/63:77 /dev/fd/63:296
 msgid "Pokemon Stats Change Feedback 1"
-msgstr ""
+msgstr "포켓몬 능력치 변경 피드백 1"
 
 #: /dev/fd/63:78 /dev/fd/63:297
 msgid "Status Effect Protect Feedback 1"
-msgstr ""
+msgstr "상태 이상 방어 피드백 1"
 
 #: /dev/fd/63:79 /dev/fd/63:298
 msgid "PP Recover Strings"
-msgstr ""
+msgstr "PP 회복 문자열"
 
 #: /dev/fd/63:80 /dev/fd/63:299
 msgid "Conversion/Sketch Strings"
-msgstr ""
+msgstr "텍스처/스케치 문자열"
 
 #: /dev/fd/63:81 /dev/fd/63:300
 msgid "Status Effect Protect Feedback 2"
-msgstr ""
+msgstr "상태 이상 방어 피드백 2"
 
 #: /dev/fd/63:82 /dev/fd/63:301
 msgid "Dungeon Pokemon Stat Names"
@@ -347,23 +347,23 @@ msgstr ""
 
 #: /dev/fd/63:83 /dev/fd/63:302
 msgid "Pokemon Stats Change Feedback 2"
-msgstr ""
+msgstr "포켓몬 능력치 변경 피드백 2"
 
 #: /dev/fd/63:84 /dev/fd/63:303
 msgid "Dungeon General Feedback 5"
-msgstr ""
+msgstr "던전 일반 피드백 5"
 
 #: /dev/fd/63:85 /dev/fd/63:304
 msgid "Mission Feedback"
-msgstr ""
+msgstr "의뢰 피드백"
 
 #: /dev/fd/63:86 /dev/fd/63:305
 msgid "Dungeon General Feedback 6"
-msgstr ""
+msgstr "던전 일반 피드백 6"
 
 #: /dev/fd/63:87 /dev/fd/63:306
 msgid "Kecleon Dungeon Shop Strings"
-msgstr ""
+msgstr "던전 내 캘리몬 상점 문자열"
 
 #: /dev/fd/63:88 /dev/fd/63:307
 msgid "Anchored Feedback"
@@ -375,7 +375,7 @@ msgstr ""
 
 #: /dev/fd/63:90 /dev/fd/63:309
 msgid "Dungeon General Feedback 7"
-msgstr ""
+msgstr "던전 일반 피드백 7"
 
 #: /dev/fd/63:91 /dev/fd/63:310
 msgid "Move Feedback (Primary)"
@@ -383,99 +383,99 @@ msgstr ""
 
 #: /dev/fd/63:92 /dev/fd/63:311
 msgid "Dungeon Level Up Detail Strings"
-msgstr ""
+msgstr "던전 레벨 업 상세 문자열"
 
 #: /dev/fd/63:93 /dev/fd/63:312
 msgid "Kirlia Secret Bazaar Strings"
-msgstr ""
+msgstr "'킬리아의 비밀의 바자' 문자열"
 
 #: /dev/fd/63:94 /dev/fd/63:313
 msgid "Grab Bags Shop Strings"
-msgstr ""
+msgstr "'복주머니 가게' 문자열"
 
 #: /dev/fd/63:95 /dev/fd/63:314
 msgid "Shedinja Shop Strings"
-msgstr ""
+msgstr "'컵질몬의 비밀의 탈출구' 문자열"
 
 #: /dev/fd/63:96 /dev/fd/63:315
 msgid "Mime Jr. Spa Strings"
-msgstr ""
+msgstr "'흉내내의 치유 스페이스' 문자열"
 
 #: /dev/fd/63:97 /dev/fd/63:316
 msgid "Swalot's Shop Strings"
-msgstr ""
+msgstr "'내룸벨트의 가게' 문자열"
 
 #: /dev/fd/63:98 /dev/fd/63:317
 msgid "Team Tactics Menu Strings"
-msgstr ""
+msgstr "팀 작전 메뉴 스트링"
 
 #: /dev/fd/63:99 /dev/fd/63:318
 msgid "Item Became Sticky String"
-msgstr ""
+msgstr "도구 끈적해짐 문자열"
 
 #: /dev/fd/63:100 /dev/fd/63:319
 msgid "Pokemon LEVEL_UP Dialogue"
-msgstr ""
+msgstr "포켓몬 레벨 업 시 대화문"
 
 #: /dev/fd/63:101 /dev/fd/63:320
 msgid "Pokemon WAIT Dialogue"
-msgstr ""
+msgstr "포켓몬 대기 시 대화문"
 
 #: /dev/fd/63:102 /dev/fd/63:321
 msgid "Pokemon HEALTHY Dialogue"
-msgstr ""
+msgstr "포켓몬 체력 50% 이상 시 대화문"
 
 #: /dev/fd/63:103 /dev/fd/63:322
 msgid "Pokemon HALF_LIFE Dialogue"
-msgstr ""
+msgstr "포켓몬 체력 50% 미만 시 대화문"
 
 #: /dev/fd/63:104 /dev/fd/63:323
 msgid "Pokemon PINCH Dialogue"
-msgstr ""
+msgstr "포켓몬 체력 25% 미만 시 대화문"
 
 #: /dev/fd/63:105 /dev/fd/63:324
 msgid "Pokemon GROUND_WAIT Dialogue"
-msgstr ""
+msgstr "포켓몬 대기 시 대화문 (그라운드)"
 
 #: /dev/fd/63:106 /dev/fd/63:325
 msgid "Item Names"
-msgstr "Nomi Oggetti"
+msgstr "아이템 이름"
 
 #: /dev/fd/63:107 /dev/fd/63:326
 msgid "Move Names"
-msgstr "Nomi delle Mosse"
+msgstr "기술 이름"
 
 #: /dev/fd/63:108 /dev/fd/63:327
 msgid "Pokemon Names"
-msgstr "Nomi Pokémon"
+msgstr "포켓몬 이름"
 
 #: /dev/fd/63:109 /dev/fd/63:328
 msgid "Pokemon Categories"
-msgstr "Categorie Pokemon"
+msgstr "포켓몬 분류"
 
 #: /dev/fd/63:110 /dev/fd/63:329
 msgid "Tactics Names"
-msgstr ""
+msgstr "작전명"
 
 #: /dev/fd/63:111 /dev/fd/63:330
 msgid "Tactics Descriptions"
-msgstr ""
+msgstr "작전 설명"
 
 #: /dev/fd/63:112 /dev/fd/63:331
 msgid "IQ Skills Names"
-msgstr "Nomi Abilità QI"
+msgstr "지능 스킬 이름"
 
 #: /dev/fd/63:113 /dev/fd/63:332
 msgid "IQ Skills Descriptions"
-msgstr "Descrizioni Abilità IQ"
+msgstr "지능 스킬 설명"
 
 #: /dev/fd/63:114 /dev/fd/63:333
 msgid "Move Targets Strings"
-msgstr ""
+msgstr "기술 범위 문자열"
 
 #: /dev/fd/63:115 /dev/fd/63:334
 msgid "Accuracy/Power Stars Ratings"
-msgstr ""
+msgstr "명중/위력 별 등급"
 
 #: /dev/fd/63:116 /dev/fd/63:335
 msgid "Always Hit/No Damage Strings"
@@ -483,23 +483,23 @@ msgstr ""
 
 #: /dev/fd/63:117 /dev/fd/63:336
 msgid "Move Descriptions"
-msgstr ""
+msgstr "기술 설명"
 
 #: /dev/fd/63:118 /dev/fd/63:337
 msgid "Item Long Descriptions"
-msgstr "Descrizioni Lunghe Oggetto"
+msgstr "긴 아이템 설명"
 
 #: /dev/fd/63:119 /dev/fd/63:338
 msgid "Item Short Descriptions"
-msgstr ""
+msgstr "짧은 아이템 설명"
 
 #: /dev/fd/63:120 /dev/fd/63:339
 msgid "Trap Names"
-msgstr "Nomi Trappole"
+msgstr "함정 이름"
 
 #: /dev/fd/63:121 /dev/fd/63:340
 msgid "Trap Descriptions"
-msgstr "Descrizioni Trappole"
+msgstr "함정 설명"
 
 #: /dev/fd/63:122 /dev/fd/63:341
 msgid "Status Names and Descriptions"
@@ -511,35 +511,35 @@ msgstr ""
 
 #: /dev/fd/63:124 /dev/fd/63:343
 msgid "Type Names"
-msgstr "Nome tipo"
+msgstr "타입 이름"
 
 #: /dev/fd/63:125 /dev/fd/63:344
 msgid "Ability Names"
-msgstr "Nomi Abilità"
+msgstr "특성 이름"
 
 #: /dev/fd/63:126 /dev/fd/63:345
 msgid "Ability Descriptions"
-msgstr ""
+msgstr "특성 설명"
 
 #: /dev/fd/63:127 /dev/fd/63:346
 msgid "Wireless Connection Strings"
-msgstr ""
+msgstr "무선 통신 문자열"
 
 #: /dev/fd/63:128 /dev/fd/63:347
 msgid "Friend Code Strings"
-msgstr ""
+msgstr "친구 코드 문자열"
 
 #: /dev/fd/63:129 /dev/fd/63:348
 msgid "Email Strings"
-msgstr ""
+msgstr "이메일 문자열"
 
 #: /dev/fd/63:130 /dev/fd/63:349
 msgid "Wi-fi Connection Strings"
-msgstr ""
+msgstr "Wi-fi 통신 문자열"
 
 #: /dev/fd/63:131 /dev/fd/63:350
 msgid "Wonder Mail S Strings"
-msgstr ""
+msgstr "이상한 메일 S 문자열"
 
 #: /dev/fd/63:132 /dev/fd/63:351
 msgid "Game Trade Strings"
@@ -571,7 +571,7 @@ msgstr ""
 
 #: /dev/fd/63:139 /dev/fd/63:358
 msgid "Debug Strings (Mission)"
-msgstr ""
+msgstr "디버그 문자열 (의뢰)"
 
 #: /dev/fd/63:140 /dev/fd/63:359
 msgid "Debug Strings (Switch)"
@@ -579,7 +579,7 @@ msgstr ""
 
 #: /dev/fd/63:141 /dev/fd/63:360
 msgid "Debug Strings (Data)"
-msgstr ""
+msgstr "디버그 문자열 (데이터)"
 
 #: /dev/fd/63:142 /dev/fd/63:361
 msgid "Debug Strings (Checks)"
@@ -587,23 +587,23 @@ msgstr ""
 
 #: /dev/fd/63:143 /dev/fd/63:362
 msgid "Debug Strings (General)"
-msgstr ""
+msgstr "디버그 문자열 (일반)"
 
 #: /dev/fd/63:144 /dev/fd/63:363
 msgid "Debug Strings (Manipulation)"
-msgstr ""
+msgstr "디버그 문자열 (조작)"
 
 #: /dev/fd/63:145 /dev/fd/63:364
 msgid "Debug Strings (Testing)"
-msgstr ""
+msgstr "디버그 문자열 (테스트)"
 
 #: /dev/fd/63:146 /dev/fd/63:365
 msgid "Debug Strings (Scripts)"
-msgstr ""
+msgstr "디버그 문자열 (스크립트)"
 
 #: /dev/fd/63:147 /dev/fd/63:366
 msgid "Debug Strings (Menu)"
-msgstr ""
+msgstr "디버그 문자열 (메뉴)"
 
 #: /dev/fd/63:148 /dev/fd/63:367
 msgid "Debug Strings (Status)"
@@ -611,15 +611,15 @@ msgstr ""
 
 #: /dev/fd/63:149 /dev/fd/63:368
 msgid "Debug Strings (Dungeon 1)"
-msgstr ""
+msgstr "디버그 문자열 (던전1)"
 
 #: /dev/fd/63:150 /dev/fd/63:369
 msgid "Portrait Names"
-msgstr ""
+msgstr "초상화 이름"
 
 #: /dev/fd/63:151 /dev/fd/63:370
 msgid "Debug Strings (Dungeon 2)"
-msgstr ""
+msgstr "디버그 문자열 (던전2)"
 
 #: /dev/fd/63:152 /dev/fd/63:371
 msgid "Debug Strings (PKMN Storage)"
@@ -627,67 +627,67 @@ msgstr ""
 
 #: /dev/fd/63:153 /dev/fd/63:372
 msgid "Debug Strings (Message)"
-msgstr ""
+msgstr "디버그 문자열 (메시지)"
 
 #: /dev/fd/63:154 /dev/fd/63:373
 msgid "Debug Strings (Triggers)"
-msgstr ""
+msgstr "디버그 문자열 (트리거)"
 
 #: /dev/fd/63:155 /dev/fd/63:374
 msgid "Debug Strings (Bulletin 1)"
-msgstr ""
+msgstr "디버그 문자열 (게시판1)"
 
 #: /dev/fd/63:156 /dev/fd/63:375
 msgid "Debug Strings (Bulletin 2)"
-msgstr ""
+msgstr "디버그 문자열 (게시판2)"
 
 #: /dev/fd/63:157 /dev/fd/63:376
 msgid "Debug Strings (Mail)"
-msgstr ""
+msgstr "디버그 문자열 (메일)"
 
 #: /dev/fd/63:158 /dev/fd/63:377
 msgid "Debug Strings (Name)"
-msgstr ""
+msgstr "디버그 문자열 (이름)"
 
 #: /dev/fd/63:159 /dev/fd/63:378
 msgid "Debug Strings (Parameters)"
-msgstr ""
+msgstr "디버그 문자열 (패러미터)"
 
 #: /dev/fd/63:160 /dev/fd/63:379
 msgid "Debug Strings (Counter)"
-msgstr ""
+msgstr "디버그 문자열 (카운터)"
 
 #: /dev/fd/63:161 /dev/fd/63:380
 msgid "Game and Dungeon Hints"
-msgstr ""
+msgstr "게임 및 던전 힌트"
 
 #: /dev/fd/63:162 /dev/fd/63:381
 msgid "Adventure Log Entries"
-msgstr ""
+msgstr "모험의 발자취 엔트리"
 
 #: /dev/fd/63:163 /dev/fd/63:382
 msgid "Ground Map Names"
-msgstr ""
+msgstr "그라운드 맵 이름"
 
 #: /dev/fd/63:164 /dev/fd/63:383
 msgid "Dungeon Names (Main)"
-msgstr ""
+msgstr "던전 이름 (메인)"
 
 #: /dev/fd/63:165 /dev/fd/63:384
 msgid "Dungeon Names (Selection)"
-msgstr ""
+msgstr "던전 이름 (선택화면)"
 
 #: /dev/fd/63:166 /dev/fd/63:385
 msgid "Dungeon Names (SetDungeonBanner)"
-msgstr ""
+msgstr "던전 이름 (SetDungeonBanner)"
 
 #: /dev/fd/63:167 /dev/fd/63:386
 msgid "Dungeon Names (Banner)"
-msgstr ""
+msgstr "던전 이름 (배너)"
 
 #: /dev/fd/63:168 /dev/fd/63:387
 msgid "Staff Roll 1"
-msgstr ""
+msgstr "스태프 롤 1"
 
 #: /dev/fd/63:169 /dev/fd/63:388
 msgid "Special Mission Strings"
@@ -699,131 +699,131 @@ msgstr ""
 
 #: /dev/fd/63:171 /dev/fd/63:390
 msgid "Spinda's Juice Bar Strings"
-msgstr ""
+msgstr "'얼루기의 드링크 스탠드' 문자열"
 
 #: /dev/fd/63:172 /dev/fd/63:391
 msgid "Recycle Shop Strings"
-msgstr ""
+msgstr "'탐험 리사이클' 문자열"
 
 #: /dev/fd/63:173 /dev/fd/63:392
 msgid "Staff Roll 2"
-msgstr ""
+msgstr "스태프 롤 2"
 
 #: /dev/fd/63:174 /dev/fd/63:393
 msgid "Staff Roll 3"
-msgstr ""
+msgstr "스태프 롤 3"
 
 #: /dev/fd/63:175 /dev/fd/63:394
 msgid "New Pokemon Names"
-msgstr ""
+msgstr "새 포켓몬 이름"
 
 #: /dev/fd/63:176 /dev/fd/63:395
 msgid "New Pokemon Categories"
-msgstr ""
+msgstr "새 포켓몬 분류"
 
 #: /dev/fd/63:177 /dev/fd/63:396
 msgid "Thrown - Pierce"
-msgstr ""
+msgstr "투척 도구 - 가시류"
 
 #: /dev/fd/63:178 /dev/fd/63:397
 msgid "Thrown - Rock"
-msgstr ""
+msgstr "투척 도구 - 돌멩이류"
 
 #: /dev/fd/63:179 /dev/fd/63:398
 msgid "Berries, Seeds, Vitamins"
-msgstr ""
+msgstr "열매, 씨앗, 도핑약"
 
 #: /dev/fd/63:180 /dev/fd/63:399
 msgid "Foods, Gummies"
-msgstr ""
+msgstr "음식, 구미"
 
 #: /dev/fd/63:181 /dev/fd/63:400
 msgid "Hold"
-msgstr ""
+msgstr "지니는 도구"
 
 #: /dev/fd/63:182 /dev/fd/63:401
 msgid "TMs, HMs"
-msgstr "MT, MN"
+msgstr "기술머신, 비전머신"
 
 #: /dev/fd/63:183 /dev/fd/63:402
 msgid "Poké (Money)"
-msgstr ""
+msgstr "포켓 (돈)"
 
 #: /dev/fd/63:184 /dev/fd/63:403
 msgid "Unknown 7"
-msgstr ""
+msgstr "불명7"
 
 #: /dev/fd/63:185 /dev/fd/63:404
 msgid "Other"
-msgstr "Altro"
+msgstr "기타 도구"
 
 #: /dev/fd/63:186 /dev/fd/63:405
 msgid "Orbs"
-msgstr "Sfere"
+msgstr "구슬"
 
 #: /dev/fd/63:187 /dev/fd/63:406
 msgid "Link Box"
-msgstr "Combinatore"
+msgstr "연결 상자"
 
 #: /dev/fd/63:188 /dev/fd/63:407
 msgid "Used TM"
-msgstr "MT Usata"
+msgstr "써버린 머신"
 
 #: /dev/fd/63:189 /dev/fd/63:408
 msgid "Treasure Box 1"
-msgstr ""
+msgstr "보물 상자 1"
 
 #: /dev/fd/63:190 /dev/fd/63:409
 msgid "Treasure Box 2"
-msgstr ""
+msgstr "보물 상자 2"
 
 #: /dev/fd/63:191 /dev/fd/63:410
 msgid "Treasure Box 3"
-msgstr ""
+msgstr "보물 상자 3"
 
 #: /dev/fd/63:192 /dev/fd/63:411
 msgid "Exclusive Items"
-msgstr ""
+msgstr "전용 도구"
 
 #: /dev/fd/63:193 /dev/fd/63:412
 msgid "Red component"
-msgstr ""
+msgstr "R값"
 
 #: /dev/fd/63:194 /dev/fd/63:413
 msgid "Green component"
-msgstr ""
+msgstr "G값"
 
 #: /dev/fd/63:195 /dev/fd/63:414
 msgid "Blue component"
-msgstr ""
+msgstr "B값"
 
 #: /dev/fd/63:196 /dev/fd/63:415
 msgid "Alpha component"
-msgstr ""
+msgstr "알파 값"
 
 #: /dev/fd/63:197 /dev/fd/63:416
 msgid "Conversion 2 Type when hit by a Fairy move"
-msgstr ""
+msgstr "페어리 타입 기술에 맞고 '텍스처2' 기술 사용시 변경되는 타입"
 
 #: /dev/fd/63:198 /dev/fd/63:417
 msgid "ID of the first icon in markfont.dat (23 entries used)"
-msgstr ""
+msgstr "markfont.dat 파일 내 첫 아이콘의 ID (23개의 엔트리 사용됨)"
 
 #: /dev/fd/63:199 /dev/fd/63:418
 msgid "Display accuracy and power values"
-msgstr ""
+msgstr "명중과 위력 값 표시"
 
 #: /dev/fd/63:200 /dev/fd/63:419
 msgid "ID of the first icon in markfont.dat (24 entries used)"
-msgstr ""
+msgstr "markfont.dat 파일 내 첫 아이콘의 ID (24개의 엔트리 사용됨)"
 
 #: /dev/fd/63:201 /dev/fd/63:420
 msgid "String ID for push dialogue"
-msgstr ""
+msgstr "밀었을 때 나오는 대화문의 문자열 ID"
 
 #: /dev/fd/63:202 /dev/fd/63:421
 msgid "String mentioned above is replaced by a default text when applying"
-msgstr ""
+msgstr "위에서 설정한 문자열이 패치 기본 텍스트로 적용됨"
 
 #: /dev/fd/63:203 /dev/fd/63:422
 msgid "Only interruptions don't heal HP"
@@ -832,103 +832,103 @@ msgstr ""
 #: /dev/fd/63:204 /dev/fd/63:423
 #, c-format
 msgid "% of exp. shared"
-msgstr ""
+msgstr "공유되는 경험치 비율 (%)"
 
 #: /dev/fd/63:205 /dev/fd/63:424
 msgid "String ID for the Menu Option"
-msgstr ""
+msgstr "메뉴 옵션에 해당하는 문자열 ID"
 
 #: /dev/fd/63:206 /dev/fd/63:425
 msgid "String ID to confirm the appraise all"
-msgstr ""
+msgstr "모두 감정 확인 시의 문자열 ID"
 
 #: /dev/fd/63:207 /dev/fd/63:426
 msgid "String ID before revealing the items"
-msgstr ""
+msgstr "도구 감정 직전의 문자열 ID"
 
 #: /dev/fd/63:208 /dev/fd/63:427
 msgid "String ID when revealing an item"
-msgstr ""
+msgstr "도구 감정 시의 문자열 ID"
 
 #: /dev/fd/63:209 /dev/fd/63:428
 msgid "All strings mentioned above are replaced by a default text when applying"
-msgstr ""
+msgstr "위에서 설정한 모든 문자열이 패치 기본 텍스트로 적용됨"
 
 #: /dev/fd/63:210 /dev/fd/63:429
 msgid "Cost of each Treasure Box (Only for Appraise All option)"
-msgstr ""
+msgstr "각 보물 상자의 비용 (모두 감정 옵션에만 해당)"
 
 #: /dev/fd/63:211 /dev/fd/63:430
 msgid "Update the level and stats of evolved enemies"
-msgstr "Aggiorna il livello e le statistiche dei nemici evoluti"
+msgstr "진화한 적의 레벨 및 스탯을 업데이트함"
 
 #: /dev/fd/63:212 /dev/fd/63:431
 msgid "Fully heal enemies after evolving"
-msgstr ""
+msgstr "진화한 적의 체력을 완전히 회복시킴"
 
 #: /dev/fd/63:213 /dev/fd/63:432
 msgid "Update the moves of evolved enemies"
-msgstr "Aggiorna le mosse dei nemici evoluti"
+msgstr "진화한 적의 기술을 업데이트함"
 
 #: /dev/fd/63:214 /dev/fd/63:433
 msgid "Increase Atk/SpAtk/Def/SpDef of evolved enemies by"
-msgstr ""
+msgstr "진화한 적의 공격, 특수공격, 방어, 특수방어를 증가시킴"
 
 #: /dev/fd/63:215 /dev/fd/63:434
 msgid "Let enemies evolve even if the defeated pokémon is revived"
-msgstr "Permetti che i nemici si evolvano anche se il Pokémon sconfitto viene rianimato"
+msgstr "쓰러뜨린 포켓몬이 부활해도 적을 진화시킴"
 
 #: /dev/fd/63:217
 msgid "French"
-msgstr "Francese"
+msgstr "프랑스어"
 
 #: /dev/fd/63:218
 msgid "German"
-msgstr "Tedesco"
+msgstr "독일어"
 
 #: /dev/fd/63:219
 msgid "Italian"
-msgstr "Italiano"
+msgstr "이탈리아어"
 
 #: /dev/fd/63:220
 msgid "Spanish"
-msgstr "Spagnolo"
+msgstr "스페인어"
 
 #: /dev/fd/63:274
 msgid "Dungeon Defeated Dialog Strings"
-msgstr ""
+msgstr "던전 실패 시 대화 문자열"
 
 #: /dev/fd/63:275
 msgid "Dungeon Cleared Dialog Strings"
-msgstr ""
+msgstr "던전 클리어 시 대화 문자열"
 
 #: explorerscript/explorerscript/common_syntax.py:99
 #: explorerscript/explorerscript/common_syntax.py:187
 msgid "Integer not allowed at this position."
-msgstr ""
+msgstr "이 위치에는 정수를 사용할 수 없습니다."
 
 #: explorerscript/explorerscript/common_syntax.py:103
 #: explorerscript/explorerscript/common_syntax.py:189
 msgid "Decimal not allowed at this position."
-msgstr ""
+msgstr "이 위치에는 십진수를 사용할 수 없습니다."
 
 #: explorerscript/explorerscript/common_syntax.py:114
 msgid "Constant not allowed at this position."
-msgstr ""
+msgstr "이 위치에는 상수를 사용할 수 없습니다."
 
 #: explorerscript/explorerscript/common_syntax.py:125
 #: explorerscript/explorerscript/common_syntax.py:191
 msgid "Variable or constant not allowed at this position."
-msgstr ""
+msgstr "이 위치에는 변수 또는 상수를 사용할 수 없습니다."
 
 #: explorerscript/explorerscript/common_syntax.py:129
 #: explorerscript/explorerscript/common_syntax.py:194
 msgid "String not allowed at this position."
-msgstr ""
+msgstr "이 위치에는 문자열이 허용되지 않습니다."
 
 #: explorerscript/explorerscript/common_syntax.py:227
 msgid "Invalid target for routine."
-msgstr ""
+msgstr "루틴의 대상이 잘못되었습니다."
 
 #: explorerscript/explorerscript/common_syntax.py:256
 msgid "Position Marker arguments need to be an integer or a decimal with '.5' as the decimal places."
@@ -937,40 +937,40 @@ msgstr ""
 #: explorerscript/explorerscript/macro.py:105
 #, python-brace-format
 msgid "Value for macro variable {var_name} not provided."
-msgstr ""
+msgstr "매크로 변수 {var_name} 의 값이 제공되지 않았습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_adventure_log.py:44
 msgid "No value for adventure_log set."
-msgstr ""
+msgstr "adventure_log 에 설정된 값이 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_clear.py:44
 msgid "No variable for clear."
-msgstr ""
+msgstr "clear 에 대한 변수가 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_dungeon_mode.py:45
 msgid "No variable for dungeon_mode set."
-msgstr ""
+msgstr "dungeon_mode 에 설정된 변수가 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_dungeon_mode.py:47
 msgid "No value for dungeon_mode set."
-msgstr ""
+msgstr "dungeon_mode 에 설정된 값이 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_initial.py:44
 msgid "No variable for init."
-msgstr ""
+msgstr "init 에 대한 변수가 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:60
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:63
 msgid "No variable for assignment."
-msgstr ""
+msgstr "할당할 변수가 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:62
 msgid "No operator set for assignment."
-msgstr ""
+msgstr "할당할 연산자가 설정되어 있지 않습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:64
 msgid "No value set for assignment."
-msgstr ""
+msgstr "할당할 변수가 없습니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:71
 #, python-brace-format
@@ -1070,7 +1070,7 @@ msgstr ""
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_header.py:74
 msgid "Unknown case operation."
-msgstr ""
+msgstr "알려지지 않은 case 동작입니다."
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:54
 msgid "No value set for case menu condition."
@@ -1276,11 +1276,11 @@ msgstr ""
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:280
 msgid "Error in the XML: One of the animation frames doesn't have 16 colors. Each frame must have a value for each color."
-msgstr ""
+msgstr "XML 오류: 애니메이션 프레임 중 하나가 16가지 색상을 가지지 않습니다. 각 프레임에는 반드시 각 색상에 대한 값이 있어야 합니다."
 
 #: skytemple-dtef/skytemple_dtef/explorers_dtef_importer.py:288
 msgid "Error in the XML: Durations for a palette or it's colors are not correctly defined."
-msgstr ""
+msgstr "XML 오류: 팔레트 또는 팔레트의 색상에 대한 지속 시간이 올바르게 정의되지 않았습니다."
 
 #: skytemple-dtef/skytemple_dtef/rules.py:119
 #, python-brace-format
@@ -1341,7 +1341,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
 msgid "Down"
-msgstr "Giù"
+msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
 msgid "Down Right"
@@ -1349,7 +1349,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
 msgid "Right"
-msgstr "Destra"
+msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
 msgid "Up Right"
@@ -1357,7 +1357,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
 msgid "Up"
-msgstr "Su"
+msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
 msgid "Up Left"
@@ -1365,7 +1365,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
 msgid "Left"
-msgstr "Sinistra"
+msgstr ""
 
 #: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
 msgid "Down Left"
@@ -1426,7 +1426,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/util.py:503
 msgid "This ROM is not supported by SkyTemple."
-msgstr "Questa ROM non è supportata da SkyTemple."
+msgstr ""
 
 #: skytemple-files/skytemple_files/common/util.py:573
 #: skytemple-files/skytemple_files/common/util.py:592
@@ -1453,57 +1453,57 @@ msgstr ""
 #: skytemple-files/skytemple_files/common/xml_util.py:34
 #, python-brace-format
 msgid "Invalid XML. Expected tag {tag}, got tag {ele.tag}."
-msgstr ""
+msgstr "잘못된 XML입니다. {tag} 태그가 필요하지만, 해당 위치에 {ele.tag} 태그가 있습니다."
 
 #: skytemple-files/skytemple_files/common/xml_util.py:40
 #, python-brace-format
 msgid "Invalid XML. Expected attribute {attrib} for XML tag {ele.tag}."
-msgstr ""
+msgstr "잘못된 XML입니다. {ele.tag} 의 속성 {attrib} 이(가) 필요합니다."
 
 #: skytemple-files/skytemple_files/data/anim/model.py:45
 msgid "Head"
-msgstr ""
+msgstr "머리"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:46
 msgid "Left Hand"
-msgstr ""
+msgstr "왼손"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:47
 msgid "Right Hand"
-msgstr ""
+msgstr "오른손"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:48
 msgid "Center"
-msgstr ""
+msgstr "중앙"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:49
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:36
 #: skytemple-files/skytemple_files/data/md/protocol.py:480
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_movesets.ui:47
 msgid "None"
-msgstr ""
+msgstr "없음"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:62
 #: skytemple-files/skytemple_files/data/md/protocol.py:67
 #: skytemple-files/skytemple_files/data/md/protocol.py:429
 msgid "Invalid"
-msgstr ""
+msgstr "유효하지 않음"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:63
 msgid "WAN File 0"
-msgstr ""
+msgstr "WAN 파일 0"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:64
 msgid "WAN File 1"
-msgstr ""
+msgstr "WAN 파일 1"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:65
 msgid "WAN"
-msgstr ""
+msgstr "WAN"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:66
 msgid "WAT"
-msgstr ""
+msgstr "WAT"
 
 #: skytemple-files/skytemple_files/data/anim/model.py:67
 msgid "Screen"
@@ -1511,26 +1511,26 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/anim/model.py:68
 msgid "WBA"
-msgstr ""
+msgstr "WBA"
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:72
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:176
 msgid "ARMIPS could not be found. Make sure, that 'armips' is inside your system's PATH."
-msgstr ""
+msgstr "ARMIPS를 찾을 수 없습니다. 'armips'가 시스템 경로 내에 있는지 확인하세요."
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:78
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:188
 msgid "ARMIPS reported an error while applying the patch."
-msgstr ""
+msgstr "ARMIPS가 패치를 적용하는 동안 오류를 보고했습니다."
 
 #: skytemple-files/skytemple_files/data/data_cd/armips_importer.py:89
 #, python-brace-format
 msgid "The armips source file did not create a {OUT_BIN}."
-msgstr ""
+msgstr "armips 소스 파일은 {OUT_BIN} 을(를) 생성하지 않았습니다."
 
 #: skytemple-files/skytemple_files/data/data_cd/model.py:76
 msgid "To delete this effect, no items must use it."
-msgstr ""
+msgstr "이 효과를 삭제하려면 어떤 항목에서도 해당 효과를 사용하지 않아야 합니다."
 
 #: skytemple-files/skytemple_files/data/inter_d/model.py:36
 msgid "Always"
@@ -1558,31 +1558,31 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:37
 msgid "Pokémon"
-msgstr "Pokémon"
+msgstr "포켓몬"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:38
 msgid "Type"
-msgstr "Tipo"
+msgstr "타입"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:71
 msgid "The Pokemon may hatch holding the item."
-msgstr ""
+msgstr "포켓몬이 도구를 들고 태어날 수 있음"
 
 #: skytemple-files/skytemple_files/data/item_s_p/model.py:78
 msgid "? (Only all the Eeveelutions, and the Tyrogue line have items with this type!)"
-msgstr ""
+msgstr "? (이브이즈와 베루키 진화 라인만이 이 항목으로 설정되어 있습니다!)"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:68
 msgid "Male"
-msgstr "Maschio"
+msgstr "수컷"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:69
 msgid "Female"
-msgstr "Femmina"
+msgstr "암컷"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:70
 msgid "Genderless"
-msgstr "Asessuato"
+msgstr "무성"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:422
 #: skytemple-files/skytemple_files/data/md/protocol.py:423
@@ -1593,165 +1593,165 @@ msgstr "Asessuato"
 #: skytemple_randomizer/skytemple_randomizer/frontend/cli/info.py:129
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_monsters_abilities.py:79
 msgid "Unused"
-msgstr "Inutilizzato"
+msgstr "미사용"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:452
 msgid "Not an Evolved Form."
-msgstr "Non evoluto."
+msgstr "진화형이 아님"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:453
 msgid "Level"
-msgstr "Livello"
+msgstr "레벨"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:454
 msgid "IQ"
-msgstr "QI"
+msgstr "지능"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:455
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:16
 msgid "Items"
-msgstr "Strumenti"
+msgstr "도구"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:456
 msgid "Recruited"
-msgstr "Reclutato"
+msgstr "동료 영입"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:457
 msgid "No Main Requirement"
-msgstr ""
+msgstr "주요 조건 없음"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:481
 msgid "Link Cable"
-msgstr "Cavo Link"
+msgstr "통신케이블"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:482
 msgid "Attack > Defense"
-msgstr "Attacco > Difesa"
+msgstr "공격 > 방어"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:483
 msgid "Attack < Defense"
-msgstr "Attacco < Difesa"
+msgstr "공격 < 방어"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:484
 msgid "Attack = Defense"
-msgstr "Attacco = Difesa"
+msgstr "공격 = 방어"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:485
 msgid "Sun Ribbon"
-msgstr "Galasole"
+msgstr "태양의리본"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:486
 msgid "Lunar Ribbon"
-msgstr "Galaluna"
+msgstr "달빛의리본"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:487
 msgid "Beauty Scarf"
-msgstr "Incantovelo"
+msgstr "뷰티스카프"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:488
 msgid "Internal Value 0x1 = 1"
-msgstr ""
+msgstr "내부 값 0x1 = 1"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:489
 msgid "Internal Value 0x1 = 0"
-msgstr ""
+msgstr "내부 값 0x1 = 0"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:490
 msgid "Male (1st form)"
-msgstr ""
+msgstr "수컷 (첫번째 모습)"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:491
 msgid "Female (2nd form)"
-msgstr ""
+msgstr "암컷 (두번째 모습)"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:492
 msgid "Knows AncientPower"
-msgstr "Conosce Forzantica"
+msgstr "원시의힘을 배움"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:493
 msgid "Knows Rollout"
-msgstr "Conosce Rotolamento"
+msgstr "구르기를 배움"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:494
 msgid "Knows Double Hit"
-msgstr "Conosce Doppiosmash"
+msgstr "더블어택을 배움"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:495
 msgid "Knows Mimic"
-msgstr "Conosce Mimica"
+msgstr "흉내내기를 배움"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:518
 msgid "Standard"
-msgstr "Standard"
+msgstr "일반"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:519
 msgid "Unknown"
-msgstr "Sconosciuto"
+msgstr "불명"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:520
 msgid "Hovering"
-msgstr ""
+msgstr "부유"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:521
 msgid "Phase Through Walls"
-msgstr ""
+msgstr "벽 통과"
 
 #. TRANSLATORS: Movement Type
 #: skytemple-files/skytemple_files/data/md/protocol.py:522
 msgid "Lava"
-msgstr "Lava"
+msgstr "용암"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:523
 msgid "Water"
-msgstr "Acqua"
+msgstr "물"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:546
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:54
 msgid "Small"
-msgstr "Piccolo"
+msgstr "작음"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:547
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:73
 msgid "Medium"
-msgstr "Medio"
+msgstr "중간"
 
 #: skytemple-files/skytemple_files/data/md/protocol.py:548
 msgid "Large"
-msgstr "Grande"
+msgstr "큼"
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:211
 #, python-brace-format
 msgid "Invalid XML. '{XML_STRINGS__NAME}' missing for language {xml_lang.tag}."
-msgstr ""
+msgstr "잘못된 XML입니다. '{xml_lang.tag}' 에 대한 '{XML_STRINGS__NAME}' 가 누락되었습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:215
 #, python-brace-format
 msgid "Invalid XML. '{XML_STRINGS__CATEGORY}' missing for language {xml_lang.tag}."
-msgstr ""
+msgstr "잘못된 XML입니다. '{xml_lang.tag}' 에 대한 '{XML_STRINGS__CATEGORY}' 가 누락되었습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:375
 #, python-brace-format
 msgid "Invalid XML. '{XML_GENENT_EXCLUSIVE_ITEMS}' needs four item IDs."
-msgstr ""
+msgstr "잘못된 XML입니다. '{XML_GENENT_EXCLUSIVE_ITEMS}' 에는 4개의 도구 ID가 필요합니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:438
 #, python-brace-format
 msgid "Invalid XML. '{a}' missing for a {b}."
-msgstr ""
+msgstr "잘못된 XML입니다. {b} 에 '{a}' 가 누락되었습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:481
 #, python-brace-format
 msgid "Invalid XML. '{XML_MOVESET_LEVEL_UP__LEVEL}' missing for a level up moveset entry."
-msgstr ""
+msgstr "잘못된 XML입니다. 레벨 업 기술 엔트리에 '{XML_MOVESET_LEVEL_UP__LEVEL}'가 없습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:485
 #, python-brace-format
 msgid "Invalid XML. '{XML_MOVESET__MOVE_ID}' missing for a level up moveset entry."
-msgstr ""
+msgstr "잘못된 XML입니다. 레벨 업 기술 엔트리에 '{XML_MOVESET__MOVE_ID}'가 없습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:523
 msgid "Invalid XML. StatsGrowth must have exactly 100 levels."
-msgstr ""
+msgstr "잘못된 XML입니다. 'StatsGrowth'에는 정확히 100레벨에 대응하는 항목이 있어야 합니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:547
 #: skytemple-files/skytemple_files/data/monster_xml.py:550
@@ -1761,91 +1761,91 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/monster_xml.py:562
 #, python-brace-format
 msgid "Invalid XML. '{x}' missing for a stats growth level entry."
-msgstr ""
+msgstr "잘못된 XML입니다. 능력치 성장 엔트리에 '{x}'가 없습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:587
 msgid "Incompatible XML. The number of portraits don't match with the expected value of {len(value_to_update)}"
-msgstr ""
+msgstr "호환되지 않는 XML. 초상화 수가 {len (value_to_update)} 의 예상 값과 일치하지 않습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:603
 #, python-brace-format
 msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__IMAGE}' missing for a portrait."
-msgstr ""
+msgstr "잘못된 XML입니다. 초상화에 대한 '{XML_PORTRAITS_PORTRAIT__IMAGE}'가 누락되었습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:607
 #, python-brace-format
 msgid "Invalid XML. '{XML_PORTRAITS_PORTRAIT__PALETTE}' missing for a portrait."
-msgstr ""
+msgstr "잘못된 XML입니다. 초상화에 대한 '{XML_PORTRAITS_PORTRAIT__PALETTE}'가 누락되었습니다."
 
 #: skytemple-files/skytemple_files/data/monster_xml.py:618
 #, python-brace-format
 msgid "Invalid XML. The portrait data of one of the portraits is invalid: {err}"
-msgstr ""
+msgstr "잘못된 XML입니다. 초상화 중 하나의 초상화 데이터가 유효하지 않습니다: {err}"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:29
 msgid "Healthy"
-msgstr ""
+msgstr "HP 50% 이상"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:30
 msgid "Half Life"
-msgstr ""
+msgstr "HP 50% 미만"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:31
 msgid "Pinch"
-msgstr ""
+msgstr "HP 25% 미만"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:32
 msgid "Level Up"
-msgstr ""
+msgstr "레벨 업"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:33
 msgid "Wait"
-msgstr ""
+msgstr "대기"
 
 #: skytemple-files/skytemple_files/data/tbl_talk/model.py:34
 msgid "Ground Wait"
-msgstr ""
+msgstr "그라운드 대기"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:35
 msgid "Physical Move"
-msgstr "Mossa fisica"
+msgstr "물리 기술"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:36
 msgid "Special Move"
-msgstr "Mossa speciale"
+msgstr "특수 기술"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:37
 msgid "Status Move"
-msgstr "Mossa di stato"
+msgstr "변화 기술"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:60
 msgid "Enemies"
-msgstr ""
+msgstr "적"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:61
 msgid "Allies"
-msgstr ""
+msgstr "아군"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:62
 msgid "Everyone"
-msgstr ""
+msgstr "전체"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:63
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:108
 msgid "User"
-msgstr ""
+msgstr "사용자"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:64
 msgid "Two-turn move"
-msgstr ""
+msgstr "2턴 기술"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:65
 msgid "Everyone except user"
-msgstr ""
+msgstr "사용자를 제외한 모두"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:66
 msgid "All allies except user"
-msgstr ""
+msgstr "사용자를 제외한 아군"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:67
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:68
@@ -1870,77 +1870,77 @@ msgstr ""
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:158
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:159
 msgid "Invalid "
-msgstr ""
+msgstr "유효하지 않음"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:75
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:116
 msgid "Special / Invalid"
-msgstr ""
+msgstr "특수 / 유효하지 않음"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:98
 msgid "In front"
-msgstr ""
+msgstr "정면"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:99
 msgid "In front + adjacent (like Wide Slash)"
-msgstr ""
+msgstr "정면 3칸 (수평베기)"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:100
 msgid "8 tiles around user"
-msgstr ""
+msgstr "주변 8칸"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:101
 msgid "Room"
-msgstr ""
+msgstr "방 전체"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:104
 msgid "Two tiles away"
-msgstr ""
+msgstr "2타일 앞"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:106
 msgid "Straight line"
-msgstr ""
+msgstr "직선상"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:107
 msgid "Floor"
-msgstr ""
+msgstr "층 전체"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:109
 msgid "In front; cuts corners"
-msgstr ""
+msgstr "정면; 모퉁이 관통"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:110
 msgid "Two tiles away; cuts corners"
-msgstr ""
+msgstr "2타일 앞; 모퉁이 관통"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:141
 msgid "No condition"
-msgstr ""
+msgstr "조건 없음"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:142
 msgid "Based on AI Condition 1 Chance"
-msgstr ""
+msgstr "AI 조건 1 확률에 기반"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:143
 msgid "Current HP <= 25%"
-msgstr ""
+msgstr "현재 HP가 25% 이하"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:144
 msgid "Has at least one negative status condition"
-msgstr ""
+msgstr "한 개 이상의 부정적인 상태이상에 걸림"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:145
 msgid "Is asleep, in a nightmare or napping"
-msgstr ""
+msgstr "수면, 악몽, 잠자는 상태 중 하나인 경우"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:146
 msgid "Is a ghost-type Pokémon and does not have the exposed status"
-msgstr ""
+msgstr "고스트타입 포켓몬이며, 꿰뚫어보기를 당한 상태가 아니어야 함"
 
 #: skytemple-files/skytemple_files/data/waza_p/protocol.py:149
 #, python-format
 msgid "Current HP <= 25% or has at least one negative status condition"
-msgstr ""
+msgstr "현재 HP가 25% 이하이거나 한 개 이상의 부정적인 상태이상에 걸림"
 
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:55
 #: skytemple-files/skytemple_files/dungeon_data/fixed_bin/model.py:235
@@ -2100,11 +2100,11 @@ msgstr ""
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:610
 #, python-brace-format
 msgid "Unknown trap {name}."
-msgstr ""
+msgstr "알 수 없는 함정 '{name}'."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/mappa_xml.py:617
 msgid "Trap lists need an entry for all of the 25 traps"
-msgstr ""
+msgstr "트랩 목록에는 25개 트랩 전체에 대한 항목이 필요합니다"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:53
 msgid "Medium Large"
@@ -2112,27 +2112,27 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:55
 msgid "Single Monster House"
-msgstr ""
+msgstr "큰 방 몬스터 소굴"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:56
 msgid "Ring"
-msgstr ""
+msgstr "고리 모양 (복도)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:59
 msgid "Crossroads"
-msgstr ""
+msgstr "교차형"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:63
 msgid "Two Rooms, One Monster House"
-msgstr ""
+msgstr "두 개의 방 (하나는 반드시 몬스터 소굴)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:65
 msgid "Line"
-msgstr ""
+msgstr "직선형"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:66
 msgid "Cross"
-msgstr ""
+msgstr "십자 모양"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:67
 msgid "Small Medium"
@@ -2140,11 +2140,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:68
 msgid "Beetle"
-msgstr ""
+msgstr "벌레 모양"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:71
 msgid "Outer Rooms"
-msgstr ""
+msgstr "고리 모양 (방)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:74
 msgid "Medium Large (12)"
@@ -2165,352 +2165,353 @@ msgstr ""
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:100
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:369
 msgid "Clear"
-msgstr ""
+msgstr "맑음"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:101
 msgid "Sunny"
-msgstr ""
+msgstr "강한 햇빛"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:102
 msgid "Sandstorm"
-msgstr ""
+msgstr "모래바람"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:103
 msgid "Cloudy"
-msgstr ""
+msgstr "구름"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:104
 msgid "Rainy"
-msgstr ""
+msgstr "비"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:105
 msgid "Hail"
-msgstr ""
+msgstr "싸라기눈"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:106
 msgid "Fog"
-msgstr ""
+msgstr "안개"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:107
 msgid "Snow"
-msgstr ""
+msgstr "눈"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:108
 msgid "Random"
-msgstr "Casuale"
+msgstr "무작위"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:131
 msgid "No darkness"
-msgstr ""
+msgstr "어둡지 않음"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:132
 msgid "1-tile vision (Heavy darkness)"
-msgstr ""
+msgstr "1타일 시야 (짙은 어둠)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:133
 msgid "2-tile vision (Light darkness)"
-msgstr ""
+msgstr "2타일 시야 (약간 어두움)"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:134
 msgid "3-tile vision"
-msgstr ""
+msgstr "3타일 시야"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:135
 msgid "4-tile vision"
-msgstr ""
+msgstr "4타일 시야"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:159
 msgid "Mud Trap"
-msgstr ""
+msgstr "진흙 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:160
 msgid "Sticky Trap"
-msgstr ""
+msgstr "끈적끈적 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:161
 msgid "Grimy Trap"
-msgstr ""
+msgstr "질퍽 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:162
 msgid "Summon Trap"
-msgstr ""
+msgstr "불러내기 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:163
 msgid "Pitfall Trap"
-msgstr ""
+msgstr "빠뜨리기 구멍"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:164
 msgid "Warp Trap"
-msgstr ""
+msgstr "워프 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:165
 msgid "Gust Trap"
-msgstr ""
+msgstr "돌풍 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:166
 msgid "Spin Trap"
-msgstr ""
+msgstr "빙글빙글 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:167
 msgid "Slumber Trap"
-msgstr ""
+msgstr "잠들기 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:168
 msgid "Slow Trap"
-msgstr ""
+msgstr "야돈 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:169
 msgid "Seal Trap"
-msgstr ""
+msgstr "봉인 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:170
 msgid "Poison Trap"
-msgstr ""
+msgstr "독침 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:171
 msgid "Selfdestruct Trap"
-msgstr ""
+msgstr "자폭 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:172
 msgid "Explosion Trap"
-msgstr ""
+msgstr "폭파 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:173
 msgid "Pp Zero Trap"
-msgstr ""
+msgstr "기술줄임 함정"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:174
 msgid "Chestnut Trap"
-msgstr "Castagnotrappola"
+msgstr "밤송이 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:175
 msgid "Wonder Tile"
-msgstr "Mattomagica"
+msgstr "이상한 마루"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:176
 msgid "Pokemon Trap"
-msgstr ""
+msgstr "포켓몬 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:177
 msgid "Spiked Tile"
-msgstr ""
+msgstr "압정"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:178
 msgid "Stealth Rock"
-msgstr ""
+msgstr "스텔스록"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:179
 msgid "Toxic Spikes"
-msgstr ""
+msgstr "독압정"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:180
 msgid "Trip Trap"
-msgstr "Inciampotrappola"
+msgstr "데굴데굴 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:181
 msgid "Random Trap"
-msgstr ""
+msgstr "손가락흔들기 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/protocol.py:182
 msgid "Grudge Trap"
-msgstr ""
+msgstr "원념 스위치"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:40
 msgid "Invalid Floor List"
-msgstr ""
+msgstr "유효하지 않은 층 목록"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:43
 msgid "References a dungeon floor list that doesn't exist."
-msgstr ""
+msgstr "존재하지 않는 던전 층 목록을 참조합니다."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:49
 msgid "Invalid Floor"
-msgstr ""
+msgstr "유효하지 않은 층"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:52
 msgid "References floor that is out of bounds in the floor list for this group."
-msgstr ""
+msgstr "이 던전 그룹의 층 목록 범위를 벗어난 층을 참조합니다."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:68
 msgid "Re-uses Floor"
-msgstr ""
+msgstr "층의 재사용"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:76
 #, python-brace-format
 msgid "Re-uses floors that are already used by {name}."
-msgstr ""
+msgstr "{name} 이 사용하는 층을 재사용합니다."
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:107
 msgid "Unused Floors"
-msgstr ""
+msgstr "미사용 층"
 
 #: skytemple-files/skytemple_files/dungeon_data/mappa_bin/validator/exception.py:112
 msgid "Has {len(self.floors_in_mappa_not_referenced)} extra floors in it's floor list, which are not assigned to any dungeon."
-msgstr ""
+msgstr "층 목록에 어떠한 던전에도 할당되지 않은 여분의 층이 {len(self.floors_in_mappa_not_referenced)} 개 있습니다."
 
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:500
 #, python-brace-format
 msgid "Can not import map background: Width of both images must match the current map width: {expected_width}px"
-msgstr ""
+msgstr "맵 배경을 불러올 수 없습니다: 두 이미지 모두 너비가 현재 맵 너비 {expected_width} 픽셀과 같아야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/bma/_model.py:511
 #, python-brace-format
 msgid "Can not import map background: Height of both images must match the current map height: {expected_height}px"
-msgstr ""
+msgstr "맵 배경을 불러올 수 없습니다: 두 이미지 모두 높이가 현재 맵 높이 {expected_height} 픽셀과 같아야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/bpa/_model.py:207
 #: skytemple-rust/src/st_bpa.rs:236
 msgid "The dimensions of all images must be the same."
-msgstr ""
+msgstr "모든 이미지의 크기는 동일해야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/chr/model.py:77
 msgid "Cannot convert PIL image to CHR: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "PIL 이미지를 CHR로 변환할 수 없습니다. 팔레트를 사용하는 인덱스된 이미지여야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/chr/model.py:80
 #, python-brace-format
 msgid "Cannot convert PIL image to CHR: width and height must be a multiple of {CHR_TILE_WIDTH}"
-msgstr ""
+msgstr "PIL 이미지를 CHR로 변환할 수 없습니다. 너비와 높이 모두 {CHR_TILE_WIDTH} 의 배수여야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:115
 #, python-brace-format
 msgid "Can not import map background: Width of image must match the expected width: {expected_width}px"
-msgstr ""
+msgstr "맵 배경을 불러올 수 없습니다: 이미지의 너비가 {expected_width} 픽셀이어야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/dbg/_model.py:124
 #, python-brace-format
 msgid "Can not import map background: Height of image must match the expected height: {expected_height}px"
-msgstr ""
+msgstr "맵 배경을 불러올 수 없습니다: 이미지의 높이가 {expected_height} 픽셀이어야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:124
 #, python-brace-format
 msgid "The image to import can only use the first 12 palettes. Tried to use palette {tm.pal_idx}"
-msgstr ""
+msgstr "가져올 이미지는 첫 12개의 팔레트만 사용할 수 있습니다. 팔레트 {tm.pal_idx} 사용을 시도했습니다."
 
 #: skytemple-files/skytemple_files/graphics/dpc/_model.py:161
 #: skytemple-rust/src/st_dpc.rs:221
 msgid "A dungeon background or tilemap can not have more than 400 chunks."
-msgstr ""
+msgstr "던전 배경이나 타일맵은 400개 이상의 청크를 가질 수 없습니다."
 
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
 #: skytemple-rust/src/st_dpla.rs:131
 msgid "This palette has no animation."
-msgstr ""
+msgstr "이 팔레트에는 애니메이션이 없습니다."
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:96
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/model.py:98
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/model.py:104
 msgid "This must be a color indexed image!"
-msgstr ""
+msgstr "컬러 인덱스 이미지여야 합니다!"
 
 #: skytemple-files/skytemple_files/graphics/fonts/banner_font/model.py:260
 #, python-brace-format
 msgid "Font parsing: Unexpected {child.tag}"
-msgstr ""
+msgstr "폰트 파싱: 예기치 않은 {child.tag}"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_dat/writer.py:45
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is defined multiple times in a font file!"
-msgstr ""
+msgstr "표 {e.table} 의 문자 {e.char} 이(가) 폰트 파일에 여러 번 정의되어 있습니다!"
 
 #: skytemple-files/skytemple_files/graphics/fonts/font_sir0/writer.py:58
 #, python-brace-format
 msgid "Character {e.char} in table {e.table} is be defined multiple times in a font file!"
-msgstr ""
+msgstr "표 {e.table} 의 문자 {e.char} 이(가) 폰트 파일에 여러 번 정의되어 있습니다!"
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:293
 #, python-brace-format
 msgid "Could not load KAO at {old_index},{old_subindex}: {ex}"
-msgstr ""
+msgstr "{old_index},{old_subindex}: {ex} 에 KAO를 로드할 수 없습니다."
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:352
 #, python-brace-format
 msgid "Can not convert PIL image to Kao: Image dimensions must be {img_dim}x{img_dim}px."
-msgstr ""
+msgstr "PIL 이미지를 KAO로 변환할 수 없습니다. 이미지 크지는 {img_dim}x{img_dim} 픽셀이어야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/kao/_model.py:459
 msgid "This portrait does not compress well, the result size is greater than {limit} bytes ({len(new_img_compressed)} bytes total).\n"
 "If you haven't done already, try applying the 'ProvideATUPXSupport' ASM patch to install an optimized compression algorithm, which might be able to better compress this image.If this still doesn't work, try the 'ExpandPortraitStructs' instead."
-msgstr ""
+msgstr "이 초상화는 잘 압축되지 않았으며, 결과 크기가 {limit} 바이트보다 큽니다. (총 {len(new_img_compressed)} 바이트)\n"
+"'ProvideATUPXSupport' ASM 패치를 아직 적용하지 않았다면, 최적화된 압축 알고리즘 설치를 위해 이 패치를 적용해 보십시오. 그래도 문제가 해결되지 않으면 'ExpandPortraitStructs' 패치를 적용해 보십시오."
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:110
 #, python-brace-format
 msgid "Portrait has an invalid size of {img.size}, Not divisble by {PORTRAIT_SIZE}x{PORTRAIT_SIZE}"
-msgstr ""
+msgstr "초상화 크기가 {img.size}로 유효하지 않습니다. {PORTRAIT_SIZE}x{PORTRAIT_SIZE}로 나눌 수 없습니다."
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:116
 #, python-brace-format
 msgid "Portrait has an invalid size of {img.size}, exceeding max of {max_size}"
-msgstr ""
+msgstr "초상화 크기가 {img.size}로 유효하지 않습니다. 최대값 {max_size}를 초과합니다."
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:152
 #, python-brace-format
 msgid "Semi-transparent pixels found at: {rogue_pixels}"
-msgstr ""
+msgstr "다음 위치에 반투명 픽셀이 있습니다: {rogue_pixels}"
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:154
 #, python-brace-format
 msgid "The following emotions have transparent pixels: {rogue_tiles}"
-msgstr ""
+msgstr "다음 감정표현이 투명한 픽셀을 가지고 있습니다: {rogue_tiles}"
 
 #: skytemple-files/skytemple_files/graphics/kao/sprite_bot_sheet.py:173
 msgid "File should have original and flipped versions of emotions: {str(flipped_tiles)}"
-msgstr ""
+msgstr "파일에는 원본과 뒤집힌 버전의 감정표현이 있어야 합니다: {str(flipped_tiles)}"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:40
 msgid "Palette Only"
-msgstr ""
+msgstr "팔레트만"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:41
 msgid "2 bits per pixel (4 colors)"
-msgstr ""
+msgstr "픽셀 당 2비트 (4색)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:42
 msgid "4 bits per pixel (16 colors)"
-msgstr ""
+msgstr "픽셀 당 4비트 (16색)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:43
 msgid "8 bits per pixel (256 colors)"
-msgstr ""
+msgstr "픽셀 당 8비트 (256색)"
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:209
 msgid "Can not convert PIL image to WTE: Must be indexed image (=using a palette)"
-msgstr ""
+msgstr "PIL 이미지를 WTE로 변환할 수 없습니다. 팔레트를 사용하는 인덱스된 이미지여야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/wte/model.py:215
 msgid "This image is too big to fit into a WTE file."
-msgstr ""
+msgstr "이 이미지는 너무 커서 WTE 파일에 담을 수 없습니다."
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:43
 msgid "Semi-Opaque"
-msgstr ""
+msgstr "반투명"
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:44
 msgid "Transparent"
-msgstr ""
+msgstr "투명"
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:45
 msgid "Opaque"
-msgstr ""
+msgstr "불투명"
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:191
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:214
 msgid "Tile and masks list must have exactly 3 items"
-msgstr ""
+msgstr "타일 및 마스크 목록에는 정확히 3개의 항목이 있어야 합니다."
 
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:197
 #: skytemple-files/skytemple_files/graphics/zmappat/model.py:220
 msgid "Can not convert PIL image to ZMAPPAT: Must be indexed images (=using a palette)"
-msgstr ""
+msgstr "PIL 이미지를 ZMAPPAT로 변환할 수 없습니다. 팔레트를 사용하는 인덱스된 이미지여야 합니다."
 
 #: skytemple-files/skytemple_files/hardcoded/cart_removed.py:59
 #, python-brace-format
 msgid "The image must have dimensions {IMG_WIDTH}x{IMG_HEIGHT}."
-msgstr ""
+msgstr "이미지 크기는 {IMG_WIDTH}x{IMG_HEIGHT}여야 합니다."
 
 #: skytemple-files/skytemple_files/hardcoded/cart_removed.py:74
 msgid "This image must be compressed better to fit in the arm9 ({len(data)} > {block.end-block.address})."
-msgstr ""
+msgstr "이 이미지는 arm9 ({len (data)} > {block.end-block.address}) 에 맞게 더 잘 압축되어야 합니다."
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:308
 msgid "White"
@@ -2571,7 +2572,7 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:325
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:355
 msgid "Earthquake"
-msgstr "Terremoto"
+msgstr ""
 
 #. TRANSLATORS: Effect of a tileset's secret power move
 #. TRANSLATORS: Move name
@@ -2606,50 +2607,50 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:345
 msgid "Cringe"
-msgstr ""
+msgstr "풀죽음"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:346
 msgid "Freeze"
-msgstr ""
+msgstr "얼음"
 
 #. TRANSLATORS: Status
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:347
 msgid "Paralysis"
-msgstr ""
+msgstr "마비"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:358
 msgid "Rock Slide"
-msgstr "Frana"
+msgstr "스톤샤워"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:360
 msgid "Tri Attack"
-msgstr "Tripletta"
+msgstr "트라이어택"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:361
 msgid "Hydro Pump"
-msgstr "Idropompa"
+msgstr "하이드로펌프"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:362
 msgid "Blizzard"
-msgstr "Bora"
+msgstr "눈보라"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:363
 msgid "Ice Beam"
-msgstr "Geloraggio"
+msgstr "냉동빔"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:364
 msgid "Seed Bomb"
-msgstr "Semebomba"
+msgstr "씨폭탄"
 
 #. TRANSLATORS: Move name
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:365
 msgid "Mud Bomb"
-msgstr "Pantanobomba"
+msgstr "진흙폭탄"
 
 #: skytemple-files/skytemple_files/hardcoded/dungeons.py:370
 msgid "Foggy 1"
@@ -2764,24 +2765,24 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:69
 msgid "Game Main Menu"
-msgstr ""
+msgstr "게임 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:77
 msgid "Game Sub Menu"
-msgstr ""
+msgstr "게임 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:85
 msgid "Continue Choice"
-msgstr ""
+msgstr "계속한다 선택"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:93
 #: skytemple-files/skytemple_files/hardcoded/menus.py:101
 msgid "Main Debug Menu"
-msgstr ""
+msgstr "주 디버그 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:109
 msgid "Quiz Debug Menu"
-msgstr ""
+msgstr "성격 테스트 디버그 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:117
 msgid "Footprint Debug Menu"
@@ -2789,28 +2790,28 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:125
 msgid "Bank Main Menu"
-msgstr ""
+msgstr "은행 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:133
 msgid "Evolution Menu Confirm"
-msgstr ""
+msgstr "진화 확인 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:141
 msgid "Evolution Sub Menu"
-msgstr ""
+msgstr "진화 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:149
 msgid "Evolution Main Menu"
-msgstr ""
+msgstr "진화 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:157
 msgid "Assembly Menu Confirm"
-msgstr ""
+msgstr "편성소 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:165
 #: skytemple-files/skytemple_files/hardcoded/menus.py:173
 msgid "Assembly Main Menu"
-msgstr ""
+msgstr "편성소 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:181
 #: skytemple-files/skytemple_files/hardcoded/menus.py:189
@@ -2820,11 +2821,11 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:221
 #: skytemple-files/skytemple_files/hardcoded/menus.py:229
 msgid "Assembly Sub Menu"
-msgstr ""
+msgstr "편성소 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:237
 msgid "Moves Menu Confirm"
-msgstr ""
+msgstr "기술 확인 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:245
 #: skytemple-files/skytemple_files/hardcoded/menus.py:253
@@ -2834,114 +2835,114 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:293
 #: skytemple-files/skytemple_files/hardcoded/menus.py:301
 msgid "Moves Sub Menu"
-msgstr ""
+msgstr "기술 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:261
 msgid "Moves Main Menu"
-msgstr ""
+msgstr "기술 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:309
 #: skytemple-files/skytemple_files/hardcoded/menus.py:317
 msgid "Bar Menu Confirm"
-msgstr ""
+msgstr "드링크 스탠드 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:325
 msgid "Bar Main Menu"
-msgstr ""
+msgstr "드링크 스탠드 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:333
 #: skytemple-files/skytemple_files/hardcoded/menus.py:341
 msgid "Bar Sub Menu"
-msgstr ""
+msgstr "드링크 스탠드 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:349
 #: skytemple-files/skytemple_files/hardcoded/menus.py:357
 msgid "Recycle Menu Confirm"
-msgstr ""
+msgstr "리사이클 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:365
 #: skytemple-files/skytemple_files/hardcoded/menus.py:373
 msgid "Recycle Sub Menu"
-msgstr ""
+msgstr "리사이클 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:381
 #: skytemple-files/skytemple_files/hardcoded/menus.py:389
 #: skytemple-files/skytemple_files/hardcoded/menus.py:397
 msgid "Recycle Main Menu"
-msgstr ""
+msgstr "리사이클 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:405
 msgid "Synthesis Menu Confirm"
-msgstr ""
+msgstr "트레이드샵 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:413
 #: skytemple-files/skytemple_files/hardcoded/menus.py:421
 #: skytemple-files/skytemple_files/hardcoded/menus.py:445
 msgid "Synthesis Sub Menu"
-msgstr ""
+msgstr "트레이드샵 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:429
 #: skytemple-files/skytemple_files/hardcoded/menus.py:437
 msgid "Synthesis Main Menu"
-msgstr ""
+msgstr "트레이드샵 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:453
 msgid "Shop Menu Confirm"
-msgstr ""
+msgstr "상점 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:461
 #: skytemple-files/skytemple_files/hardcoded/menus.py:469
 #: skytemple-files/skytemple_files/hardcoded/menus.py:477
 msgid "Shop Main Menu"
-msgstr ""
+msgstr "상점 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:485
 msgid "Storage Menu Confirm"
-msgstr ""
+msgstr "창고 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:493
 #: skytemple-files/skytemple_files/hardcoded/menus.py:501
 #: skytemple-files/skytemple_files/hardcoded/menus.py:509
 #: skytemple-files/skytemple_files/hardcoded/menus.py:517
 msgid "Storage Main Menu"
-msgstr ""
+msgstr "창고 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:525
 msgid "Hatcher Menu Confirm"
-msgstr ""
+msgstr "돌보미집 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:533
 msgid "Hatcher Main Menu"
-msgstr ""
+msgstr "돌보미집 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:541
 msgid "Appraiser Menu Confirm"
-msgstr ""
+msgstr "감정소 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:549
 msgid "Appraiser Main Menu"
-msgstr ""
+msgstr "감정소 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:557
 msgid "Appraiser Sub Menu"
-msgstr ""
+msgstr "감정소 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:565
 msgid "Discard Items Menu Confirm"
-msgstr ""
+msgstr "도구 버리기 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:573
 #: skytemple-files/skytemple_files/hardcoded/menus.py:581
 msgid "Discard Items Sub Menu"
-msgstr ""
+msgstr "도구 버리기 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:589
 msgid "Discard Items Main Menu"
-msgstr ""
+msgstr "도구 버리기 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:597
 msgid "Dungeon Main Menu"
-msgstr ""
+msgstr "던전 주 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:605
 #: skytemple-files/skytemple_files/hardcoded/menus.py:613
@@ -2950,84 +2951,87 @@ msgstr ""
 #: skytemple-files/skytemple_files/hardcoded/menus.py:637
 #: skytemple-files/skytemple_files/hardcoded/menus.py:645
 msgid "Dungeon Sub Menu"
-msgstr ""
+msgstr "던전 서브 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:653
 msgid "Start Menu Confirm"
-msgstr ""
+msgstr "게임 시작 메뉴 확인"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:661
 msgid "Dungeon Debug Menu"
-msgstr ""
+msgstr "던전 디버그 메뉴"
 
 #: skytemple-files/skytemple_files/hardcoded/menus.py:734
 #, python-brace-format
 msgid "This menu must have {num_entries} entries!"
-msgstr ""
+msgstr "이 메뉴는 반드시 {num_entries} 개의 엔트리가 있어야 합니다!"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:88
 msgid "Standing Animation (loop)"
-msgstr ""
+msgstr "서있는 애니메이션 (반복)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:89
 msgid "Standing Animation (1st frame)"
-msgstr ""
+msgstr "서있는 애니메이션 (첫 프레임)"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:90
 msgid "Special"
-msgstr ""
+msgstr "특수"
 
 #: skytemple-files/skytemple_files/hardcoded/monster_sprite_data_table.py:91
 msgid "Walking Animation (1st frame)"
-msgstr ""
+msgstr "걷는 애니메이션 (첫 프레임)"
 
 #: skytemple-files/skytemple_files/patch/arm_patcher.py:219
 #, python-brace-format
 msgid "Error while applying the patch: {ex}"
-msgstr ""
+msgstr "패치 적용 중 오류가 발생했습니다: {ex}"
 
 #: skytemple-files/skytemple_files/patch/category.py:27
 msgid "Improvements and Tweaks"
-msgstr ""
+msgstr "개선 및 변경"
 
 #: skytemple-files/skytemple_files/patch/category.py:31
 msgid "New Mechanics"
-msgstr ""
+msgstr "새로운 시스템"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:33
 msgid "Bugfixes"
-msgstr ""
+msgstr "버그 수정"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:34
 msgid "Utility"
-msgstr ""
+msgstr "유틸리티"
 
 #. TRANSLATORS: Name for the category of ASM patch
 #: skytemple-files/skytemple_files/patch/category.py:35
 msgid "Others"
-msgstr ""
+msgstr "기타"
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:53
 msgid "Tells the game to load the actor and level lists from separate files.\n"
 "Extracts both files on applying the patch."
-msgstr ""
+msgstr "별도의 파일에서 액터와 레벨 목록을 로드하도록 게임에 지시합니다.\n"
+"패치 적용 시 두 파일을 모두 추출합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:98
 msgid "This patch can not be re-applied."
-msgstr ""
+msgstr "이 패치는 다시 적용할 수 없습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:104
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:112
 msgid "The source data specification was not found in the configuration."
-msgstr ""
+msgstr "설정에서 소스 데이터 사양을 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/actor_and_level_loader.py:127
 msgid "\n\n"
 "The list was extracted anyway.\n"
 "You can already edit it through SkyTemple, but it won't be used in game, until you successfully apply the patch."
-msgstr ""
+msgstr "\n\n"
+"리스트 추출은 되었습니다.\n"
+"추출된 리스트는 SkyTemple을 통해서 수정 할 수 있지만, 정상적으로 패치를 적용하기 전에는 게임에서 사용되지 않을 것입니다."
 
 #: skytemple-files/skytemple_files/patch/handler/add_key_check.py:48
 msgid "Prevents Keys from being used on party members that are not below a Key Door!"
@@ -3035,15 +3039,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
-msgstr ""
+msgstr "타입 상성표에 타입을 추가합니다. 기존 상성표를 6세대 이후의 상성표로 변경하며, 테이블의 마지막에 페어리 타입을 추가합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/allow_unrecruitable_mons.py:48
 msgid "Allows recruiting the other Deoxys forms and the regis inside dungeons."
-msgstr ""
+msgstr "던전 내에서 다른 폼의 테오키스와 레지 시리즈를 동료로 만들 수 있게 됩니다."
 
 #: skytemple-files/skytemple_files/patch/handler/anti_softlock.py:49
 msgid "Allows the player to press A+B+X+Y during cutscenes to force the game to continue past a softlock (this can happen during cutscenes when using custom sprites or the randomizer). Does not work with crashes caused due to internal errors (such as the game running out of memory)."
-msgstr ""
+msgstr "컷신 중에 소프트락이 걸리면 플레이어가 A+B+X+Y를 눌러 강제로 게임을 계속할 수 있도록 합니다(소프트락은 커스텀 스프라이트나 랜더마이저 사용 시 컷신 중에 발생할 수 있음). 내부 오류(예: 게임 메모리 부족)에 의한 충돌 발생 시에는 작동하지 않습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:56
 msgid "Appraise all"
@@ -3066,7 +3070,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/appraise_all.py:75
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
-msgstr ""
+msgstr "상자 감정 메뉴에 모든 상자를 한 번에 감정할 수 있는 메뉴를 추가합니다. "
 
 #: skytemple-files/skytemple_files/patch/handler/better_enemy_evolution.py:49
 msgid "Allows changing how enemy evolution works. In particular, it allows you to choose if the evolved enemy will get the stats and/or moves from its new species, add extra stats after evolving, heal the enemy after evolving or choosing if the evolution will take place even if the target is revived."
@@ -3080,12 +3084,14 @@ msgstr ""
 msgid "Change the evolution system.\n"
 "After applying this, every single Pokémon will have two lists for their evolution and children, and different stat bonuses when a Pokémon evolves into them.\n"
 "This supposedly removes most of the particular cases the game handles for evolutions. "
-msgstr ""
+msgstr "진화 시스템을 변경합니다.\n"
+"적용 시, 모든 포켓몬은 진화 전과 후에 대한 두 개의 리스트를 가지며, 포켓몬이 진화할 때 다른 능력치 보너스를 받게 됩니다.\n"
+"패치를 적용하면 게임에서 진화를 처리하는 대부분의 특수한 케이스가 사라질 것입니다. 아마도요. "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:209
 #, python-brace-format
 msgid "Infinite recursion detected in pre evolutions for md entry {i}. "
-msgstr ""
+msgstr "md 엔트리 {i}에서 진화 전 포켓몬에 대한 무한 재귀가 감지되었습니다. "
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:216
 #, python-brace-format
@@ -3104,7 +3110,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/change_tbbg.py:48
 msgid "Provides support for editing textbox background color."
-msgstr ""
+msgstr "텍스트 상자 배경색 편집을 지원합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/change_text_sound.py:51
 msgid "Adds new text tags that allow for the textbox sound to be changed. [TS:X:Y] will use the Xth sound effect ID in textboxes with a volume of Y. [TR] will revert the sound and volume to their default states, sound effect 16133 and volume 256."
@@ -3116,7 +3122,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:65
 msgid "Adds an extra menu during the personality test to choose the starter."
-msgstr ""
+msgstr "성격 테스트 중 스타팅 포켓몬을 선택할 수 있는 메뉴를 추가합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:104
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
@@ -3128,19 +3134,19 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:119
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by Frostbyte before applying this patch."
-msgstr ""
+msgstr "던전에서 start 버튼을 눌러 컨트롤 모드를 자동 모드와 수동 모드로 변경할 수 있습니다. 수동 모드에서는 동료의 턴에 동료를 직접 컨트롤 할 수 있습니다. 이 패치를 적용하려면 Frostbyte가 만든 추가 코드 오버레이 패치를 적용해야 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/compress_iq_data.py:50
 msgid "Optimizes the way the list of IQ skills learnt by each IQ group is stored, removing the limit of max 25 skills per group."
-msgstr ""
+msgstr "지능 그룹마다 배울 수 있는 지능 스킬 리스트를 최적화해서 그룹 당 배울 수 있는 지능 스킬 수의 제한(25개)을 없앱니다."
 
 #: skytemple-files/skytemple_files/patch/handler/disable_tips.py:48
 msgid "Disables the tip textboxes shown in dungeons at the beginning of the game."
-msgstr ""
+msgstr "게임 초기 던전에서 표시되는 팁 메시지를 비활성화 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/disarm_one_room_mh.py:44
 msgid "Disarms one-room Monster House floors, which can appear in cases like a layout generation failure. These floors will still be one giant room, but will no longer be Monster Houses."
-msgstr ""
+msgstr "던전 레이아웃 생성 실패로 발생할 수 있는 층 전체가 방인 층의 몬스터 소굴을 무장해제합니다. 이러한 층은 여전히 거대한 하나의 방으로 이루어질 수 있지만 몬스터 소굴로는 나오지 않습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/display_script_var.py:49
 msgid "Displays a script variable in a string with the text tag [var:x:y], where \"x\" is the variable ID and \"y\" is the index!"
@@ -3148,7 +3154,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/dungeon_interrupt.py:50
 msgid "Implements dungeon interruptions. "
-msgstr ""
+msgstr "던전 중단점을 구현할 수 있게 합니다. "
 
 #: skytemple-files/skytemple_files/patch/handler/dynamic_bosses_everywhere.py:49
 msgid "Allows placing special fixed room entities #124-127 (Explorer Maze enemies) in any fixed room without causing the game to crash."
@@ -3156,24 +3162,28 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/edit_guest_pokemon.py:49
 msgid "Changes the way the game determines when to add guest pokémon to the team so it can be edited more easily"
-msgstr ""
+msgstr "게임에서 게스트 포켓몬을 팀에 추가하는 시기를 결정하는 방식을 변경하여 더 쉽게 개조할 수 있게 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/exp_share.py:59
 msgid "Implements shared experience points between all members (GtI style). \n"
 "This is disabled during Special Episodes and dungeons with level 1 or no exp. restrictions. \n"
 "Needs the ExtractDungeonData patch to be applied to free some space used by this."
-msgstr ""
+msgstr "모든 탐험대원 간 경험치 공유를 구현합니다. (마그나게이트 방식) \n"
+"이 기능은 스페셜 에피소드와 1레벨 던전, 경험치를 주지 않는 던전에서는 비활성화됩니다. \n"
+"이 기능 추가에 필요한 공간 확보를 위해 ExtractDungeonData 패치를 적용해야 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/expand_poke_list.py:115
 msgid "Expand the pokemon entries allowed to 2048, and makes all the entries independent.\n"
 "Needs ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData patches to work.\n"
 "It is strongly recommended to fix any dungeon error before applying this patch,\n"
 "and to save a backup of your ROM before applying this."
-msgstr ""
+msgstr "포켓몬 엔트리를 2048개로 확장하고 모든 엔트리를 독립적으로 동작하도록 만듭니다.\n"
+"사용하려면 ChangeEvoSystem, ExternalizeWazaFile, ExternalizeMappaFile, SpriteSizeInMonsterData 패치를 먼저 적용해야 합니다.\n"
+"이 패치를 적용하기 전에 던전 에러를 먼저 수정하고, 롬파일의 백업을 저장한 후 적용하기를 강력히 권고드립니다."
 
 #: skytemple-files/skytemple_files/patch/handler/expand_portrait.py:48
 msgid "Expands portraits structure by 8 bytes, which is enough to cover all cases."
-msgstr ""
+msgstr "초상화 파일 구조를 항목당 8바이트 확장시켜 모든 케이스를 사용할 수 있도록 만듭니다."
 
 #: skytemple-files/skytemple_files/patch/handler/externalize_mappa.py:49
 msgid "Use filestreams to access mappa_t/mappa_y/mappa_s data instead of loading them entirely.\n"
@@ -3188,46 +3198,49 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/extra_space.py:50
 msgid "This patch adds a new overlay 36 to the game, which is loaded at address 0x023A7080 and provides extra space for patches to place code and data in."
-msgstr ""
+msgstr "이 패치는 게임에 새로운 overlay_0036. bin을 추가합니다. 이 오버레이는 주소 0x023A7080에 로드되며 추가 코드와 데이터를 넣을 수 있는 여유 공간을 제공합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_anims.py:55
 msgid "Extracts animation data and put it in files. \n"
 "Needs ActorAndLevelLoader patch to free some space. "
-msgstr ""
+msgstr "애니메이션 데이터를 추출하여 파일에 넣습니다. \n"
+"공간을 확보하려면 ActorAndLevelLoader 패치가 필요합니다. "
 
 #: skytemple-files/skytemple_files/patch/handler/extract_bar_list.py:66
 msgid "Extracts Spinda bar's item list."
-msgstr ""
+msgstr "얼루기의 드링크 스탠드 아이템 리스트를 추출합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_dungeon_data.py:177
 msgid "Extracts the floor ranks, forbidden mission floors, items available in dungeon tables and put them in files. Provides support for reading them from the rom file system."
-msgstr ""
+msgstr "던전 테이블 내의 층별 랭크, 의뢰 금지 층, 사용 가능 아이템을 추출하여 파일에 넣습니다. 롬 파일 시스템에서 이 파일들을 읽어들일 수 있도록 지원합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_code.py:77
 msgid "Extracts item effects code and put it in files."
-msgstr ""
+msgstr "아이템 효과 코드를 추출하여 파일에 넣습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:65
 msgid "Extracts the hardcoded item lists, used for mission rewards/treasure boxes content as well as Kecleon shop items, and put them in files. Provides support for reading them from the rom file system."
-msgstr ""
+msgstr "미션 보상/보물상자 내용물와 캘리몬 상점 아이템에 사용되는 하드코딩된 아이템 목록을 추출하여 파일에 저장합니다. 롬 파일 시스템에서 이 파일을 읽을 수 있도록 지원합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_item_lists.py:139
 msgid "Don't have enough space to put filenames! "
-msgstr ""
+msgstr "파일명을 넣기애 공간이 충분하지 않습니다! "
 
 #: skytemple-files/skytemple_files/patch/handler/extract_move_code.py:80
 msgid "Extracts move effects code and put it in files."
-msgstr ""
+msgstr "기술 효과 코드를 추출하여 파일에 넣습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/extract_sp_code.py:72
 msgid "Extracts special processes code and put it in files."
-msgstr ""
+msgstr "특수 프로세스 코드를 추출하여 파일에 넣습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/fairy_gummies.py:113
 msgid "Implements Fairy-type specialized gummies. Uses unused item 138.\n"
 "Needs ExtractItemCode, ExtractBarItemList and AddTypes patches to be applied for this patch to work.\n"
 "Also, you'll need to reapply this if you apply AddTypes again. "
-msgstr ""
+msgstr "페어리타입 특화 구미를 추가합니다. 사용하지 않는 아이템 138을 대체합니다.\n"
+"이 패치를 적용하려면 ExtractItemCode, ExtractBarItemList, AddTypes 패치를 먼저 적용해야 합니다.\n"
+"AddTypes 패치를 재 적용하였으면 이 패치도 재 적용이 필요합니다. "
 
 #: skytemple-files/skytemple_files/patch/handler/far_off_pal_overdrive.py:50
 msgid "Makes the game always move the PoV to your partners when they use moves or are attacked, even if the partner is only one tile away, when far-off pals is enabled. Recommended for CTC since the PoV stays on your last pokemon at the end of a manual movement round without this, and CTC already reduces the amount of time the game pauses for between PoV changes."
@@ -3239,15 +3252,15 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/fix_evolution.py:45
 msgid "Fixes the evolution glitch that freezes the game when attempting to evolve a pokémon whose name has 10 characters."
-msgstr ""
+msgstr "이름이 10자인 포켓몬을 진화시키려 할 때 게임이 멈추는 버그를 수정합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/fix_memory_softlock.py:47
 msgid "If the game runs out of memory trying to load a sprite, a default one will be used instead, preventing the crash."
-msgstr ""
+msgstr "게임이 스프라이트를 로드할 때 메모리가 부족하면, 기본 스프라이트를 대신 사용하여 게임이 뻗지 않도록 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:49
 msgid "Fixes an issue that causes saving to fail on the No$GBA emulator. Warning: Causes saving to fail on the MelonDS emulator instead."
-msgstr ""
+msgstr "No$GBA 에뮬레이터에서 저장이 실패하는 문제를 수정합니다. 주의: 대신 MelonDS 에뮬레이터에서 저장이 실패합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/move_growth.py:176
 msgid "Implements move growth (PoC/Unfinished). \n"
@@ -3260,7 +3273,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/move_shortcuts.py:49
 msgid "Replaces the fixed move (L+A) with a move shortcut functionality like in GtI or Super (L+A/B/X/Y). The ExtraSpace patch must be applied before this one."
-msgstr ""
+msgstr "기술 단축키를 기존의 고정된 기술 사용(L+A)에서 마그나게이트나 초불던 스타일 기술 단축키(L+A/B/X/Y)로 변경합니다. 이 패치를 적용하려면 ExtraSpace 패치를 먼저 적용해야 합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/negative_enemy_density.py:49
 msgid "Makes negative enemy density values work as intended (the absolute value of the density is used, without adding a random variation)."
@@ -3268,11 +3281,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/no_weather_stop.py:50
 msgid "Changes weather damage messages so they don't make the player stop running."
-msgstr ""
+msgstr "날씨에 의한 피해 메시지에 의해 플레이어가 달리기를 멈추지 않도록 변경합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/obj_table.py:68
 msgid "Extracts the object table to a separate file in the ROM."
-msgstr ""
+msgstr "오브젝트 테이블을 롬파일 내 별도 파일로 추출합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/partners_trigger_hidden_traps.py:50
 msgid "Recommended for CTC. Without this patch, partners cannot trigger hidden traps - this balances the game, as making your partners dodge traps with manual movement is easy, but this patch is not recommended for mods which use pitfall traps, as they instakill partners which step on them."
@@ -3293,7 +3306,8 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/push_allies.py:55
 msgid "Implements pushing allies in dungeons.\n"
 "Uses the same command style as PSMD"
-msgstr ""
+msgstr "던전에서 동료를 밀 수 있는 기능을 추가합니다.\n"
+"초불던과 동일한 조작을 사용합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/reduce_jumpcut_pause_time.py:50
 msgid "Reduces the amount of time the game pauses for before changing the PoV, like when far-off pals is enabled, from 60 frames to 12. This is already applied in the CTC hack."
@@ -3301,11 +3315,11 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/remove_body_size_check.py:48
 msgid "Removes the total body size check before entering a dungeon."
-msgstr ""
+msgstr "던전 입장 시의 포켓몬 크기 제한 검사를 제거합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/same_type_partner.py:48
 msgid "Allows the partner to be of the same type as the player in the personality test."
-msgstr ""
+msgstr "성격 테스트에서 파트너가 플레이어와 같은 타입이어도 선택 가능하도록 변경합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:47
 msgid "Who would you like to be?"
@@ -3314,21 +3328,23 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/handler/skip_quiz.py:58
 msgid "Skips the quiz, only leaving the gender question.\n"
 "Needs ChooseStarter patch to be applied. "
-msgstr ""
+msgstr "성격 테스트를 건너뛰고 성별 선택만 남깁니다. ChooseStarter 패치가 먼저 적용되어야 합니다. "
 
 #: skytemple-files/skytemple_files/patch/handler/sprite_size.py:49
 msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
-msgstr ""
+msgstr "스프라이트 크기와 파일 사이즈 값이 각 포켓몬 데이터 내에 포함되도록 변경합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
-msgstr ""
+msgstr "기존 기술의 별 수치 표기를 막대 표기로 대체합니다.\n"
+"markfont.dat 파일을 변경한 경우 호환되지 않을 수 있습니다."
 
 #: skytemple-files/skytemple_files/patch/handler/support_atupx.py:51
 msgid "Provide support for ATUPX containers, which use a different algorithm than PX compression.\n"
 "Requires the ActorAndLevelLoader, as it frees the space needed to implement this."
-msgstr ""
+msgstr "PX 압축과는 다른 알고리즘을 사용하는 ATUPX 컨테이너에 대한 지원을 제공합니다.\n"
+"이를 구현하는 데 필요한 공간을 확보하기 위해 ActorAndLevelLoader가 필요합니다."
 
 #: skytemple-files/skytemple_files/patch/handler/team_stats_pain.py:51
 msgid "If available, change a team member's portrait in the Team Stats menu to pain when in critical condition."
@@ -3336,31 +3352,31 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
-msgstr ""
+msgstr "던전의 '미사용' 확률을 변경합니다. 해당 값은 벽 미로 방의 생성 확률을 결정하는 값이 됩니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:240
 #: skytemple-files/skytemple_files/patch/patches.py:250
 #, python-brace-format
 msgid "The patch '{name}' was not found."
-msgstr ""
+msgstr "패치 '{name}'을 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:257
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
-msgstr ""
+msgstr "'{name}'을 적용하기 위해서는 '{patch_name}'패치를 먼저 적용해야 합니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:263
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
-msgstr ""
+msgstr "'{name}'을 적용하기 위해서는 '{patch_name}'패치를 먼저 적용해야 합니다. 해당 패치를 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:273
 msgid "No configuration was given."
-msgstr ""
+msgstr "설정이 제공되지 않았습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:276
 msgid "Missing configuration value."
-msgstr ""
+msgstr "설정 값이 누락되었습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:281
 #: skytemple-files/skytemple_files/patch/patches.py:287
@@ -3368,44 +3384,44 @@ msgstr ""
 #: skytemple-files/skytemple_files/patch/patches.py:301
 #: skytemple-files/skytemple_files/patch/patches.py:315
 msgid "Invalid configuration value."
-msgstr ""
+msgstr "설정 값이 유효하지 않습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:289
 msgid "Must be >= {}."
-msgstr ""
+msgstr "{} 이상이어야 합니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:295
 msgid "Must be <= {}."
-msgstr ""
+msgstr "{} 이하여야 합니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:402
 msgid "config.xml missing in patch package."
-msgstr ""
+msgstr "패치 패키지에 config.xml이 누락되어 있습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:404
 msgid "Syntax error in the config.xml while reading patch package."
-msgstr ""
+msgstr "패치 패키지를 읽는 중 config.xml에 구문 오류가 발생했습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:414
 msgid "patch.py missing in patch package."
-msgstr ""
+msgstr "패치 패키지에 patch.py가 누락되어 있습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:416
 msgid "The patch.py of the patch package contains a syntax error."
-msgstr ""
+msgstr "패치 패키지의 patch.py에 구문 오류가 있습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:421
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
-msgstr ""
+msgstr "패치 패키지의 patch.py에 'PatchHandler'가 없습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:427
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
-msgstr ""
+msgstr "패치 패키지에 config.xml에 핸들러의 패치 이름에 대한 엔트리가 존재하지 않습니다."
 
 #: skytemple-files/skytemple_files/patch/patches.py:434
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
-msgstr ""
+msgstr "패치 설정에서 핸들러 '{handler.name}'에 대한 패치를 찾을 수 없습니다."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:109
 msgid "Unknown or extra XML element '{}' in scene data."
@@ -3413,7 +3429,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:110
 msgid "'{}' missing in scene data."
-msgstr ""
+msgstr "장면 데이터에 '{}'이(가) 누락되어 있습니다."
 
 #: skytemple-files/skytemple_files/script/ssa_sse_sss/ssa_xml.py:458
 msgid "The event ID {} is out of bounds for one of the triggers."
@@ -3537,12 +3553,12 @@ msgstr ""
 
 #: skytemple-rust/src/st_dpla.rs:112
 msgid "Palette is invalid."
-msgstr ""
+msgstr "팔레트가 유효하지 않습니다."
 
 #: skytemple-rust/src/st_dpla.rs:117 skytemple-rust/src/st_dpla.rs:174
 #: skytemple-rust/src/st_dpla.rs:210 skytemple-rust/src/st_dpla.rs:218
 msgid "Palette index out of range."
-msgstr ""
+msgstr "팔레트 인덱스가 범위를 벗어났습니다."
 
 #: skytemple-rust/src/st_dpla.rs:268
 msgid "Frame durations out of range while trying to build color."
@@ -3560,7 +3576,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:129
 msgid "Error"
-msgstr ""
+msgstr "에러"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:131
 msgid "_OK"
@@ -3572,32 +3588,32 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:100
 msgid "CSV File (*.csv)"
-msgstr ""
+msgstr "CSV 파일 (*.csv)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:108
 msgid "XML Document (*.xml)"
-msgstr ""
+msgstr "XML 문서 (*.xml)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:116
 msgid "Nintendo DS ROM (*.nds)"
-msgstr ""
+msgstr "닌텐도 DS 롬파일 (*.nds)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:124
 msgid "JSON Document (*.json)"
-msgstr ""
+msgstr "JSON 문서 (*.json)"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:156
 msgid "Any File"
-msgstr ""
+msgstr "모든 파일"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:13
 #, python-brace-format
 msgid "New version available: {version}"
-msgstr ""
+msgstr "새로운 버전을 사용 가능합니다: {version}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/banner_update_info.ui:14
 msgid "Update now"
-msgstr "Aggiorna ora"
+msgstr "지금 업데이트"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:26
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/base_dialog_settings.ui:40
@@ -3624,7 +3640,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:144
 msgid "Error while opening file ({})."
-msgstr ""
+msgstr "파일 ({}) 을(를) 여는 중 오류가 발생했습니다."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:159
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/dialog_randomize.py:195
@@ -3682,11 +3698,11 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:22
 msgid "About"
-msgstr "Info"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/grid_links.ui:35
 msgid "Wiki"
-msgstr "Wiki"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons.ui:10
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_main.ui:68
@@ -3830,12 +3846,12 @@ msgstr ""
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:299
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:219
 msgid "Import from CSV"
-msgstr "Importa da CSV"
+msgstr "CSV로부터 가져오기"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:301
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:223
 msgid "Export to CSV"
-msgstr "Esporta come CSV"
+msgstr "CSV로 내보내기"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_settings.ui:14
 msgid "Randomize Layouts, Tilesets and Music"
@@ -4288,7 +4304,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:54
 msgid "Use Native File Handlers"
-msgstr "Usa Gestori File Nativi"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.ui:64
 msgid "If enabled, the randomizer uses faster implementations to manipulate the files in the ROM.\n"
@@ -4396,7 +4412,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:64
 msgid "Randomize Chapter Titles"
-msgstr "Randomizza titoli dei capitoli"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:73
 msgid "Configure the pool of chapter titles used for randomization"
@@ -4417,7 +4433,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:117
 msgid "Randomize Story Dialogue"
-msgstr "Randomizza dialoghi della storia"
+msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text.ui:128
 msgid "Randomize the game's overworld scene text. ALL overworld text is shuffled.\n"
@@ -4536,7 +4552,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:142
 msgid "Patches"
-msgstr ""
+msgstr "패치"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_tweaks.ui:164
 msgid "Miscellaneous"

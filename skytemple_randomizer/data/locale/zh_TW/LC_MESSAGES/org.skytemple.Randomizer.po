@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-08-25 12:23+0000\n"
-"PO-Revision-Date: 2024-08-25 13:22\n"
+"POT-Creation-Date: 2024-12-14 00:55+0000\n"
+"PO-Revision-Date: 2024-12-14 00:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "Language: zh_TW\n"
@@ -2393,7 +2393,7 @@ msgid "A dungeon background or tilemap can not have more than 400 chunks."
 msgstr ""
 
 #: skytemple-files/skytemple_files/graphics/dpla/_model.py:103
-#: skytemple-rust/src/st_dpla.rs:130
+#: skytemple-rust/src/st_dpla.rs:131
 msgid "This palette has no animation."
 msgstr ""
 
@@ -3029,6 +3029,10 @@ msgid "\n\n"
 "You can already edit it through SkyTemple, but it won't be used in game, until you successfully apply the patch."
 msgstr ""
 
+#: skytemple-files/skytemple_files/patch/handler/add_key_check.py:48
+msgid "Prevents Keys from being used on party members that are not below a Key Door!"
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
 msgstr ""
@@ -3064,6 +3068,14 @@ msgstr ""
 msgid "Adds an extra menu in box appraisal to appraise all boxes at once. "
 msgstr ""
 
+#: skytemple-files/skytemple_files/patch/handler/better_enemy_evolution.py:49
+msgid "Allows changing how enemy evolution works. In particular, it allows you to choose if the evolved enemy will get the stats and/or moves from its new species, add extra stats after evolving, heal the enemy after evolving or choosing if the evolution will take place even if the target is revived."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/bold_text.py:48
+msgid "Adds new text tags that allow for bold text in strings. Encase the desired text with [BS] and [BR]."
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:118
 msgid "Change the evolution system.\n"
 "After applying this, every single Pokémon will have two lists for their evolution and children, and different stat bonuses when a Pokémon evolves into them.\n"
@@ -3085,8 +3097,17 @@ msgid "Changes and adds some properties for fixed floors.\n"
 "Removes restrictions. "
 msgstr ""
 
+#: skytemple-files/skytemple_files/patch/handler/change_portrait.py:49
+msgid "Implements the text tag [FACE:X], which sets the current portrait to use the Xth portrait emotion (e.g. 0 = FACE_NORMAL).\n"
+"This allows for changing portrait emotions during dialogue!"
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/change_tbbg.py:48
 msgid "Provides support for editing textbox background color."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/change_text_sound.py:51
+msgid "Adds new text tags that allow for the textbox sound to be changed. [TS:X:Y] will use the Xth sound effect ID in textboxes with a volume of Y. [TR] will revert the sound and volume to their default states, sound effect 16133 and volume 256."
 msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/choose_starter.py:55
@@ -3119,6 +3140,10 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/disarm_one_room_mh.py:44
 msgid "Disarms one-room Monster House floors, which can appear in cases like a layout generation failure. These floors will still be one giant room, but will no longer be Monster Houses."
+msgstr ""
+
+#: skytemple-files/skytemple_files/patch/handler/display_script_var.py:49
+msgid "Displays a script variable in a string with the text tag [var:x:y], where \"x\" is the variable ID and \"y\" is the index!"
 msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/dungeon_interrupt.py:50
@@ -3253,6 +3278,10 @@ msgstr ""
 msgid "Recommended for CTC. Without this patch, partners cannot trigger hidden traps - this balances the game, as making your partners dodge traps with manual movement is easy, but this patch is not recommended for mods which use pitfall traps, as they instakill partners which step on them."
 msgstr ""
 
+#: skytemple-files/skytemple_files/patch/handler/pitfall_trap_tweak.py:49
+msgid "Makes Pitfall Traps send the leader back by one floor in ascending dungeons. If the leader activates a Pitfall Trap on 1F, they will restart 1F with a different seed."
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/pkmn_ground_anim.py:62
 msgid "Changes implementation of idle animation to an editable table."
 msgstr ""
@@ -3301,75 +3330,79 @@ msgid "Provide support for ATUPX containers, which use a different algorithm tha
 "Requires the ActorAndLevelLoader, as it frees the space needed to implement this."
 msgstr ""
 
+#: skytemple-files/skytemple_files/patch/handler/team_stats_pain.py:51
+msgid "If available, change a team member's portrait in the Team Stats menu to pain when in critical condition."
+msgstr ""
+
 #: skytemple-files/skytemple_files/patch/handler/unused_dungeon_chance.py:49
 msgid "Fixes the 'unused' chance for dungeons. It now determines a chance of spawning a wall maze room in the floor."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:238
-#: skytemple-files/skytemple_files/patch/patches.py:248
+#: skytemple-files/skytemple_files/patch/patches.py:240
+#: skytemple-files/skytemple_files/patch/patches.py:250
 #, python-brace-format
 msgid "The patch '{name}' was not found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:255
+#: skytemple-files/skytemple_files/patch/patches.py:257
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:261
+#: skytemple-files/skytemple_files/patch/patches.py:263
 #, python-brace-format
 msgid "The patch '{patch_name}' needs to be applied before you can apply '{name}'. This patch could not be found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:271
+#: skytemple-files/skytemple_files/patch/patches.py:273
 msgid "No configuration was given."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:274
+#: skytemple-files/skytemple_files/patch/patches.py:276
 msgid "Missing configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:279
-#: skytemple-files/skytemple_files/patch/patches.py:285
-#: skytemple-files/skytemple_files/patch/patches.py:291
-#: skytemple-files/skytemple_files/patch/patches.py:299
-#: skytemple-files/skytemple_files/patch/patches.py:313
+#: skytemple-files/skytemple_files/patch/patches.py:281
+#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:293
+#: skytemple-files/skytemple_files/patch/patches.py:301
+#: skytemple-files/skytemple_files/patch/patches.py:315
 msgid "Invalid configuration value."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:287
+#: skytemple-files/skytemple_files/patch/patches.py:289
 msgid "Must be >= {}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:293
+#: skytemple-files/skytemple_files/patch/patches.py:295
 msgid "Must be <= {}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:400
+#: skytemple-files/skytemple_files/patch/patches.py:402
 msgid "config.xml missing in patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:402
+#: skytemple-files/skytemple_files/patch/patches.py:404
 msgid "Syntax error in the config.xml while reading patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:412
+#: skytemple-files/skytemple_files/patch/patches.py:414
 msgid "patch.py missing in patch package."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:414
+#: skytemple-files/skytemple_files/patch/patches.py:416
 msgid "The patch.py of the patch package contains a syntax error."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:419
+#: skytemple-files/skytemple_files/patch/patches.py:421
 msgid "The patch.py of the patch package does not contain a 'PatchHandler'."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:425
+#: skytemple-files/skytemple_files/patch/patches.py:427
 msgid "The patch package does not contain an entry for the handler's patch name in the config.xml."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/patches.py:432
+#: skytemple-files/skytemple_files/patch/patches.py:434
 #, python-brace-format
 msgid "No patch for handler '{handler.name}' found in the configuration."
 msgstr ""
@@ -3466,7 +3499,7 @@ msgid "An image selected to import is too complex. It has too many unique tiles 
 "Try to have less unique tiles. Unique tiles are 8x8 sections of the images that can't be found anywhere else in the image (including flipped or with a different sub-palette)."
 msgstr ""
 
-#: skytemple-rust/src/python_image.rs:54
+#: skytemple-rust/src/python_image.rs:53
 msgid "The image you provided is not an indexed image (it has no palette). Please convert it to an indexed image (with a maximum of {} colors) and try again."
 msgstr ""
 
@@ -3478,23 +3511,23 @@ msgstr ""
 msgid "Error reading the filesystem from ROM: {}"
 msgstr ""
 
-#: skytemple-rust/src/st_bma.rs:467
+#: skytemple-rust/src/st_bma.rs:462
 msgid "Can not import map background: Width of both images must match the current map width: {}px"
 msgstr ""
 
-#: skytemple-rust/src/st_bma.rs:479
+#: skytemple-rust/src/st_bma.rs:474
 msgid "Can not import map background: Height of both images must match the current map width: {}px"
 msgstr ""
 
-#: skytemple-rust/src/st_bpc.rs:541
+#: skytemple-rust/src/st_bpc.rs:548
 msgid "new tilemapping for this chunk must contain {} tiles."
 msgstr ""
 
-#: skytemple-rust/src/st_dbg.rs:123
+#: skytemple-rust/src/st_dbg.rs:127
 msgid "Can not import map background: Width of image must match the expected width: {}px"
 msgstr ""
 
-#: skytemple-rust/src/st_dbg.rs:129
+#: skytemple-rust/src/st_dbg.rs:133
 msgid "Can not import map background: Height of image must match the expected height: {}px"
 msgstr ""
 
@@ -3502,16 +3535,16 @@ msgstr ""
 msgid "The image to import can only use the first 12 palettes. Tried to use palette {}"
 msgstr ""
 
-#: skytemple-rust/src/st_dpla.rs:111
+#: skytemple-rust/src/st_dpla.rs:112
 msgid "Palette is invalid."
 msgstr ""
 
-#: skytemple-rust/src/st_dpla.rs:116 skytemple-rust/src/st_dpla.rs:173
-#: skytemple-rust/src/st_dpla.rs:209 skytemple-rust/src/st_dpla.rs:217
+#: skytemple-rust/src/st_dpla.rs:117 skytemple-rust/src/st_dpla.rs:174
+#: skytemple-rust/src/st_dpla.rs:210 skytemple-rust/src/st_dpla.rs:218
 msgid "Palette index out of range."
 msgstr ""
 
-#: skytemple-rust/src/st_dpla.rs:267
+#: skytemple-rust/src/st_dpla.rs:268
 msgid "Frame durations out of range while trying to build color."
 msgstr ""
 
@@ -3878,7 +3911,7 @@ msgid "Randomize Explorer Rank Unlocks"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:25
-msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points."
+msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 100000 points."
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:39
@@ -4079,15 +4112,16 @@ msgstr ""
 msgid "If enabled, the music that plays outside of dungeons is randomized (for the most part)."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:82
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:90
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:104
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:112
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:85
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:93
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:107
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:115
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:123
 msgid "Installs the patch '{}' by {}:\n"
 "{}"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:99
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.py:102
 msgid "Installs patches that allow you to control your team members manually in dungeons. Press Start to toggle. Patch by Cipnit."
 msgstr ""
 
@@ -4109,6 +4143,10 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:106
 msgid "Apply \"Fix Memory Softlock\" Patch"
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:129
+msgid "Apply \"SameTypePartner\" Patch"
 msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:14
@@ -4731,31 +4769,35 @@ msgstr ""
 msgid "Randomizing Overworld Music..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:47
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:50
 msgid "Apply base patches by psy_commando and Frostbyte..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:67
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:70
 msgid "Apply 'MoveShortcuts' patch..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:72
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:75
 msgid "Apply 'UnusedDungeonChance' patch..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:77
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:80
 msgid "Apply 'Complete Team Control' patches..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:94
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:97
 msgid "Apply personality test patches..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:102
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:105
 msgid "Apply 'FixMemorySoftlock' patch..."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:107
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:110
+msgid "Apply 'SameTypePartner' patch..."
+msgstr ""
+
+#: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:115
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr ""
 

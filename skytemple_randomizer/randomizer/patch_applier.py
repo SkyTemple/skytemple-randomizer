@@ -16,12 +16,13 @@
 #  along with SkyTemple.  If not, see <https://www.gnu.org/licenses/>.
 from time import sleep
 
+from skytemple_files.common.i18n_util import _
 from skytemple_files.common.types.file_types import FileType
 from skytemple_files.patch.patches import Patcher
+
 from skytemple_randomizer.config import QuizMode
 from skytemple_randomizer.randomizer.abstract import AbstractRandomizer
 from skytemple_randomizer.status import Status
-from skytemple_files.common.i18n_util import _
 
 
 class PatchApplier(AbstractRandomizer):
@@ -36,6 +37,8 @@ class PatchApplier(AbstractRandomizer):
         if self.config["improvements"]["patch_fixmemorysoftlock"]:
             i += 1
         if self.config["improvements"]["patch_disarm_monster_houses"]:
+            i += 1
+        if self.config["improvements"]["patch_sametypepartner"]:
             i += 1
         if self.config["quiz"]["mode"] != QuizMode.TEST:
             i += 1
@@ -102,6 +105,11 @@ class PatchApplier(AbstractRandomizer):
             status.step(_("Apply 'FixMemorySoftlock' patch..."))
             if not patcher.is_applied("FixMemorySoftlock"):
                 patcher.apply("FixMemorySoftlock")
+
+        if self.config["improvements"]["patch_sametypepartner"]:
+            status.step(_("Apply 'SameTypePartner' patch..."))
+            if not patcher.is_applied("SameTypePartner"):
+                patcher.apply("SameTypePartner")
 
         if self.config["improvements"]["patch_disarm_monster_houses"]:
             status.step(_("Apply 'DisarmOneRoomMonsterHouses' patch..."))

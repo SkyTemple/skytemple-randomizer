@@ -19,20 +19,19 @@ from __future__ import annotations
 import os
 from typing import cast
 
+from gi.repository import Gtk, Adw
 from skytemple_files.common.i18n_util import _
 from skytemple_files.patch.handler.disarm_one_room_mh import DisarmOneRoomMHPatchHandler
 from skytemple_files.patch.handler.fix_memory_softlock import (
     FixMemorySoftlockPatchHandler,
 )
 from skytemple_files.patch.handler.move_shortcuts import MoveShortcutsPatch
+from skytemple_files.patch.handler.same_type_partner import SameTypePartnerPatch
 from skytemple_files.patch.handler.unused_dungeon_chance import UnusedDungeonChancePatch
 
 from skytemple_randomizer.config import RandomizerConfig
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate
 from skytemple_randomizer.frontend.gtk.path import MAIN_PATH
-
-from gi.repository import Gtk, Adw
-
 from skytemple_randomizer.frontend.gtk.widgets import HelpPopover
 
 
@@ -44,11 +43,13 @@ class PatchesPage(Adw.PreferencesPage):
     row_patch_totalteamcontrol = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_patch_disarm_monster_houses = cast(Adw.SwitchRow, Gtk.Template.Child())
     row_patch_fixmemorysoftlock = cast(Adw.SwitchRow, Gtk.Template.Child())
+    row_patch_sametypepartner = cast(Adw.SwitchRow, Gtk.Template.Child())
     help_popover_patch_moveshortcuts = cast(HelpPopover, Gtk.Template.Child())
     help_popover_patch_unuseddungeonchance = cast(HelpPopover, Gtk.Template.Child())
     help_popover_patch_totalteamcontrol = cast(HelpPopover, Gtk.Template.Child())
     help_popover_patch_disarm_monster_houses = cast(HelpPopover, Gtk.Template.Child())
     help_popover_patch_fixmemorysoftlock = cast(HelpPopover, Gtk.Template.Child())
+    help_popover_patch_sametypepartner = cast(HelpPopover, Gtk.Template.Child())
 
     randomization_settings: RandomizerConfig | None
     _suppress_signals: bool
@@ -71,11 +72,13 @@ class PatchesPage(Adw.PreferencesPage):
         self.row_patch_totalteamcontrol.set_active(config["improvements"]["patch_totalteamcontrol"])
         self.row_patch_disarm_monster_houses.set_active(config["improvements"]["patch_disarm_monster_houses"])
         self.row_patch_fixmemorysoftlock.set_active(config["improvements"]["patch_fixmemorysoftlock"])
+        self.row_patch_sametypepartner.set_active(config["improvements"]["patch_sametypepartner"])
 
         move_shortcut_patch = MoveShortcutsPatch()
         unused_dungeon_patch = UnusedDungeonChancePatch()
         disarm_one_room_mh_patch = DisarmOneRoomMHPatchHandler()
         fix_memory_softlock_patch = FixMemorySoftlockPatchHandler()
+        same_type_partner_patch = SameTypePartnerPatch()
 
         self.help_popover_patch_moveshortcuts.set_property(
             "label",
@@ -113,6 +116,14 @@ class PatchesPage(Adw.PreferencesPage):
                 fix_memory_softlock_patch.name,
                 fix_memory_softlock_patch.author,
                 fix_memory_softlock_patch.description,
+            ),
+        )
+        self.help_popover_patch_sametypepartner.set_property(
+            "label",
+            _("Installs the patch '{}' by {}:\n{}").format(
+                same_type_partner_patch.name,
+                same_type_partner_patch.author,
+                same_type_partner_patch.description,
             ),
         )
 
@@ -159,4 +170,13 @@ class PatchesPage(Adw.PreferencesPage):
         assert self.randomization_settings is not None
         self.randomization_settings["improvements"]["patch_fixmemorysoftlock"] = (
             self.row_patch_fixmemorysoftlock.get_active()
+        )
+
+    @Gtk.Template.Callback()
+    def on_row_patch_sametypepartner_notify_active(self, *args):
+        if self._suppress_signals:
+            return
+        assert self.randomization_settings is not None
+        self.randomization_settings["improvements"]["patch_sametypepartner"] = (
+            self.row_patch_sametypepartner.get_active()
         )

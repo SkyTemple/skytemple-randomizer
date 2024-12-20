@@ -97,7 +97,7 @@ class SkyTempleRandomizerSettingsStoreGtk:
         self.loaded_config[SECT_WINDOW][KEY_RECENT_ROM] = value
         self._save()
 
-    def get_file_picker_preset_path(self, key: str) -> Optional[str]:
+    def get_file_picker_preset_path(self, key: str) -> str | None:
         if SECT_FOLDERS in self.loaded_config:
             if key in self.loaded_config[SECT_FOLDERS]:
                 return self.loaded_config[SECT_FOLDERS][key]

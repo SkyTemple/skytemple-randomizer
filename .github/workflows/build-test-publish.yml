@@ -23,41 +23,41 @@ jobs:
       fail-fast: false
       max-parallel: 5
       matrix:
-        python-version: [ "3.10", "3.11", "3.12", "3.13.0-beta.4" ]
+        python-version: [ "3.10", "3.11", "3.12", "3.13" ]
     steps:
-    - uses: actions/checkout@v4
-    - name: Install system dependencies
-      run: |
-        sudo apt install libgirepository1.0-dev python3-gi python3-gi-cairo gir1.2-gtk-4.0
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip setuptools
-        pip install -r requirements-dev.txt mypy
-    - name: Run type checks
-      run: |
-        mypy --config-file mypy.ini skytemple_randomizer
+      - uses: actions/checkout@v4
+      - name: Install system dependencies
+        run: |
+          sudo apt install libgirepository1.0-dev python3-gi python3-gi-cairo gir1.2-gtk-4.0
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools
+          pip install -r requirements-dev.txt mypy
+      - name: Run type checks
+        run: |
+          mypy --config-file mypy.ini skytemple_randomizer
 
   linting:
     runs-on: ubuntu-latest
     name: Linting
     steps:
-    - uses: actions/checkout@v4
-    - name: Install gobject-introspection and other build deps
-      run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements-dev.txt
-    - name: Lint with ruff
-      run: ruff check --output-format=github skytemple_randomizer
+      - uses: actions/checkout@v4
+      - name: Install gobject-introspection and other build deps
+        run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+      - name: Lint with ruff
+        run: ruff check --output-format=github skytemple_randomizer
 
   code-formatting:
     runs-on: ubuntu-latest
@@ -74,7 +74,7 @@ jobs:
           pip install ruff
       - name: Check with ruff
         run: ruff format --check skytemple_randomizer
-        
+
   build:
     runs-on: ubuntu-24.04
     name: Build the Python wheel
@@ -132,7 +132,7 @@ jobs:
         run: |
           twine upload *.whl
   deploy-to-artifact-storage:
-    runs-on: [self-hosted, artifact-storage]
+    runs-on: [ self-hosted, artifact-storage ]
     name: Upload artifacts
     needs:
       - build
@@ -187,7 +187,7 @@ jobs:
           cp -f "$PATH_MACOS_ARM" "/mnt/dist/randomizer/skytemple-randomizer-arm64-$REF.dmg"
   deploy-to-skytemple-dist:
     if: startsWith(github.ref, 'refs/tags/')
-    runs-on: [self-hosted, skytemple-dist]
+    runs-on: [ self-hosted, skytemple-dist ]
     name: Upload to Deposit Box
     needs:
       - build
@@ -361,7 +361,7 @@ jobs:
           echo "PIPX_BIN_DIR=C:\pipx_bin" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
           $env:path = "C:\pipx_bin;" + $env:path
-      
+          
           python -m pip install --user pipx
           python -m pipx ensurepath
           pipx install "gvsbuild==2024.8.1"

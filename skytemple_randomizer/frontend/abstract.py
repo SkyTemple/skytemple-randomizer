@@ -17,7 +17,8 @@
 from __future__ import annotations
 
 from abc import abstractmethod, ABC
-from typing import Callable, NamedTuple, Literal
+from typing import NamedTuple, Literal
+from collections.abc import Callable
 
 
 class PortraitDebugLine(NamedTuple):

@@ -22,11 +22,10 @@
 
 import json
 import os
-import sys
 import time
 from enum import Enum
 from numbers import Number
-from typing import TypedDict, Optional
+from typing import TypedDict
 
 from range_typed_integers import u16, u8, u32
 from skytemple_files.common.util import open_utf8
@@ -34,10 +33,7 @@ from skytemple_files.common.util import open_utf8
 from skytemple_randomizer.data_dir import data_dir
 from skytemple_randomizer.lists import DEFAULTMONSTERPOOL
 
-if sys.version_info >= (3, 10):
-    import importlib.metadata as importlib_metadata
-else:
-    import importlib_metadata
+import importlib.metadata as importlib_metadata
 
 CLASSREF = "__classref"
 
@@ -209,7 +205,7 @@ class RandomizerConfig(TypedDict):
     seed: str  # see get_effective_seed
 
 
-def get_effective_seed(seed: Optional[str]):
+def get_effective_seed(seed: str | None):
     """If the seed is empty, returns system time, otherwise tries to
     convert it into a number or returns it"""
     if seed is not None:

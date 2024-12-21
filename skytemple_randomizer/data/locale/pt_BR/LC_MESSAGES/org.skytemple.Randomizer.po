@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-12-14 00:55+0000\n"
-"PO-Revision-Date: 2024-12-14 00:56\n"
+"PO-Revision-Date: 2024-12-21 13:19\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -23,11 +23,11 @@ msgstr "Inglês"
 
 #: /dev/fd/63:2 /dev/fd/63:221
 msgid "Friend Rescue Set Phrases"
-msgstr ""
+msgstr "Definir frases de resgate de amigo"
 
 #: /dev/fd/63:3 /dev/fd/63:222
 msgid "Friend Rescue Message Input Strings"
-msgstr ""
+msgstr "Textos de entrada de mensagem de resgate de amigo"
 
 #: /dev/fd/63:4 /dev/fd/63:223
 msgid "Debug Strings (Game Init)"

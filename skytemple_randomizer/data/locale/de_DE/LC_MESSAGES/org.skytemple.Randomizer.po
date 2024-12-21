@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-12-14 00:55+0000\n"
-"PO-Revision-Date: 2024-12-14 00:56\n"
+"PO-Revision-Date: 2024-12-21 13:19\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -3039,7 +3039,7 @@ msgstr "\n\n"
 
 #: skytemple-files/skytemple_files/patch/handler/add_key_check.py:48
 msgid "Prevents Keys from being used on party members that are not below a Key Door!"
-msgstr ""
+msgstr "Verhindert die Verwendung von Schlüsseln für Gruppenmitglieder, die nicht unter einer Schlüsseltür stehen!"
 
 #: skytemple-files/skytemple_files/patch/handler/add_type.py:1386
 msgid "Add types to the type matchup table. This will replace the old matchup table by the 6th+ Gen type table, Fairy type being added to the end."
@@ -3084,7 +3084,7 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/patch/handler/bold_text.py:48
 msgid "Adds new text tags that allow for bold text in strings. Encase the desired text with [BS] and [BR]."
-msgstr ""
+msgstr "Fügt neue Text-Tags hinzu, die fettgedruckten Text in Zeichenketten erlauben. Erstelle den gewünschten Text mit [BS] und [BR]."
 
 #: skytemple-files/skytemple_files/patch/handler/change_evo.py:118
 msgid "Change the evolution system.\n"
@@ -3957,7 +3957,7 @@ msgstr "Freischaltung der Erkunderränge randomisieren"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:25
 msgid "If enabled, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 100000 points."
-msgstr ""
+msgstr "Wenn diese Option aktiviert ist, werden Erkunderrang-Stufen nach dem Zufallsprinzip freigeschaltet. Die Obergrenze für das Freischalten des Meister-Rangs liegt bei maximal 100000 Punkten."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_explorer_rank.ui:39
 msgid "Randomize Explorer Rank Rewards"
@@ -4197,7 +4197,7 @@ msgstr "„Fix Memory Softlock“ Patch anwenden"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_patches.ui:129
 msgid "Apply \"SameTypePartner\" Patch"
-msgstr ""
+msgstr "„SameTypePartner“ Patch anwenden"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz.ui:14
 msgid "Personality Quiz Mode"
@@ -4864,7 +4864,7 @@ msgstr "'FixMemorySoftlock' Patch wird angewendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:110
 msgid "Apply 'SameTypePartner' patch..."
-msgstr ""
+msgstr "Patch „SameTypePartner“ wird angewendet..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/patch_applier.py:115
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."

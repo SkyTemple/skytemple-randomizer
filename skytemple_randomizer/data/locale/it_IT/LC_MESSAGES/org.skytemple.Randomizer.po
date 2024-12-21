@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2024-12-14 00:55+0000\n"
-"PO-Revision-Date: 2024-12-14 00:56\n"
+"PO-Revision-Date: 2024-12-21 13:19\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -271,15 +271,15 @@ msgstr "Feedback cambio velocità"
 
 #: /dev/fd/63:64 /dev/fd/63:283
 msgid "Dungeon Potential Recruit Strings"
-msgstr ""
+msgstr "Stringhe di potenziale reclutamento nel Dungeon"
 
 #: /dev/fd/63:65 /dev/fd/63:284
 msgid "Dungeon Gummi Feedback"
-msgstr ""
+msgstr "Feedback Caramelle gommose Dugeon"
 
 #: /dev/fd/63:66 /dev/fd/63:285
 msgid "Traps Feedback (Primary)"
-msgstr ""
+msgstr "Feedback sulle trappole (primario)"
 
 #: /dev/fd/63:67 /dev/fd/63:286
 msgid "Nothing At Feet String"
@@ -287,59 +287,59 @@ msgstr ""
 
 #: /dev/fd/63:68 /dev/fd/63:287
 msgid "Dungeon Friend Rescue Strings"
-msgstr ""
+msgstr "Salvataggio amici nel Dugeon Stringa"
 
 #: /dev/fd/63:69 /dev/fd/63:288
 msgid "Dungeon General Feedback 1"
-msgstr ""
+msgstr "Feedback 1 del Dungeon"
 
 #: /dev/fd/63:70 /dev/fd/63:289
 msgid "Dungeon General Feedback 2"
-msgstr ""
+msgstr "Feedback 2 del Dungeon"
 
 #: /dev/fd/63:71 /dev/fd/63:290
 msgid "Something's Stirring Strings"
-msgstr ""
+msgstr "Stringa Qualcosa si agita"
 
 #: /dev/fd/63:72 /dev/fd/63:291
 msgid "Dungeon General Feedback 3"
-msgstr ""
+msgstr "Feedback 3 del Dungeon"
 
 #: /dev/fd/63:73 /dev/fd/63:292
 msgid "Dungeon New Recruit Strings"
-msgstr ""
+msgstr "Nuovo Recluta del Dungeon stringa"
 
 #: /dev/fd/63:74 /dev/fd/63:293
 msgid "Dungeon General Feedback 4"
-msgstr ""
+msgstr "Feedback 4 del Dungeon"
 
 #: /dev/fd/63:75 /dev/fd/63:294
 msgid "Status Effect Resolved Feedback"
-msgstr ""
+msgstr "Stato Effetto risolto Feedback"
 
 #: /dev/fd/63:76 /dev/fd/63:295
 msgid "Status Effect Apply Feedback"
-msgstr ""
+msgstr "Stato Effetto applicato Feedback"
 
 #: /dev/fd/63:77 /dev/fd/63:296
 msgid "Pokemon Stats Change Feedback 1"
-msgstr ""
+msgstr "Modifica delle statistiche dei Pokemon Feedback 1"
 
 #: /dev/fd/63:78 /dev/fd/63:297
 msgid "Status Effect Protect Feedback 1"
-msgstr ""
+msgstr "Stato Effetto protetto Feedback"
 
 #: /dev/fd/63:79 /dev/fd/63:298
 msgid "PP Recover Strings"
-msgstr ""
+msgstr "Recupero PP stringa"
 
 #: /dev/fd/63:80 /dev/fd/63:299
 msgid "Conversion/Sketch Strings"
-msgstr ""
+msgstr "Conversione/Schizzo Stringa"
 
 #: /dev/fd/63:81 /dev/fd/63:300
 msgid "Status Effect Protect Feedback 2"
-msgstr ""
+msgstr "Stato Effetto protetto Feedback 2"
 
 #: /dev/fd/63:82 /dev/fd/63:301
 msgid "Dungeon Pokemon Stat Names"

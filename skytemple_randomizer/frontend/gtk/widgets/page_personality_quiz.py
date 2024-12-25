@@ -17,7 +17,8 @@
 from __future__ import annotations
 
 import os
-from typing import Callable, cast
+from typing import cast
+from collections.abc import Callable
 
 from skytemple_randomizer.config import RandomizerConfig, QuizMode
 from skytemple_randomizer.frontend.gtk.init_locale import LocalePatchedGtkTemplate

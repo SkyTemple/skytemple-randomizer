@@ -17,7 +17,8 @@
 from __future__ import annotations
 
 import os.path
-from typing import Callable, TYPE_CHECKING
+from typing import TYPE_CHECKING
+from collections.abc import Callable
 
 from gi.repository import GLib, Gtk, Adw
 from ndspy.rom import NintendoDSRom

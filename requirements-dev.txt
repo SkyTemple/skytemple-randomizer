@@ -3,4 +3,5 @@ skytemple-3rdparty-typestubs>=1.1.1
 types-Pillow==10.2.0.20240822
 types-setuptools
 ruff
-pygobject-stubs --config-settings=config=Gtk4,Gdk4
+# https://github.com/pygobject/pygobject-stubs/issues/202
+pygobject-stubs >= 2.11.0, != 2.12.0 --config-settings=config=Gtk4,Gdk4

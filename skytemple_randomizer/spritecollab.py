@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import platform
-from typing import Optional
 from collections.abc import Sequence
 
 from skytemple_files.common.ppmdu_config.data import Pmd2Sprite
@@ -17,7 +16,7 @@ from skytemple_files.graphics.chara_wan.model import WanFile
 from skytemple_files.graphics.kao import SUBENTRIES
 from skytemple_files.graphics.kao.protocol import KaoImageProtocol
 
-_INSTANCE: Optional[SpriteCollabClient] = None
+_INSTANCE: SpriteCollabClient | None = None
 # A dict of credits for all portraits requested (and found) during the randomization
 # Key is full form name
 _COLLECTED_PORTRAITS: dict[tuple[str, str], tuple[list[Credit], list[MonsterHistory]]] = {}
@@ -35,7 +34,7 @@ def sprite_collab() -> SpriteCollabClient:
 
 async def get_details_and_portraits(
     session: SpriteCollabSession, forms_to_try: Sequence[tuple[int, str]]
-) -> Optional[tuple[MonsterFormDetails, list[Optional[KaoImageProtocol]]]]:
+) -> tuple[MonsterFormDetails, list[KaoImageProtocol | None]] | None:
     """
     Fetches portraits and details given the given list of form priorities,
     updates the credits list.
@@ -50,7 +49,7 @@ async def get_details_and_portraits(
         return None
     #   - Fetch all portraits of all given forms to try
     fetched_portraits = await session.fetch_portraits(valid_forms_to_try)
-    final_portraits: list[Optional[KaoImageProtocol]] = [None] * SUBENTRIES
+    final_portraits: list[KaoImageProtocol | None] = [None] * SUBENTRIES
     involved_forms = set()
     #   - Merge them together
     #     - Prioritize early entries, fill with later entries
@@ -74,7 +73,7 @@ async def get_details_and_portraits(
 
 async def get_sprites(
     session: SpriteCollabSession, forms_to_try: Sequence[tuple[int, str]]
-) -> Optional[tuple[WanFile, Pmd2Sprite, int]]:
+) -> tuple[WanFile, Pmd2Sprite, int] | None:
     """
     Fetches sprites given the given list of form priorities, updates the credits list.
 

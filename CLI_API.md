@@ -437,7 +437,7 @@ If true, Explorer Ranks give random items as rewards upon unlocking a new level.
 
 Type: Boolean
 
-If true, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 200000 points.
+If true, Explorer Rank Levels are randomly unlocked. The cap for Master Rank unlock is max. 100000 points.
 
 #### `.starters_npcs.native_file_handlers`
 

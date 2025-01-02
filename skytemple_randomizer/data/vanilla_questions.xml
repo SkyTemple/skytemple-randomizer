@@ -15,13 +15,13 @@ to see?</Text>
       <Answer>Working hard, every day.</Answer>
       <Answer>If I remember to...</Answer>
       <Answer>I just cover what I need to.</Answer>
+      <Answer>I can't really do it alone...</Answer>
     </Answers>
   </Question>
   <Question>
     <Text>You've been asked to do a difficult task.
 What will you do?</Text>
     <Answers>
-      <Answer>I can't really do it alone...</Answer>
       <Answer>Do it myself.</Answer>
       <Answer>Ask someone to help.</Answer>
       <Answer>Make someone else do it!</Answer>

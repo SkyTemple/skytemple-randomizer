@@ -450,7 +450,7 @@
         ]
       },
       {
-        "question": "Good lord what is happening here?",
+        "question": "Good lord what is happening in there?",
         "answers": [
           "Aurora Borealis",
           "Steamed Hams",
@@ -919,24 +919,24 @@
       {
         "question": "Do you often play stall teams on\nPokémon Showdown?",
         "answers": [
-          "No.",
+          "No",
           "I use stall teams in the main games online!",
-          "…I don’t play the mainline Pokémon games."
+          "…I don’t play the mainline Pokémon games"
         ]
       },
       {
         "question": "Are you sus? Or are you dus?",
         "answers": [
-          "Dus.",
-          "Sus.",
+          "Dus",
+          "Sus",
           "give me my liver back please i beg you"
         ]
       },
       {
         "question": "Let’s play a game of Rock Paper Scissors.\nWhat sign do you throw out?",
         "answers": [
-          "Rock.",
-          "Paper.",
+          "Rock",
+          "Paper",
           "Scissors."
         ]
       },
@@ -1731,7 +1731,7 @@
         "answers": [
           "Yes",
           "No",
-          "Alright, lemme tell you how they messed up again..."
+          "Ok, lemme tell you how they messed up again..."
         ]
       },
       {

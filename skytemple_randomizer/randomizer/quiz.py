@@ -31,8 +31,8 @@ from skytemple_randomizer.status import Status
 QUESTION_MAPPING = {
     0: [0, 1, 2],
     1: [3, 4, 5],
-    2: [6, 7, 8],
-    3: [9, 10, 11, 12],
+    2: [6, 7, 8, 9],
+    3: [10, 11, 12],
     4: [13, 14],
     5: [15, 16, 17],
     6: [18, 19],

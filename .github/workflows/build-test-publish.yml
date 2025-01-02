@@ -42,12 +42,12 @@ jobs:
           mypy --config-file mypy.ini skytemple_randomizer
 
   linting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     name: Linting
     steps:
       - uses: actions/checkout@v4
       - name: Install gobject-introspection and other build deps
-        run: sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
+        run: sudo apt-get update && sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:

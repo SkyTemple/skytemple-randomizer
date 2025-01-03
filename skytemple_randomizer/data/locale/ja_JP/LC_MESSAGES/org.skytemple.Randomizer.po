@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2024-12-14 00:55+0000\n"
-"PO-Revision-Date: 2024-12-14 00:56\n"
+"POT-Creation-Date: 2025-01-02 15:44+0000\n"
+"PO-Revision-Date: 2025-01-02 16:04\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -902,35 +902,35 @@ msgstr "ダンジョン失敗時のダイアログ文字列"
 msgid "Dungeon Cleared Dialog Strings"
 msgstr "ダンジョンクリア時のダイアログ文字列"
 
-#: explorerscript/explorerscript/common_syntax.py:99
-#: explorerscript/explorerscript/common_syntax.py:187
+#: explorerscript/explorerscript/common_syntax.py:100
+#: explorerscript/explorerscript/common_syntax.py:188
 msgid "Integer not allowed at this position."
 msgstr "この位置では整数は使用できません。"
 
-#: explorerscript/explorerscript/common_syntax.py:103
-#: explorerscript/explorerscript/common_syntax.py:189
+#: explorerscript/explorerscript/common_syntax.py:104
+#: explorerscript/explorerscript/common_syntax.py:190
 msgid "Decimal not allowed at this position."
 msgstr "この位置では小数は使用できません。"
 
-#: explorerscript/explorerscript/common_syntax.py:114
+#: explorerscript/explorerscript/common_syntax.py:115
 msgid "Constant not allowed at this position."
 msgstr "この位置では定数は使用できません。"
 
-#: explorerscript/explorerscript/common_syntax.py:125
-#: explorerscript/explorerscript/common_syntax.py:191
+#: explorerscript/explorerscript/common_syntax.py:126
+#: explorerscript/explorerscript/common_syntax.py:192
 msgid "Variable or constant not allowed at this position."
 msgstr "この位置では変数または定数は使用できません。"
 
-#: explorerscript/explorerscript/common_syntax.py:129
-#: explorerscript/explorerscript/common_syntax.py:194
+#: explorerscript/explorerscript/common_syntax.py:130
+#: explorerscript/explorerscript/common_syntax.py:195
 msgid "String not allowed at this position."
 msgstr "この位置では文字列は使用できません。"
 
-#: explorerscript/explorerscript/common_syntax.py:227
+#: explorerscript/explorerscript/common_syntax.py:228
 msgid "Invalid target for routine."
 msgstr "ルーチンの対象が無効です。"
 
-#: explorerscript/explorerscript/common_syntax.py:256
+#: explorerscript/explorerscript/common_syntax.py:257
 msgid "Position Marker arguments need to be an integer or a decimal with '.5' as the decimal places."
 msgstr ""
 
@@ -960,7 +960,7 @@ msgid "No variable for init."
 msgstr "init に変数が定義されていません。"
 
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/assignments/assignment_regular.py:60
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:63
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:59
 msgid "No variable for assignment."
 msgstr "割り当てるための変数がありません"
 
@@ -993,29 +993,29 @@ msgstr "scn() 変数がありません。"
 msgid "value() without a variable."
 msgstr "value() 変数がありません。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:83
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:79
 msgid "No target ID set for with(){} block."
 msgstr "With(){} ブロックにターゲット ID が設定されていません。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:86
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:82
 msgid "A with(){} block needs at least one statement."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:98
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:94
 #: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/operations/operation.py:75
 #, python-brace-format
 msgid "Invalid with(){{}} target type '{for_type}'."
 msgstr "無効 with(){{}} ターゲットタイプ '{for_type}'."
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:108
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:104
 msgid "Operations inside with(){} blocks cannot contain an inline `actor`, `object` or `performer` context."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:117
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:113
 msgid "Each statement inside a with(){} block needs to contain exactly one binary operation. The handler for it generated multiple operations."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:138
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ctxs/ctx_block.py:134
 msgid "A with(){} block can not contain labels."
 msgstr "with(){} ブロックにラベルを含めることはできません。"
 
@@ -1028,35 +1028,35 @@ msgstr "if 条件に値が設定されていません。"
 msgid "The variable {var_target_name} can not be used with 'not' (line {self.ctx.start.line})."
 msgstr "変数 {var_target_name} は 'not' と一緒に使用することはできません ( {self.ctx.start.line}行目)。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:59
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:55
 msgid "No variable for if condition."
 msgstr "If 条件の変数がありません。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:61
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:58
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:57
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:54
 msgid "No operator set for if condition."
 msgstr "if 条件に演算子が設定されていません。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:63
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:60
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/operator.py:59
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/op.py:56
 msgid "No value set for if condition."
 msgstr "if 条件に値が設定されていません。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:68
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:64
 #, python-brace-format
 msgid "The only supported operators for scn if conditions are ==,<,<=,>,>= (line {self.ctx.start.line})"
 msgstr "Scn if 条件でサポートされる演算子は ==、<、<=、>、>= だけです ( {self.ctx.start.line}行目)"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:76
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:72
 msgid "Invalid content for an if-header"
 msgstr "If-header のコンテンツが無効です"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:80
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:76
 #, python-brace-format
 msgid "Invalid operation for if condition: {op.op_code.name} (line {self.ctx.start.line})"
 msgstr "If 条件: {op.op_code.name} ( {self.ctx.start.line}行目) の操作は無効です"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:91
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/if_header.py:87
 #, python-brace-format
 msgid "Unknown if operation in line {self.ctx.start.line})."
 msgstr "{self.ctx.start.line} 行での操作が不明です)。"
@@ -1068,38 +1068,38 @@ msgstr "{self.ctx.start.line} 行での操作が不明です)。"
 msgid "Invalid message switch case call."
 msgstr "無効な message switch の case が呼び出されました。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_header.py:74
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_header.py:70
 msgid "Unknown case operation."
 msgstr "不明な case 操作です。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:54
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:48
 msgid "No value set for case menu condition."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:59
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:53
 msgid "Value for case menu condition must be a string."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:62
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/case_headers/menu.py:56
 msgid "Value for case menu2 condition must not be a string."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:71
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:67
 msgid "Invalid message switch."
 msgstr "無効なメッセージ switch です。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:76
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:89
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:72
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:85
 #, python-brace-format
 msgid "A message_ switch can only contain cases with strings (line {self.ctx.start.line})."
 msgstr "message_ switchは文字列の場合のみ使用できます ({self.ctx.start.line}行目)。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:80
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:76
 #, python-brace-format
 msgid "Invalid case type for message_ switch (line {self.ctx.start.line})."
 msgstr "message_ switch の case タイプが無効です ({self.ctx.start.line}行目)。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:109
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/message_switch.py:105
 #, python-brace-format
 msgid "A switch block can only have a single default case (line {self.ctx.start.line}"
 msgstr "switch ブロックには default case を 1 つだけ指定できます ({self.ctx.start.line}行目"
@@ -1119,11 +1119,11 @@ msgstr "予期しない switch の終了 ( {self.ctx.start.line}行目)"
 msgid "A switch block can only have a single default case (line {self.ctx.start.line})."
 msgstr "switch ブロックには、default case を 1 つだけ指定できます ( {self.ctx.start.line}行目)。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:80
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:76
 msgid "Invalid content for a switch-header"
 msgstr "switch-header の内容が無効です"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:87
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/switches/switch_header.py:83
 msgid "Unknown switch operation."
 msgstr "不明な switch 操作。"
 
@@ -1175,17 +1175,17 @@ msgstr "致命的なコンパイルエラー: スタックエラー"
 msgid "Label {label_id} does not exist, but a jump to it does (remove it)."
 msgstr "ラベル {label_id} は存在しませんが、そのラベルへのジャンプが存在しています (削除してください)。"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:193
+#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:194
 #, python-brace-format
 msgid "Unexpected continue; in line {ctx.start.line}"
 msgstr "予期しない 'continue' {ctx.start.line} 行目"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:199
+#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:200
 #, python-brace-format
 msgid "Unexpected break_loop; in line {ctx.start.line}"
 msgstr "予期しない 'break_loop' {ctx.start.line} 行目"
 
-#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:205
+#: explorerscript/explorerscript/ssb_converting/compiler/utils.py:206
 #, python-brace-format
 msgid "Unexpected break; in line {ctx.start.line}"
 msgstr "予期しない 'break' {ctx.start.line} 行目"
@@ -1291,91 +1291,101 @@ msgstr ""
 msgid "No match found for rule {orig_rule}. Input set correct?"
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:142
+#: skytemple-files/skytemple_files/common/exceptions/outdated_patch_dependency.py:20
+#, python-brace-format
+msgid "The patch {self.patch_name} cannot be applied because the following patches it depends on "
+msgstr ""
+
+#: skytemple-files/skytemple_files/common/exceptions/outdated_patch_dependency.py:25
+msgid "\n"
+"Please reapply these patches first."
+msgstr ""
+
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
 msgid "One Layer (#00)"
 msgstr "レイヤー1 (#00)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:143
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
 msgid "One Layer (#01)"
 msgstr "レイヤー1 (#01)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:144
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
 msgid "One Layer (#02)"
 msgstr "レイヤー1 (#02)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:145
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
 msgid "One Layer (#03)"
 msgstr "レイヤー1 (#03)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:146
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
 msgid "One Layer (#04)"
 msgstr "レイヤー1 (#04)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:147
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
 msgid "Two Layers (#05)"
 msgstr "レイヤー2 (#05)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:148
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
 msgid "Two Layers (#06)"
 msgstr "レイヤー2 (#06)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:149
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
 msgid "Two Layers (#07)"
 msgstr "レイヤー2 (#07)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:150
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
 msgid "Two Layers (#08)"
 msgstr "レイヤー2 (#08)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:151
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:152
 msgid "Two Layers (#09)"
 msgstr "レイヤー2 (#09)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:152
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:153
 msgid "Dungeon Tileset (#10)"
 msgstr "ダンジョンタイルセット (#10)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:153
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:154
 msgid "Use Fixed Room (#11)"
 msgstr "固定フロアで使用 (#11)"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:274
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:275
 msgid "This function has no description."
 msgstr "この関数には説明がありません。"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:316
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:317
 msgid "Down"
 msgstr "下"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:318
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:319
 msgid "Down Right"
 msgstr "右下"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:320
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:321
 msgid "Right"
 msgstr "右"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:322
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:323
 msgid "Up Right"
 msgstr "右上"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:324
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:325
 msgid "Up"
 msgstr "上"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:326
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:327
 msgid "Up Left"
 msgstr "左上"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:328
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:329
 msgid "Left"
 msgstr "左"
 
-#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:330
+#: skytemple-files/skytemple_files/common/ppmdu_config/script_data.py:331
 msgid "Down Left"
 msgstr "左下"
 
-#: skytemple-files/skytemple_files/common/rw_value.py:440
+#: skytemple-files/skytemple_files/common/rw_value.py:439
 msgid "'{str(value)}' cannot be encoded as a shifted immediate."
 msgstr "'{str (value)}' はシフトされた即値としてエンコードすることはできません。"
 
@@ -3132,15 +3142,15 @@ msgstr "この なかから キミがなりたいとおもう\n"
 msgid "Adds an extra menu during the personality test to choose the starter."
 msgstr "性格診断で主人公を選択するメニューを追加します。"
 
-#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:104
+#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:105
 msgid "[CS:S]Control mode set to[CR] [CS:C]automatic[CR][CS:S].[CR]"
 msgstr "[CS:S]コントロールモード：[CR] [CS:C]オート[CR][CS:S][CR]"
 
-#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:107
+#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:108
 msgid "[CS:S]Control mode set to[CR] [CS:E]manual[CR][CS:S].[CR]"
 msgstr "[CS:S]コントロールモード：[CR] [CS:E]マニュアル[CR][CS:S][CR]"
 
-#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:119
+#: skytemple-files/skytemple_files/patch/handler/complete_team_control.py:120
 msgid "Pressing start in a dungeon toggles between automatic and manual mode. In manual mode, you can control your partners on their turns. You must apply the extra code overlay made by Frostbyte before applying this patch."
 msgstr "ダンジョン内でSTARTボタンを押すと、オートモードとマニュアルモードを切り替えることができます。マニュアルモードでは、仲間の行動を操作することができます。 \n"
 "このパッチを適用するには、Frostbyte が作成した追加オーバーレイを適用する必要があります。"
@@ -3271,12 +3281,11 @@ msgstr "名前が10文字のポケモンを進化させようとするとゲー�
 msgid "If the game runs out of memory trying to load a sprite, a default one will be used instead, preventing the crash."
 msgstr "ゲームがスプライトを読み込もうとしてメモリ不足になった時、代わりにデフォルトのスプライトを使用しクラッシュを防ぎます。"
 
-#: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:49
-msgid "Fixes an issue that causes saving to fail on the No$GBA emulator. Warning: Causes saving to fail on the MelonDS emulator instead."
-msgstr "No$GBA エミュレータでセーブが行えない問題を修正します。\n"
-"注意: 代わりに MelonDS エミュレータでセーブが行えなくなります。"
+#: skytemple-files/skytemple_files/patch/handler/fix_nocash_saves.py:52
+msgid "Fixes an issue that causes saving to fail on the No$GBA emulator."
+msgstr ""
 
-#: skytemple-files/skytemple_files/patch/handler/move_growth.py:176
+#: skytemple-files/skytemple_files/patch/handler/move_growth.py:177
 msgid "Implements move growth (PoC/Unfinished). \n"
 "Needs ActorAndLevelLoader, ExtractAnimData and ChangeMoveStatsDisplay patches. \n"
 "MoveGrowth patch must be (re-)applied after MoveShortcuts to combine both effects. \n"
@@ -3357,7 +3366,7 @@ msgstr "性格診断をスキップし、性別を訪ねる質問のみ残しま
 msgid "Changes Sprite Size and Sprite File Size values to be in each Pokémon's data."
 msgstr ""
 
-#: skytemple-files/skytemple_files/patch/handler/stat_disp.py:68
+#: skytemple-files/skytemple_files/patch/handler/stat_disp.py:69
 msgid "Replaces old move stats display with bars.\n"
 "This patch may not be compatible if the markfont.dat file has been modified."
 msgstr "技の能力表示を☆表示からバーに置き換えます。\n"
@@ -3477,51 +3486,51 @@ msgstr "ダンジョンモードが無効です: {string}"
 msgid "Unknown constant {constant_as_string}."
 msgstr "不明な定数 {constant_as_string}。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:163
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:164
 msgid "The routine data lists for the decompiler must have the same lengths."
 msgstr "逆コンパイラのルーチンデータリストは同じ長さである必要があります。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:176
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:177
 #, python-brace-format
 msgid "Routine {i} not found."
 msgstr "ルーチン {i} が見つかりません。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:196
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:197
 msgid "The script must contain exactly {len(self.rom_data.script_data.common_routine_info)} coroutines."
 msgstr "スクリプトには {len(self.rom_data.script_data.common_routine_info)} 個のコルーチンを含まれていなければなりません。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:203
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:204
 msgid "The script must not contain any duplicate coroutines."
 msgstr "スクリプトに重複するコルーチンを含めることはできません。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:211
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:212
 #, python-brace-format
 msgid "Unknown coroutine {err}"
 msgstr "不明なコルーチン {err}"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:225
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:226
 msgid "Coroutines and regular routines can not be mixed in a script file."
 msgstr "コルーチンと通常のルーチンをスクリプトファイルに混在させることはできません。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:238
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:239
 #, python-brace-format
 msgid "Unknown operation {in_op.op_code.name}."
 msgstr "不明な操作 ({in_op.op_code.name}) です。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:255
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:256
 msgid "The number of parameters for {normal_op_code.name} must be at least {normal_op_code.params}, is {self._correct_param_list_len(in_op.params)}."
 msgstr "{normal_op_code.name} のパラメータ数は {normal_op_code.params} 以上でなければなりません。現在のパラメータ数は {self._correct_param_list_len(in_op.params)} です。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:276
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:277
 msgid "The number of parameters for {op_code.name} must be {op_code.params}, is {self._correct_param_list_len(in_op.params)}."
 msgstr "{op_code.name} のパラメータ数は {op_code.params} である必要があります。現在のパラメータ数は {self._correct_param_list_len(in_op.params)} です。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:373
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:374
 #, python-brace-format
 msgid "Unknown language for string: {lang}"
 msgstr "文字列の言語 {lang} が不明です。"
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:377
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:378
 #, python-brace-format
 msgid "Invalid parameter supplied for an operation: {param}"
 msgstr "無効なパラメータ {param} が設定されています。"
@@ -3603,11 +3612,11 @@ msgstr ""
 msgid "A question must contain two XML sub-nodes: {}, {}"
 msgstr "質問には {}、{} という 2 つの XML サブノードが含まれている必要があります。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:129
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:130
 msgid "Error"
 msgstr "エラー"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:131
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/frontend.py:132
 msgid "_OK"
 msgstr "OK(_O)"
 
@@ -3851,7 +3860,7 @@ msgstr "ランダム化の影響を受けるダンジョンと、天気をラン
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:195
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:264
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:155
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:156
 msgid "Failed to import: Error while opening file ({})."
 msgstr "インポートに失敗しました。ファイルを開く際にエラーが発生しました ({})。"
 
@@ -3860,31 +3869,31 @@ msgid "Missing dungeon ID in CSV"
 msgstr "CSV にダンジョン ID が見つかりません。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:231
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:174
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:175
 msgid "Failed to import. Make sure your CSV matches the same format as with the export button. Details: {}"
 msgstr "インポートに失敗しました。CSVがエクスポートボタンに書かれた形式と同じであることを確認してください。\n"
 "詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:250
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:302
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:193
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:194
 msgid "Failed to export: Error while opening file ({})."
 msgstr "エクスポートに失敗しました。ファイルを開く際にエラーが発生しました ({})。"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:293
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_personality_quiz_questions.py:317
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:210
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:211
 msgid "Failed to export. Details: {}"
 msgstr "エクスポートに失敗しました。\n"
 "詳細: {}"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:299
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:219
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:220
 msgid "Import from CSV"
 msgstr "CSV からインポート"
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_dungeons_individual_settings.py:301
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:223
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:224
 msgid "Export to CSV"
 msgstr "CSV にエクスポート"
 
@@ -4312,12 +4321,12 @@ msgstr "質問"
 msgid "Add question"
 msgstr "質問を追加"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:89
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:90
 msgid "Failed to load settings: Error while opening file ({})."
 msgstr "設定の読み込みに失敗しました。\n"
 "ファイル ({}) を開く際にエラーが発生しました。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:102
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:103
 msgid "The config file you tried to import is invalid:\n"
 "{}:\n"
 "{}"
@@ -4325,20 +4334,20 @@ msgstr "インポートしようとした設定ファイルは無効です。\n"
 "{}:\n"
 "{}"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:109
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:110
 msgid "Settings loaded!"
 msgstr "設定を読み込みました。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:129
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:130
 msgid "Failed to save settings: Error while opening file ({})."
 msgstr "設定の保存に失敗しました。\n"
 "ファイルを開く際にエラーが発生しました ({})。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:139
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:140
 msgid "The path of the settings file needs to end in '.json'."
 msgstr "設定ファイルのパスは「.json」で終了する必要があります。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:161
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_settings.py:162
 msgid "Settings saved!"
 msgstr "設定を保存しました。"
 
@@ -4543,7 +4552,7 @@ msgstr "文章中のポケモンやNPCの名前をどのように置き換える
 "スマート: NPCに関するゲーム内のセリフを置き換えるために、より網羅的なアルゴリズムを使用します。\n"
 "これは通常、単純な置換よりも遅くなります。"
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:108
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/page_text_pool.py:109
 msgid "Remove Text"
 msgstr "テキストを削除"
 
@@ -4730,7 +4739,7 @@ msgstr "Blind Moves モードを有効にしています..."
 
 #: skytemple_randomizer/skytemple_randomizer/randomizer/boss.py:208
 #: skytemple_randomizer/skytemple_randomizer/randomizer/npc.py:55
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:122
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:121
 #: skytemple_randomizer/skytemple_randomizer/randomizer/recruitment_table.py:82
 msgid "Apply 'ActorAndLevelLoader' patch..."
 msgstr "パッチ 'ActerAndLevelLoader' を適用中..."
@@ -4899,8 +4908,8 @@ msgstr ""
 msgid "Apply 'DisarmOneRoomMonsterHouses' patch..."
 msgstr "パッチ 'DisarmOneRoomMonsterHouses' を適用中..."
 
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:138
-#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:430
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:137
+#: skytemple_randomizer/skytemple_randomizer/randomizer/portrait_downloader.py:429
 msgid "Downloading portraits and sprites... {}/{}"
 msgstr "不足している顔グラフィックとスプライトをダウンロード中... {}/{}"
 

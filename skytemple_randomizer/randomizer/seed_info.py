@@ -240,39 +240,39 @@ macro settings() {{
     @l_settings;
     switch ( message_SwitchMenu(0, 1) ) {{
         case menu("General"):
-            message_Mail("Randomize Starters?: {self._bool(self.config['starters_npcs']['starters'])}\\nRandomize NPCs and Bosses?: {self._bool(self.config['starters_npcs']['npcs'])}\\nRandomize OW Music?: {self._bool(self.config['starters_npcs']['overworld_music'])}\\nRandomize Top-Menu Music?: {self._bool(self.config['starters_npcs']['topmenu_music'])}\\nRandomize Explorer Rank Unlocks?: {self._bool(self.config['starters_npcs']['explorer_rank_unlocks'])}\\nRandomize Explorer Rank Rewards?: {self._bool(self.config['starters_npcs']['explorer_rank_rewards'])}\\Use Native File Handlers: {self._bool(self.config['starters_npcs']['native_file_handlers'])}");
+            message_Mail("Randomize Starters?: {self._bool(self.config["starters_npcs"]["starters"])}\\nRandomize NPCs and Bosses?: {self._bool(self.config["starters_npcs"]["npcs"])}\\nRandomize OW Music?: {self._bool(self.config["starters_npcs"]["overworld_music"])}\\nRandomize Top-Menu Music?: {self._bool(self.config["starters_npcs"]["topmenu_music"])}\\nRandomize Explorer Rank Unlocks?: {self._bool(self.config["starters_npcs"]["explorer_rank_unlocks"])}\\nRandomize Explorer Rank Rewards?: {self._bool(self.config["starters_npcs"]["explorer_rank_rewards"])}\\Use Native File Handlers: {self._bool(self.config["starters_npcs"]["native_file_handlers"])}");
             jump @l_settings;
         case menu("Items"):
-            message_Mail("Item Randomization Algorithm: {self._item_algo(self.config['item']['algorithm'])}\\nRandomize Shops?: {self._bool(self.config['item']['global_items'])}\\n");
+            message_Mail("Item Randomization Algorithm: {self._item_algo(self.config["item"]["algorithm"])}\\nRandomize Shops?: {self._bool(self.config["item"]["global_items"])}\\n");
             message_Mail("Next are the item category weights...");
-            message_Mail("{self._item_weights(self.config['item']['weights'])}");
+            message_Mail("{self._item_weights(self.config["item"]["weights"])}");
             jump @l_settings;
         case menu("Dungeons: General"):
-            message_Mail("Mode: {self._dungeon_mode(self.config['dungeons']['mode'])}\\nLayouts and Tilesets?: {self._bool(self.config['dungeons']['layouts'])}\\nRandomize Weather?: {self._bool(self.config['dungeons']['weather'])}\\nRandomize Items?: {self._bool(self.config['dungeons']['items'])}\\nRandomize Pokémon?: {self._bool(self.config['dungeons']['pokemon'])}\\nRandomize Traps?: {self._bool(self.config['dungeons']['traps'])}\\nRandomize Boss Rooms?: {self._bool(self.config['dungeons']['fixed_rooms'])}\\Max Sticky Item Chance: {self.config['dungeons']['max_sticky_chance']}%\\nMax Monster House Chance: {self.config['dungeons']['max_mh_chance']}%\\nMax Hidden Stairs Chance: {self.config['dungeons']['max_hs_chance']}%\\nMax Kecleon Shop Chance: {self.config['dungeons']['max_ks_chance']}%\\Random Weather Chance: {self.config['dungeons']['random_weather_chance']}%\\nRandomize Floor count (down): {self.config['dungeons']['min_floor_change_percent']}%\\nRandomize Floor count (up): {self.config['dungeons']['max_floor_change_percent']}%%");
+            message_Mail("Mode: {self._dungeon_mode(self.config["dungeons"]["mode"])}\\nLayouts and Tilesets?: {self._bool(self.config["dungeons"]["layouts"])}\\nRandomize Weather?: {self._bool(self.config["dungeons"]["weather"])}\\nRandomize Items?: {self._bool(self.config["dungeons"]["items"])}\\nRandomize Pokémon?: {self._bool(self.config["dungeons"]["pokemon"])}\\nRandomize Traps?: {self._bool(self.config["dungeons"]["traps"])}\\nRandomize Boss Rooms?: {self._bool(self.config["dungeons"]["fixed_rooms"])}\\Max Sticky Item Chance: {self.config["dungeons"]["max_sticky_chance"]}%\\nMax Monster House Chance: {self.config["dungeons"]["max_mh_chance"]}%\\nMax Hidden Stairs Chance: {self.config["dungeons"]["max_hs_chance"]}%\\nMax Kecleon Shop Chance: {self.config["dungeons"]["max_ks_chance"]}%\\Random Weather Chance: {self.config["dungeons"]["random_weather_chance"]}%\\nRandomize Floor count (down): {self.config["dungeons"]["min_floor_change_percent"]}%\\nRandomize Floor count (up): {self.config["dungeons"]["max_floor_change_percent"]}%%");
             jump @l_settings;
         case menu("Improvements"):
-            message_Mail("Download portraits?: {self._bool(self.config['improvements']['download_portraits'])}\\nApply 'MoveShortcuts'?: {self._bool(self.config['improvements']['patch_moveshortcuts'])}\\nApply 'UnusedDungeonChance'?: {self._bool(self.config['improvements']['patch_unuseddungeonchance'])}\\nApply 'CTC'?: {self._bool(self.config['improvements']['patch_totalteamcontrol'])}\\nApply 'FixMemorySoftlock'?: {self._bool(self.config['improvements']['patch_fixmemorysoftlock'])}");
+            message_Mail("Download portraits?: {self._bool(self.config["improvements"]["download_portraits"])}\\nApply 'MoveShortcuts'?: {self._bool(self.config["improvements"]["patch_moveshortcuts"])}\\nApply 'UnusedDungeonChance'?: {self._bool(self.config["improvements"]["patch_unuseddungeonchance"])}\\nApply 'CTC'?: {self._bool(self.config["improvements"]["patch_totalteamcontrol"])}\\nApply 'FixMemorySoftlock'?: {self._bool(self.config["improvements"]["patch_fixmemorysoftlock"])}");
             jump @l_settings;
         case menu("Pokémon: General"):
-            message_Mail("Randomize IQ Groups?: {self._bool(self.config['pokemon']['iq_groups'])}\\nRandomize Abilities?: {self._bool(self.config['pokemon']['abilities'])}\\nRandomize Typings?: {self._bool(self.config['pokemon']['typings'])}\\nRandomize Level-Up Movesets?: {self._movesets(self.config['pokemon']['movesets'])}\\nRandomize TM/HM Movesets?: {self._bool(self.config['pokemon']['tm_hm_movesets'])}\\nRandomize TM/HMs?: {self._bool(self.config['pokemon']['tms_hms'])}");
+            message_Mail("Randomize IQ Groups?: {self._bool(self.config["pokemon"]["iq_groups"])}\\nRandomize Abilities?: {self._bool(self.config["pokemon"]["abilities"])}\\nRandomize Typings?: {self._bool(self.config["pokemon"]["typings"])}\\nRandomize Level-Up Movesets?: {self._movesets(self.config["pokemon"]["movesets"])}\\nRandomize TM/HM Movesets?: {self._bool(self.config["pokemon"]["tm_hm_movesets"])}\\nRandomize TM/HMs?: {self._bool(self.config["pokemon"]["tms_hms"])}");
             jump @l_settings;
         case menu("Locations (First)"):
-            message_Mail("Randomize?: {self._bool(self.config['locations']['randomize'])}");
-            {self._locs_chaps(self.config['locations']['first'])}
+            message_Mail("Randomize?: {self._bool(self.config["locations"]["randomize"])}");
+            {self._locs_chaps(self.config["locations"]["first"])}
             jump @l_settings;
         case menu("Locations (Second)"):
-            message_Mail("Randomize?: {self._bool(self.config['locations']['randomize'])}");
-            {self._locs_chaps(self.config['locations']['second'])}
+            message_Mail("Randomize?: {self._bool(self.config["locations"]["randomize"])}");
+            {self._locs_chaps(self.config["locations"]["second"])}
             jump @l_settings;
         case menu("Chapters"):
-            message_Mail("Randomize?: {self._bool(self.config['chapters']['randomize'])}");
-            {self._locs_chaps(self.config['chapters']['text'])}
+            message_Mail("Randomize?: {self._bool(self.config["chapters"]["randomize"])}");
+            {self._locs_chaps(self.config["chapters"]["text"])}
             jump @l_settings;
         case menu("Text"):
-            message_Mail("Randomize Main Texts?: {self._bool(self.config['text']['main'])}\\nRandomize Story Dialogue: {self._bool(self.config['text']['story'])}\\nInstant Text?: {self._bool(self.config['text']['instant'])}");
+            message_Mail("Randomize Main Texts?: {self._bool(self.config["text"]["main"])}\\nRandomize Story Dialogue: {self._bool(self.config["text"]["story"])}\\nInstant Text?: {self._bool(self.config["text"]["instant"])}");
             jump @l_settings;
         case menu("Tactics and IQ"):
-            message_Mail("Randomize Tactics Unlock Levels?: {self._bool(self.config['iq']['randomize_tactics'])}\\nRandomize IQ Gain?: {self._bool(self.config['iq']['randomize_iq_gain'])}\\nRandomize IQ Skill Unlocks?: {self._bool(self.config['iq']['randomize_iq_skills'])}\\nRandomize IQ Groups?: {self._bool(self.config['iq']['randomize_iq_groups'])}");
+            message_Mail("Randomize Tactics Unlock Levels?: {self._bool(self.config["iq"]["randomize_tactics"])}\\nRandomize IQ Gain?: {self._bool(self.config["iq"]["randomize_iq_gain"])}\\nRandomize IQ Skill Unlocks?: {self._bool(self.config["iq"]["randomize_iq_skills"])}\\nRandomize IQ Groups?: {self._bool(self.config["iq"]["randomize_iq_groups"])}");
             jump @l_settings;
         {self._dungeon_cases()}
         case menu("Goodbye!"):
@@ -561,7 +561,7 @@ macro patches() {{
             dungeon_name = self.static_data.dungeon_data.dungeons[dungeon_id].name
             cases += f"""
         case menu("D{dungeon_id:03}: {dungeon_name}"):
-            message_Mail("Randomize?: {self._bool(settings['randomize'])}\\nAllow Monster Houses?: {self._bool(settings['monster_houses'])}\\nRandomize Weather?: {self._bool(settings['randomize_weather'])}\\nRandomize IQ?: {self._bool(settings['enemy_iq'])}\\nUnlock?: {self._bool(settings['unlock'])}");
+            message_Mail("Randomize?: {self._bool(settings["randomize"])}\\nAllow Monster Houses?: {self._bool(settings["monster_houses"])}\\nRandomize Weather?: {self._bool(settings["randomize_weather"])}\\nRandomize IQ?: {self._bool(settings["enemy_iq"])}\\nUnlock?: {self._bool(settings["unlock"])}");
             jump @l_settings;
 """
         return cases

@@ -215,7 +215,7 @@ class PortraitDownloader(AbstractRandomizer):
 
         # Unowns
         if 202 <= mdidx <= 228 and pokedex_number == 201:
-            paths.append((pokedex_number, f"{(mdidx-201):04}"))
+            paths.append((pokedex_number, f"{(mdidx - 201):04}"))
 
         # Castform Snowy
         if mdidx in (380, 980) and pokedex_number == 351:

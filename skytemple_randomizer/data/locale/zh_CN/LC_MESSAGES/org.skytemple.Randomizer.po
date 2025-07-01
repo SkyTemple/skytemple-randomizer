@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2025-01-02 15:44+0000\n"
-"PO-Revision-Date: 2025-01-02 16:05\n"
+"PO-Revision-Date: 2025-07-01 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -391,7 +391,7 @@ msgstr ""
 
 #: /dev/fd/63:94 /dev/fd/63:313
 msgid "Grab Bags Shop Strings"
-msgstr ""
+msgstr "溶食兽福袋店文本"
 
 #: /dev/fd/63:95 /dev/fd/63:314
 msgid "Shedinja Shop Strings"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2025-01-02 15:44+0000\n"
-"PO-Revision-Date: 2025-07-11 10:53\n"
+"PO-Revision-Date: 2025-07-11 12:57\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -3531,11 +3531,11 @@ msgstr ""
 
 #: skytemple-rust/src/romfs.rs:101
 msgid "ROM Header checksum does not match contents."
-msgstr ""
+msgstr "ROM 헤더 체크섬이 콘텐츠와 일치하지 않습니다."
 
 #: skytemple-rust/src/romfs.rs:110
 msgid "Error reading the filesystem from ROM: {}"
-msgstr ""
+msgstr "ROM에서 파일 시스템을 읽는 중 오류가 발생했습니다. {}"
 
 #: skytemple-rust/src/st_bma.rs:462
 msgid "Can not import map background: Width of both images must match the current map width: {}px"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skytemple\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
 "POT-Creation-Date: 2025-01-02 15:44+0000\n"
-"PO-Revision-Date: 2025-07-11 12:57\n"
+"PO-Revision-Date: 2025-07-11 15:16\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -4638,7 +4638,7 @@ msgstr ""
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.py:114
 msgid "Are you sure you provided a ROM? A ROM usually has the file extension \".nds\"."
-msgstr ""
+msgstr "롬파일을 선택한 것이 맞습니까? 대부분의 롬파일 확장자는 \".nds\"입니다."
 
 #: skytemple_randomizer/skytemple_randomizer/frontend/gtk/widgets/stack_start.ui:35
 msgid "Get started by loading a ROM."

@@ -33,10 +33,7 @@ X = TypeVar("X")
 
 
 def show_about_dialog(parent: Gtk.Widget):
-    CREDITS = """Project Lead:
-Marco "Capypara" Köpcke https://github.com/theCapypara
-
-Contributors:
+    CREDITS = """Contributors:
 Aikku93 (via tilequant) https://github.com/aikku93
 techticks (MacOS packaging) https://github.com/tech-ticks
 marius851000 (via skytemple-rust) https://github.com/marius851000

@@ -7,7 +7,7 @@ backend-path = ["_custom_build"]
 name = "skytemple-randomizer"
 version = "2.2.0"
 authors = [
-    { name = 'Marco "Capypara" Köpcke', email = "hello@capypara.de" },
+    { name = 'SkyTemple Contributrors', email = "contact@skytemple.org" },
     # see About dialog or GitHub contributors list for additional people.
 ]
 description = "Randomizer GUI to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky"

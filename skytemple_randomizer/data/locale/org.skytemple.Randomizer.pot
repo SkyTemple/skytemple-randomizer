@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.skytemple.Randomizer\n"
 "Report-Msgid-Bugs-To: https://translate.skytemple.org\n"
-"POT-Creation-Date: 2025-01-02 15:44+0000\n"
+"POT-Creation-Date: 2025-10-19 10:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1041,7 +1041,7 @@ msgstr ""
 msgid "No value set for if condition."
 msgstr ""
 
-#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:64
+#: explorerscript/explorerscript/ssb_converting/compiler/compile_handlers/blocks/ifs/header/scn.py:62
 #, python-brace-format
 msgid "The only supported operators for scn if conditions are ==,<,<=,>,>= (line {self.ctx.start.line})"
 msgstr ""
@@ -1289,10 +1289,10 @@ msgstr ""
 
 #: skytemple-files/skytemple_files/common/exceptions/outdated_patch_dependency.py:20
 #, python-brace-format
-msgid "The patch {self.patch_name} cannot be applied because the following patches it depends on "
+msgid "The patch {self.patch_name} cannot be applied because the following patches it depends on are outdated:"
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/exceptions/outdated_patch_dependency.py:25
+#: skytemple-files/skytemple_files/common/exceptions/outdated_patch_dependency.py:24
 msgid ""
 "\n"
 "Please reapply these patches first."
@@ -1415,17 +1415,17 @@ msgstr ""
 msgid "Can not convert PIL image to PMD tiled image: Palette must contain max {max_len_pal} RGB colors and be divisible by {single_palette_size}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/tiled_image.py:268
+#: skytemple-files/skytemple_files/common/tiled_image.py:266
 #, python-brace-format
 msgid "Can not convert PIL image to PMD tiled image: Image dimensions must be {img_width}x{img_height}px."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/tiled_image.py:334
-#: skytemple-files/skytemple_files/common/tiled_image.py:348
+#: skytemple-files/skytemple_files/common/tiled_image.py:329
+#: skytemple-files/skytemple_files/common/tiled_image.py:343
 msgid "Can not convert PIL image to PMD tiled image: The color {pix} (from palette {math.floor(pix / single_palette_size)}) used by pixel {x+(idx % 2)}x{y} in tile {tile_id} ({tile_x}x{tile_y} is out of range. Expected are colors from palette {tile_palette_indices[tile_id]} ({tile_palette_indices[tile_id] * single_palette_size} - {(tile_palette_indices[tile_id]+1) * single_palette_size - 1})."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/tiled_image.py:394
+#: skytemple-files/skytemple_files/common/tiled_image.py:389
 #, python-brace-format
 msgid ""
 "An image selected to import is too complex. It has too many unique tiles ({len_final_tiles}, max allowed are 1024).\n"
@@ -1446,18 +1446,30 @@ msgstr ""
 msgid "Binary {binary.name} not found."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:613
-#: skytemple-files/skytemple_files/common/util.py:644
+#: skytemple-files/skytemple_files/common/util.py:618
+#: skytemple-files/skytemple_files/common/util.py:641
 #, python-brace-format
 msgid "Folder {dir_name} does not exist."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:616
+#: skytemple-files/skytemple_files/common/util.py:644
 #, python-brace-format
 msgid "File {file_name} already exists in this folder."
 msgstr ""
 
-#: skytemple-files/skytemple_files/common/util.py:639
+#: skytemple-files/skytemple_files/common/util.py:666
+#: skytemple-files/skytemple_files/common/util.py:681
+#, python-brace-format
+msgid "Folder {path} does not exist."
+msgstr ""
+
+#: skytemple-files/skytemple_files/common/util.py:678
+#: skytemple-files/skytemple_files/common/util.py:703
+#, python-brace-format
+msgid "Folder {par_dir_name} does not exist."
+msgstr ""
+
+#: skytemple-files/skytemple_files/common/util.py:698
 #, python-brace-format
 msgid "Folder {path} already exists."
 msgstr ""
@@ -2385,12 +2397,12 @@ msgstr ""
 msgid "Cannot convert PIL image to CHR: width and height must be a multiple of {CHR_TILE_WIDTH}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/dbg/_model.py:115
+#: skytemple-files/skytemple_files/graphics/dbg/_model.py:113
 #, python-brace-format
 msgid "Can not import map background: Width of image must match the expected width: {expected_width}px"
 msgstr ""
 
-#: skytemple-files/skytemple_files/graphics/dbg/_model.py:124
+#: skytemple-files/skytemple_files/graphics/dbg/_model.py:119
 #, python-brace-format
 msgid "Can not import map background: Height of image must match the expected height: {expected_height}px"
 msgstr ""
@@ -3509,12 +3521,12 @@ msgstr ""
 msgid "The number of parameters for {op_code.name} must be {op_code.params}, is {self._correct_param_list_len(in_op.params)}."
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:374
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:377
 #, python-brace-format
 msgid "Unknown language for string: {lang}"
 msgstr ""
 
-#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:378
+#: skytemple-files/skytemple_files/script/ssb/script_compiler.py:381
 #, python-brace-format
 msgid "Invalid parameter supplied for an operation: {param}"
 msgstr ""
@@ -3601,27 +3613,27 @@ msgstr ""
 msgid "_OK"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:77
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:75
 msgid "Application to randomize the ROM of Pokémon Mystery Dungeon Explorers of Sky."
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:100
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:98
 msgid "CSV File (*.csv)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:108
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:106
 msgid "XML Document (*.xml)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:116
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:114
 msgid "Nintendo DS ROM (*.nds)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:124
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:122
 msgid "JSON Document (*.json)"
 msgstr ""
 
-#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:156
+#: skytemple_randomizer/skytemple_randomizer/frontend/gtk/ui_util.py:154
 msgid "Any File"
 msgstr ""
 

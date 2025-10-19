@@ -1,4 +1,4 @@
-#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2025 SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -184,7 +184,7 @@ class QuizRandomizer(AbstractRandomizer):
 if __name__ == "__main__":
     import json
 
-    with open("/home/marco/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json") as f_test:
+    with open("/home/xxxx/dev/skytemple/skytemple/randomizer/skytemple_randomizer/data/default.json") as f_test:
         data = json.load(f_test)
     for question in data["quiz"]["questions"]:
         for answer in question["answers"]:

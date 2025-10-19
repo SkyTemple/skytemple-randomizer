@@ -1,4 +1,4 @@
-#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2025 SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -267,7 +267,7 @@ class BossRandomizer(AbstractRandomizer):
 def create_mapping():
     from ndspy.rom import NintendoDSRom
 
-    rom = NintendoDSRom.fromFile("/home/marco/dev/skytemple/skytemple/skyworkcopy_us_unpatched.nds")
+    rom = NintendoDSRom.fromFile("/home/xxxx/dev/skytemple/skytemple/skyworkcopy_us_unpatched.nds")
     from skytemple_files.common.util import get_ppmdu_config_for_rom
 
     static_data = get_ppmdu_config_for_rom(rom)

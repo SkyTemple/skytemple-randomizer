@@ -1,4 +1,4 @@
-#  Copyright 2020-2024 Capypara and the SkyTemple Contributors
+#  Copyright 2020-2025 SkyTemple Contributors
 #
 #  This file is part of SkyTemple.
 #
@@ -221,7 +221,7 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST010, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer.\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
@@ -309,7 +309,7 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST009, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer.\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
@@ -378,7 +378,7 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST008, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer.\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{
@@ -467,7 +467,7 @@ def 0 {{
     message_SetFace(ACTOR_NPC_TEST007, FACE_HAPPY, FACE_POS_TOP_L_FACEINW);
     message_Talk(" This ROM has been randomized\\nwith the SkyTemple Randomizer!");
     message_ResetActor();
-    message_Notice("SkyTemple Randomizer by [CS:A]Capypara[CR].\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
+    message_Notice("SkyTemple Randomizer.\\nVersion: [CS:Z]{escape(version())}[CR]\\nSeed: [CS:C]{escape(str(self.seed))}[CR]");
 
     @l_menu;
     switch ( message_SwitchMenu(0, 1) ) {{

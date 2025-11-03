@@ -417,7 +417,7 @@ jobs:
           }
 
       - name: Create installer
-        uses: joncloud/makensis-action@v4.1
+        uses: joncloud/makensis-action@v5.0
         with:
           script-file: "installer/skytemple-randomizer.nsi"
           arguments: "/DPRODUCT_VERSION=${{ env.PACKAGE_VERSION }} /DINST_LIST=install_list.nsh /DUNINST_LIST=uninstall_list.nsh"

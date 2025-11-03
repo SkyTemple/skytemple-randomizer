@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo apt install libgirepository1.0-dev python3-gi python3-gi-cairo gir1.2-gtk-4.0
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
@@ -49,7 +49,7 @@ jobs:
       - name: Install gobject-introspection and other build deps
         run: sudo apt-get update && sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
       - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - name: Install dependencies
@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
       - name: Install ruff
@@ -118,7 +118,7 @@ jobs:
         with:
           name: wheels
       - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: 3.11
       - name: Upgrade pip
@@ -323,7 +323,7 @@ jobs:
     name: Build and package for Windows
     steps:
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
           architecture: "x64"

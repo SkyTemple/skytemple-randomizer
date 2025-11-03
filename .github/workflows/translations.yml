@@ -13,32 +13,32 @@ jobs:
       - name: Install gobject-introspection and other build deps
         run: sudo apt-get update && sudo apt-get install -y gobject-introspection libgirepository1.0-dev gir1.2-gtk-4.0 gir1.2-adw-1 pkg-config libcairo2-dev gettext make
       - name: Checkout skytemple
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: skytemple_randomizer
           submodules: true
       - name: Checkout skytemple-files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: skytemple/skytemple-files
           path: skytemple-files
       - name: Checkout skytemple-dtef
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: skytemple/skytemple-dtef
           path: skytemple-dtef
       - name: Checkout explorerscript
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: skytemple/explorerscript
           path: explorerscript
       - name: Checkout tilequant
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: skytemple/tilequant
           path: tilequant
       - name: Checkout skytemple-rust
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: skytemple/skytemple-rust
           path: skytemple-rust

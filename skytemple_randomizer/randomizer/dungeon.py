@@ -464,6 +464,8 @@ class DungeonRandomizer(AbstractRandomizer):
                     if (
                         dungeon_id not in self.config["dungeons"]["settings"]
                         or not self.config["dungeons"]["settings"][dungeon_id]["randomize"]
+                        # Skip Labyrinth cave, changing its floor count causes a glitch
+                        or dungeon_id == 91
                     ):
                         do_continue = True
                         break
